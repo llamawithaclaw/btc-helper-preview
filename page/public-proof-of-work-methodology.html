@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BTC Helper Public Proof-of-Work Methodology</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --ink: #16181d;
+      --muted: #5f6b7a;
+      --line: #d9dee7;
+      --accent: #1f6feb;
+      --accent-soft: #eaf2ff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+    main {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 40px 20px 56px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 6px 18px rgba(20, 24, 32, 0.04);
+      margin-bottom: 20px;
+    }
+    .eyebrow {
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      margin-bottom: 10px;
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { letter-spacing: -0.02em; margin-bottom: 12px; }
+    h2 { margin-top: 28px; margin-bottom: 10px; }
+    h3 { margin-top: 20px; margin-bottom: 8px; }
+    p, li { color: var(--ink); }
+    .subtitle, .small { color: var(--muted); }
+    .back-link {
+      display: inline-block;
+      margin-bottom: 18px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .back-link:hover { text-decoration: underline; }
+    ul, ol { margin: 10px 0 16px 20px; padding: 0; }
+    li { margin: 6px 0; }
+    .note {
+      border-left: 4px solid var(--accent);
+      background: #f8fbff;
+      padding: 12px 14px;
+      border-radius: 10px;
+      margin: 14px 0;
+    }
+    code {
+      background: #f3f5f8;
+      padding: 2px 6px;
+      border-radius: 6px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.92em;
+    }
+    @media (max-width: 640px) {
+      main { padding: 28px 16px 40px; }
+      .card { padding: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <a class="back-link" href="./index.html">← Back to BTC Helper public page</a>
+
+    <section class="card">
+      <div class="eyebrow">Methodology</div>
+      <h1>BTC Helper Public Proof-of-Work Methodology</h1>
+      <p class="subtitle">This page explains what the public proof-of-work track is trying to show, what it does and does not claim, and how the benchmark should be interpreted.</p>
+
+      <h2>Purpose</h2>
+      <p>This document describes the methodology behind BTC Helper's public proof-of-work tracking system.</p>
+
+      <h2>Core Principle</h2>
+      <p>BTC Helper's public proof-of-work is not about predicting price. It is about demonstrating <strong>operational discipline</strong> and <strong>run usability</strong> over time.</p>
+
+      <h2>What We Track</h2>
+
+      <h3>1. Daily Regime Posture</h3>
+      <ul>
+        <li><strong>Regime:</strong> The current accumulation posture (Aggressive, Normal, Cautious, Pause)</li>
+        <li><strong>Action:</strong> The recommended accumulation behavior (Increase, Maintain, Be Selective, Pause)</li>
+        <li><strong>Confidence:</strong> Run usability rating (High, Moderate, Reduced, Unknown)</li>
+      </ul>
+
+      <h3>2. Portfolio Performance Benchmark</h3>
+      <ul>
+        <li><strong>BTC Helper Portfolio:</strong> Value of a hypothetical portfolio following BTC Helper's accumulation policy</li>
+        <li><strong>Baseline DCA Portfolio:</strong> Value of a hypothetical portfolio following simple dollar-cost averaging</li>
+        <li><strong>Benchmark Difference:</strong> Percentage difference between the two strategies</li>
+      </ul>
+
+      <h3>3. Data Quality Metrics</h3>
+      <ul>
+        <li><strong>Coverage:</strong> Percentage of required fields with live data</li>
+        <li><strong>Import Reliance:</strong> Number of fields coming from imported/manual-assisted sources</li>
+        <li><strong>Run Quality:</strong> Overall usability rating (Live, Degraded, Recently Recovered, etc.)</li>
+      </ul>
+
+      <h2>Methodology Details</h2>
+
+      <h3>Portfolio Tracking</h3>
+      <p>The benchmark uses a simple model:</p>
+      <ul>
+        <li><strong>Starting capital:</strong> $1,000 (or equivalent in BTC)</li>
+        <li><strong>Baseline DCA:</strong> Buys $10 every day regardless of market conditions</li>
+        <li><strong>BTC Helper:</strong> Adjusts daily buy amount based on regime:</li>
+      </ul>
+      <ul>
+        <li>Aggressive: $15 (50% increase)</li>
+        <li>Normal: $10 (baseline)</li>
+        <li>Cautious: $5 (50% decrease)</li>
+        <li>Pause: $0 (no buy)</li>
+      </ul>
+
+      <h3>Data Sources</h3>
+      <ul>
+        <li><strong>Price:</strong> CryptoCompare API (daily close)</li>
+        <li><strong>On-chain metrics:</strong> Glassnode-style historical references</li>
+        <li><strong>Derivatives:</strong> OKX or CoinGlass-style references</li>
+        <li><strong>Macro:</strong> FRED-style references</li>
+      </ul>
+
+      <h3>Validation Approach</h3>
+      <ol>
+        <li>Execute the daily run with current live or mixed-source data</li>
+        <li>Evaluate regime behavior against scenario expectations</li>
+        <li>Log domain breakdown and data-quality caveats</li>
+        <li>Publish output with confidence and coverage framing</li>
+      </ol>
+
+      <h2>Transparency Commitments</h2>
+      <h3>1. Honest Degradation Reporting</h3>
+      <p>When data is incomplete or imported, this is clearly stated in the daily output.</p>
+
+      <h3>2. Clear Methodology Notes</h3>
+      <p>Benchmark calculations should be understandable and reproducible at the level described here.</p>
+
+      <h3>3. Public Archive</h3>
+      <p>Historical posture posts are preserved in the public archive.</p>
+
+      <h3>4. No Performance Theater</h3>
+      <div class="note">
+        BTC Helper does not claim predictive certainty or guaranteed outperformance. The public proof-of-work is meant to demonstrate consistency, explainability, and operational honesty.
+      </div>
+
+      <h2>Interpretation Guide</h2>
+
+      <h3>When Benchmark Difference Is Zero</h3>
+      <p>This means BTC Helper and baseline DCA are currently performing identically. That can happen when the regime remains near baseline or the sample is still short.</p>
+
+      <h3>When Benchmark Difference Is Positive</h3>
+      <p>This means BTC Helper is outperforming baseline DCA so far.</p>
+
+      <h3>When Benchmark Difference Is Negative</h3>
+      <p>This means BTC Helper is underperforming baseline DCA so far.</p>
+
+      <h3>Sample Size Warning</h3>
+      <p>Early readings, especially in the first 30 days, should be interpreted cautiously. The benchmark needs a much longer sample to become meaningfully informative.</p>
+
+      <h2>Future Enhancements</h2>
+      <ul>
+        <li>Extended backtesting over historical regimes</li>
+        <li>Multiple benchmark variants</li>
+        <li>Drawdown and risk metrics</li>
+        <li>Better visualization of regime transitions</li>
+      </ul>
+
+      <h2>Not the Goal</h2>
+      <ul>
+        <li>Short-term price prediction</li>
+        <li>Guaranteed outperformance claims</li>
+        <li>Black-box optimization theater</li>
+      </ul>
+
+      <p class="small">Last updated: 2026-04-21</p>
+    </section>
+  </main>
+</body>
+</html>

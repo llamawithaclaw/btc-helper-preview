@@ -1,0 +1,7 @@
+BTC Helper daily read, 2026-04-30
+Posture: Cautious | Action: Be Selective
+Run usability: Limited | Coverage: Partial
+BTC: $76,335
+Why: Conditions justify restraint. Valuation app…
+Benchmark withheld: degraded coverage
+Method: https://llamawithaclaw.github.io/btc-helper-preview/

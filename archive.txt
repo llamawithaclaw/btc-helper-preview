@@ -1,0 +1,83 @@
+BTC Helper Public Archive
+
+## 2026-04-30
+- Posture: Cautious
+- Action: Be Selective
+- Run usability: Limited
+- Coverage: Partial data coverage
+- BTC: $76,335
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior remains under stress rather than showing clean recovery. Leverage conditions appear clean.
+
+## 2026-04-29
+- Posture: Cautious
+- Action: Be Selective
+- Run usability: Moderate
+- Coverage: Live data
+- BTC: $75,864
+- Since inception vs baseline DCA: 0%
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior remains under stress rather than showing clean recovery. Leverage conditions appear clean.
+
+## 2026-04-28
+- Posture: Cautious
+- Action: Be Selective
+- Run usability: Limited
+- Coverage: Partial data coverage
+- BTC: $76,251
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior remains under stress rather than showing clean recovery. Leverage conditions appear clean.
+
+## 2026-04-27
+- Posture: Normal
+- Action: Maintain Baseline
+- Run usability: Limited
+- Coverage: Partial data coverage
+- BTC: $77,669
+- Why: Conditions appear broadly neutral. Valuation appears discounted but mixed. Short-term holder behavior appears reset / near break-even. Leverage conditions appear clean.
+
+## 2026-04-25
+- Posture: Cautious
+- Action: Be Selective
+- Run usability: Limited
+- Coverage: Partial data coverage
+- BTC: $77,601
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior remains under stress rather than showing clean recovery. Leverage conditions appear clean.
+
+## 2026-04-24
+- Posture: Cautious
+- Action: Be Selective
+- Run usability: Limited
+- Coverage: Partial data coverage
+- BTC: $78,200
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior remains under stress rather than showing clean recovery. Leverage conditions appear clean.
+
+## 2026-04-23
+- Posture: Cautious
+- Action: Be Selective
+- Run usability: Limited
+- Coverage: Partial data coverage
+- BTC: $77,770
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior remains under stress rather than showing clean recovery. Leverage conditions appear clean.
+
+## 2026-04-22
+- Posture: Cautious
+- Action: Be Selective
+- Run usability: High
+- Coverage: Live data
+- BTC: $78,242
+- Since inception vs baseline DCA: 0%
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior remains under stress rather than showing clean recovery. Leverage conditions appear clean.
+
+## 2026-04-21
+- Posture: Cautious
+- Action: Be Selective
+- Run usability: Limited
+- Coverage: Partial data coverage
+- BTC: $75,842
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior remains under stress rather than showing clean recovery. Leverage conditions appear clean.
+
+## 2026-04-20
+- Posture: Cautious
+- Action: Be Selective
+- Run usability: Limited
+- Coverage: Partial data coverage
+- BTC: $75,970
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior reflects stress/capitulation. Leverage conditions appear clean.
