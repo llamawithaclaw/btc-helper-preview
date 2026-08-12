@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Don’t Wages and Jobs Offset the Cost Pressure?</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../btc-helper-logo.svg">
+  <meta name="theme-color" content="#111313">
+  <script>
+    try {
+      const savedTheme = localStorage.getItem('btcHelperTheme');
+      document.documentElement.dataset.theme = savedTheme === 'light' ? 'light' : 'dark';
+    } catch {
+      document.documentElement.dataset.theme = 'dark';
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root { color-scheme: light; --bg:#f5f1e9; --card:#fffdf8; --card-soft:#f0ebe1; --ink:#171a18; --muted:#6e746f; --line:#dcd6cb; --accent:#526b83; --accent-blue:#2563eb; --accent-soft:rgba(82,107,131,.10); --brand-navy:#111313; --brand-panel:#181a19; --brand-gold:#ad5617; --brand-warn:#ad5617; --hero-ink:#f3f0e8; --hero-muted:#a5aca6; --secondary-bg:rgba(82,107,131,.10); --secondary-ink:#26394a; --secondary-border:rgba(82,107,131,.28); --dark-card-bg:linear-gradient(135deg,#0d100f,#151816); --dark-card-ink:#f3f0e8; --dark-card-muted:#a5aca6; }
+    :root[data-theme="dark"] { color-scheme: dark; --bg:#0d100f; --card:#151816; --card-soft:#1b201d; --ink:#f3f0e8; --muted:#a5aca6; --line:rgba(255,255,255,.09); --accent:#91a99a; --accent-blue:#bfdbfe; --accent-soft:rgba(145,169,154,.12); --brand-navy:#111313; --brand-panel:#181a19; --brand-gold:#f59a3a; --brand-warn:#c3a36e; --hero-ink:#f3f0e8; --hero-muted:#a5aca6; --secondary-bg:rgba(242,237,214,.08); --secondary-ink:#f3f0e8; --secondary-border:rgba(242,237,214,.18); --dark-card-bg:linear-gradient(135deg,#0d100f,#151816); --dark-card-ink:#f3f0e8; --dark-card-muted:#a5aca6; }
+    html { font-synthesis:none; }
+    body, button, input, select, textarea, summary { font-family:"Noto Sans", "Segoe UI", Roboto, system-ui, sans-serif; }
+    button, input, select, textarea, summary { font:inherit; }
+    code, pre, .machine-record { font-family:"JetBrains Mono", ui-monospace, SFMono-Regular, Consolas, monospace; }
+    .numeric, .price, .percentage, .timestamp { font-variant-numeric:tabular-nums; }
+    .skip-link { position:absolute; left:16px; top:-52px; z-index:1000; border-radius:999px; padding:10px 14px; background:#f2edd6; color:#0d120f; font-weight:950; text-decoration:none; box-shadow:0 12px 28px rgba(0,0,0,.22); }
+    .skip-link:focus { top:14px; outline:3px solid color-mix(in srgb,var(--accent-blue) 58%,transparent); }
+    .theme-toggle { position:fixed; top:16px; right:16px; z-index:20; width:40px; height:40px; display:flex; align-items:center; justify-content:center; padding:0; border-radius:999px; border:1px solid var(--line); background:color-mix(in srgb,var(--card) 88%,transparent); color:var(--ink); box-shadow:0 12px 28px rgba(0,0,0,.16); font:900 1.05rem/1 "Noto Sans", "Segoe UI Symbol", system-ui, sans-serif; cursor:pointer; }
+    .theme-toggle:hover, .theme-toggle:focus { border-color:color-mix(in srgb,var(--accent) 45%,var(--line)); background:var(--accent-soft); outline:none; }
+    .theme-toggle .theme-icon { display:block; margin:0; }
+    .theme-toggle .theme-icon-sun, .theme-toggle .theme-icon-moon { width:22px; height:22px; }
+    * { box-sizing: border-box; }
+
+    .site-nav { position:sticky; top:0; z-index:50; backdrop-filter:blur(16px); background:color-mix(in srgb,var(--bg) 92%,transparent); border-bottom:1px solid color-mix(in srgb,var(--line) 80%,transparent); box-shadow:0 10px 30px rgba(0,0,0,.10); }
+    .site-nav-inner { max-width:1120px; margin:0 auto; padding:10px 20px; display:grid; grid-template-columns:auto 1fr; align-items:center; gap:16px; min-height:62px; }
+    .brand-lockup { display:inline-flex; align-items:center; gap:10px; min-width:fit-content; color:var(--ink); text-decoration:none; }
+    .brand-mark { width:34px; height:34px; border-radius:10px; display:inline-flex; align-items:center; justify-content:center; background:linear-gradient(135deg,#111313,#181a19); border:1px solid color-mix(in srgb,var(--accent) 44%,#34362d); box-shadow:0 8px 18px rgba(15,23,42,.16); overflow:hidden; }
+    .brand-mark svg, .brand-mark img { width:30px; height:30px; display:block; }
+    .brand-mark .mark-cradle, .brand-mark .mark-rail { stroke:var(--accent); } .brand-mark .mark-signal { stroke:#f3f2e8; } .brand-mark .mark-reserve-dot { fill:#f59a3a; }
+    .brand-text strong { display:block; font-size:.82rem; letter-spacing:.12em; text-transform:uppercase; line-height:1.05; }
+    .brand-text span { display:block; color:var(--muted); font-size:.72rem; margin-top:1px; }
+    .nav-links { display:flex; align-items:center; gap:4px; flex-wrap:wrap; justify-content:flex-end; }
+    .nav-links a, .theme-toggle, .menu-toggle { position:static; box-shadow:none; display:inline-flex; align-items:center; justify-content:center; border:1px solid transparent; border-radius:999px; padding:7px 9px; min-height:36px; min-width:36px; color:var(--muted); background:transparent; text-decoration:none; font:inherit; font-size:.82rem; font-weight:850; cursor:pointer; }
+    .nav-links a:hover, .nav-links a:focus, .theme-toggle:hover, .theme-toggle:focus, .menu-toggle:hover, .menu-toggle:focus { color:var(--ink); background:var(--accent-soft); border-color:color-mix(in srgb,var(--accent) 24%,var(--line)); outline:none; }
+    .nav-links a[aria-current="page"] { color:var(--ink); background:var(--accent-soft); border-color:color-mix(in srgb,var(--accent) 28%,var(--line)); }
+    .nav-links a.nav-cta { color:color-mix(in srgb,var(--ink) 82%,var(--muted)); border-color:color-mix(in srgb,var(--accent) 22%,var(--line)); background:color-mix(in srgb,var(--card) 70%,transparent); padding-inline:12px; }
+    .nav-links a.nav-cta:hover, .nav-links a.nav-cta:focus { color:var(--ink); background:var(--accent-soft); }
+    .menu-toggle { display:none; gap:7px; padding-inline:11px; color:var(--ink); border-color:var(--line); background:color-mix(in srgb,var(--card) 72%,transparent); }
+    .menu-toggle-bars { width:15px; height:10px; position:relative; display:inline-block; border-top:2px solid currentColor; border-bottom:2px solid currentColor; }
+    .menu-toggle-bars::after { content:''; position:absolute; left:0; right:0; top:3px; border-top:2px solid currentColor; }
+    .theme-toggle { width:36px; height:36px; padding:0; }
+    .site-footer { max-width:1120px; margin:0 auto; padding:30px 20px 48px; color:var(--muted); }
+    .site-footer-inner { border:1px solid var(--line); border-radius:24px; padding:24px; display:grid; grid-template-columns:minmax(0,1.2fr) repeat(3,minmax(150px,.55fr)); gap:22px; background:linear-gradient(135deg,color-mix(in srgb,var(--card) 94%,transparent),color-mix(in srgb,var(--accent-soft) 36%,var(--card))); box-shadow:0 16px 44px rgba(0,0,0,.10); }
+    .footer-brand strong { display:block; color:var(--ink); letter-spacing:.08em; text-transform:uppercase; font-size:.86rem; }
+    .footer-brand p, .footer-note { margin:.45rem 0 0; color:var(--muted); font-size:.9rem; }
+    .footer-column-title { color:var(--ink); font-weight:900; margin-bottom:10px; font-size:.86rem; display:flex; align-items:center; gap:8px; }
+    .footer-icon { width:22px; height:22px; border-radius:8px; display:inline-flex; align-items:center; justify-content:center; background:var(--accent-soft); color:var(--ink); border:1px solid var(--line); font-size:.82rem; line-height:1; }
+    .footer-links { display:grid; gap:7px; }
+    .footer-links a { color:var(--muted); text-decoration:none; font-weight:760; font-size:.9rem; display:inline-flex; align-items:center; gap:7px; }
+    .footer-links a .link-icon { color:var(--accent); font-size:.86rem; width:1.1em; text-align:center; }
+    .footer-links a:hover, .footer-links a:focus { color:var(--ink); text-decoration:underline; outline:none; }
+    .breadcrumb { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin:0 0 16px; color:var(--muted); font-size:.78rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+    .breadcrumb a { color:var(--accent-blue); text-decoration:none; }
+    .breadcrumb a:hover, .breadcrumb a:focus { color:var(--ink); text-decoration:underline; outline:none; }
+    .breadcrumb span { min-width:0; }
+    @media (max-width:860px) {
+      .site-nav-inner { grid-template-columns:1fr auto; gap:10px; min-height:56px; padding:9px 14px; }
+      .menu-toggle { display:inline-flex; }
+      .nav-links { display:none; grid-column:1 / -1; width:100%; grid-template-columns:1fr 1fr; gap:8px; padding:8px 0 4px; border-top:1px solid var(--line); }
+      .site-nav.is-open .nav-links { display:grid; }
+      .nav-links a, .theme-toggle { justify-content:flex-start; width:100%; border-color:var(--line); background:color-mix(in srgb,var(--card) 74%,transparent); padding:9px 10px; }
+      .theme-toggle { justify-content:center; }
+      .brand-text span { display:none; }
+      .site-footer-inner { grid-template-columns:1fr 1fr; padding:20px; }
+      .footer-brand { grid-column:1 / -1; }
+    }
+    @media (max-width:560px) {
+      .site-nav-inner { padding:8px 12px; }
+      .brand-mark { width:32px; height:32px; }
+      .brand-mark svg, .brand-mark img { width:28px; height:28px; }
+      .brand-text strong { font-size:.78rem; }
+      .menu-toggle { min-height:34px; padding:6px 10px; font-size:.8rem; }
+      .site-footer-inner { grid-template-columns:1fr; border-radius:20px; }
+    }
+
+    .menu-toggle { gap:8px; min-height:34px; padding:7px 11px; border-radius:999px; font-weight:900; }
+    .menu-toggle-icon { width:16px; height:14px; position:relative; display:inline-block; flex:0 0 auto; }
+    .menu-toggle-icon span { position:absolute; left:0; right:0; height:2px; border-radius:999px; background:currentColor; display:block; transform-origin:center; transition:top .16s ease, transform .16s ease, opacity .16s ease; }
+    .menu-toggle-icon span:nth-child(1) { top:1px; }
+    .menu-toggle-icon span:nth-child(2) { top:6px; }
+    .menu-toggle-icon span:nth-child(3) { top:11px; }
+    .site-nav.is-open .menu-toggle-icon span:nth-child(1) { top:6px; transform:rotate(45deg); }
+    .site-nav.is-open .menu-toggle-icon span:nth-child(2) { opacity:0; }
+    .site-nav.is-open .menu-toggle-icon span:nth-child(3) { top:6px; transform:rotate(-45deg); }
+    .theme-toggle { gap:8px; }
+    .theme-toggle .theme-icon { margin:0; }
+    .theme-toggle-label { display:none; font-size:.83rem; font-weight:900; }
+    .footer-icon, .footer-links a .link-icon { display:none; }
+    .footer-column-title { gap:0; letter-spacing:.09em; text-transform:uppercase; font-size:.75rem; color:var(--muted); }
+    .footer-links { gap:6px; }
+    .footer-links a { gap:0; color:color-mix(in srgb,var(--ink) 78%,var(--muted)); }
+    @media (max-width:860px) {
+      .site-nav-inner { gap:8px; min-height:54px; padding:8px 14px; }
+      .nav-links { grid-template-columns:repeat(2,minmax(0,1fr)); gap:6px; margin:6px 0 2px; padding:7px; border:1px solid var(--line); border-radius:16px; background:color-mix(in srgb,var(--card) 92%,transparent); box-shadow:0 18px 44px rgba(0,0,0,.16); }
+      .site-nav.is-open .nav-links { display:grid; }
+      .nav-links a, .theme-toggle { width:100%; min-height:36px; justify-content:flex-start; gap:8px; padding:8px 10px; border:0; border-radius:12px; background:transparent; color:var(--ink); }
+      .nav-links a:hover, .nav-links a:focus, .theme-toggle:hover, .theme-toggle:focus { background:var(--accent-soft); border-color:transparent; text-decoration:none; }
+      .theme-toggle { height:auto; grid-column:1 / -1; }
+      .theme-toggle-label { display:inline; }
+      .menu-toggle-label-text { min-width:36px; text-align:left; }
+      .theme-toggle .theme-icon { flex:0 0 auto; }
+      .site-footer { padding-top:24px; }
+      .site-footer-inner { grid-template-columns:1fr; gap:18px; padding:20px; }
+      .footer-brand { grid-column:auto; }
+    }
+    @media (max-width:560px) {
+      .site-footer-inner { border-radius:18px; padding:18px; }
+    }
+    @media (max-width:340px) { .nav-links { grid-template-columns:1fr; } .theme-toggle { grid-column:auto; } }
+
+    html { scroll-behavior:smooth; }
+    body { margin:0; font-family: "Noto Sans", "Segoe UI", Roboto, system-ui, sans-serif; background:radial-gradient(circle at 20% -10%, color-mix(in srgb,var(--accent) 8%,transparent), transparent 32%), radial-gradient(circle at 90% 10%, rgba(251,191,36,.07), transparent 30%), var(--bg); color:var(--ink); line-height:1.62; }
+    main { max-width: 980px; margin:0 auto; padding:32px 20px 64px; }
+    .back-link { display:inline-block; margin-bottom:18px; color:var(--accent-blue); text-decoration:none; font-weight:800; font-family:'JetBrains Mono', ui-monospace, monospace; letter-spacing:.08em; text-transform:uppercase; font-size:.76rem; }
+    .back-link:hover { text-decoration:underline; }
+    .hero, .card { background:var(--card); border:1px solid var(--line); border-radius:22px; padding:28px; box-shadow:0 16px 44px rgba(0,0,0,.30); margin-bottom:18px; }
+    .hero { background:radial-gradient(circle at 84% 18%, rgba(251,191,36,.07), transparent 28%), radial-gradient(circle at 78% 74%, color-mix(in srgb,var(--accent) 10%, transparent), transparent 32%), linear-gradient(135deg,#0b0d0d,#171a1a 58%,#111313); border-color:color-mix(in srgb,var(--accent) 28%,#050704); color:var(--hero-ink); }
+    .eyebrow { color:var(--accent-blue); font-family:'JetBrains Mono', ui-monospace, monospace; font-weight:900; letter-spacing:.12em; text-transform:uppercase; font-size:.76rem; margin-bottom:10px; }
+    h1, h2, h3, h4, p { margin-top:0; }
+    h1 { letter-spacing:-.035em; line-height:1.08; margin-bottom:10px; font-size:clamp(2rem,4vw,3.1rem); }
+    h2 { margin-top:34px; margin-bottom:10px; font-size:1.45rem; letter-spacing:-.015em; }
+    h3 { margin-top:24px; margin-bottom:8px; font-size:1.1rem; }
+    h4 { margin-top:18px; margin-bottom:6px; }
+    .subtitle, .small, figcaption { color:var(--muted); }
+    .doc-byline { color:var(--hero-ink); font-weight:800; margin:8px 0 0; }
+    .hero .subtitle { color:var(--hero-muted); }
+    .actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:18px; }
+    .button { display:inline-flex; align-items:center; gap:8px; border:1px solid var(--brand-gold); background:var(--brand-gold); color:#0d120f; text-decoration:none; border-radius:999px; padding:10px 14px; font-weight:900; }
+    .button.secondary { background:var(--secondary-bg); color:var(--secondary-ink); border-color:var(--secondary-border); }
+    .hero .button.secondary, .doc-card .button.secondary { background:rgba(242,237,214,.10); color:#f2edd6; border-color:rgba(242,237,214,.25); }
+    .note { border-left:4px solid var(--accent); background:var(--accent-soft); padding:12px 14px; border-radius:12px; color:var(--ink); }
+    .toc { display:grid; gap:4px; margin-top:18px; padding:14px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14); border-radius:14px; }
+    .toc-title { font-weight:900; margin-bottom:4px; color:var(--hero-ink); }
+    .toc a { color:var(--accent-blue); text-decoration:none; }
+    .toc a:hover { text-decoration:underline; }
+    .toc-3 { padding-left:14px; font-size:.94rem; }
+    .doc-body > h1:first-child, .doc-body > h2:first-child { margin-top:0; }
+    ul, ol { margin:8px 0 16px 22px; padding:0; }
+    li { margin:5px 0; }
+    blockquote { border-left:4px solid var(--accent); margin:16px 0; padding:12px 16px; background:rgba(138,160,173,.12); border-radius:12px; color:var(--ink); }
+    code { background:rgba(255,255,255,.08); padding:2px 6px; border-radius:6px; color:var(--secondary-ink); }
+    hr { border:0; border-top:1px solid var(--line); margin:24px 0; }
+    .table-wrap { overflow-x:auto; margin:14px 0 20px; border:1px solid var(--line); border-radius:14px; }
+    table { border-collapse:collapse; min-width:100%; font-size:.92rem; background:var(--card); }
+    th, td { border-bottom:1px solid var(--line); padding:9px 10px; text-align:left; vertical-align:top; }
+    th { background:#151615; font-weight:900; color:var(--hero-ink); }
+    tr:last-child td { border-bottom:0; }
+    figure { margin:22px 0; }
+    figure img { max-width:100%; display:block; border:1px solid var(--line); border-radius:14px; background:white; }
+    figcaption { font-size:.92rem; margin-top:8px; }
+    .doc-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; margin-top:18px; }
+    .doc-card { display:block; color:inherit; text-decoration:none; border:1px solid var(--line); border-radius:18px; padding:18px; background:var(--dark-card-bg); }
+    .doc-card:hover, .doc-card:focus { border-color:var(--accent); outline:none; }
+    .doc-title { font-weight:900; color:var(--hero-ink); margin-bottom:6px; }
+    .doc-meta { color:var(--dark-card-muted); font-size:.92rem; }
+    @media print { body { background:#fff; color:#111827; } main { max-width:none; padding:0; } .back-link, .actions, .toc { display:none; } .hero, .card { box-shadow:none; border:0; padding:0; background:#fff; color:#111827; } h2, h3 { break-after:avoid; } figure, table { break-inside:avoid; } }
+
+  </style>
+</head>
+<body>
+  <nav class="site-nav" aria-label="BTC Helper site navigation">
+    <div class="site-nav-inner">
+      <a class="brand-lockup" href="./index.html" aria-label="BTC Helper home">
+        <span class="brand-mark"><svg viewBox="0 0 256 256" aria-hidden="true" focusable="false">
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path class="mark-cradle" d="M68 92c-16 23-17 58-1 84 17 28 49 43 81 34 29-8 51-33 55-64 3-20-2-39-15-54" stroke-width="12"></path>
+    <path class="mark-rail" d="M86 96v82M170 96v82" stroke-width="10" opacity="0.92"></path>
+    <path class="mark-signal" d="M96 118v34M108 84v58M126 60v106M144 72v80M162 94v36" stroke-width="10"></path>
+  </g>
+  <circle class="mark-reserve-dot" cx="108" cy="70" r="6"></circle>
+</svg></span>
+        <span class="brand-text"><strong>BTC Helper</strong><span>Resilient accumulation</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav-links"><span class="menu-toggle-icon" aria-hidden="true"><span></span><span></span><span></span></span><span class="menu-toggle-label-text">Menu</span></button>
+      <div class="nav-links" id="site-nav-links">
+        <a href="./index.html#today">Today</a>
+        <a href="./planner.html">My Plan</a>
+        <a href="./insights.html">Insights</a>
+        <a href="./track.html">Track</a>
+        <a class="nav-cta" href="./updates.html">Updates</a>
+        <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Switch theme"><svg aria-hidden="true" class="theme-icon theme-icon-moon" viewBox="0 0 24 24"><path d="M20.4 14.7A8.3 8.3 0 0 1 9.3 3.6 8.7 8.7 0 1 0 20.4 14.7Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="theme-toggle-label">Theme</span></button>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <a class="back-link" href="./documents-and-research.html">← Back to Documents &amp; Research</a>
+    <section class="hero">
+      <div class="eyebrow">Sound Money Stress Tests</div>
+      <h1>Don’t Wages and Jobs Offset the Cost Pressure?</h1>
+      <p class="subtitle">Sound Money Stress Tests, Essay 3.</p>
+      <p class="doc-byline">Arne Kotte · BTC Helper Research</p>
+      <div class="actions">
+        <a class="button" href="../Dont_Wages_and_Jobs_Offset_the_Cost_Pressure.pdf">Download PDF</a>
+        <a class="button secondary" href="./index.html">Home</a>
+      </div>
+      <nav class="toc"><div class="toc-title">Contents</div><a class="toc-1" href="#don-t-wages-and-jobs-offset-the-cost-pressure">Don’t Wages and Jobs Offset the Cost Pressure?</a><a class="toc-2" href="#the-objection">The objection</a><a class="toc-2" href="#what-offset-means-here">What “offset” means here</a><a class="toc-2" href="#data-scope">Data scope</a><a class="toc-2" href="#what-labor-strength-can-prove">What labor strength can prove</a><a class="toc-2" href="#what-the-argument-should-concede">What the argument should concede</a><a class="toc-2" href="#what-the-aggregate-series-are-consistent-with">What the aggregate series are consistent with</a><a class="toc-2" href="#where-labor-strength-may-still-fall-short">Where labor strength may still fall short</a><a class="toc-2" href="#what-this-does-not-prove">What this does not prove</a><a class="toc-2" href="#the-narrow-conclusion">The narrow conclusion</a><a class="toc-2" href="#evidence-note">Evidence note</a><a class="toc-2" href="#related-research-library-pieces">Related research-library pieces</a></nav>
+    </section>
+    <section class="card doc-body">
+      <p class="small"><strong>Suggested citation:</strong> Kotte, Arne. 2026. “Don’t Wages and Jobs Offset the Cost Pressure?” Sound Money Stress Tests. BTC Helper Research.</p>
+      <h1 id="don-t-wages-and-jobs-offset-the-cost-pressure">Don’t Wages and Jobs Offset the Cost Pressure?</h1>
+<h2 id="the-objection">The objection</h2>
+<p>A serious objection to household-stress research is that it can understate labor-market strength. If people are employed, wages are rising, and prime-age work attachment is strong, then perhaps higher costs are not evidence of fragility. Households adapt. They earn more, switch jobs, add hours, move to stronger labor markets, or use a second earner to absorb pressure.</p>
+<p>That objection is important because it is partly right. A strong labor market is one of the best household resilience tools. Employment provides income and often provides insurance access, creditworthiness, retirement contributions, and bargaining power. Rising real earnings should count as good news, not be waved away because they complicate a stress narrative.</p>
+<p>The question is not whether jobs and wages matter. They clearly do. The question is whether strong labor-market aggregates fully settle the household-resilience question.</p>
+<h2 id="what-offset-means-here">What “offset” means here</h2>
+<p>This essay uses “offset” in a narrow practical sense. Labor-market strength offsets cost pressure when work income leaves a household with enough slack after essential costs and required obligations to avoid fragile adjustment.</p>
+<p>That slack can take several forms:</p>
+<ul>
+<li>cash left after rent, food, utilities, transport, insurance, childcare, medical exposure, and debt service;</li>
+<li>liquid savings that can absorb an emergency or a short income interruption;</li>
+<li>stable hours and job quality rather than involuntary part-time work or earnings volatility;</li>
+<li>unused labor-supply margin, meaning the household is not already relying on every available worker, hour, or side job to stay current.</li>
+</ul>
+<p>This is not a full welfare measure. It does not prove whether a household is happy, optimizing, or better off in a lifetime sense. It asks a narrower balance-sheet question: after jobs and wages are counted, is there still room to absorb a shock?</p>
+<h2 id="data-scope">Data scope</h2>
+<p>The evidence discussed here is descriptive and aggregate. It uses national public labor-market series and a simple national cost benchmark. That is useful for testing an extreme national claim, but it is not household-level evidence.</p>
+<p>The sample starts in 1994 because the public multiple-jobholding series used in the underlying labor paper begins then. Other labor and price series go back further, but using a common post-1994 window keeps the comparison aligned.</p>
+<p>The period includes the 2020–2021 COVID disruption, when earnings and employment series can be affected by composition changes. A formal empirical paper should report results with and without those years. This essay uses the series only as broad descriptive context, not as a causal estimate or a precise trend decomposition.</p>
+<h2 id="what-labor-strength-can-prove">What labor strength can prove</h2>
+<p>Labor-market evidence can test whether a simple “everyone is working more just to stand still” story is too strong. It can show whether real earnings improved, whether multiple jobholding rose, whether underemployment worsened, and whether prime-age workers remained attached to the labor force.</p>
+<p>Those are meaningful tests. If real earnings rose, that weakens any claim that wages simply failed to keep up. If multiple jobholding did not rise, it weakens the claim that households broadly added second jobs out of necessity. If prime-age employment recovered, it weakens any story of long-running labor-market collapse.</p>
+<p>But labor strength is not the same as full household resilience. A household can be employed and still fragile if fixed costs are high, buffers are thin, hours are unstable, debt service is heavy, or there is little unused labor-supply margin left. The same paycheck can feel very different depending on rent, childcare, insurance, medical exposure, transportation costs, debt, household size, and local housing conditions.</p>
+<p>So the useful test is narrower: do jobs and wages eliminate the cost-pressure story, or do they show that the story has to be stated more carefully?</p>
+<h2 id="what-the-argument-should-concede">What the argument should concede</h2>
+<p>The argument should concede three things.</p>
+<p>First, the public labor data do not support the bluntest version of the “more work to stand still” claim. From 1994 through 2024, real median weekly earnings rose. A second inflation-adjusted weekly earnings measure also rose. Prime-age employment recovered. Multiple jobholding did not rise monotonically.</p>
+<p>Second, employment strength is real resilience. A household with stable work and rising real earnings is in a better position than a household facing job loss, unstable hours, or involuntary part-time work. Work is not merely a symptom of stress; it is often the main way households maintain security.</p>
+<p>Third, additional labor supply can be voluntary and welfare-improving. A second job can be professional development, entrepreneurship, seasonal opportunity, or preference. A second earner can reflect empowerment, not distress. More work is not automatically fragility.</p>
+<p>These concessions matter. If every extra hour, second job, or two-earner household is treated as hardship, the analysis will misread ordinary adaptation and opportunity.</p>
+<h2 id="what-the-aggregate-series-are-consistent-with">What the aggregate series are consistent with</h2>
+<p>The labor evidence gives a deliberately mixed answer. It uses public FRED and BLS data from 1994 through 2024 to compare real earnings, weekly hours, multiple jobholding, involuntary part-time work, U-6 labor underutilization, prime-age work attachment, labor share, and a transparent essential-cost pressure benchmark. The labor measures are national annual averages, not household-level estimates.</p>
+<p>The aggregate evidence rejects the strongest national squeeze story. Real median usual weekly earnings for full-time wage and salary workers rose from an index value of 100 in 1994 to 117 in 2024. This series covers wage and salary workers and excludes the self-employed. A second inflation-adjusted weekly earnings measure, built from average hourly earnings and average weekly hours for production and nonsupervisory workers, rose to 123. That proxy is useful for a broad check, but it is a payroll-job measure, not household income.</p>
+<p>The simple cost comparison points in the same direction. An equal-weight food, energy, shelter, and medical-care CPI benchmark divided by the weekly earnings proxy was 98 in 2024, slightly below its 1994 base. This benchmark is intentionally transparent, but it is not a household budget. Actual exposure varies by income, renter or homeowner status, family size, age, health, geography, transportation needs, insurance coverage, and local prices. The result does not prove costs were painless. It shows that this simple national benchmark does not support a one-way aggregate squeeze claim.</p>
+<p>Prime-age employment-population ratios were also higher in 2024 than in 1994. That matters, but work attachment is not job quality. It does not capture benefits, commuting costs, schedule volatility, local wage levels, household slack, or whether work is chosen or forced by fixed obligations.</p>
+<p>Multiple jobholding also does not carry a simple hardship narrative. The multiple-jobholding rate was 5.9 percent of employed workers in 1994 and 5.2 percent in 2024. That does not prove second jobs are never stressful. It also does not rule out informal work, gig work, unreported cash work, hours intensification, second-earner changes, or subgroup strain. It only means the national series should not be used as if it shows a monotonic rise in forced extra work.</p>
+<p>These findings discipline the broader argument. The public aggregate evidence rejects a crude national claim that labor conditions simply deteriorated across the whole period. It does not prove how many households are resilient or fragile.</p>
+<h2 id="where-labor-strength-may-still-fall-short">Where labor strength may still fall short</h2>
+<p>Underemployment is the clearer stress margin. Part-time work for economic reasons and U-6 labor underutilization rise sharply when labor markets weaken. U-6 is broad: it includes unemployed workers, marginally attached workers, and workers employed part time for economic reasons. A household that is fine at full employment may become fragile when hours are cut or full-time work disappears. That risk is larger when rent, debt service, childcare, insurance, transport, or medical bills already absorb most of the household margin.</p>
+<p>Labor share adds background context, but it should not carry the argument. The labor-share index fell from 100 in 1994 to 90 in 2024. That is a macro distributional fact, not a household balance-sheet measure. It reflects compensation, productivity, output, sectoral composition, capital income, and measurement conventions. At most, it adds context for why rising real earnings may not fully settle the resilience question when asset ownership is uneven and fixed costs remain important.</p>
+<p>The central issue is interaction. A household with rising wages, low fixed costs, liquid savings, manageable debt, stable hours, good insurance, and affordable housing access may be genuinely resilient. A household with similar earnings growth but high rent, childcare, medical exposure, debt service, and no cash buffer may be fragile even while employed.</p>
+<p>This is why employment headlines can be true and incomplete at the same time. They tell us whether income is coming in. They do not tell us how much room remains after must-pay costs, whether the household can absorb a shock, whether the next hour of work is available, or whether a second earner already carries the household’s margin.</p>
+<p>Essential-cost evidence makes the same point from the cost side. Essential categories can rise faster than headline CPI, while income-normalized pressure remains more mixed. The practical issue is budget compression: the loss of room for saving, insurance, maintenance, healthcare, or delay-free bill payment.</p>
+<p>That compression can coexist with rising earnings. The question is whether earnings growth produces durable buffers, or whether it is mostly absorbed by fixed commitments.</p>
+<h2 id="what-this-does-not-prove">What this does not prove</h2>
+<p>This evidence does not prove that employed households are broadly worse off. It does not prove that higher costs erased labor-market gains. It does not prove that two-earner households are fragile, that multiple jobholders are necessarily distressed, or that monetary forces caused labor-market pressure.</p>
+<p>It also does not identify which households face the most strain. National averages cannot tell whether renters in high-cost metros, single parents, lower-wage workers, young households, medically exposed households, or households with unstable hours are using labor adaptation to build resilience or merely to avoid falling behind.</p>
+<p>A stronger empirical paper would need household-level or subgroup evidence: hours, second jobs, earnings volatility, involuntary part-time work, debt service, rent burden, childcare, medical exposure, liquid savings, local cost conditions, and COVID-period sensitivity checks. That is especially important because national averages can mask subgroup strain. The public aggregate data are useful, but they cannot carry more than a bounded descriptive claim.</p>
+<h2 id="the-narrow-conclusion">The narrow conclusion</h2>
+<p>The strongest answer to the labor-market objection is to accept the good news. Jobs and wages matter. Real earnings improved. Prime-age work attachment recovered. Multiple jobholding did not show a simple upward hardship trend. Those facts should narrow the household-stress claim.</p>
+<p>But they do not eliminate it. Labor-market strength is a resilience input, not a complete resilience measure. A household is resilient when labor income leaves enough room for liquidity, manageable debt, essential costs, insurance, healthcare access, and long-horizon commitments. Employment alone does not prove that those margins are secure.</p>
+<p>The defensible claim is therefore modest: strong labor markets can offset cost pressure for many households, but they do not automatically settle whether households have durable resilience. The right question is not simply whether people are working. It is whether work income is producing slack, or whether it is being consumed by fixed costs and thin buffers.</p>
+<h2 id="evidence-note">Evidence note</h2>
+<p>This essay relies on public research-library papers covering labor-market fragility, essential-cost pressure, and household financial resilience. The figures cited above are descriptive public-data findings. They should not be read as causal estimates or as proof of individual hardship.</p>
+<p>A formal empirical paper would need a clearer household-level resilience measure, transparent series documentation, subgroup or local data, statistical inference, alternative cost weights, and robustness checks. That is beyond the scope of this public stress-test essay, but it is the right standard for an academic article.</p>
+<h2 id="related-research-library-pieces">Related research-library pieces</h2>
+<ul>
+<li><em>Society Under Monetary Stress IV: More Work to Stand Still?</em></li>
+<li><em>Society Under Monetary Stress III: The Quiet Tax</em></li>
+<li><em>Mapping Household Financial Resilience</em></li>
+</ul>
+    </section>
+  </main>
+  <footer class="site-footer" id="contact">
+    <div class="site-footer-inner">
+      <div class="footer-brand"><strong>BTC Helper</strong><p>A private Bitcoin accumulation plan, a source-aware daily action layer, and a public decision record.</p><p class="footer-note">Educational research tool only. Not financial advice, investment advice, or a recommendation to buy or sell any asset.</p></div>
+      <div><div class="footer-column-title">Product</div><div class="footer-links"><a href="./index.html#today">Today</a><a href="./planner.html">My Plan</a><a href="./insights.html">Insights</a><a href="./track.html">Track</a><a href="./updates.html">Updates</a></div></div>
+      <div><div class="footer-column-title">Research</div><div class="footer-links"><a href="./weekly-macro-thesis/">Weekly macro</a><a href="./documents-and-research.html">Research library</a><a href="./public-proof-of-work-methodology.html">Methodology</a><a href="./household-resilience-planner.html">Household resilience</a></div></div>
+      <div><div class="footer-column-title">Trust</div><div class="footer-links"><a href="./data-sources.html">Source health</a><a href="./about.html">About</a><a href="./privacy.html">Privacy</a><a href="./terms.html">Terms</a><a href="./contact.html">Contact</a><a href="https://x.com/btchelperapp">BTC Helper on X</a></div></div>
+    </div>
+  </footer>
+  <script>
+    const btcHelperThemeStorageKey = 'btcHelperTheme';
+    function setBtcHelperTheme(theme, persist = true) {
+      const next = theme === 'dark' ? 'dark' : 'light';
+      document.documentElement.dataset.theme = next;
+      if (persist) { try { localStorage.setItem(btcHelperThemeStorageKey, next); } catch {} }
+      const button = document.getElementById('theme-toggle');
+      if (button) {
+        button.innerHTML = next === 'dark' ? '<svg aria-hidden="true" class="theme-icon theme-icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2.8v3M12 18.2v3M4.8 4.8l2.1 2.1M17.1 17.1l2.1 2.1M2.8 12h3M18.2 12h3M4.8 19.2l2.1-2.1M17.1 6.9l2.1-2.1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="theme-toggle-label">Theme</span>' : '<svg aria-hidden="true" class="theme-icon theme-icon-moon" viewBox="0 0 24 24"><path d="M20.4 14.7A8.3 8.3 0 0 1 9.3 3.6 8.7 8.7 0 1 0 20.4 14.7Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="theme-toggle-label">Theme</span>';
+        button.setAttribute('aria-label', next === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+        button.setAttribute('title', next === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+      }
+    }
+    setBtcHelperTheme(document.documentElement.dataset.theme || 'light', false);
+    document.getElementById('theme-toggle')?.addEventListener('click', () => setBtcHelperTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'));
+    window.addEventListener('storage', (event) => { if (event.key === btcHelperThemeStorageKey && event.newValue) setBtcHelperTheme(event.newValue, false); });
+    document.querySelectorAll('.site-nav').forEach((nav) => {
+      const toggle = nav.querySelector('.menu-toggle');
+      const links = nav.querySelector('.nav-links');
+      if (!toggle || !links) return;
+      const label = toggle.querySelector('.menu-toggle-label-text');
+      const normalizePath = (href) => {
+        try {
+          const url = new URL(href, window.location.href);
+          return url.pathname.replace(/\/index\.html$/, '/');
+        } catch {
+          return '';
+        }
+      };
+      const currentPath = normalizePath(window.location.href);
+      links.querySelectorAll('a').forEach((link) => {
+        const linkPath = normalizePath(link.href);
+        if (linkPath === currentPath || (currentPath === '/' && linkPath === '/')) link.setAttribute('aria-current', 'page');
+      });
+      const setMenuOpen = (open, restoreFocus = false) => {
+        nav.classList.toggle('is-open', open);
+        toggle.setAttribute('aria-expanded', String(open));
+        if (label) label.textContent = open ? 'Close' : 'Menu';
+        if (!open && restoreFocus) toggle.focus();
+      };
+      toggle.addEventListener('click', () => setMenuOpen(!nav.classList.contains('is-open')));
+      links.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setMenuOpen(false)));
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && nav.classList.contains('is-open')) setMenuOpen(false, true);
+      });
+      document.addEventListener('click', (event) => {
+        if (nav.classList.contains('is-open') && !nav.contains(event.target)) setMenuOpen(false, true);
+      });
+    });
+  </script>
+</body>
+</html>

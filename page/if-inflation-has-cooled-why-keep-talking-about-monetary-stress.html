@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>If Inflation Has Cooled, Why Keep Talking About Monetary Stress?</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../btc-helper-logo.svg">
+  <meta name="theme-color" content="#111313">
+  <script>
+    try {
+      const savedTheme = localStorage.getItem('btcHelperTheme');
+      document.documentElement.dataset.theme = savedTheme === 'light' ? 'light' : 'dark';
+    } catch {
+      document.documentElement.dataset.theme = 'dark';
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root { color-scheme: light; --bg:#f5f1e9; --card:#fffdf8; --card-soft:#f0ebe1; --ink:#171a18; --muted:#6e746f; --line:#dcd6cb; --accent:#526b83; --accent-blue:#2563eb; --accent-soft:rgba(82,107,131,.10); --brand-navy:#111313; --brand-panel:#181a19; --brand-gold:#ad5617; --brand-warn:#ad5617; --hero-ink:#f3f0e8; --hero-muted:#a5aca6; --secondary-bg:rgba(82,107,131,.10); --secondary-ink:#26394a; --secondary-border:rgba(82,107,131,.28); --dark-card-bg:linear-gradient(135deg,#0d100f,#151816); --dark-card-ink:#f3f0e8; --dark-card-muted:#a5aca6; }
+    :root[data-theme="dark"] { color-scheme: dark; --bg:#0d100f; --card:#151816; --card-soft:#1b201d; --ink:#f3f0e8; --muted:#a5aca6; --line:rgba(255,255,255,.09); --accent:#91a99a; --accent-blue:#bfdbfe; --accent-soft:rgba(145,169,154,.12); --brand-navy:#111313; --brand-panel:#181a19; --brand-gold:#f59a3a; --brand-warn:#c3a36e; --hero-ink:#f3f0e8; --hero-muted:#a5aca6; --secondary-bg:rgba(242,237,214,.08); --secondary-ink:#f3f0e8; --secondary-border:rgba(242,237,214,.18); --dark-card-bg:linear-gradient(135deg,#0d100f,#151816); --dark-card-ink:#f3f0e8; --dark-card-muted:#a5aca6; }
+    html { font-synthesis:none; }
+    body, button, input, select, textarea, summary { font-family:"Noto Sans", "Segoe UI", Roboto, system-ui, sans-serif; }
+    button, input, select, textarea, summary { font:inherit; }
+    code, pre, .machine-record { font-family:"JetBrains Mono", ui-monospace, SFMono-Regular, Consolas, monospace; }
+    .numeric, .price, .percentage, .timestamp { font-variant-numeric:tabular-nums; }
+    .skip-link { position:absolute; left:16px; top:-52px; z-index:1000; border-radius:999px; padding:10px 14px; background:#f2edd6; color:#0d120f; font-weight:950; text-decoration:none; box-shadow:0 12px 28px rgba(0,0,0,.22); }
+    .skip-link:focus { top:14px; outline:3px solid color-mix(in srgb,var(--accent-blue) 58%,transparent); }
+    .theme-toggle { position:fixed; top:16px; right:16px; z-index:20; width:40px; height:40px; display:flex; align-items:center; justify-content:center; padding:0; border-radius:999px; border:1px solid var(--line); background:color-mix(in srgb,var(--card) 88%,transparent); color:var(--ink); box-shadow:0 12px 28px rgba(0,0,0,.16); font:900 1.05rem/1 "Noto Sans", "Segoe UI Symbol", system-ui, sans-serif; cursor:pointer; }
+    .theme-toggle:hover, .theme-toggle:focus { border-color:color-mix(in srgb,var(--accent) 45%,var(--line)); background:var(--accent-soft); outline:none; }
+    .theme-toggle .theme-icon { display:block; margin:0; }
+    .theme-toggle .theme-icon-sun, .theme-toggle .theme-icon-moon { width:22px; height:22px; }
+    * { box-sizing: border-box; }
+
+    .site-nav { position:sticky; top:0; z-index:50; backdrop-filter:blur(16px); background:color-mix(in srgb,var(--bg) 92%,transparent); border-bottom:1px solid color-mix(in srgb,var(--line) 80%,transparent); box-shadow:0 10px 30px rgba(0,0,0,.10); }
+    .site-nav-inner { max-width:1120px; margin:0 auto; padding:10px 20px; display:grid; grid-template-columns:auto 1fr; align-items:center; gap:16px; min-height:62px; }
+    .brand-lockup { display:inline-flex; align-items:center; gap:10px; min-width:fit-content; color:var(--ink); text-decoration:none; }
+    .brand-mark { width:34px; height:34px; border-radius:10px; display:inline-flex; align-items:center; justify-content:center; background:linear-gradient(135deg,#111313,#181a19); border:1px solid color-mix(in srgb,var(--accent) 44%,#34362d); box-shadow:0 8px 18px rgba(15,23,42,.16); overflow:hidden; }
+    .brand-mark svg, .brand-mark img { width:30px; height:30px; display:block; }
+    .brand-mark .mark-cradle, .brand-mark .mark-rail { stroke:var(--accent); } .brand-mark .mark-signal { stroke:#f3f2e8; } .brand-mark .mark-reserve-dot { fill:#f59a3a; }
+    .brand-text strong { display:block; font-size:.82rem; letter-spacing:.12em; text-transform:uppercase; line-height:1.05; }
+    .brand-text span { display:block; color:var(--muted); font-size:.72rem; margin-top:1px; }
+    .nav-links { display:flex; align-items:center; gap:4px; flex-wrap:wrap; justify-content:flex-end; }
+    .nav-links a, .theme-toggle, .menu-toggle { position:static; box-shadow:none; display:inline-flex; align-items:center; justify-content:center; border:1px solid transparent; border-radius:999px; padding:7px 9px; min-height:36px; min-width:36px; color:var(--muted); background:transparent; text-decoration:none; font:inherit; font-size:.82rem; font-weight:850; cursor:pointer; }
+    .nav-links a:hover, .nav-links a:focus, .theme-toggle:hover, .theme-toggle:focus, .menu-toggle:hover, .menu-toggle:focus { color:var(--ink); background:var(--accent-soft); border-color:color-mix(in srgb,var(--accent) 24%,var(--line)); outline:none; }
+    .nav-links a[aria-current="page"] { color:var(--ink); background:var(--accent-soft); border-color:color-mix(in srgb,var(--accent) 28%,var(--line)); }
+    .nav-links a.nav-cta { color:color-mix(in srgb,var(--ink) 82%,var(--muted)); border-color:color-mix(in srgb,var(--accent) 22%,var(--line)); background:color-mix(in srgb,var(--card) 70%,transparent); padding-inline:12px; }
+    .nav-links a.nav-cta:hover, .nav-links a.nav-cta:focus { color:var(--ink); background:var(--accent-soft); }
+    .menu-toggle { display:none; gap:7px; padding-inline:11px; color:var(--ink); border-color:var(--line); background:color-mix(in srgb,var(--card) 72%,transparent); }
+    .menu-toggle-bars { width:15px; height:10px; position:relative; display:inline-block; border-top:2px solid currentColor; border-bottom:2px solid currentColor; }
+    .menu-toggle-bars::after { content:''; position:absolute; left:0; right:0; top:3px; border-top:2px solid currentColor; }
+    .theme-toggle { width:36px; height:36px; padding:0; }
+    .site-footer { max-width:1120px; margin:0 auto; padding:30px 20px 48px; color:var(--muted); }
+    .site-footer-inner { border:1px solid var(--line); border-radius:24px; padding:24px; display:grid; grid-template-columns:minmax(0,1.2fr) repeat(3,minmax(150px,.55fr)); gap:22px; background:linear-gradient(135deg,color-mix(in srgb,var(--card) 94%,transparent),color-mix(in srgb,var(--accent-soft) 36%,var(--card))); box-shadow:0 16px 44px rgba(0,0,0,.10); }
+    .footer-brand strong { display:block; color:var(--ink); letter-spacing:.08em; text-transform:uppercase; font-size:.86rem; }
+    .footer-brand p, .footer-note { margin:.45rem 0 0; color:var(--muted); font-size:.9rem; }
+    .footer-column-title { color:var(--ink); font-weight:900; margin-bottom:10px; font-size:.86rem; display:flex; align-items:center; gap:8px; }
+    .footer-icon { width:22px; height:22px; border-radius:8px; display:inline-flex; align-items:center; justify-content:center; background:var(--accent-soft); color:var(--ink); border:1px solid var(--line); font-size:.82rem; line-height:1; }
+    .footer-links { display:grid; gap:7px; }
+    .footer-links a { color:var(--muted); text-decoration:none; font-weight:760; font-size:.9rem; display:inline-flex; align-items:center; gap:7px; }
+    .footer-links a .link-icon { color:var(--accent); font-size:.86rem; width:1.1em; text-align:center; }
+    .footer-links a:hover, .footer-links a:focus { color:var(--ink); text-decoration:underline; outline:none; }
+    .breadcrumb { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin:0 0 16px; color:var(--muted); font-size:.78rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+    .breadcrumb a { color:var(--accent-blue); text-decoration:none; }
+    .breadcrumb a:hover, .breadcrumb a:focus { color:var(--ink); text-decoration:underline; outline:none; }
+    .breadcrumb span { min-width:0; }
+    @media (max-width:860px) {
+      .site-nav-inner { grid-template-columns:1fr auto; gap:10px; min-height:56px; padding:9px 14px; }
+      .menu-toggle { display:inline-flex; }
+      .nav-links { display:none; grid-column:1 / -1; width:100%; grid-template-columns:1fr 1fr; gap:8px; padding:8px 0 4px; border-top:1px solid var(--line); }
+      .site-nav.is-open .nav-links { display:grid; }
+      .nav-links a, .theme-toggle { justify-content:flex-start; width:100%; border-color:var(--line); background:color-mix(in srgb,var(--card) 74%,transparent); padding:9px 10px; }
+      .theme-toggle { justify-content:center; }
+      .brand-text span { display:none; }
+      .site-footer-inner { grid-template-columns:1fr 1fr; padding:20px; }
+      .footer-brand { grid-column:1 / -1; }
+    }
+    @media (max-width:560px) {
+      .site-nav-inner { padding:8px 12px; }
+      .brand-mark { width:32px; height:32px; }
+      .brand-mark svg, .brand-mark img { width:28px; height:28px; }
+      .brand-text strong { font-size:.78rem; }
+      .menu-toggle { min-height:34px; padding:6px 10px; font-size:.8rem; }
+      .site-footer-inner { grid-template-columns:1fr; border-radius:20px; }
+    }
+
+    .menu-toggle { gap:8px; min-height:34px; padding:7px 11px; border-radius:999px; font-weight:900; }
+    .menu-toggle-icon { width:16px; height:14px; position:relative; display:inline-block; flex:0 0 auto; }
+    .menu-toggle-icon span { position:absolute; left:0; right:0; height:2px; border-radius:999px; background:currentColor; display:block; transform-origin:center; transition:top .16s ease, transform .16s ease, opacity .16s ease; }
+    .menu-toggle-icon span:nth-child(1) { top:1px; }
+    .menu-toggle-icon span:nth-child(2) { top:6px; }
+    .menu-toggle-icon span:nth-child(3) { top:11px; }
+    .site-nav.is-open .menu-toggle-icon span:nth-child(1) { top:6px; transform:rotate(45deg); }
+    .site-nav.is-open .menu-toggle-icon span:nth-child(2) { opacity:0; }
+    .site-nav.is-open .menu-toggle-icon span:nth-child(3) { top:6px; transform:rotate(-45deg); }
+    .theme-toggle { gap:8px; }
+    .theme-toggle .theme-icon { margin:0; }
+    .theme-toggle-label { display:none; font-size:.83rem; font-weight:900; }
+    .footer-icon, .footer-links a .link-icon { display:none; }
+    .footer-column-title { gap:0; letter-spacing:.09em; text-transform:uppercase; font-size:.75rem; color:var(--muted); }
+    .footer-links { gap:6px; }
+    .footer-links a { gap:0; color:color-mix(in srgb,var(--ink) 78%,var(--muted)); }
+    @media (max-width:860px) {
+      .site-nav-inner { gap:8px; min-height:54px; padding:8px 14px; }
+      .nav-links { grid-template-columns:repeat(2,minmax(0,1fr)); gap:6px; margin:6px 0 2px; padding:7px; border:1px solid var(--line); border-radius:16px; background:color-mix(in srgb,var(--card) 92%,transparent); box-shadow:0 18px 44px rgba(0,0,0,.16); }
+      .site-nav.is-open .nav-links { display:grid; }
+      .nav-links a, .theme-toggle { width:100%; min-height:36px; justify-content:flex-start; gap:8px; padding:8px 10px; border:0; border-radius:12px; background:transparent; color:var(--ink); }
+      .nav-links a:hover, .nav-links a:focus, .theme-toggle:hover, .theme-toggle:focus { background:var(--accent-soft); border-color:transparent; text-decoration:none; }
+      .theme-toggle { height:auto; grid-column:1 / -1; }
+      .theme-toggle-label { display:inline; }
+      .menu-toggle-label-text { min-width:36px; text-align:left; }
+      .theme-toggle .theme-icon { flex:0 0 auto; }
+      .site-footer { padding-top:24px; }
+      .site-footer-inner { grid-template-columns:1fr; gap:18px; padding:20px; }
+      .footer-brand { grid-column:auto; }
+    }
+    @media (max-width:560px) {
+      .site-footer-inner { border-radius:18px; padding:18px; }
+    }
+    @media (max-width:340px) { .nav-links { grid-template-columns:1fr; } .theme-toggle { grid-column:auto; } }
+
+    html { scroll-behavior:smooth; }
+    body { margin:0; font-family: "Noto Sans", "Segoe UI", Roboto, system-ui, sans-serif; background:radial-gradient(circle at 20% -10%, color-mix(in srgb,var(--accent) 8%,transparent), transparent 32%), radial-gradient(circle at 90% 10%, rgba(251,191,36,.07), transparent 30%), var(--bg); color:var(--ink); line-height:1.62; }
+    main { max-width: 980px; margin:0 auto; padding:32px 20px 64px; }
+    .back-link { display:inline-block; margin-bottom:18px; color:var(--accent-blue); text-decoration:none; font-weight:800; font-family:'JetBrains Mono', ui-monospace, monospace; letter-spacing:.08em; text-transform:uppercase; font-size:.76rem; }
+    .back-link:hover { text-decoration:underline; }
+    .hero, .card { background:var(--card); border:1px solid var(--line); border-radius:22px; padding:28px; box-shadow:0 16px 44px rgba(0,0,0,.30); margin-bottom:18px; }
+    .hero { background:radial-gradient(circle at 84% 18%, rgba(251,191,36,.07), transparent 28%), radial-gradient(circle at 78% 74%, color-mix(in srgb,var(--accent) 10%, transparent), transparent 32%), linear-gradient(135deg,#0b0d0d,#171a1a 58%,#111313); border-color:color-mix(in srgb,var(--accent) 28%,#050704); color:var(--hero-ink); }
+    .eyebrow { color:var(--accent-blue); font-family:'JetBrains Mono', ui-monospace, monospace; font-weight:900; letter-spacing:.12em; text-transform:uppercase; font-size:.76rem; margin-bottom:10px; }
+    h1, h2, h3, h4, p { margin-top:0; }
+    h1 { letter-spacing:-.035em; line-height:1.08; margin-bottom:10px; font-size:clamp(2rem,4vw,3.1rem); }
+    h2 { margin-top:34px; margin-bottom:10px; font-size:1.45rem; letter-spacing:-.015em; }
+    h3 { margin-top:24px; margin-bottom:8px; font-size:1.1rem; }
+    h4 { margin-top:18px; margin-bottom:6px; }
+    .subtitle, .small, figcaption { color:var(--muted); }
+    .doc-byline { color:var(--hero-ink); font-weight:800; margin:8px 0 0; }
+    .hero .subtitle { color:var(--hero-muted); }
+    .actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:18px; }
+    .button { display:inline-flex; align-items:center; gap:8px; border:1px solid var(--brand-gold); background:var(--brand-gold); color:#0d120f; text-decoration:none; border-radius:999px; padding:10px 14px; font-weight:900; }
+    .button.secondary { background:var(--secondary-bg); color:var(--secondary-ink); border-color:var(--secondary-border); }
+    .hero .button.secondary, .doc-card .button.secondary { background:rgba(242,237,214,.10); color:#f2edd6; border-color:rgba(242,237,214,.25); }
+    .note { border-left:4px solid var(--accent); background:var(--accent-soft); padding:12px 14px; border-radius:12px; color:var(--ink); }
+    .toc { display:grid; gap:4px; margin-top:18px; padding:14px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14); border-radius:14px; }
+    .toc-title { font-weight:900; margin-bottom:4px; color:var(--hero-ink); }
+    .toc a { color:var(--accent-blue); text-decoration:none; }
+    .toc a:hover { text-decoration:underline; }
+    .toc-3 { padding-left:14px; font-size:.94rem; }
+    .doc-body > h1:first-child, .doc-body > h2:first-child { margin-top:0; }
+    ul, ol { margin:8px 0 16px 22px; padding:0; }
+    li { margin:5px 0; }
+    blockquote { border-left:4px solid var(--accent); margin:16px 0; padding:12px 16px; background:rgba(138,160,173,.12); border-radius:12px; color:var(--ink); }
+    code { background:rgba(255,255,255,.08); padding:2px 6px; border-radius:6px; color:var(--secondary-ink); }
+    hr { border:0; border-top:1px solid var(--line); margin:24px 0; }
+    .table-wrap { overflow-x:auto; margin:14px 0 20px; border:1px solid var(--line); border-radius:14px; }
+    table { border-collapse:collapse; min-width:100%; font-size:.92rem; background:var(--card); }
+    th, td { border-bottom:1px solid var(--line); padding:9px 10px; text-align:left; vertical-align:top; }
+    th { background:#151615; font-weight:900; color:var(--hero-ink); }
+    tr:last-child td { border-bottom:0; }
+    figure { margin:22px 0; }
+    figure img { max-width:100%; display:block; border:1px solid var(--line); border-radius:14px; background:white; }
+    figcaption { font-size:.92rem; margin-top:8px; }
+    .doc-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; margin-top:18px; }
+    .doc-card { display:block; color:inherit; text-decoration:none; border:1px solid var(--line); border-radius:18px; padding:18px; background:var(--dark-card-bg); }
+    .doc-card:hover, .doc-card:focus { border-color:var(--accent); outline:none; }
+    .doc-title { font-weight:900; color:var(--hero-ink); margin-bottom:6px; }
+    .doc-meta { color:var(--dark-card-muted); font-size:.92rem; }
+    @media print { body { background:#fff; color:#111827; } main { max-width:none; padding:0; } .back-link, .actions, .toc { display:none; } .hero, .card { box-shadow:none; border:0; padding:0; background:#fff; color:#111827; } h2, h3 { break-after:avoid; } figure, table { break-inside:avoid; } }
+
+  </style>
+</head>
+<body>
+  <nav class="site-nav" aria-label="BTC Helper site navigation">
+    <div class="site-nav-inner">
+      <a class="brand-lockup" href="./index.html" aria-label="BTC Helper home">
+        <span class="brand-mark"><svg viewBox="0 0 256 256" aria-hidden="true" focusable="false">
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path class="mark-cradle" d="M68 92c-16 23-17 58-1 84 17 28 49 43 81 34 29-8 51-33 55-64 3-20-2-39-15-54" stroke-width="12"></path>
+    <path class="mark-rail" d="M86 96v82M170 96v82" stroke-width="10" opacity="0.92"></path>
+    <path class="mark-signal" d="M96 118v34M108 84v58M126 60v106M144 72v80M162 94v36" stroke-width="10"></path>
+  </g>
+  <circle class="mark-reserve-dot" cx="108" cy="70" r="6"></circle>
+</svg></span>
+        <span class="brand-text"><strong>BTC Helper</strong><span>Resilient accumulation</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav-links"><span class="menu-toggle-icon" aria-hidden="true"><span></span><span></span><span></span></span><span class="menu-toggle-label-text">Menu</span></button>
+      <div class="nav-links" id="site-nav-links">
+        <a href="./index.html#today">Today</a>
+        <a href="./planner.html">My Plan</a>
+        <a href="./insights.html">Insights</a>
+        <a href="./track.html">Track</a>
+        <a class="nav-cta" href="./updates.html">Updates</a>
+        <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Switch theme"><svg aria-hidden="true" class="theme-icon theme-icon-moon" viewBox="0 0 24 24"><path d="M20.4 14.7A8.3 8.3 0 0 1 9.3 3.6 8.7 8.7 0 1 0 20.4 14.7Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="theme-toggle-label">Theme</span></button>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <a class="back-link" href="./documents-and-research.html">← Back to Documents &amp; Research</a>
+    <section class="hero">
+      <div class="eyebrow">Sound Money Stress Tests</div>
+      <h1>If Inflation Has Cooled, Why Keep Talking About Monetary Stress?</h1>
+      <p class="subtitle">Sound Money Stress Tests, Essay 4.</p>
+      <p class="doc-byline">Arne Kotte · BTC Helper Research</p>
+      <div class="actions">
+        <a class="button" href="../If_Inflation_Has_Cooled_Why_Keep_Talking_About_Monetary_Stress.pdf">Download PDF</a>
+        <a class="button secondary" href="./index.html">Home</a>
+      </div>
+      <nav class="toc"><div class="toc-title">Contents</div><a class="toc-1" href="#if-inflation-has-cooled-why-keep-talking-about-monetary-stress">If Inflation Has Cooled, Why Keep Talking About Monetary Stress?</a><a class="toc-2" href="#the-objection">The objection</a><a class="toc-2" href="#what-this-essay-means-by-monetary-stress-and-resilience">What this essay means by monetary stress and resilience</a><a class="toc-2" href="#what-cooled-inflation-can-and-cannot-mean">What “cooled inflation” can and cannot mean</a><a class="toc-2" href="#what-the-argument-should-concede">What the argument should concede</a><a class="toc-2" href="#what-public-data-can-test">What public data can test</a><a class="toc-2" href="#what-the-existing-evidence-suggests">What the existing evidence suggests</a><a class="toc-2" href="#the-level-effect">The level effect</a><a class="toc-2" href="#the-borrowing-cost-and-planning-effects">The borrowing-cost and planning effects</a><a class="toc-2" href="#what-this-does-not-prove">What this does not prove</a><a class="toc-2" href="#what-the-framing-is-useful-for">What the framing is useful for</a><a class="toc-2" href="#the-narrow-conclusion">The narrow conclusion</a><a class="toc-2" href="#evidence-note">Evidence note</a><a class="toc-2" href="#related-research-library-pieces">Related research-library pieces</a></nav>
+    </section>
+    <section class="card doc-body">
+      <p class="small"><strong>Suggested citation:</strong> Kotte, Arne. 2026. “If Inflation Has Cooled, Why Keep Talking About Monetary Stress?” Sound Money Stress Tests. BTC Helper Research.</p>
+      <h1 id="if-inflation-has-cooled-why-keep-talking-about-monetary-stress">If Inflation Has Cooled, Why Keep Talking About Monetary Stress?</h1>
+<h2 id="the-objection">The objection</h2>
+<p>A serious objection to household monetary-stress research is that it can sound backward-looking. If inflation has cooled from its peak, unemployment is not in crisis, and nominal incomes are still rising, why keep talking about monetary stress? Maybe the household squeeze was a temporary inflation episode, not a durable condition.</p>
+<p>That objection matters because it protects the analysis from fighting the last war. A line of analysis that treats every year like 2022 will overstate the case. Lower inflation is real relief. Slower price growth helps households plan, reduces surprise, and gives wages more time to catch up.</p>
+<p>The question is not whether disinflation matters. It does. The question is whether lower inflation rates automatically restore household resilience.</p>
+<h2 id="what-this-essay-means-by-monetary-stress-and-resilience">What this essay means by monetary stress and resilience</h2>
+<p>This essay uses <strong>monetary stress</strong> in a narrow household-facing sense: pressure that reaches households through nominal prices, inflation expectations, interest rates, debt service, real-income adjustment, and uncertainty about future nominal commitments. It does not mean that every household stressor is caused by monetary policy, or even that every stressor is primarily monetary. Housing supply, insurance markets, healthcare costs, energy shocks, fiscal policy, regulation, and household choices all matter.</p>
+<p>To keep the term from becoming a catch-all, it helps to separate four channels:</p>
+<ul>
+<li><strong>Price-level stress:</strong> cumulative increases in essential costs relative to income.</li>
+<li><strong>Interest-rate stress:</strong> higher debt-service costs and reduced affordability of durable commitments.</li>
+<li><strong>Liquidity stress:</strong> thinner liquid buffers after prior shocks or higher monthly obligations.</li>
+<li><strong>Planning stress:</strong> uncertainty about future prices, rates, income, and expenses.</li>
+</ul>
+<p>It uses <strong>household resilience</strong> to mean the ability to absorb shocks and make commitments without missed payments, high-cost borrowing, forced asset sales, delayed essential care, or abandoning long-horizon plans. That depends on income, liquid buffers, fixed costs, debt service, credit access, insurance, and expectations.</p>
+<p>So the practical question is not whether CPI inflation is lower. It is whether households have enough income, liquidity, and planning confidence to live with the new price level and the current cost of commitments.</p>
+<h2 id="what-cooled-inflation-can-and-cannot-mean">What “cooled inflation” can and cannot mean</h2>
+<p>Inflation cooling usually means the rate of price increase has slowed. That is good news, but it is not the same thing as prices returning to earlier levels. A household that faced a large increase in rent, food, insurance, transport, or medical costs may still live with the higher price level even after month-to-month inflation slows.</p>
+<p>Three ideas need to be separated:</p>
+<ul>
+<li><strong>Inflation rate:</strong> how fast prices are rising now.</li>
+<li><strong>Price level:</strong> where prices now stand after earlier increases.</li>
+<li><strong>Planning reliability:</strong> whether households believe future prices, rates, income, and expenses are stable enough to make commitments.</li>
+</ul>
+<p>A lower inflation rate improves the first problem. It may only partly repair the second and third.</p>
+<p>This is why households can hear “inflation is down” and still feel strained. They may not be denying the data. They may be reacting to a level shift that remains embedded in bills, rents, insurance premiums, debt payments, and savings targets.</p>
+<p>That does not mean prices should return to their old level. Broad deflation is not the relevant benchmark and can create its own risks. The better question is whether nominal incomes, liquid buffers, and debt-service burdens have adjusted enough for households to manage the new nominal environment.</p>
+<h2 id="what-the-argument-should-concede">What the argument should concede</h2>
+<p>The argument should concede three things.</p>
+<p>First, lower inflation is materially helpful. A move from very high inflation to lower inflation reduces the pace of new pressure. It can improve sentiment, restore some planning confidence, and reduce the need for emergency repricing in household budgets.</p>
+<p>Second, not every cost remains elevated for every household. Gasoline, goods, local rents, and interest-rate-sensitive prices can move differently. A household’s lived inflation depends on geography, tenure, transportation, healthcare exposure, insurance, family size, and debt structure.</p>
+<p>Third, public data cannot infer household hardship from price indexes alone. A household with rising income, strong savings, low debt, and stable housing may absorb the post-inflation price level. Another household with thinner margins may not. The difference is balance-sheet exposure, not just CPI.</p>
+<p>These concessions matter. The point is not to pretend inflation never cooled. The point is to ask what remains after it cools.</p>
+<h2 id="what-public-data-can-test">What public data can test</h2>
+<p>Public data can test whether consumer confidence and planning conditions are explained by unemployment alone, or whether price instability, expected inflation, real income growth, rates, saving, credit, and fuel prices also matter.</p>
+<p>That test is descriptive, not causal. It cannot prove how an individual household forms beliefs. It cannot show whether inflation expectations cause sentiment to fall. It can show whether the public aggregate record is consistent with a broader planning ledger rather than with jobs alone.</p>
+<p>The confidence evidence uses monthly public FRED data, including University of Michigan consumer sentiment and expected inflation, CPI inflation, rolling inflation volatility, unemployment, real disposable-income growth, gasoline prices, rates, saving, debt service, and revolving credit. The Michigan expected-inflation and sentiment measures come from the same survey environment, so their relationship may partly reflect common mood, media attention, political salience, or generalized pessimism. That caveat is central, not cosmetic.</p>
+<p>Even with that caveat, the pattern is informative as motivation. It is not enough to carry the household-resilience claim by itself.</p>
+<h2 id="what-the-existing-evidence-suggests">What the existing evidence suggests</h2>
+<p>The confidence evidence suggests that unemployment alone misses important household-facing stress. In 2022, unemployment averaged 3.6 percent and U-6 averaged 6.9 percent, but consumer sentiment averaged only 59.0. That low-confidence reading coincided with 8.0 percent CPI inflation, 5.0 percent expected inflation, falling real disposable income, high gasoline inflation, and a low saving rate.</p>
+<p>By 2024, sentiment recovered as realized inflation and expected inflation fell. That supports the objection: cooling inflation matters. But sentiment did not simply return to the pre-shock pattern by assumption, and the broader ledger remained relevant. Rates, saving, credit, real-income growth, and expected inflation still remained part of the planning environment.</p>
+<p>The monthly evidence is also consistent with a planning story. In monthly data from 1978 through 2025, Michigan expected inflation has a -0.50 correlation with Michigan consumer sentiment. The same correlation remains -0.50 when 2020 through 2022 is excluded. Rolling 12-month inflation volatility has a -0.33 correlation with sentiment in the full sample and -0.30 excluding 2020 through 2022. Real disposable-income growth has a positive correlation with sentiment.</p>
+<p>These are descriptive associations, not proof of mechanism. They do not separate price-level effects from borrowing costs, credit conditions, politics, news, or general pessimism. They do show why “inflation cooled” is not the whole household-resilience question. Aggregate sentiment appears to move not only with labor-market conditions, but also with expected price changes, price instability, real-income growth, saving conditions, and the cost of carrying commitments.</p>
+<p>Sentiment should therefore be treated as an early-warning gauge, not as the final outcome. The stronger household-resilience evidence would come from missed payments, liquid buffers, high-cost borrowing, delayed care, reduced retirement contributions, durable-purchase delays, food insecurity, or other direct measures of household strain.</p>
+<p>Essential-cost evidence reinforces the point. Headline CPI is useful, but households do not pay an abstract average. They pay rent or mortgage costs, groceries, fuel, utilities, insurance, medical bills, and debt service. Essential categories can rise faster than headline CPI, and the burden depends on whether those costs meet thin buffers and fixed obligations.</p>
+<h2 id="the-level-effect">The level effect</h2>
+<p>The simplest reason to keep talking about monetary stress after inflation cools is the level effect. If a household’s monthly essentials rise from $3,000 to $3,600, a later slowdown in inflation does not by itself return the bill to $3,000. It only means the bill is rising more slowly from the new base.</p>
+<p>That distinction is easy to miss in public conversation. Inflation rates describe current price momentum. Households often experience the price level because bills are paid in dollars.</p>
+<p>A lower inflation rate can make the future less unstable while leaving the household with a higher required monthly floor. Whether that higher floor is manageable depends on wages, hours, transfers, debt service, savings, housing tenure, insurance, and local costs.</p>
+<p>So the relevant household question is not only “Is inflation lower?” It is also “Did income and buffers adjust enough to the new price level?”</p>
+<h2 id="the-borrowing-cost-and-planning-effects">The borrowing-cost and planning effects</h2>
+<p>There is also a borrowing-cost effect. After the inflation shock, many households did not only face higher prices. They also faced a different rate environment. Mortgage payments for new buyers, credit-card balances, auto loans, refinancing decisions, and business or education borrowing can all become harder when the cost of money changes.</p>
+<p>That matters because weak sentiment after inflation cools may reflect borrowing conditions as much as the price level itself. A household may feel better about grocery inflation but worse about buying a home, replacing a car, carrying revolving debt, or financing a needed repair. The price-level channel and the borrowing-cost channel are complements, not substitutes.</p>
+<p>There is also a planning effect. Households make commitments before they know the future: leases, mortgages, childcare, car repairs, insurance, schooling, medical care, retirement contributions, and family formation. If prices, rates, and expectations become volatile, households may shorten their planning horizon even after current inflation improves.</p>
+<p>This does not require panic or irrationality. If a household cannot predict whether insurance, rent, grocery bills, fuel, or borrowing costs will stay manageable, caution becomes reasonable. Delayed purchases, delayed care, lower savings, more cash hoarding, or reluctance to take on long-term commitments can all be rational responses to uncertainty.</p>
+<p>That is why planning reliability belongs in a household resilience framework. A household is not only balancing today’s income against today’s bills. It is deciding whether tomorrow’s obligations are safe to accept.</p>
+<h2 id="what-this-does-not-prove">What this does not prove</h2>
+<p>This evidence does not prove that inflation is the only source of household stress. Housing supply, healthcare costs, insurance markets, energy shocks, fiscal policy, regulation, taxes, demographics, technology, global supply chains, and household choices all matter.</p>
+<p>It also does not prove that consumer sentiment is the same as hardship. Sentiment can reflect politics, news, social mood, survey design, and personal expectations. A low sentiment reading does not prove that every household is financially fragile.</p>
+<p>Nor does it prove that monetary policy caused the entire price-level shock or that lower inflation is irrelevant. Lower inflation is helpful. The narrow point is that cooling inflation does not automatically restore affordability, liquidity, or planning confidence.</p>
+<h2 id="what-the-framing-is-useful-for">What the framing is useful for</h2>
+<p>The policy implication is diagnostic rather than prescriptive. If household stress persists after inflation cools, policymakers and analysts should avoid treating headline inflation and unemployment as sufficient summaries of household resilience.</p>
+<p>A better dashboard would keep the channels separate: cumulative essential costs relative to income, debt-service exposure, liquid buffers, credit conditions, and measures of planning confidence. That separation matters because each channel points to different remedies. Housing supply, insurance, healthcare, energy, credit-market conditions, fiscal cushions, and monetary-policy communication are not interchangeable tools.</p>
+<p>The point is not to claim one master cause. It is to prevent a premature declaration of recovery when the inflation rate has cooled but household balance sheets and commitments have not fully adjusted.</p>
+<h2 id="the-narrow-conclusion">The narrow conclusion</h2>
+<p>The strongest answer to the “inflation has cooled” objection is to accept the relief and then ask what remains. Lower inflation matters. It reduces the pace of new pressure and can improve confidence.</p>
+<p>But households live with price levels, fixed commitments, borrowing costs, and planning uncertainty. If essentials moved to a higher base, if rates changed the cost of debt and housing, if buffers were depleted, or if expectations remain unstable, then household-facing monetary stress can persist after the inflation rate cools.</p>
+<p>The defensible claim is modest: cooling inflation is important relief, but it is not the same as restored household resilience. The right question is not only whether CPI inflation is lower. It is whether household income, buffers, debt service, and planning confidence have adjusted enough for families to absorb shocks and make long-term commitments again.</p>
+<h2 id="evidence-note">Evidence note</h2>
+<p>This essay relies on public research-library papers covering consumer sentiment, inflation expectations, essential-cost pressure, and household financial resilience. The figures cited above are descriptive public-data findings. They should not be read as causal estimates or as proof of individual hardship.</p>
+<p>A formal empirical paper would need household-level measures of experienced inflation, income growth, debt service, liquid buffers, rate exposure, local costs, and expectation formation. It would also need to separate price-level effects from borrowing-cost exposure, sentiment effects from measured hardship, and monetary channels from other cost-of-living channels. That is beyond the scope of this public stress-test essay, but it is the right standard for a formal research article.</p>
+<h2 id="related-research-library-pieces">Related research-library pieces</h2>
+<ul>
+<li><em>Society Under Monetary Stress VIII: The Confidence Ledger</em></li>
+<li><em>Society Under Monetary Stress III: The Quiet Tax</em></li>
+<li><em>Mapping Household Financial Resilience</em></li>
+</ul>
+    </section>
+  </main>
+  <footer class="site-footer" id="contact">
+    <div class="site-footer-inner">
+      <div class="footer-brand"><strong>BTC Helper</strong><p>A private Bitcoin accumulation plan, a source-aware daily action layer, and a public decision record.</p><p class="footer-note">Educational research tool only. Not financial advice, investment advice, or a recommendation to buy or sell any asset.</p></div>
+      <div><div class="footer-column-title">Product</div><div class="footer-links"><a href="./index.html#today">Today</a><a href="./planner.html">My Plan</a><a href="./insights.html">Insights</a><a href="./track.html">Track</a><a href="./updates.html">Updates</a></div></div>
+      <div><div class="footer-column-title">Research</div><div class="footer-links"><a href="./weekly-macro-thesis/">Weekly macro</a><a href="./documents-and-research.html">Research library</a><a href="./public-proof-of-work-methodology.html">Methodology</a><a href="./household-resilience-planner.html">Household resilience</a></div></div>
+      <div><div class="footer-column-title">Trust</div><div class="footer-links"><a href="./data-sources.html">Source health</a><a href="./about.html">About</a><a href="./privacy.html">Privacy</a><a href="./terms.html">Terms</a><a href="./contact.html">Contact</a><a href="https://x.com/btchelperapp">BTC Helper on X</a></div></div>
+    </div>
+  </footer>
+  <script>
+    const btcHelperThemeStorageKey = 'btcHelperTheme';
+    function setBtcHelperTheme(theme, persist = true) {
+      const next = theme === 'dark' ? 'dark' : 'light';
+      document.documentElement.dataset.theme = next;
+      if (persist) { try { localStorage.setItem(btcHelperThemeStorageKey, next); } catch {} }
+      const button = document.getElementById('theme-toggle');
+      if (button) {
+        button.innerHTML = next === 'dark' ? '<svg aria-hidden="true" class="theme-icon theme-icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2.8v3M12 18.2v3M4.8 4.8l2.1 2.1M17.1 17.1l2.1 2.1M2.8 12h3M18.2 12h3M4.8 19.2l2.1-2.1M17.1 6.9l2.1-2.1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="theme-toggle-label">Theme</span>' : '<svg aria-hidden="true" class="theme-icon theme-icon-moon" viewBox="0 0 24 24"><path d="M20.4 14.7A8.3 8.3 0 0 1 9.3 3.6 8.7 8.7 0 1 0 20.4 14.7Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="theme-toggle-label">Theme</span>';
+        button.setAttribute('aria-label', next === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+        button.setAttribute('title', next === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+      }
+    }
+    setBtcHelperTheme(document.documentElement.dataset.theme || 'light', false);
+    document.getElementById('theme-toggle')?.addEventListener('click', () => setBtcHelperTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'));
+    window.addEventListener('storage', (event) => { if (event.key === btcHelperThemeStorageKey && event.newValue) setBtcHelperTheme(event.newValue, false); });
+    document.querySelectorAll('.site-nav').forEach((nav) => {
+      const toggle = nav.querySelector('.menu-toggle');
+      const links = nav.querySelector('.nav-links');
+      if (!toggle || !links) return;
+      const label = toggle.querySelector('.menu-toggle-label-text');
+      const normalizePath = (href) => {
+        try {
+          const url = new URL(href, window.location.href);
+          return url.pathname.replace(/\/index\.html$/, '/');
+        } catch {
+          return '';
+        }
+      };
+      const currentPath = normalizePath(window.location.href);
+      links.querySelectorAll('a').forEach((link) => {
+        const linkPath = normalizePath(link.href);
+        if (linkPath === currentPath || (currentPath === '/' && linkPath === '/')) link.setAttribute('aria-current', 'page');
+      });
+      const setMenuOpen = (open, restoreFocus = false) => {
+        nav.classList.toggle('is-open', open);
+        toggle.setAttribute('aria-expanded', String(open));
+        if (label) label.textContent = open ? 'Close' : 'Menu';
+        if (!open && restoreFocus) toggle.focus();
+      };
+      toggle.addEventListener('click', () => setMenuOpen(!nav.classList.contains('is-open')));
+      links.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setMenuOpen(false)));
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && nav.classList.contains('is-open')) setMenuOpen(false, true);
+      });
+      document.addEventListener('click', (event) => {
+        if (nav.classList.contains('is-open') && !nav.contains(event.target)) setMenuOpen(false, true);
+      });
+    });
+  </script>
+</body>
+</html>

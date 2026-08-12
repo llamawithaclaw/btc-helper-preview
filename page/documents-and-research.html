@@ -1,0 +1,815 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BTC Helper Documents & Research</title>
+  <meta name="description" content="BTC Helper public white paper, methodology, research manuscripts, and related sound-money and household-resilience documents.">
+  <meta property="og:title" content="BTC Helper Documents & Research">
+  <meta property="og:description" content="BTC Helper public white paper, methodology, research manuscripts, and related sound-money and household-resilience documents.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://btchelper.app/documents-and-research.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="BTC Helper Documents & Research">
+  <meta name="twitter:description" content="BTC Helper public white paper, methodology, research manuscripts, and related sound-money and household-resilience documents.">
+  <link rel="canonical" href="https://btchelper.app/documents-and-research.html">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","@id":"https://btchelper.app/documents-and-research.html#webpage","url":"https://btchelper.app/documents-and-research.html","name":"BTC Helper Documents & Research","description":"BTC Helper public white paper, methodology, research manuscripts, and related sound-money and household-resilience documents.","isAccessibleForFree":true,"publisher":{"@type":"Organization","name":"BTC Helper"}},{"@type":"BreadcrumbList","@id":"https://btchelper.app/documents-and-research.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"BTC Helper","item":"https://btchelper.app/"},{"@type":"ListItem","position":2,"name":"Documents & Research","item":"https://btchelper.app/documents-and-research.html"}]}]}</script>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../btc-helper-logo.svg">
+  <meta name="theme-color" content="#111313">
+  <script>
+    try {
+      const savedTheme = localStorage.getItem('btcHelperTheme');
+      document.documentElement.dataset.theme = savedTheme === 'light' ? 'light' : 'dark';
+    } catch {
+      document.documentElement.dataset.theme = 'dark';
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root { color-scheme: light; --bg:#f5f1e9; --card:#fffdf8; --card-soft:#f0ebe1; --ink:#171a18; --muted:#6e746f; --line:#dcd6cb; --accent:#526b83; --accent-blue:#2563eb; --accent-soft:rgba(82,107,131,.10); --brand-navy:#111313; --brand-panel:#181a19; --brand-gold:#ad5617; --brand-warn:#ad5617; --hero-ink:#f3f0e8; --hero-muted:#a5aca6; --secondary-bg:rgba(82,107,131,.10); --secondary-ink:#26394a; --secondary-border:rgba(82,107,131,.28); --dark-card-bg:linear-gradient(135deg,#0d100f,#151816); --dark-card-ink:#f3f0e8; --dark-card-muted:#a5aca6; }
+    :root[data-theme="dark"] { color-scheme: dark; --bg:#0d100f; --card:#151816; --card-soft:#1b201d; --ink:#f3f0e8; --muted:#a5aca6; --line:rgba(255,255,255,.09); --accent:#91a99a; --accent-blue:#bfdbfe; --accent-soft:rgba(145,169,154,.12); --brand-navy:#111313; --brand-panel:#181a19; --brand-gold:#f59a3a; --brand-warn:#c3a36e; --hero-ink:#f3f0e8; --hero-muted:#a5aca6; --secondary-bg:rgba(242,237,214,.08); --secondary-ink:#f3f0e8; --secondary-border:rgba(242,237,214,.18); --dark-card-bg:linear-gradient(135deg,#0d100f,#151816); --dark-card-ink:#f3f0e8; --dark-card-muted:#a5aca6; }
+    html { font-synthesis:none; }
+    body, button, input, select, textarea, summary { font-family:"Noto Sans", "Segoe UI", Roboto, system-ui, sans-serif; }
+    button, input, select, textarea, summary { font:inherit; }
+    code, pre, .machine-record { font-family:"JetBrains Mono", ui-monospace, SFMono-Regular, Consolas, monospace; }
+    .numeric, .price, .percentage, .timestamp { font-variant-numeric:tabular-nums; }
+    .skip-link { position:absolute; left:16px; top:-52px; z-index:1000; border-radius:999px; padding:10px 14px; background:#f2edd6; color:#0d120f; font-weight:950; text-decoration:none; box-shadow:0 12px 28px rgba(0,0,0,.22); }
+    .skip-link:focus { top:14px; outline:3px solid color-mix(in srgb,var(--accent-blue) 58%,transparent); }
+    .theme-toggle { position:fixed; top:16px; right:16px; z-index:20; width:40px; height:40px; display:flex; align-items:center; justify-content:center; padding:0; border-radius:999px; border:1px solid var(--line); background:color-mix(in srgb,var(--card) 88%,transparent); color:var(--ink); box-shadow:0 12px 28px rgba(0,0,0,.16); font:900 1.05rem/1 "Noto Sans", "Segoe UI Symbol", system-ui, sans-serif; cursor:pointer; }
+    .theme-toggle:hover, .theme-toggle:focus { border-color:color-mix(in srgb,var(--accent) 45%,var(--line)); background:var(--accent-soft); outline:none; }
+    .theme-toggle .theme-icon { display:block; margin:0; }
+    .theme-toggle .theme-icon-sun, .theme-toggle .theme-icon-moon { width:22px; height:22px; }
+    * { box-sizing: border-box; }
+
+    .site-nav { position:sticky; top:0; z-index:50; backdrop-filter:blur(16px); background:color-mix(in srgb,var(--bg) 92%,transparent); border-bottom:1px solid color-mix(in srgb,var(--line) 80%,transparent); box-shadow:0 10px 30px rgba(0,0,0,.10); }
+    .site-nav-inner { max-width:1120px; margin:0 auto; padding:10px 20px; display:grid; grid-template-columns:auto 1fr; align-items:center; gap:16px; min-height:62px; }
+    .brand-lockup { display:inline-flex; align-items:center; gap:10px; min-width:fit-content; color:var(--ink); text-decoration:none; }
+    .brand-mark { width:34px; height:34px; border-radius:10px; display:inline-flex; align-items:center; justify-content:center; background:linear-gradient(135deg,#111313,#181a19); border:1px solid color-mix(in srgb,var(--accent) 44%,#34362d); box-shadow:0 8px 18px rgba(15,23,42,.16); overflow:hidden; }
+    .brand-mark svg, .brand-mark img { width:30px; height:30px; display:block; }
+    .brand-mark .mark-cradle, .brand-mark .mark-rail { stroke:var(--accent); } .brand-mark .mark-signal { stroke:#f3f2e8; } .brand-mark .mark-reserve-dot { fill:#f59a3a; }
+    .brand-text strong { display:block; font-size:.82rem; letter-spacing:.12em; text-transform:uppercase; line-height:1.05; }
+    .brand-text span { display:block; color:var(--muted); font-size:.72rem; margin-top:1px; }
+    .nav-links { display:flex; align-items:center; gap:4px; flex-wrap:wrap; justify-content:flex-end; }
+    .nav-links a, .theme-toggle, .menu-toggle { position:static; box-shadow:none; display:inline-flex; align-items:center; justify-content:center; border:1px solid transparent; border-radius:999px; padding:7px 9px; min-height:36px; min-width:36px; color:var(--muted); background:transparent; text-decoration:none; font:inherit; font-size:.82rem; font-weight:850; cursor:pointer; }
+    .nav-links a:hover, .nav-links a:focus, .theme-toggle:hover, .theme-toggle:focus, .menu-toggle:hover, .menu-toggle:focus { color:var(--ink); background:var(--accent-soft); border-color:color-mix(in srgb,var(--accent) 24%,var(--line)); outline:none; }
+    .nav-links a[aria-current="page"] { color:var(--ink); background:var(--accent-soft); border-color:color-mix(in srgb,var(--accent) 28%,var(--line)); }
+    .nav-links a.nav-cta { color:color-mix(in srgb,var(--ink) 82%,var(--muted)); border-color:color-mix(in srgb,var(--accent) 22%,var(--line)); background:color-mix(in srgb,var(--card) 70%,transparent); padding-inline:12px; }
+    .nav-links a.nav-cta:hover, .nav-links a.nav-cta:focus { color:var(--ink); background:var(--accent-soft); }
+    .menu-toggle { display:none; gap:7px; padding-inline:11px; color:var(--ink); border-color:var(--line); background:color-mix(in srgb,var(--card) 72%,transparent); }
+    .menu-toggle-bars { width:15px; height:10px; position:relative; display:inline-block; border-top:2px solid currentColor; border-bottom:2px solid currentColor; }
+    .menu-toggle-bars::after { content:''; position:absolute; left:0; right:0; top:3px; border-top:2px solid currentColor; }
+    .theme-toggle { width:36px; height:36px; padding:0; }
+    .site-footer { max-width:1120px; margin:0 auto; padding:30px 20px 48px; color:var(--muted); }
+    .site-footer-inner { border:1px solid var(--line); border-radius:24px; padding:24px; display:grid; grid-template-columns:minmax(0,1.2fr) repeat(3,minmax(150px,.55fr)); gap:22px; background:linear-gradient(135deg,color-mix(in srgb,var(--card) 94%,transparent),color-mix(in srgb,var(--accent-soft) 36%,var(--card))); box-shadow:0 16px 44px rgba(0,0,0,.10); }
+    .footer-brand strong { display:block; color:var(--ink); letter-spacing:.08em; text-transform:uppercase; font-size:.86rem; }
+    .footer-brand p, .footer-note { margin:.45rem 0 0; color:var(--muted); font-size:.9rem; }
+    .footer-column-title { color:var(--ink); font-weight:900; margin-bottom:10px; font-size:.86rem; display:flex; align-items:center; gap:8px; }
+    .footer-icon { width:22px; height:22px; border-radius:8px; display:inline-flex; align-items:center; justify-content:center; background:var(--accent-soft); color:var(--ink); border:1px solid var(--line); font-size:.82rem; line-height:1; }
+    .footer-links { display:grid; gap:7px; }
+    .footer-links a { color:var(--muted); text-decoration:none; font-weight:760; font-size:.9rem; display:inline-flex; align-items:center; gap:7px; }
+    .footer-links a .link-icon { color:var(--accent); font-size:.86rem; width:1.1em; text-align:center; }
+    .footer-links a:hover, .footer-links a:focus { color:var(--ink); text-decoration:underline; outline:none; }
+    .breadcrumb { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin:0 0 16px; color:var(--muted); font-size:.78rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+    .breadcrumb a { color:var(--accent-blue); text-decoration:none; }
+    .breadcrumb a:hover, .breadcrumb a:focus { color:var(--ink); text-decoration:underline; outline:none; }
+    .breadcrumb span { min-width:0; }
+    @media (max-width:860px) {
+      .site-nav-inner { grid-template-columns:1fr auto; gap:10px; min-height:56px; padding:9px 14px; }
+      .menu-toggle { display:inline-flex; }
+      .nav-links { display:none; grid-column:1 / -1; width:100%; grid-template-columns:1fr 1fr; gap:8px; padding:8px 0 4px; border-top:1px solid var(--line); }
+      .site-nav.is-open .nav-links { display:grid; }
+      .nav-links a, .theme-toggle { justify-content:flex-start; width:100%; border-color:var(--line); background:color-mix(in srgb,var(--card) 74%,transparent); padding:9px 10px; }
+      .theme-toggle { justify-content:center; }
+      .brand-text span { display:none; }
+      .site-footer-inner { grid-template-columns:1fr 1fr; padding:20px; }
+      .footer-brand { grid-column:1 / -1; }
+    }
+    @media (max-width:560px) {
+      .site-nav-inner { padding:8px 12px; }
+      .brand-mark { width:32px; height:32px; }
+      .brand-mark svg, .brand-mark img { width:28px; height:28px; }
+      .brand-text strong { font-size:.78rem; }
+      .menu-toggle { min-height:34px; padding:6px 10px; font-size:.8rem; }
+      .site-footer-inner { grid-template-columns:1fr; border-radius:20px; }
+    }
+
+    .menu-toggle { gap:8px; min-height:34px; padding:7px 11px; border-radius:999px; font-weight:900; }
+    .menu-toggle-icon { width:16px; height:14px; position:relative; display:inline-block; flex:0 0 auto; }
+    .menu-toggle-icon span { position:absolute; left:0; right:0; height:2px; border-radius:999px; background:currentColor; display:block; transform-origin:center; transition:top .16s ease, transform .16s ease, opacity .16s ease; }
+    .menu-toggle-icon span:nth-child(1) { top:1px; }
+    .menu-toggle-icon span:nth-child(2) { top:6px; }
+    .menu-toggle-icon span:nth-child(3) { top:11px; }
+    .site-nav.is-open .menu-toggle-icon span:nth-child(1) { top:6px; transform:rotate(45deg); }
+    .site-nav.is-open .menu-toggle-icon span:nth-child(2) { opacity:0; }
+    .site-nav.is-open .menu-toggle-icon span:nth-child(3) { top:6px; transform:rotate(-45deg); }
+    .theme-toggle { gap:8px; }
+    .theme-toggle .theme-icon { margin:0; }
+    .theme-toggle-label { display:none; font-size:.83rem; font-weight:900; }
+    .footer-icon, .footer-links a .link-icon { display:none; }
+    .footer-column-title { gap:0; letter-spacing:.09em; text-transform:uppercase; font-size:.75rem; color:var(--muted); }
+    .footer-links { gap:6px; }
+    .footer-links a { gap:0; color:color-mix(in srgb,var(--ink) 78%,var(--muted)); }
+    @media (max-width:860px) {
+      .site-nav-inner { gap:8px; min-height:54px; padding:8px 14px; }
+      .nav-links { grid-template-columns:repeat(2,minmax(0,1fr)); gap:6px; margin:6px 0 2px; padding:7px; border:1px solid var(--line); border-radius:16px; background:color-mix(in srgb,var(--card) 92%,transparent); box-shadow:0 18px 44px rgba(0,0,0,.16); }
+      .site-nav.is-open .nav-links { display:grid; }
+      .nav-links a, .theme-toggle { width:100%; min-height:36px; justify-content:flex-start; gap:8px; padding:8px 10px; border:0; border-radius:12px; background:transparent; color:var(--ink); }
+      .nav-links a:hover, .nav-links a:focus, .theme-toggle:hover, .theme-toggle:focus { background:var(--accent-soft); border-color:transparent; text-decoration:none; }
+      .theme-toggle { height:auto; grid-column:1 / -1; }
+      .theme-toggle-label { display:inline; }
+      .menu-toggle-label-text { min-width:36px; text-align:left; }
+      .theme-toggle .theme-icon { flex:0 0 auto; }
+      .site-footer { padding-top:24px; }
+      .site-footer-inner { grid-template-columns:1fr; gap:18px; padding:20px; }
+      .footer-brand { grid-column:auto; }
+    }
+    @media (max-width:560px) {
+      .site-footer-inner { border-radius:18px; padding:18px; }
+    }
+    @media (max-width:340px) { .nav-links { grid-template-columns:1fr; } .theme-toggle { grid-column:auto; } }
+
+    html { scroll-behavior:smooth; }
+    body { margin:0; font-family: "Noto Sans", "Segoe UI", Roboto, system-ui, sans-serif; background:radial-gradient(circle at 20% -10%, color-mix(in srgb,var(--accent) 8%,transparent), transparent 32%), radial-gradient(circle at 90% 10%, rgba(251,191,36,.07), transparent 30%), var(--bg); color:var(--ink); line-height:1.6; }
+    main { max-width: 1120px; margin:0 auto; padding:32px 20px 64px; }
+    .back-link { display:inline-block; margin-bottom:18px; color:var(--accent-blue); text-decoration:none; font-weight:800; font-family:'JetBrains Mono', ui-monospace, monospace; letter-spacing:.08em; text-transform:uppercase; font-size:.76rem; }
+    .back-link:hover { text-decoration:underline; }
+    .hero, .card { background:var(--card); border:1px solid var(--line); border-radius:22px; padding:28px; box-shadow:0 16px 44px rgba(0,0,0,.20); margin-bottom:18px; }
+    .hero { background:radial-gradient(circle at 84% 18%, rgba(251,191,36,.07), transparent 28%), radial-gradient(circle at 78% 74%, color-mix(in srgb,var(--accent) 10%, transparent), transparent 32%), linear-gradient(135deg,#0b0d0d,#171a1a 58%,#111313); border-color:color-mix(in srgb,var(--accent) 28%,#050704); color:var(--hero-ink); }
+    .eyebrow, .doc-kicker { color:var(--accent-blue); font-family:'JetBrains Mono', ui-monospace, monospace; font-weight:900; letter-spacing:.12em; text-transform:uppercase; font-size:.76rem; margin-bottom:10px; }
+    h1, h2, h3, p { margin-top:0; }
+    h1 { letter-spacing:-.035em; line-height:1.08; margin-bottom:10px; font-size:clamp(2rem,4vw,3.1rem); }
+    .section-lead { color:var(--muted); max-width:820px; }
+    .hero .section-lead { color:var(--hero-muted); }
+    .library-guide { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:12px; margin-top:18px; }
+    .library-guide.status-guide { grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); }
+    .guide-tile { border:1px solid var(--line); border-radius:16px; padding:14px; background:var(--card-soft); }
+    :root[data-theme="dark"] .guide-tile { background:rgba(255,255,255,.045); }
+    .guide-tile strong { display:block; color:var(--ink); margin-bottom:4px; }
+    .guide-tile span { color:var(--muted); font-size:.9rem; }
+    .featured-research-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; margin-top:16px; }
+    .featured-research-card { display:grid; gap:7px; border:1px solid color-mix(in srgb,var(--accent) 24%,var(--line)); border-radius:16px; padding:16px; background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 8%,var(--card)),var(--card)); color:inherit; text-decoration:none; }
+    .featured-research-card:hover, .featured-research-card:focus { border-color:var(--accent-blue); outline:3px solid color-mix(in srgb,var(--accent-blue) 16%,transparent); outline-offset:2px; }
+    .featured-research-card span { color:var(--accent-blue); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.72rem; font-weight:900; letter-spacing:.1em; text-transform:uppercase; }
+    .featured-research-card strong { color:var(--ink); line-height:1.2; }
+    .featured-research-card em { color:var(--muted); font-style:normal; font-size:.92rem; line-height:1.42; }
+    .recommended-track-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:12px; margin-top:16px; }
+    .recommended-track-card { display:grid; gap:10px; border:1px solid var(--line); border-radius:16px; padding:16px; background:var(--card-soft); }
+    :root[data-theme="dark"] .recommended-track-card { background:rgba(255,255,255,.045); }
+    .recommended-track-card a { display:grid; gap:3px; color:inherit; text-decoration:none; border-top:1px solid var(--line); padding-top:10px; }
+    .recommended-track-card a:first-of-type { border-top:0; padding-top:0; }
+    .recommended-track-card a strong { color:var(--ink); line-height:1.22; }
+    .recommended-track-card a span { color:var(--muted); font-size:.9rem; line-height:1.38; }
+    .research-map { display:grid; gap:12px; margin-top:18px; }
+    .map-row { display:grid; grid-template-columns:120px minmax(0,1fr); gap:12px; align-items:stretch; }
+    .map-label { border:1px solid var(--line); border-radius:16px; padding:14px; background:var(--accent-soft); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.76rem; letter-spacing:.1em; text-transform:uppercase; color:var(--accent-blue); font-weight:900; }
+    .map-panel { border:1px solid var(--line); border-radius:16px; padding:16px; background:var(--card-soft); }
+    :root[data-theme="dark"] .map-panel { background:rgba(255,255,255,.045); }
+    .map-panel strong { display:block; color:var(--ink); margin-bottom:5px; }
+    .map-panel p { color:var(--muted); font-size:.92rem; margin-bottom:10px; }
+    .map-links { display:flex; flex-wrap:wrap; gap:8px; }
+    .map-links a { color:var(--accent-blue); text-decoration:none; font-weight:850; border:1px solid var(--line); border-radius:999px; padding:5px 9px; background:color-mix(in srgb,var(--card) 78%,transparent); }
+    .map-links a:hover, .map-links a:focus { color:var(--ink); border-color:var(--accent); outline:none; }
+    .doc-filter-panel { border:1px solid var(--line); border-radius:18px; background:var(--card-soft); padding:16px; margin:16px 0 12px; }
+    :root[data-theme="dark"] .doc-filter-panel { background:rgba(255,255,255,.045); }
+    .doc-filter-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:12px; }
+    .doc-filter label { display:block; color:var(--muted); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.72rem; font-weight:900; letter-spacing:.09em; text-transform:uppercase; margin-bottom:6px; }
+    .doc-filter select, .doc-filter input { width:100%; min-height:42px; border:1px solid var(--line); border-radius:12px; padding:8px 10px; background:var(--card); color:var(--ink); font:inherit; }
+    .doc-filter-actions { display:flex; align-items:center; flex-wrap:wrap; gap:12px; margin-top:12px; }
+    .doc-count { margin:0; color:var(--muted); font-weight:800; font-size:.92rem; }
+    .doc-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:16px; margin-top:20px; }
+    .doc-card { border:1px solid var(--line); border-radius:18px; padding:20px; background:var(--dark-card-bg); display:flex; flex-direction:column; gap:12px; min-height:260px; box-shadow:0 16px 44px rgba(0,0,0,.18); }
+    .doc-card:hover { border-color:color-mix(in srgb,var(--accent) 42%,var(--line)); }
+    .doc-card[hidden] { display:none; }
+    .doc-card-head { display:flex; gap:12px; align-items:flex-start; justify-content:space-between; }
+    .doc-title { font-size:1.08rem; font-weight:900; color:var(--hero-ink); margin:4px 0 0; letter-spacing:-.01em; line-height:1.25; }
+    .doc-status-label { flex:0 0 auto; border:1px solid rgba(242,237,214,.25); border-radius:999px; padding:5px 9px; color:#f2edd6; background:rgba(242,237,214,.10); font-size:.74rem; font-weight:900; white-space:nowrap; }
+    .doc-claim { color:var(--hero-ink); margin:0; font-weight:720; line-height:1.4; }
+    .doc-field-grid { display:grid; gap:8px; }
+    .doc-field { border-left:4px solid var(--accent); padding:8px 10px; border-radius:10px; background:rgba(255,255,255,.05); }
+    .doc-field span, .doc-meta-grid dt { display:block; color:var(--dark-card-muted); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+    .doc-field strong { display:block; color:var(--hero-ink); font-size:.9rem; line-height:1.35; }
+    .doc-meta-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px 12px; margin:0; }
+    .doc-meta-grid dt, .doc-meta-grid dd { margin:0; }
+    .doc-meta-grid dd { color:var(--dark-card-muted); font-size:.88rem; overflow-wrap:anywhere; }
+    .doc-tag-list { display:flex; flex-wrap:wrap; gap:8px; margin-top:auto; }
+    .tag { display:inline-flex; border:1px solid var(--line); border-radius:999px; padding:4px 8px; background:rgba(255,255,255,.05); color:var(--hero-muted); }
+    .doc-actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
+    .button { display:inline-flex; align-items:center; gap:8px; border:1px solid var(--brand-gold); background:var(--brand-gold); color:#0d120f; text-decoration:none; border-radius:999px; padding:9px 13px; font-weight:900; }
+    .button.secondary { background:var(--secondary-bg); color:var(--secondary-ink); border-color:var(--secondary-border); }
+    .hero .button.secondary, .doc-card .button.secondary { background:rgba(242,237,214,.10); color:#f2edd6; border-color:rgba(242,237,214,.25); }
+    .doc-empty { border:1px dashed var(--line); border-radius:16px; padding:16px; background:var(--card-soft); color:var(--muted); }
+    @media (max-width:620px) {
+      .map-row { grid-template-columns:1fr; gap:6px; }
+      .map-label { padding:9px 12px; border-radius:14px; }
+      .map-panel { padding:14px; }
+      .hero, .card { padding:20px; border-radius:18px; }
+      .doc-card-head { display:grid; }
+      .doc-status-label { width:fit-content; white-space:normal; }
+      .doc-meta-grid { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body><a class="skip-link" href="#main-content">Skip to main content</a><nav class="site-nav" aria-label="BTC Helper site navigation">
+    <div class="site-nav-inner">
+      <a class="brand-lockup" href="./index.html" aria-label="BTC Helper home">
+        <span class="brand-mark"><svg viewBox="0 0 256 256" aria-hidden="true" focusable="false">
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path class="mark-cradle" d="M68 92c-16 23-17 58-1 84 17 28 49 43 81 34 29-8 51-33 55-64 3-20-2-39-15-54" stroke-width="12"></path>
+    <path class="mark-rail" d="M86 96v82M170 96v82" stroke-width="10" opacity="0.92"></path>
+    <path class="mark-signal" d="M96 118v34M108 84v58M126 60v106M144 72v80M162 94v36" stroke-width="10"></path>
+  </g>
+  <circle class="mark-reserve-dot" cx="108" cy="70" r="6"></circle>
+</svg></span>
+        <span class="brand-text"><strong>BTC Helper</strong><span>Resilient accumulation</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav-links"><span class="menu-toggle-icon" aria-hidden="true"><span></span><span></span><span></span></span><span class="menu-toggle-label-text">Menu</span></button>
+      <div class="nav-links" id="site-nav-links">
+        <a href="./index.html#today">Today</a>
+        <a href="./planner.html">My Plan</a>
+        <a href="./insights.html">Insights</a>
+        <a href="./track.html">Track</a>
+        <a class="nav-cta" href="./updates.html">Updates</a>
+        <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Switch theme"><svg aria-hidden="true" class="theme-icon theme-icon-moon" viewBox="0 0 24 24"><path d="M20.4 14.7A8.3 8.3 0 0 1 9.3 3.6 8.7 8.7 0 1 0 20.4 14.7Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="theme-toggle-label">Theme</span></button>
+      </div>
+    </div>
+  </nav><main id="main-content">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="./insights.html">Insights</a><span>/</span><span>Research Library</span></nav>
+  <section class="hero">
+    <div class="eyebrow">Research library</div>
+    <h1>Documents &amp; Research</h1>
+    <p class="section-lead">A curated research front door for the product method, household-resilience argument, weekly macro context, measurement notes, and complete public shelf.</p>
+  </section>
+  <section class="card">
+    <h2>Start here</h2>
+    <p class="section-lead">These entries carry the core product. The full shelf is below for readers who want methods, objections, supporting evidence, or older context.</p>
+    <div class="research-map">
+      <div class="map-row"><div class="map-label">Method</div><div class="map-panel"><strong>How BTC Helper works</strong><p>The plain product method: baseline plan, optional reserve overlay, daily action translation, source health, public record, and public boundary.</p><div class="map-links"><a href="./public-proof-of-work-methodology.html">Methodology</a><a href="./btc-helper-white-paper.html">White paper</a></div></div></div>
+      <div class="map-row"><div class="map-label">Safety</div><div class="map-panel"><strong>Why household resilience comes first</strong><p>The safety argument behind My Plan: a Bitcoin plan is only useful when a household can sustain it through ordinary stress.</p><div class="map-links"><a href="./household-resilience-summary.html">Resilience synthesis</a><a href="./household-resilience-planner.html">Local planner</a></div></div></div>
+      <div class="map-row"><div class="map-label">Macro</div><div class="map-panel"><strong>Latest weekly macro thesis</strong><p>The interpretation layer for why conditions are moving underneath the daily action.</p><div class="map-links"><a href="./weekly-macro-thesis/">Weekly macro</a><a href="./insights.html">Insights</a></div></div></div>
+    </div>
+  </section>
+  <section class="card">
+    <h2>Featured</h2>
+    <p class="section-lead">The best first reads remain prominent, while the complete library stays visible below.</p>
+    <div class="featured-research-grid"><a class="featured-research-card" href="./btc-helper-white-paper.html"><span>Accumulation methodology</span><strong>BTC Helper White Paper</strong><em>BTC Helper is an educational reserve-aware accumulation framework, not a trade-call service.</em></a><a class="featured-research-card" href="./public-proof-of-work-methodology.html"><span>Accumulation methodology</span><strong>How BTC Helper Works</strong><em>The daily read translates source health and factor direction into baseline and optional-reserve guidance.</em></a><a class="featured-research-card" href="./weekly-macro-thesis/"><span>Bitcoin and macro structure</span><strong>Latest Weekly Macro Thesis</strong><em>Conditions can move underneath the daily action even when the plan instruction stays unchanged.</em></a><a class="featured-research-card" href="./household-resilience-summary.html"><span>Household resilience</span><strong>Mapping Household Financial Resilience</strong><em>Buffers, costs, debt, labor risk, and backstops determine whether a long-horizon plan can survive stress.</em></a></div>
+  </section>
+  <section class="card">
+    <h2>Research tracks</h2>
+    <p class="section-lead">Use tracks when a specific product question needs more support. This keeps the research from competing with the daily decision surface.</p>
+    <div class="library-guide"><div class="guide-tile"><strong>Accumulation methodology</strong><span>Baseline planning, optional reserve rules, cautious posture, source health, and public evidence boundaries.</span></div><div class="guide-tile"><strong>Household resilience</strong><span>Emergency buffers, debt pressure, essential costs, medical and insurance risk, and plan durability.</span></div><div class="guide-tile"><strong>Bitcoin and macro structure</strong><span>Weekly interpretation and factor movement underneath the daily action layer.</span></div><div class="guide-tile"><strong>Measurement and replication</strong><span>Public-data methods, replication notes, and limits around what each research item can support.</span></div></div>
+  </section>
+  <section class="card">
+    <h2>Recommended by track</h2>
+    <p class="section-lead">Use these as entry points when you know which question you are trying to answer.</p>
+    <div class="recommended-track-grid"><div class="recommended-track-card"><div class="doc-kicker">Accumulation methodology</div><a href="./btc-helper-white-paper.html"><strong>BTC Helper White Paper</strong><span>Best first read for the product promise, boundaries, and public beta scope.</span></a><a href="./public-proof-of-work-methodology.html"><strong>How BTC Helper Works</strong><span>Explains the public decision record without exposing thresholds, weights, or private calibration.</span></a></div><div class="recommended-track-card"><div class="doc-kicker">Household resilience</div><a href="./household-resilience-planner.html"><strong>Household Resilience Planner</strong><span>Turns the resilience-first philosophy into the private My Plan workflow.</span></a><a href="./household-resilience-summary.html"><strong>Mapping Household Financial Resilience</strong><span>Best research bridge from the planner to the broader household-resilience argument.</span></a></div><div class="recommended-track-card"><div class="doc-kicker">Bitcoin and macro structure</div><a href="./weekly-macro-thesis/"><strong>Latest Weekly Macro Thesis</strong><span>Primary interpretation layer for readers who want context without daily checking.</span></a><a href="./sound-money-stress-tests.html"><strong>Sound Money Stress Tests</strong><span>Gives skeptical readers a doorway into the strongest counterarguments.</span></a></div><div class="recommended-track-card"><div class="doc-kicker">Measurement and replication</div><a href="./bitcoin-indicator-data-quality.html"><strong>Why Data Quality Matters in Bitcoin Indicators</strong><span>Shows why BTC Helper separates action language from source-health confidence.</span></a><a href="./research-replication-methodology-index.html"><strong>Public Research Replication and Methodology Index</strong><span>Explains how to read the library without treating every item as equally mature.</span></a></div></div>
+  </section>
+  <section class="card">
+    <h2>Status labels</h2>
+    <p class="section-lead">One controlled vocabulary tells readers how much weight to put on a document before opening it.</p>
+    <div class="library-guide status-guide"><div class="guide-tile"><strong>Published</strong><span>Stable public synthesis or product explanation.</span></div><div class="guide-tile"><strong>Working paper</strong><span>Substantive research draft that may still be revised.</span></div><div class="guide-tile"><strong>Measurement note</strong><span>Narrow evidence, replication, or methods note.</span></div><div class="guide-tile"><strong>Prototype</strong><span>Experimental tool or research-to-action surface.</span></div><div class="guide-tile"><strong>Supporting material</strong><span>Deeper background behind a better starting point.</span></div><div class="guide-tile"><strong>Superseded</strong><span>Preserved for context, but no longer the preferred entry.</span></div></div>
+  </section>
+  <section class="card">
+    <h2>All research</h2>
+    <p class="section-lead">Filter by track, status, source family, year, or a plain-language search term. Each card states its claim, product relevance, and main limitation before asking for a click.</p>
+    <div class="doc-filter-panel" role="search" aria-label="Research library filters">
+      <div class="doc-filter-grid">
+        <div class="doc-filter"><label for="research-track-filter">Track</label><select id="research-track-filter"><option value="">All tracks</option><option value="Accumulation methodology">Accumulation methodology</option><option value="Bitcoin and macro structure">Bitcoin and macro structure</option><option value="Household resilience">Household resilience</option><option value="Measurement and replication">Measurement and replication</option></select></div>
+        <div class="doc-filter"><label for="research-status-filter">Status</label><select id="research-status-filter"><option value="">All statuses</option><option value="Measurement note">Measurement note</option><option value="Prototype">Prototype</option><option value="Published">Published</option><option value="Superseded">Superseded</option><option value="Supporting material">Supporting material</option><option value="Working paper">Working paper</option></select></div>
+        <div class="doc-filter"><label for="research-source-filter">Data/source</label><select id="research-source-filter"><option value="">All sources</option><option value="ACS and FHFA public data">ACS and FHFA public data</option><option value="BTC Helper methodology">BTC Helper methodology</option><option value="BTC Helper public record">BTC Helper public record</option><option value="BTC Helper public source-health record">BTC Helper public source-health record</option><option value="BTC Helper research archive">BTC Helper research archive</option><option value="BTC Helper weekly macro brief">BTC Helper weekly macro brief</option><option value="CEX and MEPS public data">CEX and MEPS public data</option><option value="Contrarian research series">Contrarian research series</option><option value="FRED and BLS public data">FRED and BLS public data</option><option value="FRED and SHED public data">FRED and SHED public data</option><option value="FRED public economic series">FRED public economic series</option><option value="Household resilience synthesis">Household resilience synthesis</option><option value="Local-only manual planner inputs">Local-only manual planner inputs</option><option value="MEPS public-use microdata">MEPS public-use microdata</option><option value="Public state-year panel">Public state-year panel</option><option value="Published emergency-savings indicators">Published emergency-savings indicators</option><option value="SHED public-use microdata">SHED public-use microdata</option><option value="SHED repeated cross-sections">SHED repeated cross-sections</option><option value="SHED replication package">SHED replication package</option><option value="Sound Money research series">Sound Money research series</option></select></div>
+        <div class="doc-filter"><label for="research-year-filter">Year</label><select id="research-year-filter"><option value="">All years</option><option value="2026">2026</option></select></div>
+        <div class="doc-filter"><label for="research-search">Search</label><input id="research-search" type="search" autocomplete="off" placeholder="Search by topic"></div>
+      </div>
+      <div class="doc-filter-actions"><button class="button secondary" type="button" id="research-reset">Reset filters</button><p class="doc-count" id="research-result-count">Showing all 24 reads</p></div>
+    </div>
+    <div class="doc-grid" id="research-card-grid"><article class="doc-card" data-research-card data-track="Accumulation methodology" data-status="Published" data-source="BTC Helper methodology" data-year="2026" data-search="btc helper white paper accumulation methodology published btc helper methodology btc helper is an educational reserve-aware accumulation framework, not a trade-call service. best first read for the product promise, boundaries, and public beta scope. summarizes the framework; use track and methodology for evidence state. white paper method">
+        <div class="doc-card-head">
+          <div><div class="doc-kicker">Accumulation methodology</div><h3 class="doc-title">BTC Helper White Paper</h3></div>
+          <span class="doc-status-label">Published</span>
+        </div>
+        <p class="doc-claim">BTC Helper is an educational reserve-aware accumulation framework, not a trade-call service.</p>
+        <div class="doc-field-grid">
+          <div class="doc-field"><span>Product relevance</span><strong>Best first read for the product promise, boundaries, and public beta scope.</strong></div>
+          <div class="doc-field"><span>Main limitation</span><strong>Summarizes the framework; use Track and methodology for evidence state.</strong></div>
+        </div>
+        <dl class="doc-meta-grid">
+          <div><dt>Data/source</dt><dd>BTC Helper methodology</dd></div>
+          <div><dt>Author</dt><dd>BTC Helper / Arne Kotte</dd></div>
+          <div><dt>Last reviewed</dt><dd>2026-07-20</dd></div>
+          <div><dt>Reading time</dt><dd>12 min</dd></div>
+        </dl>
+        <div class="doc-tag-list"><span class="tag">White paper</span><span class="tag">Method</span></div>
+        <div class="doc-actions"><a class="button" href="./btc-helper-white-paper.html">Open read</a><a class="button secondary" href="../BTC_HELPER_WHITE_PAPER.pdf">Download</a></div>
+      </article><article class="doc-card" data-research-card data-track="Accumulation methodology" data-status="Published" data-source="BTC Helper public record" data-year="2026" data-search="how btc helper works accumulation methodology published btc helper public record the daily read translates source health and factor direction into baseline and optional-reserve guidance. explains the public decision record without exposing thresholds, weights, or private calibration. explains method boundaries; it is not a reproducible model specification. methodology public record">
+        <div class="doc-card-head">
+          <div><div class="doc-kicker">Accumulation methodology</div><h3 class="doc-title">How BTC Helper Works</h3></div>
+          <span class="doc-status-label">Published</span>
+        </div>
+        <p class="doc-claim">The daily read translates source health and factor direction into baseline and optional-reserve guidance.</p>
+        <div class="doc-field-grid">
+          <div class="doc-field"><span>Product relevance</span><strong>Explains the public decision record without exposing thresholds, weights, or private calibration.</strong></div>
+          <div class="doc-field"><span>Main limitation</span><strong>Explains method boundaries; it is not a reproducible model specification.</strong></div>
+        </div>
+        <dl class="doc-meta-grid">
+          <div><dt>Data/source</dt><dd>BTC Helper public record</dd></div>
+          <div><dt>Author</dt><dd>BTC Helper</dd></div>
+          <div><dt>Last reviewed</dt><dd>2026-07-20</dd></div>
+          <div><dt>Reading time</dt><dd>8 min</dd></div>
+        </dl>
+        <div class="doc-tag-list"><span class="tag">Methodology</span><span class="tag">Public record</span></div>
+        <div class="doc-actions"><a class="button" href="./public-proof-of-work-methodology.html">Open read</a></div>
+      </article><article class="doc-card" data-research-card data-track="Accumulation methodology" data-status="Published" data-source="BTC Helper methodology" data-year="2026" data-search="bitcoin dca vs reserve-aware accumulation accumulation methodology published btc helper methodology btc helper keeps baseline accumulation separate from optional reserve deployment. clarifies the product behavior most users need before building a private plan. educational framing only; it does not personalize purchase sizes. dca reserve">
+        <div class="doc-card-head">
+          <div><div class="doc-kicker">Accumulation methodology</div><h3 class="doc-title">Bitcoin DCA vs Reserve-Aware Accumulation</h3></div>
+          <span class="doc-status-label">Published</span>
+        </div>
+        <p class="doc-claim">BTC Helper keeps baseline accumulation separate from optional reserve deployment.</p>
+        <div class="doc-field-grid">
+          <div class="doc-field"><span>Product relevance</span><strong>Clarifies the product behavior most users need before building a private plan.</strong></div>
+          <div class="doc-field"><span>Main limitation</span><strong>Educational framing only; it does not personalize purchase sizes.</strong></div>
+        </div>
+        <dl class="doc-meta-grid">
+          <div><dt>Data/source</dt><dd>BTC Helper methodology</dd></div>
+          <div><dt>Author</dt><dd>BTC Helper</dd></div>
+          <div><dt>Last reviewed</dt><dd>2026-07-20</dd></div>
+          <div><dt>Reading time</dt><dd>6 min</dd></div>
+        </dl>
+        <div class="doc-tag-list"><span class="tag">DCA</span><span class="tag">Reserve</span></div>
+        <div class="doc-actions"><a class="button" href="./bitcoin-dca-vs-reserve-aware-accumulation.html">Open read</a></div>
+      </article><article class="doc-card" data-research-card data-track="Accumulation methodology" data-status="Published" data-source="BTC Helper methodology" data-year="2026" data-search="what a cautious bitcoin accumulation stance means accumulation methodology published btc helper methodology cautious context can change interpretation without changing a user default baseline purchase. useful when the daily read says baseline only but the market posture still says cautious. does not replace the user plan boundary selected in my plan. cautious posture">
+        <div class="doc-card-head">
+          <div><div class="doc-kicker">Accumulation methodology</div><h3 class="doc-title">What a Cautious Bitcoin Accumulation Stance Means</h3></div>
+          <span class="doc-status-label">Published</span>
+        </div>
+        <p class="doc-claim">Cautious context can change interpretation without changing a user default baseline purchase.</p>
+        <div class="doc-field-grid">
+          <div class="doc-field"><span>Product relevance</span><strong>Useful when the daily read says Baseline only but the market posture still says Cautious.</strong></div>
+          <div class="doc-field"><span>Main limitation</span><strong>Does not replace the user plan boundary selected in My Plan.</strong></div>
+        </div>
+        <dl class="doc-meta-grid">
+          <div><dt>Data/source</dt><dd>BTC Helper methodology</dd></div>
+          <div><dt>Author</dt><dd>BTC Helper</dd></div>
+          <div><dt>Last reviewed</dt><dd>2026-07-20</dd></div>
+          <div><dt>Reading time</dt><dd>5 min</dd></div>
+        </dl>
+        <div class="doc-tag-list"><span class="tag">Cautious</span><span class="tag">Posture</span></div>
+        <div class="doc-actions"><a class="button" href="./cautious-bitcoin-accumulation-stance.html">Open read</a></div>
+      </article><article class="doc-card" data-research-card data-track="Measurement and replication" data-status="Measurement note" data-source="BTC Helper public source-health record" data-year="2026" data-search="why data quality matters in bitcoin indicators measurement and replication measurement note btc helper public source-health record indicator freshness and coverage can matter as much as the headline action label. shows why btc helper separates action language from source-health confidence. names public source families but keeps raw values and internal field logic private. source health quality">
+        <div class="doc-card-head">
+          <div><div class="doc-kicker">Measurement and replication</div><h3 class="doc-title">Why Data Quality Matters in Bitcoin Indicators</h3></div>
+          <span class="doc-status-label">Measurement note</span>
+        </div>
+        <p class="doc-claim">Indicator freshness and coverage can matter as much as the headline action label.</p>
+        <div class="doc-field-grid">
+          <div class="doc-field"><span>Product relevance</span><strong>Shows why BTC Helper separates action language from source-health confidence.</strong></div>
+          <div class="doc-field"><span>Main limitation</span><strong>Names public source families but keeps raw values and internal field logic private.</strong></div>
+        </div>
+        <dl class="doc-meta-grid">
+          <div><dt>Data/source</dt><dd>BTC Helper public source-health record</dd></div>
+          <div><dt>Author</dt><dd>BTC Helper</dd></div>
+          <div><dt>Last reviewed</dt><dd>2026-07-20</dd></div>
+          <div><dt>Reading time</dt><dd>7 min</dd></div>
+        </dl>
+        <div class="doc-tag-list"><span class="tag">Source health</span><span class="tag">Quality</span></div>
+        <div class="doc-actions"><a class="button" href="./bitcoin-indicator-data-quality.html">Open read</a></div>
+      </article><article class="doc-card" data-research-card data-track="Bitcoin and macro structure" data-status="Published" data-source="BTC Helper weekly macro brief" data-year="2026" data-search="latest weekly macro thesis bitcoin and macro structure published btc helper weekly macro brief conditions can move underneath the daily action even when the plan instruction stays unchanged. primary interpretation layer for readers who want context without daily checking. weekly brief format is still being strengthened with clearer sourcing and navigation. macro weekly">
+        <div class="doc-card-head">
+          <div><div class="doc-kicker">Bitcoin and macro structure</div><h3 class="doc-title">Latest Weekly Macro Thesis</h3></div>
+          <span class="doc-status-label">Published</span>
+        </div>
+        <p class="doc-claim">Conditions can move underneath the daily action even when the plan instruction stays unchanged.</p>
+        <div class="doc-field-grid">
+          <div class="doc-field"><span>Product relevance</span><strong>Primary interpretation layer for readers who want context without daily checking.</strong></div>
+          <div class="doc-field"><span>Main limitation</span><strong>Weekly brief format is still being strengthened with clearer sourcing and navigation.</strong></div>
+        </div>
+        <dl class="doc-meta-grid">
+          <div><dt>Data/source</dt><dd>BTC Helper weekly macro brief</dd></div>
+          <div><dt>Author</dt><dd>BTC Helper</dd></div>
+          <div><dt>Last reviewed</dt><dd>2026-07-20</dd></div>
+          <div><dt>Reading time</dt><dd>6 min</dd></div>
+        </dl>
+        <div class="doc-tag-list"><span class="tag">Macro</span><span class="tag">Weekly</span></div>
+        <div class="doc-actions"><a class="button" href="./weekly-macro-thesis/">Open read</a></div>
+      </article><article class="doc-card" data-research-card data-track="Household resilience" data-status="Prototype" data-source="Local-only manual planner inputs" data-year="2026" data-search="household resilience planner household resilience prototype local-only manual planner inputs a bitcoin plan is more durable when emergency buffers and must-pay obligations are respected first. turns the resilience-first philosophy into the private my plan workflow. prototype tool; it stores values locally and does not verify finances. planner local-only">
+        <div class="doc-card-head">
+          <div><div class="doc-kicker">Household resilience</div><h3 class="doc-title">Household Resilience Planner</h3></div>
+          <span class="doc-status-label">Prototype</span>
+        </div>
+        <p class="doc-claim">A Bitcoin plan is more durable when emergency buffers and must-pay obligations are respected first.</p>
+        <div class="doc-field-grid">
+          <div class="doc-field"><span>Product relevance</span><strong>Turns the resilience-first philosophy into the private My Plan workflow.</strong></div>
+          <div class="doc-field"><span>Main limitation</span><strong>Prototype tool; it stores values locally and does not verify finances.</strong></div>
+        </div>
+        <dl class="doc-meta-grid">
+          <div><dt>Data/source</dt><dd>Local-only manual planner inputs</dd></div>
+          <div><dt>Author</dt><dd>BTC Helper</dd></div>
+          <div><dt>Last reviewed</dt><dd>2026-07-20</dd></div>
+          <div><dt>Reading time</dt><dd>Interactive</dd></div>
+        </dl>
+        <div class="doc-tag-list"><span class="tag">Planner</span><span class="tag">Local-only</span></div>
+        <div class="doc-actions"><a class="button" href="./household-resilience-planner.html">Open read</a></div>
+      </article><article class="doc-card" data-research-card data-track="Household resilience" data-status="Published" data-source="Household resilience synthesis" data-year="2026" data-search="mapping household financial resilience household resilience published household resilience synthesis buffers, costs, debt, labor risk, and backstops determine whether a long-horizon plan can survive stress. best research bridge from the planner to the broader household-resilience argument. synthesis paper; individual evidence lanes have different data strength. synthesis resilience">
+        <div class="doc-card-head">
+          <div><div class="doc-kicker">Household resilience</div><h3 class="doc-title">Mapping Household Financial Resilience</h3></div>
+          <span class="doc-status-label">Published</span>
+        </div>
+        <p class="doc-claim">Buffers, costs, debt, labor risk, and backstops determine whether a long-horizon plan can survive stress.</p>
+        <div class="doc-field-grid">
+          <div class="doc-field"><span>Product relevance</span><strong>Best research bridge from the planner to the broader household-resilience argument.</strong></div>
+          <div class="doc-field"><span>Main limitation</span><strong>Synthesis paper; individual evidence lanes have different data strength.</strong></div>
+        </div>
+        <dl class="doc-meta-grid">
+          <div><dt>Data/source</dt><dd>Household resilience synthesis</dd></div>
+          <div><dt>Author</dt><dd>BTC Helper / Arne Kotte</dd></div>
+          <div><dt>Last reviewed</dt><dd>2026-07-20</dd></div>
+          <div><dt>Reading time</dt><dd>10 min</dd></div>
+        </dl>
+        <div class="doc-tag-list"><span class="tag">Synthesis</span><span class="tag">Resilience</span></div>
+        <div class="doc-actions"><a class="button" href="./household-resilience-summary.html">Open read</a><a class="button secondary" href="../Mapping_Household_Financial_Resilience.pdf">Download</a></div>
+      </article><article class="doc-card" data-research-card data-track="Household resilience" data-status="Working paper" data-source="SHED public-use microdata" data-year="2026" data-search="emergency buffers, borrowed resilience, and household hardship household resilience working paper shed public-use microdata emergency buffers, borrowing channels, and hardship markers carry different resilience meanings. strongest current evidence lane behind the safety-floor logic in my plan. descriptive evidence; not a causal household-level treatment estimate. shed buffers">
+        <div class="doc-card-head">
+          <div><div class="doc-kicker">Household resilience</div><h3 class="doc-title">Emergency Buffers, Borrowed Resilience, and Household Hardship</h3></div>
+          <span class="doc-status-label">Working paper</span>
+        </div>
+        <p class="doc-claim">Emergency buffers, borrowing channels, and hardship markers carry different resilience meanings.</p>
+        <div class="doc-field-grid">
+          <div class="doc-field"><span>Product relevance</span><strong>Strongest current evidence lane behind the safety-floor logic in My Plan.</strong></div>
+          <div class="doc-field"><span>Main limitation</span><strong>Descriptive evidence; not a causal household-level treatment estimate.</strong></div>
+        </div>
+        <dl class="doc-meta-grid">
+          <div><dt>Data/source</dt><dd>SHED public-use microdata</dd></div>
+          <div><dt>Author</dt><dd>BTC Helper / Arne Kotte</dd></div>
+          <div><dt>Last reviewed</dt><dd>2026-07-20</dd></div>
+          <div><dt>Reading time</dt><dd>14 min</dd></div>
+        </dl>
+        <div class="doc-tag-list"><span class="tag">SHED</span><span class="tag">Buffers</span></div>
+        <div class="doc-actions"><a class="button" href="./emergency-buffers-borrowed-resilience-household-hardship.html">Open read</a><a class="button secondary" href="../Emergency_Buffers_Borrowed_Resilience_and_Household_Hardship_SHED_2015_2025.pdf">Download</a></div>
+      </article><article class="doc-card" data-research-card data-track="Measurement and replication" data-status="Measurement note" data-source="BTC Helper research archive" data-year="2026" data-search="public research replication and methodology index measurement and replication measurement note btc helper research archive a research shelf needs clear labels for evidence strength, reproducibility, and remaining limits. explains how to read the library without treating every item as equally mature. index only; each linked item still needs its own evidence review. replication index">
+        <div class="doc-card-head">
+          <div><div class="doc-kicker">Measurement and replication</div><h3 class="doc-title">Public Research Replication and Methodology Index</h3></div>
+          <span class="doc-status-label">Measurement note</span>
+        </div>
+        <p class="doc-claim">A research shelf needs clear labels for evidence strength, reproducibility, and remaining limits.</p>
+        <div class="doc-field-grid">
+          <div class="doc-field"><span>Product relevance</span><strong>Explains how to read the library without treating every item as equally mature.</strong></div>
+          <div class="doc-field"><span>Main limitation</span><strong>Index only; each linked item still needs its own evidence review.</strong></div>
+        </div>
+        <dl class="doc-meta-grid">
+          <div><dt>Data/source</dt><dd>BTC Helper research archive</dd></div>
+          <div><dt>Author</dt><dd>BTC Helper</dd></div>
+          <div><dt>Last reviewed</dt><dd>2026-07-20</dd></div>
+          <div><dt>Reading time</dt><dd>8 min</dd></div>
+        </dl>
+        <div class="doc-tag-list"><span class="tag">Replication</span><span class="tag">Index</span></div>
+        <div class="doc-actions"><a class="button" href="./research-replication-methodology-index.html">Open read</a><a class="button secondary" href="../Research_Replication_Methodology_Index.pdf">Download</a></div>
+      </article><article class="doc-card" data-research-card data-track="Bitcoin and macro structure" data-status="Supporting material" data-source="Contrarian research series" data-year="2026" data-search="sound money stress tests bitcoin and macro structure supporting material contrarian research series the framework is stronger when major objections are stated plainly and tested fairly. gives skeptical readers a doorway into the strongest counterarguments. essay series; not all objections are empirical tests. stress tests objections">
+        <div class="doc-card-head">
+          <div><div class="doc-kicker">Bitcoin and macro structure</div><h3 class="doc-title">Sound Money Stress Tests</h3></div>
+          <span class="doc-status-label">Supporting material</span>
+        </div>
+        <p class="doc-claim">The framework is stronger when major objections are stated plainly and tested fairly.</p>
+        <div class="doc-field-grid">
+          <div class="doc-field"><span>Product relevance</span><strong>Gives skeptical readers a doorway into the strongest counterarguments.</strong></div>
+          <div class="doc-field"><span>Main limitation</span><strong>Essay series; not all objections are empirical tests.</strong></div>
+        </div>
+        <dl class="doc-meta-grid">
+          <div><dt>Data/source</dt><dd>Contrarian research series</dd></div>
+          <div><dt>Author</dt><dd>BTC Helper / Arne Kotte</dd></div>
+          <div><dt>Last reviewed</dt><dd>2026-07-20</dd></div>
+          <div><dt>Reading time</dt><dd>Series</dd></div>
+        </dl>
+        <div class="doc-tag-list"><span class="tag">Stress tests</span><span class="tag">Objections</span></div>
+        <div class="doc-actions"><a class="button" href="./sound-money-stress-tests.html">Open read</a><a class="button secondary" href="../Sound_Money_Stress_Tests_Series_Intro.pdf">Download</a></div>
+      </article><article class="doc-card" data-research-card data-track="Household resilience" data-status="Supporting material" data-source="Sound Money research series" data-year="2026" data-search="society under monetary stress household resilience supporting material sound money research series monetary stress often appears through housing, buffers, debt, labor pressure, and planning confidence. background theory for why btc helper starts with household durability. long-form research spine; most users should start with the resilience synthesis. series theory">
+        <div class="doc-card-head">
+          <div><div class="doc-kicker">Household resilience</div><h3 class="doc-title">Society Under Monetary Stress</h3></div>
+          <span class="doc-status-label">Supporting material</span>
+        </div>
+        <p class="doc-claim">Monetary stress often appears through housing, buffers, debt, labor pressure, and planning confidence.</p>
+        <div class="doc-field-grid">
+          <div class="doc-field"><span>Product relevance</span><strong>Background theory for why BTC Helper starts with household durability.</strong></div>
+          <div class="doc-field"><span>Main limitation</span><strong>Long-form research spine; most users should start with the resilience synthesis.</strong></div>
+        </div>
+        <dl class="doc-meta-grid">
+          <div><dt>Data/source</dt><dd>Sound Money research series</dd></div>
+          <div><dt>Author</dt><dd>BTC Helper / Arne Kotte</dd></div>
+          <div><dt>Last reviewed</dt><dd>2026-07-20</dd></div>
+          <div><dt>Reading time</dt><dd>Series</dd></div>
+        </dl>
+        <div class="doc-tag-list"><span class="tag">Series</span><span class="tag">Theory</span></div>
+        <div class="doc-actions"><a class="button" href="./society-under-monetary-stress.html">Open read</a></div>
+      </article><article class="doc-card" data-research-card data-track="Household resilience" data-status="Working paper" data-source="MEPS public-use microdata" data-year="2026" data-search="medical financial fragility household resilience working paper meps public-use microdata low medical spending can mean protection, low need, or foregone care, so spending alone can misread risk. supports the broader claim that household safety floors need more than income checks. working paper; interpretation depends on measurement choices and data scope. meps medical risk">
+        <div class="doc-card-head">
+          <div><div class="doc-kicker">Household resilience</div><h3 class="doc-title">Medical Financial Fragility</h3></div>
+          <span class="doc-status-label">Working paper</span>
+        </div>
+        <p class="doc-claim">Low medical spending can mean protection, low need, or foregone care, so spending alone can misread risk.</p>
+        <div class="doc-field-grid">
+          <div class="doc-field"><span>Product relevance</span><strong>Supports the broader claim that household safety floors need more than income checks.</strong></div>
+          <div class="doc-field"><span>Main limitation</span><strong>Working paper; interpretation depends on measurement choices and data scope.</strong></div>
+        </div>
+        <dl class="doc-meta-grid">
+          <div><dt>Data/source</dt><dd>MEPS public-use microdata</dd></div>
+          <div><dt>Author</dt><dd>BTC Helper / Arne Kotte</dd></div>
+          <div><dt>Last reviewed</dt><dd>2026-07-20</dd></div>
+          <div><dt>Reading time</dt><dd>11 min</dd></div>
+        </dl>
+        <div class="doc-tag-list"><span class="tag">MEPS</span><span class="tag">Medical risk</span></div>
+        <div class="doc-actions"><a class="button" href="./medical-financial-fragility-meps.html">Open read</a><a class="button secondary" href="../Medical_Financial_Fragility_MEPS_Working_Draft.pdf">Download</a></div>
+      </article><article class="doc-card" data-research-card data-track="Household resilience" data-status="Measurement note" data-source="CEX and MEPS public data" data-year="2026" data-search="insurance costs and household financial resilience household resilience measurement note cex and meps public data insurance and medical-risk costs can act as a hidden resilience premium. adds essential-cost context to the resilience-first planner logic. descriptive note; does not estimate full household welfare effects. insurance medical risk">
+        <div class="doc-card-head">
+          <div><div class="doc-kicker">Household resilience</div><h3 class="doc-title">Insurance Costs and Household Financial Resilience</h3></div>
+          <span class="doc-status-label">Measurement note</span>
+        </div>
+        <p class="doc-claim">Insurance and medical-risk costs can act as a hidden resilience premium.</p>
+        <div class="doc-field-grid">
+          <div class="doc-field"><span>Product relevance</span><strong>Adds essential-cost context to the resilience-first planner logic.</strong></div>
+          <div class="doc-field"><span>Main limitation</span><strong>Descriptive note; does not estimate full household welfare effects.</strong></div>
+        </div>
+        <dl class="doc-meta-grid">
+          <div><dt>Data/source</dt><dd>CEX and MEPS public data</dd></div>
+          <div><dt>Author</dt><dd>BTC Helper / Arne Kotte</dd></div>
+          <div><dt>Last reviewed</dt><dd>2026-07-20</dd></div>
+          <div><dt>Reading time</dt><dd>8 min</dd></div>
+        </dl>
+        <div class="doc-tag-list"><span class="tag">Insurance</span><span class="tag">Medical risk</span></div>
+        <div class="doc-actions"><a class="button" href="./insurance-costs-household-financial-resilience.html">Open read</a><a class="button secondary" href="../Insurance_Costs_and_Household_Financial_Resilience.pdf">Download</a></div>
+      </article><article class="doc-card" data-research-card data-track="Household resilience" data-status="Measurement note" data-source="FRED public economic series" data-year="2026" data-search="household-facing indicators of monetary tightening household resilience measurement note fred public economic series tight money reaches households through rates, payments, delinquencies, debt service, and buffer pressure. helps explain why macro context belongs behind the daily accumulation plan. public aggregate indicators cannot see individual household circumstances. fred macro">
+        <div class="doc-card-head">
+          <div><div class="doc-kicker">Household resilience</div><h3 class="doc-title">Household-Facing Indicators of Monetary Tightening</h3></div>
+          <span class="doc-status-label">Measurement note</span>
+        </div>
+        <p class="doc-claim">Tight money reaches households through rates, payments, delinquencies, debt service, and buffer pressure.</p>
+        <div class="doc-field-grid">
+          <div class="doc-field"><span>Product relevance</span><strong>Helps explain why macro context belongs behind the daily accumulation plan.</strong></div>
+          <div class="doc-field"><span>Main limitation</span><strong>Public aggregate indicators cannot see individual household circumstances.</strong></div>
+        </div>
+        <dl class="doc-meta-grid">
+          <div><dt>Data/source</dt><dd>FRED public economic series</dd></div>
+          <div><dt>Author</dt><dd>BTC Helper / Arne Kotte</dd></div>
+          <div><dt>Last reviewed</dt><dd>2026-07-20</dd></div>
+          <div><dt>Reading time</dt><dd>7 min</dd></div>
+        </dl>
+        <div class="doc-tag-list"><span class="tag">FRED</span><span class="tag">Macro</span></div>
+        <div class="doc-actions"><a class="button" href="./household-facing-indicators-monetary-tightening.html">Open read</a><a class="button secondary" href="../Household_Facing_Indicators_of_Monetary_Tightening.pdf">Download</a></div>
+      </article><article class="doc-card" data-research-card data-track="Household resilience" data-status="Measurement note" data-source="FRED public economic series" data-year="2026" data-search="real rates, asset prices, and household entry barriers household resilience measurement note fred public economic series higher rates did not automatically restore entry affordability when prices stayed elevated. supports the household-pressure context behind resilient accumulation planning. transparent calculation; not a full housing-market model. housing rates">
+        <div class="doc-card-head">
+          <div><div class="doc-kicker">Household resilience</div><h3 class="doc-title">Real Rates, Asset Prices, and Household Entry Barriers</h3></div>
+          <span class="doc-status-label">Measurement note</span>
+        </div>
+        <p class="doc-claim">Higher rates did not automatically restore entry affordability when prices stayed elevated.</p>
+        <div class="doc-field-grid">
+          <div class="doc-field"><span>Product relevance</span><strong>Supports the household-pressure context behind resilient accumulation planning.</strong></div>
+          <div class="doc-field"><span>Main limitation</span><strong>Transparent calculation; not a full housing-market model.</strong></div>
+        </div>
+        <dl class="doc-meta-grid">
+          <div><dt>Data/source</dt><dd>FRED public economic series</dd></div>
+          <div><dt>Author</dt><dd>BTC Helper / Arne Kotte</dd></div>
+          <div><dt>Last reviewed</dt><dd>2026-07-20</dd></div>
+          <div><dt>Reading time</dt><dd>8 min</dd></div>
+        </dl>
+        <div class="doc-tag-list"><span class="tag">Housing</span><span class="tag">Rates</span></div>
+        <div class="doc-actions"><a class="button" href="./real-rates-asset-prices-household-entry-barriers.html">Open read</a><a class="button secondary" href="../Real_Rates_Asset_Prices_and_Household_Entry_Barriers.pdf">Download</a></div>
+      </article><article class="doc-card" data-research-card data-track="Measurement and replication" data-status="Prototype" data-source="ACS and FHFA public data" data-year="2026" data-search="geographic household pressure index measurement and replication prototype acs and fhfa public data selected public proxies can map where household pressure clusters geographically. experimental bridge from national resilience themes to place-aware pressure signals. prototype index; should not be treated as a validated local-risk score. geography index">
+        <div class="doc-card-head">
+          <div><div class="doc-kicker">Measurement and replication</div><h3 class="doc-title">Geographic Household Pressure Index</h3></div>
+          <span class="doc-status-label">Prototype</span>
+        </div>
+        <p class="doc-claim">Selected public proxies can map where household pressure clusters geographically.</p>
+        <div class="doc-field-grid">
+          <div class="doc-field"><span>Product relevance</span><strong>Experimental bridge from national resilience themes to place-aware pressure signals.</strong></div>
+          <div class="doc-field"><span>Main limitation</span><strong>Prototype index; should not be treated as a validated local-risk score.</strong></div>
+        </div>
+        <dl class="doc-meta-grid">
+          <div><dt>Data/source</dt><dd>ACS and FHFA public data</dd></div>
+          <div><dt>Author</dt><dd>BTC Helper / Arne Kotte</dd></div>
+          <div><dt>Last reviewed</dt><dd>2026-07-20</dd></div>
+          <div><dt>Reading time</dt><dd>9 min</dd></div>
+        </dl>
+        <div class="doc-tag-list"><span class="tag">Geography</span><span class="tag">Index</span></div>
+        <div class="doc-actions"><a class="button" href="./geographic-household-pressure-index.html">Open read</a><a class="button secondary" href="../Geographic_Household_Pressure_Index.pdf">Download</a></div>
+      </article><article class="doc-card" data-research-card data-track="Household resilience" data-status="Measurement note" data-source="FRED and SHED public data" data-year="2026" data-search="cash, inflation, and household optionality household resilience measurement note fred and shed public data emergency liquidity has option value even when inflation erodes idle cash purchasing power. explains why btc helper does not treat every available dollar as deployable reserve. descriptive context; does not estimate the marginal option value of liquidity. cash inflation">
+        <div class="doc-card-head">
+          <div><div class="doc-kicker">Household resilience</div><h3 class="doc-title">Cash, Inflation, and Household Optionality</h3></div>
+          <span class="doc-status-label">Measurement note</span>
+        </div>
+        <p class="doc-claim">Emergency liquidity has option value even when inflation erodes idle cash purchasing power.</p>
+        <div class="doc-field-grid">
+          <div class="doc-field"><span>Product relevance</span><strong>Explains why BTC Helper does not treat every available dollar as deployable reserve.</strong></div>
+          <div class="doc-field"><span>Main limitation</span><strong>Descriptive context; does not estimate the marginal option value of liquidity.</strong></div>
+        </div>
+        <dl class="doc-meta-grid">
+          <div><dt>Data/source</dt><dd>FRED and SHED public data</dd></div>
+          <div><dt>Author</dt><dd>BTC Helper / Arne Kotte</dd></div>
+          <div><dt>Last reviewed</dt><dd>2026-07-20</dd></div>
+          <div><dt>Reading time</dt><dd>7 min</dd></div>
+        </dl>
+        <div class="doc-tag-list"><span class="tag">Cash</span><span class="tag">Inflation</span></div>
+        <div class="doc-actions"><a class="button" href="./cash-inflation-household-optionality.html">Open read</a><a class="button secondary" href="../Cash_Inflation_and_Household_Optionality.pdf">Download</a></div>
+      </article><article class="doc-card" data-research-card data-track="Household resilience" data-status="Measurement note" data-source="FRED and BLS public data" data-year="2026" data-search="inflation volatility and household planning risk household resilience measurement note fred and bls public data essential-price dispersion can create planning risk even when headline inflation cools. supports the household-safety floor before optional bitcoin allocation. selected categories only; not a full household budget panel. inflation essential costs">
+        <div class="doc-card-head">
+          <div><div class="doc-kicker">Household resilience</div><h3 class="doc-title">Inflation Volatility and Household Planning Risk</h3></div>
+          <span class="doc-status-label">Measurement note</span>
+        </div>
+        <p class="doc-claim">Essential-price dispersion can create planning risk even when headline inflation cools.</p>
+        <div class="doc-field-grid">
+          <div class="doc-field"><span>Product relevance</span><strong>Supports the household-safety floor before optional Bitcoin allocation.</strong></div>
+          <div class="doc-field"><span>Main limitation</span><strong>Selected categories only; not a full household budget panel.</strong></div>
+        </div>
+        <dl class="doc-meta-grid">
+          <div><dt>Data/source</dt><dd>FRED and BLS public data</dd></div>
+          <div><dt>Author</dt><dd>BTC Helper / Arne Kotte</dd></div>
+          <div><dt>Last reviewed</dt><dd>2026-07-20</dd></div>
+          <div><dt>Reading time</dt><dd>7 min</dd></div>
+        </dl>
+        <div class="doc-tag-list"><span class="tag">Inflation</span><span class="tag">Essential costs</span></div>
+        <div class="doc-actions"><a class="button" href="./inflation-volatility-household-planning-risk.html">Open read</a><a class="button secondary" href="../Inflation_Volatility_Household_Planning_Risk.pdf">Download</a></div>
+      </article><article class="doc-card" data-research-card data-track="Household resilience" data-status="Superseded" data-source="Published emergency-savings indicators" data-year="2026" data-search="emergency savings and household financial fragility household resilience superseded published emergency-savings indicators emergency savings indicators helped frame the original resilience problem. preserved for history; the shed buffer paper is now the better starting point. older supporting note with less complete measurement than the flagship shed work. emergency savings older note">
+        <div class="doc-card-head">
+          <div><div class="doc-kicker">Household resilience</div><h3 class="doc-title">Emergency Savings and Household Financial Fragility</h3></div>
+          <span class="doc-status-label">Superseded</span>
+        </div>
+        <p class="doc-claim">Emergency savings indicators helped frame the original resilience problem.</p>
+        <div class="doc-field-grid">
+          <div class="doc-field"><span>Product relevance</span><strong>Preserved for history; the SHED buffer paper is now the better starting point.</strong></div>
+          <div class="doc-field"><span>Main limitation</span><strong>Older supporting note with less complete measurement than the flagship SHED work.</strong></div>
+        </div>
+        <dl class="doc-meta-grid">
+          <div><dt>Data/source</dt><dd>Published emergency-savings indicators</dd></div>
+          <div><dt>Author</dt><dd>BTC Helper / Arne Kotte</dd></div>
+          <div><dt>Last reviewed</dt><dd>2026-07-20</dd></div>
+          <div><dt>Reading time</dt><dd>6 min</dd></div>
+        </dl>
+        <div class="doc-tag-list"><span class="tag">Emergency savings</span><span class="tag">Older note</span></div>
+        <div class="doc-actions"><a class="button" href="./emergency-savings-summary.html">Open read</a><a class="button secondary" href="../Emergency_Savings_and_Household_Financial_Fragility.pdf">Download</a></div>
+      </article><article class="doc-card" data-research-card data-track="Household resilience" data-status="Supporting material" data-source="SHED public-use microdata" data-year="2026" data-search="emergency liquidity, borrowing, and hardship household resilience supporting material shed public-use microdata emergency-payment responses differ sharply by buffer and hardship context. detailed support behind the flagship buffer-and-hardship paper. supporting material; read the flagship shed paper first. shed borrowing">
+        <div class="doc-card-head">
+          <div><div class="doc-kicker">Household resilience</div><h3 class="doc-title">Emergency Liquidity, Borrowing, and Hardship</h3></div>
+          <span class="doc-status-label">Supporting material</span>
+        </div>
+        <p class="doc-claim">Emergency-payment responses differ sharply by buffer and hardship context.</p>
+        <div class="doc-field-grid">
+          <div class="doc-field"><span>Product relevance</span><strong>Detailed support behind the flagship buffer-and-hardship paper.</strong></div>
+          <div class="doc-field"><span>Main limitation</span><strong>Supporting material; read the flagship SHED paper first.</strong></div>
+        </div>
+        <dl class="doc-meta-grid">
+          <div><dt>Data/source</dt><dd>SHED public-use microdata</dd></div>
+          <div><dt>Author</dt><dd>BTC Helper / Arne Kotte</dd></div>
+          <div><dt>Last reviewed</dt><dd>2026-07-20</dd></div>
+          <div><dt>Reading time</dt><dd>7 min</dd></div>
+        </dl>
+        <div class="doc-tag-list"><span class="tag">SHED</span><span class="tag">Borrowing</span></div>
+        <div class="doc-actions"><a class="button" href="./emergency-liquidity-summary.html">Open read</a><a class="button secondary" href="../Emergency_Liquidity_Borrowing_and_Hardship.pdf">Download</a></div>
+      </article><article class="doc-card" data-research-card data-track="Measurement and replication" data-status="Measurement note" data-source="SHED repeated cross-sections" data-year="2026" data-search="emergency buffers over time measurement and replication measurement note shed repeated cross-sections repeated shed cross-sections require careful harmonization before trend language is useful. shows the measurement caution behind the public buffer evidence. cross-section methods note; not a direct planner recommendation. shed time series">
+        <div class="doc-card-head">
+          <div><div class="doc-kicker">Measurement and replication</div><h3 class="doc-title">Emergency Buffers Over Time</h3></div>
+          <span class="doc-status-label">Measurement note</span>
+        </div>
+        <p class="doc-claim">Repeated SHED cross-sections require careful harmonization before trend language is useful.</p>
+        <div class="doc-field-grid">
+          <div class="doc-field"><span>Product relevance</span><strong>Shows the measurement caution behind the public buffer evidence.</strong></div>
+          <div class="doc-field"><span>Main limitation</span><strong>Cross-section methods note; not a direct planner recommendation.</strong></div>
+        </div>
+        <dl class="doc-meta-grid">
+          <div><dt>Data/source</dt><dd>SHED repeated cross-sections</dd></div>
+          <div><dt>Author</dt><dd>BTC Helper / Arne Kotte</dd></div>
+          <div><dt>Last reviewed</dt><dd>2026-07-20</dd></div>
+          <div><dt>Reading time</dt><dd>7 min</dd></div>
+        </dl>
+        <div class="doc-tag-list"><span class="tag">SHED</span><span class="tag">Time series</span></div>
+        <div class="doc-actions"><a class="button" href="./emergency-buffers-over-time-summary.html">Open read</a><a class="button secondary" href="../Emergency_Buffers_Over_Time_SHED_2015_2025.pdf">Download</a></div>
+      </article><article class="doc-card" data-research-card data-track="Measurement and replication" data-status="Measurement note" data-source="SHED replication package" data-year="2026" data-search="shed emergency-buffer measurement and replication note measurement and replication measurement note shed replication package emergency-buffer evidence needs provenance, variable maps, benchmark checks, and environment capture. strongest current example of the research program maturing toward reproducibility. replication package is public-facing but still not a formal academic archive. replication shed">
+        <div class="doc-card-head">
+          <div><div class="doc-kicker">Measurement and replication</div><h3 class="doc-title">SHED Emergency-Buffer Measurement and Replication Note</h3></div>
+          <span class="doc-status-label">Measurement note</span>
+        </div>
+        <p class="doc-claim">Emergency-buffer evidence needs provenance, variable maps, benchmark checks, and environment capture.</p>
+        <div class="doc-field-grid">
+          <div class="doc-field"><span>Product relevance</span><strong>Strongest current example of the research program maturing toward reproducibility.</strong></div>
+          <div class="doc-field"><span>Main limitation</span><strong>Replication package is public-facing but still not a formal academic archive.</strong></div>
+        </div>
+        <dl class="doc-meta-grid">
+          <div><dt>Data/source</dt><dd>SHED replication package</dd></div>
+          <div><dt>Author</dt><dd>BTC Helper / Arne Kotte</dd></div>
+          <div><dt>Last reviewed</dt><dd>2026-07-20</dd></div>
+          <div><dt>Reading time</dt><dd>10 min</dd></div>
+        </dl>
+        <div class="doc-tag-list"><span class="tag">Replication</span><span class="tag">SHED</span></div>
+        <div class="doc-actions"><a class="button" href="./shed-emergency-buffer-replication-summary.html">Open read</a><a class="button secondary" href="../SHED_Emergency_Buffer_Replication_Methodology_Draft.pdf">Download</a></div>
+      </article><article class="doc-card" data-research-card data-track="Measurement and replication" data-status="Working paper" data-source="Public state-year panel" data-year="2026" data-search="economic strain and health burden measurement and replication working paper public state-year panel housing pressure, labor-market stress, and health burden can be studied together in a state-year panel. adjacent research lane that informs household-pressure thinking. working manuscript; not part of the btc helper daily signal engine. health burden panel">
+        <div class="doc-card-head">
+          <div><div class="doc-kicker">Measurement and replication</div><h3 class="doc-title">Economic Strain and Health Burden</h3></div>
+          <span class="doc-status-label">Working paper</span>
+        </div>
+        <p class="doc-claim">Housing pressure, labor-market stress, and health burden can be studied together in a state-year panel.</p>
+        <div class="doc-field-grid">
+          <div class="doc-field"><span>Product relevance</span><strong>Adjacent research lane that informs household-pressure thinking.</strong></div>
+          <div class="doc-field"><span>Main limitation</span><strong>Working manuscript; not part of the BTC Helper daily signal engine.</strong></div>
+        </div>
+        <dl class="doc-meta-grid">
+          <div><dt>Data/source</dt><dd>Public state-year panel</dd></div>
+          <div><dt>Author</dt><dd>BTC Helper / Arne Kotte</dd></div>
+          <div><dt>Last reviewed</dt><dd>2026-07-20</dd></div>
+          <div><dt>Reading time</dt><dd>13 min</dd></div>
+        </dl>
+        <div class="doc-tag-list"><span class="tag">Health burden</span><span class="tag">Panel</span></div>
+        <div class="doc-actions"><a class="button" href="./liquidity-health-manuscript.html">Open read</a><a class="button secondary" href="../LIQUIDITY_HEALTH_MANUSCRIPT.pdf">Download</a></div>
+      </article></div>
+    <p class="doc-empty" id="research-empty" hidden>No matching research items. Try a broader track, status, or search term.</p>
+  </section>
+</main><footer class="site-footer" id="contact">
+    <div class="site-footer-inner">
+      <div class="footer-brand"><strong>BTC Helper</strong><p>A private Bitcoin accumulation plan, a source-aware daily action layer, and a public decision record.</p><p class="footer-note">Educational research tool only. Not financial advice, investment advice, or a recommendation to buy or sell any asset.</p></div>
+      <div><div class="footer-column-title">Product</div><div class="footer-links"><a href="./index.html#today">Today</a><a href="./planner.html">My Plan</a><a href="./insights.html">Insights</a><a href="./track.html">Track</a><a href="./updates.html">Updates</a></div></div>
+      <div><div class="footer-column-title">Research</div><div class="footer-links"><a href="./weekly-macro-thesis/">Weekly macro</a><a href="./documents-and-research.html">Research library</a><a href="./public-proof-of-work-methodology.html">Methodology</a><a href="./household-resilience-planner.html">Household resilience</a></div></div>
+      <div><div class="footer-column-title">Trust</div><div class="footer-links"><a href="./data-sources.html">Source health</a><a href="./about.html">About</a><a href="./privacy.html">Privacy</a><a href="./terms.html">Terms</a><a href="./contact.html">Contact</a><a href="https://x.com/btchelperapp">BTC Helper on X</a></div></div>
+    </div>
+  </footer><script>
+    const btcHelperThemeStorageKey = 'btcHelperTheme';
+    function setBtcHelperTheme(theme, persist = true) {
+      const next = theme === 'dark' ? 'dark' : 'light';
+      document.documentElement.dataset.theme = next;
+      if (persist) { try { localStorage.setItem(btcHelperThemeStorageKey, next); } catch {} }
+      const button = document.getElementById('theme-toggle');
+      if (button) {
+        button.innerHTML = next === 'dark' ? '<svg aria-hidden="true" class="theme-icon theme-icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2.8v3M12 18.2v3M4.8 4.8l2.1 2.1M17.1 17.1l2.1 2.1M2.8 12h3M18.2 12h3M4.8 19.2l2.1-2.1M17.1 6.9l2.1-2.1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="theme-toggle-label">Theme</span>' : '<svg aria-hidden="true" class="theme-icon theme-icon-moon" viewBox="0 0 24 24"><path d="M20.4 14.7A8.3 8.3 0 0 1 9.3 3.6 8.7 8.7 0 1 0 20.4 14.7Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="theme-toggle-label">Theme</span>';
+        button.setAttribute('aria-label', next === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+        button.setAttribute('title', next === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+      }
+    }
+    setBtcHelperTheme(document.documentElement.dataset.theme || 'light', false);
+    document.getElementById('theme-toggle')?.addEventListener('click', () => setBtcHelperTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'));
+    window.addEventListener('storage', (event) => { if (event.key === btcHelperThemeStorageKey && event.newValue) setBtcHelperTheme(event.newValue, false); });
+    document.querySelectorAll('.site-nav').forEach((nav) => {
+      const toggle = nav.querySelector('.menu-toggle');
+      const links = nav.querySelector('.nav-links');
+      if (!toggle || !links) return;
+      const label = toggle.querySelector('.menu-toggle-label-text');
+      const normalizePath = (href) => {
+        try {
+          const url = new URL(href, window.location.href);
+          return url.pathname.replace(/\/index\.html$/, '/');
+        } catch {
+          return '';
+        }
+      };
+      const currentPath = normalizePath(window.location.href);
+      links.querySelectorAll('a').forEach((link) => {
+        const linkPath = normalizePath(link.href);
+        if (linkPath === currentPath || (currentPath === '/' && linkPath === '/')) link.setAttribute('aria-current', 'page');
+      });
+      const setMenuOpen = (open, restoreFocus = false) => {
+        nav.classList.toggle('is-open', open);
+        toggle.setAttribute('aria-expanded', String(open));
+        if (label) label.textContent = open ? 'Close' : 'Menu';
+        if (!open && restoreFocus) toggle.focus();
+      };
+      toggle.addEventListener('click', () => setMenuOpen(!nav.classList.contains('is-open')));
+      links.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setMenuOpen(false)));
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && nav.classList.contains('is-open')) setMenuOpen(false, true);
+      });
+      document.addEventListener('click', (event) => {
+        if (nav.classList.contains('is-open') && !nav.contains(event.target)) setMenuOpen(false, true);
+      });
+    });
+  </script><script>
+  (function () {
+    const cards = Array.from(document.querySelectorAll('[data-research-card]'));
+    const controls = {
+      track: document.getElementById('research-track-filter'),
+      status: document.getElementById('research-status-filter'),
+      source: document.getElementById('research-source-filter'),
+      year: document.getElementById('research-year-filter'),
+      search: document.getElementById('research-search')
+    };
+    const count = document.getElementById('research-result-count');
+    const empty = document.getElementById('research-empty');
+    function cardMatches(card) {
+      const query = (controls.search?.value || '').trim().toLowerCase();
+      return (!controls.track?.value || card.dataset.track === controls.track.value)
+        && (!controls.status?.value || card.dataset.status === controls.status.value)
+        && (!controls.source?.value || card.dataset.source === controls.source.value)
+        && (!controls.year?.value || card.dataset.year === controls.year.value)
+        && (!query || (card.dataset.search || '').includes(query));
+    }
+    function updateResearchFilters() {
+      let shown = 0;
+      cards.forEach((card) => {
+        const visible = cardMatches(card);
+        card.hidden = !visible;
+        if (visible) shown += 1;
+      });
+      if (count) count.textContent = 'Showing ' + shown + ' of ' + cards.length + ' reads';
+      if (empty) empty.hidden = shown !== 0;
+    }
+    Object.values(controls).forEach((control) => control?.addEventListener('input', updateResearchFilters));
+    document.getElementById('research-reset')?.addEventListener('click', () => {
+      Object.values(controls).forEach((control) => { if (control) control.value = ''; });
+      updateResearchFilters();
+    });
+    updateResearchFilters();
+  })();
+</script></body></html>

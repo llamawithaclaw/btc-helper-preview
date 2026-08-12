@@ -1,0 +1,187 @@
+{
+  "date": "2026-07-13",
+  "generatedAt": "2026-07-13T08:30:17.457Z",
+  "publicationTimestampUtc": "2026-07-13T21:34:16.851Z",
+  "transparencyBoundary": {
+    "public": [
+      "daily action and buying stance",
+      "factor-state labels",
+      "source family, freshness, and retrieval status",
+      "data-quality status",
+      "publication and calculation timestamps"
+    ],
+    "withheld": [
+      "raw metric values",
+      "exact metric mix",
+      "thresholds and weights",
+      "override rules",
+      "calibration details"
+    ]
+  },
+  "headline": {
+    "regime": "cautious",
+    "action": "be_selective",
+    "rationale": null
+  },
+  "factorStates": {
+    "valuation": {
+      "label": "Valuation",
+      "state": "Cheap",
+      "availability": "available",
+      "missingInputCount": 0
+    },
+    "sth_behavior": {
+      "label": "Holder behavior",
+      "state": "Stress",
+      "availability": "available",
+      "missingInputCount": 0
+    },
+    "flows": {
+      "label": "Flow pressure",
+      "state": "Weak",
+      "availability": "available",
+      "missingInputCount": 0
+    },
+    "macro": {
+      "label": "Macro pressure",
+      "state": "Strong Headwind",
+      "availability": "available",
+      "missingInputCount": 0
+    },
+    "leverage": {
+      "label": "Leverage",
+      "state": "Clean",
+      "availability": "available",
+      "missingInputCount": 0
+    }
+  },
+  "dataQuality": {
+    "confidenceLevel": "moderate",
+    "runQualityLevel": "live",
+    "summary": "Run quality: LIVE — key fields were sourced directly from current providers."
+  },
+  "sourceCoverageSummary": {
+    "fieldCount": 12,
+    "liveFieldCount": 6,
+    "importAssistedFieldCount": 6,
+    "fallbackSupportedFieldCount": 0,
+    "unknownFieldCount": 0
+  },
+  "importStatus": {
+    "reliance": "heavy",
+    "importedFieldCount": 6,
+    "summary": "Import-assisted reliance: HEAVY — 6 field(s) came from imported/manual-assisted sources.",
+    "guidance": "Import status: acceptable for normal use.",
+    "refreshNeeded": false,
+    "sources": [
+      {
+        "sourceFamily": "Public on-chain dashboard",
+        "importedFieldCount": 3,
+        "asOf": null,
+        "timestampStatus": "not_reported",
+        "timestampNote": null,
+        "fetchedAt": "2026-07-13T08:30:14.074Z",
+        "freshness": "very recent",
+        "severity": "acceptable"
+      },
+      {
+        "sourceFamily": "Public on-chain dashboard",
+        "importedFieldCount": 1,
+        "asOf": null,
+        "timestampStatus": "not_reported",
+        "timestampNote": null,
+        "fetchedAt": "2026-07-13T08:30:15.127Z",
+        "freshness": "very recent",
+        "severity": "acceptable"
+      },
+      {
+        "sourceFamily": "Public on-chain dashboard",
+        "importedFieldCount": 1,
+        "asOf": null,
+        "timestampStatus": "not_reported",
+        "timestampNote": null,
+        "fetchedAt": "2026-07-13T08:30:15.373Z",
+        "freshness": "very recent",
+        "severity": "acceptable"
+      },
+      {
+        "sourceFamily": "Public ETF-flow source",
+        "importedFieldCount": 1,
+        "asOf": null,
+        "timestampStatus": "not_reported",
+        "timestampNote": null,
+        "fetchedAt": "2026-07-13T08:30:15.700Z",
+        "freshness": "very recent",
+        "severity": "acceptable"
+      }
+    ]
+  },
+  "provenance": [
+    {
+      "sourceFamily": "Public market data API",
+      "asOf": "2026-07-13T08:29:21.000Z",
+      "timestampStatus": "reported",
+      "timestampNote": null
+    },
+    {
+      "sourceFamily": "Public market data API",
+      "asOf": "2026-07-13T08:29:57.794Z",
+      "timestampStatus": "reported",
+      "timestampNote": null
+    },
+    {
+      "sourceFamily": "Public on-chain dashboard",
+      "asOf": "2026-07-13T00:00:00",
+      "timestampStatus": "reported",
+      "timestampNote": null
+    },
+    {
+      "sourceFamily": "Public on-chain dashboard",
+      "asOf": "2026-07-13T00:00:00",
+      "timestampStatus": "reported",
+      "timestampNote": null
+    },
+    {
+      "sourceFamily": "Public on-chain dashboard",
+      "asOf": "2026-07-13T00:00:00",
+      "timestampStatus": "reported",
+      "timestampNote": null
+    },
+    {
+      "sourceFamily": "Public on-chain dashboard",
+      "asOf": "2026-07-13T00:00:00",
+      "timestampStatus": "reported",
+      "timestampNote": null
+    },
+    {
+      "sourceFamily": "Public on-chain dashboard",
+      "asOf": "2026-07-13T00:00:00",
+      "timestampStatus": "reported",
+      "timestampNote": null
+    },
+    {
+      "sourceFamily": "Public derivatives market API",
+      "asOf": null,
+      "timestampStatus": "normalization_review",
+      "timestampNote": "One source-family timestamp was later than the audit generation time, so the public page flags it for normalization instead of presenting it as provenance."
+    },
+    {
+      "sourceFamily": "Public derivatives market API",
+      "asOf": "2026-07-13T08:30:12.552Z",
+      "timestampStatus": "reported",
+      "timestampNote": null
+    },
+    {
+      "sourceFamily": "Public macro data provider",
+      "asOf": "2026-07-02",
+      "timestampStatus": "reported",
+      "timestampNote": null
+    },
+    {
+      "sourceFamily": "Public ETF-flow source",
+      "asOf": "Jul 09, 2026",
+      "timestampStatus": "reported",
+      "timestampNote": null
+    }
+  ]
+}

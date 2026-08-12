@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BTC Helper White Paper</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../btc-helper-logo.svg">
+  <meta name="theme-color" content="#111313">
+  <script>
+    try {
+      const savedTheme = localStorage.getItem('btcHelperTheme');
+      document.documentElement.dataset.theme = savedTheme === 'light' ? 'light' : 'dark';
+    } catch {
+      document.documentElement.dataset.theme = 'dark';
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root { color-scheme: light; --bg:#f5f1e9; --card:#fffdf8; --card-soft:#f0ebe1; --ink:#171a18; --muted:#6e746f; --line:#dcd6cb; --accent:#526b83; --accent-blue:#2563eb; --accent-soft:rgba(82,107,131,.10); --brand-navy:#111313; --brand-panel:#181a19; --brand-gold:#ad5617; --brand-warn:#ad5617; --hero-ink:#f3f0e8; --hero-muted:#a5aca6; --secondary-bg:rgba(82,107,131,.10); --secondary-ink:#26394a; --secondary-border:rgba(82,107,131,.28); --dark-card-bg:linear-gradient(135deg,#0d100f,#151816); --dark-card-ink:#f3f0e8; --dark-card-muted:#a5aca6; }
+    :root[data-theme="dark"] { color-scheme: dark; --bg:#0d100f; --card:#151816; --card-soft:#1b201d; --ink:#f3f0e8; --muted:#a5aca6; --line:rgba(255,255,255,.09); --accent:#91a99a; --accent-blue:#bfdbfe; --accent-soft:rgba(145,169,154,.12); --brand-navy:#111313; --brand-panel:#181a19; --brand-gold:#f59a3a; --brand-warn:#c3a36e; --hero-ink:#f3f0e8; --hero-muted:#a5aca6; --secondary-bg:rgba(242,237,214,.08); --secondary-ink:#f3f0e8; --secondary-border:rgba(242,237,214,.18); --dark-card-bg:linear-gradient(135deg,#0d100f,#151816); --dark-card-ink:#f3f0e8; --dark-card-muted:#a5aca6; }
+    html { font-synthesis:none; }
+    body, button, input, select, textarea, summary { font-family:"Noto Sans", "Segoe UI", Roboto, system-ui, sans-serif; }
+    button, input, select, textarea, summary { font:inherit; }
+    code, pre, .machine-record { font-family:"JetBrains Mono", ui-monospace, SFMono-Regular, Consolas, monospace; }
+    .numeric, .price, .percentage, .timestamp { font-variant-numeric:tabular-nums; }
+    .skip-link { position:absolute; left:16px; top:-52px; z-index:1000; border-radius:999px; padding:10px 14px; background:#f2edd6; color:#0d120f; font-weight:950; text-decoration:none; box-shadow:0 12px 28px rgba(0,0,0,.22); }
+    .skip-link:focus { top:14px; outline:3px solid color-mix(in srgb,var(--accent-blue) 58%,transparent); }
+    .theme-toggle { position:fixed; top:16px; right:16px; z-index:20; width:40px; height:40px; display:flex; align-items:center; justify-content:center; padding:0; border-radius:999px; border:1px solid var(--line); background:color-mix(in srgb,var(--card) 88%,transparent); color:var(--ink); box-shadow:0 12px 28px rgba(0,0,0,.16); font:900 1.05rem/1 "Noto Sans", "Segoe UI Symbol", system-ui, sans-serif; cursor:pointer; }
+    .theme-toggle:hover, .theme-toggle:focus { border-color:color-mix(in srgb,var(--accent) 45%,var(--line)); background:var(--accent-soft); outline:none; }
+    .theme-toggle .theme-icon { display:block; margin:0; }
+    .theme-toggle .theme-icon-sun, .theme-toggle .theme-icon-moon { width:22px; height:22px; }
+    * { box-sizing: border-box; }
+
+    .site-nav { position:sticky; top:0; z-index:50; backdrop-filter:blur(16px); background:color-mix(in srgb,var(--bg) 92%,transparent); border-bottom:1px solid color-mix(in srgb,var(--line) 80%,transparent); box-shadow:0 10px 30px rgba(0,0,0,.10); }
+    .site-nav-inner { max-width:1120px; margin:0 auto; padding:10px 20px; display:grid; grid-template-columns:auto 1fr; align-items:center; gap:16px; min-height:62px; }
+    .brand-lockup { display:inline-flex; align-items:center; gap:10px; min-width:fit-content; color:var(--ink); text-decoration:none; }
+    .brand-mark { width:34px; height:34px; border-radius:10px; display:inline-flex; align-items:center; justify-content:center; background:linear-gradient(135deg,#111313,#181a19); border:1px solid color-mix(in srgb,var(--accent) 44%,#34362d); box-shadow:0 8px 18px rgba(15,23,42,.16); overflow:hidden; }
+    .brand-mark svg, .brand-mark img { width:30px; height:30px; display:block; }
+    .brand-mark .mark-cradle, .brand-mark .mark-rail { stroke:var(--accent); } .brand-mark .mark-signal { stroke:#f3f2e8; } .brand-mark .mark-reserve-dot { fill:#f59a3a; }
+    .brand-text strong { display:block; font-size:.82rem; letter-spacing:.12em; text-transform:uppercase; line-height:1.05; }
+    .brand-text span { display:block; color:var(--muted); font-size:.72rem; margin-top:1px; }
+    .nav-links { display:flex; align-items:center; gap:4px; flex-wrap:wrap; justify-content:flex-end; }
+    .nav-links a, .theme-toggle, .menu-toggle { position:static; box-shadow:none; display:inline-flex; align-items:center; justify-content:center; border:1px solid transparent; border-radius:999px; padding:7px 9px; min-height:36px; min-width:36px; color:var(--muted); background:transparent; text-decoration:none; font:inherit; font-size:.82rem; font-weight:850; cursor:pointer; }
+    .nav-links a:hover, .nav-links a:focus, .theme-toggle:hover, .theme-toggle:focus, .menu-toggle:hover, .menu-toggle:focus { color:var(--ink); background:var(--accent-soft); border-color:color-mix(in srgb,var(--accent) 24%,var(--line)); outline:none; }
+    .nav-links a[aria-current="page"] { color:var(--ink); background:var(--accent-soft); border-color:color-mix(in srgb,var(--accent) 28%,var(--line)); }
+    .nav-links a.nav-cta { color:color-mix(in srgb,var(--ink) 82%,var(--muted)); border-color:color-mix(in srgb,var(--accent) 22%,var(--line)); background:color-mix(in srgb,var(--card) 70%,transparent); padding-inline:12px; }
+    .nav-links a.nav-cta:hover, .nav-links a.nav-cta:focus { color:var(--ink); background:var(--accent-soft); }
+    .menu-toggle { display:none; gap:7px; padding-inline:11px; color:var(--ink); border-color:var(--line); background:color-mix(in srgb,var(--card) 72%,transparent); }
+    .menu-toggle-bars { width:15px; height:10px; position:relative; display:inline-block; border-top:2px solid currentColor; border-bottom:2px solid currentColor; }
+    .menu-toggle-bars::after { content:''; position:absolute; left:0; right:0; top:3px; border-top:2px solid currentColor; }
+    .theme-toggle { width:36px; height:36px; padding:0; }
+    .site-footer { max-width:1120px; margin:0 auto; padding:30px 20px 48px; color:var(--muted); }
+    .site-footer-inner { border:1px solid var(--line); border-radius:24px; padding:24px; display:grid; grid-template-columns:minmax(0,1.2fr) repeat(3,minmax(150px,.55fr)); gap:22px; background:linear-gradient(135deg,color-mix(in srgb,var(--card) 94%,transparent),color-mix(in srgb,var(--accent-soft) 36%,var(--card))); box-shadow:0 16px 44px rgba(0,0,0,.10); }
+    .footer-brand strong { display:block; color:var(--ink); letter-spacing:.08em; text-transform:uppercase; font-size:.86rem; }
+    .footer-brand p, .footer-note { margin:.45rem 0 0; color:var(--muted); font-size:.9rem; }
+    .footer-column-title { color:var(--ink); font-weight:900; margin-bottom:10px; font-size:.86rem; display:flex; align-items:center; gap:8px; }
+    .footer-icon { width:22px; height:22px; border-radius:8px; display:inline-flex; align-items:center; justify-content:center; background:var(--accent-soft); color:var(--ink); border:1px solid var(--line); font-size:.82rem; line-height:1; }
+    .footer-links { display:grid; gap:7px; }
+    .footer-links a { color:var(--muted); text-decoration:none; font-weight:760; font-size:.9rem; display:inline-flex; align-items:center; gap:7px; }
+    .footer-links a .link-icon { color:var(--accent); font-size:.86rem; width:1.1em; text-align:center; }
+    .footer-links a:hover, .footer-links a:focus { color:var(--ink); text-decoration:underline; outline:none; }
+    .breadcrumb { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin:0 0 16px; color:var(--muted); font-size:.78rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+    .breadcrumb a { color:var(--accent-blue); text-decoration:none; }
+    .breadcrumb a:hover, .breadcrumb a:focus { color:var(--ink); text-decoration:underline; outline:none; }
+    .breadcrumb span { min-width:0; }
+    @media (max-width:860px) {
+      .site-nav-inner { grid-template-columns:1fr auto; gap:10px; min-height:56px; padding:9px 14px; }
+      .menu-toggle { display:inline-flex; }
+      .nav-links { display:none; grid-column:1 / -1; width:100%; grid-template-columns:1fr 1fr; gap:8px; padding:8px 0 4px; border-top:1px solid var(--line); }
+      .site-nav.is-open .nav-links { display:grid; }
+      .nav-links a, .theme-toggle { justify-content:flex-start; width:100%; border-color:var(--line); background:color-mix(in srgb,var(--card) 74%,transparent); padding:9px 10px; }
+      .theme-toggle { justify-content:center; }
+      .brand-text span { display:none; }
+      .site-footer-inner { grid-template-columns:1fr 1fr; padding:20px; }
+      .footer-brand { grid-column:1 / -1; }
+    }
+    @media (max-width:560px) {
+      .site-nav-inner { padding:8px 12px; }
+      .brand-mark { width:32px; height:32px; }
+      .brand-mark svg, .brand-mark img { width:28px; height:28px; }
+      .brand-text strong { font-size:.78rem; }
+      .menu-toggle { min-height:34px; padding:6px 10px; font-size:.8rem; }
+      .site-footer-inner { grid-template-columns:1fr; border-radius:20px; }
+    }
+
+    .menu-toggle { gap:8px; min-height:34px; padding:7px 11px; border-radius:999px; font-weight:900; }
+    .menu-toggle-icon { width:16px; height:14px; position:relative; display:inline-block; flex:0 0 auto; }
+    .menu-toggle-icon span { position:absolute; left:0; right:0; height:2px; border-radius:999px; background:currentColor; display:block; transform-origin:center; transition:top .16s ease, transform .16s ease, opacity .16s ease; }
+    .menu-toggle-icon span:nth-child(1) { top:1px; }
+    .menu-toggle-icon span:nth-child(2) { top:6px; }
+    .menu-toggle-icon span:nth-child(3) { top:11px; }
+    .site-nav.is-open .menu-toggle-icon span:nth-child(1) { top:6px; transform:rotate(45deg); }
+    .site-nav.is-open .menu-toggle-icon span:nth-child(2) { opacity:0; }
+    .site-nav.is-open .menu-toggle-icon span:nth-child(3) { top:6px; transform:rotate(-45deg); }
+    .theme-toggle { gap:8px; }
+    .theme-toggle .theme-icon { margin:0; }
+    .theme-toggle-label { display:none; font-size:.83rem; font-weight:900; }
+    .footer-icon, .footer-links a .link-icon { display:none; }
+    .footer-column-title { gap:0; letter-spacing:.09em; text-transform:uppercase; font-size:.75rem; color:var(--muted); }
+    .footer-links { gap:6px; }
+    .footer-links a { gap:0; color:color-mix(in srgb,var(--ink) 78%,var(--muted)); }
+    @media (max-width:860px) {
+      .site-nav-inner { gap:8px; min-height:54px; padding:8px 14px; }
+      .nav-links { grid-template-columns:repeat(2,minmax(0,1fr)); gap:6px; margin:6px 0 2px; padding:7px; border:1px solid var(--line); border-radius:16px; background:color-mix(in srgb,var(--card) 92%,transparent); box-shadow:0 18px 44px rgba(0,0,0,.16); }
+      .site-nav.is-open .nav-links { display:grid; }
+      .nav-links a, .theme-toggle { width:100%; min-height:36px; justify-content:flex-start; gap:8px; padding:8px 10px; border:0; border-radius:12px; background:transparent; color:var(--ink); }
+      .nav-links a:hover, .nav-links a:focus, .theme-toggle:hover, .theme-toggle:focus { background:var(--accent-soft); border-color:transparent; text-decoration:none; }
+      .theme-toggle { height:auto; grid-column:1 / -1; }
+      .theme-toggle-label { display:inline; }
+      .menu-toggle-label-text { min-width:36px; text-align:left; }
+      .theme-toggle .theme-icon { flex:0 0 auto; }
+      .site-footer { padding-top:24px; }
+      .site-footer-inner { grid-template-columns:1fr; gap:18px; padding:20px; }
+      .footer-brand { grid-column:auto; }
+    }
+    @media (max-width:560px) {
+      .site-footer-inner { border-radius:18px; padding:18px; }
+    }
+    @media (max-width:340px) { .nav-links { grid-template-columns:1fr; } .theme-toggle { grid-column:auto; } }
+
+    html { scroll-behavior:smooth; }
+    body { margin:0; font-family: "Noto Sans", "Segoe UI", Roboto, system-ui, sans-serif; background:radial-gradient(circle at 20% -10%, color-mix(in srgb,var(--accent) 8%,transparent), transparent 32%), radial-gradient(circle at 90% 10%, rgba(251,191,36,.07), transparent 30%), var(--bg); color:var(--ink); line-height:1.62; }
+    main { max-width: 980px; margin:0 auto; padding:32px 20px 64px; }
+    .back-link { display:inline-block; margin-bottom:18px; color:var(--accent-blue); text-decoration:none; font-weight:800; font-family:'JetBrains Mono', ui-monospace, monospace; letter-spacing:.08em; text-transform:uppercase; font-size:.76rem; }
+    .back-link:hover { text-decoration:underline; }
+    .hero, .card { background:var(--card); border:1px solid var(--line); border-radius:22px; padding:28px; box-shadow:0 16px 44px rgba(0,0,0,.30); margin-bottom:18px; }
+    .hero { background:radial-gradient(circle at 84% 18%, rgba(251,191,36,.07), transparent 28%), radial-gradient(circle at 78% 74%, color-mix(in srgb,var(--accent) 10%, transparent), transparent 32%), linear-gradient(135deg,#0b0d0d,#171a1a 58%,#111313); border-color:color-mix(in srgb,var(--accent) 28%,#050704); color:var(--hero-ink); }
+    .eyebrow { color:var(--accent-blue); font-family:'JetBrains Mono', ui-monospace, monospace; font-weight:900; letter-spacing:.12em; text-transform:uppercase; font-size:.76rem; margin-bottom:10px; }
+    h1, h2, h3, h4, p { margin-top:0; }
+    h1 { letter-spacing:-.035em; line-height:1.08; margin-bottom:10px; font-size:clamp(2rem,4vw,3.1rem); }
+    h2 { margin-top:34px; margin-bottom:10px; font-size:1.45rem; letter-spacing:-.015em; }
+    h3 { margin-top:24px; margin-bottom:8px; font-size:1.1rem; }
+    h4 { margin-top:18px; margin-bottom:6px; }
+    .subtitle, .small, figcaption { color:var(--muted); }
+    .doc-byline { color:var(--hero-ink); font-weight:800; margin:8px 0 0; }
+    .hero .subtitle { color:var(--hero-muted); }
+    .actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:18px; }
+    .button { display:inline-flex; align-items:center; gap:8px; border:1px solid var(--brand-gold); background:var(--brand-gold); color:#0d120f; text-decoration:none; border-radius:999px; padding:10px 14px; font-weight:900; }
+    .button.secondary { background:var(--secondary-bg); color:var(--secondary-ink); border-color:var(--secondary-border); }
+    .hero .button.secondary, .doc-card .button.secondary { background:rgba(242,237,214,.10); color:#f2edd6; border-color:rgba(242,237,214,.25); }
+    .note { border-left:4px solid var(--accent); background:var(--accent-soft); padding:12px 14px; border-radius:12px; color:var(--ink); }
+    .toc { display:grid; gap:4px; margin-top:18px; padding:14px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14); border-radius:14px; }
+    .toc-title { font-weight:900; margin-bottom:4px; color:var(--hero-ink); }
+    .toc a { color:var(--accent-blue); text-decoration:none; }
+    .toc a:hover { text-decoration:underline; }
+    .toc-3 { padding-left:14px; font-size:.94rem; }
+    .doc-body > h1:first-child, .doc-body > h2:first-child { margin-top:0; }
+    ul, ol { margin:8px 0 16px 22px; padding:0; }
+    li { margin:5px 0; }
+    blockquote { border-left:4px solid var(--accent); margin:16px 0; padding:12px 16px; background:rgba(138,160,173,.12); border-radius:12px; color:var(--ink); }
+    code { background:rgba(255,255,255,.08); padding:2px 6px; border-radius:6px; color:var(--secondary-ink); }
+    hr { border:0; border-top:1px solid var(--line); margin:24px 0; }
+    .table-wrap { overflow-x:auto; margin:14px 0 20px; border:1px solid var(--line); border-radius:14px; }
+    table { border-collapse:collapse; min-width:100%; font-size:.92rem; background:var(--card); }
+    th, td { border-bottom:1px solid var(--line); padding:9px 10px; text-align:left; vertical-align:top; }
+    th { background:#151615; font-weight:900; color:var(--hero-ink); }
+    tr:last-child td { border-bottom:0; }
+    figure { margin:22px 0; }
+    figure img { max-width:100%; display:block; border:1px solid var(--line); border-radius:14px; background:white; }
+    figcaption { font-size:.92rem; margin-top:8px; }
+    .doc-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; margin-top:18px; }
+    .doc-card { display:block; color:inherit; text-decoration:none; border:1px solid var(--line); border-radius:18px; padding:18px; background:var(--dark-card-bg); }
+    .doc-card:hover, .doc-card:focus { border-color:var(--accent); outline:none; }
+    .doc-title { font-weight:900; color:var(--hero-ink); margin-bottom:6px; }
+    .doc-meta { color:var(--dark-card-muted); font-size:.92rem; }
+    @media print { body { background:#fff; color:#111827; } main { max-width:none; padding:0; } .back-link, .actions, .toc { display:none; } .hero, .card { box-shadow:none; border:0; padding:0; background:#fff; color:#111827; } h2, h3 { break-after:avoid; } figure, table { break-inside:avoid; } }
+
+  </style>
+</head>
+<body>
+  <nav class="site-nav" aria-label="BTC Helper site navigation">
+    <div class="site-nav-inner">
+      <a class="brand-lockup" href="./index.html" aria-label="BTC Helper home">
+        <span class="brand-mark"><svg viewBox="0 0 256 256" aria-hidden="true" focusable="false">
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path class="mark-cradle" d="M68 92c-16 23-17 58-1 84 17 28 49 43 81 34 29-8 51-33 55-64 3-20-2-39-15-54" stroke-width="12"></path>
+    <path class="mark-rail" d="M86 96v82M170 96v82" stroke-width="10" opacity="0.92"></path>
+    <path class="mark-signal" d="M96 118v34M108 84v58M126 60v106M144 72v80M162 94v36" stroke-width="10"></path>
+  </g>
+  <circle class="mark-reserve-dot" cx="108" cy="70" r="6"></circle>
+</svg></span>
+        <span class="brand-text"><strong>BTC Helper</strong><span>Resilient accumulation</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav-links"><span class="menu-toggle-icon" aria-hidden="true"><span></span><span></span><span></span></span><span class="menu-toggle-label-text">Menu</span></button>
+      <div class="nav-links" id="site-nav-links">
+        <a href="./index.html#today">Today</a>
+        <a href="./planner.html">My Plan</a>
+        <a href="./insights.html">Insights</a>
+        <a href="./track.html">Track</a>
+        <a class="nav-cta" href="./updates.html">Updates</a>
+        <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Switch theme"><svg aria-hidden="true" class="theme-icon theme-icon-moon" viewBox="0 0 24 24"><path d="M20.4 14.7A8.3 8.3 0 0 1 9.3 3.6 8.7 8.7 0 1 0 20.4 14.7Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="theme-toggle-label">Theme</span></button>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <a class="back-link" href="./documents-and-research.html">← Back to Documents &amp; Research</a>
+    <section class="hero">
+      <div class="eyebrow">BTC Helper</div>
+      <h1>BTC Helper White Paper</h1>
+      <p class="subtitle">An explainable Bitcoin accumulation regime engine.</p>
+      <p class="doc-byline">Arne Kotte · BTC Helper Research</p>
+      <div class="actions">
+        <a class="button" href="../BTC_HELPER_WHITE_PAPER.pdf">Download PDF</a>
+        <a class="button secondary" href="./index.html">Home</a>
+      </div>
+      <nav class="toc"><div class="toc-title">Contents</div><a class="toc-2" href="#abstract">Abstract</a><a class="toc-2" href="#1-introduction">1. Introduction</a><a class="toc-2" href="#2-product-objective-and-scope">2. Product objective and scope</a><a class="toc-2" href="#3-intended-user-context">3. Intended user context</a><a class="toc-2" href="#4-design-principles">4. Design principles</a><a class="toc-3" href="#4-1-interpretability-first">4.1 Interpretability first</a><a class="toc-3" href="#4-2-multi-domain-balance">4.2 Multi-domain balance</a><a class="toc-3" href="#4-3-accumulation-focused-posture">4.3 Accumulation-focused posture</a><a class="toc-3" href="#4-4-public-framework-private-implementation">4.4 Public framework, private implementation</a><a class="toc-3" href="#4-5-honesty-under-degradation">4.5 Honesty under degradation</a><a class="toc-2" href="#5-core-model-architecture">5. Core model architecture</a><a class="toc-3" href="#5-1-structural-valuation">5.1 Structural valuation</a><a class="toc-3" href="#5-2-short-term-holder-behavior">5.2 Short-term holder behavior</a><a class="toc-3" href="#5-3-leverage-reflexivity">5.3 Leverage / reflexivity</a><a class="toc-3" href="#5-4-demand-flow-context">5.4 Demand / flow context</a><a class="toc-3" href="#5-5-macro-context">5.5 Macro context</a><a class="toc-2" href="#6-secondary-and-research-indicators">6. Secondary and research indicators</a><a class="toc-2" href="#7-regime-framework">7. Regime framework</a><a class="toc-3" href="#aggressive">Aggressive</a><a class="toc-3" href="#normal">Normal</a><a class="toc-3" href="#cautious">Cautious</a><a class="toc-3" href="#pause">Pause</a><a class="toc-2" href="#8-decision-philosophy">8. Decision philosophy</a><a class="toc-2" href="#9-data-quality-run-quality-and-operational-honesty">9. Data quality, run quality, and operational honesty</a><a class="toc-3" href="#9-1-data-quality">9.1 Data quality</a><a class="toc-3" href="#9-2-run-quality">9.2 Run quality</a><a class="toc-3" href="#9-3-domain-aware-degradation">9.3 Domain-aware degradation</a><a class="toc-2" href="#10-data-architecture-and-sourcing-posture">10. Data architecture and sourcing posture</a><a class="toc-2" href="#11-validation-philosophy">11. Validation philosophy</a><a class="toc-3" href="#11-1-scenario-validation">11.1 Scenario validation</a><a class="toc-3" href="#11-2-historical-style-validation">11.2 Historical-style validation</a><a class="toc-3" href="#11-3-degraded-data-validation">11.3 Degraded-data validation</a><a class="toc-3" href="#11-4-explanation-validation">11.4 Explanation validation</a><a class="toc-3" href="#11-5-benchmark-and-ablation-validation">11.5 Benchmark and ablation validation</a><a class="toc-2" href="#12-public-methodology-versus-proprietary-implementation">12. Public methodology versus proprietary implementation</a><a class="toc-3" href="#publicly-discussable">Publicly discussable</a><a class="toc-3" href="#kept-private">Kept private</a><a class="toc-2" href="#13-reading-the-output-as-an-individual">13. Reading the output as an individual</a><a class="toc-2" href="#14-why-this-product-exists">14. Why this product exists</a><a class="toc-2" href="#15-limitations">15. Limitations</a><a class="toc-2" href="#16-future-work">16. Future work</a><a class="toc-3" href="#16-1-research-layer-expansion">16.1 Research-layer expansion</a><a class="toc-3" href="#16-2-methodology-expansion">16.2 Methodology expansion</a><a class="toc-3" href="#16-3-product-evolution">16.3 Product evolution</a><a class="toc-3" href="#16-4-institutional-and-partner-readiness">16.4 Institutional and partner readiness</a><a class="toc-2" href="#17-conclusion">17. Conclusion</a></nav>
+    </section>
+    <section class="card doc-body">
+      <p class="small"><strong>Suggested citation:</strong> Kotte, Arne. 2026. “BTC Helper White Paper: An Explainable Bitcoin Accumulation Regime Engine.” BTC Helper Research.</p>
+      <p><strong>Author:</strong> Arne Kotte</p>
+<p><strong>Affiliation:</strong> BTC Helper Research</p>
+<p><strong>Document type:</strong> Product methodology white paper</p>
+<h2 id="abstract">Abstract</h2>
+<p>BTC Helper is an explainable Bitcoin accumulation regime engine designed to help users answer a practical portfolio question: when do current conditions support aggressive accumulation, baseline accumulation, selective caution, or temporary pause?</p>
+<p>Unlike opaque signal products that ask users to trust unexplained outputs, or simplistic dip heuristics that react to price movement alone, BTC Helper is built around interpretability, domain-based reasoning, explicit degraded-data handling, and operational honesty. The system combines a small number of core market-context domains into a concise set of user-facing regime outputs. A separate data-quality and run-quality layer communicates the usability of the current run without pretending to express certainty about future returns.</p>
+<p>This paper outlines the conceptual foundation for BTC Helper, explains the rationale for its domain design, clarifies the boundary between public methodology and proprietary model details, and summarizes the validation philosophy guiding its development. It should be read as product methodology documentation, not as a claim of academic proof, personalized financial advice, or a public disclosure of the proprietary model core.</p>
+<hr>
+<h2 id="1-introduction">1. Introduction</h2>
+<p>Bitcoin accumulation decisions are often made using simplistic heuristics: buy every dip, buy below a moving average, fade euphoria, or follow a small number of cycle indicators in isolation. These approaches can be useful, but they often fail to capture the interaction between structural valuation, holder stress, leverage conditions, institutional flows, and macro headwinds.</p>
+<p>That weakness matters in product terms, not just research terms. A simplistic dip rule may be easy to ship, but it treats many superficially similar pullbacks as equivalent even when the underlying environment is very different. A small move below a short moving average does not tell a user whether the market has become structurally attractive, merely noisy, or dangerously reflexive.</p>
+<p>BTC Helper is built on a narrower and more defensible objective than short-term prediction. It does not attempt to forecast exact prices or turning points. Instead, it asks:</p>
+<blockquote>Given current market conditions, should a disciplined accumulator become more aggressive than baseline, remain baseline, exercise caution, or temporarily pause?</blockquote>
+<p>This distinction matters. A regime engine for accumulation does not need to claim clairvoyance. It needs to be coherent, interpretable, honest about its limitations, and operationally resilient enough to remain useful under imperfect data conditions.</p>
+<hr>
+<h2 id="2-product-objective-and-scope">2. Product objective and scope</h2>
+<p>BTC Helper is intended to be:</p>
+<ul>
+<li>an explainable Bitcoin accumulation decision-support tool</li>
+<li>a multi-domain regime classifier rather than a price target generator</li>
+<li>an accumulation policy layer rather than a one-factor dip trigger</li>
+<li>a system that distinguishes data quality from market certainty</li>
+<li>a product that can say when its own inputs are degraded</li>
+</ul>
+<p>BTC Helper is not intended to be:</p>
+<ul>
+<li>a price-target or trade-call service</li>
+<li>a guarantee of alpha</li>
+<li>financial advice</li>
+<li>a promise that the next move in Bitcoin is knowable</li>
+</ul>
+<p>The product’s value proposition is better accumulation discipline: clearer posture, less one-factor reactivity, explicit uncertainty, and more honest handling of degraded data. It does not mean guaranteed higher returns, statistical dominance over every benchmark, or personalized portfolio advice.</p>
+<hr>
+<h2 id="3-intended-user-context">3. Intended user context</h2>
+<p>BTC Helper is designed for a specific decision context: a long-horizon Bitcoin accumulator who already has, or is considering, a baseline recurring accumulation plan and wants help deciding whether discretionary accumulation should be stronger, ordinary, more selective, or temporarily deferred.</p>
+<p>That context matters. A retiree with near-term liquidity needs, a trader using leverage, a household with concentrated Bitcoin exposure, and a long-horizon saver with modest recurring purchases do not face the same problem. BTC Helper does not attempt to solve every portfolio problem. It is intended to support posture discipline for spot accumulation, subject to each user's own time horizon, liquidity needs, risk tolerance, tax situation, and broader portfolio exposure.</p>
+<p>The regime labels should therefore be read as decision-support posture, not as commands. They are intended to help users ask better questions before acting: Is this an opportunity, a baseline environment, a mixed setup, or a fragile/stretched environment? Is the current run usable enough to rely on? Does my own financial situation justify any discretionary action at all?</p>
+<h2 id="4-design-principles">4. Design principles</h2>
+<p>BTC Helper follows five core design principles.</p>
+<h3 id="4-1-interpretability-first">4.1 Interpretability first</h3>
+<p>Every meaningful output should be traceable to domain-level reasoning. Users should be able to understand why a regime was produced.</p>
+<h3 id="4-2-multi-domain-balance">4.2 Multi-domain balance</h3>
+<p>No single metric should dominate the system by default. The product should balance valuation, behavior, leverage, flow, and macro context.</p>
+<h3 id="4-3-accumulation-focused-posture">4.3 Accumulation-focused posture</h3>
+<p>The system is optimized for stacking posture and accumulation policy, not short-term tactical trading.</p>
+<h3 id="4-4-public-framework-private-implementation">4.4 Public framework, private implementation</h3>
+<p>The high-level methodology can be described publicly. Exact thresholds, weightings, tie-break logic, and calibration details remain private.</p>
+<h3 id="4-5-honesty-under-degradation">4.5 Honesty under degradation</h3>
+<p>A useful system must remain honest when provider failures, stale inputs, fallback behavior, or import-assisted data affect interpretation.</p>
+<hr>
+<h2 id="5-core-model-architecture">5. Core model architecture</h2>
+<p>BTC Helper is organized into five primary domains plus a regime decision layer and a run-usability/data-quality layer.</p>
+<h3 id="5-1-structural-valuation">5.1 Structural valuation</h3>
+<p>Purpose: assess whether Bitcoin appears structurally attractive, ordinary, warm, or extended relative to broader context.</p>
+<p>Representative inputs may include valuation anchors and long-horizon reference points.</p>
+<p>In the current beta method, structural valuation uses a private mix of public valuation anchors and cycle-context checks. The public site describes the resulting valuation state and source freshness, but it intentionally withholds the exact anchor list, raw metric values, thresholds, weights, override rules, and calibration details.</p>
+<p>This domain matters because BTC Helper is accumulation-oriented rather than short-term trader-oriented.</p>
+<h3 id="5-2-short-term-holder-behavior">5.2 Short-term holder behavior</h3>
+<p>Purpose: capture whether recent-holder conditions look stressed, reset, recovering, balanced, or overheated.</p>
+<p>Representative inputs may include holder profitability and behavior-sensitive signals.</p>
+<p>This domain matters because accumulation decisions often become most interesting when recent holders are under visible stress or transitioning between regimes.</p>
+<h3 id="5-3-leverage-reflexivity">5.3 Leverage / reflexivity</h3>
+<p>Purpose: identify crowding, overheating, and fragility caused by reflexive positioning.</p>
+<p>Representative inputs may include derivatives and positioning-sensitive context.</p>
+<p>This domain mainly acts as a constraint or modifier. It does not erase attractive structural setups on its own, but crowding or fragility can prevent aggressive interpretations.</p>
+<h3 id="5-4-demand-flow-context">5.4 Demand / flow context</h3>
+<p>Purpose: capture persistent demand support or weakness without overreacting to one-off noise.</p>
+<p>Representative inputs may include directional flow and demand-sensitive context.</p>
+<p>This domain helps distinguish structurally attractive conditions that are also receiving support from persistent demand from those that are not.</p>
+<h3 id="5-5-macro-context">5.5 Macro context</h3>
+<p>Purpose: reflect broad liquidity headwinds or tailwinds that influence Bitcoin risk appetite.</p>
+<p>Representative inputs may include broad macro and dollar/liquidity context.</p>
+<p>Macro conditions modify interpretation but do not automatically dominate the entire read.</p>
+<hr>
+<h2 id="6-secondary-and-research-indicators">6. Secondary and research indicators</h2>
+<p>BTC Helper explicitly distinguishes between core model drivers and secondary/context indicators.</p>
+<p>Some indicators remain in a research or supporting-context role rather than serving as headline core drivers.</p>
+<p>This is an intentional design choice. Such indicators can still be useful for cycle context and confirmation, but BTC Helper currently prioritizes a clearer public-facing core centered on accumulation-relevant domains. Future validation may justify broader use, but they are not currently required for the main daily regime decision.</p>
+<hr>
+<h2 id="7-regime-framework">7. Regime framework</h2>
+<p>BTC Helper produces four user-facing regimes.</p>
+<p>These regimes are meant to support practical accumulation posture, not just descriptive commentary. They are not personalized recommendations and should always be interpreted through the user's own cash-flow, emergency reserve, portfolio concentration, tax, and risk constraints.</p>
+<h3 id="aggressive">Aggressive</h3>
+<p>Conditions favor more assertive accumulation.</p>
+<p>Practical posture:</p>
+<ul>
+<li>maintain baseline accumulation</li>
+<li>consider stronger-than-baseline additional buying, subject to data-quality and run-quality limits</li>
+</ul>
+<h3 id="normal">Normal</h3>
+<p>Maintain baseline accumulation discipline.</p>
+<p>Practical posture:</p>
+<ul>
+<li>continue ordinary baseline accumulation</li>
+<li>avoid forcing extra buying without a stronger edge</li>
+</ul>
+<h3 id="cautious">Cautious</h3>
+<p>Conditions are mixed enough to justify selectivity.</p>
+<p>Practical posture:</p>
+<ul>
+<li>maintain baseline accumulation only if it fits the user's plan</li>
+<li>reduce or defer discretionary extra buys</li>
+<li>wait for either stronger opportunity or clearer risk improvement before pressing harder</li>
+</ul>
+<p>Cautious does not necessarily mean Bitcoin is unattractive. It can also mean valuation is favorable, but holder behavior, flows, macro context, leverage, or data-quality limits argue against reserve deployment or aggressive discretionary buying.</p>
+<h3 id="pause">Pause</h3>
+<p>Conditions appear sufficiently stretched or fragile to justify standing down from fresh accumulation.</p>
+<p>Practical posture:</p>
+<ul>
+<li>avoid fresh discretionary extra buying</li>
+<li>do not let momentum or excitement override structural risk warnings</li>
+</ul>
+<p>This regime set is intentionally simple. The goal is not to express maximal nuance through labels, but to support disciplined accumulation decisions with a small, interpretable vocabulary.</p>
+<hr>
+<h2 id="8-decision-philosophy">8. Decision philosophy</h2>
+<p>BTC Helper does not treat the model as a naive sum of raw indicators.</p>
+<p>It is designed to reason across multiple forms of context rather than simply stack one-factor triggers.</p>
+<p>At a high level, the system is built to support policy judgments such as:</p>
+<ul>
+<li>structurally attractive conditions can still matter even when the environment is uncomfortable</li>
+<li>supportive context should not override clearly dangerous reflexive risk</li>
+<li>not all weakness is equal, and not all stress should be interpreted the same way</li>
+</ul>
+<p>These principles matter because accumulation timing requires asymmetry recognition, not just generic risk scoring.</p>
+<hr>
+<h2 id="9-data-quality-run-quality-and-operational-honesty">9. Data quality, run quality, and operational honesty</h2>
+<p>BTC Helper separates the market regime from the quality of the current run.</p>
+<h3 id="9-1-data-quality">9.1 Data quality</h3>
+<p>Data quality reflects the usability of the current run, not certainty of outcome.</p>
+<p>It is influenced by factors such as completeness, freshness, internal coherence, and sourcing strength.</p>
+<p>The public surface can describe data quality in plain-language levels such as high, moderate, reduced, or degraded. These labels are intentionally separate from the market regime. A favorable market posture with degraded data quality should not be treated the same way as the same posture under clean live coverage.</p>
+<p>Data quality is not intended to represent probability of correctness or forecast likelihood. It is a practical quality signal: how much trust should a user place in this run as a decision-support artifact?</p>
+<h3 id="9-2-run-quality">9.2 Run quality</h3>
+<p>BTC Helper also reports a run-quality layer so the product can communicate when the current read is fully usable versus operationally limited.</p>
+<p>This is a practical layer for a real mixed-source system. It allows the product to remain operational without pretending that every run is equally trustworthy.</p>
+<h3 id="9-3-domain-aware-degradation">9.3 Domain-aware degradation</h3>
+<p>When degradation occurs, BTC Helper is designed to preserve more honest interpretation than a generic warning banner would provide.</p>
+<p>This matters because different types of operational limitation do not affect interpretation in the same way, and users should not be forced to treat them as identical.</p>
+<hr>
+<h2 id="10-data-architecture-and-sourcing-posture">10. Data architecture and sourcing posture</h2>
+<p>BTC Helper currently operates with a staged sourcing posture.</p>
+<p>The near-term philosophy is:</p>
+<ul>
+<li>practical live sources where appropriate</li>
+<li>selectively assisted sourcing where justified during the beta stage</li>
+<li>stronger production-grade sourcing when commercialization or partner requirements warrant it</li>
+</ul>
+<p>This is a deliberate product choice. It keeps the system realistic for an early-stage product while forcing stronger honesty about provider fragility and operational limitations, without overclaiming production readiness before the sourcing path is fully finalized.</p>
+<hr>
+<h2 id="11-validation-philosophy">11. Validation philosophy</h2>
+<p>BTC Helper is not being built by intuition alone. Its validation posture includes:</p>
+<ul>
+<li>scenario fixtures</li>
+<li>historical-style case-study review</li>
+<li>degraded-data review</li>
+<li>policy-audit review</li>
+<li>explanation review</li>
+<li>benchmark comparison against baseline accumulation and simple heuristic alternatives</li>
+<li>domain-ablation review to test whether the multi-domain structure adds explanatory value</li>
+</ul>
+<p>The development philosophy is that explicit validation loops should outrank threshold tuning guided only by intuition. At the same time, the current public white paper should not be read as a completed statistical validation package. Public validation will mature over time without requiring disclosure of proprietary thresholds, weights, aggregation rules, or tie-break logic.</p>
+<h3 id="11-1-scenario-validation">11.1 Scenario validation</h3>
+<p>Scenario fixtures test whether the regime engine behaves correctly across stylized market states.</p>
+<h3 id="11-2-historical-style-validation">11.2 Historical-style validation</h3>
+<p>Historical-style cases assess whether the model behaves plausibly in recognizable environments, while remaining honest about reconstruction quality.</p>
+<h3 id="11-3-degraded-data-validation">11.3 Degraded-data validation</h3>
+<p>Because real products fail under real data conditions, degraded-run behavior is itself a first-class validation target.</p>
+<h3 id="11-4-explanation-validation">11.4 Explanation validation</h3>
+<p>The output should remain understandable and defensible to a human operator.</p>
+<h3 id="11-5-benchmark-and-ablation-validation">11.5 Benchmark and ablation validation</h3>
+<p>A useful accumulation engine should eventually be evaluated against simple baselines such as baseline recurring accumulation, buy-the-dip heuristics, valuation-only reads, and other one-factor rules. It should also be tested by removing or weakening domains to determine whether each domain adds useful decision context. These tests are part of the validation roadmap.</p>
+<p>The purpose of public benchmark language is not to disclose the private model core. It is to make the product's burden of proof clear: BTC Helper should earn trust by showing that its regime logic is disciplined, robust, and more informative than simplistic alternatives.</p>
+<hr>
+<h2 id="12-public-methodology-versus-proprietary-implementation">12. Public methodology versus proprietary implementation</h2>
+<p>BTC Helper is intentionally designed with a disclosure boundary.</p>
+<h3 id="publicly-discussable">Publicly discussable</h3>
+<ul>
+<li>five-domain architecture</li>
+<li>regime framework</li>
+<li>run-usability philosophy</li>
+<li>validation philosophy</li>
+<li>mixed-source operational honesty</li>
+<li>role of secondary indicators as context</li>
+</ul>
+<h3 id="kept-private">Kept private</h3>
+<ul>
+<li>exact thresholds</li>
+<li>exact weightings</li>
+<li>exact aggregation rules</li>
+<li>exact thresholds and override rules</li>
+<li>calibration history</li>
+<li>private tie-break logic</li>
+</ul>
+<p>This boundary exists to preserve both credibility and defensibility. The public method should be clear enough for a user or partner to understand what kind of system BTC Helper is, what it is trying to improve, and where its limitations are. It should not be detailed enough to reconstruct the proprietary engine.</p>
+<hr>
+<h2 id="13-reading-the-output-as-an-individual">13. Reading the output as an individual</h2>
+<p>The most useful way to read BTC Helper is not as a command to buy or stop buying. It is a structured prompt for personal decision-making.</p>
+<p>A user should separate four questions:</p>
+<ol>
+<li><strong>Market posture:</strong> do current conditions look opportunity-rich, ordinary, mixed, or fragile?</li>
+<li><strong>Data quality:</strong> is the current read based on clean, fresh, coherent inputs, or are important inputs degraded?</li>
+<li><strong>Personal capacity:</strong> do cash flow, emergency reserves, portfolio concentration, and near-term obligations leave room for discretionary accumulation?</li>
+<li><strong>Behavioral discipline:</strong> is the user acting from a plan, or reacting emotionally to price movement, fear, or excitement?</li>
+</ol>
+<p>BTC Helper can help with the first two questions. It can remind users to ask the third and fourth. It cannot answer those personal questions for them.</p>
+<p>This is central to the product's purpose. The goal is not to make users dependent on an opaque signal. The goal is to help them think more clearly about when conditions are more favorable, more ordinary, more mixed, or too fragile to press.</p>
+<hr>
+<h2 id="14-why-this-product-exists">14. Why this product exists</h2>
+<p>BTC Helper exists because there is room between two unsatisfying extremes:</p>
+<ol>
+<li>simplistic retail heuristics that ignore market structure, and</li>
+<li>opaque signal products that ask for trust without explanation.</li>
+</ol>
+<p>A useful middle path is an accumulation-focused regime engine that explains its posture, distinguishes data quality from certainty, and remains honest when its own operating conditions degrade.</p>
+<p>In practical terms, BTC Helper is trying to improve on weak dip-buy logic rather than merely add more indicators for their own sake.</p>
+<p>A simple dip rule can react to short-term price movement, but it cannot reliably distinguish between:</p>
+<ul>
+<li>a genuinely attractive washout</li>
+<li>an ordinary baseline reset</li>
+<li>a mixed pullback that still deserves caution</li>
+<li>an overheated environment where buying more is not disciplined</li>
+</ul>
+<p>BTC Helper is trying to make those distinctions legible and actionable.</p>
+<p>That is the lane BTC Helper is trying to occupy: better accumulation policy with human-readable explanations and an explicit proprietary implementation boundary.</p>
+<hr>
+<h2 id="15-limitations">15. Limitations</h2>
+<p>BTC Helper still has meaningful limitations.</p>
+<ul>
+<li>It operates in a mixed-source environment.</li>
+<li>Some premium-quality on-chain metrics remain import-assisted or deferred.</li>
+<li>Validation is meaningful but still evolving.</li>
+<li>The system is not a substitute for judgment, risk tolerance, or broader portfolio context.</li>
+<li>Regime labels are posture categories, not personalized instructions.</li>
+<li>Public-facing outputs necessarily simplify deeper internal complexity.</li>
+<li>Public materials cannot disclose the proprietary rules needed to fully replicate the engine.</li>
+<li>Benchmarking and validation should continue to mature before any strong performance claim is made.</li>
+</ul>
+<p>These limitations are not incidental. They are part of the product reality that the beta should communicate clearly.</p>
+<hr>
+<h2 id="16-future-work">16. Future work</h2>
+<p>Several future directions remain open.</p>
+<h3 id="16-1-research-layer-expansion">16.1 Research-layer expansion</h3>
+<p>NUPL and Puell Multiple remain explicit candidates for deeper validation as secondary or confirmation indicators. They should remain on the research roadmap even if they stay outside the public-facing core model for now.</p>
+<h3 id="16-2-methodology-expansion">16.2 Methodology expansion</h3>
+<p>A future methodology appendix may describe validation design, domain roles, and use-case framing in greater depth.</p>
+<h3 id="16-3-product-evolution">16.3 Product evolution</h3>
+<p>BTC Helper may evolve from static beta surface toward a more robust web product, service-backed application, or partner-facing analytical tool.</p>
+<h3 id="16-4-institutional-and-partner-readiness">16.4 Institutional and partner readiness</h3>
+<p>If BTC Helper is ever expected to approach institutional-grade consumer products or partner discussions, the path will require stronger reliability, broader validation, tighter presentation, and continued clarity about what is public versus proprietary.</p>
+<p>That partner path may include products that currently rely on simplistic accumulation automation. In that context, BTC Helper's case would not be &quot;more complexity&quot; but &quot;better accumulation policy&quot;: an explainable regime layer that can sit on top of recurring-buy workflows and distinguish opportunity, baseline, caution, and pause more intelligently than a one-factor dip rule.</p>
+<hr>
+<h2 id="17-conclusion">17. Conclusion</h2>
+<p>BTC Helper is best understood not as a predictor, but as a disciplined and explainable Bitcoin accumulation regime engine.</p>
+<p>Its core claim is modest but meaningful: that a multi-domain, interpretable, validation-driven system can support more disciplined accumulation posture than isolated heuristics, while remaining honest about degraded conditions, mixed-source dependencies, and uncertainty. This is a product-methodology claim, not a public proof of outperformance.</p>
+<p>If BTC Helper succeeds, it will not be because it claimed to know the future. It will be because it helped users think more clearly about when Bitcoin conditions looked structurally attractive, mixed, stretched, or too fragile to chase.</p>
+    </section>
+  </main>
+  <footer class="site-footer" id="contact">
+    <div class="site-footer-inner">
+      <div class="footer-brand"><strong>BTC Helper</strong><p>A private Bitcoin accumulation plan, a source-aware daily action layer, and a public decision record.</p><p class="footer-note">Educational research tool only. Not financial advice, investment advice, or a recommendation to buy or sell any asset.</p></div>
+      <div><div class="footer-column-title">Product</div><div class="footer-links"><a href="./index.html#today">Today</a><a href="./planner.html">My Plan</a><a href="./insights.html">Insights</a><a href="./track.html">Track</a><a href="./updates.html">Updates</a></div></div>
+      <div><div class="footer-column-title">Research</div><div class="footer-links"><a href="./weekly-macro-thesis/">Weekly macro</a><a href="./documents-and-research.html">Research library</a><a href="./public-proof-of-work-methodology.html">Methodology</a><a href="./household-resilience-planner.html">Household resilience</a></div></div>
+      <div><div class="footer-column-title">Trust</div><div class="footer-links"><a href="./data-sources.html">Source health</a><a href="./about.html">About</a><a href="./privacy.html">Privacy</a><a href="./terms.html">Terms</a><a href="./contact.html">Contact</a><a href="https://x.com/btchelperapp">BTC Helper on X</a></div></div>
+    </div>
+  </footer>
+  <script>
+    const btcHelperThemeStorageKey = 'btcHelperTheme';
+    function setBtcHelperTheme(theme, persist = true) {
+      const next = theme === 'dark' ? 'dark' : 'light';
+      document.documentElement.dataset.theme = next;
+      if (persist) { try { localStorage.setItem(btcHelperThemeStorageKey, next); } catch {} }
+      const button = document.getElementById('theme-toggle');
+      if (button) {
+        button.innerHTML = next === 'dark' ? '<svg aria-hidden="true" class="theme-icon theme-icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2.8v3M12 18.2v3M4.8 4.8l2.1 2.1M17.1 17.1l2.1 2.1M2.8 12h3M18.2 12h3M4.8 19.2l2.1-2.1M17.1 6.9l2.1-2.1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="theme-toggle-label">Theme</span>' : '<svg aria-hidden="true" class="theme-icon theme-icon-moon" viewBox="0 0 24 24"><path d="M20.4 14.7A8.3 8.3 0 0 1 9.3 3.6 8.7 8.7 0 1 0 20.4 14.7Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="theme-toggle-label">Theme</span>';
+        button.setAttribute('aria-label', next === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+        button.setAttribute('title', next === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+      }
+    }
+    setBtcHelperTheme(document.documentElement.dataset.theme || 'light', false);
+    document.getElementById('theme-toggle')?.addEventListener('click', () => setBtcHelperTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'));
+    window.addEventListener('storage', (event) => { if (event.key === btcHelperThemeStorageKey && event.newValue) setBtcHelperTheme(event.newValue, false); });
+    document.querySelectorAll('.site-nav').forEach((nav) => {
+      const toggle = nav.querySelector('.menu-toggle');
+      const links = nav.querySelector('.nav-links');
+      if (!toggle || !links) return;
+      const label = toggle.querySelector('.menu-toggle-label-text');
+      const normalizePath = (href) => {
+        try {
+          const url = new URL(href, window.location.href);
+          return url.pathname.replace(/\/index\.html$/, '/');
+        } catch {
+          return '';
+        }
+      };
+      const currentPath = normalizePath(window.location.href);
+      links.querySelectorAll('a').forEach((link) => {
+        const linkPath = normalizePath(link.href);
+        if (linkPath === currentPath || (currentPath === '/' && linkPath === '/')) link.setAttribute('aria-current', 'page');
+      });
+      const setMenuOpen = (open, restoreFocus = false) => {
+        nav.classList.toggle('is-open', open);
+        toggle.setAttribute('aria-expanded', String(open));
+        if (label) label.textContent = open ? 'Close' : 'Menu';
+        if (!open && restoreFocus) toggle.focus();
+      };
+      toggle.addEventListener('click', () => setMenuOpen(!nav.classList.contains('is-open')));
+      links.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setMenuOpen(false)));
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && nav.classList.contains('is-open')) setMenuOpen(false, true);
+      });
+      document.addEventListener('click', (event) => {
+        if (nav.classList.contains('is-open') && !nav.contains(event.target)) setMenuOpen(false, true);
+      });
+    });
+  </script>
+</body>
+</html>

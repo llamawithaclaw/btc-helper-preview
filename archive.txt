@@ -1,0 +1,1254 @@
+BTC Helper Public Archive
+
+## 2026-08-12
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Normal
+- Source health: Reduced
+- Coverage: Limited
+- Run quality: Degraded
+- BTC: $63,732
+- Plan summary: Baseline continues; reserve stays held
+- Why: Valuation is favorable, but confirmation is not strong enough to deploy reserve aggressively.
+
+## 2026-08-11
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Normal
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $64,081
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Valuation is favorable, but confirmation is not strong enough to deploy reserve aggressively.
+
+## 2026-08-10
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Normal
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $65,202
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Valuation is favorable, but confirmation is not strong enough to deploy reserve aggressively.
+
+## 2026-08-09
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Normal
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $64,774
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Valuation is favorable, but confirmation is not strong enough to deploy reserve aggressively.
+
+## 2026-08-08
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Normal
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $64,955
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Valuation is favorable, but confirmation is not strong enough to deploy reserve aggressively.
+
+## 2026-08-07
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Normal
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $64,531
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Valuation is favorable, but confirmation is not strong enough to deploy reserve aggressively.
+
+## 2026-08-06
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $64,876
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Valuation is favorable, but holder stress or macro/flow friction argues for baseline-only selective accumulation.
+
+## 2026-08-05
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Reduced
+- Coverage: Limited
+- Run quality: Degraded
+- BTC: $64,102
+- Plan summary: Baseline continues; reserve stays held
+- Why: Valuation is favorable, but holder stress or macro/flow friction argues for baseline-only selective accumulation.
+
+## 2026-08-04
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $63,530
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Valuation is favorable, but holder stress or macro/flow friction argues for baseline-only selective accumulation.
+
+## 2026-08-03
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $62,466
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Valuation is favorable, but holder stress or macro/flow friction argues for baseline-only selective accumulation.
+
+## 2026-08-02
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $63,140
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Valuation is favorable, but holder stress or macro/flow friction argues for baseline-only selective accumulation.
+
+## 2026-08-01
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $63,084
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Valuation is favorable, but holder stress or macro/flow friction argues for baseline-only selective accumulation.
+
+## 2026-07-31
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $63,782
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Valuation is favorable, but holder stress or macro/flow friction argues for baseline-only selective accumulation.
+
+## 2026-07-30
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $64,234
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Valuation is favorable, but holder stress or macro/flow friction argues for baseline-only selective accumulation.
+
+## 2026-07-29
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Reduced
+- Coverage: Limited
+- Run quality: Degraded
+- BTC: $64,349
+- Plan summary: Baseline continues; reserve stays held
+- Why: Valuation is favorable, but holder stress or macro/flow friction argues for baseline-only selective accumulation.
+
+## 2026-07-28
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $63,353
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Valuation is favorable, but holder stress or macro/flow friction argues for baseline-only selective accumulation.
+
+## 2026-07-27
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Normal
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $65,128
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Valuation is favorable, but confirmation is not strong enough to deploy reserve aggressively.
+
+## 2026-07-26
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Normal
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $64,429
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Valuation is favorable, but confirmation is not strong enough to deploy reserve aggressively.
+
+## 2026-07-25
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Normal
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $63,817
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Valuation is favorable, but confirmation is not strong enough to deploy reserve aggressively.
+
+## 2026-07-24
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Normal
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $65,284
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Valuation is favorable, but confirmation is not strong enough to deploy reserve aggressively.
+
+## 2026-07-23
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Normal
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $65,597
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Valuation is favorable, but confirmation is not strong enough to deploy reserve aggressively.
+
+## 2026-07-22
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Normal
+- Source health: Reduced
+- Coverage: Limited
+- Run quality: Degraded
+- BTC: $65,926
+- Plan summary: Baseline continues; reserve stays held
+- Why: Valuation is favorable, but confirmation is not strong enough to deploy reserve aggressively.
+
+## 2026-07-21
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Normal
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $66,289
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Valuation is favorable, but confirmation is not strong enough to deploy reserve aggressively.
+
+## 2026-07-20
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $65,195
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Valuation is favorable, but holder stress or macro/flow friction argues for baseline-only selective accumulation.
+
+## 2026-07-19
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $64,651
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Valuation is favorable, but holder stress or macro/flow friction argues for baseline-only selective accumulation.
+
+## 2026-07-18
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Normal
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $63,944
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Valuation is favorable, but confirmation is not strong enough to deploy reserve aggressively.
+
+## 2026-07-17
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $62,850
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Valuation is favorable, but holder stress or macro/flow friction argues for baseline-only selective accumulation.
+
+## 2026-07-16
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $64,036
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Valuation is favorable, but holder stress or macro/flow friction argues for baseline-only selective accumulation.
+
+## 2026-07-15
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Reduced
+- Coverage: Limited
+- Run quality: Degraded
+- BTC: $64,719
+- Plan summary: Baseline continues; reserve stays held
+- Why: Valuation is favorable, but holder stress or macro/flow friction argues for baseline-only selective accumulation.
+
+## 2026-07-14
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Reduced
+- Coverage: Limited
+- Run quality: Degraded
+- BTC: $62,627
+- Plan summary: Baseline continues; reserve stays held
+- Why: Valuation is favorable, but holder stress or macro/flow friction argues for baseline-only selective accumulation.
+
+## 2026-07-13
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $61,969
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Valuation is favorable, but holder stress or macro/flow friction argues for baseline-only selective accumulation.
+
+## 2026-07-12
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $63,778
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Valuation is favorable, but holder stress or macro/flow friction argues for baseline-only selective accumulation.
+
+## 2026-07-04
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $62,527
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior remains under stress rather than showing clean recovery. Leverage conditions appear clean.
+
+## 2026-07-03
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Reduced
+- Coverage: Limited
+- Run quality: Degraded
+- BTC: $61,519
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior reflects active capitulation. Leverage conditions appear clean.
+
+## 2026-07-02
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $60,431
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior reflects active capitulation. Leverage conditions appear clean.
+
+## 2026-07-01
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Reduced
+- Coverage: Limited
+- Run quality: Degraded
+- BTC: $58,843
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior reflects active capitulation. Leverage conditions appear clean.
+
+## 2026-06-30
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Reduced
+- Coverage: Limited
+- Run quality: Degraded
+- BTC: $59,219
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior reflects active capitulation. Leverage conditions appear clean.
+
+## 2026-06-29
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Reduced
+- Coverage: Limited
+- Run quality: Degraded
+- BTC: $59,767
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior reflects active capitulation. Leverage conditions appear clean.
+
+## 2026-06-28
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Reduced
+- Coverage: Limited
+- Run quality: Degraded
+- BTC: $60,298
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior reflects active capitulation. Leverage conditions appear clean.
+
+## 2026-06-27
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $60,376
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior reflects active capitulation. Leverage conditions appear clean.
+
+## 2026-06-26
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $60,152
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior reflects active capitulation. Leverage conditions appear clean.
+
+## 2026-06-25
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $61,607
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior reflects active capitulation. Leverage conditions appear clean.
+
+## 2026-06-24
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $62,716
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior reflects active capitulation. Leverage conditions appear clean.
+
+## 2026-06-23
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Reduced
+- Coverage: Limited
+- Run quality: Degraded
+- BTC: $62,334
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior remains under stress rather than showing clean recovery. Leverage conditions appear clean.
+
+## 2026-06-22
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Reduced
+- Coverage: Limited
+- Run quality: Degraded
+- BTC: $64,086
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior remains under stress rather than showing clean recovery. Leverage conditions appear clean.
+
+## 2026-06-21
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $63,918
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior remains under stress rather than showing clean recovery. Leverage conditions appear clean.
+
+## 2026-06-20
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $63,356
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior reflects active capitulation. Leverage conditions appear clean.
+
+## 2026-06-19
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $62,528
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior reflects active capitulation. Leverage conditions appear clean.
+
+## 2026-06-18
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $64,353
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior reflects active capitulation. Leverage conditions appear clean.
+
+## 2026-06-17
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $64,900
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior remains under stress rather than showing clean recovery. Leverage conditions appear clean.
+
+## 2026-06-16
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Reduced
+- Coverage: Limited
+- Run quality: Degraded
+- BTC: $66,895
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior remains under stress rather than showing clean recovery. Leverage conditions appear clean.
+
+## 2026-06-15
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Reduced
+- Coverage: Limited
+- Run quality: Degraded
+- BTC: $65,647
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior remains under stress rather than showing clean recovery. Leverage conditions appear clean.
+
+## 2026-06-14
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $64,433
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Leverage conditions appear clean. Flows are weak or deteriorating.
+
+## 2026-06-13
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $63,780
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior reflects active capitulation. Leverage conditions appear clean.
+
+## 2026-06-12
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $63,393
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior reflects active capitulation. Leverage conditions appear clean.
+
+## 2026-06-11
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $62,860
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior reflects active capitulation. Leverage conditions appear clean.
+
+## 2026-06-10
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Reduced
+- Coverage: Limited
+- Run quality: Degraded
+- BTC: $61,217
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior reflects active capitulation. Leverage conditions appear clean.
+
+## 2026-06-09
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Reduced
+- Coverage: Limited
+- Run quality: Degraded
+- BTC: $62,824
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior reflects active capitulation. Leverage conditions appear clean.
+
+## 2026-06-08
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Reduced
+- Coverage: Limited
+- Run quality: Degraded
+- BTC: $63,089
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior reflects active capitulation. Leverage conditions appear clean.
+
+## 2026-06-07
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $62,800
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior reflects active capitulation. Leverage conditions appear clean.
+
+## 2026-06-06
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $61,324
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior reflects active capitulation. Leverage conditions appear clean.
+
+## 2026-06-05
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $62,388
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior reflects active capitulation. Leverage conditions appear clean.
+
+## 2026-06-04
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $63,567
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior reflects active capitulation. Leverage conditions appear clean.
+
+## 2026-06-03
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $66,941
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior reflects active capitulation. Leverage conditions appear clean.
+
+## 2026-06-02
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $67,074
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior reflects active capitulation. Leverage conditions appear clean.
+
+## 2026-06-01
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Reduced
+- Coverage: Limited
+- Run quality: Degraded
+- BTC: $72,806
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior remains under stress rather than showing clean recovery. Leverage conditions appear clean.
+
+## 2026-05-31
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $73,836
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior remains under stress rather than showing clean recovery. Leverage conditions appear clean.
+
+## 2026-05-30
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $73,424
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior remains under stress rather than showing clean recovery. Leverage conditions appear clean.
+
+## 2026-05-29
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $73,540
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior remains under stress rather than showing clean recovery. Leverage conditions appear clean.
+
+## 2026-05-28
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $73,200
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior remains under stress rather than showing clean recovery. Leverage conditions appear clean.
+
+## 2026-05-27
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $75,755
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior remains under stress rather than showing clean recovery. Leverage conditions appear clean.
+
+## 2026-05-26
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Reduced
+- Coverage: Limited
+- Run quality: Degraded
+- BTC: $76,667
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior remains under stress rather than showing clean recovery. Leverage conditions appear clean.
+
+## 2026-05-25
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Reduced
+- Coverage: Limited
+- Run quality: Degraded
+- BTC: $77,352
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior remains under stress rather than showing clean recovery. Leverage conditions appear clean.
+
+## 2026-05-24
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $76,726
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior remains under stress rather than showing clean recovery. Leverage conditions appear clean.
+
+## 2026-05-23
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $74,589
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior remains under stress rather than showing clean recovery. Leverage conditions appear clean.
+
+## 2026-05-22
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $75,841
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior remains under stress rather than showing clean recovery. Leverage conditions appear clean.
+
+## 2026-05-21
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $77,858
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior remains under stress rather than showing clean recovery. Leverage conditions appear clean.
+
+## 2026-05-20
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $77,384
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior remains under stress rather than showing clean recovery. Leverage conditions appear clean.
+
+## 2026-05-19
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $76,820
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior remains under stress rather than showing clean recovery. Leverage conditions appear clean.
+
+## 2026-05-18
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Reduced
+- Coverage: Limited
+- Run quality: Degraded
+- BTC: $76,981
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior remains under stress rather than showing clean recovery. Leverage conditions appear clean.
+
+## 2026-05-17
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $78,052
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior appears reset / near break-even. Leverage conditions appear clean.
+
+## 2026-05-16
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $78,181
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior appears reset / near break-even. Leverage conditions appear clean.
+
+## 2026-05-15
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $79,142
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior appears reset / near break-even. Leverage conditions appear clean.
+
+## 2026-05-14
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Normal
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $81,216
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions appear broadly neutral. Valuation appears discounted but mixed. Short-term holder behavior appears reset / near break-even. Leverage conditions appear clean.
+
+## 2026-05-13
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Normal
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $79,257
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions appear broadly neutral. Valuation appears discounted but mixed. Short-term holder behavior appears reset / near break-even. Leverage conditions appear clean.
+
+## 2026-05-12
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Normal
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $80,666
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions appear broadly neutral. Valuation appears discounted but mixed. Short-term holder behavior appears reset / near break-even. Leverage conditions appear clean.
+
+## 2026-05-11
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Normal
+- Source health: Reduced
+- Coverage: Limited
+- Run quality: Degraded
+- BTC: $80,756
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions appear broadly neutral. Valuation appears discounted but mixed. Short-term holder behavior appears reset / near break-even. Leverage conditions appear clean.
+
+## 2026-05-10
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Normal
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $80,808
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions appear broadly neutral. Valuation appears discounted but mixed. Short-term holder behavior appears reset / near break-even. Leverage conditions appear clean.
+
+## 2026-05-09
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Normal
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $80,396
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions appear broadly neutral. Valuation appears discounted but mixed. Short-term holder behavior appears reset / near break-even. Leverage conditions appear clean.
+
+## 2026-05-08
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Normal
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $79,901
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions appear broadly neutral. Valuation appears discounted but mixed. Short-term holder behavior appears reset / near break-even. Leverage conditions appear clean.
+
+## 2026-05-07
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Normal
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $80,209
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions appear broadly neutral. Valuation appears discounted but mixed. Short-term holder behavior appears reset / near break-even. Leverage conditions appear clean.
+
+## 2026-05-06
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Normal
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $81,807
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions appear broadly neutral. Valuation appears discounted but mixed. Short-term holder behavior appears reset / near break-even. Leverage conditions appear clean.
+
+## 2026-05-05
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Normal
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $81,357
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions appear broadly neutral. Valuation appears discounted but mixed. Short-term holder behavior appears reset / near break-even. Leverage conditions appear clean.
+
+## 2026-05-04
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Normal
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $79,900
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions appear broadly neutral. Valuation appears discounted but mixed. Short-term holder behavior appears reset / near break-even. Leverage conditions appear clean.
+
+## 2026-05-03
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Normal
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $78,715
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions appear broadly neutral. Valuation appears discounted but mixed. Short-term holder behavior appears reset / near break-even. Leverage conditions appear clean.
+
+## 2026-05-02
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Normal
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $78,324
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions appear broadly neutral. Valuation appears discounted but mixed. Short-term holder behavior appears reset / near break-even. Leverage conditions appear clean.
+
+## 2026-05-01
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Reduced
+- Coverage: Limited
+- Run quality: Degraded
+- BTC: $77,930
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior remains under stress rather than showing clean recovery. Leverage conditions appear clean.
+
+## 2026-04-30
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $76,301
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior remains under stress rather than showing clean recovery. Leverage conditions appear clean.
+
+## 2026-04-29
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Moderate
+- Coverage: Usable
+- Run quality: Live
+- BTC: $75,864
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior remains under stress rather than showing clean recovery. Leverage conditions appear clean.
+
+## 2026-04-28
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Reduced
+- Coverage: Limited
+- Run quality: Degraded
+- BTC: $76,251
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior remains under stress rather than showing clean recovery. Leverage conditions appear clean.
+
+## 2026-04-27
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Normal
+- Source health: Reduced
+- Coverage: Limited
+- Run quality: Degraded
+- BTC: $77,669
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions appear broadly neutral. Valuation appears discounted but mixed. Short-term holder behavior appears reset / near break-even. Leverage conditions appear clean.
+
+## 2026-04-25
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Reduced
+- Coverage: Limited
+- Run quality: Degraded
+- BTC: $77,601
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior remains under stress rather than showing clean recovery. Leverage conditions appear clean.
+
+## 2026-04-24
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Reduced
+- Coverage: Limited
+- Run quality: Degraded
+- BTC: $78,200
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior remains under stress rather than showing clean recovery. Leverage conditions appear clean.
+
+## 2026-04-23
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Reduced
+- Coverage: Limited
+- Run quality: Degraded
+- BTC: $77,770
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior remains under stress rather than showing clean recovery. Leverage conditions appear clean.
+
+## 2026-04-22
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: High
+- Coverage: Usable
+- Run quality: Live
+- BTC: $78,242
+- Since inception vs baseline DCA: 0%
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior remains under stress rather than showing clean recovery. Leverage conditions appear clean.
+
+## 2026-04-21
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Reduced
+- Coverage: Limited
+- Run quality: Degraded
+- BTC: $75,842
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior remains under stress rather than showing clean recovery. Leverage conditions appear clean.
+
+## 2026-04-20
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Cautious
+- Source health: Reduced
+- Coverage: Limited
+- Run quality: Degraded
+- BTC: $75,970
+- Plan summary: Baseline continues; reserve stays held
+- Why: Conditions justify restraint. Valuation appears discounted but mixed. Short-term holder behavior reflects stress/capitulation. Leverage conditions appear clean.

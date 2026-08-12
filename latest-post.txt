@@ -1,0 +1,10 @@
+BTC Helper, 2026-08-12
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Normal
+- Source health: Reduced
+- Coverage: Limited
+- Run quality: Degraded
+- BTC: $63,732
+- Plan summary: Baseline continues; reserve stays held
+- Why: Valuation is favorable, but confirmation is not strong enough to deploy reserve aggressively.

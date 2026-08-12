@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BTC Helper Post Card</title>
+  <style>
+    body { margin: 0; font-family: "Noto Sans", "Segoe UI", Roboto, system-ui, sans-serif; background: #0d100f; color: #f3f0e8; }
+    .card {
+      width: 1200px;
+      height: 630px;
+      padding: 34px 42px 30px;
+      box-sizing: border-box;
+      background: linear-gradient(135deg, #0d100f 0%, #151816 58%, #111313 100%);
+      border: 1px solid rgba(255,255,255,0.09);
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 18px;
+    }
+    .top { display: flex; justify-content: space-between; gap: 28px; align-items: start; }
+    .brand { font-size: 25px; font-weight: 900; letter-spacing: -0.02em; }
+    .tag { color: #a5aca6; font-size: 18px; margin-top: 4px; }
+    .date { color: #a5aca6; font-size: 20px; font-weight: 700; }
+    .hero { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 34px; align-items: center; }
+    .posture-label { color: #c3a36e; font-size: 19px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.09em; margin-bottom: 12px; }
+    .action { font-size: 64px; line-height: 0.98; font-weight: 950; letter-spacing: -0.045em; color: #f8fafc; max-width: 650px; }
+    .status-line { display: inline-block; margin-top: 18px; color: #c3a36e; font-size: 22px; font-weight: 850; }
+    .plan-box { display: grid; gap: 24px; border-top: 1px solid rgba(255,255,255,0.12); border-bottom: 1px solid rgba(255,255,255,0.12); padding: 26px 0; }
+    .track-row { display: grid; grid-template-columns: 150px 1fr; gap: 18px; align-items: center; }
+    .track-label { display: grid; gap: 4px; }
+    .metric-label { color: #a5aca6; text-transform: uppercase; letter-spacing: 0.07em; font-size: 15px; font-weight: 850; }
+    .metric-value { font-size: 28px; line-height: 1.08; font-weight: 900; color: #f3f2e8; }
+    .track-line { position: relative; height: 16px; }
+    .track-line::before { content: ''; position: absolute; left: 0; right: 0; top: 50%; transform: translateY(-50%); border-radius: 999px; }
+    .baseline-line::before { height: 5px; background: rgba(243,240,232,0.78); }
+    .reserve-line::before { border-top: 4px dashed #f59a3a; }
+    .reserve-line span { position: absolute; left: 58%; top: 50%; width: 16px; height: 16px; border-radius: 999px; background: #f59a3a; transform: translate(-50%, -50%); box-shadow: 0 0 0 4px rgba(245,154,58,0.18); }
+    .source-row { display: flex; justify-content: space-between; gap: 20px; color: #a5aca6; font-size: 20px; font-weight: 750; }
+    .source-row strong { color: #f3f0e8; }
+    .why { border-left: 5px solid #c3a36e; background: rgba(255,255,255,0.06); border-radius: 12px; padding: 14px 18px; font-size: 21px; line-height: 1.22; color: #f3f2e8; max-height: 84px; overflow: hidden; }
+    .footer { display: flex; justify-content: space-between; align-items: center; color: #a5aca6; font-size: 18px; }
+    .footer strong { color: #f8fafc; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="top">
+      <div><div class="brand">BTC Helper</div><div class="tag">Today's public decision record</div></div>
+      <div class="date">2026-08-12</div>
+    </div>
+    <div class="hero">
+      <div>
+        <div class="posture-label">Scheduled plan unchanged</div>
+        <div class="action">Continue baseline. Hold reserve.</div>
+        <div class="status-line">Normal context · Reduced source health</div>
+      </div>
+      <div class="plan-box">
+        <div class="track-row">
+          <div class="track-label"><div class="metric-label">Baseline</div><div class="metric-value">Continue</div></div>
+          <div class="track-line baseline-line" aria-hidden="true"></div>
+        </div>
+        <div class="track-row">
+          <div class="track-label"><div class="metric-label">Reserve</div><div class="metric-value">Hold</div></div>
+          <div class="track-line reserve-line" aria-hidden="true"><span></span></div>
+        </div>
+        <div class="source-row"><span>Coverage <strong>Limited</strong></span><span>BTC ref <strong>$63,732</strong></span></div>
+      </div>
+    </div>
+    <div>
+      <div class="why">Valuation is favorable, but confirmation is not strong enough to deploy reserve aggressively.</div>
+      <div class="footer"><span><strong>Public proof-of-work</strong> · not price prediction</span><span>Limited coverage shown explicitly</span></div>
+    </div>
+  </div>
+</body>
+</html>

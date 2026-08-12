@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Economic Strain and Health Burden in U.S. States</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/btc-helper-logo.svg">
+  <meta name="theme-color" content="#111313">
+  <script>
+    try {
+      const savedTheme = localStorage.getItem('btcHelperTheme');
+      document.documentElement.dataset.theme = savedTheme === 'light' ? 'light' : 'dark';
+    } catch {
+      document.documentElement.dataset.theme = 'dark';
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root { color-scheme: light; --bg:#f5f1e9; --card:#fffdf8; --card-soft:#f0ebe1; --ink:#171a18; --muted:#6e746f; --line:#dcd6cb; --accent:#526b83; --accent-blue:#2563eb; --accent-soft:rgba(82,107,131,.10); --brand-navy:#111313; --brand-panel:#181a19; --brand-gold:#ad5617; --brand-warn:#ad5617; --hero-ink:#f3f0e8; --hero-muted:#a5aca6; --secondary-bg:rgba(82,107,131,.10); --secondary-ink:#26394a; --secondary-border:rgba(82,107,131,.28); --dark-card-bg:linear-gradient(135deg,#0d100f,#151816); --dark-card-ink:#f3f0e8; --dark-card-muted:#a5aca6; }
+    :root[data-theme="dark"] { color-scheme: dark; --bg:#0d100f; --card:#151816; --card-soft:#1b201d; --ink:#f3f0e8; --muted:#a5aca6; --line:rgba(255,255,255,.09); --accent:#91a99a; --accent-blue:#bfdbfe; --accent-soft:rgba(145,169,154,.12); --brand-navy:#111313; --brand-panel:#181a19; --brand-gold:#f59a3a; --brand-warn:#c3a36e; --hero-ink:#f3f0e8; --hero-muted:#a5aca6; --secondary-bg:rgba(242,237,214,.08); --secondary-ink:#f3f0e8; --secondary-border:rgba(242,237,214,.18); --dark-card-bg:linear-gradient(135deg,#0d100f,#151816); --dark-card-ink:#f3f0e8; --dark-card-muted:#a5aca6; }
+    html { font-synthesis:none; }
+    body, button, input, select, textarea, summary { font-family:"Noto Sans", "Segoe UI", Roboto, system-ui, sans-serif; }
+    button, input, select, textarea, summary { font:inherit; }
+    code, pre, .machine-record { font-family:"JetBrains Mono", ui-monospace, SFMono-Regular, Consolas, monospace; }
+    .numeric, .price, .percentage, .timestamp { font-variant-numeric:tabular-nums; }
+    .skip-link { position:absolute; left:16px; top:-52px; z-index:1000; border-radius:999px; padding:10px 14px; background:#f2edd6; color:#0d120f; font-weight:950; text-decoration:none; box-shadow:0 12px 28px rgba(0,0,0,.22); }
+    .skip-link:focus { top:14px; outline:3px solid color-mix(in srgb,var(--accent-blue) 58%,transparent); }
+    .theme-toggle { position:fixed; top:16px; right:16px; z-index:20; width:40px; height:40px; display:flex; align-items:center; justify-content:center; padding:0; border-radius:999px; border:1px solid var(--line); background:color-mix(in srgb,var(--card) 88%,transparent); color:var(--ink); box-shadow:0 12px 28px rgba(0,0,0,.16); font:900 1.05rem/1 "Noto Sans", "Segoe UI Symbol", system-ui, sans-serif; cursor:pointer; }
+    .theme-toggle:hover, .theme-toggle:focus { border-color:color-mix(in srgb,var(--accent) 45%,var(--line)); background:var(--accent-soft); outline:none; }
+    .theme-toggle .theme-icon { display:block; margin:0; }
+    .theme-toggle .theme-icon-sun, .theme-toggle .theme-icon-moon { width:22px; height:22px; }
+    * { box-sizing: border-box; }
+
+    .site-nav { position:sticky; top:0; z-index:50; backdrop-filter:blur(16px); background:color-mix(in srgb,var(--bg) 92%,transparent); border-bottom:1px solid color-mix(in srgb,var(--line) 80%,transparent); box-shadow:0 10px 30px rgba(0,0,0,.10); }
+    .site-nav-inner { max-width:1120px; margin:0 auto; padding:10px 20px; display:grid; grid-template-columns:auto 1fr; align-items:center; gap:16px; min-height:62px; }
+    .brand-lockup { display:inline-flex; align-items:center; gap:10px; min-width:fit-content; color:var(--ink); text-decoration:none; }
+    .brand-mark { width:34px; height:34px; border-radius:10px; display:inline-flex; align-items:center; justify-content:center; background:linear-gradient(135deg,#111313,#181a19); border:1px solid color-mix(in srgb,var(--accent) 44%,#34362d); box-shadow:0 8px 18px rgba(15,23,42,.16); overflow:hidden; }
+    .brand-mark svg, .brand-mark img { width:30px; height:30px; display:block; }
+    .brand-mark .mark-cradle, .brand-mark .mark-rail { stroke:var(--accent); } .brand-mark .mark-signal { stroke:#f3f2e8; } .brand-mark .mark-reserve-dot { fill:#f59a3a; }
+    .brand-text strong { display:block; font-size:.82rem; letter-spacing:.12em; text-transform:uppercase; line-height:1.05; }
+    .brand-text span { display:block; color:var(--muted); font-size:.72rem; margin-top:1px; }
+    .nav-links { display:flex; align-items:center; gap:4px; flex-wrap:wrap; justify-content:flex-end; }
+    .nav-links a, .theme-toggle, .menu-toggle { position:static; box-shadow:none; display:inline-flex; align-items:center; justify-content:center; border:1px solid transparent; border-radius:999px; padding:7px 9px; min-height:36px; min-width:36px; color:var(--muted); background:transparent; text-decoration:none; font:inherit; font-size:.82rem; font-weight:850; cursor:pointer; }
+    .nav-links a:hover, .nav-links a:focus, .theme-toggle:hover, .theme-toggle:focus, .menu-toggle:hover, .menu-toggle:focus { color:var(--ink); background:var(--accent-soft); border-color:color-mix(in srgb,var(--accent) 24%,var(--line)); outline:none; }
+    .nav-links a[aria-current="page"] { color:var(--ink); background:var(--accent-soft); border-color:color-mix(in srgb,var(--accent) 28%,var(--line)); }
+    .nav-links a.nav-cta { color:color-mix(in srgb,var(--ink) 82%,var(--muted)); border-color:color-mix(in srgb,var(--accent) 22%,var(--line)); background:color-mix(in srgb,var(--card) 70%,transparent); padding-inline:12px; }
+    .nav-links a.nav-cta:hover, .nav-links a.nav-cta:focus { color:var(--ink); background:var(--accent-soft); }
+    .menu-toggle { display:none; gap:7px; padding-inline:11px; color:var(--ink); border-color:var(--line); background:color-mix(in srgb,var(--card) 72%,transparent); }
+    .menu-toggle-bars { width:15px; height:10px; position:relative; display:inline-block; border-top:2px solid currentColor; border-bottom:2px solid currentColor; }
+    .menu-toggle-bars::after { content:''; position:absolute; left:0; right:0; top:3px; border-top:2px solid currentColor; }
+    .theme-toggle { width:36px; height:36px; padding:0; }
+    .site-footer { max-width:1120px; margin:0 auto; padding:30px 20px 48px; color:var(--muted); }
+    .site-footer-inner { border:1px solid var(--line); border-radius:24px; padding:24px; display:grid; grid-template-columns:minmax(0,1.2fr) repeat(3,minmax(150px,.55fr)); gap:22px; background:linear-gradient(135deg,color-mix(in srgb,var(--card) 94%,transparent),color-mix(in srgb,var(--accent-soft) 36%,var(--card))); box-shadow:0 16px 44px rgba(0,0,0,.10); }
+    .footer-brand strong { display:block; color:var(--ink); letter-spacing:.08em; text-transform:uppercase; font-size:.86rem; }
+    .footer-brand p, .footer-note { margin:.45rem 0 0; color:var(--muted); font-size:.9rem; }
+    .footer-column-title { color:var(--ink); font-weight:900; margin-bottom:10px; font-size:.86rem; display:flex; align-items:center; gap:8px; }
+    .footer-icon { width:22px; height:22px; border-radius:8px; display:inline-flex; align-items:center; justify-content:center; background:var(--accent-soft); color:var(--ink); border:1px solid var(--line); font-size:.82rem; line-height:1; }
+    .footer-links { display:grid; gap:7px; }
+    .footer-links a { color:var(--muted); text-decoration:none; font-weight:760; font-size:.9rem; display:inline-flex; align-items:center; gap:7px; }
+    .footer-links a .link-icon { color:var(--accent); font-size:.86rem; width:1.1em; text-align:center; }
+    .footer-links a:hover, .footer-links a:focus { color:var(--ink); text-decoration:underline; outline:none; }
+    .breadcrumb { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin:0 0 16px; color:var(--muted); font-size:.78rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+    .breadcrumb a { color:var(--accent-blue); text-decoration:none; }
+    .breadcrumb a:hover, .breadcrumb a:focus { color:var(--ink); text-decoration:underline; outline:none; }
+    .breadcrumb span { min-width:0; }
+    @media (max-width:860px) {
+      .site-nav-inner { grid-template-columns:1fr auto; gap:10px; min-height:56px; padding:9px 14px; }
+      .menu-toggle { display:inline-flex; }
+      .nav-links { display:none; grid-column:1 / -1; width:100%; grid-template-columns:1fr 1fr; gap:8px; padding:8px 0 4px; border-top:1px solid var(--line); }
+      .site-nav.is-open .nav-links { display:grid; }
+      .nav-links a, .theme-toggle { justify-content:flex-start; width:100%; border-color:var(--line); background:color-mix(in srgb,var(--card) 74%,transparent); padding:9px 10px; }
+      .theme-toggle { justify-content:center; }
+      .brand-text span { display:none; }
+      .site-footer-inner { grid-template-columns:1fr 1fr; padding:20px; }
+      .footer-brand { grid-column:1 / -1; }
+    }
+    @media (max-width:560px) {
+      .site-nav-inner { padding:8px 12px; }
+      .brand-mark { width:32px; height:32px; }
+      .brand-mark svg, .brand-mark img { width:28px; height:28px; }
+      .brand-text strong { font-size:.78rem; }
+      .menu-toggle { min-height:34px; padding:6px 10px; font-size:.8rem; }
+      .site-footer-inner { grid-template-columns:1fr; border-radius:20px; }
+    }
+
+    .menu-toggle { gap:8px; min-height:34px; padding:7px 11px; border-radius:999px; font-weight:900; }
+    .menu-toggle-icon { width:16px; height:14px; position:relative; display:inline-block; flex:0 0 auto; }
+    .menu-toggle-icon span { position:absolute; left:0; right:0; height:2px; border-radius:999px; background:currentColor; display:block; transform-origin:center; transition:top .16s ease, transform .16s ease, opacity .16s ease; }
+    .menu-toggle-icon span:nth-child(1) { top:1px; }
+    .menu-toggle-icon span:nth-child(2) { top:6px; }
+    .menu-toggle-icon span:nth-child(3) { top:11px; }
+    .site-nav.is-open .menu-toggle-icon span:nth-child(1) { top:6px; transform:rotate(45deg); }
+    .site-nav.is-open .menu-toggle-icon span:nth-child(2) { opacity:0; }
+    .site-nav.is-open .menu-toggle-icon span:nth-child(3) { top:6px; transform:rotate(-45deg); }
+    .theme-toggle { gap:8px; }
+    .theme-toggle .theme-icon { margin:0; }
+    .theme-toggle-label { display:none; font-size:.83rem; font-weight:900; }
+    .footer-icon, .footer-links a .link-icon { display:none; }
+    .footer-column-title { gap:0; letter-spacing:.09em; text-transform:uppercase; font-size:.75rem; color:var(--muted); }
+    .footer-links { gap:6px; }
+    .footer-links a { gap:0; color:color-mix(in srgb,var(--ink) 78%,var(--muted)); }
+    @media (max-width:860px) {
+      .site-nav-inner { gap:8px; min-height:54px; padding:8px 14px; }
+      .nav-links { grid-template-columns:repeat(2,minmax(0,1fr)); gap:6px; margin:6px 0 2px; padding:7px; border:1px solid var(--line); border-radius:16px; background:color-mix(in srgb,var(--card) 92%,transparent); box-shadow:0 18px 44px rgba(0,0,0,.16); }
+      .site-nav.is-open .nav-links { display:grid; }
+      .nav-links a, .theme-toggle { width:100%; min-height:36px; justify-content:flex-start; gap:8px; padding:8px 10px; border:0; border-radius:12px; background:transparent; color:var(--ink); }
+      .nav-links a:hover, .nav-links a:focus, .theme-toggle:hover, .theme-toggle:focus { background:var(--accent-soft); border-color:transparent; text-decoration:none; }
+      .theme-toggle { height:auto; grid-column:1 / -1; }
+      .theme-toggle-label { display:inline; }
+      .menu-toggle-label-text { min-width:36px; text-align:left; }
+      .theme-toggle .theme-icon { flex:0 0 auto; }
+      .site-footer { padding-top:24px; }
+      .site-footer-inner { grid-template-columns:1fr; gap:18px; padding:20px; }
+      .footer-brand { grid-column:auto; }
+    }
+    @media (max-width:560px) {
+      .site-footer-inner { border-radius:18px; padding:18px; }
+    }
+    @media (max-width:340px) { .nav-links { grid-template-columns:1fr; } .theme-toggle { grid-column:auto; } }
+
+    html { scroll-behavior:smooth; }
+    body { margin:0; font-family: "Noto Sans", "Segoe UI", Roboto, system-ui, sans-serif; background:radial-gradient(circle at 20% -10%, color-mix(in srgb,var(--accent) 8%,transparent), transparent 32%), radial-gradient(circle at 90% 10%, rgba(251,191,36,.07), transparent 30%), var(--bg); color:var(--ink); line-height:1.62; }
+    main { max-width: 980px; margin:0 auto; padding:32px 20px 64px; }
+    .back-link { display:inline-block; margin-bottom:18px; color:var(--accent-blue); text-decoration:none; font-weight:800; font-family:'JetBrains Mono', ui-monospace, monospace; letter-spacing:.08em; text-transform:uppercase; font-size:.76rem; }
+    .back-link:hover { text-decoration:underline; }
+    .hero, .card { background:var(--card); border:1px solid var(--line); border-radius:22px; padding:28px; box-shadow:0 16px 44px rgba(0,0,0,.30); margin-bottom:18px; }
+    .hero { background:radial-gradient(circle at 84% 18%, rgba(251,191,36,.07), transparent 28%), radial-gradient(circle at 78% 74%, color-mix(in srgb,var(--accent) 10%, transparent), transparent 32%), linear-gradient(135deg,#0b0d0d,#171a1a 58%,#111313); border-color:color-mix(in srgb,var(--accent) 28%,#050704); color:var(--hero-ink); }
+    .eyebrow { color:var(--accent-blue); font-family:'JetBrains Mono', ui-monospace, monospace; font-weight:900; letter-spacing:.12em; text-transform:uppercase; font-size:.76rem; margin-bottom:10px; }
+    h1, h2, h3, h4, p { margin-top:0; }
+    h1 { letter-spacing:-.035em; line-height:1.08; margin-bottom:10px; font-size:clamp(2rem,4vw,3.1rem); }
+    h2 { margin-top:34px; margin-bottom:10px; font-size:1.45rem; letter-spacing:-.015em; }
+    h3 { margin-top:24px; margin-bottom:8px; font-size:1.1rem; }
+    h4 { margin-top:18px; margin-bottom:6px; }
+    .subtitle, .small, figcaption { color:var(--muted); }
+    .doc-byline { color:var(--hero-ink); font-weight:800; margin:8px 0 0; }
+    .hero .subtitle { color:var(--hero-muted); }
+    .actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:18px; }
+    .button { display:inline-flex; align-items:center; gap:8px; border:1px solid var(--brand-gold); background:var(--brand-gold); color:#0d120f; text-decoration:none; border-radius:999px; padding:10px 14px; font-weight:900; }
+    .button.secondary { background:var(--secondary-bg); color:var(--secondary-ink); border-color:var(--secondary-border); }
+    .hero .button.secondary, .doc-card .button.secondary { background:rgba(242,237,214,.10); color:#f2edd6; border-color:rgba(242,237,214,.25); }
+    .note { border-left:4px solid var(--accent); background:var(--accent-soft); padding:12px 14px; border-radius:12px; color:var(--ink); }
+    .toc { display:grid; gap:4px; margin-top:18px; padding:14px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14); border-radius:14px; }
+    .toc-title { font-weight:900; margin-bottom:4px; color:var(--hero-ink); }
+    .toc a { color:var(--accent-blue); text-decoration:none; }
+    .toc a:hover { text-decoration:underline; }
+    .toc-3 { padding-left:14px; font-size:.94rem; }
+    .doc-body > h1:first-child, .doc-body > h2:first-child { margin-top:0; }
+    ul, ol { margin:8px 0 16px 22px; padding:0; }
+    li { margin:5px 0; }
+    blockquote { border-left:4px solid var(--accent); margin:16px 0; padding:12px 16px; background:rgba(138,160,173,.12); border-radius:12px; color:var(--ink); }
+    code { background:rgba(255,255,255,.08); padding:2px 6px; border-radius:6px; color:var(--secondary-ink); }
+    hr { border:0; border-top:1px solid var(--line); margin:24px 0; }
+    .table-wrap { overflow-x:auto; margin:14px 0 20px; border:1px solid var(--line); border-radius:14px; }
+    table { border-collapse:collapse; min-width:100%; font-size:.92rem; background:var(--card); }
+    th, td { border-bottom:1px solid var(--line); padding:9px 10px; text-align:left; vertical-align:top; }
+    th { background:#151615; font-weight:900; color:var(--hero-ink); }
+    tr:last-child td { border-bottom:0; }
+    figure { margin:22px 0; }
+    figure img { max-width:100%; display:block; border:1px solid var(--line); border-radius:14px; background:white; }
+    figcaption { font-size:.92rem; margin-top:8px; }
+    .doc-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; margin-top:18px; }
+    .doc-card { display:block; color:inherit; text-decoration:none; border:1px solid var(--line); border-radius:18px; padding:18px; background:var(--dark-card-bg); }
+    .doc-card:hover, .doc-card:focus { border-color:var(--accent); outline:none; }
+    .doc-title { font-weight:900; color:var(--hero-ink); margin-bottom:6px; }
+    .doc-meta { color:var(--dark-card-muted); font-size:.92rem; }
+    @media print { body { background:#fff; color:#111827; } main { max-width:none; padding:0; } .back-link, .actions, .toc { display:none; } .hero, .card { box-shadow:none; border:0; padding:0; background:#fff; color:#111827; } h2, h3 { break-after:avoid; } figure, table { break-inside:avoid; } }
+
+  </style>
+</head>
+<body>
+  <nav class="site-nav" aria-label="BTC Helper site navigation">
+    <div class="site-nav-inner">
+      <a class="brand-lockup" href="/index.html" aria-label="BTC Helper home">
+        <span class="brand-mark"><svg viewBox="0 0 256 256" aria-hidden="true" focusable="false">
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path class="mark-cradle" d="M68 92c-16 23-17 58-1 84 17 28 49 43 81 34 29-8 51-33 55-64 3-20-2-39-15-54" stroke-width="12"></path>
+    <path class="mark-rail" d="M86 96v82M170 96v82" stroke-width="10" opacity="0.92"></path>
+    <path class="mark-signal" d="M96 118v34M108 84v58M126 60v106M144 72v80M162 94v36" stroke-width="10"></path>
+  </g>
+  <circle class="mark-reserve-dot" cx="108" cy="70" r="6"></circle>
+</svg></span>
+        <span class="brand-text"><strong>BTC Helper</strong><span>Resilient accumulation</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav-links"><span class="menu-toggle-icon" aria-hidden="true"><span></span><span></span><span></span></span><span class="menu-toggle-label-text">Menu</span></button>
+      <div class="nav-links" id="site-nav-links">
+        <a href="/index.html#today">Today</a>
+        <a href="/planner.html">My Plan</a>
+        <a href="/insights.html">Insights</a>
+        <a href="/track.html">Track</a>
+        <a class="nav-cta" href="/updates.html">Updates</a>
+        <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Switch theme"><svg aria-hidden="true" class="theme-icon theme-icon-moon" viewBox="0 0 24 24"><path d="M20.4 14.7A8.3 8.3 0 0 1 9.3 3.6 8.7 8.7 0 1 0 20.4 14.7Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="theme-toggle-label">Theme</span></button>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <a class="back-link" href="/documents-and-research.html">← Back to Documents &amp; Research</a>
+    <section class="hero">
+      <div class="eyebrow">Research manuscript</div>
+      <h1>Economic Strain and Health Burden in U.S. States</h1>
+      <p class="subtitle">Housing pressure, labor-market stress, and a rebuilt post-2011 state-year panel.</p>
+      <p class="doc-byline">Arne Kotte · BTC Helper Research</p>
+      <div class="actions">
+        <a class="button" href="/LIQUIDITY_HEALTH_MANUSCRIPT.pdf">Download PDF</a>
+        <a class="button secondary" href="/index.html">Home</a>
+      </div>
+      <nav class="toc"><div class="toc-title">Contents</div><a class="toc-2" href="#housing-pressure-labor-market-stress-and-a-rebuilt-post-2011-state-year-panel">Housing Pressure, Labor-Market Stress, and a Rebuilt Post-2011 State-Year Panel</a><a class="toc-2" href="#abstract">Abstract</a><a class="toc-2" href="#1-introduction">1. Introduction</a><a class="toc-2" href="#2-data-and-methods">2. Data and Methods</a><a class="toc-3" href="#2-1-study-design-and-unit-of-analysis">2.1 Study design and unit of analysis</a><a class="toc-3" href="#2-2-health-outcome-measures">2.2 Health outcome measures</a><a class="toc-3" href="#2-3-brfss-weighting-and-survey-fields">2.3 BRFSS weighting and survey fields</a><a class="toc-3" href="#2-4-context-variables">2.4 Context variables</a><a class="toc-3" href="#2-5-public-source-rebuild-workflow">2.5 Public-source rebuild workflow</a><a class="toc-3" href="#2-6-analytic-approach">2.6 Analytic approach</a><a class="toc-3" href="#2-7-scope-and-limitations-of-the-current-analytic-window">2.7 Scope and limitations of the current analytic window</a><a class="toc-2" href="#3-results">3. Results</a><a class="toc-3" href="#3-1-rebuild-success-and-analytic-sample">3.1 Rebuild success and analytic sample</a><a class="toc-3" href="#3-2-descriptive-evolution-of-health-burden">3.2 Descriptive evolution of health burden</a><a class="toc-3" href="#3-3-descriptive-evolution-of-contextual-conditions">3.3 Descriptive evolution of contextual conditions</a><a class="toc-3" href="#3-4-exploratory-pooled-model-patterns">3.4 Exploratory pooled model patterns</a><a class="toc-3" href="#3-5-state-and-year-adjusted-model-contrasts-and-interpretive-caution">3.5 State-and-year-adjusted model contrasts and interpretive caution</a><a class="toc-3" href="#3-6-main-empirical-takeaway-from-the-results">3.6 Main empirical takeaway from the results</a><a class="toc-2" href="#4-reading-the-evidence-as-a-household">4. Reading the Evidence as a Household</a><a class="toc-2" href="#5-discussion">5. Discussion</a><a class="toc-2" href="#6-limitations">6. Limitations</a><a class="toc-2" href="#7-conclusion">7. Conclusion</a><a class="toc-2" href="#tables-and-figures">Tables and figures</a><a class="toc-2" href="#appendix">Appendix</a></nav>
+    </section>
+    <section class="card doc-body">
+      <p class="small"><strong>Suggested citation:</strong> Kotte, Arne. 2026. “Economic Strain and Health Burden in U.S. States: Housing Pressure, Labor-Market Stress, and a Rebuilt Post-2011 State-Year Panel.” BTC Helper Research.</p>
+      <p class="small"><strong>Working manuscript.</strong> Public research draft; wording may continue to evolve as the evidence package is polished.</p><h2 id="housing-pressure-labor-market-stress-and-a-rebuilt-post-2011-state-year-panel">Housing Pressure, Labor-Market Stress, and a Rebuilt Post-2011 State-Year Panel</h2>
+<p><strong>Author:</strong> Arne Kotte</p>
+<p><strong>Affiliation:</strong> BTC Helper Research</p>
+<p><strong>Date:</strong> May 2026</p>
+<h2 id="abstract">Abstract</h2>
+<p>This study rebuilds a public-source state-year panel to examine how health burden co-moves with house-price growth, labor-market stress, and broader macro regime conditions across U.S. states in the post-2011 period. The analytic panel covers 50 states and includes annual state-level estimates of obesity prevalence, fair or poor self-rated health prevalence, and diabetes prevalence derived from the Behavioral Risk Factor Surveillance System (BRFSS). These outcomes are linked to Federal Housing Finance Agency (FHFA) house-price measures, state unemployment rates from the Federal Reserve Economic Data (FRED) system, and national macro context variables including consumer price inflation and money-supply growth. The clean panel includes nine validated years and 450 state-year observations. Descriptive patterns show rising obesity and diabetes across the clean years, while fair or poor self-rated health follows a more variable path. Exploratory models indicate that housing and labor-market conditions belong in the explanatory frame, while national macro variables are best treated as regime context rather than separately identified state-level drivers.</p>
+<p><strong>JEL codes:</strong> I12, I14, R21, R31, E24</p>
+<p><strong>Keywords:</strong> health burden, housing pressure, labor-market stress, BRFSS, public data, household resilience</p>
+<p><strong>Disclosure:</strong> This public-data descriptive study involves no human-subject intervention or randomized trial. Funding and conflict disclosures should be reviewed before any formal journal submission.</p>
+<h2 id="1-introduction">1. Introduction</h2>
+<p>Population health does not evolve in a vacuum. Households experience health burden within an environment shaped by employment conditions, purchasing power, housing costs, and macroeconomic change. These pressures are not merely background conditions; they are the practical setting in which chronic disease burden, perceived health, and constrained household choices accumulate. A labor-market shock can interact with strained household budgets. House-price growth can tighten the path into ownership, even when formal labor-market indicators improve. Inflation can erode the practical purchasing power of wages and benefits, while broader liquidity conditions may shape the macro regime in which those changes unfold. A study of health burden under economic stress therefore benefits from an empirical design broad enough to capture multiple forms of pressure without pretending that one national aggregate fully explains local outcomes.</p>
+<p>The original version of this project was motivated in part by a stronger macro-liquidity framing. That starting point was useful as a provocation, but it proved too narrow as an empirical foundation for a state-year health analysis. National monetary aggregates may help characterize macro regimes, but they do not by themselves provide a clean or sufficient explanation for differences in state-level health burden. The rebuild process made that limitation clearer rather than weaker. As the panel became more complete, the most defensible empirical center of the project shifted toward an affordability-stress and health-burden framework, with housing pressure and labor-market stress occupying more central roles and national macro variables serving as contextual regime indicators rather than the sole explanatory engine.</p>
+<p>This reframing matters for both substantive and methodological reasons. Substantively, it aligns the study more closely with how economic strain is actually experienced by households and communities. Methodologically, it avoids overstating what can be identified from a panel that combines state-varying contextual measures with macro variables shared nationally within year. In that sense, the rebuild was not only a recovery of data infrastructure. It was also a correction of study design.</p>
+<p>To support this reframed analysis, the project rebuilt a public-source state-year panel centered on three indicators of health burden: obesity prevalence, fair or poor self-rated health prevalence, and diabetes prevalence. These outcomes were linked to annual house-price conditions from the FHFA, state unemployment rates from FRED, and national macro context variables including consumer price inflation and money-supply growth. The resulting dataset is not intended to support strong causal claims about national liquidity causing state health outcomes. Instead, it is designed to provide a disciplined descriptive and exploratory panel for understanding how state-level health burden evolves alongside housing, labor-market, and macro-regime conditions.</p>
+<p>The initial clean analytic window begins in 2011 and currently extends through a set of validated post-2011 years. This study window was chosen for methodological discipline rather than theoretical exclusivity. The post-2011 BRFSS public files provide a relatively stable modern field environment for the study's core variables, making it possible to establish a transparent and auditable public-source panel before attempting a more difficult historical harmonization across earlier archive-dependent survey regimes.</p>
+<p>This study therefore asks a narrower and more defensible question than the project's earliest framing implied: how do state-level health burden indicators co-move with house-price growth, labor-market stress, and broader macro regime conditions across U.S. states in the reconstructed post-2011 period? The question matters because health burden and economic stress are jointly experienced, while research and policy discussions often separate health outcomes from household budget conditions or default to a national macro story that does not cleanly map onto local conditions. A state-year panel lets the analysis ask whether housing and labor-market stress belong in the explanatory frame, while treating macro variables as regime context rather than as the sole driver. For individual readers, the purpose is diagnostic: to understand why health risk, job risk, housing exposure, and financial resilience should be considered together rather than as separate problems.</p>
+<h2 id="2-data-and-methods">2. Data and Methods</h2>
+<h3 id="2-1-study-design-and-unit-of-analysis">2.1 Study design and unit of analysis</h3>
+<p>The study uses a state-year panel design. The unit of analysis is the U.S. state-year, with the main panel restricted to the 50 states and excluding the District of Columbia from the core analytic sample. This restriction was adopted to maintain a clean and consistent state panel while avoiding the need to mix the 50-state design with the distinct treatment of DC and territorial records that appear in some public BRFSS files. Table 1 summarizes the analytic sample, year coverage, and variable definitions used in the rebuilt panel.</p>
+<p>The current clean analytic panel includes nine years: 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, and 2022. These years were retained because they passed coverage and build checks within the public-source reconstruction workflow. Certain late-period public files showed state-coverage anomalies and were therefore not silently included in the clean panel.</p>
+<h3 id="2-2-health-outcome-measures">2.2 Health outcome measures</h3>
+<p>Health outcomes were constructed from annual BRFSS public-use files. The three outcome domains were selected to reflect broad population health burden while remaining feasible to harmonize in a reproducible state-year workflow.</p>
+<p>The first outcome is obesity prevalence. In the post-2011 files, obesity was derived using the modern public BMI field environment, with post-2011 obesity classification aligned to the public BMI-based coding structure documented during the rebuild. State-year obesity prevalence was estimated as the weighted proportion of respondents classified as obese.</p>
+<p>The second outcome is fair or poor self-rated health prevalence. This outcome was constructed from the self-rated general health field, using fair or poor responses as the burden threshold. During proof-of-life checks for the modern years, the direct recode from the general-health item aligned exactly with the BRFSS fair-or-poor shortcut recode, supporting the use of the underlying general-health item for transparent methods wording.</p>
+<p>The third outcome is diabetes prevalence. For post-2011 years, diabetes was constructed from the modern BRFSS diabetes field environment, with year-appropriate variable mapping preserved during the rebuild. In the current coding, respondents classified as having diabetes were counted as cases, pregnancy-only responses were excluded rather than treated as diabetic, non-diabetic responses were retained as non-cases, and missing or refused responses were excluded from the outcome denominator.</p>
+<p>All health outcomes were converted into state-year prevalence estimates on the unit interval <code>[0,1]</code>. These are survey-derived estimates, not directly observed population counts. The current manuscript uses weighted state-year prevalence estimates as the analytic outcomes, but it does not yet incorporate design-based variance estimates, inverse-variance weighting, or age standardization. That matters because age composition, diagnosis access, and self-reporting patterns can affect obesity, diabetes, and self-rated health measures.</p>
+<h3 id="2-3-brfss-weighting-and-survey-fields">2.3 BRFSS weighting and survey fields</h3>
+<p>State-year outcome estimates were produced using the BRFSS final weight available in the public files (<code>_LLCPWT</code>) as the main weight in the current reconstruction workflow. Survey design variables (<code>_STSTR</code> and <code>_PSU</code>) were preserved from the start of the rebuild so that more design-aware extensions remain possible later, even though the initial state-year prevalence estimates rely primarily on the main final weight.</p>
+<p>This design choice reflects a sequencing decision. The first aim of the rebuild was to recover transparent, contract-compatible state-year estimates. More elaborate survey-design estimation can be layered on later if needed.</p>
+<h3 id="2-4-context-variables">2.4 Context variables</h3>
+<p>The panel attaches several contextual measures intended to capture affordability, labor-market conditions, and broad macro regime conditions.</p>
+<p>Housing context was drawn from the Federal Housing Finance Agency state house-price index series. Quarterly FHFA state observations were aggregated to annual averages, and annual year-over-year percentage change was calculated within state. The annual average state house-price index and its annual growth rate were both retained in the panel. This measure should be read precisely as house-price growth, not as a complete measure of housing affordability stress. It does not directly capture rent burden, mortgage-payment pressure, down-payment requirements, insurance, taxes, renter share, eviction risk, or household income.</p>
+<p>Labor-market context was measured using state unemployment rate series retrieved from the Federal Reserve Economic Data system. Monthly state unemployment rates were averaged to the calendar-year level.</p>
+<p>Two national macro context variables were also attached. Consumer price inflation was measured as annual average year-over-year change in the Consumer Price Index for All Urban Consumers. Money-supply growth was measured as annual average year-over-year change in M2. These variables vary nationally by year, not by state. They are included to characterize macro regime conditions rather than to assume clean independent identification of national macro effects on state health outcomes. In specifications with full year indicators, they should not be interpreted as separately identified state-level predictors.</p>
+<h3 id="2-5-public-source-rebuild-workflow">2.5 Public-source rebuild workflow</h3>
+<p>The rebuild was designed to be reproducible from public sources. BRFSS annual files were retrieved from public CDC-hosted sources where available, with direct file-level confirmation conducted for the key modern years used as proof-of-life anchors. The workflow explicitly documented field mappings, annual file coverage, and the handling of anomalous public files.</p>
+<p>Years that failed clean state-coverage checks were not silently included in the clean analytic panel. Instead, they were documented separately as anomalies pending deliberate resolution. This rule was particularly important for preserving the integrity of the 50-state panel.</p>
+<h3 id="2-6-analytic-approach">2.6 Analytic approach</h3>
+<p>The current analysis is intentionally exploratory and proceeds in stages.</p>
+<p>First, the panel is described using annual summary statistics for the three health outcomes and the contextual variables. This step establishes the broad temporal pattern of health burden and contextual change across the clean years.</p>
+<p>Second, exploratory pooled panel models are estimated as directional pattern checks. These models are useful for identifying broad co-movement but do not by themselves separate within-state evolution from between-state differences and shared national period shifts.</p>
+<p>Third, simple models with state and year indicators are used to probe how interpretation changes once persistent state differences and shared period shocks are absorbed. These specifications are exploratory adjustments rather than a causal identification design. The national macro variables in particular are not separately identified in a standard model with full year indicators because they are shared across all states within year. In this manuscript, they function as regime markers and descriptive period context, not as clean independently identified drivers.</p>
+<p>The analytic goal is therefore descriptive and exploratory restraint, not strong causal identification.</p>
+<h3 id="2-7-scope-and-limitations-of-the-current-analytic-window">2.7 Scope and limitations of the current analytic window</h3>
+<p>The current analytic window begins in 2011 because the post-2011 BRFSS public files provide a comparatively stable modern field environment for the study's core variables and survey-design fields. This starting point should be understood as a disciplined reconstruction choice rather than a claim that earlier years are substantively unimportant.</p>
+<p>Pre-2011 years remain relevant as a future extension track, but they require a more archive-aware harmonization strategy because of older file-access patterns, variable-name drift, and broader comparability challenges. The present study therefore prioritizes a clean modern panel before extending backward into older survey regimes.</p>
+<h2 id="3-results">3. Results</h2>
+<h3 id="3-1-rebuild-success-and-analytic-sample">3.1 Rebuild success and analytic sample</h3>
+<p>The reconstruction process produced a clean post-2011 analytic panel linking BRFSS-derived health outcomes to housing, labor-market, and macro context variables. The current clean panel includes 50 U.S. states across nine validated years: 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, and 2022. This yields 450 state-year observations.</p>
+<p>The health outcomes in the panel are obesity prevalence, fair or poor self-rated health prevalence, and diabetes prevalence. These outcomes were merged with annual FHFA state house-price measures, state unemployment rates, annual CPI inflation, and annual M2 growth. For the included years, the context merges were complete for the attached variables, with no missing FHFA rows and no missing unemployment rows. Table 2 presents the year-level descriptive summary for the full clean panel.</p>
+<p>The rebuild also clarified that not every public BRFSS year can be assumed to be panel-ready. Some late-period years were excluded because they either had documented state-coverage anomalies in the files used for the rebuild or had not yet been deliberately incorporated into the clean panel. This quality-control decision preserved the integrity of the 50-state design.</p>
+<h3 id="3-2-descriptive-evolution-of-health-burden">3.2 Descriptive evolution of health burden</h3>
+<p>Across the clean post-2011 panel years, obesity prevalence increased from 0.2768 in 2011 to 0.3395 in 2022. Diabetes prevalence also increased over the same period, from 0.0978 to 0.1208. These two outcomes therefore show a broadly upward trajectory across the reconstructed analytic window. Figure 1 visualizes these trends directly.</p>
+<p>Fair or poor self-rated health followed a more variable pattern. The estimated mean prevalence was 0.1738 in 2011, remained in a similar range through the mid-2010s, rose to 0.1807 in 2017, and then stood at 0.1755 in 2022. Relative to obesity and diabetes, fair or poor health appears less monotonic and more sensitive to short-run variation across years.</p>
+<p>Taken together, these descriptive patterns suggest that the three outcomes should not be treated as interchangeable. Obesity and diabetes appear to reflect a clearer accumulation pattern across the clean years, while fair or poor health may be capturing a more mixed burden structure that is responsive to both chronic and shorter-run conditions.</p>
+<h3 id="3-3-descriptive-evolution-of-contextual-conditions">3.3 Descriptive evolution of contextual conditions</h3>
+<p>The contextual variables also show clear temporal structure. Mean state unemployment declined from 8.08 percent in 2011 to 3.35 percent in 2022, with most of the decline occurring across the mid-to-late 2010s. Housing conditions changed markedly as well. Mean annual FHFA house-price growth was negative in 2011, approximately flat in 2012, and then positive throughout the later clean years, culminating in a much larger surge in 2022.</p>
+<p>The national macro context variables also shifted across the panel. CPI year-over-year inflation remained relatively modest through much of the clean period before rising sharply in 2022. M2 growth was positive throughout the window, with variation across years but a pattern that is inherently national rather than state-specific. Figure 2 summarizes the evolution of these housing, labor-market, and macro conditions across the analytic window. The gap from 2019 through 2021 should be read explicitly: 2022 follows a major public-health, labor-market, housing, and inflation shock and should not be treated as a seamless continuation of 2018.</p>
+<p>These descriptive changes indicate that the analytic window captures a meaningful transition in both state-level and national context. The panel is therefore not simply a set of repeated cross-sections; it spans a distinct period of post-crisis adjustment, later-cycle tightening, and pandemic-era macro disruption.</p>
+<h3 id="3-4-exploratory-pooled-model-patterns">3.4 Exploratory pooled model patterns</h3>
+<p>Exploratory pooled models were used as directional pattern checks rather than final inferential statements. The pooled specifications give the first empirical reason to keep housing and labor-market context in the study rather than treating the panel as a purely macro-regime exercise. Across outcomes, the associations were not uniform, but they were substantively informative.</p>
+<p>For obesity, the pooled models suggested positive associations with house-price growth and inflationary context, while the unemployment coefficient was comparatively weak in the initial analytic pass and somewhat more informative in the denser panel. For fair or poor health, unemployment appeared more clearly related to worse health burden in pooled models. Diabetes also showed pooled associations with both unemployment and broader contextual shifts.</p>
+<p>The main lesson from these pooled models is therefore not that one predictor dominates. It is that health burden appears to move alongside several forms of economic pressure, and that the relevant pressure differs by outcome. That finding supports the paper's multi-domain framing. At the same time, pooled specifications necessarily combine within-state change, between-state differences, and shared macro period effects. They are best interpreted as broad descriptive co-movement rather than as evidence of cleanly identified causal pathways.</p>
+<h3 id="3-5-state-and-year-adjusted-model-contrasts-and-interpretive-caution">3.5 State-and-year-adjusted model contrasts and interpretive caution</h3>
+<p>The most important modeling lesson emerged when the denser panel was used to compare pooled models with specifications that include state and year indicators. In these contrasts, the interpretation changed in ways that are more valuable as a design warning than as a search for a single preferred coefficient. Table 3 presents a compact contrast between pooled and state/year-adjusted results for the core predictors across all three outcomes.</p>
+<p>Once state and year structure were absorbed, the national variables, particularly CPI and M2, should not be read as independent substantive drivers. In a conventional specification with full year indicators, national year-level variables are collinear with the year structure. They are therefore better handled as period context or through future interaction designs that create genuine state-year exposure variation. At the same time, the apparent role of housing and unemployment shifted across outcomes and specifications. In some cases, housing weakened substantially; in others, labor-market stress became less stable once the additional structure was introduced.</p>
+<p>These model contrasts do not imply that housing and labor-market context are unimportant. Rather, they show that interpretation becomes more fragile once the analysis attempts to separate state-specific variation from national time structure. This is especially important for the macro variables, which function as regime markers rather than fully independent explanatory drivers in the current panel.</p>
+<h3 id="3-6-main-empirical-takeaway-from-the-results">3.6 Main empirical takeaway from the results</h3>
+<p>The strongest empirical takeaway is not a single coefficient sign. It is that the rebuilt panel supports a more focused study design than the project's earliest framing implied. The descriptive results show meaningful health-burden and economic-context movement across the clean years. The model contrasts then show why a narrow macro-liquidity interpretation would overstate what the data can identify.</p>
+<p>Taken together, the results support viewing the study as a state-year panel of affordability stress, labor-market stress, and health burden, with macro conditions treated as contextual features of the period. That is a substantive result in its own right. The rebuild did not simply reproduce a dataset. It clarified the most defensible empirical meaning of the project.</p>
+<h2 id="4-reading-the-evidence-as-a-household">4. Reading the Evidence as a Household</h2>
+<p>The most practical use of this manuscript is not to predict health outcomes from a single economic variable. It is to help readers see that health burden, housing exposure, labor-market exposure, and financial resilience are connected.</p>
+<p>For a household, the relevant question is not only whether a state has rising home prices or falling unemployment. The more useful questions are: does local housing pressure leave enough monthly margin for food, transportation, medical care, savings, and rest? Does job or income risk make a health setback harder to absorb? Does a move to a stronger labor market come with higher housing costs that reduce the benefit of higher wages? Does a rent or mortgage burden make preventive care easier to delay and harder to recover from?</p>
+<p>This paper cannot answer those questions for a particular person. But it supports a diagnostic habit that is useful for personal economic decisions: treat health resilience as part of the household balance sheet. Emergency reserves, housing flexibility, job stability, insurance access, commute burden, and local cost pressure all shape the practical room a household has to protect health and recover from shocks.</p>
+<p>That is why the distinction between house-price growth, labor-market stress, and national macro context matters. A national inflation or liquidity measure may describe the regime, but the lived constraint is local and household-specific. The reader-facing lesson is to identify which constraint is binding: housing cost, employment risk, medical vulnerability, income volatility, or lack of buffer.</p>
+<h2 id="5-discussion">5. Discussion</h2>
+<p>The present study began from a broader concern with liquidity, purchasing power, and health, but the rebuild process made it possible to sharpen that concern into a more defensible empirical framework. The resulting panel does not support a simple story in which national macro aggregates directly and cleanly explain state health outcomes. Instead, it supports a layered interpretation in which health burden evolves alongside housing pressure, labor-market conditions, and broader macro regime shifts.</p>
+<p>That shift in emphasis is valuable. Housing and labor-market context are more directly connected to the practical conditions under which households experience financial strain, constrained choices, and prolonged burden. They therefore provide a better empirical center for the analysis than a narrow macro-liquidity frame alone. At the same time, the macro variables still matter because they help characterize the broader regime in which state-level affordability and labor-market conditions unfold. Their role is contextual and interpretive rather than singularly explanatory.</p>
+<p>The distinction between obesity and diabetes on one hand and fair or poor self-rated health on the other is also noteworthy. Obesity and diabetes showed clearer upward movement across the clean panel years, suggesting a cumulative burden pattern across the reconstructed period. Fair or poor health was more variable, which may indicate that it captures a different mix of chronic burden, perceived well-being, and short-run stress exposure. That divergence strengthens the case for keeping multiple health outcomes in the panel rather than relying on a single indicator.</p>
+<p>Methodologically, the project contributes a practical lesson about public-source panel reconstruction. Rebuilding the panel from public files was not just a technical prerequisite. It exposed the importance of field stability, file-level validation, anomaly documentation, and disciplined exclusion rules. In that sense, the reconstruction process itself is part of the study's contribution. It demonstrates how a usable state-year health panel can be built from public materials without relying on opaque preprocessing or undocumented harmonization decisions.</p>
+<p>The model results also reinforce the importance of interpretive restraint. Once state and year effects are introduced, national macro variables become difficult to read as independent substantive drivers. This is not a failure of the study. It is an informative constraint. It suggests that the relationship between state-level health burden and national macro context is better approached as one of regime description and structured co-movement than as a cleanly identified causal mechanism in the current panel.</p>
+<p>Taken together, these points define a clearer version of the project. The study's most defensible contribution is to document how health burden co-moves with housing and labor-market stress across a meaningful post-2011 state-year panel, while also clarifying the proper role of macro context in that analysis. That is narrower than the earliest version of the project, but it is also more honest and more empirically grounded.</p>
+<h2 id="6-limitations">6. Limitations</h2>
+<p>Several limitations should be acknowledged.</p>
+<p>First, the current panel does not yet provide complete annual coverage across the full post-2011 period. The clean panel includes nine validated years, but some years remain absent either because they have not yet been incorporated or because public-source anomalies require deliberate resolution before inclusion.</p>
+<p>Second, the current study window begins in 2011. This starting point is methodologically justified by the relative stability of the modern BRFSS field environment, but it means that earlier historical regimes are not yet represented in the analytic sample. A longer historical extension could add valuable context and improve regime comparison.</p>
+<p>Third, the contextual variable set remains incomplete. In particular, state-level income has not yet been attached, even though it is a plausible and potentially important dimension of affordability stress. The current panel therefore captures important context, but not the full set of state-level socioeconomic conditions that could matter.</p>
+<p>Fourth, the macro variables used here are national rather than state-specific. As a result, their interpretation in panel models is inherently limited, especially in specifications that absorb year structure. These variables are informative as regime context, but the current panel does not support strong claims about their independent causal effect on state health outcomes.</p>
+<p>Fifth, the health outcomes are survey-derived state-year estimates. The current manuscript does not yet age-standardize outcomes, report design-based standard errors for the generated prevalence estimates, or model individual-level BRFSS records with demographic controls. Obesity depends on self-reported height and weight, and diabetes depends on reported diagnosis. These are useful public-health measures, but they are not free of measurement error.</p>
+<p>Sixth, the current modeling approach is exploratory. The pooled and state/year-adjusted specifications are useful for learning from the panel, but they should not be mistaken for a final identification strategy. Stronger causal claims would require a different design and likely richer variation than the present first-stage dataset is intended to provide.</p>
+<h2 id="7-conclusion">7. Conclusion</h2>
+<p>This study rebuilt a public-source state-year panel linking BRFSS-derived health burden measures to housing, labor-market, and macro context variables across a clean post-2011 analytic window. The resulting panel is coherent enough to support meaningful descriptive and exploratory analysis, while still too limited for strong causal claims. Across the clean years, obesity and diabetes increased, fair or poor health showed a more variable pattern, unemployment declined across much of the period, and housing-price growth strengthened substantially before the sharp macro shift observed by 2022.</p>
+<p>The central lesson of the rebuilt analysis is not that one national macro variable cleanly explains state health outcomes. Rather, it is that the study works best as an analysis of affordability stress, labor-market stress, and health burden within a broader macro regime. That framing preserves what is informative in the panel while avoiding claims that the current data cannot responsibly sustain.</p>
+<p>For individual readers, the takeaway is practical rather than predictive. Health resilience and financial resilience should not be planned separately. Housing burden, income risk, job-market exposure, insurance access, and household cash buffers all affect the room a person has to prevent, absorb, and recover from health strain.</p>
+<p>The study therefore contributes both a reproducible public-source reconstruction and a more disciplined empirical template for examining health burden under changing economic conditions. Future work can extend the panel backward into older archive-dependent BRFSS regimes, add missing contextual dimensions such as state-level income, and refine the analytic strategy. But even in its current form, the rebuilt panel provides a defensible foundation for studying how health burden evolves across states under changing affordability and stress conditions.</p>
+<h2 id="tables-and-figures">Tables and figures</h2><figure><img src="/assets/liquidity-health-figure1_health_outcome_trends.png" alt="Figure 1. Health outcome trends across clean panel years"><figcaption><strong>Figure 1. Health outcome trends across clean panel years.</strong> This figure shows mean obesity prevalence, fair or poor self-rated health prevalence, and diabetes prevalence across the clean panel years. The figure highlights the clearer upward trajectories in obesity and diabetes alongside the more variable path of fair or poor health. The 2019-2021 gap should not be interpreted as continuously observed annual coverage.</figcaption></figure><figure><img src="/assets/liquidity-health-figure2_context_evolution.png" alt="Figure 2. Context evolution across clean panel years"><figcaption><strong>Figure 2. Context evolution across clean panel years.</strong> This figure summarizes the evolution of housing, labor-market, and national macro context across the clean panel years. Panel A shows mean FHFA house-price growth and mean state unemployment, while Panel B shows CPI inflation and M2 growth. FHFA growth is house-price growth, not a complete measure of housing affordability stress.</figcaption></figure><h3 id="table-1-analytic-sample-and-variable-definition-summary">Table 1. Analytic sample and variable definition summary</h3><p class="small">This table summarizes the rebuilt panel’s unit of analysis, year coverage, core health outcomes, and contextual variables. It provides the study’s contract-level definition of the analytic sample used in the main manuscript.</p><div class="table-wrap"><table><thead><tr><th>Construct</th><th>Definition</th><th>Source</th><th>Scale</th><th>Notes</th></tr></thead><tbody><tr><td>Unit of analysis</td><td>U.S. state-year</td><td>Rebuilt panel design</td><td>Categorical</td><td>Main analytic unit</td></tr><tr><td>Sample coverage</td><td>50 U.S. states excluding DC</td><td>BRFSS-derived panel</td><td>Categorical</td><td>Core panel excludes DC</td></tr><tr><td>Year coverage</td><td>2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2022</td><td>Rebuilt clean panel</td><td>Categorical</td><td>Validated clean post-2011 years only</td></tr><tr><td>Obesity prevalence</td><td>Weighted proportion classified as obese from post-2011 BMI field environment</td><td>BRFSS public files</td><td>Proportion [0,1]</td><td>State-year estimate using _LLCPWT</td></tr><tr><td>Fair/poor health prevalence</td><td>Weighted proportion reporting fair or poor general health</td><td>BRFSS public files</td><td>Proportion [0,1]</td><td>GENHLTH-based construction aligned with BRFSS shortcut recode</td></tr><tr><td>Diabetes prevalence</td><td>Weighted proportion classified as diabetic with pregnancy-only responses excluded</td><td>BRFSS public files</td><td>Proportion [0,1]</td><td>Year-appropriate modern diabetes mapping</td></tr><tr><td>FHFA annual average HPI</td><td>Annual average of quarterly state house-price index</td><td>FHFA</td><td>Index level</td><td>State-level annual context</td></tr><tr><td>FHFA HPI YoY</td><td>Year-over-year percent change in annual average HPI</td><td>FHFA</td><td>Decimal growth rate</td><td>State-level annual housing pressure context</td></tr><tr><td>State unemployment rate</td><td>Annual average monthly unemployment rate</td><td>FRED state series</td><td>Percent rate</td><td>State-level labor-market context</td></tr><tr><td>CPI YoY</td><td>Annual average year-over-year CPI growth</td><td>FRED CPIAUCSL</td><td>Decimal growth rate</td><td>National macro regime context</td></tr><tr><td>M2 YoY</td><td>Annual average year-over-year M2 growth</td><td>FRED M2SL</td><td>Decimal growth rate</td><td>National macro regime context</td></tr></tbody></table></div><h3 id="table-2-year-level-descriptive-summary-of-the-clean-panel">Table 2. Year-level descriptive summary of the clean panel</h3><p class="small">This table reports year-level means for the three health outcomes and the principal contextual variables across the clean post-2011 analytic panel. Values are rounded for reader-facing interpretation. The 2019-2021 gap should be read as a true missing-year gap before the 2022 shock-year observation.</p><div class="table-wrap"><table><thead><tr><th>Year</th><th>States</th><th>Obesity prevalence</th><th>Fair/poor health prevalence</th><th>Diabetes prevalence</th><th>FHFA house-price growth</th><th>State unemployment rate</th><th>CPI inflation</th><th>M2 growth</th></tr></thead><tbody><tr><td>2011</td><td>50</td><td>27.7%</td><td>17.4%</td><td>9.8%</td><td>-3.4%</td><td>8.1%</td><td>3.1%</td><td>7.4%</td></tr><tr><td>2012</td><td>50</td><td>28.1%</td><td>17.3%</td><td>10.0%</td><td>-0.1%</td><td>7.3%</td><td>2.1%</td><td>8.5%</td></tr><tr><td>2013</td><td>50</td><td>28.8%</td><td>17.2%</td><td>10.1%</td><td>3.0%</td><td>6.7%</td><td>1.5%</td><td>6.7%</td></tr><tr><td>2014</td><td>50</td><td>29.4%</td><td>17.0%</td><td>10.4%</td><td>3.9%</td><td>5.7%</td><td>1.6%</td><td>6.2%</td></tr><tr><td>2015</td><td>50</td><td>29.4%</td><td>17.0%</td><td>10.4%</td><td>4.5%</td><td>5.0%</td><td>0.1%</td><td>5.8%</td></tr><tr><td>2016</td><td>50</td><td>29.9%</td><td>17.4%</td><td>10.7%</td><td>4.5%</td><td>4.6%</td><td>1.3%</td><td>6.8%</td></tr><tr><td>2017</td><td>50</td><td>30.7%</td><td>18.1%</td><td>10.8%</td><td>4.7%</td><td>4.1%</td><td>2.1%</td><td>5.7%</td></tr><tr><td>2018</td><td>50</td><td>31.4%</td><td>17.9%</td><td>11.5%</td><td>5.1%</td><td>3.7%</td><td>2.4%</td><td>3.8%</td></tr><tr><td>2022</td><td>50</td><td>33.9%</td><td>17.6%</td><td>12.1%</td><td>15.9%</td><td>3.4%</td><td>8.0%</td><td>5.2%</td></tr></tbody></table></div><h3 id="table-3-exploratory-model-contrast-table">Table 3. Exploratory model contrast table</h3><p class="small">This table compares pooled and state/year-adjusted model patterns for the main predictors across the three health outcomes. Its purpose is not to claim a final identification strategy, but to show how interpretation changes once state and year structure are absorbed. CPI and M2 are national within-year variables and are therefore marked as not separately identified in full year-indicator specifications.</p><div class="table-wrap"><table><thead><tr><th>Outcome</th><th>Predictor</th><th>Pooled pattern</th><th>State/year-adjusted pattern</th><th>Interpretation note</th></tr></thead><tbody><tr><td>Obesity</td><td>FHFA house-price growth</td><td>-0.038</td><td>+0.002</td><td>Housing signal weakens sharply after state and year structure are absorbed</td></tr><tr><td>Obesity</td><td>State unemployment rate</td><td>-0.001</td><td>+0.003</td><td>Labor-market signal becomes more visible in the adjusted contrast</td></tr><tr><td>Obesity</td><td>CPI inflation</td><td>+0.517</td><td>Not separately identified</td><td>National within-year variable; use as regime context in full year-indicator models</td></tr><tr><td>Obesity</td><td>M2 growth</td><td>-0.853</td><td>Not separately identified</td><td>National within-year variable; use as regime context in full year-indicator models</td></tr><tr><td>Fair/poor health</td><td>FHFA house-price growth</td><td>+0.077</td><td>-0.037</td><td>Housing sign flips, so caution is warranted</td></tr><tr><td>Fair/poor health</td><td>State unemployment rate</td><td>+0.009</td><td>+0.001</td><td>Strong pooled labor signal weakens after state and year structure are absorbed</td></tr><tr><td>Fair/poor health</td><td>CPI inflation</td><td>+0.029</td><td>Not separately identified</td><td>National within-year variable; use as regime context in full year-indicator models</td></tr><tr><td>Fair/poor health</td><td>M2 growth</td><td>-0.862</td><td>Not separately identified</td><td>National within-year variable; use as regime context in full year-indicator models</td></tr><tr><td>Diabetes</td><td>FHFA house-price growth</td><td>+0.037</td><td>-0.022</td><td>Housing signal becomes less stable after state and year structure are absorbed</td></tr><tr><td>Diabetes</td><td>State unemployment rate</td><td>+0.003</td><td>-0.000</td><td>Labor signal weakens after state and year structure are absorbed</td></tr><tr><td>Diabetes</td><td>CPI inflation</td><td>+0.151</td><td>Not separately identified</td><td>National within-year variable; use as regime context in full year-indicator models</td></tr><tr><td>Diabetes</td><td>M2 growth</td><td>-0.585</td><td>Not separately identified</td><td>National within-year variable; use as regime context in full year-indicator models</td></tr></tbody></table></div>
+<h2 id="appendix">Appendix</h2>
+<h1 id="appendix-housing-pressure-labor-market-stress-and-health-burden-in-a-rebuilt-post-2011-u-s-state-year-panel">Appendix: Housing Pressure, Labor-Market Stress, and Health Burden in a Rebuilt Post-2011 U.S. State-Year Panel</h1>
+<h2 id="status">Status</h2>
+<p>Companion appendix for the current manuscript draft.</p>
+<p>This appendix holds material that is important for transparency and defensibility but too detailed for the main text. It is aligned with the manuscript's current framing: affordability stress, labor-market stress, and health burden, with national macro variables treated as regime context rather than as a central explanatory mechanism.</p>
+<hr>
+<h2 id="appendix-a-clean-panel-year-inclusion-and-anomaly-handling">Appendix A. Clean panel year inclusion and anomaly handling</h2>
+<h3 id="a1-clean-analytic-years-included-in-the-main-panel">A1. Clean analytic years included in the main panel</h3>
+<p>The current clean analytic panel includes the following years:</p>
+<ul>
+<li>2011</li>
+<li>2012</li>
+<li>2013</li>
+<li>2014</li>
+<li>2015</li>
+<li>2016</li>
+<li>2017</li>
+<li>2018</li>
+<li>2022</li>
+</ul>
+<p>These years were retained because they passed the public-source reconstruction workflow, including year-level coverage checks and outcome-build validation.</p>
+<h3 id="a2-years-not-currently-included-in-the-clean-panel">A2. Years not currently included in the clean panel</h3>
+<p>Not all post-2011 years were included in the current clean panel. Excluded or not-yet-incorporated years include:</p>
+<ul>
+<li>2019</li>
+<li>2020</li>
+<li>2021</li>
+<li>2023</li>
+</ul>
+<p>The reasons differ by year and should not be collapsed into a single category of missingness.</p>
+<h3 id="a3-documented-anomaly-years">A3. Documented anomaly years</h3>
+<p>Two years were especially important in the reconstruction process because they failed clean coverage expectations in the downloaded public files used during the rebuild.</p>
+<h4 id="2019">2019</h4>
+<p>The public file used in the rebuild was missing New Jersey from the expected 50-state main panel while also including territorial records. Because the study’s core unit is a clean 50-state panel, 2019 was not silently folded into the analytic sample.</p>
+<h4 id="2021">2021</h4>
+<p>The public file used in the rebuild was missing Florida from the expected 50-state main panel. For the same reason, 2021 was not silently folded into the analytic sample.</p>
+<h3 id="a4-why-anomaly-exclusion-matters">A4. Why anomaly exclusion matters</h3>
+<p>The purpose of excluding anomaly years from the clean panel was not to hide inconvenient data. It was to preserve the integrity of the 50-state state-year design. A panel that quietly changes its underlying geographic coverage across years would undermine the comparability that the reconstruction was intended to establish.</p>
+<hr>
+<h2 id="appendix-b-additional-notes-on-exploratory-model-interpretation">Appendix B. Additional notes on exploratory model interpretation</h2>
+<h3 id="b1-why-pooled-and-state-year-adjusted-models-are-both-shown">B1. Why pooled and state/year-adjusted models are both shown</h3>
+<p>The manuscript reports both pooled and state/year-adjusted exploratory models because each reveals something different about the panel and about the limits of interpretation.</p>
+<ul>
+<li>pooled models are useful for broad descriptive co-movement and for showing why housing and labor-market context belong in the frame</li>
+<li>state/year-adjusted models are useful for showing how interpretation changes once state and year structure are absorbed</li>
+</ul>
+<p>The contrast between them is substantively informative even though the models are not intended as final identification strategies. The key lesson is not a single preferred coefficient, but the need to treat national macro variables cautiously and to center the analysis on state-year affordability, labor-market, and health-burden patterns.</p>
+<h3 id="b2-why-national-macro-variables-require-caution">B2. Why national macro variables require caution</h3>
+<p>The macro variables used in the study, especially CPI and M2, are national within-year series. They do not vary across states within a given year. As a result, they can become difficult to interpret in state/year-adjusted models because they are tightly entangled with the panel’s time structure.</p>
+<p>This means their apparent prominence in some specifications should not be read as strong evidence of clean independent macro effects on state health outcomes. In the current study, they are best treated as indicators of macro regime conditions rather than as singularly explanatory drivers.</p>
+<h3 id="b3-where-the-fuller-model-detail-lives">B3. Where the fuller model detail lives</h3>
+<p>Fuller pooled and state/year-adjusted model summaries were generated during the analysis pass and can be retained as supplementary artifacts. These include outcome-specific summary outputs for:</p>
+<ul>
+<li>obesity</li>
+<li>fair/poor health</li>
+<li>diabetes</li>
+</ul>
+<p>The compact model contrast table in the main text is therefore intended as a reader-facing summary rather than a replacement for the underlying model outputs.</p>
+<hr>
+<h2 id="appendix-c-scope-justification-for-the-post-2011-window">Appendix C. Scope justification for the post-2011 window</h2>
+<h3 id="c1-why-the-analytic-window-begins-in-2011">C1. Why the analytic window begins in 2011</h3>
+<p>The current analytic window begins in 2011 because the post-2011 BRFSS public files provide a relatively stable modern field environment for the study’s core health variables and survey-design variables. In a reconstruction setting, this made it possible to establish a clean, auditable, and reproducible public-source panel before attempting a more difficult historical harmonization across earlier survey regimes.</p>
+<h3 id="c2-what-the-post-2011-focus-does-not-mean">C2. What the post-2011 focus does not mean</h3>
+<p>The post-2011 focus should not be interpreted to mean that earlier years are irrelevant. It is a sequencing choice rather than a theoretical claim. Earlier years may still matter for historical context, regime comparison, and future paper development.</p>
+<h3 id="c3-what-the-current-scope-can-and-cannot-support">C3. What the current scope can and cannot support</h3>
+<p>The current clean panel is sufficient to support a transparent descriptive manuscript because it includes:</p>
+<ul>
+<li>nine validated years</li>
+<li>50 states</li>
+<li>450 state-year observations</li>
+<li>three core health outcomes</li>
+<li>housing, unemployment, and macro context variables</li>
+</ul>
+<p>That scope is not sufficient for strong causal claims or for a definitive health-economics contribution. It is best understood as a disciplined first public-data layer: useful for descriptive interpretation, design learning, and reader-facing economic-health context before extending backward or moving to richer microdata.</p>
+<hr>
+<h2 id="appendix-d-recommended-extension-track-beyond-the-current-panel">Appendix D. Recommended extension track beyond the current panel</h2>
+<h3 id="d1-extension-should-be-phased">D1. Extension should be phased</h3>
+<p>Any historical extension should proceed in phases rather than as an immediate attempt at full annual backfill.</p>
+<h3 id="d2-recommended-bridge-years">D2. Recommended bridge years</h3>
+<p>The most logical first extension window is 2005-2011. This window is attractive because it captures the GFC-era housing and labor-market shock while remaining close enough to the modern BRFSS field environment to be a feasible first harmonization pass.</p>
+<p>Within that window, 2008 is the most important stress anchor, but the preferred Phase B plan is a 2005-2011 extension rather than a sparse set of isolated older anchor years.</p>
+<h3 id="d3-recommended-extension-logic">D3. Recommended extension logic</h3>
+<p>For each bridge year, the extension workflow should:</p>
+<ul>
+<li>retrieve the relevant archive-era BRFSS source files</li>
+<li>confirm actual in-file public variable names</li>
+<li>run outcome-specific proof-of-life checks</li>
+<li>preserve survey design variables where available</li>
+<li>document all comparability compromises explicitly</li>
+</ul>
+<h3 id="d4-preferred-extension-path">D4. Preferred extension path</h3>
+<p>The preferred next historical design is a bounded 2005-2011 extension rather than an immediate deep-history backfill. This approach is more likely to produce a useful GFC comparison layer without turning the project into an open-ended harmonization exercise. Earlier years, such as 1993-2004, remain possible later but should be treated as a separate Phase C rather than folded into the current manuscript path.</p>
+<hr>
+<h2 id="appendix-e-possible-supplementary-tables-and-figures">Appendix E. Possible supplementary tables and figures</h2>
+<h3 id="table-a1-year-inclusion-and-anomaly-audit-table">Table A1. Year inclusion and anomaly audit table</h3>
+<p>A compact appendix table could summarize:</p>
+<ul>
+<li>year</li>
+<li>inclusion status</li>
+<li>coverage status</li>
+<li>anomaly note</li>
+</ul>
+<h3 id="table-a2-full-exploratory-model-results">Table A2. Full exploratory model results</h3>
+<p>A larger appendix table could report fuller pooled and state/year-adjusted outputs for each outcome.</p>
+<h3 id="table-a3-year-by-year-harmonization-notes">Table A3. Year-by-year harmonization notes</h3>
+<p>This becomes more useful if the project later extends backward into the planned 2005-2011 BRFSS extension window.</p>
+<h3 id="figure-a1-state-level-change-distributions">Figure A1. State-level change distributions</h3>
+<p>Potential appendix figure showing 2011-to-2022 state-level changes in the three health outcomes.</p>
+    </section>
+  </main>
+  <footer class="site-footer" id="contact">
+    <div class="site-footer-inner">
+      <div class="footer-brand"><strong>BTC Helper</strong><p>A private Bitcoin accumulation plan, a source-aware daily action layer, and a public decision record.</p><p class="footer-note">Educational research tool only. Not financial advice, investment advice, or a recommendation to buy or sell any asset.</p></div>
+      <div><div class="footer-column-title">Product</div><div class="footer-links"><a href="/index.html#today">Today</a><a href="/planner.html">My Plan</a><a href="/insights.html">Insights</a><a href="/track.html">Track</a><a href="/updates.html">Updates</a></div></div>
+      <div><div class="footer-column-title">Research</div><div class="footer-links"><a href="/weekly-macro-thesis/">Weekly macro</a><a href="/documents-and-research.html">Research library</a><a href="/public-proof-of-work-methodology.html">Methodology</a><a href="/household-resilience-planner.html">Household resilience</a></div></div>
+      <div><div class="footer-column-title">Trust</div><div class="footer-links"><a href="/data-sources.html">Source health</a><a href="/about.html">About</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a><a href="https://x.com/btchelperapp">BTC Helper on X</a></div></div>
+    </div>
+  </footer>
+  <script>
+    const btcHelperThemeStorageKey = 'btcHelperTheme';
+    function setBtcHelperTheme(theme, persist = true) {
+      const next = theme === 'dark' ? 'dark' : 'light';
+      document.documentElement.dataset.theme = next;
+      if (persist) { try { localStorage.setItem(btcHelperThemeStorageKey, next); } catch {} }
+      const button = document.getElementById('theme-toggle');
+      if (button) {
+        button.innerHTML = next === 'dark' ? '<svg aria-hidden="true" class="theme-icon theme-icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2.8v3M12 18.2v3M4.8 4.8l2.1 2.1M17.1 17.1l2.1 2.1M2.8 12h3M18.2 12h3M4.8 19.2l2.1-2.1M17.1 6.9l2.1-2.1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="theme-toggle-label">Theme</span>' : '<svg aria-hidden="true" class="theme-icon theme-icon-moon" viewBox="0 0 24 24"><path d="M20.4 14.7A8.3 8.3 0 0 1 9.3 3.6 8.7 8.7 0 1 0 20.4 14.7Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="theme-toggle-label">Theme</span>';
+        button.setAttribute('aria-label', next === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+        button.setAttribute('title', next === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+      }
+    }
+    setBtcHelperTheme(document.documentElement.dataset.theme || 'light', false);
+    document.getElementById('theme-toggle')?.addEventListener('click', () => setBtcHelperTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'));
+    window.addEventListener('storage', (event) => { if (event.key === btcHelperThemeStorageKey && event.newValue) setBtcHelperTheme(event.newValue, false); });
+    document.querySelectorAll('.site-nav').forEach((nav) => {
+      const toggle = nav.querySelector('.menu-toggle');
+      const links = nav.querySelector('.nav-links');
+      if (!toggle || !links) return;
+      const label = toggle.querySelector('.menu-toggle-label-text');
+      const normalizePath = (href) => {
+        try {
+          const url = new URL(href, window.location.href);
+          return url.pathname.replace(/\/index\.html$/, '/');
+        } catch {
+          return '';
+        }
+      };
+      const currentPath = normalizePath(window.location.href);
+      links.querySelectorAll('a').forEach((link) => {
+        const linkPath = normalizePath(link.href);
+        if (linkPath === currentPath || (currentPath === '/' && linkPath === '/')) link.setAttribute('aria-current', 'page');
+      });
+      const setMenuOpen = (open, restoreFocus = false) => {
+        nav.classList.toggle('is-open', open);
+        toggle.setAttribute('aria-expanded', String(open));
+        if (label) label.textContent = open ? 'Close' : 'Menu';
+        if (!open && restoreFocus) toggle.focus();
+      };
+      toggle.addEventListener('click', () => setMenuOpen(!nav.classList.contains('is-open')));
+      links.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setMenuOpen(false)));
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && nav.classList.contains('is-open')) setMenuOpen(false, true);
+      });
+      document.addEventListener('click', (event) => {
+        if (nav.classList.contains('is-open') && !nav.contains(event.target)) setMenuOpen(false, true);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,825 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Household Resilience Planner by BTC Helper</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/btc-helper-logo.svg">
+  <meta name="theme-color" content="#111313">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <script>
+    try {
+      const savedTheme = localStorage.getItem('btcHelperTheme');
+      document.documentElement.dataset.theme = savedTheme === 'light' ? 'light' : 'dark';
+    } catch {
+      document.documentElement.dataset.theme = 'dark';
+    }
+  </script>
+  <style>
+    :root { color-scheme:light; --bg:#f7f6ef; --card:#fffefa; --card-soft:#f7f6ef; --ink:#141712; --muted:#4f584c; --line:#d7d2c0; --accent:#526b83; --accent-blue:#2563eb; --accent-soft:#eef1f1; --brand-gold:#f2edd6; --hero-ink:#f8fafc; --hero-muted:#cbd5e1; --secondary-bg:#eef1f1; --secondary-ink:#26394a; --secondary-border:rgba(82,107,131,.45); --warn:#b45309; --bad:#991b1b; --good:#166534; --strong:#155e75; }
+    :root[data-theme="dark"] { color-scheme:dark; --bg:#0b0d0d; --card:#101111; --card-soft:#151615; --ink:#f3f2e8; --muted:#c2cbbd; --line:#343837; --accent:#8aa0ad; --accent-blue:#dbeafe; --accent-soft:rgba(138,160,173,.14); --brand-gold:#f2edd6; --hero-ink:#f8fafc; --hero-muted:#cbd5e1; --secondary-bg:#1b211f; --secondary-ink:#f2edd6; --secondary-border:rgba(242,237,214,.36); --warn:#fb923c; --bad:#fca5a5; --good:#86efac; --strong:#67e8f9; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; font-synthesis:none; }
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration:.001ms !important;
+        animation-iteration-count:1 !important;
+        scroll-behavior:auto !important;
+        transition-duration:.001ms !important;
+      }
+      html { scroll-behavior:auto; }
+    }
+    body, button, input, select, textarea, summary { font-family:"Noto Sans", "Segoe UI", Roboto, system-ui, sans-serif; }
+    button, input, select, textarea, summary { font:inherit; }
+    .skip-link { position:absolute; left:16px; top:-52px; z-index:1000; border-radius:999px; padding:10px 14px; background:#f2edd6; color:#0d120f; font-weight:950; text-decoration:none; box-shadow:0 12px 28px rgba(0,0,0,.22); }
+    .skip-link:focus { top:14px; outline:3px solid color-mix(in srgb,var(--accent-blue) 58%,transparent); }
+    body { margin:0; padding:0; font-family:"Noto Sans", "Segoe UI", Roboto, system-ui, sans-serif; background:radial-gradient(circle at 20% -10%, color-mix(in srgb,var(--accent) 8%,transparent), transparent 32%), radial-gradient(circle at 90% 10%, rgba(251,191,36,.07), transparent 30%), var(--bg); color:var(--ink); line-height:1.55; }
+    .site-nav { position:sticky; top:0; z-index:20; backdrop-filter:blur(14px); background:color-mix(in srgb,var(--bg) 88%,transparent); border-bottom:1px solid var(--line); box-shadow:0 10px 28px rgba(0,0,0,.14); }
+    .site-nav-inner { max-width:1120px; margin:0 auto; padding:12px 20px; display:flex; align-items:center; justify-content:space-between; gap:18px; }
+    .brand-lockup { display:inline-flex; align-items:center; gap:10px; color:var(--ink); text-decoration:none; min-width:fit-content; }
+    .brand-mark { width:40px; height:40px; border-radius:13px; display:inline-flex; align-items:center; justify-content:center; background:linear-gradient(135deg,#111313,#181a19); border:1px solid color-mix(in srgb,var(--accent) 44%,#34362d); overflow:hidden; }
+    .brand-mark svg, .brand-mark img { width:36px; height:36px; display:block; }
+    .brand-mark .mark-ring, .brand-mark .mark-compass { stroke:var(--accent); } .brand-mark .mark-arc { stroke:#6f8f5f; } .brand-mark .mark-center { stroke:#f3f2e8; fill:none; } .brand-mark .mark-needle { fill:#fbbf24; stroke:none; }
+    .brand-text strong { display:block; font-size:.86rem; letter-spacing:.12em; text-transform:uppercase; line-height:1.1; }
+    .brand-text span { display:block; color:var(--muted); font-size:.78rem; margin-top:2px; }
+    .nav-links { display:flex; align-items:center; gap:6px; flex-wrap:wrap; justify-content:flex-end; }
+    .nav-links a, .theme-toggle { border:1px solid transparent; border-radius:999px; padding:8px 10px; min-width:38px; color:var(--muted); background:transparent; text-decoration:none; font:inherit; font-size:.86rem; font-weight:800; cursor:pointer; }
+    .nav-links a:hover, .nav-links a:focus, .theme-toggle:hover, .theme-toggle:focus { color:var(--ink); background:var(--accent-soft); border-color:color-mix(in srgb,var(--accent) 24%,var(--line)); outline:none; }
+    .nav-links a[aria-current="page"] { color:var(--ink); background:var(--accent-soft); border-color:color-mix(in srgb,var(--accent) 28%,var(--line)); }
+    .theme-toggle { width:40px; height:40px; display:inline-flex; align-items:center; justify-content:center; padding:0; box-shadow:none; }
+    .theme-toggle:hover, .theme-toggle:focus { border-color:color-mix(in srgb,var(--accent) 45%,var(--line)); background:var(--accent-soft); outline:none; }
+    .theme-icon { display:block; margin:0; }
+    .theme-icon-sun, .theme-icon-moon { width:22px; height:22px; }
+    .breadcrumb { display:flex; align-items:center; gap:8px; flex-wrap:wrap; max-width:1120px; margin:40px auto 18px; color:var(--muted); text-decoration:none; font-weight:900; font-family:'JetBrains Mono', ui-monospace, monospace; letter-spacing:.08em; text-transform:uppercase; font-size:.78rem; }
+    .breadcrumb a { color:var(--accent-blue); text-decoration:none; }
+    .breadcrumb a:hover, .breadcrumb a:focus { color:var(--ink); text-decoration:underline; outline:none; }
+    header { max-width:1120px; margin:0 auto 18px; background:radial-gradient(circle at 84% 18%, rgba(251,191,36,.07), transparent 28%), radial-gradient(circle at 78% 74%, color-mix(in srgb,var(--accent) 10%, transparent), transparent 32%), linear-gradient(135deg,#0b0d0d,#171a1a 58%,#111313); border:1px solid color-mix(in srgb,var(--accent) 28%,#050704); border-radius:22px; color:var(--hero-ink); padding:22px 24px; box-shadow:0 16px 44px rgba(0,0,0,.30); }
+    .wrap { max-width:1120px; margin:0 auto; }
+    .breadcrumb, header, .wrap { width:min(1120px, calc(100% - 32px)); }
+    .eyebrow { text-transform:uppercase; letter-spacing:.12em; font-size:.76rem; color:var(--accent-blue); font-weight:900; font-family:'JetBrains Mono', ui-monospace, monospace; }
+    h1 { margin:.25rem 0 .5rem; font-size:clamp(1.9rem, 4vw, 3.25rem); line-height:1.04; }
+    header p { max-width:760px; color:var(--hero-muted); font-size:1rem; }
+    main { padding:0 0 60px; }
+    .grid { display:grid; grid-template-columns: minmax(0, 1fr) minmax(320px, .8fr); gap:22px; align-items:start; }
+    .planner-split { grid-template-columns:minmax(0, 1.05fr) minmax(320px, .78fr); }
+    .input-panel { min-width:0; }
+    .result-panel { position:sticky; top:86px; align-self:start; }
+    .result-panel h2 { margin-bottom:1rem; }
+    @media (max-width: 860px) { .grid { grid-template-columns:1fr; } }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:22px; padding:20px; box-shadow:0 16px 44px rgba(0,0,0,.22); }
+    h2 { margin:0 0 .75rem; font-size:1.25rem; }
+    h3 { margin:1.2rem 0 .5rem; }
+    .input-grid { display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap:14px; }
+    @media (max-width: 640px) { .input-grid { grid-template-columns:1fr; } }
+    label { display:block; font-size:.88rem; font-weight:800; color:var(--ink); }
+    .input-section { grid-column:1 / -1; margin-top:4px; padding-top:10px; border-top:1px solid var(--line); color:var(--muted); font-weight:900; text-transform:uppercase; letter-spacing:.07em; font-size:.78rem; }
+    .input-section:first-child { border-top:0; padding-top:0; }
+    input { width:100%; margin-top:5px; padding:11px 12px; border:1px solid var(--line); border-radius:12px; background:var(--card-soft); color:var(--ink); font:inherit; }
+    input::placeholder { color:color-mix(in srgb,var(--muted) 88%,var(--ink)); opacity:.78; }
+    .hint { color:var(--muted); font-size:.86rem; margin:.25rem 0 0; }
+    .results { display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap:12px; }
+    .metric { border:1px solid var(--line); border-radius:16px; padding:14px; background:var(--card-soft); }
+    .supporting-ratios { margin-top:12px; }
+    .wide { grid-column:1 / -1; }
+    .example-note { margin-top:12px; padding:12px 14px; border:1px dashed var(--line); border-radius:14px; background:var(--card-soft); color:var(--muted); font-size:.9rem; }
+    .why-box { margin-top:14px; border:1px solid var(--line); border-radius:16px; padding:14px; background:var(--card-soft); }
+    .why-box p { margin:.35rem 0 0; }
+    .plan-summary-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-bottom:12px; }
+    .plan-summary-item { min-height:112px; border:1px solid var(--line); border-radius:16px; padding:14px; background:var(--card-soft); }
+    .plan-summary-item.primary { grid-column:1 / -1; min-height:0; background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 14%,var(--card-soft)),var(--card-soft)); }
+    .plan-summary-item span, .plan-next-step span { display:block; color:var(--muted); font-size:.78rem; font-weight:900; letter-spacing:.07em; text-transform:uppercase; }
+    .plan-summary-item strong { display:block; margin-top:4px; font-size:1.2rem; line-height:1.18; }
+    .plan-summary-item p { margin:.35rem 0 0; }
+    .plan-next-step { margin:12px 0 14px; border:1px solid color-mix(in srgb,var(--accent) 34%,var(--line)); border-radius:16px; padding:14px; background:var(--accent-soft); }
+    .plan-next-step strong { display:block; margin-top:4px; line-height:1.35; }
+    @media (max-width: 640px) { .plan-summary-grid { grid-template-columns:1fr; } .plan-summary-item.primary { grid-column:auto; } }
+    .score-card { margin-bottom:14px; padding:16px; border:1px solid var(--line); border-radius:18px; background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 14%,var(--card-soft)),var(--card-soft)); }
+    details { margin-top:14px; border:1px solid var(--line); border-radius:16px; background:var(--card-soft); padding:0; overflow:hidden; }
+    summary { cursor:pointer; padding:12px 14px; font-weight:900; color:var(--ink); }
+    details[open] summary { border-bottom:1px solid var(--line); }
+    .details-body { padding:14px; }
+    .score-row { display:flex; align-items:end; justify-content:space-between; gap:14px; }
+    .score-value { font-size:2.35rem; line-height:1; font-weight:900; }
+    .score-label { color:var(--muted); font-weight:900; text-transform:uppercase; letter-spacing:.07em; font-size:.78rem; }
+    .score-bar { height:10px; border-radius:999px; overflow:hidden; background:color-mix(in srgb,var(--line) 70%,transparent); margin-top:12px; }
+    .score-fill { display:block; height:100%; width:0%; background:linear-gradient(90deg,var(--bad),var(--warn),var(--good)); border-radius:999px; transition:width .18s ease; }
+    .subscores, .scenario-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin-top:12px; }
+    .scenario-grid.is-primary { margin:12px 0 14px; }
+    .supporting-heading { margin:.35rem 0 .25rem; font-size:1rem; }
+    .subscore, .scenario { border:1px solid var(--line); border-radius:14px; padding:12px; background:var(--card-soft); }
+    .subscore strong, .scenario strong { display:block; }
+    .subscore span, .scenario span { color:var(--muted); font-size:.86rem; }
+    .scenario-grid { grid-template-columns:1fr; }
+    .scenario strong { font-size:1rem; }
+    .scenario-metrics { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; margin-top:8px; }
+    .scenario-metrics span { display:block; border-top:1px solid var(--line); padding-top:6px; }
+    .tool-row { display:flex; flex-wrap:wrap; gap:10px; margin-top:12px; }
+    .tool-row button { margin-top:0; }
+    .file-label { display:inline-flex; align-items:center; border:1px solid var(--secondary-border); border-radius:999px; padding:10px 14px; background:var(--secondary-bg); color:var(--secondary-ink); font-weight:900; cursor:pointer; }
+    .file-label input { display:none; }
+    .method-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-top:12px; }
+    @media (max-width: 640px) { .method-grid { grid-template-columns:1fr; } }
+    .method-card { border:1px solid var(--line); border-radius:16px; padding:14px; background:var(--card-soft); }
+    .method-card strong { display:block; margin-bottom:4px; }
+    .summary-card { margin-top:18px; }
+    .start-panel { display:grid; grid-template-columns:1.1fr repeat(3,minmax(150px,.7fr)); gap:12px; margin:0 0 18px; }
+    .start-card { border:1px solid var(--line); border-radius:18px; padding:16px; background:var(--card); box-shadow:0 10px 28px rgba(0,0,0,.14); }
+    .start-card.primary { background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 14%,var(--card)),var(--card)); }
+    .start-card strong { display:block; margin-bottom:5px; color:var(--ink); }
+    .step-number { display:inline-flex; align-items:center; justify-content:center; width:26px; height:26px; margin-bottom:8px; border-radius:999px; background:var(--accent-soft); color:var(--ink); font-weight:900; }
+    @media (max-width:900px) { .start-panel { grid-template-columns:1fr 1fr; } .start-card.primary { grid-column:1 / -1; } }
+    @media (max-width:620px) { .start-panel { grid-template-columns:1fr; } }
+    @media print { body { background:white; color:#111; padding:0; } .theme-toggle,.breadcrumb,button,.file-label,.research-links { display:none !important; } header,.card { box-shadow:none; border:1px solid #ddd; break-inside:avoid; } .grid { grid-template-columns:1fr; } .result-panel { position:static; } }
+    .metric .label { color:var(--muted); font-size:.8rem; font-weight:800; text-transform:uppercase; letter-spacing:.07em; }
+    .metric .value { font-size:1.35rem; font-weight:900; margin-top:3px; }
+    .status { padding:12px 14px; border-radius:16px; border:1px solid var(--line); margin:0 0 14px; }
+    .status.fragile { background:color-mix(in srgb,var(--bad) 10%,var(--card)); border-color:color-mix(in srgb,var(--bad) 45%,var(--line)); color:var(--bad); }
+    .status.stabilizing { background:color-mix(in srgb,var(--warn) 10%,var(--card)); border-color:color-mix(in srgb,var(--warn) 45%,var(--line)); color:var(--warn); }
+    .status.baseline { background:color-mix(in srgb,var(--good) 10%,var(--card)); border-color:color-mix(in srgb,var(--good) 45%,var(--line)); color:var(--good); }
+    .status.strong { background:color-mix(in srgb,var(--strong) 10%,var(--card)); border-color:color-mix(in srgb,var(--strong) 45%,var(--line)); color:var(--strong); }
+    .status strong { display:block; font-size:1rem; }
+    ul { padding-left:1.2rem; }
+    .small { color:var(--muted); font-size:.9rem; }
+    .pill { display:inline-flex; gap:6px; align-items:center; border:1px solid var(--line); background:var(--card-soft); border-radius:999px; padding:6px 10px; margin:4px 4px 0 0; font-weight:800; font-size:.82rem; color:var(--ink); text-decoration:none; }
+    a.pill:hover, a.pill:focus { border-color:var(--accent); color:var(--accent-blue); outline:none; }
+    .disclaimer { margin-top:18px; padding:14px; border-left:4px solid var(--accent); background:var(--accent-soft); color:var(--ink); border-radius:12px; }
+    button { border:1px solid color-mix(in srgb,var(--brand-gold) 72%,#0d120f); border-radius:999px; padding:11px 16px; background:var(--brand-gold); color:#0d120f; font-weight:900; cursor:pointer; margin-top:14px; box-shadow:0 10px 24px rgba(0,0,0,.12); }
+    button.secondary { background:var(--secondary-bg); color:var(--secondary-ink); border-color:var(--secondary-border); }
+    .site-footer { max-width:1120px; margin:0 auto; padding:28px 20px 44px; color:var(--muted); }
+    .site-footer-inner { border-top:1px solid var(--line); padding-top:22px; display:grid; grid-template-columns:minmax(0,1.2fr) minmax(260px,.8fr); gap:22px; }
+    .footer-links { display:flex; flex-wrap:wrap; gap:10px; }
+    .footer-links a { color:var(--muted); text-decoration:none; font-weight:800; }
+    .footer-links a:hover, .footer-links a:focus { color:var(--ink); text-decoration:underline; outline:none; }
+    .menu-toggle { display:none; gap:7px; padding-inline:11px; color:var(--ink); border-color:var(--line); background:color-mix(in srgb,var(--card) 72%,transparent); }
+    .menu-toggle-bars { width:15px; height:10px; position:relative; display:inline-block; border-top:2px solid currentColor; border-bottom:2px solid currentColor; }
+    .menu-toggle-bars::after { content:''; position:absolute; left:0; right:0; top:3px; border-top:2px solid currentColor; }
+    .site-nav { z-index:50; background:color-mix(in srgb,var(--bg) 92%,transparent); }
+    .site-nav-inner { display:grid; grid-template-columns:auto 1fr; min-height:62px; padding:10px 20px; }
+    .brand-mark { width:34px; height:34px; border-radius:10px; }
+    .brand-mark svg, .brand-mark img { width:30px; height:30px; }
+    .brand-text strong { font-size:.82rem; }
+    .brand-text span { font-size:.72rem; }
+    .nav-links { gap:4px; }
+    .nav-links a, .theme-toggle, .menu-toggle { position:static; box-shadow:none; display:inline-flex; align-items:center; justify-content:center; min-height:36px; min-width:36px; padding:7px 9px; font-size:.82rem; }
+    .site-nav .menu-toggle { display:none; }
+    .site-footer-inner { border:1px solid var(--line); border-radius:24px; padding:24px; display:grid; grid-template-columns:minmax(0,1.2fr) repeat(3,minmax(150px,.55fr)); gap:22px; background:linear-gradient(135deg,color-mix(in srgb,var(--card) 94%,transparent),color-mix(in srgb,var(--accent-soft) 36%,var(--card))); box-shadow:0 16px 44px rgba(0,0,0,.10); }
+    .footer-brand strong { display:block; color:var(--ink); letter-spacing:.08em; text-transform:uppercase; font-size:.86rem; }
+    .footer-brand p, .footer-note { margin:.45rem 0 0; color:var(--muted); font-size:.9rem; }
+    .footer-column-title { color:var(--ink); font-weight:900; margin-bottom:10px; font-size:.86rem; display:flex; align-items:center; gap:8px; }
+    .footer-icon { width:22px; height:22px; border-radius:8px; display:inline-flex; align-items:center; justify-content:center; background:var(--accent-soft); color:var(--ink); border:1px solid var(--line); font-size:.82rem; line-height:1; }
+    .footer-links a { display:inline-flex; align-items:center; gap:7px; }
+    .footer-links a .link-icon { color:var(--accent); font-size:.86rem; width:1.1em; text-align:center; }
+    @media (max-width:860px) { .site-nav-inner { grid-template-columns:1fr auto; gap:10px; min-height:56px; padding:9px 14px; } .menu-toggle { display:inline-flex; } .nav-links { display:none; grid-column:1 / -1; width:100%; grid-template-columns:1fr 1fr; gap:8px; padding:8px 0 4px; border-top:1px solid var(--line); } .site-nav.is-open .nav-links { display:grid; } .nav-links a, .theme-toggle { justify-content:flex-start; width:100%; border-color:var(--line); background:color-mix(in srgb,var(--card) 74%,transparent); padding:9px 10px; } .theme-toggle { justify-content:center; } .brand-text span { display:none; } .site-footer-inner { grid-template-columns:1fr 1fr; padding:20px; } .footer-brand { grid-column:1 / -1; } }
+    @media (max-width:560px) { .site-nav-inner { padding:4px 12px; } .brand-mark { width:32px; height:32px; } .brand-mark svg, .brand-mark img { width:28px; height:28px; } .brand-text strong { font-size:.78rem; } .menu-toggle { min-height:34px; padding:6px 10px; font-size:.8rem; } .site-footer-inner { grid-template-columns:1fr; border-radius:20px; } }
+
+    .menu-toggle { gap:8px; min-height:34px; padding:7px 11px; border-radius:999px; font-weight:900; }
+    .menu-toggle-icon { width:16px; height:14px; position:relative; display:inline-block; flex:0 0 auto; }
+    .menu-toggle-icon span { position:absolute; left:0; right:0; height:2px; border-radius:999px; background:currentColor; display:block; transform-origin:center; transition:top .16s ease, transform .16s ease, opacity .16s ease; }
+    .menu-toggle-icon span:nth-child(1) { top:1px; }
+    .menu-toggle-icon span:nth-child(2) { top:6px; }
+    .menu-toggle-icon span:nth-child(3) { top:11px; }
+    .site-nav.is-open .menu-toggle-icon span:nth-child(1) { top:6px; transform:rotate(45deg); }
+    .site-nav.is-open .menu-toggle-icon span:nth-child(2) { opacity:0; }
+    .site-nav.is-open .menu-toggle-icon span:nth-child(3) { top:6px; transform:rotate(-45deg); }
+    .theme-toggle { gap:8px; }
+    .theme-toggle .theme-icon { margin:0; }
+    .theme-toggle-label { display:none; font-size:.83rem; font-weight:900; }
+    .footer-icon, .footer-links a .link-icon { display:none; }
+    .footer-column-title { gap:0; letter-spacing:.09em; text-transform:uppercase; font-size:.75rem; color:var(--muted); }
+    .footer-links { gap:6px; }
+    .footer-links a { gap:0; color:color-mix(in srgb,var(--ink) 78%,var(--muted)); }
+    @media (max-width:860px) {
+      .site-nav-inner { gap:8px; min-height:54px; padding:8px 14px; }
+      .site-nav .menu-toggle { display:inline-flex; }
+      .nav-links { grid-template-columns:repeat(2,minmax(0,1fr)); gap:6px; margin:6px 0 2px; padding:7px; border:1px solid var(--line); border-radius:16px; background:color-mix(in srgb,var(--card) 92%,transparent); box-shadow:0 18px 44px rgba(0,0,0,.16); }
+      .site-nav.is-open .nav-links { display:grid; }
+      .nav-links a, .theme-toggle { width:100%; min-height:36px; justify-content:flex-start; gap:8px; padding:8px 10px; border:0; border-radius:12px; background:transparent; color:var(--ink); }
+      .nav-links a:hover, .nav-links a:focus, .theme-toggle:hover, .theme-toggle:focus { background:var(--accent-soft); border-color:transparent; text-decoration:none; }
+      .theme-toggle { height:auto; grid-column:1 / -1; }
+      .theme-toggle-label { display:inline; }
+      .menu-toggle-label-text { min-width:36px; text-align:left; }
+      .theme-toggle .theme-icon { flex:0 0 auto; }
+      .site-footer { padding-top:24px; }
+      .site-footer-inner { grid-template-columns:1fr; gap:18px; padding:20px; }
+      .footer-brand { grid-column:auto; }
+      .result-panel { position:static; }
+    }
+    @media (max-width:560px) {
+      .site-footer { padding:24px 12px 40px; }
+      .site-footer-inner { width:100%; min-width:0; border-radius:18px; padding:18px; gap:18px; overflow:hidden; }
+      .site-footer-inner > * { min-width:0; }
+      .footer-column-title { margin-bottom:8px; }
+      .footer-links { display:grid; grid-template-columns:1fr; gap:6px; align-items:stretch; }
+      .footer-links a { width:100%; min-height:32px; align-items:center; padding:2px 0; line-height:1.25; overflow-wrap:anywhere; }
+    }
+    @media (max-width:340px) { .nav-links { grid-template-columns:1fr; } .theme-toggle { grid-column:auto; } }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <nav class="site-nav" aria-label="BTC Helper site navigation">
+    <div class="site-nav-inner">
+      <a class="brand-lockup" href="/index.html" aria-label="BTC Helper home">
+        <span class="brand-mark"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path class="mark-arc" d="M17 23c-4 6-4 14 0 21 4 7 12 11 20 8 7-2 13-8 14-16 1-5-1-10-4-14" stroke-width="3.5"></path>
+            <path class="mark-compass" d="M22 24v20M42 24v20" stroke-width="2.8" opacity="0.92"></path>
+            <path class="mark-center" d="M24 30v8M28 21v15M32 15v27M36 18v20M40 24v9" stroke-width="2.8"></path>
+          </g>
+          <circle class="mark-needle" cx="28" cy="18" r="2"></circle>
+        </svg></span>
+        <span class="brand-text"><strong>BTC Helper</strong><span>Resilient accumulation</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav-links"><span class="menu-toggle-icon" aria-hidden="true"><span></span><span></span><span></span></span><span class="menu-toggle-label-text">Menu</span></button>
+      <div class="nav-links" id="site-nav-links">
+        <a href="/index.html#today">Today</a>
+        <a href="/planner.html">My Plan</a>
+        <a href="/insights.html">Insights</a>
+        <a href="/track.html">Track</a>
+        <a href="/updates.html">Updates</a>
+        <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Switch theme"><svg aria-hidden="true" class="theme-icon theme-icon-moon" viewBox="0 0 24 24"><path d="M20.4 14.7A8.3 8.3 0 0 1 9.3 3.6 8.7 8.7 0 1 0 20.4 14.7Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="theme-toggle-label">Theme</span></button>
+      </div>
+    </div>
+  </nav>
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/planner.html">My Plan</a><span>/</span><span>Household Resilience</span></nav>
+  <header>
+    <div class="wrap">
+      <div class="eyebrow">BTC Helper Household Tool · local-only</div>
+      <h1>Household Resilience Planner</h1>
+      <p>Estimate whether a monthly plan has enough room, cash buffer, and debt flexibility to support durable long-term accumulation.</p>
+    </div>
+  </header>
+  <main class="wrap" id="main-content">
+    <section class="start-panel" aria-label="How to use the planner">
+      <div class="start-card primary"><strong>Start here</strong><span class="small">Enter rough monthly numbers. The planner turns them into a plain resilience posture, biggest bottleneck, and first practical next step. Nothing leaves this browser.</span></div>
+      <div class="start-card"><span class="step-number">1</span><strong>Monthly room</strong><span class="small">Can income cover essentials, debt, irregular bills, and optional accumulation?</span></div>
+      <div class="start-card"><span class="step-number">2</span><strong>Shock buffer</strong><span class="small">Could normal surprises force borrowing, missed bills, or selling long-term assets?</span></div>
+      <div class="start-card"><span class="step-number">3</span><strong>Durable amount</strong><span class="small">If BTC is optional, is the amount small enough to keep going during stress?</span></div>
+    </section>
+    <div class="grid planner-split">
+      <section class="card input-panel" data-household-panel="inputs">
+        <h2>1. Enter your monthly picture</h2>
+        <p class="small">Use estimates, not perfection. The goal is a quick resilience read: room, buffers, debt pressure, and optional accumulation durability.</p>
+        <div class="input-grid">
+          <div class="input-section">Income</div>
+          <label>Monthly take-home income <input id="income" type="number" min="0" step="50" placeholder="e.g., monthly after-tax income" required></label>
+          <div class="input-section">Monthly spending</div>
+          <label>Fixed essentials <input id="fixed" type="number" min="0" step="50" placeholder="e.g., rent/mortgage, utilities" required></label>
+          <label>Variable essentials <input id="variable" type="number" min="0" step="50" placeholder="e.g., groceries, fuel" required></label>
+          <label>Flexible spending <input id="discretionary" type="number" min="0" step="50" placeholder="optional"></label>
+          <label>Medical / insurance <input id="medical" type="number" min="0" step="25" placeholder="optional estimate"></label>
+          <label>Irregular bills reserve <input id="irregular" type="number" min="0" step="25" placeholder="optional estimate"></label>
+          <div class="input-section">Debt, savings, and BTC</div>
+          <label>Minimum debt payments <input id="debtPay" type="number" min="0" step="25" placeholder="enter 0 if none" required></label>
+          <label>High-interest debt balance <input id="debtBal" type="number" min="0" step="100" placeholder="if any"></label>
+          <label>Total liquid cash <input id="cash" type="number" min="0" step="100" placeholder="cash before protected buckets" required></label>
+          <label>Near-term obligations reserve <input id="nearTermReserve" type="number" min="0" step="25" placeholder="enter 0 if none" required></label>
+          <label>Expected tax reserve <input id="taxReserve" type="number" min="0" step="25" placeholder="enter 0 if none" required></label>
+          <label>Required debt-payment reserve <input id="debtReserve" type="number" min="0" step="25" placeholder="enter 0 if none" required></label>
+          <label>Other protected cash <input id="otherProtectedCash" type="number" min="0" step="25" placeholder="enter 0 if none" required></label>
+          <label>Optional monthly BTC <input id="btc" type="number" min="0" step="10" placeholder="enter 0 if none" required></label>
+          <div class="input-section">BTC exposure context</div>
+          <label>Current BTC / BTC-linked value <input id="btcExposure" type="number" min="0" step="100" placeholder="BTC, ETFs, MSTR, related funds" required></label>
+          <label>Total investable assets <input id="investableAssets" type="number" min="0" step="500" placeholder="liquid + retirement/investable assets" required></label>
+          <label>Chosen BTC concentration limit (%) <input id="btcLimitPct" type="number" min="0" max="100" step="1" placeholder="e.g., 10" required></label>
+        </div>
+        <div class="tool-row">
+          <button id="recalc">Check resilience</button>
+          <button class="secondary" id="loadExample">Try example</button>
+          <button class="secondary" id="reset">Clear this device</button>
+        </div>
+        <details>
+          <summary>Advanced: save, export, import, or print</summary>
+          <div class="details-body">
+            <div class="tool-row">
+              <button class="secondary" id="saveLocal">Save locally</button>
+              <button class="secondary" id="exportJson">Export JSON</button>
+              <label class="file-label">Import JSON <input id="importJson" type="file" accept="application/json,.json"></label>
+              <button class="secondary" id="printSummary">Print summary</button>
+            </div>
+            <p class="small" id="saveStatus">This prototype does not save unless you choose “Save locally.” Local browser profiles are not encrypted by BTC Helper; use Clear this device on shared computers.</p>
+          </div>
+        </details>
+        <div id="exampleNote" class="example-note" hidden>This is a fictional teaching example only. It does not come from any real household data.</div>
+        <div class="disclaimer"><strong>Not financial advice.</strong> This tool is for education and personal planning. It does not know your full circumstances and does not recommend buying, selling, or holding any asset.</div>
+      </section>
+      <aside class="card result-panel" data-household-panel="result">
+        <h2>2. Read your result</h2>
+        <div class="plan-summary-grid" aria-live="polite">
+          <div class="plan-summary-item primary">
+            <span>Plan durability</span>
+            <strong id="resilience-summary-durability">Not checked</strong>
+            <p id="resilience-summary-reason" class="small">Enter rough numbers or load the fictional example to see the household read.</p>
+          </div>
+          <div class="plan-summary-item">
+            <span>Main pressure</span>
+            <strong id="resilience-summary-pressure">Use the quick check</strong>
+          </div>
+          <div class="plan-summary-item">
+            <span>Safe floor</span>
+            <strong id="resilience-summary-floor">Protect essentials first</strong>
+          </div>
+          <div class="plan-summary-item">
+            <span>Optional accumulation room</span>
+            <strong id="resilience-summary-room">Not established</strong>
+          </div>
+          <div class="plan-summary-item">
+            <span>Protected cash check</span>
+            <strong id="resilience-summary-protected-cash">Not checked</strong>
+          </div>
+          <div class="plan-summary-item">
+            <span>BTC exposure check</span>
+            <strong id="resilience-summary-exposure">Not checked</strong>
+          </div>
+          <div class="plan-summary-item">
+            <span>Market-plan boundary</span>
+            <strong>BTC Helper should not override household safety.</strong>
+          </div>
+        </div>
+        <div class="plan-next-step">
+          <span>First next step</span>
+          <strong id="resilience-summary-next-step">Enter income, essential expenses, debt payments, and liquid savings.</strong>
+        </div>
+        <div id="status" class="status"><strong>Ready when you are</strong><span>Required blanks stay unknown. Enter 0 only when the value is truly zero. Nothing leaves this browser.</span></div>
+        <details>
+          <summary>Show supporting score and ratios</summary>
+          <div class="details-body">
+            <div class="score-card">
+              <div class="score-row"><div><div class="score-label">Resilience score</div><div id="scoreMeaning" class="small">Planning resilience, not investment merit.</div></div><div id="scoreValue" class="score-value">—</div></div>
+              <div class="score-bar" aria-hidden="true"><span id="scoreFill" class="score-fill"></span></div>
+            </div>
+            <div class="results">
+              <div class="metric"><div class="label">Monthly margin</div><div id="margin" class="value">—</div></div>
+              <div class="metric"><div class="label">Buffer months</div><div id="buffer" class="value">—</div></div>
+              <div class="metric"><div class="label">Debt load</div><div id="debtLoad" class="value">—</div></div>
+              <div class="metric"><div class="label">Main bottleneck</div><div id="bottleneck" class="value">—</div></div>
+            </div>
+            <div class="results supporting-ratios">
+              <div class="metric"><div class="label">Essential load</div><div id="essential" class="value">—</div></div>
+              <div class="metric"><div class="label">Margin rate</div><div id="marginRate" class="value">—</div></div>
+              <div class="metric"><div class="label">Accumulation share</div><div id="accumShare" class="value">—</div></div>
+            </div>
+            <h3 class="supporting-heading">Score breakdown</h3>
+            <div class="subscores" id="subscores"></div>
+          </div>
+        </details>
+        <h3>First practical next steps</h3>
+        <ul id="priorities"></ul>
+        <h3>BTC accumulation guardrail</h3>
+        <p id="btcGuardrail"></p>
+        <h3>Stress scenarios</h3>
+        <div class="scenario-grid is-primary" id="primaryScenarios"></div>
+        <details>
+          <summary>Compare scenarios</summary>
+          <div class="details-body"><div class="scenario-grid" id="scenarios"></div></div>
+        </details>
+        <details>
+          <summary>Evidence and explanation</summary>
+          <div class="details-body">
+            <div class="why-box">
+              <h3>Why this matters</h3>
+              <p id="whyThisMatters">The planner connects household inputs to the public research base so the output is traceable instead of unexplained.</p>
+            </div>
+            <h3 class="research-links">Research links</h3>
+            <a class="pill research-links" href="/emergency-buffers-borrowed-resilience-household-hardship.html">Emergency buffers / SHED</a>
+            <a class="pill research-links" href="/borrowed-resilience-summary.html">Borrowed Resilience</a>
+            <a class="pill research-links" href="/quiet-tax-summary.html">Quiet Tax</a>
+            <a class="pill research-links" href="/medical-financial-fragility-meps.html">Medical Fragility / MEPS</a>
+            <a class="pill research-links" href="/confidence-ledger-summary.html">Confidence Ledger</a>
+            <a class="pill research-links" href="/household-resilience-summary.html">Capstone synthesis</a>
+          </div>
+        </details>
+      </aside>
+    </div>
+    <section class="card summary-card" id="methodology">
+      <h2>Why these measures?</h2>
+      <p class="small">The score is a transparent planning heuristic — not a credit score, financial plan, or Bitcoin return forecast.</p>
+      <details>
+        <summary>Show methodology</summary>
+        <div class="details-body">
+          <p class="small">The score rewards household conditions that make long-horizon accumulation more durable: positive margin, emergency liquidity, manageable debt pressure, survivable essential costs, and accumulation that does not consume all available slack.</p>
+          <div class="method-grid">
+            <div class="method-card"><strong>Cash-flow margin</strong><span>Higher monthly slack improves resilience because shocks are less likely to force borrowing or asset sales.</span></div>
+            <div class="method-card"><strong>Emergency buffer</strong><span>Liquid savings are treated as a base layer because the research links buffers to lower hardship risk.</span></div>
+            <div class="method-card"><strong>Debt pressure</strong><span>Required debt payments reduce flexibility, especially when paired with thin buffers.</span></div>
+            <div class="method-card"><strong>Essential costs</strong><span>Housing, food, utilities, insurance, and irregular essentials can crowd out long-horizon planning.</span></div>
+            <div class="method-card"><strong>Medical exposure</strong><span>Medical and insurance costs can operate like a resilience premium that must be carried before savings can build.</span></div>
+            <div class="method-card"><strong>Accumulation durability</strong><span>The planner favors accumulation that can survive stress without becoming forced selling, high-cost debt, or interrupted savings.</span></div>
+          </div>
+        </div>
+      </details>
+    </section>
+    <section class="card summary-card" id="summary">
+      <h2>Private summary</h2>
+      <details>
+        <summary>Show printable summary</summary>
+        <div class="details-body"><p class="small">A simple snapshot for printing or private review.</p><div id="printableSummary" class="why-box">Enter numbers or load the fictional example to generate a summary.</div></div>
+      </details>
+    </section>
+  </main>
+  <footer class="site-footer" id="contact">
+    <div class="site-footer-inner">
+      <div class="footer-brand"><strong>BTC Helper</strong><p>A private Bitcoin accumulation plan, a source-aware daily action layer, and a public decision record.</p><p class="footer-note">Educational research tool only. Not financial advice, investment advice, or a recommendation to buy or sell any asset.</p></div>
+      <div><div class="footer-column-title">Product</div><div class="footer-links"><a href="/index.html#today">Today</a><a href="/planner.html">My Plan</a><a href="/insights.html">Insights</a><a href="/track.html">Track</a><a href="/updates.html">Updates</a></div></div>
+      <div><div class="footer-column-title">Research</div><div class="footer-links"><a href="/weekly-macro-thesis/">Weekly macro</a><a href="/documents-and-research.html">Research library</a><a href="/public-proof-of-work-methodology.html">Methodology</a><a href="/household-resilience-planner.html">Household resilience</a></div></div>
+      <div><div class="footer-column-title">Trust</div><div class="footer-links"><a href="/data-sources.html">Source health</a><a href="/about.html">About</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a><a href="https://x.com/btchelperapp">BTC Helper on X</a></div></div>
+    </div>
+  </footer>
+  <script>
+    const btcHelperThemeStorageKey = 'btcHelperTheme';
+    function setBtcHelperTheme(theme, persist = true) {
+      const next = theme === 'light' ? 'light' : 'dark';
+      document.documentElement.dataset.theme = next;
+      if (persist) { try { localStorage.setItem(btcHelperThemeStorageKey, next); } catch {} }
+      const button = document.getElementById('theme-toggle');
+      if (button) {
+        button.innerHTML = next === 'dark' ? '<svg aria-hidden="true" class="theme-icon theme-icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2.8v3M12 18.2v3M4.8 4.8l2.1 2.1M17.1 17.1l2.1 2.1M2.8 12h3M18.2 12h3M4.8 19.2l2.1-2.1M17.1 6.9l2.1-2.1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="theme-toggle-label">Theme</span>' : '<svg aria-hidden="true" class="theme-icon theme-icon-moon" viewBox="0 0 24 24"><path d="M20.4 14.7A8.3 8.3 0 0 1 9.3 3.6 8.7 8.7 0 1 0 20.4 14.7Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="theme-toggle-label">Theme</span>';
+        button.setAttribute('aria-label', next === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+        button.setAttribute('title', next === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+      }
+    }
+    setBtcHelperTheme(document.documentElement.dataset.theme || 'dark', false);
+    document.getElementById('theme-toggle')?.addEventListener('click', () => setBtcHelperTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'));
+    window.addEventListener('storage', (event) => { if (event.key === btcHelperThemeStorageKey && event.newValue) setBtcHelperTheme(event.newValue, false); });
+    document.querySelectorAll('.site-nav').forEach((nav) => {
+      const toggle = nav.querySelector('.menu-toggle');
+      const links = nav.querySelector('.nav-links');
+      if (!toggle || !links) return;
+      const label = toggle.querySelector('.menu-toggle-label-text');
+      const normalizePath = (href) => {
+        try {
+          const url = new URL(href, window.location.href);
+          return url.pathname.replace(/\/index\.html$/, '/');
+        } catch {
+          return '';
+        }
+      };
+      const currentPath = normalizePath(window.location.href);
+      links.querySelectorAll('a').forEach((link) => {
+        const linkPath = normalizePath(link.href);
+        if (linkPath === currentPath || (currentPath === '/' && linkPath === '/')) link.setAttribute('aria-current', 'page');
+      });
+      const setMenuOpen = (open, restoreFocus = false) => {
+        nav.classList.toggle('is-open', open);
+        toggle.setAttribute('aria-expanded', String(open));
+        if (label) label.textContent = open ? 'Close' : 'Menu';
+        if (!open && restoreFocus) toggle.focus();
+      };
+      toggle.addEventListener('click', () => setMenuOpen(!nav.classList.contains('is-open')));
+      links.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setMenuOpen(false)));
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && nav.classList.contains('is-open')) setMenuOpen(false, true);
+      });
+      document.addEventListener('click', (event) => {
+        if (nav.classList.contains('is-open') && !nav.contains(event.target)) setMenuOpen(false, true);
+      });
+    });
+
+    const ids = ['income','fixed','variable','discretionary','medical','irregular','debtPay','debtBal','cash','nearTermReserve','taxReserve','debtReserve','otherProtectedCash','btc','btcExposure','investableAssets','btcLimitPct'];
+    const requiredInputs = [
+      ['income', 'monthly take-home income'],
+      ['fixed', 'fixed essentials'],
+      ['variable', 'variable essentials'],
+      ['debtPay', 'minimum debt payments'],
+      ['cash', 'total liquid cash'],
+      ['nearTermReserve', 'near-term obligations reserve'],
+      ['taxReserve', 'expected tax reserve'],
+      ['debtReserve', 'required debt-payment reserve'],
+      ['otherProtectedCash', 'other protected cash'],
+      ['btc', 'optional monthly BTC'],
+      ['btcExposure', 'current BTC or BTC-linked value'],
+      ['investableAssets', 'total investable assets'],
+      ['btcLimitPct', 'chosen BTC concentration limit']
+    ];
+    const fmt = new Intl.NumberFormat('en-US', { style:'currency', currency:'USD', maximumFractionDigits:0 });
+    const pct = (x) => `${Math.round(x * 100)}%`;
+    const storageKey = 'btcHelperHouseholdResiliencePlannerV1';
+    function getProfile() { return Object.fromEntries(ids.map(id => [id, document.getElementById(id).value])); }
+    function applyProfile(profile) { ids.forEach(id => { if (profile && Object.prototype.hasOwnProperty.call(profile, id)) document.getElementById(id).value = profile[id]; }); recalc(); }
+    function val(id) { return Number(document.getElementById(id).value || 0); }
+    function setText(id, text) { document.getElementById(id).textContent = text; }
+    function hasValue(id) { return String(document.getElementById(id).value || '').trim() !== ''; }
+    function missingRequiredInputs() { return requiredInputs.filter(([id]) => !hasValue(id)); }
+    function resetSupportingOutputs() {
+      ['margin','buffer','essential','debtLoad','marginRate','accumShare'].forEach(id => setText(id, '—'));
+      setText('bottleneck', '—');
+      setText('scoreValue', '—');
+      document.getElementById('scoreFill').style.width = '0%';
+      document.getElementById('subscores').innerHTML = '';
+      document.getElementById('scenarios').innerHTML = '<div class="scenario"><strong>No scenario yet</strong><span>Enter the required fields or load the fictional example to compare current, buffer-aware, and buffer-first paths.</span></div>';
+      document.getElementById('primaryScenarios').innerHTML = '<div class="scenario"><strong>No scenario yet</strong><span>Enter the required fields or load the fictional example to compare income-loss, medical-shock, and BTC concentration stress.</span></div>';
+    }
+    function setNotEnoughInformation(missing) {
+      resetSupportingOutputs();
+      const names = missing.map(([, label]) => label).join(', ');
+      const message = `Not enough information to calculate plan durability. Add ${names}. Enter 0 only when a required value is truly zero.`;
+      const status = document.getElementById('status');
+      status.className = 'status';
+      status.innerHTML = `<strong>Not enough information</strong><span>${message}</span>`;
+      renderPlanSummary({
+        durability: 'Not checked',
+        reason: 'Required household inputs are still unknown.',
+        pressure: 'Missing required inputs',
+        safeFloor: 'Enter required fields first',
+        optionalRoom: 'Not established',
+        protectedCash: 'Not checked',
+        exposure: 'Not checked',
+        nextStep: message
+      });
+      document.getElementById('priorities').innerHTML = `<li>${message}</li>`;
+      setText('btcGuardrail', 'BTC accumulation is optional. The planner evaluates it only after the required household fields are known.');
+      setText('whyThisMatters', 'Unknown household values are not treated as zero. Missing protected-cash inputs mean unknown liquidity boundaries, not no protected cash.');
+      document.getElementById('printableSummary').textContent = message;
+    }
+    const clamp = (n, min = 0, max = 100) => Math.max(min, Math.min(max, n));
+    function scoreProfile({ income, monthlyNeed, marginAfterBtc, marginBeforeBtc, bufferMonths, debtPay, essentials, medical, btc, btcConcentration, btcLimit }) {
+      const marginRate = income > 0 ? marginAfterBtc / income : 0;
+      const debtLoad = income > 0 ? debtPay / income : 1;
+      const essentialLoad = income > 0 ? essentials / income : 1;
+      const medicalLoad = income > 0 ? medical / income : 0;
+      const accumulationShare = marginBeforeBtc > 0 ? btc / marginBeforeBtc : (btc > 0 ? 1 : 0);
+      const concentrationPressure = btcLimit > 0 && btcConcentration > 0 ? btcConcentration / btcLimit : 0;
+      const parts = {
+        margin: clamp((marginRate + 0.05) / 0.25 * 100),
+        buffer: clamp(bufferMonths / 3 * 100),
+        debt: clamp(100 - debtLoad / 0.18 * 100),
+        essentials: clamp(100 - Math.max(0, essentialLoad - 0.45) / 0.35 * 100),
+        medical: clamp(100 - medicalLoad / 0.12 * 100),
+        durability: btc <= 0 ? 72 : clamp(100 - accumulationShare / 0.75 * 100),
+        concentration: btcLimit <= 0 ? 35 : clamp(100 - Math.max(0, concentrationPressure - 0.5) / 0.75 * 100)
+      };
+      let score = Math.round(parts.margin * 0.22 + parts.buffer * 0.22 + parts.debt * 0.15 + parts.essentials * 0.13 + parts.medical * 0.07 + parts.durability * 0.10 + parts.concentration * 0.11);
+      if (income <= 0) score = 0;
+      if (marginAfterBtc < 0) score = Math.min(score, 30);
+      if (bufferMonths < 0.5) score = Math.min(score, 38);
+      if (btcLimit > 0 && btcConcentration > btcLimit) score = Math.min(score, 55);
+      return { score, parts };
+    }
+    function renderSubscores(parts) {
+      const labels = { margin:'Cash-flow margin', buffer:'Emergency buffer', debt:'Debt pressure', essentials:'Essential costs', medical:'Medical exposure', durability:'Accumulation durability', concentration:'BTC concentration' };
+      document.getElementById('subscores').innerHTML = Object.entries(labels).map(([key,label]) => `<div class="subscore"><strong>${Math.round(parts[key])}/100</strong><span>${label}</span></div>`).join('');
+    }
+    function renderPrimaryScenarios({ cash, monthlyNeed, medicalShock, btcConcentration, btcLimit, projectedConcentration }) {
+      const oneMonthShortfall = Math.max(0, monthlyNeed - cash);
+      const threeMonthShortfall = Math.max(0, monthlyNeed * 3 - cash);
+      const shockCash = cash - medicalShock;
+      const shockCopy = shockCash >= monthlyNeed
+        ? `After a ${fmt.format(medicalShock)} shock, at least one month of essential liquidity remains.`
+        : `A ${fmt.format(medicalShock)} shock would leave liquidity below one month by ${fmt.format(Math.max(0, monthlyNeed - Math.max(0, shockCash)))}.`;
+      const concentrationCopy = btcLimit > 0
+        ? `Current BTC-linked exposure is ${pct(btcConcentration)} against a ${pct(btcLimit)} selected limit; 12 months at the entered amount would be about ${pct(projectedConcentration)} before market moves.`
+        : 'Enter a nonzero concentration limit to compare current and projected BTC-linked exposure.';
+      const items = [
+        ['One-month income loss', oneMonthShortfall <= 0 ? 'Survives from current liquid savings' : `${fmt.format(oneMonthShortfall)} shortfall`, oneMonthShortfall <= 0 ? 'Emergency cash covers one month of essential bills and minimum debt payments.' : 'Current emergency cash would not cover one month of essential bills and minimum debt payments.'],
+        ['Three-month income loss', threeMonthShortfall <= 0 ? 'Survives from current liquid savings' : `${fmt.format(threeMonthShortfall)} shortfall`, threeMonthShortfall <= 0 ? 'Current cash covers a deeper interruption under these assumptions.' : 'A deeper interruption would require plan changes, borrowing, income, or asset sales.'],
+        ['Medical shock', shockCash >= monthlyNeed ? 'One-month floor preserved' : 'Floor breached', shockCopy],
+        ['BTC concentration', btcLimit > 0 && btcConcentration > btcLimit ? 'Above selected limit' : btcLimit > 0 && projectedConcentration > btcLimit ? 'Projected to exceed limit' : 'Within entered limit', concentrationCopy]
+      ];
+      document.getElementById('primaryScenarios').innerHTML = items.map(([name, result, note]) => `<div class="scenario"><strong>${name}</strong><span>${result}</span><div class="scenario-metrics"><span>${note}</span></div></div>`).join('');
+    }
+    function renderScenarios({ marginBeforeBtc, btc, monthlyNeed, cash }) {
+      const currentBtc = btc;
+      const bufferAwareBtc = btc > 0 ? Math.round(Math.max(0, Math.min(btc * 0.5, marginBeforeBtc * 0.25)) / 10) * 10 : 0;
+      const scenarios = [
+        ['Current plan', currentBtc, marginBeforeBtc - currentBtc, 'Uses the entered monthly accumulation amount.'],
+        ['Buffer-aware rhythm', bufferAwareBtc, marginBeforeBtc - bufferAwareBtc, 'Stress-tests a smaller amount so more slack can build liquidity.'],
+        ['Buffer-first month', 0, marginBeforeBtc, 'Shows the one-month tradeoff if all optional accumulation slack protects the base layer.']
+      ];
+      const targetOne = Math.max(0, monthlyNeed - cash);
+      const targetThree = Math.max(0, monthlyNeed * 3 - cash);
+      document.getElementById('scenarios').innerHTML = scenarios.map(([name, amount, margin, note]) => {
+        const positive = Math.max(0, margin);
+        const monthsOne = positive > 0 && targetOne > 0 ? Math.ceil(targetOne / positive) : (targetOne <= 0 ? 0 : '—');
+        const monthsThree = positive > 0 && targetThree > 0 ? Math.ceil(targetThree / positive) : (targetThree <= 0 ? 0 : '—');
+        return `<div class="scenario"><strong>${name}</strong><span>${note}</span><div class="scenario-metrics"><span>BTC: ${fmt.format(amount)}</span><span>Margin: ${fmt.format(margin)}</span><span>1-mo buffer: ${monthsOne} mo</span><span>3-mo buffer: ${monthsThree} mo</span></div></div>`;
+      }).join('');
+    }
+    function findBottleneck({ marginAfterBtc, income, bufferMonths, debtBal, debtPay, essentials, medical, btc, marginBeforeBtc, btcConcentration, btcLimit }) {
+      const essentialLoad = essentials / Math.max(income,1);
+      const debtLoad = debtPay / Math.max(income,1);
+      if (income <= 0) return ['Missing income', 'Monthly income anchors every ratio. Enter take-home income first so the planner can distinguish low spending from missing data.'];
+      if (btcLimit > 0 && btcConcentration > btcLimit) return ['BTC concentration above limit', 'Current BTC-linked exposure is already above the selected boundary, so additional accumulation is a portfolio concentration question, not just a cash-flow question.'];
+      if (marginAfterBtc < 0) return ['Negative monthly margin', 'Outflows exceed income after optional accumulation. Cash-flow stabilization is the first resilience layer.'];
+      if (bufferMonths < 1) return ['Thin emergency buffer', 'A thin cash buffer means ordinary surprises may force borrowing, missed payments, or selling assets at the wrong time.'];
+      if (debtBal > 0 && debtLoad > 0.12) return ['Debt pressure', 'Required debt payments are taking a meaningful share of income, reducing flexibility when shocks arrive.'];
+      if (essentialLoad > 0.7) return ['High essential-cost load', 'Fixed and necessary costs are consuming most take-home income, leaving little room for buffers or long-horizon planning.'];
+      if (medical / Math.max(income,1) > 0.08) return ['Medical / insurance exposure', 'Health and insurance costs can behave like a resilience premium: recurring costs must be carried before savings can build.'];
+      if (btc > 0 && marginBeforeBtc > 0 && btc / marginBeforeBtc > 0.5) return ['Accumulation crowd-out', 'The entered accumulation amount uses a large share of available monthly slack. Stress-test a lower amount before treating it as durable.'];
+      return ['No single severe bottleneck', 'The entered profile has multiple usable resilience inputs. Maintain buffers and keep any accumulation sized below household stress points.'];
+    }
+    function classify({ margin, income, bufferMonths, debtBal, debtPay, btc, essentials, btcConcentration, btcLimit }) {
+      const marginRate = income > 0 ? margin / income : 0;
+      const essentialLoad = essentials / Math.max(income,1);
+      const debtLoad = debtPay / Math.max(income,1);
+      if (btcLimit > 0 && btcConcentration > btcLimit) return ['stabilizing','Concentration-limited','Cash flow may be usable, but current BTC-linked exposure exceeds the selected boundary.'];
+      if (margin < 0 || bufferMonths < 0.5 || (debtBal > 0 && bufferMonths < 1)) return ['fragile','Fragile','Thin cash savings or cash-flow pressure could make BTC accumulation easier to interrupt or reverse.'];
+      if (marginRate < 0.05 || bufferMonths < 1 || debtLoad > 0.12 || debtBal > 0) return ['stabilizing','Stabilizing','Some margin exists, but buffers or debt pressure still need priority.'];
+      if (bufferMonths >= 3 && marginRate >= 0.15 && essentialLoad < 0.6) return ['strong','Resilient','Your entered numbers suggest more flexibility, while decisions remain yours.'];
+      return ['baseline','Baseline-ready','Your entered numbers suggest baseline resilience is forming.'];
+    }
+    function planDurabilityLabel(cls) {
+      if (cls === 'fragile') return 'Fragile';
+      if (cls === 'stabilizing') return 'Limited';
+      return 'Strong';
+    }
+    function safeFloorText({ income, marginAfterBtc, bufferMonths, debtBal, debtPay }) {
+      const debtLoad = debtPay / Math.max(income, 1);
+      if (income <= 0) return 'Enter income, essential costs, debt payments, and liquid savings first.';
+      if (marginAfterBtc < 0) return 'Protect essential costs and minimum debt payments before optional accumulation.';
+      if (debtBal > 0 && bufferMonths < 1) return 'Keep minimum debt payments current while building one month of liquid savings.';
+      if (bufferMonths < 1) return 'Build one month of essential expenses in liquid savings.';
+      if (debtBal > 0 && debtLoad > 0.12) return 'Protect required debt payments while the emergency buffer grows.';
+      return 'Keep essentials, minimum debt payments, and buffer contributions protected.';
+    }
+    function exposureText({ btcConcentration, btcLimit, projectedConcentration }) {
+      if (btcLimit <= 0) return 'Not established.';
+      if (btcConcentration > btcLimit) return `Above selected limit (${pct(btcConcentration)} vs ${pct(btcLimit)}).`;
+      if (projectedConcentration > btcLimit) return `Projected to exceed limit in 12 months (${pct(projectedConcentration)}).`;
+      return `Within selected limit (${pct(btcConcentration)} vs ${pct(btcLimit)}).`;
+    }
+    function optionalRoomText({ income, btc, marginAfterBtc, bufferMonths, debtBal, accumulationShare, btcConcentration, btcLimit, projectedConcentration, protectedCashFloor, cash, potentiallyOptionalCash }) {
+      if (income <= 0) return 'Not established until income is entered.';
+      if (btc <= 0) return 'Not established.';
+      if (protectedCashFloor > cash) return 'Not established: protected cash and one-month floor exceed liquid cash.';
+      if (potentiallyOptionalCash <= 0) return 'Not established after the protected cash amounts entered.';
+      if (btcLimit > 0 && btcConcentration > btcLimit) return 'Not available while BTC exposure is above the selected limit.';
+      if (btcLimit > 0 && projectedConcentration > btcLimit) return 'Limited: projected exposure crosses the selected limit.';
+      if (marginAfterBtc < 0) return 'Not available under these assumptions.';
+      if (bufferMonths < 1) return 'Hold increases until one-month liquidity is built.';
+      if (debtBal > 0 && bufferMonths < 3) return 'Limited while debt and buffers compete.';
+      if (accumulationShare > 0.5) return 'Limited: stress-test a smaller amount.';
+      return `Potentially optional up to ${fmt.format(potentiallyOptionalCash)} before your own review.`;
+    }
+    function firstNextStepText({ income, marginAfterBtc, bufferMonths, debtBal, debtPay, essentials, cash, btc, accumulationShare, btcConcentration, btcLimit, projectedConcentration, protectedCashFloor, potentiallyOptionalCash }) {
+      const essentialLoad = essentials / Math.max(income, 1);
+      const debtLoad = debtPay / Math.max(income, 1);
+      if (income <= 0) return 'Enter monthly take-home income, essential costs, debt payments, and liquid savings.';
+      if (protectedCashFloor > cash) return 'Reconcile protected cash because protected buckets plus a one-month floor are greater than total liquid cash.';
+      if (btc > 0 && potentiallyOptionalCash <= 0) return 'Separate protected cash before treating any BTC reserve as potentially optional.';
+      if (btcLimit > 0 && btcConcentration > btcLimit) return 'Pause additional BTC planning until exposure is back inside the selected concentration boundary or the boundary is deliberately revised.';
+      if (btcLimit > 0 && projectedConcentration > btcLimit) return 'Stress-test a smaller amount or a review date before projected BTC exposure crosses the selected boundary.';
+      if (marginAfterBtc < 0) return 'Reduce optional outflows or optional accumulation until monthly margin is positive.';
+      if (debtBal > 0 && bufferMonths < 1) return 'Protect minimum debt payments and build one month of cash before increasing optional accumulation.';
+      if (bufferMonths < 1) return 'Build one month of essential liquidity before increasing optional accumulation.';
+      if (cash < 400) return 'Build at least a small shock buffer before treating optional accumulation as durable.';
+      if (debtBal > 0 && debtLoad > 0.12) return 'Keep debt pressure contained while building the emergency buffer.';
+      if (essentialLoad > 0.7) return 'Review essential-cost pressure before increasing optional accumulation.';
+      if (btc > 0 && accumulationShare > 0.5) return 'Stress-test a smaller optional accumulation amount.';
+      if (bufferMonths < 3) return 'Keep building toward a deeper emergency buffer.';
+      return 'Maintain buffers and review monthly or after household circumstances change.';
+    }
+    function renderPlanSummary({ durability, reason, pressure, safeFloor, optionalRoom, protectedCash, exposure, nextStep }) {
+      setText('resilience-summary-durability', durability);
+      setText('resilience-summary-reason', reason);
+      setText('resilience-summary-pressure', pressure);
+      setText('resilience-summary-floor', safeFloor);
+      setText('resilience-summary-room', optionalRoom);
+      setText('resilience-summary-protected-cash', protectedCash || 'Not checked');
+      setText('resilience-summary-exposure', exposure || 'Not checked');
+      setText('resilience-summary-next-step', nextStep);
+    }
+    function recalc() {
+      const entered = ids.some(id => String(document.getElementById(id).value || '').trim() !== '');
+      const income=val('income'), fixed=val('fixed'), variable=val('variable'), discretionary=val('discretionary'), medical=val('medical'), irregular=val('irregular'), debtPay=val('debtPay'), debtBal=val('debtBal'), cash=val('cash'), nearTermReserve=val('nearTermReserve'), taxReserve=val('taxReserve'), debtReserve=val('debtReserve'), otherProtectedCash=val('otherProtectedCash'), btc=val('btc'), btcExposure=val('btcExposure'), investableAssets=val('investableAssets'), btcLimitPct=val('btcLimitPct');
+      if (!entered) {
+        resetSupportingOutputs();
+        const status = document.getElementById('status');
+        status.className = 'status';
+        status.innerHTML = '<strong>Ready when you are</strong><span>Enter the required fields or load the fictional example. Required blanks stay unknown; enter 0 only when a value is truly zero.</span>';
+        renderPlanSummary({
+          durability: 'Not checked',
+          reason: 'Enter rough numbers or load the fictional example to see the household read.',
+        pressure: 'Use the quick check',
+        safeFloor: 'Protect essentials first',
+        optionalRoom: 'Not established',
+        protectedCash: 'Not checked',
+        exposure: 'Not checked',
+        nextStep: 'Enter income, essential expenses, debt payments, and liquid savings.'
+      });
+        document.getElementById('priorities').innerHTML = '<li>Start with monthly take-home income, essential expenses, minimum debt payments, liquid savings, optional monthly BTC, and BTC exposure context. Use 0 when a required value is truly none.</li>';
+        setText('btcGuardrail', 'BTC accumulation is optional. The planner will evaluate it only if you enter an amount.');
+        setText('whyThisMatters', 'Household resilience starts with cash-flow margin, emergency savings, debt pressure, and essential-cost exposure.');
+        document.getElementById('printableSummary').textContent = 'Enter numbers or load the fictional example to generate a summary.';
+        return;
+      }
+      const missing = missingRequiredInputs();
+      if (missing.length) {
+        setNotEnoughInformation(missing);
+        return;
+      }
+      const essentials = fixed + variable + medical + irregular;
+      const monthlyNeed = essentials + debtPay;
+      const protectedCashTotal = nearTermReserve + taxReserve + debtReserve + otherProtectedCash;
+      const protectedCashFloor = protectedCashTotal + monthlyNeed;
+      const potentiallyOptionalCash = Math.max(0, cash - protectedCashFloor);
+      const protectedCashText = protectedCashFloor > cash
+        ? 'Protected buckets plus one-month floor exceed liquid cash'
+        : `${fmt.format(protectedCashFloor)} protected including one-month floor; ${fmt.format(potentiallyOptionalCash)} potentially optional`;
+      const marginBeforeBtc = income - monthlyNeed - discretionary;
+      const marginAfterBtc = marginBeforeBtc - btc;
+      const bufferMonths = monthlyNeed > 0 ? cash / monthlyNeed : 0;
+      const marginRate = income > 0 ? marginAfterBtc / income : 0;
+      const accumulationShare = marginBeforeBtc > 0 ? btc / marginBeforeBtc : 0;
+      const btcConcentration = investableAssets > 0 ? btcExposure / investableAssets : (btcExposure > 0 ? 1 : 0);
+      const projectedBtcExposure = btcExposure + (btc * 12);
+      const projectedInvestableAssets = investableAssets + Math.max(0, marginAfterBtc * 12);
+      const projectedConcentration = projectedInvestableAssets > 0 ? projectedBtcExposure / projectedInvestableAssets : btcConcentration;
+      const btcLimit = btcLimitPct / 100;
+      const { score, parts } = scoreProfile({ income, monthlyNeed, marginAfterBtc, marginBeforeBtc, bufferMonths, debtPay, essentials, medical, btc, btcConcentration, btcLimit });
+      setText('scoreValue', `${score}/100`);
+      document.getElementById('scoreFill').style.width = `${score}%`;
+      setText('scoreMeaning', score < 40 ? 'Fragile base layer; durability risk is high.' : score < 65 ? 'Some resilience, but at least one weak point remains.' : score < 82 ? 'Baseline-ready with continued buffer discipline.' : 'Resilient profile under entered assumptions.');
+      renderSubscores(parts);
+      renderScenarios({ marginBeforeBtc, btc, monthlyNeed, cash });
+      setText('margin', fmt.format(marginAfterBtc));
+      setText('buffer', bufferMonths.toFixed(1));
+      setText('essential', pct(essentials / Math.max(income,1)));
+      setText('debtLoad', pct(debtPay / Math.max(income,1)));
+      setText('marginRate', pct(marginRate));
+      setText('accumShare', btc > 0 ? pct(accumulationShare) : '0%');
+      renderPrimaryScenarios({ cash, monthlyNeed, medicalShock: 5000, btcConcentration, btcLimit, projectedConcentration });
+      const [bottleneck, why] = findBottleneck({ marginAfterBtc, income, bufferMonths, debtBal, debtPay, essentials, medical, btc, marginBeforeBtc, btcConcentration, btcLimit });
+      setText('bottleneck', bottleneck);
+      setText('whyThisMatters', why);
+      const [cls,title,copy] = classify({ margin: marginAfterBtc, income, bufferMonths, debtBal, debtPay, btc, essentials, btcConcentration, btcLimit });
+      const durability = planDurabilityLabel(cls);
+      const safeFloor = safeFloorText({ income, marginAfterBtc, bufferMonths, debtBal, debtPay });
+      const exposure = exposureText({ btcConcentration, btcLimit, projectedConcentration });
+      const optionalRoom = optionalRoomText({ income, btc, marginAfterBtc, bufferMonths, debtBal, accumulationShare, btcConcentration, btcLimit, projectedConcentration, protectedCashFloor, cash, potentiallyOptionalCash });
+      const nextStep = firstNextStepText({ income, marginAfterBtc, bufferMonths, debtBal, debtPay, essentials, cash, btc, accumulationShare, btcConcentration, btcLimit, projectedConcentration, protectedCashFloor, potentiallyOptionalCash });
+      renderPlanSummary({
+        durability,
+        reason: copy,
+        pressure: bottleneck,
+        safeFloor,
+        optionalRoom,
+        protectedCash: protectedCashText,
+        exposure,
+        nextStep
+      });
+      const status = document.getElementById('status');
+      status.className = `status ${cls === 'baseline' ? 'baseline' : cls}`;
+      status.innerHTML = `<strong>${title}</strong><span>${copy}</span>`;
+      const priorities = [];
+      if (income <= 0) priorities.push('Enter monthly take-home income to make the ratios meaningful.');
+      if (protectedCashFloor > cash) priorities.push('Protected cash buckets plus a one-month floor exceed total liquid cash; reconcile the buckets before treating any reserve as potentially optional.');
+      else if (btc > 0 && potentiallyOptionalCash <= 0) priorities.push('No potentially optional cash remains after protected buckets; keep BTC planning at baseline/context only until household cash is separated.');
+      if (btcLimit > 0 && btcConcentration > btcLimit) priorities.push('Existing BTC-linked exposure is above the selected concentration boundary; treat additional BTC as a portfolio decision, not merely leftover monthly room.');
+      else if (btcLimit > 0 && projectedConcentration > btcLimit) priorities.push('At the entered monthly amount, projected BTC-linked exposure crosses the selected boundary within 12 months; set a review point or lower the amount.');
+      if (marginAfterBtc < 0) priorities.push('Monthly outflows exceed income after optional BTC accumulation; make the amount smaller, rebuild cash-flow margin, or use a buffer-aware rhythm so accumulation is not later forced into reversal.');
+      if (cash < 400) priorities.push('Build at least a small shock buffer; current liquid savings are below $400.');
+      if (bufferMonths < 1) priorities.push('Prioritize reaching at least one month of essential expenses in liquid savings.');
+      if (bufferMonths >= 1 && bufferMonths < 3) priorities.push('Continue building toward a deeper emergency buffer before treating optional accumulation as fully flexible.');
+      if (debtBal > 0 && bufferMonths < 1) priorities.push('High-interest debt plus a thin buffer is a fragility warning; protect the household base layer before treating higher accumulation as durable.');
+      if (essentials / Math.max(income,1) > 0.7) priorities.push('Essential costs are consuming a high share of take-home income; resilience may require cost or income changes.');
+      if (btc > 0 && accumulationShare > 0.5) priorities.push('Optional accumulation is using more than half of pre-accumulation monthly slack; stress-test a smaller amount.');
+      if (!priorities.length) priorities.push('Maintain buffers, keep debt pressure contained, and size any accumulation so it does not crowd out resilience.');
+      document.getElementById('priorities').innerHTML = priorities.map(p => `<li>${p}</li>`).join('');
+      let guardrail = 'BTC accumulation is optional. Use this as a budget guardrail, not investment advice. ';
+      if (btc <= 0) guardrail += 'No BTC accumulation amount is entered; planner is evaluating household resilience only.';
+      else if (protectedCashFloor > cash) guardrail += 'Protected cash plus a one-month floor exceeds total liquid cash, so the planner does not treat any reserve as potentially optional.';
+      else if (potentiallyOptionalCash <= 0) guardrail += 'After the protected amounts entered, no liquid cash remains as potentially optional reserve.';
+      else if (btcLimit > 0 && btcConcentration > btcLimit) guardrail += 'Existing BTC-linked exposure is already above the selected limit, so the planner does not treat additional BTC as optional room.';
+      else if (btcLimit > 0 && projectedConcentration > btcLimit) guardrail += 'Cash flow may support the amount, but projected BTC-linked exposure crosses the selected limit before 12 months.';
+      else if (marginAfterBtc < 0) guardrail += 'Entered BTC accumulation is not budget-affordable under these assumptions because it pushes monthly margin negative.';
+      else if (bufferMonths < 1) guardrail += 'Consider a smaller BTC amount while building the emergency buffer, so accumulation is easier to sustain.';
+      else if (debtBal > 0 && bufferMonths < 3) guardrail += 'Baseline accumulation may fit, but high-interest debt and incomplete buffers argue for caution.';
+      else if (accumulationShare > 0.5) guardrail += 'The amount appears affordable but uses much of monthly slack; consider a lower baseline while buffers grow.';
+      else guardrail += 'Entered baseline accumulation appears budget-compatible under these assumptions, provided priorities and risks are understood.';
+      setText('btcGuardrail', guardrail);
+      document.getElementById('printableSummary').innerHTML = `<strong>${durability} plan durability</strong><br>${copy}<br><br><strong>Main pressure:</strong> ${bottleneck}<br><strong>Safe floor:</strong> ${safeFloor}<br><strong>Protected cash check:</strong> ${protectedCashText}<br><strong>Optional accumulation room:</strong> ${optionalRoom}<br><strong>BTC exposure check:</strong> ${exposure}<br><strong>First next step:</strong> ${nextStep}<br><br><strong>Supporting score:</strong> ${score}/100 · <strong>Monthly margin:</strong> ${fmt.format(marginAfterBtc)} · <strong>Buffer:</strong> ${bufferMonths.toFixed(1)} months · <strong>Debt load:</strong> ${pct(debtPay / Math.max(income,1))}<br><br><strong>Guardrail:</strong> ${guardrail}`;
+    }
+    document.getElementById('recalc').addEventListener('click', recalc);
+    document.getElementById('loadExample').addEventListener('click', () => {
+      const sample = { income: 5200, fixed: 2250, variable: 950, discretionary: 450, medical: 250, irregular: 300, debtPay: 420, debtBal: 6800, cash: 12000, nearTermReserve: 1000, taxReserve: 500, debtReserve: 500, otherProtectedCash: 0, btc: 150, btcExposure: 4200, investableAssets: 62000, btcLimitPct: 12 };
+      for (const [id, value] of Object.entries(sample)) document.getElementById(id).value = value;
+      document.getElementById('exampleNote').hidden = false;
+      document.getElementById('saveStatus').textContent = 'Loaded fictional example. Nothing has been saved.';
+      recalc();
+    });
+    document.getElementById('saveLocal').addEventListener('click', () => {
+      try { localStorage.setItem(storageKey, JSON.stringify({ version: 1, savedAt: new Date().toISOString(), profile: getProfile() })); document.getElementById('saveStatus').textContent = 'Saved locally in this browser.'; }
+      catch { document.getElementById('saveStatus').textContent = 'Local save failed in this browser.'; }
+    });
+    document.getElementById('exportJson').addEventListener('click', () => {
+      const blob = new Blob([JSON.stringify({ version: 1, exportedAt: new Date().toISOString(), profile: getProfile() }, null, 2)], { type: 'application/json' });
+      const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'btc-helper-household-resilience-profile.json'; a.click(); URL.revokeObjectURL(a.href);
+    });
+    document.getElementById('importJson').addEventListener('change', async (event) => {
+      const file = event.target.files?.[0]; if (!file) return;
+      try { const data = JSON.parse(await file.text()); applyProfile(data.profile || data); document.getElementById('saveStatus').textContent = 'Imported JSON into the planner. Nothing has been saved unless you choose Save locally.'; }
+      catch { document.getElementById('saveStatus').textContent = 'Import failed. Expected a planner JSON export.'; }
+      event.target.value = '';
+    });
+    document.getElementById('printSummary').addEventListener('click', () => window.print());
+    document.getElementById('reset').addEventListener('click', () => { ids.forEach(id => document.getElementById(id).value = ''); localStorage.removeItem(storageKey); document.getElementById('exampleNote').hidden = true; document.getElementById('saveStatus').textContent = 'Cleared fields and removed local saved profile.'; recalc(); });
+    ids.forEach(id => document.getElementById(id).addEventListener('input', () => { document.getElementById('exampleNote').hidden = true; document.getElementById('saveStatus').textContent = 'Unsaved changes in this browser.'; recalc(); }));
+    try { const saved = JSON.parse(localStorage.getItem(storageKey) || 'null'); if (saved?.profile) { applyProfile(saved.profile); document.getElementById('saveStatus').textContent = 'Loaded saved local profile from this browser.'; } else recalc(); } catch { recalc(); }
+  </script>
+</body>
+</html>

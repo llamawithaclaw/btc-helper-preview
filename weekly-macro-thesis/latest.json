@@ -1,0 +1,67 @@
+{
+  "date": "2026-08-08",
+  "title": "Treasury Plumbing Moves to the Center",
+  "summary": "This week's macro backdrop shifted from generic liquidity talk toward yen pressure, Treasury-market support, and carry-trade risk. Liquidity is still mixed rather than cleanly bullish, while Bitcoin's on-chain read is noisier because custody-related movements can look like holder stress even when they are mostly market-structure signal.",
+  "regime": "Mixed liquidity, Treasury plumbing focus",
+  "thesisBullets": [
+    "The main macro focus is now funding plumbing: yen support, Treasury collateral, bill issuance, buybacks, and the risk that carry trades unwind into broader market stress.",
+    "Near-term liquidity has pockets of support, but momentum still looks mature and uneven, which argues for confirmation rather than assuming a clean risk-on regime.",
+    "Bitcoin's holder data needs extra care this week because custody-related coin movement can blur the difference between real distribution and operational migration.",
+    "The AI financing boom is becoming part of the sound-money map because heavily levered capital spending could increase pressure on policymakers to prevent hard liquidation.",
+    "This weekly backdrop adds context and watch items, but it does not change BTC Helper's mechanical daily signal, posture, thresholds, or weights."
+  ],
+  "btcImplications": [
+    "BTC Helper users should treat macro as a caution-and-confirmation layer this week: the plumbing story matters, but the daily model still decides posture.",
+    "Supportive bill issuance and buybacks can help risk appetite, but slowing liquidity momentum means Bitcoin still needs evidence from flows, holder behavior, and leverage.",
+    "Large coin movements deserve context before being read as capitulation; custody events can distort short-term on-chain signals.",
+    "If funding stress stays contained while spot demand improves, the backdrop can become constructive without needing a single dramatic catalyst."
+  ],
+  "factorImplications": [
+    {
+      "factor": "Valuation",
+      "weeklyChange": "Macro support is uneven, so valuation needs confirmation from market behavior rather than narrative alone.",
+      "dailyImplication": "No standalone posture change without alignment from the broader daily model."
+    },
+    {
+      "factor": "Holder behavior",
+      "weeklyChange": "Custody-related movement made holder interpretation noisier.",
+      "dailyImplication": "Separate operational migration from genuine distribution before treating holder stress as decisive."
+    },
+    {
+      "factor": "Flows",
+      "weeklyChange": "Liquidity channels improved in some places but remain mature and mixed overall.",
+      "dailyImplication": "Stronger spot demand would help confirm resilience; fading demand would keep caution elevated."
+    },
+    {
+      "factor": "Macro",
+      "weeklyChange": "Yen pressure, Treasury funding mix, buybacks, and carry-trade risk moved to the center of the weekly map.",
+      "dailyImplication": "Watch funding stress and dollar liquidity before leaning too hard into risk-on conclusions."
+    },
+    {
+      "factor": "Leverage",
+      "weeklyChange": "Carry trades and circular financing risk became more important watch items.",
+      "dailyImplication": "Calm leverage supports resilience; forced deleveraging would make drawdowns more dangerous."
+    }
+  ],
+  "counterThesis": [
+    "If Treasury support and bill-heavy funding keep liquidity ample, Bitcoin can strengthen before slower momentum becomes visible in price.",
+    "If custody-related coin movement fades without broader holder selling, this week's on-chain noise may prove less bearish than it first appears.",
+    "If carry-trade stress accelerates, the mixed-liquidity framing may be too calm and risk assets could need a more defensive read."
+  ],
+  "watchNext": [
+    "Yen pressure, carry-trade behavior, and whether funding stress spreads beyond currency markets.",
+    "Treasury issuance mix, buybacks, reserve balances, repo conditions, and front-end funding rates.",
+    "Spot Bitcoin demand, ETF flow tone, volume, and whether participation broadens.",
+    "Long-term holder behavior after custody-related movements settle.",
+    "Gold, dollar strength, and global liquidity impulse.",
+    "AI-linked financing structures and signs that capital-market stress is becoming systemic."
+  ],
+  "whatWouldChange": [
+    "A clear turn higher in liquidity, broad spot demand, and calm leverage would make the backdrop more constructive.",
+    "Rising repo stress, yen-driven deleveraging, or weaker Treasury-market functioning would make the backdrop more defensive.",
+    "Cleaner holder data after custody-related movement settles would improve confidence in the on-chain read.",
+    "Persistent financing stress in speculative capital structures would raise the risk that macro pressure spills into Bitcoin."
+  ],
+  "xPost": "BTC Helper Weekly Macro Thesis: Treasury plumbing is now the main macro focus. Liquidity has support, but momentum is mixed.\n\nWatch: yen/carry stress and whether BTC spot demand confirms.\n\nhttps://btchelper.app/weekly-macro-thesis/2026-08-08/",
+  "createdAt": null
+}

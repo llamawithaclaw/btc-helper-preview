@@ -1,0 +1,188 @@
+{
+  "date": "2026-07-21",
+  "generatedAt": "2026-07-21T08:30:16.063Z",
+  "publicationTimestampUtc": "2026-07-21T11:48:52.281Z",
+  "transparencyBoundary": {
+    "public": [
+      "daily action and buying stance",
+      "factor-state labels",
+      "provider/source family, freshness, and retrieval status",
+      "data-quality status",
+      "publication and calculation timestamps"
+    ],
+    "withheld": [
+      "source links",
+      "raw metric values",
+      "exact metric mix",
+      "thresholds and weights",
+      "override rules",
+      "calibration details"
+    ]
+  },
+  "headline": {
+    "regime": "normal",
+    "action": "maintain_baseline",
+    "rationale": null
+  },
+  "factorStates": {
+    "valuation": {
+      "label": "Valuation",
+      "state": "Cheap",
+      "availability": "available",
+      "missingInputCount": 0
+    },
+    "sth_behavior": {
+      "label": "Holder behavior",
+      "state": "Stress",
+      "availability": "available",
+      "missingInputCount": 0
+    },
+    "flows": {
+      "label": "Flow pressure",
+      "state": "Mild Support",
+      "availability": "available",
+      "missingInputCount": 0
+    },
+    "macro": {
+      "label": "Macro pressure",
+      "state": "Headwind",
+      "availability": "available",
+      "missingInputCount": 0
+    },
+    "leverage": {
+      "label": "Leverage",
+      "state": "Clean",
+      "availability": "available",
+      "missingInputCount": 0
+    }
+  },
+  "dataQuality": {
+    "confidenceLevel": "moderate",
+    "runQualityLevel": "live",
+    "summary": "Run quality: LIVE — key fields were sourced directly from current providers."
+  },
+  "sourceCoverageSummary": {
+    "fieldCount": 12,
+    "liveFieldCount": 6,
+    "importAssistedFieldCount": 6,
+    "fallbackSupportedFieldCount": 0,
+    "unknownFieldCount": 0
+  },
+  "importStatus": {
+    "reliance": "heavy",
+    "importedFieldCount": 6,
+    "summary": "Import-assisted reliance: HEAVY — 6 field(s) came from imported/manual-assisted sources.",
+    "guidance": "Import status: acceptable for normal use, but at least one imported source is approaching its preferred freshness limit.",
+    "refreshNeeded": false,
+    "sources": [
+      {
+        "sourceFamily": "Checkonchain",
+        "importedFieldCount": 3,
+        "asOf": "2026-07-19T00:00:00",
+        "timestampStatus": "reported",
+        "timestampNote": null,
+        "fetchedAt": "2026-07-21T08:30:13.500Z",
+        "freshness": "recent",
+        "severity": "acceptable"
+      },
+      {
+        "sourceFamily": "Checkonchain",
+        "importedFieldCount": 1,
+        "asOf": "2026-07-19T00:00:00",
+        "timestampStatus": "reported",
+        "timestampNote": null,
+        "fetchedAt": "2026-07-21T08:30:14.366Z",
+        "freshness": "recent",
+        "severity": "acceptable"
+      },
+      {
+        "sourceFamily": "Checkonchain",
+        "importedFieldCount": 1,
+        "asOf": "2026-07-19T00:00:00",
+        "timestampStatus": "reported",
+        "timestampNote": null,
+        "fetchedAt": "2026-07-21T08:30:14.565Z",
+        "freshness": "recent",
+        "severity": "acceptable"
+      },
+      {
+        "sourceFamily": "Bitbo",
+        "importedFieldCount": 1,
+        "asOf": "Jul 17, 2026",
+        "timestampStatus": "reported",
+        "timestampNote": null,
+        "fetchedAt": "2026-07-21T08:30:14.798Z",
+        "freshness": "aging",
+        "severity": "aging"
+      }
+    ]
+  },
+  "provenance": [
+    {
+      "sourceFamily": "CoinGecko",
+      "asOf": "2026-07-21T08:29:02.000Z",
+      "timestampStatus": "reported",
+      "timestampNote": null
+    },
+    {
+      "sourceFamily": "CoinGecko",
+      "asOf": "2026-07-21T08:29:50.527Z",
+      "timestampStatus": "reported",
+      "timestampNote": null
+    },
+    {
+      "sourceFamily": "Checkonchain",
+      "asOf": "2026-07-19T00:00:00",
+      "timestampStatus": "reported",
+      "timestampNote": null
+    },
+    {
+      "sourceFamily": "Checkonchain",
+      "asOf": "2026-07-19T00:00:00",
+      "timestampStatus": "reported",
+      "timestampNote": null
+    },
+    {
+      "sourceFamily": "Checkonchain",
+      "asOf": "2026-07-19T00:00:00",
+      "timestampStatus": "reported",
+      "timestampNote": null
+    },
+    {
+      "sourceFamily": "Checkonchain",
+      "asOf": "2026-07-19T00:00:00",
+      "timestampStatus": "reported",
+      "timestampNote": null
+    },
+    {
+      "sourceFamily": "Checkonchain",
+      "asOf": "2026-07-19T00:00:00",
+      "timestampStatus": "reported",
+      "timestampNote": null
+    },
+    {
+      "sourceFamily": "OKX",
+      "asOf": null,
+      "timestampStatus": "normalization_review",
+      "timestampNote": "One source-family timestamp was later than the audit generation time, so the public page flags it for normalization instead of presenting it as provenance."
+    },
+    {
+      "sourceFamily": "OKX",
+      "asOf": "2026-07-21T08:30:13.131Z",
+      "timestampStatus": "reported",
+      "timestampNote": null
+    },
+    {
+      "sourceFamily": "FRED",
+      "asOf": "2026-07-17",
+      "timestampStatus": "reported",
+      "timestampNote": null
+    },
+    {
+      "sourceFamily": "Bitbo",
+      "asOf": "Jul 17, 2026",
+      "timestampStatus": "reported",
+      "timestampNote": null
+    }
+  ]
+}

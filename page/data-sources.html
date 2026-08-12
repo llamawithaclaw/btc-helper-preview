@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Source Health &amp; Freshness | BTC Helper</title>
+  <meta name="description" content="BTC Helper source-health, freshness, and data-quality notes for the current public daily Bitcoin accumulation read.">
+  <meta property="og:title" content="Source Health &amp; Freshness | BTC Helper">
+  <meta property="og:description" content="BTC Helper source-health, freshness, and data-quality notes for the current public daily Bitcoin accumulation read.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://btchelper.app/data-sources.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Source Health &amp; Freshness | BTC Helper">
+  <meta name="twitter:description" content="BTC Helper source-health, freshness, and data-quality notes for the current public daily Bitcoin accumulation read.">
+  <link rel="canonical" href="https://btchelper.app/data-sources.html">
+  <link rel="alternate" type="application/rss+xml" title="BTC Helper daily reads" href="https://btchelper.app/feed.xml">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/btc-helper-logo.png?v=20260722" type="image/png" sizes="1024x1024">
+  <link rel="apple-touch-icon" href="/btc-helper-logo.png?v=20260722">
+  <meta name="theme-color" content="#111313">
+  <script>
+    try {
+      const savedTheme = localStorage.getItem('btcHelperTheme');
+      document.documentElement.dataset.theme = savedTheme === 'light' ? 'light' : 'dark';
+    } catch {
+      document.documentElement.dataset.theme = 'dark';
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","@id":"https://btchelper.app/data-sources.html#webpage","url":"https://btchelper.app/data-sources.html","name":"Source Health & Freshness","headline":"Source Health & Freshness","description":"BTC Helper source-health, freshness, and data-quality notes for the current public daily Bitcoin accumulation read.","isAccessibleForFree":true,"publisher":{"@type":"Organization","name":"BTC Helper","logo":{"@type":"ImageObject","url":"https://btchelper.app/btc-helper-logo.svg"}}},{"@type":"BreadcrumbList","@id":"https://btchelper.app/data-sources.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"BTC Helper","item":"https://btchelper.app/"},{"@type":"ListItem","position":2,"name":"Data Sources","item":"https://btchelper.app/data-sources.html"}]}]}</script>
+  <style>
+    :root { color-scheme: light; --bg:#f5f1e9; --card:#fffdf8; --card-soft:#f0ebe1; --ink:#171a18; --muted:#6e746f; --line:#dcd6cb; --accent:#526b83; --accent-blue:#2563eb; --accent-soft:rgba(82,107,131,.10); --brand-gold:#ad5617; --btc-amber:#ad5617; --btc-amber-soft:#efe3d5; --muted-positive:#6f8f7c; --muted-caution:#9b793f; --muted-adverse:#9b625f; --status-live:#6f8f7c; --status-live-text:#14532d; --status-degraded:#ad5617; --status-degraded-text:#9a3412; --status-warn:#ad5617; --hero-ink:#f3f0e8; --hero-muted:#a5aca6; --secondary-bg:rgba(82,107,131,.10); --secondary-ink:#26394a; --secondary-border:rgba(82,107,131,.28); --dark-card-bg:linear-gradient(135deg,#0d100f,#151816); --dark-card-ink:#f3f0e8; --dark-card-muted:#a5aca6; }
+    :root[data-theme="dark"] { color-scheme: dark; --bg:#0d100f; --card:#151816; --card-soft:#1b201d; --ink:#f3f0e8; --muted:#a5aca6; --line:rgba(255,255,255,.09); --accent:#91a99a; --accent-blue:#bfdbfe; --accent-soft:rgba(145,169,154,.12); --brand-gold:#f59a3a; --btc-amber:#f59a3a; --btc-amber-soft:#2b2015; --muted-positive:#91a99a; --muted-caution:#c3a36e; --muted-adverse:#b98782; --status-live:#91a99a; --status-live-text:#bbf7d0; --status-degraded:#c3a36e; --status-degraded-text:#fed7aa; --status-warn:#c3a36e; --hero-ink:#f3f0e8; --hero-muted:#a5aca6; --secondary-bg:rgba(242,237,214,.08); --secondary-ink:#f3f0e8; --secondary-border:rgba(242,237,214,.18); --dark-card-bg:linear-gradient(135deg,#0d100f,#151816); --dark-card-ink:#f3f0e8; --dark-card-muted:#a5aca6; }
+    html { font-synthesis:none; }
+    body, button, input, select, textarea, summary { font-family:"Noto Sans", "Segoe UI", Roboto, system-ui, sans-serif; }
+    button, input, select, textarea, summary { font:inherit; }
+    code, pre, .machine-record { font-family:"JetBrains Mono", ui-monospace, SFMono-Regular, Consolas, monospace; }
+    .numeric, .price, .percentage, .timestamp { font-variant-numeric:tabular-nums; }
+    .skip-link { position:absolute; left:16px; top:-52px; z-index:1000; border-radius:999px; padding:10px 14px; background:#f2edd6; color:#0d120f; font-weight:950; text-decoration:none; box-shadow:0 12px 28px rgba(0,0,0,.22); }
+    .skip-link:focus { top:14px; outline:3px solid color-mix(in srgb,var(--accent-blue) 58%,transparent); }
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible { outline:3px solid color-mix(in srgb,var(--accent-blue) 34%,transparent); outline-offset:3px; }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration:.001ms !important; animation-iteration-count:1 !important; scroll-behavior:auto !important; transition-duration:.001ms !important; } }
+    .theme-toggle { position:fixed; top:16px; right:16px; z-index:20; width:40px; height:40px; display:flex; align-items:center; justify-content:center; padding:0; border-radius:999px; border:1px solid var(--line); background:color-mix(in srgb,var(--card) 88%,transparent); color:var(--ink); box-shadow:0 12px 28px rgba(0,0,0,.16); font:900 1.05rem/1 "Noto Sans", "Segoe UI Symbol", system-ui, sans-serif; cursor:pointer; }
+    .theme-toggle:hover, .theme-toggle:focus { border-color:color-mix(in srgb,var(--accent) 45%,var(--line)); background:var(--accent-soft); outline:none; }
+    .theme-toggle .theme-icon { display:block; margin:0; }
+    .theme-toggle .theme-icon-sun, .theme-toggle .theme-icon-moon { width:22px; height:22px; }
+
+    .skip-link { position:absolute; left:16px; top:-52px; z-index:1000; border-radius:999px; padding:10px 14px; background:#f2edd6; color:#0d120f; font-weight:950; text-decoration:none; box-shadow:0 12px 28px rgba(0,0,0,.22); }
+    .skip-link:focus { top:14px; outline:3px solid color-mix(in srgb,var(--accent-blue, #2563eb) 58%,transparent); }
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible { outline:3px solid color-mix(in srgb,var(--accent-blue, #2563eb) 34%,transparent); outline-offset:3px; }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration:.001ms !important; animation-iteration-count:1 !important; scroll-behavior:auto !important; transition-duration:.001ms !important; } }
+    .site-nav { position:sticky; top:0; z-index:50; backdrop-filter:blur(16px); background:color-mix(in srgb,var(--bg) 92%,transparent); border-bottom:1px solid color-mix(in srgb,var(--line) 80%,transparent); box-shadow:0 10px 30px rgba(0,0,0,.10); }
+    .site-nav-inner { max-width:1120px; margin:0 auto; padding:10px 20px; display:grid; grid-template-columns:auto 1fr; align-items:center; gap:16px; min-height:62px; }
+    .brand-lockup { display:inline-flex; align-items:center; gap:10px; min-width:fit-content; color:var(--ink); text-decoration:none; }
+    .brand-mark { width:34px; height:34px; border-radius:10px; display:inline-flex; align-items:center; justify-content:center; background:linear-gradient(135deg,#111313,#181a19); border:1px solid color-mix(in srgb,var(--accent) 44%,#34362d); box-shadow:0 8px 18px rgba(15,23,42,.16); overflow:hidden; }
+    .brand-mark svg, .brand-mark img { width:30px; height:30px; display:block; }
+    .brand-mark .mark-cradle, .brand-mark .mark-rail { stroke:var(--accent); } .brand-mark .mark-signal { stroke:#f3f2e8; } .brand-mark .mark-reserve-dot { fill:#f59a3a; }
+    .brand-text strong { display:block; font-size:.82rem; letter-spacing:.12em; text-transform:uppercase; line-height:1.05; }
+    .brand-text span { display:block; color:var(--muted); font-size:.72rem; margin-top:1px; }
+    .nav-links { display:flex; align-items:center; gap:4px; flex-wrap:wrap; justify-content:flex-end; }
+    .nav-links a, .theme-toggle, .menu-toggle { position:static; box-shadow:none; display:inline-flex; align-items:center; justify-content:center; border:1px solid transparent; border-radius:999px; padding:7px 9px; min-height:36px; min-width:36px; color:var(--muted); background:transparent; text-decoration:none; font:inherit; font-size:.82rem; font-weight:850; cursor:pointer; }
+    .nav-links a:hover, .nav-links a:focus, .theme-toggle:hover, .theme-toggle:focus, .menu-toggle:hover, .menu-toggle:focus { color:var(--ink); background:var(--accent-soft); border-color:color-mix(in srgb,var(--accent) 24%,var(--line)); outline:none; }
+    .nav-links a[aria-current="page"] { color:var(--ink); background:var(--accent-soft); border-color:color-mix(in srgb,var(--accent) 28%,var(--line)); }
+    .nav-links a.nav-cta { color:color-mix(in srgb,var(--ink) 82%,var(--muted)); border-color:color-mix(in srgb,var(--accent) 22%,var(--line)); background:color-mix(in srgb,var(--card) 70%,transparent); padding-inline:12px; }
+    .nav-links a.nav-cta:hover, .nav-links a.nav-cta:focus { color:var(--ink); background:var(--accent-soft); }
+    .menu-toggle { display:none; gap:7px; padding-inline:11px; color:var(--ink); border-color:var(--line); background:color-mix(in srgb,var(--card) 72%,transparent); }
+    .menu-toggle-bars { width:15px; height:10px; position:relative; display:inline-block; border-top:2px solid currentColor; border-bottom:2px solid currentColor; }
+    .menu-toggle-bars::after { content:''; position:absolute; left:0; right:0; top:3px; border-top:2px solid currentColor; }
+    .theme-toggle { width:36px; height:36px; padding:0; }
+    .site-footer { max-width:1120px; margin:0 auto; padding:30px 20px 48px; color:var(--muted); }
+    .site-footer-inner { border:1px solid var(--line); border-radius:24px; padding:24px; display:grid; grid-template-columns:minmax(0,1.2fr) repeat(3,minmax(150px,.55fr)); gap:22px; background:linear-gradient(135deg,color-mix(in srgb,var(--card) 94%,transparent),color-mix(in srgb,var(--accent-soft) 36%,var(--card))); box-shadow:0 16px 44px rgba(0,0,0,.10); }
+    .footer-brand strong { display:block; color:var(--ink); letter-spacing:.08em; text-transform:uppercase; font-size:.86rem; }
+    .footer-brand p, .footer-note { margin:.45rem 0 0; color:var(--muted); font-size:.9rem; }
+    .footer-column-title { color:var(--ink); font-weight:900; margin-bottom:10px; font-size:.86rem; display:flex; align-items:center; gap:8px; }
+    .footer-icon { width:22px; height:22px; border-radius:8px; display:inline-flex; align-items:center; justify-content:center; background:var(--accent-soft); color:var(--ink); border:1px solid var(--line); font-size:.82rem; line-height:1; }
+    .footer-links { display:grid; gap:7px; }
+    .footer-links a { color:var(--muted); text-decoration:none; font-weight:760; font-size:.9rem; display:inline-flex; align-items:center; gap:7px; }
+    .footer-links a .link-icon { color:var(--accent); font-size:.86rem; width:1.1em; text-align:center; }
+    .footer-links a:hover, .footer-links a:focus { color:var(--ink); text-decoration:underline; outline:none; }
+    .breadcrumb { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin:0 0 16px; color:var(--muted); font-size:.78rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+    .breadcrumb a { color:var(--accent-blue); text-decoration:none; }
+    .breadcrumb a:hover, .breadcrumb a:focus { color:var(--ink); text-decoration:underline; outline:none; }
+    .breadcrumb span { min-width:0; }
+    @media (max-width:860px) {
+      .site-nav-inner { grid-template-columns:1fr auto; gap:10px; min-height:56px; padding:9px 14px; }
+      .menu-toggle { display:inline-flex; }
+      .nav-links { display:none; grid-column:1 / -1; width:100%; grid-template-columns:1fr 1fr; gap:8px; padding:8px 0 4px; border-top:1px solid var(--line); }
+      .site-nav.is-open .nav-links { display:grid; }
+      .nav-links a, .theme-toggle { justify-content:flex-start; width:100%; border-color:var(--line); background:color-mix(in srgb,var(--card) 74%,transparent); padding:9px 10px; }
+      .theme-toggle { justify-content:center; }
+      .brand-text span { display:none; }
+      .site-footer-inner { grid-template-columns:1fr 1fr; padding:20px; }
+      .footer-brand { grid-column:1 / -1; }
+    }
+    @media (max-width:560px) {
+      .site-nav-inner { padding:8px 12px; }
+      .brand-mark { width:32px; height:32px; }
+      .brand-mark svg, .brand-mark img { width:28px; height:28px; }
+      .brand-text strong { font-size:.78rem; }
+      .menu-toggle { min-height:34px; padding:6px 10px; font-size:.8rem; }
+      .site-footer-inner { grid-template-columns:1fr; border-radius:20px; }
+    }
+
+    .menu-toggle { gap:8px; min-height:34px; padding:7px 11px; border-radius:999px; font-weight:900; }
+    .menu-toggle-icon { width:16px; height:14px; position:relative; display:inline-block; flex:0 0 auto; }
+    .menu-toggle-icon span { position:absolute; left:0; right:0; height:2px; border-radius:999px; background:currentColor; display:block; transform-origin:center; transition:top .16s ease, transform .16s ease, opacity .16s ease; }
+    .menu-toggle-icon span:nth-child(1) { top:1px; }
+    .menu-toggle-icon span:nth-child(2) { top:6px; }
+    .menu-toggle-icon span:nth-child(3) { top:11px; }
+    .site-nav.is-open .menu-toggle-icon span:nth-child(1) { top:6px; transform:rotate(45deg); }
+    .site-nav.is-open .menu-toggle-icon span:nth-child(2) { opacity:0; }
+    .site-nav.is-open .menu-toggle-icon span:nth-child(3) { top:6px; transform:rotate(-45deg); }
+    .theme-toggle { gap:8px; }
+    .theme-toggle .theme-icon { margin:0; }
+    .theme-toggle-label { display:none; font-size:.83rem; font-weight:900; }
+    .footer-icon, .footer-links a .link-icon { display:none; }
+    .footer-column-title { gap:0; letter-spacing:.09em; text-transform:uppercase; font-size:.75rem; color:var(--muted); }
+    .footer-links { gap:6px; }
+    .footer-links a { gap:0; color:color-mix(in srgb,var(--ink) 78%,var(--muted)); }
+    @media (max-width:860px) {
+      .site-nav-inner { gap:8px; min-height:54px; padding:8px 14px; }
+      .nav-links { grid-template-columns:repeat(2,minmax(0,1fr)); gap:6px; margin:6px 0 2px; padding:7px; border:1px solid var(--line); border-radius:16px; background:color-mix(in srgb,var(--card) 92%,transparent); box-shadow:0 18px 44px rgba(0,0,0,.16); }
+      .site-nav.is-open .nav-links { display:grid; }
+      .nav-links a, .theme-toggle { width:100%; min-height:36px; justify-content:flex-start; gap:8px; padding:8px 10px; border:0; border-radius:12px; background:transparent; color:var(--ink); }
+      .nav-links a:hover, .nav-links a:focus, .theme-toggle:hover, .theme-toggle:focus { background:var(--accent-soft); border-color:transparent; text-decoration:none; }
+      .theme-toggle { height:auto; grid-column:1 / -1; }
+      .theme-toggle-label { display:inline; }
+      .menu-toggle-label-text { min-width:36px; text-align:left; }
+      .theme-toggle .theme-icon { flex:0 0 auto; }
+      .site-footer { padding-top:24px; }
+      .site-footer-inner { grid-template-columns:1fr; gap:18px; padding:20px; }
+      .footer-brand { grid-column:auto; }
+    }
+    @media (max-width:560px) {
+      .site-footer-inner { border-radius:18px; padding:18px; }
+    }
+    @media (max-width:340px) { .nav-links { grid-template-columns:1fr; } .theme-toggle { grid-column:auto; } }
+
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; scroll-padding-top:84px; }
+    body { margin:0; font-family:"Noto Sans","Segoe UI",Roboto,system-ui,sans-serif; background:radial-gradient(circle at 15% -10%, color-mix(in srgb,var(--accent) 10%,transparent), transparent 30%), var(--bg); color:var(--ink); line-height:1.6; }
+    main { max-width:1080px; margin:0 auto; padding:34px 20px 64px; }
+    .hero, .card, .source-card { border:1px solid var(--line); border-radius:22px; background:var(--card); box-shadow:0 10px 30px rgba(0,0,0,.10); }
+    .hero { border-radius:28px; padding:30px; background:var(--dark-card-bg); color:var(--hero-ink); margin-bottom:18px; }
+    .hero p { color:var(--hero-muted); max-width:780px; margin:0; }
+    .eyebrow { color:var(--brand-gold); font-weight:900; letter-spacing:.12em; text-transform:uppercase; font-size:.78rem; }
+    h1 { margin:.35rem 0 .55rem; letter-spacing:-.04em; line-height:1; font-size:clamp(2.1rem,6vw,4.3rem); }
+    h2, h3, p { margin-top:0; }
+    a { color:var(--accent-blue); font-weight:850; }
+    .card { padding:22px; margin-bottom:18px; }
+    .small, .section-lead { color:var(--muted); }
+    .source-status-board { display:grid; grid-template-columns:minmax(260px,1.4fr) repeat(6,minmax(120px,.55fr)); gap:0; margin:18px 0 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+    .source-status-primary, .source-status-board-item { min-width:0; padding:16px 18px; border-left:1px solid var(--line); }
+    .source-status-primary { border-left:0; padding-left:0; }
+    .source-status-primary span, .source-status-board-item span { display:block; color:var(--muted); font-size:.75rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+    .source-status-primary strong { display:block; color:var(--ink); font-size:1.55rem; line-height:1.08; margin:6px 0; }
+    .source-status-primary p { margin:0; color:var(--muted); line-height:1.45; }
+    .source-status-board-item strong { display:block; color:var(--ink); line-height:1.2; margin-top:6px; overflow-wrap:anywhere; }
+    .summary-grid, .source-meta-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; }
+    .summary-box, .source-meta-grid > div { border:1px solid var(--line); border-radius:16px; padding:14px; background:var(--card-soft); }
+    .summary-box span, .source-meta-grid span { display:block; color:var(--muted); font-size:.76rem; font-weight:900; letter-spacing:.07em; text-transform:uppercase; }
+    .summary-box strong, .source-meta-grid strong { display:block; margin-top:3px; color:var(--ink); font-size:1rem; overflow-wrap:anywhere; }
+    .coverage-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; margin-top:14px; }
+    .coverage-box { border-left:4px solid var(--accent); background:var(--card-soft); border-radius:14px; padding:13px 14px; }
+    .coverage-box strong { display:block; margin-bottom:4px; }
+    .coverage-box ul { margin:8px 0 0 18px; padding:0; color:var(--muted); }
+    .coverage-box li { margin:6px 0; }
+    .source-grid { display:grid; gap:14px; }
+    .source-table-wrap { overflow-x:auto; border:1px solid var(--line); border-radius:18px; background:var(--card); }
+    .source-table { width:100%; min-width:760px; border-collapse:collapse; }
+    .source-table th, .source-table td { border-top:1px solid var(--line); padding:13px 14px; text-align:left; vertical-align:top; }
+    .source-table thead th { border-top:0; color:var(--muted); font-size:.74rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+    .source-table tbody th strong { display:block; color:var(--ink); font-size:1rem; line-height:1.2; }
+    .source-table tbody th span { display:block; color:var(--muted); font-size:.88rem; line-height:1.35; margin-top:4px; }
+    .source-table tbody tr[data-freshness="fresh"] { box-shadow:inset 4px 0 0 var(--status-live); }
+    .source-table tbody tr[data-freshness="varies"] { box-shadow:inset 4px 0 0 var(--accent-blue); }
+    .source-table tbody tr[data-freshness="late"],
+    .source-table tbody tr[data-freshness="missing"] { box-shadow:inset 4px 0 0 var(--brand-gold); }
+    .source-detail-list { display:grid; gap:8px; margin:10px 0 0; }
+    .source-detail-list div { min-width:0; }
+    .source-detail-list dt, .source-detail-list dd { margin:0; }
+    .source-detail-list dt { color:var(--muted); font-size:.72rem; font-weight:900; letter-spacing:.07em; text-transform:uppercase; }
+    .source-detail-list dd { color:var(--ink); overflow-wrap:anywhere; }
+    .source-card { padding:18px; }
+    .source-ledger-row { box-shadow:none; border-radius:16px; }
+    .source-ledger-row[data-freshness="fresh"] { border-left:4px solid var(--status-live); }
+    .source-ledger-row[data-freshness="varies"] { border-left:4px solid var(--accent-blue); }
+    .source-ledger-row[data-freshness="late"],
+    .source-ledger-row[data-freshness="missing"] { border-left:4px solid var(--brand-gold); }
+    .source-card-top { display:flex; justify-content:space-between; gap:14px; align-items:flex-start; margin-bottom:12px; }
+    .source-card h2 { margin:0; font-size:1.15rem; letter-spacing:-.015em; }
+    .source-pill { display:inline-flex; align-items:center; justify-content:center; border:1px solid var(--line); border-radius:999px; padding:6px 9px; background:var(--accent-soft); color:var(--ink); font-weight:900; font-size:.78rem; white-space:nowrap; }
+    .source-signal { display:inline-flex; align-items:end; gap:3px; margin-right:7px; }
+    .source-signal i { display:block; width:4px; height:10px; border-radius:999px; background:color-mix(in srgb,var(--muted) 38%,transparent); }
+    .source-signal i:nth-child(2) { height:13px; }
+    .source-signal i:nth-child(3) { height:16px; }
+    .source-signal i.filled { background:var(--accent); }
+    details { margin-top:12px; }
+    summary { cursor:pointer; font-weight:900; color:var(--ink); }
+    .source-limit { margin:12px 0 0; color:var(--muted); }
+    .source-notes { margin:12px 0 0 18px; padding:0; color:var(--muted); }
+    .source-notes li { margin:7px 0; }
+    .note { border-left:4px solid var(--brand-gold); background:var(--card-soft); padding:13px 14px; border-radius:12px; color:var(--ink); }
+    @media (max-width:760px) { .source-status-board { grid-template-columns:1fr; } .source-status-primary, .source-status-board-item { border-left:0; border-top:1px solid var(--line); padding:13px 0; } .source-status-primary { border-top:0; } }
+    @media (max-width:560px) { main { padding-inline:14px; } .hero, .card, .source-card { border-radius:18px; padding:18px; } .source-card-top { display:grid; } }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <nav class="site-nav" aria-label="BTC Helper site navigation">
+    <div class="site-nav-inner">
+      <a class="brand-lockup" href="./index.html" aria-label="BTC Helper home">
+        <span class="brand-mark"><svg viewBox="0 0 256 256" aria-hidden="true" focusable="false">
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path class="mark-cradle" d="M68 92c-16 23-17 58-1 84 17 28 49 43 81 34 29-8 51-33 55-64 3-20-2-39-15-54" stroke-width="12"></path>
+    <path class="mark-rail" d="M86 96v82M170 96v82" stroke-width="10" opacity="0.92"></path>
+    <path class="mark-signal" d="M96 118v34M108 84v58M126 60v106M144 72v80M162 94v36" stroke-width="10"></path>
+  </g>
+  <circle class="mark-reserve-dot" cx="108" cy="70" r="6"></circle>
+</svg></span>
+        <span class="brand-text"><strong>BTC Helper</strong><span>Resilient accumulation</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav-links"><span class="menu-toggle-icon" aria-hidden="true"><span></span><span></span><span></span></span><span class="menu-toggle-label-text">Menu</span></button>
+      <div class="nav-links" id="site-nav-links">
+        <a href="./index.html#today">Today</a>
+        <a href="./planner.html">My Plan</a>
+        <a href="./insights.html">Insights</a>
+        <a href="./track.html">Track</a>
+        <a class="nav-cta" href="./updates.html">Updates</a>
+        <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Switch theme"><svg aria-hidden="true" class="theme-icon theme-icon-moon" viewBox="0 0 24 24"><path d="M20.4 14.7A8.3 8.3 0 0 1 9.3 3.6 8.7 8.7 0 1 0 20.4 14.7Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="theme-toggle-label">Theme</span></button>
+      </div>
+    </div>
+  </nav>
+  <main id="main-content">
+    <section class="hero">
+      <div class="eyebrow">Source health</div>
+      <h1>Source health &amp; freshness.</h1>
+      <p>Current source health for the daily read. This page names the public provider/source families BTC Helper relied on, shows cadence and freshness, and keeps source links, raw metric values, exact field mapping, thresholds, weights, override rules, and calibration details private.</p>
+    </section>
+
+    <section class="card">
+
+      <div class="source-status-board" aria-label="Current source run">
+        <div class="source-status-primary">
+          <span>Source health</span>
+          <strong>Reduced</strong>
+          <p>Source health is the overall interpretability label. Freshness, coverage, acquisition mode, publication status, and benchmark eligibility are shown separately.</p>
+        </div>
+        <div class="source-status-board-item"><span>Freshness</span><strong>Fresh or cadence-aware</strong></div>
+        <div class="source-status-board-item"><span>Coverage</span><strong>Limited</strong></div>
+        <div class="source-status-board-item"><span>Acquisition</span><strong>Mixed</strong></div>
+        <div class="source-status-board-item"><span>Operational status</span><strong>Usable for context</strong></div>
+        <div class="source-status-board-item"><span>Publication</span><strong>Degraded but interpretable</strong></div>
+        <div class="source-status-board-item"><span>Benchmark</span><strong>Withheld</strong></div>
+      </div>
+      <p class="note" style="margin-top:16px;">Source health describes source completeness and freshness. It is not a probability that price will rise or fall.</p>
+      <p class="section-lead">Publication status: Degraded but interpretable. Acquisition mode: Mixed. Benchmark comparison: Withheld.</p>
+    </section>
+
+    <section class="card">
+      <div class="summary-grid">
+        <div class="summary-box"><span>Source audit generated</span><strong>Aug 11, 2026, 4:30 AM EDT</strong></div>
+        <div class="summary-box"><span>Source audit age at publication</span><strong>24h 30m</strong></div>
+        <div class="summary-box"><span>Audit age status</span><strong>Elevated</strong></div>
+        <div class="summary-box"><span>Freshness</span><strong>Fresh or cadence-aware</strong></div>
+        <div class="summary-box"><span>Coverage</span><strong>Limited</strong></div>
+        <div class="summary-box"><span>Source health</span><strong>Reduced</strong></div>
+        <div class="summary-box"><span>Publication status</span><strong>Degraded but interpretable</strong></div>
+        <div class="summary-box"><span>Benchmark eligibility</span><strong>Withheld</strong></div>
+        <div class="summary-box"><span>Operational status</span><strong>Usable for context</strong></div>
+        <div class="summary-box"><span>Coverage mix</span><strong>6 direct public feed fields · 6 public chart/table review fields</strong></div>
+        <div class="summary-box"><span>Evidence bundle</span><strong>btc-helper-evidence-2026-08-12-5131fe46d2e9</strong></div>
+        <div class="summary-box"><span>Bundle hash</span><strong>sha256:5131fe46d2e9aeb7233...</strong></div>
+        <div class="summary-box"><span>Provenance label</span><strong>Grounded reconstruction</strong></div>
+      </div>
+      <p class="small" style="margin-top:12px;">Publication time, source-audit time, and BTC reference-price time can differ. Daily read pages show those timestamps separately when the run reports them.</p>
+    </section>
+
+    <section class="card">
+      <h2>Transparency boundary</h2>
+      <div class="coverage-grid">
+        <div class="coverage-box">
+          <strong>Public on this page</strong>
+          <p class="small">Provider/source family, series family, expected cadence, source as-of date, retrieval date, source-health status, and known limitation.</p>
+        </div>
+        <div class="coverage-box">
+          <strong>Kept private</strong>
+          <p class="small">Source links, raw metric values, exact field mapping, thresholds, weights, override rules, calibration details, and private validation notes.</p>
+        </div>
+        <div class="coverage-box">
+          <strong>How to read it</strong>
+          <p class="small">Fresh means fresh for that source cadence, not a claim that the market signal is correct.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Source-health rubric</h2>
+      <p class="section-lead">Source health is reproducibility context for the public read. The exact model weighting stays private, but the public components are stable enough for readers to understand why a read is clean, limited, or withheld from benchmark language.</p>
+      <div class="coverage-grid">
+        <div class="coverage-box"><strong>Freshness</strong><p class="small">whether each source is current for its own expected cadence.</p></div><div class="coverage-box"><strong>Coverage</strong><p class="small">whether required domains have enough public inputs to interpret the read.</p></div><div class="coverage-box"><strong>Acquisition reliability</strong><p class="small">whether collection was direct, fallback, import-assisted, or unstable.</p></div><div class="coverage-box"><strong>Transformation success</strong><p class="small">whether the public normalization step completed without exposing raw inputs.</p></div><div class="coverage-box"><strong>Internal coherence</strong><p class="small">whether the source run had contradictions or warnings that limit usability.</p></div><div class="coverage-box"><strong>Correction/revision state</strong><p class="small">whether a known correction, replacement, or timestamp review is attached to the run.</p></div><div class="coverage-box"><strong>Substitution severity</strong><p class="small">whether missing inputs were replaced, softened, or withheld from benchmark language.</p></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Evidence-bundle protocol</h2>
+      <p class="section-lead">The latest public read stores a dated evidence bundle with source timing, frequency-aware freshness, correction status, normalized factor states, transformation version, and a content hash. The bundle ID and hash identify the serialized record; they do not prove source correctness, model accuracy, or future performance.</p>
+      <p class="small"><a href="/source-snapshots/2026-08-12.json">Open the current public-safe evidence bundle JSON</a>. The underlying source audit was captured before the public read, but this evidence-bundle record was assembled after publication. Treat it as a grounded reconstruction, not a publication-time point-in-time bundle. Older daily reads that predate bundle v1 remain partial public records and are not relabeled as captured point-in-time evidence.</p>
+      <div class="coverage-grid">
+        <div class="coverage-box"><strong>Bundle ID and content hash</strong><p class="small">Stored in the current public-safe bundle when available for the source run.</p></div><div class="coverage-box"><strong>Decision timestamp and methodology version</strong><p class="small">Stored in the current public-safe bundle when available for the source run.</p></div><div class="coverage-box"><strong>Source as-of timestamp, retrieval timestamp, and expected frequency</strong><p class="small">Stored in the current public-safe bundle when available for the source run.</p></div><div class="coverage-box"><strong>Frequency-aware freshness and degraded/unavailable state</strong><p class="small">Stored in the current public-safe bundle when available for the source run.</p></div><div class="coverage-box"><strong>Transformation/schema version used for public normalization</strong><p class="small">Stored in the current public-safe bundle when available for the source run.</p></div><div class="coverage-box"><strong>Fallback, stale, imported, or manually reviewed status</strong><p class="small">Stored in the current public-safe bundle when available for the source run.</p></div><div class="coverage-box"><strong>Correction/revision status and provenance label</strong><p class="small">Stored in the current public-safe bundle when available for the source run.</p></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Coverage by source domain</h2>
+      <div class="coverage-grid">
+        <div class="coverage-box"><strong>Direct public feed inputs</strong><p class="small">Leverage (2 fields) · Macro (1 field) · Market price (3 fields)</p></div>
+        <div class="coverage-box"><strong>Public chart/table review inputs</strong><p class="small">Flows (1 field) · Holder behavior (2 fields) · Valuation (3 fields)</p></div>
+        <div class="coverage-box"><strong>Premium-gated inputs</strong><p class="small">None listed</p></div>
+        <div class="coverage-box"><strong>Unknown inputs</strong><p class="small">None listed</p></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Source status ledger</h2>
+      <p class="small">Current source families are listed as a compact ledger. Expand a provider row for retrieval mode, limitation, and parsing notes.</p>
+      <div class="source-table-wrap">
+        <table class="source-table">
+          <thead><tr><th scope="col">Provider</th><th scope="col">Domain</th><th scope="col">Status</th><th scope="col">As of</th><th scope="col">Expected cadence</th><th scope="col">Detail</th></tr></thead>
+          <tbody>
+      <tr data-freshness="fresh">
+        <th scope="row"><strong>Bitbo</strong><span>Spot Bitcoin ETF flow table</span></th>
+        <td>Flows (1 field)</td>
+        <td><span class="source-pill"><span class="source-signal source-signal-fresh" aria-hidden="true"><i class="filled"></i><i class="filled"></i><i class="filled"></i></span>Fresh for cadence</span></td>
+        <td>Aug 7, 2026, 12:00 AM EDT</td>
+        <td>Business day; weekend and holiday lags expected</td>
+        <td>
+          <details>
+            <summary>Details</summary>
+            <dl class="source-detail-list">
+              <div><dt>Retrieved</dt><dd>Aug 11, 2026, 4:30 AM EDT</dd></div>
+              <div><dt>Retrieval mode</dt><dd>Public table review</dd></div>
+              <div><dt>Known limitation</dt><dd>ETF flow context follows market-day reporting and may trail real-time price action.</dd></div>
+            </dl>
+
+
+          </details>
+        </td>
+      </tr>
+
+      <tr data-freshness="fresh">
+        <th scope="row"><strong>Checkonchain</strong><span>Bitcoin holder behavior and valuation dashboard</span></th>
+        <td>Holder behavior (2 fields) · Other (1 field) · Valuation (3 fields)</td>
+        <td><span class="source-pill"><span class="source-signal source-signal-fresh" aria-hidden="true"><i class="filled"></i><i class="filled"></i><i class="filled"></i></span>Fresh for cadence</span></td>
+        <td>Aug 11, 2026, 12:00 AM EDT</td>
+        <td>Daily; latest completed UTC day is typical</td>
+        <td>
+          <details>
+            <summary>Details</summary>
+            <dl class="source-detail-list">
+              <div><dt>Retrieved</dt><dd>Aug 11, 2026, 4:30 AM EDT</dd></div>
+              <div><dt>Retrieval mode</dt><dd>Public chart/dashboard review</dd></div>
+              <div><dt>Known limitation</dt><dd>Slow-moving on-chain series can update after the daily read window.</dd></div>
+            </dl>
+
+            <ul class="source-notes"><li>One public chart/table source reported a non-blocking parsing note.</li></ul>
+          </details>
+        </td>
+      </tr>
+
+      <tr data-freshness="fresh">
+        <th scope="row"><strong>CoinGecko</strong><span>BTC spot price and market reference</span></th>
+        <td>Market price (2 fields)</td>
+        <td><span class="source-pill"><span class="source-signal source-signal-fresh" aria-hidden="true"><i class="filled"></i><i class="filled"></i><i class="filled"></i></span>Fresh for cadence</span></td>
+        <td>Aug 11, 2026, 4:28 AM EDT</td>
+        <td>Intraday</td>
+        <td>
+          <details>
+            <summary>Details</summary>
+            <dl class="source-detail-list">
+              <div><dt>Retrieved</dt><dd>Aug 11, 2026, 4:30 AM EDT</dd></div>
+              <div><dt>Retrieval mode</dt><dd>Direct public feed</dd></div>
+              <div><dt>Known limitation</dt><dd>Reference pricing can differ from any exchange where a reader buys Bitcoin.</dd></div>
+            </dl>
+            <p class="small"><strong>All source as-of dates:</strong> Aug 11, 2026, 4:28 AM EDT · Aug 11, 2026, 4:27 AM EDT</p>
+
+          </details>
+        </td>
+      </tr>
+
+      <tr data-freshness="fresh">
+        <th scope="row"><strong>FRED</strong><span>Broad U.S. dollar macro context</span></th>
+        <td>Macro (1 field)</td>
+        <td><span class="source-pill"><span class="source-signal source-signal-fresh" aria-hidden="true"><i class="filled"></i><i class="filled"></i><i class="filled"></i></span>Fresh for cadence</span></td>
+        <td>Aug 6, 2026, 8:00 PM EDT</td>
+        <td>Daily business series; release gaps can occur</td>
+        <td>
+          <details>
+            <summary>Details</summary>
+            <dl class="source-detail-list">
+              <div><dt>Retrieved</dt><dd>Aug 11, 2026, 4:30 AM EDT</dd></div>
+              <div><dt>Retrieval mode</dt><dd>Direct public macro feed</dd></div>
+              <div><dt>Known limitation</dt><dd>Macro series can lag around holidays, revisions, and release-calendar gaps.</dd></div>
+            </dl>
+
+
+          </details>
+        </td>
+      </tr>
+
+      <tr data-freshness="fresh">
+        <th scope="row"><strong>OKX</strong><span>BTC derivatives leverage context</span></th>
+        <td>Leverage (2 fields)</td>
+        <td><span class="source-pill"><span class="source-signal source-signal-fresh" aria-hidden="true"><i class="filled"></i><i class="filled"></i><i class="filled"></i></span>Fresh for cadence</span></td>
+        <td>Aug 11, 2026, 4:30 AM EDT</td>
+        <td>Intraday</td>
+        <td>
+          <details>
+            <summary>Details</summary>
+            <dl class="source-detail-list">
+              <div><dt>Retrieved</dt><dd>Aug 11, 2026, 4:30 AM EDT</dd></div>
+              <div><dt>Retrieval mode</dt><dd>Direct public feed</dd></div>
+              <div><dt>Known limitation</dt><dd>Leverage context is directional support, not a complete exchange-wide risk measure.</dd></div>
+            </dl>
+
+            <ul class="source-notes"><li>One source-family timestamp was later than the audit generation time, so the public page flags it for normalization instead of presenting it as provenance.</li></ul>
+          </details>
+        </td>
+      </tr>
+
+      <tr data-freshness="varies">
+        <th scope="row"><strong>Public source</strong><span>Public market or macro source family</span></th>
+        <td>Other (1 field)</td>
+        <td><span class="source-pill"><span class="source-signal source-signal-varies" aria-hidden="true"><i class="filled"></i><i class="filled"></i><i class=""></i></span>Cadence varies</span></td>
+        <td>Aug 9, 2026, 8:00 PM EDT</td>
+        <td>Varies by source</td>
+        <td>
+          <details>
+            <summary>Details</summary>
+            <dl class="source-detail-list">
+              <div><dt>Retrieved</dt><dd>Aug 11, 2026, 4:30 AM EDT</dd></div>
+              <div><dt>Retrieval mode</dt><dd>Public data retrieval</dd></div>
+              <div><dt>Known limitation</dt><dd>Availability, revisions, or reporting lags can affect a daily read.</dd></div>
+            </dl>
+
+
+          </details>
+        </td>
+      </tr>
+    </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Provider notes</h2>
+      <ul class="source-notes"><li>One preferred market-data source currently requires authorization for some series, so the public read used configured public alternatives.</li><li>The derivatives source did not supply one preferred open-interest view, so leverage coverage remains limited to the available public context.</li></ul>
+      <p class="small">Source limitations are shown so a limited-data read is visible to users instead of hidden behind a single confidence score.</p>
+    </section>
+  </main>
+  <footer class="site-footer" id="contact">
+    <div class="site-footer-inner">
+      <div class="footer-brand">
+        <strong>BTC Helper</strong>
+        <p>A private Bitcoin accumulation plan, a source-aware daily action layer, and a public decision record.</p>
+        <p class="footer-note">Educational research tool only. Not financial advice, investment advice, or a recommendation to buy or sell any asset.</p>
+      </div>
+      <div><div class="footer-column-title">Product</div><div class="footer-links"><a href="./index.html#today">Today</a><a href="./planner.html">My Plan</a><a href="./insights.html">Insights</a><a href="./track.html">Track</a><a href="./updates.html">Updates</a></div></div>
+      <div><div class="footer-column-title">Research</div><div class="footer-links"><a href="./weekly-macro-thesis/">Weekly macro</a><a href="./documents-and-research.html">Research library</a><a href="./public-proof-of-work-methodology.html">Methodology</a><a href="./household-resilience-planner.html">Household resilience</a></div></div>
+      <div><div class="footer-column-title">Trust</div><div class="footer-links"><a href="./trust.html">Trust hub</a><a href="./data-sources.html">Source health</a><a href="./about.html">About</a><a href="./privacy.html">Privacy</a><a href="./terms.html">Terms</a><a href="./contact.html">Contact</a><a href="https://x.com/btchelperapp">BTC Helper on X</a></div></div>
+    </div>
+  </footer>
+  <script>
+    const btcHelperThemeStorageKey = 'btcHelperTheme';
+    function setBtcHelperTheme(theme, persist = true) {
+      const next = theme === 'dark' ? 'dark' : 'light';
+      document.documentElement.dataset.theme = next;
+      if (persist) { try { localStorage.setItem(btcHelperThemeStorageKey, next); } catch {} }
+      const button = document.getElementById('theme-toggle');
+      if (button) {
+        button.innerHTML = next === 'dark' ? '<svg aria-hidden="true" class="theme-icon theme-icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2.8v3M12 18.2v3M4.8 4.8l2.1 2.1M17.1 17.1l2.1 2.1M2.8 12h3M18.2 12h3M4.8 19.2l2.1-2.1M17.1 6.9l2.1-2.1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="theme-toggle-label">Theme</span>' : '<svg aria-hidden="true" class="theme-icon theme-icon-moon" viewBox="0 0 24 24"><path d="M20.4 14.7A8.3 8.3 0 0 1 9.3 3.6 8.7 8.7 0 1 0 20.4 14.7Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="theme-toggle-label">Theme</span>';
+        button.setAttribute('aria-label', next === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+        button.setAttribute('title', next === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+      }
+    }
+    setBtcHelperTheme(document.documentElement.dataset.theme || 'light', false);
+    document.getElementById('theme-toggle')?.addEventListener('click', () => setBtcHelperTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'));
+    window.addEventListener('storage', (event) => { if (event.key === btcHelperThemeStorageKey && event.newValue) setBtcHelperTheme(event.newValue, false); });
+    document.querySelectorAll('.site-nav').forEach((nav) => {
+      const toggle = nav.querySelector('.menu-toggle');
+      const links = nav.querySelector('.nav-links');
+      if (!toggle || !links) return;
+      const label = toggle.querySelector('.menu-toggle-label-text');
+      const normalizePath = (href) => {
+        try {
+          const url = new URL(href, window.location.href);
+          return url.pathname.replace(/\/index\.html$/, '/');
+        } catch {
+          return '';
+        }
+      };
+      const currentPath = normalizePath(window.location.href);
+      links.querySelectorAll('a').forEach((link) => {
+        const linkPath = normalizePath(link.href);
+        if (linkPath === currentPath || (currentPath === '/' && linkPath === '/')) link.setAttribute('aria-current', 'page');
+      });
+      const setMenuOpen = (open, restoreFocus = false) => {
+        nav.classList.toggle('is-open', open);
+        toggle.setAttribute('aria-expanded', String(open));
+        if (label) label.textContent = open ? 'Close' : 'Menu';
+        if (!open && restoreFocus) toggle.focus();
+      };
+      toggle.addEventListener('click', () => setMenuOpen(!nav.classList.contains('is-open')));
+      links.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setMenuOpen(false)));
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && nav.classList.contains('is-open')) setMenuOpen(false, true);
+      });
+      document.addEventListener('click', (event) => {
+        if (nav.classList.contains('is-open') && !nav.contains(event.target)) setMenuOpen(false, true);
+      });
+    });
+  </script>
+</body>
+</html>

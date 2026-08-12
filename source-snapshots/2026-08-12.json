@@ -1,0 +1,459 @@
+{
+  "schemaVersion": "public_source_snapshot_v2",
+  "date": "2026-08-12",
+  "generatedAt": "2026-08-11T08:30:19.047Z",
+  "publicationTimestampUtc": "2026-08-12T09:00:25.424Z",
+  "evidenceBundleId": "btc-helper-evidence-2026-08-12-5131fe46d2e9",
+  "evidenceBundleHash": "sha256:5131fe46d2e9aeb723319389b2af012e6d21f95650166188d25f5596af34c47e",
+  "evidenceBundleSchemaVersion": "btc_helper_evidence_bundle_v1",
+  "evidenceCaptureKind": "grounded_reconstruction",
+  "evidenceCaptureLabel": "Grounded reconstruction",
+  "evidenceIntegrityStatement": "Public evidence fields describe provenance, timing, and operational source quality. They do not prove source correctness, model accuracy, or future BTC performance.",
+  "evidenceBundle": {
+    "bundle_id": "btc-helper-evidence-2026-08-12-5131fe46d2e9",
+    "schema_version": "btc_helper_evidence_bundle_v1",
+    "bundle_kind": "grounded_reconstruction",
+    "capture_label": "Grounded reconstruction",
+    "decision": {
+      "read_id": "2026-08-12",
+      "publication_timestamp_utc": "2026-08-12T09:00:25.424Z",
+      "decision_timestamp_utc": "2026-08-12T09:00:25.424Z",
+      "methodology_version": "phase1_reserve_tracker_v1",
+      "public_read_schema_version": "public_read_v1"
+    },
+    "timing": {
+      "source_retrieval_timestamp_utc": "2026-08-11T08:30:19.047Z",
+      "source_data_as_of": "2026-08-11T08:30:12.869Z",
+      "source_frequency": "mixed",
+      "freshness_state": "current",
+      "bundle_finalized_timestamp_utc": "2026-08-12T09:00:25.612Z"
+    },
+    "correction": {
+      "revision_status": "no_known_correction",
+      "history": []
+    },
+    "transformation": {
+      "version": "public-evidence-bundle-v1",
+      "stable_identifier": "sha256:0c3e57f2b791778691576a98879053482dc57178ec4e64992d5dacbd926c719b",
+      "notes": [
+        "Public-safe evidence bundle derived from the same daily read source run as the public page.",
+        "The bundle preserves provenance and operational quality context without exposing private thresholds, weights, raw inputs, or exact field mappings."
+      ]
+    },
+    "normalized_factor_states": {
+      "valuation": {
+        "label": "Valuation",
+        "state": "Cheap",
+        "availability": "available",
+        "missingInputCount": 0
+      },
+      "sth_behavior": {
+        "label": "Holder behavior",
+        "state": "Stress",
+        "availability": "available",
+        "missingInputCount": 0
+      },
+      "flows": {
+        "label": "Flow pressure",
+        "state": "Mild Support",
+        "availability": "available",
+        "missingInputCount": 0
+      },
+      "macro": {
+        "label": "Macro pressure",
+        "state": "Supportive",
+        "availability": "available",
+        "missingInputCount": 0
+      },
+      "leverage": {
+        "label": "Leverage",
+        "state": "Clean",
+        "availability": "available",
+        "missingInputCount": 0
+      }
+    },
+    "source_health": {
+      "status": "reduced",
+      "public_label": "Reduced",
+      "coverage_status": "limited",
+      "coverage_label": "Limited",
+      "run_quality_level": "live",
+      "run_quality_summary": "Run quality: LIVE — key fields were sourced directly from current providers.",
+      "rubric": {
+        "availability": "source families reported",
+        "retrieval_success": "completed for public audit fields",
+        "expected_cadence": "frequency-aware by source family",
+        "freshness_relative_to_cadence": "Fresh or cadence-aware",
+        "fallback_import_assisted_status": "heavy",
+        "transformation_success": "public normalization completed",
+        "internal_coherence": "live",
+        "known_correction_revision_state": "no public correction recorded"
+      }
+    },
+    "current_run": {
+      "usability": "limited",
+      "quality": "reduced",
+      "run_quality": "degraded"
+    },
+    "sources": [
+      {
+        "source_identifier": "Bitbo",
+        "source_family": "Bitbo",
+        "domain_labels": [
+          "Flows"
+        ],
+        "source_frequency": "Business day; weekend and holiday lags expected",
+        "source_data_as_of": "Aug 07, 2026",
+        "source_retrieval_timestamp_utc": "2026-08-11T08:30:19.047Z",
+        "freshness_state": "current",
+        "stale_degraded_state": "Fresh for cadence",
+        "fallback_import_assisted_status": "import_assisted",
+        "correction_revision_status": "not_reported",
+        "transformation_version": "public-evidence-bundle-v1",
+        "visibility": "public_safe",
+        "provenance_note": "ETF flow context follows market-day reporting and may trail real-time price action."
+      },
+      {
+        "source_identifier": "Checkonchain",
+        "source_family": "Checkonchain",
+        "domain_labels": [
+          "Holder behavior",
+          "Other",
+          "Valuation"
+        ],
+        "source_frequency": "Daily; latest completed UTC day is typical",
+        "source_data_as_of": "2026-08-11T00:00:00",
+        "source_retrieval_timestamp_utc": "2026-08-11T08:30:19.047Z",
+        "freshness_state": "current",
+        "stale_degraded_state": "Fresh for cadence",
+        "fallback_import_assisted_status": "import_assisted",
+        "correction_revision_status": "not_reported",
+        "transformation_version": "public-evidence-bundle-v1",
+        "visibility": "public_safe",
+        "provenance_note": "Slow-moving on-chain series can update after the daily read window."
+      },
+      {
+        "source_identifier": "CoinGecko",
+        "source_family": "CoinGecko",
+        "domain_labels": [
+          "Market price"
+        ],
+        "source_frequency": "Intraday",
+        "source_data_as_of": "2026-08-11T08:28:50.000Z",
+        "source_retrieval_timestamp_utc": "2026-08-11T08:30:19.047Z",
+        "freshness_state": "current",
+        "stale_degraded_state": "Fresh for cadence",
+        "fallback_import_assisted_status": "direct_or_public",
+        "correction_revision_status": "not_reported",
+        "transformation_version": "public-evidence-bundle-v1",
+        "visibility": "public_safe",
+        "provenance_note": "Reference pricing can differ from any exchange where a reader buys Bitcoin."
+      },
+      {
+        "source_identifier": "FRED",
+        "source_family": "FRED",
+        "domain_labels": [
+          "Macro"
+        ],
+        "source_frequency": "Daily business series; release gaps can occur",
+        "source_data_as_of": "2026-08-07",
+        "source_retrieval_timestamp_utc": "2026-08-11T08:30:19.047Z",
+        "freshness_state": "current",
+        "stale_degraded_state": "Fresh for cadence",
+        "fallback_import_assisted_status": "direct_or_public",
+        "correction_revision_status": "not_reported",
+        "transformation_version": "public-evidence-bundle-v1",
+        "visibility": "public_safe",
+        "provenance_note": "Macro series can lag around holidays, revisions, and release-calendar gaps."
+      },
+      {
+        "source_identifier": "OKX",
+        "source_family": "OKX",
+        "domain_labels": [
+          "Leverage"
+        ],
+        "source_frequency": "Intraday",
+        "source_data_as_of": "2026-08-11T08:30:12.869Z",
+        "source_retrieval_timestamp_utc": "2026-08-11T08:30:19.047Z",
+        "freshness_state": "current",
+        "stale_degraded_state": "Fresh for cadence",
+        "fallback_import_assisted_status": "direct_or_public",
+        "correction_revision_status": "not_reported",
+        "transformation_version": "public-evidence-bundle-v1",
+        "visibility": "public_safe",
+        "provenance_note": "Leverage context is directional support, not a complete exchange-wide risk measure."
+      },
+      {
+        "source_identifier": "Public source",
+        "source_family": "Public source",
+        "domain_labels": [
+          "Other"
+        ],
+        "source_frequency": "Varies by source",
+        "source_data_as_of": "2026-08-10",
+        "source_retrieval_timestamp_utc": "2026-08-11T08:30:19.047Z",
+        "freshness_state": "lagged_but_normal",
+        "stale_degraded_state": "Cadence varies",
+        "fallback_import_assisted_status": "import_assisted",
+        "correction_revision_status": "not_reported",
+        "transformation_version": "public-evidence-bundle-v1",
+        "visibility": "public_safe",
+        "provenance_note": "Availability, revisions, or reporting lags can affect a daily read."
+      }
+    ],
+    "visibility_boundary": {
+      "public": [
+        "bundle id and content hash",
+        "decision and publication timestamps",
+        "source retrieval and as-of timing",
+        "source frequency and frequency-aware freshness status",
+        "normalized factor-state labels",
+        "source-health rubric inputs and status",
+        "correction/revision status",
+        "methodology and transformation version labels"
+      ],
+      "private": [
+        "exact thresholds",
+        "exact weights",
+        "proprietary transformations and tie-break logic",
+        "raw private or import-assisted values",
+        "private source paths",
+        "credentials or provider access details",
+        "private review notes"
+      ],
+      "statement": "Public evidence fields describe provenance, timing, and operational source quality. They do not prove source correctness, model accuracy, or future BTC performance."
+    },
+    "provenance": {
+      "point_in_time": false,
+      "capture_status": "grounded reconstruction from captured source audit",
+      "historical_scope": "latest daily read only; earlier reads before bundle v1 are not retroactively claimed as captured",
+      "warning": "The underlying source audit was captured before the public read, but this evidence-bundle record was assembled after publication. Treat it as a grounded reconstruction, not a publication-time point-in-time bundle.",
+      "notes": [
+        "Future true point-in-time bundles must be generated and frozen before publication.",
+        "Historical replay, grounded reconstruction, reconstructed, grounded, and synthetic evidence use separate labels when present."
+      ]
+    },
+    "integrity_statement": "Public evidence fields describe provenance, timing, and operational source quality. They do not prove source correctness, model accuracy, or future BTC performance.",
+    "integrity": {
+      "algorithm": "sha256",
+      "canonicalization": "stable-json-v1",
+      "content_hash": "sha256:5131fe46d2e9aeb723319389b2af012e6d21f95650166188d25f5596af34c47e"
+    }
+  },
+  "transparencyBoundary": {
+    "public": [
+      "daily action and buying stance",
+      "factor-state labels",
+      "provider/source family, freshness, and retrieval status",
+      "data-quality status",
+      "publication and calculation timestamps"
+    ],
+    "withheld": [
+      "source links",
+      "raw metric values",
+      "exact metric mix",
+      "thresholds and weights",
+      "override rules",
+      "calibration details",
+      "private macro source-chain details"
+    ]
+  },
+  "headline": {
+    "regime": "normal",
+    "action": "maintain_baseline",
+    "rationale": null
+  },
+  "factorStates": {
+    "valuation": {
+      "label": "Valuation",
+      "state": "Cheap",
+      "availability": "available",
+      "missingInputCount": 0
+    },
+    "sth_behavior": {
+      "label": "Holder behavior",
+      "state": "Stress",
+      "availability": "available",
+      "missingInputCount": 0
+    },
+    "flows": {
+      "label": "Flow pressure",
+      "state": "Mild Support",
+      "availability": "available",
+      "missingInputCount": 0
+    },
+    "macro": {
+      "label": "Macro pressure",
+      "state": "Supportive",
+      "availability": "available",
+      "missingInputCount": 0
+    },
+    "leverage": {
+      "label": "Leverage",
+      "state": "Clean",
+      "availability": "available",
+      "missingInputCount": 0
+    }
+  },
+  "dataQuality": {
+    "confidenceLevel": "moderate",
+    "runQualityLevel": "live",
+    "summary": "Run quality: LIVE — key fields were sourced directly from current providers."
+  },
+  "sourceCoverageSummary": {
+    "fieldCount": 12,
+    "liveFieldCount": 6,
+    "importAssistedFieldCount": 6,
+    "fallbackSupportedFieldCount": 0,
+    "unknownFieldCount": 0
+  },
+  "importStatus": {
+    "reliance": "heavy",
+    "importedFieldCount": 6,
+    "summary": "Import-assisted reliance: HEAVY — 6 field(s) came from imported/manual-assisted sources.",
+    "guidance": "Import status: acceptable for normal use, but at least one imported source is approaching its preferred freshness limit.",
+    "refreshNeeded": false,
+    "sources": [
+      {
+        "sourceFamily": "Checkonchain",
+        "importedFieldCount": 3,
+        "asOf": "2026-08-11T00:00:00",
+        "timestampStatus": "reported",
+        "timestampNote": null,
+        "fetchedAt": "2026-08-11T08:30:14.320Z",
+        "freshness": "very recent",
+        "severity": "acceptable"
+      },
+      {
+        "sourceFamily": "Checkonchain",
+        "importedFieldCount": 1,
+        "asOf": "2026-08-11T00:00:00",
+        "timestampStatus": "reported",
+        "timestampNote": null,
+        "fetchedAt": "2026-08-11T08:30:16.109Z",
+        "freshness": "very recent",
+        "severity": "acceptable"
+      },
+      {
+        "sourceFamily": "Checkonchain",
+        "importedFieldCount": 1,
+        "asOf": "2026-08-11T00:00:00",
+        "timestampStatus": "reported",
+        "timestampNote": null,
+        "fetchedAt": "2026-08-11T08:30:16.451Z",
+        "freshness": "very recent",
+        "severity": "acceptable"
+      },
+      {
+        "sourceFamily": "Checkonchain",
+        "importedFieldCount": 1,
+        "asOf": "2026-08-11T00:00:00",
+        "timestampStatus": "reported",
+        "timestampNote": null,
+        "fetchedAt": "2026-08-11T08:30:16.915Z",
+        "freshness": "very recent",
+        "severity": "acceptable"
+      },
+      {
+        "sourceFamily": "Public source",
+        "importedFieldCount": 1,
+        "asOf": "2026-08-10",
+        "timestampStatus": "reported",
+        "timestampNote": null,
+        "fetchedAt": "2026-08-11T08:30:17.123Z",
+        "freshness": "recent",
+        "severity": "acceptable"
+      },
+      {
+        "sourceFamily": "Bitbo",
+        "importedFieldCount": 1,
+        "asOf": "Aug 07, 2026",
+        "timestampStatus": "reported",
+        "timestampNote": null,
+        "fetchedAt": "2026-08-11T08:30:17.533Z",
+        "freshness": "aging",
+        "severity": "aging"
+      }
+    ]
+  },
+  "provenance": [
+    {
+      "sourceFamily": "CoinGecko",
+      "asOf": "2026-08-11T08:28:50.000Z",
+      "timestampStatus": "reported",
+      "timestampNote": null
+    },
+    {
+      "sourceFamily": "CoinGecko",
+      "asOf": "2026-08-11T08:27:30.000Z",
+      "timestampStatus": "reported",
+      "timestampNote": null
+    },
+    {
+      "sourceFamily": "Checkonchain",
+      "asOf": "2026-08-11T00:00:00",
+      "timestampStatus": "reported",
+      "timestampNote": null
+    },
+    {
+      "sourceFamily": "Checkonchain",
+      "asOf": "2026-08-11T00:00:00",
+      "timestampStatus": "reported",
+      "timestampNote": null
+    },
+    {
+      "sourceFamily": "Checkonchain",
+      "asOf": "2026-08-11T00:00:00",
+      "timestampStatus": "reported",
+      "timestampNote": null
+    },
+    {
+      "sourceFamily": "Checkonchain",
+      "asOf": "2026-08-11T00:00:00",
+      "timestampStatus": "reported",
+      "timestampNote": null
+    },
+    {
+      "sourceFamily": "Checkonchain",
+      "asOf": "2026-08-11T00:00:00",
+      "timestampStatus": "reported",
+      "timestampNote": null
+    },
+    {
+      "sourceFamily": "OKX",
+      "asOf": null,
+      "timestampStatus": "normalization_review",
+      "timestampNote": "One source-family timestamp was later than the audit generation time, so the public page flags it for normalization instead of presenting it as provenance."
+    },
+    {
+      "sourceFamily": "OKX",
+      "asOf": "2026-08-11T08:30:12.869Z",
+      "timestampStatus": "reported",
+      "timestampNote": null
+    },
+    {
+      "sourceFamily": "FRED",
+      "asOf": "2026-08-07",
+      "timestampStatus": "reported",
+      "timestampNote": null
+    },
+    {
+      "sourceFamily": "Bitbo",
+      "asOf": "Aug 07, 2026",
+      "timestampStatus": "reported",
+      "timestampNote": null
+    },
+    {
+      "sourceFamily": "Checkonchain",
+      "asOf": "2026-08-11T00:00:00",
+      "timestampStatus": "reported",
+      "timestampNote": null
+    },
+    {
+      "sourceFamily": "Public source",
+      "asOf": "2026-08-10",
+      "timestampStatus": "reported",
+      "timestampNote": null
+    }
+  ]
+}

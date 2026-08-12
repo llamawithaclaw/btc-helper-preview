@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Is This Just Nostalgia for Cheaper Housing?</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../btc-helper-logo.svg">
+  <meta name="theme-color" content="#111313">
+  <script>
+    try {
+      const savedTheme = localStorage.getItem('btcHelperTheme');
+      document.documentElement.dataset.theme = savedTheme === 'light' ? 'light' : 'dark';
+    } catch {
+      document.documentElement.dataset.theme = 'dark';
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root { color-scheme: light; --bg:#f5f1e9; --card:#fffdf8; --card-soft:#f0ebe1; --ink:#171a18; --muted:#6e746f; --line:#dcd6cb; --accent:#526b83; --accent-blue:#2563eb; --accent-soft:rgba(82,107,131,.10); --brand-navy:#111313; --brand-panel:#181a19; --brand-gold:#ad5617; --brand-warn:#ad5617; --hero-ink:#f3f0e8; --hero-muted:#a5aca6; --secondary-bg:rgba(82,107,131,.10); --secondary-ink:#26394a; --secondary-border:rgba(82,107,131,.28); --dark-card-bg:linear-gradient(135deg,#0d100f,#151816); --dark-card-ink:#f3f0e8; --dark-card-muted:#a5aca6; }
+    :root[data-theme="dark"] { color-scheme: dark; --bg:#0d100f; --card:#151816; --card-soft:#1b201d; --ink:#f3f0e8; --muted:#a5aca6; --line:rgba(255,255,255,.09); --accent:#91a99a; --accent-blue:#bfdbfe; --accent-soft:rgba(145,169,154,.12); --brand-navy:#111313; --brand-panel:#181a19; --brand-gold:#f59a3a; --brand-warn:#c3a36e; --hero-ink:#f3f0e8; --hero-muted:#a5aca6; --secondary-bg:rgba(242,237,214,.08); --secondary-ink:#f3f0e8; --secondary-border:rgba(242,237,214,.18); --dark-card-bg:linear-gradient(135deg,#0d100f,#151816); --dark-card-ink:#f3f0e8; --dark-card-muted:#a5aca6; }
+    html { font-synthesis:none; }
+    body, button, input, select, textarea, summary { font-family:"Noto Sans", "Segoe UI", Roboto, system-ui, sans-serif; }
+    button, input, select, textarea, summary { font:inherit; }
+    code, pre, .machine-record { font-family:"JetBrains Mono", ui-monospace, SFMono-Regular, Consolas, monospace; }
+    .numeric, .price, .percentage, .timestamp { font-variant-numeric:tabular-nums; }
+    .skip-link { position:absolute; left:16px; top:-52px; z-index:1000; border-radius:999px; padding:10px 14px; background:#f2edd6; color:#0d120f; font-weight:950; text-decoration:none; box-shadow:0 12px 28px rgba(0,0,0,.22); }
+    .skip-link:focus { top:14px; outline:3px solid color-mix(in srgb,var(--accent-blue) 58%,transparent); }
+    .theme-toggle { position:fixed; top:16px; right:16px; z-index:20; width:40px; height:40px; display:flex; align-items:center; justify-content:center; padding:0; border-radius:999px; border:1px solid var(--line); background:color-mix(in srgb,var(--card) 88%,transparent); color:var(--ink); box-shadow:0 12px 28px rgba(0,0,0,.16); font:900 1.05rem/1 "Noto Sans", "Segoe UI Symbol", system-ui, sans-serif; cursor:pointer; }
+    .theme-toggle:hover, .theme-toggle:focus { border-color:color-mix(in srgb,var(--accent) 45%,var(--line)); background:var(--accent-soft); outline:none; }
+    .theme-toggle .theme-icon { display:block; margin:0; }
+    .theme-toggle .theme-icon-sun, .theme-toggle .theme-icon-moon { width:22px; height:22px; }
+    * { box-sizing: border-box; }
+
+    .site-nav { position:sticky; top:0; z-index:50; backdrop-filter:blur(16px); background:color-mix(in srgb,var(--bg) 92%,transparent); border-bottom:1px solid color-mix(in srgb,var(--line) 80%,transparent); box-shadow:0 10px 30px rgba(0,0,0,.10); }
+    .site-nav-inner { max-width:1120px; margin:0 auto; padding:10px 20px; display:grid; grid-template-columns:auto 1fr; align-items:center; gap:16px; min-height:62px; }
+    .brand-lockup { display:inline-flex; align-items:center; gap:10px; min-width:fit-content; color:var(--ink); text-decoration:none; }
+    .brand-mark { width:34px; height:34px; border-radius:10px; display:inline-flex; align-items:center; justify-content:center; background:linear-gradient(135deg,#111313,#181a19); border:1px solid color-mix(in srgb,var(--accent) 44%,#34362d); box-shadow:0 8px 18px rgba(15,23,42,.16); overflow:hidden; }
+    .brand-mark svg, .brand-mark img { width:30px; height:30px; display:block; }
+    .brand-mark .mark-cradle, .brand-mark .mark-rail { stroke:var(--accent); } .brand-mark .mark-signal { stroke:#f3f2e8; } .brand-mark .mark-reserve-dot { fill:#f59a3a; }
+    .brand-text strong { display:block; font-size:.82rem; letter-spacing:.12em; text-transform:uppercase; line-height:1.05; }
+    .brand-text span { display:block; color:var(--muted); font-size:.72rem; margin-top:1px; }
+    .nav-links { display:flex; align-items:center; gap:4px; flex-wrap:wrap; justify-content:flex-end; }
+    .nav-links a, .theme-toggle, .menu-toggle { position:static; box-shadow:none; display:inline-flex; align-items:center; justify-content:center; border:1px solid transparent; border-radius:999px; padding:7px 9px; min-height:36px; min-width:36px; color:var(--muted); background:transparent; text-decoration:none; font:inherit; font-size:.82rem; font-weight:850; cursor:pointer; }
+    .nav-links a:hover, .nav-links a:focus, .theme-toggle:hover, .theme-toggle:focus, .menu-toggle:hover, .menu-toggle:focus { color:var(--ink); background:var(--accent-soft); border-color:color-mix(in srgb,var(--accent) 24%,var(--line)); outline:none; }
+    .nav-links a[aria-current="page"] { color:var(--ink); background:var(--accent-soft); border-color:color-mix(in srgb,var(--accent) 28%,var(--line)); }
+    .nav-links a.nav-cta { color:color-mix(in srgb,var(--ink) 82%,var(--muted)); border-color:color-mix(in srgb,var(--accent) 22%,var(--line)); background:color-mix(in srgb,var(--card) 70%,transparent); padding-inline:12px; }
+    .nav-links a.nav-cta:hover, .nav-links a.nav-cta:focus { color:var(--ink); background:var(--accent-soft); }
+    .menu-toggle { display:none; gap:7px; padding-inline:11px; color:var(--ink); border-color:var(--line); background:color-mix(in srgb,var(--card) 72%,transparent); }
+    .menu-toggle-bars { width:15px; height:10px; position:relative; display:inline-block; border-top:2px solid currentColor; border-bottom:2px solid currentColor; }
+    .menu-toggle-bars::after { content:''; position:absolute; left:0; right:0; top:3px; border-top:2px solid currentColor; }
+    .theme-toggle { width:36px; height:36px; padding:0; }
+    .site-footer { max-width:1120px; margin:0 auto; padding:30px 20px 48px; color:var(--muted); }
+    .site-footer-inner { border:1px solid var(--line); border-radius:24px; padding:24px; display:grid; grid-template-columns:minmax(0,1.2fr) repeat(3,minmax(150px,.55fr)); gap:22px; background:linear-gradient(135deg,color-mix(in srgb,var(--card) 94%,transparent),color-mix(in srgb,var(--accent-soft) 36%,var(--card))); box-shadow:0 16px 44px rgba(0,0,0,.10); }
+    .footer-brand strong { display:block; color:var(--ink); letter-spacing:.08em; text-transform:uppercase; font-size:.86rem; }
+    .footer-brand p, .footer-note { margin:.45rem 0 0; color:var(--muted); font-size:.9rem; }
+    .footer-column-title { color:var(--ink); font-weight:900; margin-bottom:10px; font-size:.86rem; display:flex; align-items:center; gap:8px; }
+    .footer-icon { width:22px; height:22px; border-radius:8px; display:inline-flex; align-items:center; justify-content:center; background:var(--accent-soft); color:var(--ink); border:1px solid var(--line); font-size:.82rem; line-height:1; }
+    .footer-links { display:grid; gap:7px; }
+    .footer-links a { color:var(--muted); text-decoration:none; font-weight:760; font-size:.9rem; display:inline-flex; align-items:center; gap:7px; }
+    .footer-links a .link-icon { color:var(--accent); font-size:.86rem; width:1.1em; text-align:center; }
+    .footer-links a:hover, .footer-links a:focus { color:var(--ink); text-decoration:underline; outline:none; }
+    .breadcrumb { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin:0 0 16px; color:var(--muted); font-size:.78rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+    .breadcrumb a { color:var(--accent-blue); text-decoration:none; }
+    .breadcrumb a:hover, .breadcrumb a:focus { color:var(--ink); text-decoration:underline; outline:none; }
+    .breadcrumb span { min-width:0; }
+    @media (max-width:860px) {
+      .site-nav-inner { grid-template-columns:1fr auto; gap:10px; min-height:56px; padding:9px 14px; }
+      .menu-toggle { display:inline-flex; }
+      .nav-links { display:none; grid-column:1 / -1; width:100%; grid-template-columns:1fr 1fr; gap:8px; padding:8px 0 4px; border-top:1px solid var(--line); }
+      .site-nav.is-open .nav-links { display:grid; }
+      .nav-links a, .theme-toggle { justify-content:flex-start; width:100%; border-color:var(--line); background:color-mix(in srgb,var(--card) 74%,transparent); padding:9px 10px; }
+      .theme-toggle { justify-content:center; }
+      .brand-text span { display:none; }
+      .site-footer-inner { grid-template-columns:1fr 1fr; padding:20px; }
+      .footer-brand { grid-column:1 / -1; }
+    }
+    @media (max-width:560px) {
+      .site-nav-inner { padding:8px 12px; }
+      .brand-mark { width:32px; height:32px; }
+      .brand-mark svg, .brand-mark img { width:28px; height:28px; }
+      .brand-text strong { font-size:.78rem; }
+      .menu-toggle { min-height:34px; padding:6px 10px; font-size:.8rem; }
+      .site-footer-inner { grid-template-columns:1fr; border-radius:20px; }
+    }
+
+    .menu-toggle { gap:8px; min-height:34px; padding:7px 11px; border-radius:999px; font-weight:900; }
+    .menu-toggle-icon { width:16px; height:14px; position:relative; display:inline-block; flex:0 0 auto; }
+    .menu-toggle-icon span { position:absolute; left:0; right:0; height:2px; border-radius:999px; background:currentColor; display:block; transform-origin:center; transition:top .16s ease, transform .16s ease, opacity .16s ease; }
+    .menu-toggle-icon span:nth-child(1) { top:1px; }
+    .menu-toggle-icon span:nth-child(2) { top:6px; }
+    .menu-toggle-icon span:nth-child(3) { top:11px; }
+    .site-nav.is-open .menu-toggle-icon span:nth-child(1) { top:6px; transform:rotate(45deg); }
+    .site-nav.is-open .menu-toggle-icon span:nth-child(2) { opacity:0; }
+    .site-nav.is-open .menu-toggle-icon span:nth-child(3) { top:6px; transform:rotate(-45deg); }
+    .theme-toggle { gap:8px; }
+    .theme-toggle .theme-icon { margin:0; }
+    .theme-toggle-label { display:none; font-size:.83rem; font-weight:900; }
+    .footer-icon, .footer-links a .link-icon { display:none; }
+    .footer-column-title { gap:0; letter-spacing:.09em; text-transform:uppercase; font-size:.75rem; color:var(--muted); }
+    .footer-links { gap:6px; }
+    .footer-links a { gap:0; color:color-mix(in srgb,var(--ink) 78%,var(--muted)); }
+    @media (max-width:860px) {
+      .site-nav-inner { gap:8px; min-height:54px; padding:8px 14px; }
+      .nav-links { grid-template-columns:repeat(2,minmax(0,1fr)); gap:6px; margin:6px 0 2px; padding:7px; border:1px solid var(--line); border-radius:16px; background:color-mix(in srgb,var(--card) 92%,transparent); box-shadow:0 18px 44px rgba(0,0,0,.16); }
+      .site-nav.is-open .nav-links { display:grid; }
+      .nav-links a, .theme-toggle { width:100%; min-height:36px; justify-content:flex-start; gap:8px; padding:8px 10px; border:0; border-radius:12px; background:transparent; color:var(--ink); }
+      .nav-links a:hover, .nav-links a:focus, .theme-toggle:hover, .theme-toggle:focus { background:var(--accent-soft); border-color:transparent; text-decoration:none; }
+      .theme-toggle { height:auto; grid-column:1 / -1; }
+      .theme-toggle-label { display:inline; }
+      .menu-toggle-label-text { min-width:36px; text-align:left; }
+      .theme-toggle .theme-icon { flex:0 0 auto; }
+      .site-footer { padding-top:24px; }
+      .site-footer-inner { grid-template-columns:1fr; gap:18px; padding:20px; }
+      .footer-brand { grid-column:auto; }
+    }
+    @media (max-width:560px) {
+      .site-footer-inner { border-radius:18px; padding:18px; }
+    }
+    @media (max-width:340px) { .nav-links { grid-template-columns:1fr; } .theme-toggle { grid-column:auto; } }
+
+    html { scroll-behavior:smooth; }
+    body { margin:0; font-family: "Noto Sans", "Segoe UI", Roboto, system-ui, sans-serif; background:radial-gradient(circle at 20% -10%, color-mix(in srgb,var(--accent) 8%,transparent), transparent 32%), radial-gradient(circle at 90% 10%, rgba(251,191,36,.07), transparent 30%), var(--bg); color:var(--ink); line-height:1.62; }
+    main { max-width: 980px; margin:0 auto; padding:32px 20px 64px; }
+    .back-link { display:inline-block; margin-bottom:18px; color:var(--accent-blue); text-decoration:none; font-weight:800; font-family:'JetBrains Mono', ui-monospace, monospace; letter-spacing:.08em; text-transform:uppercase; font-size:.76rem; }
+    .back-link:hover { text-decoration:underline; }
+    .hero, .card { background:var(--card); border:1px solid var(--line); border-radius:22px; padding:28px; box-shadow:0 16px 44px rgba(0,0,0,.30); margin-bottom:18px; }
+    .hero { background:radial-gradient(circle at 84% 18%, rgba(251,191,36,.07), transparent 28%), radial-gradient(circle at 78% 74%, color-mix(in srgb,var(--accent) 10%, transparent), transparent 32%), linear-gradient(135deg,#0b0d0d,#171a1a 58%,#111313); border-color:color-mix(in srgb,var(--accent) 28%,#050704); color:var(--hero-ink); }
+    .eyebrow { color:var(--accent-blue); font-family:'JetBrains Mono', ui-monospace, monospace; font-weight:900; letter-spacing:.12em; text-transform:uppercase; font-size:.76rem; margin-bottom:10px; }
+    h1, h2, h3, h4, p { margin-top:0; }
+    h1 { letter-spacing:-.035em; line-height:1.08; margin-bottom:10px; font-size:clamp(2rem,4vw,3.1rem); }
+    h2 { margin-top:34px; margin-bottom:10px; font-size:1.45rem; letter-spacing:-.015em; }
+    h3 { margin-top:24px; margin-bottom:8px; font-size:1.1rem; }
+    h4 { margin-top:18px; margin-bottom:6px; }
+    .subtitle, .small, figcaption { color:var(--muted); }
+    .doc-byline { color:var(--hero-ink); font-weight:800; margin:8px 0 0; }
+    .hero .subtitle { color:var(--hero-muted); }
+    .actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:18px; }
+    .button { display:inline-flex; align-items:center; gap:8px; border:1px solid var(--brand-gold); background:var(--brand-gold); color:#0d120f; text-decoration:none; border-radius:999px; padding:10px 14px; font-weight:900; }
+    .button.secondary { background:var(--secondary-bg); color:var(--secondary-ink); border-color:var(--secondary-border); }
+    .hero .button.secondary, .doc-card .button.secondary { background:rgba(242,237,214,.10); color:#f2edd6; border-color:rgba(242,237,214,.25); }
+    .note { border-left:4px solid var(--accent); background:var(--accent-soft); padding:12px 14px; border-radius:12px; color:var(--ink); }
+    .toc { display:grid; gap:4px; margin-top:18px; padding:14px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14); border-radius:14px; }
+    .toc-title { font-weight:900; margin-bottom:4px; color:var(--hero-ink); }
+    .toc a { color:var(--accent-blue); text-decoration:none; }
+    .toc a:hover { text-decoration:underline; }
+    .toc-3 { padding-left:14px; font-size:.94rem; }
+    .doc-body > h1:first-child, .doc-body > h2:first-child { margin-top:0; }
+    ul, ol { margin:8px 0 16px 22px; padding:0; }
+    li { margin:5px 0; }
+    blockquote { border-left:4px solid var(--accent); margin:16px 0; padding:12px 16px; background:rgba(138,160,173,.12); border-radius:12px; color:var(--ink); }
+    code { background:rgba(255,255,255,.08); padding:2px 6px; border-radius:6px; color:var(--secondary-ink); }
+    hr { border:0; border-top:1px solid var(--line); margin:24px 0; }
+    .table-wrap { overflow-x:auto; margin:14px 0 20px; border:1px solid var(--line); border-radius:14px; }
+    table { border-collapse:collapse; min-width:100%; font-size:.92rem; background:var(--card); }
+    th, td { border-bottom:1px solid var(--line); padding:9px 10px; text-align:left; vertical-align:top; }
+    th { background:#151615; font-weight:900; color:var(--hero-ink); }
+    tr:last-child td { border-bottom:0; }
+    figure { margin:22px 0; }
+    figure img { max-width:100%; display:block; border:1px solid var(--line); border-radius:14px; background:white; }
+    figcaption { font-size:.92rem; margin-top:8px; }
+    .doc-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; margin-top:18px; }
+    .doc-card { display:block; color:inherit; text-decoration:none; border:1px solid var(--line); border-radius:18px; padding:18px; background:var(--dark-card-bg); }
+    .doc-card:hover, .doc-card:focus { border-color:var(--accent); outline:none; }
+    .doc-title { font-weight:900; color:var(--hero-ink); margin-bottom:6px; }
+    .doc-meta { color:var(--dark-card-muted); font-size:.92rem; }
+    @media print { body { background:#fff; color:#111827; } main { max-width:none; padding:0; } .back-link, .actions, .toc { display:none; } .hero, .card { box-shadow:none; border:0; padding:0; background:#fff; color:#111827; } h2, h3 { break-after:avoid; } figure, table { break-inside:avoid; } }
+
+  </style>
+</head>
+<body>
+  <nav class="site-nav" aria-label="BTC Helper site navigation">
+    <div class="site-nav-inner">
+      <a class="brand-lockup" href="./index.html" aria-label="BTC Helper home">
+        <span class="brand-mark"><svg viewBox="0 0 256 256" aria-hidden="true" focusable="false">
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path class="mark-cradle" d="M68 92c-16 23-17 58-1 84 17 28 49 43 81 34 29-8 51-33 55-64 3-20-2-39-15-54" stroke-width="12"></path>
+    <path class="mark-rail" d="M86 96v82M170 96v82" stroke-width="10" opacity="0.92"></path>
+    <path class="mark-signal" d="M96 118v34M108 84v58M126 60v106M144 72v80M162 94v36" stroke-width="10"></path>
+  </g>
+  <circle class="mark-reserve-dot" cx="108" cy="70" r="6"></circle>
+</svg></span>
+        <span class="brand-text"><strong>BTC Helper</strong><span>Resilient accumulation</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav-links"><span class="menu-toggle-icon" aria-hidden="true"><span></span><span></span><span></span></span><span class="menu-toggle-label-text">Menu</span></button>
+      <div class="nav-links" id="site-nav-links">
+        <a href="./index.html#today">Today</a>
+        <a href="./planner.html">My Plan</a>
+        <a href="./insights.html">Insights</a>
+        <a href="./track.html">Track</a>
+        <a class="nav-cta" href="./updates.html">Updates</a>
+        <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Switch theme"><svg aria-hidden="true" class="theme-icon theme-icon-moon" viewBox="0 0 24 24"><path d="M20.4 14.7A8.3 8.3 0 0 1 9.3 3.6 8.7 8.7 0 1 0 20.4 14.7Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="theme-toggle-label">Theme</span></button>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <a class="back-link" href="./documents-and-research.html">← Back to Documents &amp; Research</a>
+    <section class="hero">
+      <div class="eyebrow">Sound Money Stress Tests</div>
+      <h1>Is This Just Nostalgia for Cheaper Housing?</h1>
+      <p class="subtitle">Sound Money Stress Tests, Essay 7.</p>
+      <p class="doc-byline">Arne Kotte · BTC Helper Research</p>
+      <div class="actions">
+        <a class="button" href="../Is_This_Just_Nostalgia_for_Cheaper_Housing.pdf">Download PDF</a>
+        <a class="button secondary" href="./index.html">Home</a>
+      </div>
+      <nav class="toc"><div class="toc-title">Contents</div><a class="toc-1" href="#is-this-just-nostalgia-for-cheaper-housing">Is This Just Nostalgia for Cheaper Housing?</a><a class="toc-2" href="#the-objection">The objection</a><a class="toc-2" href="#what-the-bridge-means">What the bridge means</a><a class="toc-2" href="#what-nostalgia-gets-wrong">What nostalgia gets wrong</a><a class="toc-2" href="#what-public-data-can-and-cannot-test">What public data can and cannot test</a><a class="toc-2" href="#what-the-framework-should-concede">What the framework should concede</a><a class="toc-2" href="#what-the-existing-evidence-suggests">What the existing evidence suggests</a><a class="toc-2" href="#why-national-averages-are-not-enough">Why national averages are not enough</a><a class="toc-2" href="#what-this-does-not-prove">What this does not prove</a><a class="toc-2" href="#the-narrow-conclusion">The narrow conclusion</a><a class="toc-2" href="#evidence-note">Evidence note</a><a class="toc-2" href="#related-research-library-pieces">Related research-library pieces</a></nav>
+    </section>
+    <section class="card doc-body">
+      <p class="small"><strong>Suggested citation:</strong> Kotte, Arne. 2026. “Is This Just Nostalgia for Cheaper Housing?” Sound Money Stress Tests. BTC Helper Research.</p>
+      <h1 id="is-this-just-nostalgia-for-cheaper-housing">Is This Just Nostalgia for Cheaper Housing?</h1>
+<h2 id="the-objection">The objection</h2>
+<p>A fair objection to housing-affordability research is that every generation thinks housing was easier before.</p>
+<p>Older households remember lower sticker prices and forget higher mortgage rates, smaller homes, weaker amenities, different neighborhoods, lower incomes, and the risk that came with buying earlier. Younger households see today’s prices and rents and may understate the advantages they have: higher nominal incomes, more financing options, better information, wider job search, and in many cases higher-quality housing.</p>
+<p>In that view, complaints about housing affordability may be partly nostalgia. Housing has always required sacrifice. Entry has always been hardest for young households. If homeownership still exists, incomes have risen, and households continue to form, perhaps the stress story is overstated.</p>
+<p>That critique deserves a serious answer because it is partly right. A careful public-data essay should not treat every expensive apartment, delayed purchase, or frustrated buyer as proof that the past was easy and the present is broken.</p>
+<p>The better question is narrower: did the measurable bridge from household income to stable housing access become harder to cross?</p>
+<h2 id="what-the-bridge-means">What the bridge means</h2>
+<p>This essay uses “bridge” in a practical measurement sense. It is not a new theory of housing markets. It is a way to separate the constraints that are often collapsed into one phrase: housing affordability.</p>
+<p>Here, <strong>household income</strong> means ordinary recurring income available to support rent, saving, debt service, or a mortgage payment. In the national evidence below, the income benchmark is median household income. That is not ideal for every household, but it is transparent and publicly observable.</p>
+<p><strong>Stable housing access</strong> means the ability to rent or buy without turning the housing decision into a persistent financial stressor: excessive rent burden, unsustainable monthly payment, unsafe depletion of cash buffers, or delayed independent household formation. Ownership is not treated as the only valid outcome. Renting can be rational and resilient. The question is whether either path became harder at the margin.</p>
+<p>The bridge has several pieces:</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Margin</th><th>Plain meaning</th><th>What public data can approximate</th><th>What public data often miss</th></tr></thead>
+<tbody>
+<tr><td>Price hurdle</td><td>Purchase price relative to income</td><td>home-price-to-income indexes</td><td>house quality, local mix, starter-home availability</td></tr>
+<tr><td>Payment hurdle</td><td>Monthly owner cost under prevailing rates</td><td>mortgage-payment-to-income proxy</td><td>taxes, insurance, PMI, maintenance, credit score, down payment</td></tr>
+<tr><td>Cash-entry hurdle</td><td>Upfront cash needed to enter safely</td><td>down-payment proxies, savings rates, liquid-wealth surveys where available</td><td>family transfers, closing costs, emergency-buffer adequacy</td></tr>
+<tr><td>Rent-burden channel</td><td>Rent absorbing income before ownership is possible</td><td>ACS/Census rent-burden measures</td><td>informal support, roommate arrangements, local quality differences</td></tr>
+<tr><td>Timing risk</td><td>The chance that prices, rates, rents, or life obligations move before entry</td><td>changes across price/rate regimes</td><td>expectations, household preferences, local opportunity costs</td></tr>
+</tbody></table></div>
+<p>This map is the essay’s main contribution. It keeps the argument from becoming a simple claim that houses used to be cheap. The past was not simple. Mortgage rates, local conditions, house quality, credit standards, and household choices all mattered.</p>
+<h2 id="what-nostalgia-gets-wrong">What nostalgia gets wrong</h2>
+<p>Nostalgia compares memories. Measurement compares constraints.</p>
+<p>A household deciding whether it can rent, buy, move, save, or form a household does not face “the housing market” as a single price. A low-rate period can make monthly payments look easier while home prices and down-payment targets rise. A high-rate period can make payments harder even if price growth cools. Rising incomes can help without fully offsetting a higher entry price. Stable homeownership rates can coexist with sharper strain among marginal buyers or renters.</p>
+<p>So the question is not whether the past was universally easier. It was not. The question is whether the current bridge requires more income, more debt capacity, more cash, more favorable timing, or more tolerance for risk than the public data suggest it once did.</p>
+<h2 id="what-public-data-can-and-cannot-test">What public data can and cannot test</h2>
+<p>Public data cannot settle every housing story. They do not fully observe family transfers, credit scores, local zoning constraints, neighborhood quality, home size, commuting patterns, maintenance costs, insurance costs, or individual preferences. They also cannot prove that one monetary or macro-financial variable caused housing stress.</p>
+<p>But public data can still test a useful descriptive claim: whether national and local indicators are consistent with a widening gap between ordinary income and housing access.</p>
+<p>Several measures matter more than any single headline:</p>
+<ul>
+<li>home prices relative to household income;</li>
+<li>mortgage-payment proxies that account for interest rates;</li>
+<li>renter cost-burden measures;</li>
+<li>homeownership and household-formation indicators;</li>
+<li>saving and liquidity measures where available;</li>
+<li>local variation in home-price pressure and renter burden.</li>
+</ul>
+<p>A careful reader should read these together. If only one measure worsens, the story may be weak. If prices rise but payments fall because rates decline, the conclusion should be mixed. If ownership rates hold up but rent burden and entry costs rise, the conclusion should not be “collapse.” It should be “entry may be harder at the margin.”</p>
+<p>That is the standard this essay uses.</p>
+<h2 id="what-the-framework-should-concede">What the framework should concede</h2>
+<p>The housing-nostalgia critique improves the analysis in four ways.</p>
+<p>First, it reminds us that mortgage rates matter. A home bought at a lower sticker price but a much higher interest rate may not have been easy to finance. Price-to-income ratios alone are not enough.</p>
+<p>Second, it forces quality awareness. A newer, larger, safer, or better-located home may cost more partly because it is different. Simple price comparisons can overstate deterioration if they ignore size, quality, location, schools, amenities, and commute patterns.</p>
+<p>Third, it prevents a false collapse story. U.S. homeownership did not disappear. Many households own homes, many benefited from appreciation, and some renters rationally choose flexibility over ownership.</p>
+<p>Fourth, it preserves agency. Households make real choices about location, family timing, career, consumption, saving, and debt. A serious affordability framework should not erase those choices.</p>
+<p>Those concessions make the narrower claim stronger. The defensible claim is not that earlier generations had an easy path or that every current household is blocked. The defensible claim is that several observable entry margins became less forgiving.</p>
+<h2 id="what-the-existing-evidence-suggests">What the existing evidence suggests</h2>
+<p>The public research library’s housing evidence is descriptive. It does not claim that money growth alone explains housing affordability, and it does not treat national averages as a complete local housing model.</p>
+<p>Even with those limits, the pattern is informative.</p>
+<p>The housing paper separates the price bridge from the payment bridge. Using 1987 as the base year, the national home-price-to-income index reached 151.0 by 2024. In plain language, the national home-price measure rose faster than median household income over the sample. That does not prove that every local buyer faced the same deterioration, but it does show why sticker-price pressure cannot be dismissed as memory alone.</p>
+<p>The payment story is more mixed. The payment proxy uses the national home-price index and the 30-year fixed mortgage rate to approximate the mortgage-payment burden relative to income. It is an index, not an underwriting model. It does not include property taxes, insurance, maintenance, closing costs, mortgage insurance, points, refinancing, borrower credit quality, or actual down-payment variation.</p>
+<p>With that caveat, the proxy still clarifies an important point: affordability did not move in a straight line. Lower mortgage rates softened monthly-payment pressure during parts of the 2010s, even as home prices rose. By 2024, however, the payment-to-income proxy had returned above its 1987 base, reaching 109.3. The most careful interpretation is a regime story: low rates can mask price pressure for a time; higher prices plus higher rates renew the squeeze.</p>
+<p>The local evidence adds a renter channel. In the ACS/FHFA state panel summarized in the research library, higher local housing-price pressure is associated with higher rent-burdened renter shares after accounting for stable state differences and common year shocks. The relationship is descriptive and ecological, not proof about any household. But it supports the basic idea that housing-price pressure can show up for renters, not only buyers.</p>
+<p>The evidence for young household formation is weaker. Under-35 householdership and ownership proxies are preliminary and proxy-dependent. They do not support a strong claim that young-adult household formation collapsed because of housing costs. That weakness should be acknowledged plainly.</p>
+<p>The long-horizon planning paper adds balance. Real disposable personal income rose. Real median household income rose. The national homeownership rate was 64.0 percent in 1994 and 65.6 percent in 2024. Saving was volatile rather than simply destroyed. These facts matter because they rule out an easy decline story.</p>
+<p>But the same corrected evidence still shows rising housing-entry pressure. A nominal median-home-price-to-nominal-income measure rose from 100 in 1994 to 124 in 2024. A real home-price-index-to-real-income proxy rose to 145. Those figures are not apocalyptic. They are evidence that the entry bridge became more demanding even while income and ownership indicators improved in other ways.</p>
+<h2 id="why-national-averages-are-not-enough">Why national averages are not enough</h2>
+<p>Housing markets are local. A national index can hide whether pressure is broad-based or concentrated in high-growth metros, supply-constrained regions, migration destinations, or specific income groups.</p>
+<p>That limitation should change the strength of the claim. National data are enough to motivate the concern. They are not enough to settle how much of the problem comes from local supply, credit access, household sorting, regional labor markets, or intergenerational transfers.</p>
+<p>For a formal empirical article, the local analysis would need to move to the center: state, metro, or commuting-zone panels; clear definitions of price pressure, rent burden, income, and payment burden; local fixed effects; year effects; supply and labor-market controls; and robustness checks. This essay does not do that. Its narrower purpose is to explain why the nostalgia objection does not dispose of the affordability concern.</p>
+<h2 id="what-this-does-not-prove">What this does not prove</h2>
+<p>This evidence does not prove that every young household is uniquely disadvantaged. Life cycle matters. Young adults usually have lower wealth, shorter work histories, smaller savings, and more uncertainty. Some stress at the beginning of adulthood is normal.</p>
+<p>It also does not prove that home prices rose because of one monetary channel. Housing supply, zoning, land scarcity, migration, tax policy, credit standards, household size, investor demand, insurance, construction costs, labor markets, and local amenities all matter.</p>
+<p>Nor does it prove that ownership is always the right goal. Renting can be rational when mobility, maintenance risk, local prices, or career uncertainty make ownership unattractive. A household can be resilient without owning a home.</p>
+<p>Finally, the cash-entry channel remains undermeasured in this short essay. Down payments, closing costs, deposits, liquid wealth, credit scores, and family transfers are central to the lived experience of housing entry, but they require more detailed household-level data than the simple public-data summary presented here. That is a limitation, not a footnote.</p>
+<h2 id="the-narrow-conclusion">The narrow conclusion</h2>
+<p>The nostalgia objection is right to reject simple “houses used to be cheap” storytelling. Housing was never easy, mortgage rates mattered, home quality changed, and many households still became owners.</p>
+<p>But the objection goes too far if it treats today’s affordability concerns as mere mood or generational complaint. Public data show a real distinction between income progress and housing-entry progress. Prices relative to income rose. Low rates temporarily softened payments but did not erase the cash-entry problem. Higher prices plus higher rates renewed payment pressure by 2024. Local housing-price pressure appears connected to renter burden. Long-horizon planning indicators are mixed, not reassuring enough to dismiss the concern.</p>
+<p>The best conclusion is modest: today’s housing stress is not just nostalgia. It is a bridge problem.</p>
+<p>The bridge from income to stable housing access appears more dependent on timing, rates, prior asset ownership, local market exposure, and debt capacity than a simple homeownership-rate statistic can show. That does not mean every household is trapped. It means housing affordability should be measured as a set of entry, payment, rent, and planning constraints — not as a debate between nostalgia and denial.</p>
+<h2 id="evidence-note">Evidence note</h2>
+<p>This essay relies on public research-library findings from <em>Society Under Monetary Stress I: The Fiat Squeeze</em>, <em>Society Under Monetary Stress V: Saving the Future</em>, and <em>Mapping Household Financial Resilience</em>. The underlying public sources include FRED/Census homeownership and income series, national home-price and mortgage-rate series, FHFA house-price indexes, and ACS/Census renter-burden measures. The figures cited here are descriptive public-data findings. They should not be read as causal estimates, local market advice, or claims about any individual household.</p>
+<p>A formal empirical paper would need more than this essay provides: direct data-source tables, formulas, code, local panels, standard errors, quality adjustment, subgroup analysis, direct cash-entry measures, and engagement with the urban economics, household finance, mortgage-credit, and demographic literatures. That is the right standard for a research article. This essay’s narrower role is to clarify the measurement question for public readers.</p>
+<h2 id="related-research-library-pieces">Related research-library pieces</h2>
+<ul>
+<li><em>Society Under Monetary Stress I: The Fiat Squeeze</em></li>
+<li><em>Society Under Monetary Stress V: Saving the Future</em></li>
+<li><em>Society Under Monetary Stress II: The Cantillon Map</em></li>
+<li><em>Mapping Household Financial Resilience</em></li>
+</ul>
+    </section>
+  </main>
+  <footer class="site-footer" id="contact">
+    <div class="site-footer-inner">
+      <div class="footer-brand"><strong>BTC Helper</strong><p>A private Bitcoin accumulation plan, a source-aware daily action layer, and a public decision record.</p><p class="footer-note">Educational research tool only. Not financial advice, investment advice, or a recommendation to buy or sell any asset.</p></div>
+      <div><div class="footer-column-title">Product</div><div class="footer-links"><a href="./index.html#today">Today</a><a href="./planner.html">My Plan</a><a href="./insights.html">Insights</a><a href="./track.html">Track</a><a href="./updates.html">Updates</a></div></div>
+      <div><div class="footer-column-title">Research</div><div class="footer-links"><a href="./weekly-macro-thesis/">Weekly macro</a><a href="./documents-and-research.html">Research library</a><a href="./public-proof-of-work-methodology.html">Methodology</a><a href="./household-resilience-planner.html">Household resilience</a></div></div>
+      <div><div class="footer-column-title">Trust</div><div class="footer-links"><a href="./data-sources.html">Source health</a><a href="./about.html">About</a><a href="./privacy.html">Privacy</a><a href="./terms.html">Terms</a><a href="./contact.html">Contact</a><a href="https://x.com/btchelperapp">BTC Helper on X</a></div></div>
+    </div>
+  </footer>
+  <script>
+    const btcHelperThemeStorageKey = 'btcHelperTheme';
+    function setBtcHelperTheme(theme, persist = true) {
+      const next = theme === 'dark' ? 'dark' : 'light';
+      document.documentElement.dataset.theme = next;
+      if (persist) { try { localStorage.setItem(btcHelperThemeStorageKey, next); } catch {} }
+      const button = document.getElementById('theme-toggle');
+      if (button) {
+        button.innerHTML = next === 'dark' ? '<svg aria-hidden="true" class="theme-icon theme-icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2.8v3M12 18.2v3M4.8 4.8l2.1 2.1M17.1 17.1l2.1 2.1M2.8 12h3M18.2 12h3M4.8 19.2l2.1-2.1M17.1 6.9l2.1-2.1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="theme-toggle-label">Theme</span>' : '<svg aria-hidden="true" class="theme-icon theme-icon-moon" viewBox="0 0 24 24"><path d="M20.4 14.7A8.3 8.3 0 0 1 9.3 3.6 8.7 8.7 0 1 0 20.4 14.7Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="theme-toggle-label">Theme</span>';
+        button.setAttribute('aria-label', next === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+        button.setAttribute('title', next === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+      }
+    }
+    setBtcHelperTheme(document.documentElement.dataset.theme || 'light', false);
+    document.getElementById('theme-toggle')?.addEventListener('click', () => setBtcHelperTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'));
+    window.addEventListener('storage', (event) => { if (event.key === btcHelperThemeStorageKey && event.newValue) setBtcHelperTheme(event.newValue, false); });
+    document.querySelectorAll('.site-nav').forEach((nav) => {
+      const toggle = nav.querySelector('.menu-toggle');
+      const links = nav.querySelector('.nav-links');
+      if (!toggle || !links) return;
+      const label = toggle.querySelector('.menu-toggle-label-text');
+      const normalizePath = (href) => {
+        try {
+          const url = new URL(href, window.location.href);
+          return url.pathname.replace(/\/index\.html$/, '/');
+        } catch {
+          return '';
+        }
+      };
+      const currentPath = normalizePath(window.location.href);
+      links.querySelectorAll('a').forEach((link) => {
+        const linkPath = normalizePath(link.href);
+        if (linkPath === currentPath || (currentPath === '/' && linkPath === '/')) link.setAttribute('aria-current', 'page');
+      });
+      const setMenuOpen = (open, restoreFocus = false) => {
+        nav.classList.toggle('is-open', open);
+        toggle.setAttribute('aria-expanded', String(open));
+        if (label) label.textContent = open ? 'Close' : 'Menu';
+        if (!open && restoreFocus) toggle.focus();
+      };
+      toggle.addEventListener('click', () => setMenuOpen(!nav.classList.contains('is-open')));
+      links.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setMenuOpen(false)));
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && nav.classList.contains('is-open')) setMenuOpen(false, true);
+      });
+      document.addEventListener('click', (event) => {
+        if (nav.classList.contains('is-open') && !nav.contains(event.target)) setMenuOpen(false, true);
+      });
+    });
+  </script>
+</body>
+</html>

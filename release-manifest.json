@@ -1,0 +1,112 @@
+{
+  "read_id": "2026-08-12",
+  "publication_id": "2026-08-12T09:00:25.424Z",
+  "schema_version": "public_read_v1",
+  "methodology_version": "phase1_reserve_tracker_v1",
+  "source_audit_at": "2026-08-11T08:30:19.047Z",
+  "btc_reference_at": "2026-08-12T09:00:25.424Z",
+  "btc_reference_price_usd": 63732,
+  "baseline_instruction": "continue",
+  "reserve_instruction": "hold",
+  "market_context": "normal",
+  "source_health": "reduced",
+  "coverage_status": "limited",
+  "run_quality": "degraded",
+  "behavior_change": false,
+  "context_change": true,
+  "combined_translation": "scheduled_plan_unchanged",
+  "evidence_bundle_id": "btc-helper-evidence-2026-08-12-5131fe46d2e9",
+  "evidence_bundle_hash": "sha256:5131fe46d2e9aeb723319389b2af012e6d21f95650166188d25f5596af34c47e",
+  "evidence_bundle_schema_version": "btc_helper_evidence_bundle_v1",
+  "evidence_capture_kind": "grounded_reconstruction",
+  "evidence_capture_label": "Grounded reconstruction",
+  "evidence_source_retrieval_at": "2026-08-11T08:30:19.047Z",
+  "evidence_source_data_as_of": "2026-08-11T08:30:12.869Z",
+  "evidence_freshness_state": "current",
+  "evidence_correction_status": "no_known_correction",
+  "build_id": "btc-helper-20260812-20260812090025",
+  "content_hash": "sha256:2c4ce889bbf56a2dd4e1b2048fc18fb7ab0042e5baf0a58dc8101bfb842391cb",
+  "benchmark": {
+    "btc_helper_cumulative_btc": 0.0015666815633098193,
+    "baseline_cumulative_btc": 0.0015666815633098193,
+    "btc_helper_portfolio_value": 99.8477493928614,
+    "baseline_portfolio_value": 99.8477493928614,
+    "benchmark_difference_pct": 0,
+    "benchmark_status": "in_line"
+  },
+  "artifacts": {
+    "nojekyll": {
+      "path": ".nojekyll",
+      "sha256": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "homepage": {
+      "path": "index.html",
+      "sha256": "sha256:365110003a6163578bebc28c9332bc480419752a5b0865a6e4600cef7c3618ec"
+    },
+    "daily_read": {
+      "path": "history/2026-08-12/index.html",
+      "sha256": "sha256:2f41f3fbfe086b892f411cb546e1216f988b1ad0624d1ed7c73ca227209a1cac"
+    },
+    "archive": {
+      "path": "archive.html",
+      "sha256": "sha256:ee5f5739727c106e2f5c3e423bbc9dc2fb77a6e03dbb17d4ee33c8eb71a7c49e"
+    },
+    "track": {
+      "path": "track.html",
+      "sha256": "sha256:5e0ec89dda3aeb7cbb51ccd6487eaa93ca61d077e9767444f5c5c0e830ba3c55"
+    },
+    "evidence": {
+      "path": "evidence.html",
+      "sha256": "sha256:8ff48c4eedd162c794c84d86ceb76d1c486a0cb16a327f25651f4e7c32f0233d"
+    },
+    "source_health": {
+      "path": "data-sources.html",
+      "sha256": "sha256:0e0a84ecdf7fb4ea6dc28aad59b2f18fb6e740a88fcc57d408b9c8a25075ba16"
+    },
+    "trust": {
+      "path": "trust.html",
+      "sha256": "sha256:22238dd7dfc42b3d8d4ae452dbb2aaf46621fef29230e46dbae7e5538f607f86"
+    },
+    "latest_post": {
+      "path": "latest-post.txt",
+      "sha256": "sha256:acb11d250ba9d97afa9dc08e82433cc49d57d3dac1559ed3adc94945081a8370"
+    },
+    "x_post": {
+      "path": "x-post.txt",
+      "sha256": "sha256:2df9a4b1233b198fe04fdd180ba89bdc0b009d19a3ee0ced9da0555623a1eed0"
+    },
+    "rss": {
+      "path": "feed.xml",
+      "sha256": "sha256:ad8ec5ac1576e7ce9144d830d288ed72ec4440909a188ce5fc7baf366d3dc818"
+    },
+    "csv": {
+      "path": "latest-read.csv",
+      "sha256": "sha256:9658d80aae055cae472b2905cabd62ad07ae02c52d60feb1abbd8a2922fbb927"
+    },
+    "summary": {
+      "path": "summary.json",
+      "sha256": "sha256:4816bc8b795104efe642486c5c1f953a9c60953a81f5f3700e59c5af8926ebf7"
+    },
+    "source_snapshot": {
+      "path": "source-snapshots/2026-08-12.json",
+      "sha256": "sha256:a8ca884c47c916fbd38cbf567130f346f38fbfd88d672f61f78d48fa773a1712"
+    },
+    "security_txt": {
+      "path": ".well-known/security.txt",
+      "sha256": "sha256:74fdabb4f742522575f15dcdf7fbf432dca6917c52e5cb3b2293bacfab5a8a57"
+    },
+    "social_card_html": {
+      "path": "card/card.html",
+      "sha256": "sha256:9e769d4c867ec40903f95615864d0e8fab0cfaad6728e1f78247aeddceca0a14"
+    },
+    "social_card_image": {
+      "path": "card/latest-read-card.png",
+      "sha256": "sha256:cc05d6c061303a8f940a4dfb036b25f61b729cd734373b827510af92a17e33f8"
+    },
+    "dated_social_card_image": {
+      "path": "history/2026-08-12/social-card.png",
+      "sha256": "sha256:cc05d6c061303a8f940a4dfb036b25f61b729cd734373b827510af92a17e33f8"
+    }
+  },
+  "generated_at": "2026-08-12T09:00:37.999Z"
+}
