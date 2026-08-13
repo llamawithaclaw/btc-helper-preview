@@ -248,7 +248,7 @@
           <strong>Reduced</strong>
           <p>Source health is the overall interpretability label. Freshness, coverage, acquisition mode, publication status, and benchmark eligibility are shown separately.</p>
         </div>
-        <div class="source-status-board-item"><span>Freshness</span><strong>Fresh or cadence-aware</strong></div>
+        <div class="source-status-board-item"><span>Freshness</span><strong>Needs reader attention</strong></div>
         <div class="source-status-board-item"><span>Coverage</span><strong>Limited</strong></div>
         <div class="source-status-board-item"><span>Acquisition</span><strong>Mixed</strong></div>
         <div class="source-status-board-item"><span>Operational status</span><strong>Usable for context</strong></div>
@@ -261,18 +261,18 @@
 
     <section class="card">
       <div class="summary-grid">
-        <div class="summary-box"><span>Source audit generated</span><strong>Aug 11, 2026, 4:30 AM EDT</strong></div>
-        <div class="summary-box"><span>Source audit age at publication</span><strong>24h 30m</strong></div>
-        <div class="summary-box"><span>Audit age status</span><strong>Elevated</strong></div>
-        <div class="summary-box"><span>Freshness</span><strong>Fresh or cadence-aware</strong></div>
+        <div class="summary-box"><span>Source audit generated</span><strong>Aug 13, 2026, 5:00 AM EDT</strong></div>
+        <div class="summary-box"><span>Source audit age at publication</span><strong>0 min</strong></div>
+        <div class="summary-box"><span>Audit age status</span><strong>Expected</strong></div>
+        <div class="summary-box"><span>Freshness</span><strong>Needs reader attention</strong></div>
         <div class="summary-box"><span>Coverage</span><strong>Limited</strong></div>
         <div class="summary-box"><span>Source health</span><strong>Reduced</strong></div>
         <div class="summary-box"><span>Publication status</span><strong>Degraded but interpretable</strong></div>
         <div class="summary-box"><span>Benchmark eligibility</span><strong>Withheld</strong></div>
         <div class="summary-box"><span>Operational status</span><strong>Usable for context</strong></div>
-        <div class="summary-box"><span>Coverage mix</span><strong>6 direct public feed fields · 6 public chart/table review fields</strong></div>
-        <div class="summary-box"><span>Evidence bundle</span><strong>btc-helper-evidence-2026-08-12-5131fe46d2e9</strong></div>
-        <div class="summary-box"><span>Bundle hash</span><strong>sha256:5131fe46d2e9aeb7233...</strong></div>
+        <div class="summary-box"><span>Coverage mix</span><strong>6 direct public feed fields · 1 public chart/table review field</strong></div>
+        <div class="summary-box"><span>Evidence bundle</span><strong>btc-helper-evidence-2026-08-13-5411707f260f</strong></div>
+        <div class="summary-box"><span>Bundle hash</span><strong>sha256:5411707f260fc2d1dd6...</strong></div>
         <div class="summary-box"><span>Provenance label</span><strong>Grounded reconstruction</strong></div>
       </div>
       <p class="small" style="margin-top:12px;">Publication time, source-audit time, and BTC reference-price time can differ. Daily read pages show those timestamps separately when the run reports them.</p>
@@ -307,7 +307,7 @@
     <section class="card">
       <h2>Evidence-bundle protocol</h2>
       <p class="section-lead">The latest public read stores a dated evidence bundle with source timing, frequency-aware freshness, correction status, normalized factor states, transformation version, and a content hash. The bundle ID and hash identify the serialized record; they do not prove source correctness, model accuracy, or future performance.</p>
-      <p class="small"><a href="/source-snapshots/2026-08-12.json">Open the current public-safe evidence bundle JSON</a>. The underlying source audit was captured before the public read, but this evidence-bundle record was assembled after publication. Treat it as a grounded reconstruction, not a publication-time point-in-time bundle. Older daily reads that predate bundle v1 remain partial public records and are not relabeled as captured point-in-time evidence.</p>
+      <p class="small"><a href="/source-snapshots/2026-08-13.json">Open the current public-safe evidence bundle JSON</a>. The underlying source audit was captured before the public read, but this evidence-bundle record was assembled after publication. Treat it as a grounded reconstruction, not a publication-time point-in-time bundle. Older daily reads that predate bundle v1 remain partial public records and are not relabeled as captured point-in-time evidence.</p>
       <div class="coverage-grid">
         <div class="coverage-box"><strong>Bundle ID and content hash</strong><p class="small">Stored in the current public-safe bundle when available for the source run.</p></div><div class="coverage-box"><strong>Decision timestamp and methodology version</strong><p class="small">Stored in the current public-safe bundle when available for the source run.</p></div><div class="coverage-box"><strong>Source as-of timestamp, retrieval timestamp, and expected frequency</strong><p class="small">Stored in the current public-safe bundle when available for the source run.</p></div><div class="coverage-box"><strong>Frequency-aware freshness and degraded/unavailable state</strong><p class="small">Stored in the current public-safe bundle when available for the source run.</p></div><div class="coverage-box"><strong>Transformation/schema version used for public normalization</strong><p class="small">Stored in the current public-safe bundle when available for the source run.</p></div><div class="coverage-box"><strong>Fallback, stale, imported, or manually reviewed status</strong><p class="small">Stored in the current public-safe bundle when available for the source run.</p></div><div class="coverage-box"><strong>Correction/revision status and provenance label</strong><p class="small">Stored in the current public-safe bundle when available for the source run.</p></div>
       </div>
@@ -317,7 +317,7 @@
       <h2>Coverage by source domain</h2>
       <div class="coverage-grid">
         <div class="coverage-box"><strong>Direct public feed inputs</strong><p class="small">Leverage (2 fields) · Macro (1 field) · Market price (3 fields)</p></div>
-        <div class="coverage-box"><strong>Public chart/table review inputs</strong><p class="small">Flows (1 field) · Holder behavior (2 fields) · Valuation (3 fields)</p></div>
+        <div class="coverage-box"><strong>Public chart/table review inputs</strong><p class="small">Flows (1 field)</p></div>
         <div class="coverage-box"><strong>Premium-gated inputs</strong><p class="small">None listed</p></div>
         <div class="coverage-box"><strong>Unknown inputs</strong><p class="small">None listed</p></div>
       </div>
@@ -334,13 +334,13 @@
         <th scope="row"><strong>Bitbo</strong><span>Spot Bitcoin ETF flow table</span></th>
         <td>Flows (1 field)</td>
         <td><span class="source-pill"><span class="source-signal source-signal-fresh" aria-hidden="true"><i class="filled"></i><i class="filled"></i><i class="filled"></i></span>Fresh for cadence</span></td>
-        <td>Aug 7, 2026, 12:00 AM EDT</td>
+        <td>Aug 11, 2026, 12:00 AM EDT</td>
         <td>Business day; weekend and holiday lags expected</td>
         <td>
           <details>
             <summary>Details</summary>
             <dl class="source-detail-list">
-              <div><dt>Retrieved</dt><dd>Aug 11, 2026, 4:30 AM EDT</dd></div>
+              <div><dt>Retrieved</dt><dd>Aug 13, 2026, 5:00 AM EDT</dd></div>
               <div><dt>Retrieval mode</dt><dd>Public table review</dd></div>
               <div><dt>Known limitation</dt><dd>ETF flow context follows market-day reporting and may trail real-time price action.</dd></div>
             </dl>
@@ -350,41 +350,41 @@
         </td>
       </tr>
 
-      <tr data-freshness="fresh">
-        <th scope="row"><strong>Checkonchain</strong><span>Bitcoin holder behavior and valuation dashboard</span></th>
-        <td>Holder behavior (2 fields) · Other (1 field) · Valuation (3 fields)</td>
-        <td><span class="source-pill"><span class="source-signal source-signal-fresh" aria-hidden="true"><i class="filled"></i><i class="filled"></i><i class="filled"></i></span>Fresh for cadence</span></td>
-        <td>Aug 11, 2026, 12:00 AM EDT</td>
+      <tr data-freshness="missing">
+        <th scope="row"><strong>Checkonchain</strong><span>Bitcoin on-chain dashboard</span></th>
+        <td>None listed</td>
+        <td><span class="source-pill"><span class="source-signal source-signal-missing" aria-hidden="true"><i class=""></i><i class=""></i><i class=""></i></span>As-of not reported</span></td>
+        <td>Not reported by source</td>
         <td>Daily; latest completed UTC day is typical</td>
         <td>
           <details>
             <summary>Details</summary>
             <dl class="source-detail-list">
-              <div><dt>Retrieved</dt><dd>Aug 11, 2026, 4:30 AM EDT</dd></div>
+              <div><dt>Retrieved</dt><dd>Aug 13, 2026, 5:00 AM EDT</dd></div>
               <div><dt>Retrieval mode</dt><dd>Public chart/dashboard review</dd></div>
               <div><dt>Known limitation</dt><dd>Slow-moving on-chain series can update after the daily read window.</dd></div>
             </dl>
 
-            <ul class="source-notes"><li>One public chart/table source reported a non-blocking parsing note.</li></ul>
+
           </details>
         </td>
       </tr>
 
       <tr data-freshness="fresh">
         <th scope="row"><strong>CoinGecko</strong><span>BTC spot price and market reference</span></th>
-        <td>Market price (2 fields)</td>
+        <td>Market price (3 fields)</td>
         <td><span class="source-pill"><span class="source-signal source-signal-fresh" aria-hidden="true"><i class="filled"></i><i class="filled"></i><i class="filled"></i></span>Fresh for cadence</span></td>
-        <td>Aug 11, 2026, 4:28 AM EDT</td>
+        <td>Aug 13, 2026, 4:58 AM EDT</td>
         <td>Intraday</td>
         <td>
           <details>
             <summary>Details</summary>
             <dl class="source-detail-list">
-              <div><dt>Retrieved</dt><dd>Aug 11, 2026, 4:30 AM EDT</dd></div>
+              <div><dt>Retrieved</dt><dd>Aug 13, 2026, 5:00 AM EDT</dd></div>
               <div><dt>Retrieval mode</dt><dd>Direct public feed</dd></div>
               <div><dt>Known limitation</dt><dd>Reference pricing can differ from any exchange where a reader buys Bitcoin.</dd></div>
             </dl>
-            <p class="small"><strong>All source as-of dates:</strong> Aug 11, 2026, 4:28 AM EDT · Aug 11, 2026, 4:27 AM EDT</p>
+            <p class="small"><strong>All source as-of dates:</strong> Aug 13, 2026, 4:57 AM EDT · Aug 13, 2026, 4:58 AM EDT</p>
 
           </details>
         </td>
@@ -400,7 +400,7 @@
           <details>
             <summary>Details</summary>
             <dl class="source-detail-list">
-              <div><dt>Retrieved</dt><dd>Aug 11, 2026, 4:30 AM EDT</dd></div>
+              <div><dt>Retrieved</dt><dd>Aug 13, 2026, 5:00 AM EDT</dd></div>
               <div><dt>Retrieval mode</dt><dd>Direct public macro feed</dd></div>
               <div><dt>Known limitation</dt><dd>Macro series can lag around holidays, revisions, and release-calendar gaps.</dd></div>
             </dl>
@@ -414,13 +414,13 @@
         <th scope="row"><strong>OKX</strong><span>BTC derivatives leverage context</span></th>
         <td>Leverage (2 fields)</td>
         <td><span class="source-pill"><span class="source-signal source-signal-fresh" aria-hidden="true"><i class="filled"></i><i class="filled"></i><i class="filled"></i></span>Fresh for cadence</span></td>
-        <td>Aug 11, 2026, 4:30 AM EDT</td>
+        <td>Aug 13, 2026, 5:00 AM EDT</td>
         <td>Intraday</td>
         <td>
           <details>
             <summary>Details</summary>
             <dl class="source-detail-list">
-              <div><dt>Retrieved</dt><dd>Aug 11, 2026, 4:30 AM EDT</dd></div>
+              <div><dt>Retrieved</dt><dd>Aug 13, 2026, 5:00 AM EDT</dd></div>
               <div><dt>Retrieval mode</dt><dd>Direct public feed</dd></div>
               <div><dt>Known limitation</dt><dd>Leverage context is directional support, not a complete exchange-wide risk measure.</dd></div>
             </dl>
@@ -430,17 +430,17 @@
         </td>
       </tr>
 
-      <tr data-freshness="varies">
+      <tr data-freshness="missing">
         <th scope="row"><strong>Public source</strong><span>Public market or macro source family</span></th>
-        <td>Other (1 field)</td>
-        <td><span class="source-pill"><span class="source-signal source-signal-varies" aria-hidden="true"><i class="filled"></i><i class="filled"></i><i class=""></i></span>Cadence varies</span></td>
-        <td>Aug 9, 2026, 8:00 PM EDT</td>
+        <td>None listed</td>
+        <td><span class="source-pill"><span class="source-signal source-signal-missing" aria-hidden="true"><i class=""></i><i class=""></i><i class=""></i></span>As-of not reported</span></td>
+        <td>Not reported by source</td>
         <td>Varies by source</td>
         <td>
           <details>
             <summary>Details</summary>
             <dl class="source-detail-list">
-              <div><dt>Retrieved</dt><dd>Aug 11, 2026, 4:30 AM EDT</dd></div>
+              <div><dt>Retrieved</dt><dd>Aug 13, 2026, 5:00 AM EDT</dd></div>
               <div><dt>Retrieval mode</dt><dd>Public data retrieval</dd></div>
               <div><dt>Known limitation</dt><dd>Availability, revisions, or reporting lags can affect a daily read.</dd></div>
             </dl>
@@ -456,7 +456,7 @@
 
     <section class="card">
       <h2>Provider notes</h2>
-      <ul class="source-notes"><li>One preferred market-data source currently requires authorization for some series, so the public read used configured public alternatives.</li><li>The derivatives source did not supply one preferred open-interest view, so leverage coverage remains limited to the available public context.</li></ul>
+      <ul class="source-notes"><li>One preferred market-data source currently requires authorization for some series, so the public read used configured public alternatives.</li><li>The derivatives source did not supply one preferred open-interest view, so leverage coverage remains limited to the available public context.</li><li>Import source checkonchain_realized_price failed: Could not locate one public source Realised Price trace</li><li>Import source checkonchain_true_market_mean failed: Unknown import source: checkonchain_true_market_mean</li><li>Import source checkonchain_nupl failed: Unknown import source: checkonchain_nupl</li><li>Import source bmpro_puell failed: Unknown import source: bmpro_puell</li></ul>
       <p class="small">Source limitations are shown so a limited-data read is visible to users instead of hidden behind a single confidence score.</p>
     </section>
   </main>
