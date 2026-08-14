@@ -5,7 +5,14 @@
     <link>https://btchelper.app/</link>
     <description>Dated Bitcoin accumulation reads, source health, and manual-plan context.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 13 Aug 2026 09:00:22 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 14 Aug 2026 09:00:25 GMT</lastBuildDate>
+    <item>
+      <title>BTC Helper 2026-08-14: Baseline continues; reserve stays held</title>
+      <link>https://btchelper.app/history/2026-08-14/</link>
+      <guid isPermaLink="true">https://btchelper.app/history/2026-08-14/</guid>
+      <pubDate>Fri, 14 Aug 2026 09:00:25 GMT</pubDate>
+      <description>Baseline continues; reserve stays held. Not enough data to confidently assess a regime. Source health: Reduced. Coverage: Limited.</description>
+    </item>
     <item>
       <title>BTC Helper 2026-08-13: Baseline continues; reserve stays held</title>
       <link>https://btchelper.app/history/2026-08-13/</link>
@@ -208,13 +215,6 @@
       <guid isPermaLink="true">https://btchelper.app/history/2026-07-16/</guid>
       <pubDate>Thu, 16 Jul 2026 09:00:21 GMT</pubDate>
       <description>Baseline continues; reserve stays held. Valuation is favorable, but holder stress or macro/flow friction argues for baseline-only selective accumulation. Source health: Moderate. Coverage: Usable.</description>
-    </item>
-    <item>
-      <title>BTC Helper 2026-07-15: Baseline continues; reserve stays held</title>
-      <link>https://btchelper.app/history/2026-07-15/</link>
-      <guid isPermaLink="true">https://btchelper.app/history/2026-07-15/</guid>
-      <pubDate>Wed, 15 Jul 2026 09:00:23 GMT</pubDate>
-      <description>Baseline continues; reserve stays held. Valuation is favorable, but holder stress or macro/flow friction argues for baseline-only selective accumulation. Source health: Reduced. Coverage: Limited.</description>
     </item>
   </channel>
 </rss>
