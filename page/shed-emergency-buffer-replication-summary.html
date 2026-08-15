@@ -166,6 +166,15 @@
     .doc-card:hover, .doc-card:focus { border-color:var(--accent); outline:none; }
     .doc-title { font-weight:900; color:var(--hero-ink); margin-bottom:6px; }
     .doc-meta { color:var(--dark-card-muted); font-size:.92rem; }
+    .research-identity-panel { border:1px solid var(--line); border-radius:16px; background:var(--card-soft); padding:16px; margin-bottom:18px; }
+    :root[data-theme="dark"] .research-identity-panel { background:rgba(255,255,255,.045); }
+    .identity-pill-row { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
+    .identity-pill-row span { display:inline-flex; border:1px solid var(--line); border-radius:999px; padding:5px 9px; background:var(--card); color:var(--ink); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.07em; text-transform:uppercase; }
+    .identity-summary { display:grid; gap:10px; margin:0; }
+    .identity-summary div { border-left:4px solid var(--accent); padding-left:10px; }
+    .identity-summary dt, .identity-summary dd { margin:0; }
+    .identity-summary dt { color:var(--muted); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+    .identity-summary dd { color:var(--ink); font-weight:720; }
     @media print { body { background:#fff; color:#111827; } main { max-width:none; padding:0; } .back-link, .actions, .toc { display:none; } .hero, .card { box-shadow:none; border:0; padding:0; background:#fff; color:#111827; } h2, h3 { break-after:avoid; } figure, table { break-inside:avoid; } }
 
   </style>
@@ -206,38 +215,23 @@
         <a class="button" href="../SHED_Emergency_Buffer_Replication_Methodology_Draft.pdf">Download PDF</a>
         <a class="button secondary" href="./index.html">Home</a>
       </div>
-      <nav class="toc"><div class="toc-title">Contents</div><a class="toc-1" href="#shed-emergency-buffer-measurement-and-replication-note">SHED Emergency-Buffer Measurement and Replication Note</a><a class="toc-2" href="#what-this-document-is">What this document is</a><a class="toc-2" href="#main-correction">Main correction</a><a class="toc-2" href="#why-the-bridge-matters">Why the bridge matters</a><a class="toc-2" href="#what-remains-usable">What remains usable</a><a class="toc-2" href="#why-publish-this">Why publish this</a></nav>
+
     </section>
     <section class="card doc-body">
+      <aside class="research-identity-panel" aria-label="Research classification">
+    <div class="doc-kicker">Research classification</div>
+    <div class="identity-pill-row">
+      <span>Measurement / methodology</span>
+      <span>Measurement note</span>
+      <span>Measurement / methods</span>
+    </div>
+    <dl class="identity-summary">
+      <div><dt>What it can support</dt><dd>Replication discipline for household research; not BTC Helper efficacy evidence.</dd></div>
+      <div><dt>Primary limitation</dt><dd>Replication package is public-facing but still not a formal academic archive.</dd></div>
+    </dl>
+  </aside>
       <p class="small"><strong>Suggested citation:</strong> Kotte, Arne. 2026. “SHED Emergency-Buffer Measurement and Replication Note: Source Provenance, Harmonization Limits, and Reproducibility Package for Emergency-Liquidity Measures.” BTC Helper Research.</p>
-      <h1 id="shed-emergency-buffer-measurement-and-replication-note">SHED Emergency-Buffer Measurement and Replication Note</h1>
-<h2 id="what-this-document-is">What this document is</h2>
-<p>This is a data and replication-methodology note for the SHED emergency-buffer research line. It explains how the public-use survey files were handled, where harmonization is safe, and where a tempting shortcut would misstate the evidence.</p>
-<p>The note is not a causal paper and not a final certified journal archive. Its value is narrower and important: it documents the measurement boundary so later household-liquidity work can be built on cleaner foundations.</p>
-<p><strong>2026 archive update:</strong> a public replication archive is now available as a downloadable ZIP: <a href="../shed-emergency-buffer-replication-archive-candidate-2026-05-16.zip">SHED emergency-buffer replication archive</a>. It includes documentation, scripts, aggregate tables, rendered methodology exports, source provenance, checksum manifests, and clean-room rebuild audit notes. It intentionally excludes raw SHED public-use ZIPs and person-level processed extracts.</p>
-<h2 id="main-correction">Main correction</h2>
-<p>A prior draft treated a pre-2020 component-built measure of $400 cash/equivalent capacity as if it were continuous with the Federal Reserve's official published series. That was incorrect.</p>
-<p>The revised benchmark is:</p>
-<ul>
-<li>use the official published SHED trend for 2015–2025;</li>
-<li>use direct <code>pay_casheqv</code> evidence from 2020 onward;</li>
-<li>treat pre-2020 component-built measures as diagnostics unless a bridge can validate them.</li>
-</ul>
-<p>The official published series rises from 54 percent in 2015 to 68 percent in 2021, then returns to about 63 percent in 2022–2025. The earlier 2019-high interpretation does not survive.</p>
-<h2 id="why-the-bridge-matters">Why the bridge matters</h2>
-<p>In 2020–2025, both the direct <code>pay_casheqv</code> variable and the broad component rule can be compared. The broad rule <code>EF3_a OR EF3_c</code> overstates direct cash/equivalent capacity by 7.5–8.6 percentage points every year.</p>
-<p>The error is also larger among groups that matter for household-fragility analysis, including younger adults, lower-income adults, and renters. That means the issue is not just a harmless level shift. It can affect subgroup interpretation.</p>
-<h2 id="what-remains-usable">What remains usable</h2>
-<p>The corrected evidence still supports useful descriptive work:</p>
-<ul>
-<li>official 2015–2025 trend language using the Federal Reserve published series;</li>
-<li>direct 2020–2025 respondent-level cash/equivalent comparisons;</li>
-<li>2021–2025 subgroup and adjusted descriptive analysis where covariate coverage is stronger.</li>
-</ul>
-<p>The note keeps the boundary clear: these are descriptive repeated-cross-section measures, not causal estimates.</p>
-<h2 id="why-publish-this">Why publish this</h2>
-<p>Publishing the methodology note and replication archive improves trust. It shows the measurement correction openly, documents the bridge diagnostics, preserves a reproducible rebuild scaffold, and makes clear what future empirical work should and should not claim from the SHED public-use files.</p>
-<p>Suggested citation: Kotte, Arne. 2026. “SHED Emergency-Buffer Measurement and Replication Note: Source Provenance, Harmonization Limits, and Reproducibility Package for Emergency-Liquidity Measures.” BTC Helper Research.</p>
+
     </section>
   </main>
   <footer class="site-footer" id="contact">

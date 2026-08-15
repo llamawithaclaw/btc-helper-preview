@@ -166,6 +166,15 @@
     .doc-card:hover, .doc-card:focus { border-color:var(--accent); outline:none; }
     .doc-title { font-weight:900; color:var(--hero-ink); margin-bottom:6px; }
     .doc-meta { color:var(--dark-card-muted); font-size:.92rem; }
+    .research-identity-panel { border:1px solid var(--line); border-radius:16px; background:var(--card-soft); padding:16px; margin-bottom:18px; }
+    :root[data-theme="dark"] .research-identity-panel { background:rgba(255,255,255,.045); }
+    .identity-pill-row { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
+    .identity-pill-row span { display:inline-flex; border:1px solid var(--line); border-radius:999px; padding:5px 9px; background:var(--card); color:var(--ink); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.07em; text-transform:uppercase; }
+    .identity-summary { display:grid; gap:10px; margin:0; }
+    .identity-summary div { border-left:4px solid var(--accent); padding-left:10px; }
+    .identity-summary dt, .identity-summary dd { margin:0; }
+    .identity-summary dt { color:var(--muted); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+    .identity-summary dd { color:var(--ink); font-weight:720; }
     @media print { body { background:#fff; color:#111827; } main { max-width:none; padding:0; } .back-link, .actions, .toc { display:none; } .hero, .card { box-shadow:none; border:0; padding:0; background:#fff; color:#111827; } h2, h3 { break-after:avoid; } figure, table { break-inside:avoid; } }
 
   </style>
@@ -206,123 +215,23 @@
         <a class="button" href="../Can_Public_Data_Support_Individual_Decision_Tools_Without_Becoming_Financial_Advice.pdf">Download PDF</a>
         <a class="button secondary" href="./index.html">Home</a>
       </div>
-      <nav class="toc"><div class="toc-title">Contents</div><a class="toc-1" href="#can-public-data-support-individual-decision-tools-without-becoming-financial-advice">Can Public Data Support Individual Decision Tools Without Becoming Financial Advice?</a><a class="toc-2" href="#the-objection">The objection</a><a class="toc-2" href="#what-the-objection-gets-right">What the objection gets right</a><a class="toc-2" href="#what-public-data-can-support">What public data can support</a><a class="toc-2" href="#the-decision-tool-boundary">The decision-tool boundary</a><a class="toc-2" href="#what-simple-planner-math-can-do">What simple planner math can do</a><a class="toc-2" href="#why-not-financial-advice-is-not-enough">Why “not financial advice” is not enough</a><a class="toc-2" href="#what-the-household-resilience-framework-adds">What the household-resilience framework adds</a><a class="toc-2" href="#what-this-does-not-prove">What this does not prove</a><a class="toc-2" href="#the-narrow-conclusion">The narrow conclusion</a><a class="toc-2" href="#evidence-note">Evidence note</a></nav>
+
     </section>
     <section class="card doc-body">
+      <aside class="research-identity-panel" aria-label="Research classification">
+    <div class="doc-kicker">Research classification</div>
+    <div class="identity-pill-row">
+      <span>Bitcoin thesis research</span>
+      <span>Supporting material</span>
+      <span>Bitcoin thesis context</span>
+    </div>
+    <dl class="identity-summary">
+      <div><dt>What it can support</dt><dd>Adversarial thesis context; not BTC Helper decision-engine validation.</dd></div>
+      <div><dt>Primary limitation</dt><dd>Essay series; not all objections are empirical tests.</dd></div>
+    </dl>
+  </aside>
       <p class="small"><strong>Suggested citation:</strong> Kotte, Arne. 2026. “Can Public Data Support Individual Decision Tools Without Becoming Financial Advice?” Sound Money Stress Tests. BTC Helper Research.</p>
-      <h1 id="can-public-data-support-individual-decision-tools-without-becoming-financial-advice">Can Public Data Support Individual Decision Tools Without Becoming Financial Advice?</h1>
-<h2 id="the-objection">The objection</h2>
-<p>A fair objection to the research library is that public evidence can become overconfident once it is turned into a tool.</p>
-<p>A reader may accept the descriptive papers but object to the next step. Public data can show that households differ in buffers, debts, costs, income stability, asset exposure, medical access, and planning confidence. It can show that some households are more exposed to shocks than others. It can show that broad indicators often miss lived household pressure.</p>
-<p>But an individual tool is different. A tool asks a user to enter their own situation and may return labels, warnings, scenarios, or priorities. That can feel close to advice. If the public evidence is aggregate, descriptive, or still partly exploratory, why should it support any user-facing decision workflow at all?</p>
-<p>That objection is serious. A public-data tool should not smuggle broad research claims into personalized commands. It should not pretend to know a household’s full risk tolerance, family obligations, tax situation, job security, medical exposure, credit access, or investment constraints. It should not turn a research framework into a recommendation engine.</p>
-<p>The narrow question is whether public data can support a decision <strong>framework</strong> without becoming individualized financial advice.</p>
-<p>Here, “financial advice” is used in a practical sense, not as a legal conclusion about any jurisdiction. The concern is advice-like behavior: outputs that appear to tell a user what financial action to take, what to buy or avoid, what to prioritize, or how much risk to accept. A production tool would still need legal review. This essay is about the public design boundary.</p>
-<h2 id="what-the-objection-gets-right">What the objection gets right</h2>
-<p>The objection is right about several things.</p>
-<p>First, public data are usually incomplete at the individual level. A national series, survey table, or public-use microdata file cannot see every household’s informal support, local opportunities, family transfers, private obligations, preferences, or future shocks.</p>
-<p>Second, descriptive evidence is not the same as causal proof. A public-data pattern can identify a risk margin without proving that one factor caused one household’s outcome.</p>
-<p>Third, labels can be misleading if they are too strong. A term such as “fragile,” “resilient,” or “safe” can sound more precise than the evidence allows. If a tool uses labels, it must explain what they mean and what they do not mean.</p>
-<p>Fourth, a tool can create false authority. Clean design, charts, and simple outputs can make uncertain judgments look official. That risk is highest when the tool hides assumptions, compresses many inputs into one score, or tells users what to do without showing why.</p>
-<p>Fifth, financial decisions are personal. A household with the same income, rent, debt, and cash buffer as another household may still face different constraints because of dependents, health, job risk, family support, age, location, insurance, taxes, or temperament.</p>
-<p>Those concerns should shape the product boundary from the start.</p>
-<h2 id="what-public-data-can-support">What public data can support</h2>
-<p>Public data can support tools when the tool’s job is to organize questions, not issue commands.</p>
-<p>The research library points to recurring household margins:</p>
-<div class="table-wrap"><table>
-<thead><tr><th>Margin</th><th>What public evidence can support</th><th>What a tool should not pretend</th></tr></thead>
-<tbody>
-<tr><td>Cash-flow slack</td><td>Monthly margin matters for resilience and planning.</td><td>That one month’s surplus proves long-term safety.</td></tr>
-<tr><td>Liquid buffers</td><td>Thin buffers are strongly relevant to shock absorption.</td><td>That a single buffer threshold fits every household.</td></tr>
-<tr><td>Debt pressure</td><td>Required payments and high-cost borrowing can crowd out resilience.</td><td>That all borrowing is bad or that a debt choice was irrational.</td></tr>
-<tr><td>Essential costs</td><td>Shelter, food, utilities, medical care, insurance, transport, and childcare can absorb practical freedom.</td><td>That aggregate inflation or cost indexes reveal a user’s actual local budget.</td></tr>
-<tr><td>Health and access</td><td>Low medical spending can mean protection, low need, or foregone care.</td><td>That observed spending alone measures medical security.</td></tr>
-<tr><td>Housing entry</td><td>Price, rent, payment, and cash-entry barriers shape optionality.</td><td>That ownership is the correct goal for every user.</td></tr>
-<tr><td>Planning stability</td><td>Volatile prices, rates, income, and expectations can shorten planning horizons.</td><td>That a tool knows the user’s future with precision.</td></tr>
-</tbody></table></div>
-<p>That distinction is the key. Public data can identify the margins a household should examine. It cannot decide the household’s values, constraints, or final action.</p>
-<p>A good tool can say: “Here are the pressure points that usually matter. Here is how your entered numbers compare to simple planning thresholds. Here are scenarios to test. Here are considerations that may point toward slowing down, building buffers, reducing pressure, or seeking professional advice.”</p>
-<p>A bad tool says: “You should do this.”</p>
-<h2 id="the-decision-tool-boundary">The decision-tool boundary</h2>
-<p>The safe boundary is between <strong>decision support</strong> and <strong>decision substitution</strong>.</p>
-<p>Decision support helps users understand their situation. It can calculate ratios, show scenarios, flag obvious stress points, explain tradeoffs, and encourage caution when buffers are thin. It keeps the user in charge.</p>
-<p>Decision substitution tells the user what to buy, sell, borrow, insure, invest in, or prioritize as if the tool knows the full household context. It replaces judgment with an output.</p>
-<p>The public research library can support the first. It should avoid the second.</p>
-<p>A useful way to draw the line is to sort outputs by how advice-like they are:</p>
-<div class="table-wrap"><table>
-<thead><tr><th>Output type</th><th>Example</th><th>Boundary</th></tr></thead>
-<tbody>
-<tr><td>Raw calculation</td><td>“Monthly margin: $420.”</td><td>Low advice risk; still needs clear definitions.</td></tr>
-<tr><td>Neutral comparison</td><td>“Cash buffer equals 1.4 months of entered expenses.”</td><td>Acceptable if threshold assumptions are visible.</td></tr>
-<tr><td>Warning</td><td>“A thin buffer may leave little room for shocks.”</td><td>Acceptable if phrased as risk context, not instruction.</td></tr>
-<tr><td>Scenario</td><td>“If optional contributions pause, buffer target is reached sooner.”</td><td>Acceptable when user controls the scenario.</td></tr>
-<tr><td>Educational prompt</td><td>“Consider whether liquidity should come before optional commitments.”</td><td>Borderline but defensible if general and non-commanding.</td></tr>
-<tr><td>Personalized prioritization</td><td>“Pay down this debt before saving.”</td><td>Advice-like; avoid unless the product is designed and governed for that role.</td></tr>
-<tr><td>Explicit recommendation</td><td>“Buy, sell, borrow, or invest this amount.”</td><td>Decision substitution; outside this public-data boundary.</td></tr>
-</tbody></table></div>
-<p>This taxonomy matters because real tools rarely jump directly from neutral calculation to explicit command. The gray area is warnings, prompts, and ranked priorities. The safer public boundary is to show tradeoffs and let the user choose, rather than rank the user’s life for them.</p>
-<h2 id="what-simple-planner-math-can-do">What simple planner math can do</h2>
-<p>A household-resilience planner does not need a hidden model to be useful. The first layer can be plain arithmetic:</p>
-<ul>
-<li><strong>Monthly margin</strong> = take-home income minus essential costs, debt payments, irregular-expense reserve, and planned optional contributions.</li>
-<li><strong>Buffer months</strong> = liquid cash divided by monthly essential costs and required payments.</li>
-<li><strong>Debt-payment pressure</strong> = required monthly debt payments divided by take-home income.</li>
-<li><strong>Required-cost share</strong> = essential costs plus required payments divided by take-home income.</li>
-<li><strong>Optional-plan strain</strong> = optional saving or accumulation divided by monthly margin before that optional plan.</li>
-</ul>
-<p>These measures are not perfect. They miss job risk, family support, taxes, medical exposure, insurance quality, local prices, and temperament. But they make the user’s entered tradeoffs visible.</p>
-<p>That is the appropriate role for public-data research in a tool: name the margins, explain why they matter, and show how the user’s own inputs change the picture. The tool should not pretend that a formula can decide the user’s life.</p>
-<h2 id="why-not-financial-advice-is-not-enough">Why “not financial advice” is not enough</h2>
-<p>A disclaimer is necessary, but it is not sufficient.</p>
-<p>A tool can say “not financial advice” and still behave like advice if it gives personalized commands, hides uncertainty, overstates thresholds, or presents one path as the correct answer. The real boundary has to appear in the design.</p>
-<p>Several design rules help:</p>
-<ol>
-<li><strong>Use plain calculations before scores.</strong> Monthly margin, buffer months, debt-payment pressure, and required-cost share are easier to inspect than a black-box score.</li>
-<li><strong>Show assumptions.</strong> If a threshold is used, explain it as a planning heuristic, not a law.</li>
-<li><strong>Prefer ranges and states.</strong> “Thin buffer,” “stabilizing,” or “stronger cushion” is safer than pretending to know exact safety.</li>
-<li><strong>Separate warnings from instructions.</strong> A warning can say that an optional plan may strain cash flow. It should not command the user’s next financial move.</li>
-<li><strong>Make scenario testing user-controlled.</strong> Let the user test buffer building, debt reduction, reduced spending, or paused optional contributions without declaring one universal answer.</li>
-<li><strong>Preserve uncertainty.</strong> Remind users that local costs, job risk, health exposure, family obligations, taxes, and professional advice may change the conclusion.</li>
-<li><strong>Avoid product pressure.</strong> A resilience tool should be willing to make cash buffers, debt reduction, professional help, or no optional accumulation visible as reasonable paths.</li>
-</ol>
-<p>The last rule is especially important. If a tool always nudges users toward the sponsor’s preferred outcome, it becomes marketing with calculators attached. A trustworthy tool must sometimes make patience, caution, or no action visible as reasonable options.</p>
-<h2 id="what-the-household-resilience-framework-adds">What the household-resilience framework adds</h2>
-<p>The household-resilience framework is useful because it does not reduce financial life to one ratio.</p>
-<p>A household can have good income and weak buffers. It can have low debt and high fixed costs. It can have rising net worth and little liquidity. It can have low medical spending because it is healthy, insured, or avoiding care. It can have access to credit that smooths a timing gap, or credit that becomes the emergency buffer itself.</p>
-<p>That interaction is exactly why a public tool can be helpful. The tool does not need to forecast the future. It can help users see whether their entered situation depends too heavily on one fragile assumption:</p>
-<ul>
-<li>income must remain uninterrupted;</li>
-<li>rent or insurance cannot rise;</li>
-<li>no medical or car shock can occur;</li>
-<li>credit must remain available;</li>
-<li>debt payments cannot increase;</li>
-<li>optional saving can continue without weakening liquidity;</li>
-<li>family help will be available if needed.</li>
-</ul>
-<p>Those are planning questions, not investment commands.</p>
-<h2 id="what-this-does-not-prove">What this does not prove</h2>
-<p>This does not prove that a public-data tool can solve personal finance.</p>
-<p>It cannot know a user’s full household situation. It cannot replace a fiduciary adviser, tax professional, credit counselor, insurance expert, or trusted human judgment. It cannot make risk tolerance objective. It cannot guarantee that a buffer is enough. It cannot know whether a user’s job, health, family, local market, or obligations will change.</p>
-<p>It also does not prove that every public-data research page should become a tool. Some evidence should remain explanatory. Some measurements are too uncertain or too exploratory to drive user-facing outputs. The methodology index matters because it separates polished findings, working drafts, measurement notes, and exploratory checks.</p>
-<p>It does not settle difficult user-protection cases. A distressed user, low-literacy user, overconfident user, medically exposed user, or user seeking validation for a risky decision may interpret even cautious tool outputs too strongly. A production tool would need to be tested against those cases, not merely designed for a careful reader.</p>
-<p>Finally, it does not prove that simplified labels are harmless. Labels help only if they are modest, transparent, and reversible. A user should be able to see the inputs behind the label and disagree with it.</p>
-<h2 id="the-narrow-conclusion">The narrow conclusion</h2>
-<p>The financial-advice objection is right to be cautious. Public data should not be converted into personalized commands.</p>
-<p>But the objection goes too far if it says public evidence cannot support user-facing tools at all. Public research can support tools that organize attention, reveal tradeoffs, test scenarios, and make assumptions visible.</p>
-<p>The boundary is straightforward: public data can guide questions; the user owns decisions.</p>
-<p>A responsible decision tool should help a household ask:</p>
-<ul>
-<li>Do I have enough liquid slack for ordinary shocks?</li>
-<li>Are fixed costs absorbing too much of my monthly income?</li>
-<li>Is debt service crowding out resilience?</li>
-<li>Would an optional saving or accumulation plan weaken my buffer?</li>
-<li>What happens if income falls, rent rises, or a medical bill appears?</li>
-<li>Which tradeoffs should I understand before acting?</li>
-</ul>
-<p>That is a defensible use of public data. It does not pretend to be personalized financial advice. It turns the research library into a clearer map of household constraints, while leaving final judgment where it belongs: with the person or household using the tool.</p>
-<h2 id="evidence-note">Evidence note</h2>
-<p>This essay relies on the BTC Helper white paper, the Public Research Replication and Methodology Index, <em>Mapping Household Financial Resilience</em>, and the Household Resilience Planner concept. The figures and frameworks behind those documents are public-data and product-methodology materials. They should not be read as individualized advice, legal analysis, causal proof, or a guarantee that any household should take a specific financial action.</p>
-<p>A production tool would also need usability testing, threshold validation, adverse-user testing, legal review, and evidence that users understand the output as scenario support rather than a recommendation engine. This essay’s narrower role is to state the public boundary: research can inform questions and scenarios, but it should not substitute for personal judgment.</p>
+
     </section>
   </main>
   <footer class="site-footer" id="contact">

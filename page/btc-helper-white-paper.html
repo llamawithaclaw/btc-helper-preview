@@ -166,6 +166,15 @@
     .doc-card:hover, .doc-card:focus { border-color:var(--accent); outline:none; }
     .doc-title { font-weight:900; color:var(--hero-ink); margin-bottom:6px; }
     .doc-meta { color:var(--dark-card-muted); font-size:.92rem; }
+    .research-identity-panel { border:1px solid var(--line); border-radius:16px; background:var(--card-soft); padding:16px; margin-bottom:18px; }
+    :root[data-theme="dark"] .research-identity-panel { background:rgba(255,255,255,.045); }
+    .identity-pill-row { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
+    .identity-pill-row span { display:inline-flex; border:1px solid var(--line); border-radius:999px; padding:5px 9px; background:var(--card); color:var(--ink); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.07em; text-transform:uppercase; }
+    .identity-summary { display:grid; gap:10px; margin:0; }
+    .identity-summary div { border-left:4px solid var(--accent); padding-left:10px; }
+    .identity-summary dt, .identity-summary dd { margin:0; }
+    .identity-summary dt { color:var(--muted); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+    .identity-summary dd { color:var(--ink); font-weight:720; }
     @media print { body { background:#fff; color:#111827; } main { max-width:none; padding:0; } .back-link, .actions, .toc { display:none; } .hero, .card { box-shadow:none; border:0; padding:0; background:#fff; color:#111827; } h2, h3 { break-after:avoid; } figure, table { break-inside:avoid; } }
 
   </style>
@@ -206,16 +215,28 @@
         <a class="button" href="../BTC_HELPER_WHITE_PAPER.pdf">Download PDF</a>
         <a class="button secondary" href="./index.html">Home</a>
       </div>
-      <nav class="toc"><div class="toc-title">Contents</div><a class="toc-2" href="#abstract">Abstract</a><a class="toc-2" href="#1-introduction">1. Introduction</a><a class="toc-2" href="#2-product-objective-and-scope">2. Product objective and scope</a><a class="toc-2" href="#3-intended-user-context">3. Intended user context</a><a class="toc-2" href="#4-design-principles">4. Design principles</a><a class="toc-3" href="#4-1-interpretability-first">4.1 Interpretability first</a><a class="toc-3" href="#4-2-multi-domain-balance">4.2 Multi-domain balance</a><a class="toc-3" href="#4-3-accumulation-focused-posture">4.3 Accumulation-focused posture</a><a class="toc-3" href="#4-4-public-framework-private-implementation">4.4 Public framework, private implementation</a><a class="toc-3" href="#4-5-honesty-under-degradation">4.5 Honesty under degradation</a><a class="toc-2" href="#5-core-model-architecture">5. Core model architecture</a><a class="toc-3" href="#5-1-structural-valuation">5.1 Structural valuation</a><a class="toc-3" href="#5-2-short-term-holder-behavior">5.2 Short-term holder behavior</a><a class="toc-3" href="#5-3-leverage-reflexivity">5.3 Leverage / reflexivity</a><a class="toc-3" href="#5-4-demand-flow-context">5.4 Demand / flow context</a><a class="toc-3" href="#5-5-macro-context">5.5 Macro context</a><a class="toc-2" href="#6-secondary-and-research-indicators">6. Secondary and research indicators</a><a class="toc-2" href="#7-regime-framework">7. Regime framework</a><a class="toc-3" href="#aggressive">Aggressive</a><a class="toc-3" href="#normal">Normal</a><a class="toc-3" href="#cautious">Cautious</a><a class="toc-3" href="#pause">Pause</a><a class="toc-2" href="#8-decision-philosophy">8. Decision philosophy</a><a class="toc-2" href="#9-data-quality-run-quality-and-operational-honesty">9. Data quality, run quality, and operational honesty</a><a class="toc-3" href="#9-1-data-quality">9.1 Data quality</a><a class="toc-3" href="#9-2-run-quality">9.2 Run quality</a><a class="toc-3" href="#9-3-domain-aware-degradation">9.3 Domain-aware degradation</a><a class="toc-2" href="#10-data-architecture-and-sourcing-posture">10. Data architecture and sourcing posture</a><a class="toc-2" href="#11-validation-philosophy">11. Validation philosophy</a><a class="toc-3" href="#11-1-scenario-validation">11.1 Scenario validation</a><a class="toc-3" href="#11-2-historical-style-validation">11.2 Historical-style validation</a><a class="toc-3" href="#11-3-degraded-data-validation">11.3 Degraded-data validation</a><a class="toc-3" href="#11-4-explanation-validation">11.4 Explanation validation</a><a class="toc-3" href="#11-5-benchmark-and-ablation-validation">11.5 Benchmark and ablation validation</a><a class="toc-2" href="#12-public-methodology-versus-proprietary-implementation">12. Public methodology versus proprietary implementation</a><a class="toc-3" href="#publicly-discussable">Publicly discussable</a><a class="toc-3" href="#kept-private">Kept private</a><a class="toc-2" href="#13-reading-the-output-as-an-individual">13. Reading the output as an individual</a><a class="toc-2" href="#14-why-this-product-exists">14. Why this product exists</a><a class="toc-2" href="#15-limitations">15. Limitations</a><a class="toc-2" href="#16-future-work">16. Future work</a><a class="toc-3" href="#16-1-research-layer-expansion">16.1 Research-layer expansion</a><a class="toc-3" href="#16-2-methodology-expansion">16.2 Methodology expansion</a><a class="toc-3" href="#16-3-product-evolution">16.3 Product evolution</a><a class="toc-3" href="#16-4-institutional-and-partner-readiness">16.4 Institutional and partner readiness</a><a class="toc-2" href="#17-conclusion">17. Conclusion</a></nav>
+      <nav class="toc"><div class="toc-title">Contents</div><a class="toc-2" href="#abstract">Abstract</a><a class="toc-2" href="#1-introduction">1. Introduction</a><a class="toc-2" href="#2-product-objective-and-scope">2. Product objective and scope</a><a class="toc-2" href="#3-intended-user-context">3. Intended user context</a><a class="toc-2" href="#4-design-principles">4. Design principles</a><a class="toc-3" href="#4-1-interpretability-first">4.1 Interpretability first</a><a class="toc-3" href="#4-2-multi-domain-balance">4.2 Multi-domain balance</a><a class="toc-3" href="#4-3-accumulation-focused-posture">4.3 Accumulation-focused posture</a><a class="toc-3" href="#4-4-public-framework-private-implementation">4.4 Public framework, private implementation</a><a class="toc-3" href="#4-5-honesty-under-degradation">4.5 Honesty under degradation</a><a class="toc-2" href="#5-core-model-architecture">5. Core model architecture</a><a class="toc-3" href="#5-1-structural-valuation">5.1 Structural valuation</a><a class="toc-3" href="#5-2-short-term-holder-behavior">5.2 Short-term holder behavior</a><a class="toc-3" href="#5-3-leverage-reflexivity">5.3 Leverage / reflexivity</a><a class="toc-3" href="#5-4-demand-flow-context">5.4 Demand / flow context</a><a class="toc-3" href="#5-5-macro-context">5.5 Macro context</a><a class="toc-2" href="#6-secondary-and-research-indicators">6. Secondary and research indicators</a><a class="toc-2" href="#7-regime-framework">7. Regime framework</a><a class="toc-3" href="#aggressive">Aggressive</a><a class="toc-3" href="#normal">Normal</a><a class="toc-3" href="#cautious">Cautious</a><a class="toc-3" href="#pause">Pause</a><a class="toc-2" href="#8-decision-philosophy">8. Decision philosophy</a><a class="toc-2" href="#9-run-usability-run-quality-and-operational-honesty">9. Run usability, run quality, and operational honesty</a><a class="toc-3" href="#9-1-run-usability">9.1 Run Usability</a><a class="toc-3" href="#9-2-run-quality">9.2 Run quality</a><a class="toc-3" href="#9-3-domain-aware-degradation">9.3 Domain-aware degradation</a><a class="toc-2" href="#10-data-architecture-and-sourcing-posture">10. Data architecture and sourcing posture</a><a class="toc-2" href="#11-validation-philosophy">11. Validation philosophy</a><a class="toc-3" href="#11-1-scenario-validation">11.1 Scenario validation</a><a class="toc-3" href="#11-2-historical-style-validation">11.2 Historical-style validation</a><a class="toc-3" href="#11-3-degraded-data-validation">11.3 Degraded-data validation</a><a class="toc-3" href="#11-4-explanation-validation">11.4 Explanation validation</a><a class="toc-3" href="#11-5-benchmark-and-ablation-validation">11.5 Benchmark and ablation validation</a><a class="toc-2" href="#12-public-methodology-versus-proprietary-implementation">12. Public methodology versus proprietary implementation</a><a class="toc-3" href="#publicly-discussable">Publicly discussable</a><a class="toc-3" href="#kept-private">Kept private</a><a class="toc-2" href="#13-reading-the-output-as-an-individual">13. Reading the output as an individual</a><a class="toc-2" href="#14-why-this-product-exists">14. Why this product exists</a><a class="toc-2" href="#15-limitations">15. Limitations</a><a class="toc-2" href="#16-future-work">16. Future work</a><a class="toc-3" href="#16-1-research-layer-expansion">16.1 Research-layer expansion</a><a class="toc-3" href="#16-2-methodology-expansion">16.2 Methodology expansion</a><a class="toc-3" href="#16-3-product-evolution">16.3 Product evolution</a><a class="toc-3" href="#16-4-institutional-and-partner-readiness">16.4 Institutional and partner readiness</a><a class="toc-2" href="#17-conclusion">17. Conclusion</a></nav>
     </section>
     <section class="card doc-body">
+      <aside class="research-identity-panel" aria-label="Research classification">
+    <div class="doc-kicker">Research classification</div>
+    <div class="identity-pill-row">
+      <span>Engine / product validation</span>
+      <span>Established public methodology</span>
+      <span>Product method</span>
+    </div>
+    <dl class="identity-summary">
+      <div><dt>What it can support</dt><dd>Explains product boundaries; does not demonstrate timing advantage or policy efficacy.</dd></div>
+      <div><dt>Primary limitation</dt><dd>Framework description only; use Track for current evidence state and limitations.</dd></div>
+    </dl>
+  </aside>
       <p class="small"><strong>Suggested citation:</strong> Kotte, Arne. 2026. “BTC Helper White Paper: An Explainable Bitcoin Accumulation Regime Engine.” BTC Helper Research.</p>
       <p><strong>Author:</strong> Arne Kotte</p>
 <p><strong>Affiliation:</strong> BTC Helper Research</p>
 <p><strong>Document type:</strong> Product methodology white paper</p>
 <h2 id="abstract">Abstract</h2>
 <p>BTC Helper is an explainable Bitcoin accumulation regime engine designed to help users answer a practical portfolio question: when do current conditions support aggressive accumulation, baseline accumulation, selective caution, or temporary pause?</p>
-<p>Unlike opaque signal products that ask users to trust unexplained outputs, or simplistic dip heuristics that react to price movement alone, BTC Helper is built around interpretability, domain-based reasoning, explicit degraded-data handling, and operational honesty. The system combines a small number of core market-context domains into a concise set of user-facing regime outputs. A separate data-quality and run-quality layer communicates the usability of the current run without pretending to express certainty about future returns.</p>
+<p>Unlike opaque signal products that ask users to trust unexplained outputs, or simplistic dip heuristics that react to price movement alone, BTC Helper is built around interpretability, domain-based reasoning, explicit degraded-data handling, and operational honesty. The system combines a small number of core market-context domains into a concise set of user-facing regime outputs. A separate run-usability and run-quality layer communicates the usability of the current run without pretending to express certainty about future returns.</p>
 <p>This paper outlines the conceptual foundation for BTC Helper, explains the rationale for its domain design, clarifies the boundary between public methodology and proprietary model details, and summarizes the validation philosophy guiding its development. It should be read as product methodology documentation, not as a claim of academic proof, personalized financial advice, or a public disclosure of the proprietary model core.</p>
 <hr>
 <h2 id="1-introduction">1. Introduction</h2>
@@ -231,12 +252,12 @@
 <li>an explainable Bitcoin accumulation decision-support tool</li>
 <li>a multi-domain regime classifier rather than a price target generator</li>
 <li>an accumulation policy layer rather than a one-factor dip trigger</li>
-<li>a system that distinguishes data quality from market certainty</li>
+<li>a system that distinguishes run usability from market certainty</li>
 <li>a product that can say when its own inputs are degraded</li>
 </ul>
 <p>BTC Helper is not intended to be:</p>
 <ul>
-<li>a price-target or trade-call service</li>
+<li>a black-box trading oracle</li>
 <li>a guarantee of alpha</li>
 <li>financial advice</li>
 <li>a promise that the next move in Bitcoin is knowable</li>
@@ -265,7 +286,7 @@
 <h3 id="5-1-structural-valuation">5.1 Structural valuation</h3>
 <p>Purpose: assess whether Bitcoin appears structurally attractive, ordinary, warm, or extended relative to broader context.</p>
 <p>Representative inputs may include valuation anchors and long-horizon reference points.</p>
-<p>In the current beta method, structural valuation uses a private mix of public valuation anchors and cycle-context checks. The public site describes the resulting valuation state and source freshness, but it intentionally withholds the exact anchor list, raw metric values, thresholds, weights, override rules, and calibration details.</p>
+<p>In the current beta method, structural valuation includes reference anchors such as realized price, True Market Mean, the 200-day moving average, and MVRV-Z-style cycle context. True Market Mean is treated as a structural valuation anchor, not merely as a displayed chart value.</p>
 <p>This domain matters because BTC Helper is accumulation-oriented rather than short-term trader-oriented.</p>
 <h3 id="5-2-short-term-holder-behavior">5.2 Short-term holder behavior</h3>
 <p>Purpose: capture whether recent-holder conditions look stressed, reset, recovering, balanced, or overheated.</p>
@@ -297,7 +318,7 @@
 <p>Practical posture:</p>
 <ul>
 <li>maintain baseline accumulation</li>
-<li>consider stronger-than-baseline additional buying, subject to data-quality and run-quality limits</li>
+<li>consider stronger-than-baseline additional buying, subject to run-usability and run-quality limits</li>
 </ul>
 <h3 id="normal">Normal</h3>
 <p>Maintain baseline accumulation discipline.</p>
@@ -311,7 +332,7 @@
 <p>Practical posture:</p>
 <ul>
 <li>maintain baseline accumulation only if it fits the user's plan</li>
-<li>reduce or defer discretionary extra buys</li>
+<li>reduce or defer discretionary top-ups</li>
 <li>wait for either stronger opportunity or clearer risk improvement before pressing harder</li>
 </ul>
 <p>Cautious does not necessarily mean Bitcoin is unattractive. It can also mean valuation is favorable, but holder behavior, flows, macro context, leverage, or data-quality limits argue against reserve deployment or aggressive discretionary buying.</p>
@@ -319,7 +340,7 @@
 <p>Conditions appear sufficiently stretched or fragile to justify standing down from fresh accumulation.</p>
 <p>Practical posture:</p>
 <ul>
-<li>avoid fresh discretionary extra buying</li>
+<li>avoid fresh discretionary top-up buying</li>
 <li>do not let momentum or excitement override structural risk warnings</li>
 </ul>
 <p>This regime set is intentionally simple. The goal is not to express maximal nuance through labels, but to support disciplined accumulation decisions with a small, interpretable vocabulary.</p>
@@ -335,13 +356,13 @@
 </ul>
 <p>These principles matter because accumulation timing requires asymmetry recognition, not just generic risk scoring.</p>
 <hr>
-<h2 id="9-data-quality-run-quality-and-operational-honesty">9. Data quality, run quality, and operational honesty</h2>
+<h2 id="9-run-usability-run-quality-and-operational-honesty">9. Run usability, run quality, and operational honesty</h2>
 <p>BTC Helper separates the market regime from the quality of the current run.</p>
-<h3 id="9-1-data-quality">9.1 Data quality</h3>
-<p>Data quality reflects the usability of the current run, not certainty of outcome.</p>
+<h3 id="9-1-run-usability">9.1 Run Usability</h3>
+<p>Run usability reflects the usability of the current run, not certainty of outcome.</p>
 <p>It is influenced by factors such as completeness, freshness, internal coherence, and sourcing strength.</p>
-<p>The public surface can describe data quality in plain-language levels such as high, moderate, reduced, or degraded. These labels are intentionally separate from the market regime. A favorable market posture with degraded data quality should not be treated the same way as the same posture under clean live coverage.</p>
-<p>Data quality is not intended to represent probability of correctness or forecast likelihood. It is a practical quality signal: how much trust should a user place in this run as a decision-support artifact?</p>
+<p>The public surface can describe usability in plain-language levels such as stronger, moderate, limited, or degraded usability. These labels are intentionally separate from the market regime. A favorable market posture with degraded usability should not be treated the same way as the same posture under clean live coverage.</p>
+<p>Run usability is not intended to represent probability of correctness or forecast likelihood. It is a practical quality signal: how much trust should a user place in this run as a decision-support artifact?</p>
 <h3 id="9-2-run-quality">9.2 Run quality</h3>
 <p>BTC Helper also reports a run-quality layer so the product can communicate when the current read is fully usable versus operationally limited.</p>
 <p>This is a practical layer for a real mixed-source system. It allows the product to remain operational without pretending that every run is equally trustworthy.</p>
@@ -410,7 +431,7 @@
 <p>A user should separate four questions:</p>
 <ol>
 <li><strong>Market posture:</strong> do current conditions look opportunity-rich, ordinary, mixed, or fragile?</li>
-<li><strong>Data quality:</strong> is the current read based on clean, fresh, coherent inputs, or are important inputs degraded?</li>
+<li><strong>Run usability:</strong> is the current read based on clean, fresh, coherent inputs, or are important inputs degraded?</li>
 <li><strong>Personal capacity:</strong> do cash flow, emergency reserves, portfolio concentration, and near-term obligations leave room for discretionary accumulation?</li>
 <li><strong>Behavioral discipline:</strong> is the user acting from a plan, or reacting emotionally to price movement, fear, or excitement?</li>
 </ol>
@@ -423,7 +444,7 @@
 <li>simplistic retail heuristics that ignore market structure, and</li>
 <li>opaque signal products that ask for trust without explanation.</li>
 </ol>
-<p>A useful middle path is an accumulation-focused regime engine that explains its posture, distinguishes data quality from certainty, and remains honest when its own operating conditions degrade.</p>
+<p>A useful middle path is an accumulation-focused regime engine that explains its posture, distinguishes run usability from certainty, and remains honest when its own operating conditions degrade.</p>
 <p>In practical terms, BTC Helper is trying to improve on weak dip-buy logic rather than merely add more indicators for their own sake.</p>
 <p>A simple dip rule can react to short-term price movement, but it cannot reliably distinguish between:</p>
 <ul>
@@ -433,7 +454,7 @@
 <li>an overheated environment where buying more is not disciplined</li>
 </ul>
 <p>BTC Helper is trying to make those distinctions legible and actionable.</p>
-<p>That is the lane BTC Helper is trying to occupy: better accumulation policy with human-readable explanations and an explicit proprietary implementation boundary.</p>
+<p>That is the lane BTC Helper is trying to occupy: better accumulation policy without black-box opacity.</p>
 <hr>
 <h2 id="15-limitations">15. Limitations</h2>
 <p>BTC Helper still has meaningful limitations.</p>

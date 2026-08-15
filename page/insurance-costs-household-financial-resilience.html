@@ -166,6 +166,15 @@
     .doc-card:hover, .doc-card:focus { border-color:var(--accent); outline:none; }
     .doc-title { font-weight:900; color:var(--hero-ink); margin-bottom:6px; }
     .doc-meta { color:var(--dark-card-muted); font-size:.92rem; }
+    .research-identity-panel { border:1px solid var(--line); border-radius:16px; background:var(--card-soft); padding:16px; margin-bottom:18px; }
+    :root[data-theme="dark"] .research-identity-panel { background:rgba(255,255,255,.045); }
+    .identity-pill-row { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
+    .identity-pill-row span { display:inline-flex; border:1px solid var(--line); border-radius:999px; padding:5px 9px; background:var(--card); color:var(--ink); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.07em; text-transform:uppercase; }
+    .identity-summary { display:grid; gap:10px; margin:0; }
+    .identity-summary div { border-left:4px solid var(--accent); padding-left:10px; }
+    .identity-summary dt, .identity-summary dd { margin:0; }
+    .identity-summary dt { color:var(--muted); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+    .identity-summary dd { color:var(--ink); font-weight:720; }
     @media print { body { background:#fff; color:#111827; } main { max-width:none; padding:0; } .back-link, .actions, .toc { display:none; } .hero, .card { box-shadow:none; border:0; padding:0; background:#fff; color:#111827; } h2, h3 { break-after:avoid; } figure, table { break-inside:avoid; } }
 
   </style>
@@ -206,31 +215,23 @@
         <a class="button" href="../Insurance_Costs_and_Household_Financial_Resilience.pdf">Download PDF</a>
         <a class="button secondary" href="./index.html">Home</a>
       </div>
-      <nav class="toc"><div class="toc-title">Contents</div><a class="toc-1" href="#insurance-costs-and-household-financial-resilience">Insurance Costs and Household Financial Resilience</a><a class="toc-2" href="#public-companion-summary">Public companion summary</a><a class="toc-2" href="#core-measurement-idea">Core measurement idea</a><a class="toc-2" href="#main-evidence">Main evidence</a><a class="toc-2" href="#how-to-read-the-note">How to read the note</a><a class="toc-2" href="#why-it-matters-for-btc-helper">Why it matters for BTC Helper</a></nav>
+
     </section>
     <section class="card doc-body">
+      <aside class="research-identity-panel" aria-label="Research classification">
+    <div class="doc-kicker">Research classification</div>
+    <div class="identity-pill-row">
+      <span>Household / resilience research</span>
+      <span>Measurement note</span>
+      <span>Household evidence</span>
+    </div>
+    <dl class="identity-summary">
+      <div><dt>What it can support</dt><dd>Adds household-cost context; not allocation guidance or engine validation.</dd></div>
+      <div><dt>Primary limitation</dt><dd>Descriptive note; does not estimate full household welfare effects.</dd></div>
+    </dl>
+  </aside>
       <p class="small"><strong>Suggested citation:</strong> Kotte, Arne. 2026. “Insurance Costs and Household Financial Resilience: A Descriptive Measurement Note on the Hidden Fragility Premium.” BTC Helper Research.</p>
-      <p class="small"><strong>Measurement note.</strong> Descriptive public-data evidence; not a causal estimate, not a finished journal-style economics paper, and not a validated household fragility index. The note defines an insurance-resilience burden concept, shows public CEX/MEPS burden evidence, and identifies liquidity/outcome validation as the next empirical step.</p><h1 id="insurance-costs-and-household-financial-resilience">Insurance Costs and Household Financial Resilience</h1>
-<h2 id="public-companion-summary">Public companion summary</h2>
-<p>This measurement note treats insurance and medical-risk costs as part of household resilience rather than as miscellaneous expenses. The central idea is simple: a household can remain insured on paper while becoming less liquid in practice if recurring protection costs absorb too much of its cash-flow capacity.</p>
-<p>The note is deliberately descriptive. It is not a causal paper and does not claim that insurance repricing causes borrowing, delinquency, or reduced savings. It instead defines a measurable burden concept and shows why that concept deserves a place in household resilience work.</p>
-<h2 id="core-measurement-idea">Core measurement idea</h2>
-<p>The feasible public-data object is:</p>
-<p><code>insurance-resilience burden = selected recurring insurance and medical-risk costs / income</code></p>
-<p>The broader conceptual target is stronger:</p>
-<p><code>fragility premium = recurring premiums + expected out-of-pocket exposure + deductible/shock capacity, scaled by liquid resources</code></p>
-<p>This note does not estimate the full liquidity-based object. It uses public data to motivate and partially measure the income-scaled burden.</p>
-<h2 id="main-evidence">Main evidence</h2>
-<ul>
-<li>Aggregate BLS/FRED evidence shows that selected defensive categories, especially auto insurance and hospital services, have outpaced headline CPI since 1998.</li>
-<li>CEX 2024 evidence shows selected reference-period insurance and medical-risk costs absorbing a larger share of annual income for lower-income consumer units.</li>
-<li>MEPS evidence shows that medical out-of-pocket burden and access barriers are concentrated among lower-income and higher-burden groups.</li>
-<li>Realized medical spending alone can miss vulnerability because low spending may reflect delayed or unaffordable care, not only low need or good protection.</li>
-</ul>
-<h2 id="how-to-read-the-note">How to read the note</h2>
-<p>Read this as a public-data measurement note, not a finished journal-style causal paper. Its purpose is to clarify the measurement object, show distributional burden, and identify the next empirical step: validating insurance-resilience burden against emergency savings, borrowing, missed payments, skipped care, coverage choices, or other financial-distress outcomes.</p>
-<h2 id="why-it-matters-for-btc-helper">Why it matters for BTC Helper</h2>
-<p>Durable accumulation depends on resilience. A household does not become more financially sovereign by holding long-duration savings that it will be forced to liquidate during ordinary insurance, medical, vehicle, or household-protection shocks. This note supports the Household Resilience Planner’s design choice to ask about insurance and medical exposure directly.</p>
+      <p class="small"><strong>Measurement note.</strong> Descriptive public-data evidence; not a causal estimate, not a finished journal-style economics paper, and not a validated household fragility index. The note defines an insurance-resilience burden concept, shows public CEX/MEPS burden evidence, and identifies liquidity/outcome validation as the next empirical step.</p>
     </section>
   </main>
   <footer class="site-footer" id="contact">

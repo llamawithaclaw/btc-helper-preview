@@ -166,6 +166,15 @@
     .doc-card:hover, .doc-card:focus { border-color:var(--accent); outline:none; }
     .doc-title { font-weight:900; color:var(--hero-ink); margin-bottom:6px; }
     .doc-meta { color:var(--dark-card-muted); font-size:.92rem; }
+    .research-identity-panel { border:1px solid var(--line); border-radius:16px; background:var(--card-soft); padding:16px; margin-bottom:18px; }
+    :root[data-theme="dark"] .research-identity-panel { background:rgba(255,255,255,.045); }
+    .identity-pill-row { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
+    .identity-pill-row span { display:inline-flex; border:1px solid var(--line); border-radius:999px; padding:5px 9px; background:var(--card); color:var(--ink); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.07em; text-transform:uppercase; }
+    .identity-summary { display:grid; gap:10px; margin:0; }
+    .identity-summary div { border-left:4px solid var(--accent); padding-left:10px; }
+    .identity-summary dt, .identity-summary dd { margin:0; }
+    .identity-summary dt { color:var(--muted); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+    .identity-summary dd { color:var(--ink); font-weight:720; }
     @media print { body { background:#fff; color:#111827; } main { max-width:none; padding:0; } .back-link, .actions, .toc { display:none; } .hero, .card { box-shadow:none; border:0; padding:0; background:#fff; color:#111827; } h2, h3 { break-after:avoid; } figure, table { break-inside:avoid; } }
 
   </style>
@@ -206,72 +215,23 @@
         <a class="button" href="/Society_Under_Monetary_Stress_VII_Borrowed_Resilience.pdf">Download PDF</a>
         <a class="button secondary" href="/index.html">Home</a>
       </div>
-      <nav class="toc"><div class="toc-title">Contents</div><a class="toc-1" href="#society-under-monetary-stress-vii-borrowed-resilience">Society Under Monetary Stress VII: Borrowed Resilience</a><a class="toc-2" href="#summary">Summary</a><a class="toc-2" href="#main-findings">Main findings</a><a class="toc-2" href="#why-it-matters">Why it matters</a><a class="toc-2" href="#credit-state-typology">Credit-state typology</a><a class="toc-2" href="#measurement-corrections">Measurement corrections</a><a class="toc-2" href="#data-and-replication">Data and replication</a><a class="toc-2" href="#read-the-full-paper">Read the full paper</a></nav>
+
     </section>
     <section class="card doc-body">
+      <aside class="research-identity-panel" aria-label="Research classification">
+    <div class="doc-kicker">Research classification</div>
+    <div class="identity-pill-row">
+      <span>Household / resilience research</span>
+      <span>Supporting material</span>
+      <span>Household evidence</span>
+    </div>
+    <dl class="identity-summary">
+      <div><dt>What it can support</dt><dd>Background theory for resilience constraints; not direct BTC Helper validation.</dd></div>
+      <div><dt>Primary limitation</dt><dd>Long-form research spine; most users should start with the resilience synthesis.</dd></div>
+    </dl>
+  </aside>
       <p class="small"><strong>Suggested citation:</strong> Kotte, Arne. 2026. “Society Under Monetary Stress VII: Borrowed Resilience: Consumer Credit, Debt Service, and Household Balance-Sheet Fragility.” BTC Helper Research.</p>
-      <h1 id="society-under-monetary-stress-vii-borrowed-resilience">Society Under Monetary Stress VII: Borrowed Resilience</h1>
-<p><strong>Consumer Credit, Debt Service, and Household Balance-Sheet Fragility</strong></p>
-<p>Arne Kotte</p>
-<h2 id="summary">Summary</h2>
-<p>This paper examines household credit as a private shock absorber.</p>
-<p>Credit can help households smooth life: education, transportation, durable purchases, temporary cash-flow gaps, or refinancing. But credit can also defer stress into the future. The paper uses the phrase <strong>borrowed resilience</strong> for that middle ground.</p>
-<p>The revised paper makes the key caveat explicit: <strong>credit is not automatically fragility</strong>. Convenience credit, bridge credit, productive or durable-goods credit, distress credit, and credit exclusion are different states. Aggregate public data cannot fully separate them, so the paper treats borrowed resilience as a serviceability-dependence concept rather than an anti-credit claim.</p>
-<p>The revised paper is intentionally descriptive. It does not claim to prove that households borrowed because of inflation, rent pressure, medical bills, job loss, or any single shock. Instead, it separates three things that are often blurred:</p>
-<ol>
-<li><strong>Credit stocks</strong> — how much credit is outstanding.</li>
-<li><strong>Debt-service flows</strong> — required payments relative to disposable personal income.</li>
-<li><strong>Loan performance</strong> — delinquency indicators showing repayment stress.</li>
-</ol>
-<h2 id="main-findings">Main findings</h2>
-<ol>
-<li><strong>Debt-service stress was not a replay of 2007.</strong> Household debt service was 15.7% of disposable personal income in 2007, compared with 10.6% in 2022 and 11.1% in 2024.</li>
-</ol>
-<ol>
-<li><strong>Financial-obligation comparisons need careful dating.</strong> The <code>FODSP</code> series is discontinued and has only Q1-Q3 observations in 2023. Full-year comparisons requiring <code>FODSP</code> should end in 2022.</li>
-</ol>
-<ol>
-<li><strong>Consumer credit did not explode relative to disposable income.</strong> Total consumer credit was 24.2% of disposable personal income in 2007, 25.4% in 2019, and 22.9% in 2024.</li>
-</ol>
-<ol>
-<li><strong>Credit composition shifted.</strong> Revolving credit fell as a share of disposable income, while nonrevolving credit became more important.</li>
-</ol>
-<ol>
-<li><strong>Student-loan exposure rose sharply through 2019.</strong> Student loans were 5.4% of disposable personal income in 2007, 10.0% in 2019, and 8.0% in 2024.</li>
-</ol>
-<ol>
-<li><strong>Credit-card delinquency rose from its recent low but remained below 2007.</strong> Credit-card delinquency was 4.3% in 2007, 2.0% in 2022, and 3.2% in 2024.</li>
-</ol>
-<h2 id="why-it-matters">Why it matters</h2>
-<p>The useful conclusion is not “households are in a debt crisis.” The evidence is more nuanced:</p>
-<blockquote>Aggregate household debt-service stress in the early 2020s was not a replay of 2007, but household resilience remained conditional on credit composition, saving behavior, rate conditions, and repayment performance.</blockquote>
-<p>Borrowed resilience is a serviceability problem. Credit can preserve normal life for a while. Whether that is healthy smoothing or fragile deferral depends on buffers, rates, income stability, credit terms, and repayment performance.</p>
-<p>This is also why the SHED hardship-profile work matters. SHED can begin separating paid-in-full bridge credit from revolving credit, other emergency borrowing, inability to pay, and low-buffer/no-listed-financing states — distinctions that aggregate credit series cannot observe.</p>
-<h2 id="credit-state-typology">Credit-state typology</h2>
-<p>The paper now uses five credit states as a guide for interpretation:</p>
-<ol>
-<li><strong>Convenience credit</strong> — paid-in-full timing, rewards, or liquidity management.</li>
-<li><strong>Bridge credit</strong> — short-term smoothing during a temporary gap.</li>
-<li><strong>Productive or durable-goods credit</strong> — education, vehicle, housing, repair, or other capacity-preserving uses.</li>
-<li><strong>Distress credit</strong> — revolving, high-cost, repeated, or arrears-adjacent borrowing because cash flow and buffers are insufficient.</li>
-<li><strong>Credit exclusion</strong> — thin liquidity with no usable credit channel.</li>
-</ol>
-<p>The public aggregate evidence cannot classify households into these states. It can only show stocks, payment flows, and repayment performance. That limitation is central to the paper's interpretation.</p>
-<h2 id="measurement-corrections">Measurement corrections</h2>
-<p>An external-style review flagged that the earlier version treated 2023 as the latest full core-flow year. The revision fixes that:</p>
-<ul>
-<li><code>FODSP</code> is labeled discontinued.</li>
-<li>2023 <code>FODSP</code> is labeled partial.</li>
-<li>Full-year <code>FODSP</code> comparisons end in 2022.</li>
-<li>2024 is used only for continuing series.</li>
-<li>The original wide milestone table was split into clearer stock/flow/performance tables.</li>
-<li>The debt-service-minus-saving comparison is treated as a heuristic, not a true liquidity-buffer measure.</li>
-</ul>
-<h2 id="data-and-replication">Data and replication</h2>
-<p>The paper uses public FRED series including <code>TDSP</code>, <code>FODSP</code>, <code>TOTALSL</code>, <code>REVOLSL</code>, <code>NONREVSL</code>, <code>SLOAS</code>, <code>MVLOAS</code>, <code>DRCCLACBS</code>, <code>DRCLACBS</code>, <code>DRSFRMACBS</code>, <code>PSAVERT</code>, <code>DSPI</code>, <code>CPIAUCSL</code>, <code>UNRATE</code>, <code>U6RATE</code>, <code>FEDFUNDS</code>, and <code>DGS10</code>.</p>
-<p>Credit stocks reported in millions are divided by 1,000 before normalization by disposable personal income in billions.</p>
-<h2 id="read-the-full-paper">Read the full paper</h2>
-<p>Download the full PDF for figures, tables, caveats, and replication notes.</p>
+
     </section>
   </main>
   <footer class="site-footer" id="contact">

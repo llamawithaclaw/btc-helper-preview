@@ -166,6 +166,15 @@
     .doc-card:hover, .doc-card:focus { border-color:var(--accent); outline:none; }
     .doc-title { font-weight:900; color:var(--hero-ink); margin-bottom:6px; }
     .doc-meta { color:var(--dark-card-muted); font-size:.92rem; }
+    .research-identity-panel { border:1px solid var(--line); border-radius:16px; background:var(--card-soft); padding:16px; margin-bottom:18px; }
+    :root[data-theme="dark"] .research-identity-panel { background:rgba(255,255,255,.045); }
+    .identity-pill-row { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
+    .identity-pill-row span { display:inline-flex; border:1px solid var(--line); border-radius:999px; padding:5px 9px; background:var(--card); color:var(--ink); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.07em; text-transform:uppercase; }
+    .identity-summary { display:grid; gap:10px; margin:0; }
+    .identity-summary div { border-left:4px solid var(--accent); padding-left:10px; }
+    .identity-summary dt, .identity-summary dd { margin:0; }
+    .identity-summary dt { color:var(--muted); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+    .identity-summary dd { color:var(--ink); font-weight:720; }
     @media print { body { background:#fff; color:#111827; } main { max-width:none; padding:0; } .back-link, .actions, .toc { display:none; } .hero, .card { box-shadow:none; border:0; padding:0; background:#fff; color:#111827; } h2, h3 { break-after:avoid; } figure, table { break-inside:avoid; } }
 
   </style>
@@ -209,6 +218,18 @@
       <nav class="toc"><div class="toc-title">Contents</div><a class="toc-1" href="#when-is-credit-resilience-rather-than-fragility">When Is Credit Resilience Rather Than Fragility?</a><a class="toc-2" href="#the-objection">The objection</a><a class="toc-2" href="#what-public-data-can-test">What public data can test</a><a class="toc-2" href="#what-the-research-framework-should-concede">What the research framework should concede</a><a class="toc-2" href="#what-the-existing-evidence-suggests">What the existing evidence suggests</a><a class="toc-2" href="#what-this-does-not-prove">What this does not prove</a><a class="toc-2" href="#the-narrow-conclusion">The narrow conclusion</a><a class="toc-2" href="#evidence-note">Evidence note</a><a class="toc-2" href="#related-research-library-pieces">Related research-library pieces</a></nav>
     </section>
     <section class="card doc-body">
+      <aside class="research-identity-panel" aria-label="Research classification">
+    <div class="doc-kicker">Research classification</div>
+    <div class="identity-pill-row">
+      <span>Bitcoin thesis research</span>
+      <span>Supporting material</span>
+      <span>Bitcoin thesis context</span>
+    </div>
+    <dl class="identity-summary">
+      <div><dt>What it can support</dt><dd>Adversarial thesis context; not BTC Helper decision-engine validation.</dd></div>
+      <div><dt>Primary limitation</dt><dd>Essay series; not all objections are empirical tests.</dd></div>
+    </dl>
+  </aside>
       <p class="small"><strong>Suggested citation:</strong> Kotte, Arne. 2026. “When Is Credit Resilience Rather Than Fragility?” Sound Money Stress Tests. BTC Helper Research.</p>
       <h1 id="when-is-credit-resilience-rather-than-fragility">When Is Credit Resilience Rather Than Fragility?</h1>
 <h2 id="the-objection">The objection</h2>

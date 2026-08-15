@@ -166,6 +166,15 @@
     .doc-card:hover, .doc-card:focus { border-color:var(--accent); outline:none; }
     .doc-title { font-weight:900; color:var(--hero-ink); margin-bottom:6px; }
     .doc-meta { color:var(--dark-card-muted); font-size:.92rem; }
+    .research-identity-panel { border:1px solid var(--line); border-radius:16px; background:var(--card-soft); padding:16px; margin-bottom:18px; }
+    :root[data-theme="dark"] .research-identity-panel { background:rgba(255,255,255,.045); }
+    .identity-pill-row { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
+    .identity-pill-row span { display:inline-flex; border:1px solid var(--line); border-radius:999px; padding:5px 9px; background:var(--card); color:var(--ink); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.07em; text-transform:uppercase; }
+    .identity-summary { display:grid; gap:10px; margin:0; }
+    .identity-summary div { border-left:4px solid var(--accent); padding-left:10px; }
+    .identity-summary dt, .identity-summary dd { margin:0; }
+    .identity-summary dt { color:var(--muted); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+    .identity-summary dd { color:var(--ink); font-weight:720; }
     @media print { body { background:#fff; color:#111827; } main { max-width:none; padding:0; } .back-link, .actions, .toc { display:none; } .hero, .card { box-shadow:none; border:0; padding:0; background:#fff; color:#111827; } h2, h3 { break-after:avoid; } figure, table { break-inside:avoid; } }
 
   </style>
@@ -206,62 +215,23 @@
         <a class="button" href="../Mapping_Household_Financial_Resilience.pdf">Download PDF</a>
         <a class="button secondary" href="./index.html">Home</a>
       </div>
-      <nav class="toc"><div class="toc-title">Contents</div><a class="toc-1" href="#mapping-household-financial-resilience">Mapping Household Financial Resilience</a><a class="toc-2" href="#costs-buffers-debt-and-planning-under-monetary-stress">Costs, Buffers, Debt, and Planning Under Monetary Stress</a><a class="toc-2" href="#plain-language-summary">Plain-language summary</a><a class="toc-2" href="#what-the-paper-adds">What the paper adds</a><a class="toc-2" href="#main-framework">Main framework</a><a class="toc-2" href="#evidence-posture">Evidence posture</a><a class="toc-2" href="#suggested-citation">Suggested citation</a><a class="toc-2" href="#2026-research-program-update">2026 research-program update</a><a class="toc-2" href="#how-to-read-the-public-library-now">How to read the public library now</a></nav>
+
     </section>
     <section class="card doc-body">
+      <aside class="research-identity-panel" aria-label="Research classification">
+    <div class="doc-kicker">Research classification</div>
+    <div class="identity-pill-row">
+      <span>Household / resilience research</span>
+      <span>Current public synthesis</span>
+      <span>Household evidence</span>
+    </div>
+    <dl class="identity-summary">
+      <div><dt>What it can support</dt><dd>Supports safety-floor reasoning; not evidence that Bitcoin should be bought or that BTC Helper improves outcomes.</dd></div>
+      <div><dt>Primary limitation</dt><dd>Synthesis paper; individual evidence lanes have different data strength.</dd></div>
+    </dl>
+  </aside>
       <p class="small"><strong>Suggested citation:</strong> Kotte, Arne. 2026. “Mapping Household Financial Resilience: Costs, Buffers, Debt, and Planning Under Monetary Stress.” BTC Helper Research.</p>
-      <h1 id="mapping-household-financial-resilience">Mapping Household Financial Resilience</h1>
-<h2 id="costs-buffers-debt-and-planning-under-monetary-stress">Costs, Buffers, Debt, and Planning Under Monetary Stress</h2>
-<p><strong>Author:</strong> Arne Kotte</p>
-<p><strong>Document type:</strong> Capstone synthesis / public-data framework</p>
-<p><strong>Date:</strong> May 2026</p>
-<h2 id="plain-language-summary">Plain-language summary</h2>
-<p>This capstone synthesizes the Society Under Monetary Stress research sequence into a single household resilience map. Its central claim is modest: households do not experience monetary and macro-financial stress as one abstract statistic. They experience it through linked margins — entry costs, must-pay costs, health and access barriers, labor adaptation, liquid buffers, debt capacity, asset exposure, planning stability, and public or private backstops.</p>
-<p>The paper is a public-data synthesis and research-program framework. Its purpose is to show what public indicators can reveal, where they are weak, and what the next microdata work should test.</p>
-<h2 id="what-the-paper-adds">What the paper adds</h2>
-<p>The paper clarifies three things:</p>
-<ol>
-<li><strong>Monetary stress needs a narrower definition.</strong> In this framework, monetary stress means nominal or macro-financial pressure transmitted through prices, rates, credit conditions, asset-entry costs, real-income adjustment, or planning instability.</li>
-<li><strong>Resilience is a hardship-risk concept.</strong> A resilient household can absorb a shock without missed payments, high-cost borrowing, forced asset sales, reduced essential consumption, delayed medical care, persistent delinquency, or abandoning long-horizon commitments.</li>
-<li><strong>The important claims are interaction claims.</strong> Costs, buffers, debt, assets, labor, and expectations matter most when they combine. A household with high must-pay costs and thin buffers faces a different risk profile than a household with similar income but stronger liquidity and lower fixed obligations.</li>
-</ol>
-<h2 id="main-framework">Main framework</h2>
-<p>The capstone organizes household resilience around these channels:</p>
-<ul>
-<li><strong>Entry costs:</strong> whether households can cross major life thresholds such as independent living, homeownership, education, family formation, or business formation.</li>
-<li><strong>Asset exposure:</strong> whether households participate in asset appreciation or encounter it mainly as higher entry costs.</li>
-<li><strong>Must-pay costs:</strong> how shelter, food, utilities, medical care, transport, insurance, and childcare absorb free cash flow.</li>
-<li><strong>Health/access barriers:</strong> whether low medical spending reflects protection, low need, or foregone care.</li>
-<li><strong>Labor adaptation:</strong> whether stability comes from durable income growth or from more hours, multiple jobs, delayed retirement, or reduced slack.</li>
-<li><strong>Fiscal backstops:</strong> how taxes, transfers, services, public insurance, rates, and crisis-response capacity shape household resilience.</li>
-<li><strong>Debt backstops:</strong> whether credit smooths timing or replaces missing liquidity.</li>
-<li><strong>Planning stability:</strong> whether volatile prices, rates, and expectations shorten household planning horizons.</li>
-<li><strong>Liquid buffers:</strong> whether households can absorb shocks without borrowing, delay, or hardship.</li>
-</ul>
-<h2 id="evidence-posture">Evidence posture</h2>
-<p>The paper is deliberately cautious. It relies on public indicators and prior public-data papers. It does not claim to identify one causal path from monetary conditions to household outcomes, and it does not replace household-level microdata.</p>
-<p>The strongest next step is a focused empirical paper using microdata — especially SHED — to test how emergency buffers, debt use, must-pay costs, and hardship interact.</p>
-<h2 id="suggested-citation">Suggested citation</h2>
-<p>Kotte, Arne. 2026. “Mapping Household Financial Resilience: Costs, Buffers, Debt, and Planning Under Monetary Stress.” BTC Helper Research.</p>
-<h2 id="2026-research-program-update">2026 research-program update</h2>
-<p>Since the original capstone draft, three additions have clarified the roadmap:</p>
-<ol>
-<li><strong>SHED replication work has become the strongest trust scaffold.</strong> The emergency-buffer lane now includes source provenance, variable maps, official-topline benchmarking, bridge diagnostics, a variable map, software-environment capture, and a public archive manifest. This makes the buffer/debt/hardship channel the best current example of how the research program should mature from public indicators toward reproducible microdata work.</li>
-<li><strong>Paper IX now has a CEX public-use appendix.</strong> It remains a revised measurement note, not a causal article, but its CY2024 CEX appendix makes selected resilience-cost budget shares more transparent.</li>
-<li><strong>MEPS medical financial fragility adds the health/access channel.</strong> The MEPS working draft shows why realized medical spending alone is ambiguous: low out-of-pocket spending can reflect good protection, low need, or foregone care. It is public as a working paper / measurement draft with an initial set of uncertainty, family-construction, premium-linkage, and multi-year checks; full design-based inference, official family construction, and PRPL annualization validation remain pending.</li>
-<li><strong>The Household Resilience Planner turns the map into a user-facing workflow.</strong> The planner is a prototype budgeting tool, not an empirical paper. Its role is to translate the research map into practical household questions: cash-flow margin, emergency buffers, debt pressure, essential-cost exposure, and whether optional saving or accumulation plans are budget-compatible without weakening resilience.</li>
-</ol>
-<p>These additions do not change the capstone's core claim. They make the next step clearer: the public-data sequence has done enough broad mapping. The next contribution should be depth — replication, microdata validation, and a reader-friendly gateway that helps people understand how the pieces fit together.</p>
-<h2 id="how-to-read-the-public-library-now">How to read the public library now</h2>
-<p>The research library should be read in layers:</p>
-<ul>
-<li><strong>Start with this capstone</strong> for the overall map.</li>
-<li><strong>Use the Society Under Monetary Stress papers</strong> as channel-specific public-data evidence.</li>
-<li><strong>Use SHED notes</strong> for the strongest current buffer/debt/hardship microdata lane.</li>
-<li><strong>Use MEPS medical financial fragility</strong> as a promising, validation-hardened health/access lane that still requires additional technical validation before carrying family- or premium-linked headline estimates.</li>
-<li><strong>Use the replication/methodology index</strong> to understand which documents are polished, exploratory, working drafts, or archive scaffolds.</li>
-<li><strong>Use the Household Resilience Planner</strong> as an early research-to-action prototype, not as financial advice.</li>
-</ul>
+
     </section>
   </main>
   <footer class="site-footer" id="contact">

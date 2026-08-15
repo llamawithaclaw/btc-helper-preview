@@ -166,6 +166,15 @@
     .doc-card:hover, .doc-card:focus { border-color:var(--accent); outline:none; }
     .doc-title { font-weight:900; color:var(--hero-ink); margin-bottom:6px; }
     .doc-meta { color:var(--dark-card-muted); font-size:.92rem; }
+    .research-identity-panel { border:1px solid var(--line); border-radius:16px; background:var(--card-soft); padding:16px; margin-bottom:18px; }
+    :root[data-theme="dark"] .research-identity-panel { background:rgba(255,255,255,.045); }
+    .identity-pill-row { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
+    .identity-pill-row span { display:inline-flex; border:1px solid var(--line); border-radius:999px; padding:5px 9px; background:var(--card); color:var(--ink); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.07em; text-transform:uppercase; }
+    .identity-summary { display:grid; gap:10px; margin:0; }
+    .identity-summary div { border-left:4px solid var(--accent); padding-left:10px; }
+    .identity-summary dt, .identity-summary dd { margin:0; }
+    .identity-summary dt { color:var(--muted); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+    .identity-summary dd { color:var(--ink); font-weight:720; }
     @media print { body { background:#fff; color:#111827; } main { max-width:none; padding:0; } .back-link, .actions, .toc { display:none; } .hero, .card { box-shadow:none; border:0; padding:0; background:#fff; color:#111827; } h2, h3 { break-after:avoid; } figure, table { break-inside:avoid; } }
 
   </style>
@@ -206,41 +215,23 @@
         <a class="button" href="../Society_Under_Monetary_Stress_II_The_Cantillon_Map.pdf">Download PDF</a>
         <a class="button secondary" href="./index.html">Home</a>
       </div>
-      <nav class="toc"><div class="toc-title">Contents</div><a class="toc-1" href="#society-under-monetary-stress-ii-the-cantillon-map">Society Under Monetary Stress II: The Cantillon Map</a><a class="toc-2" href="#what-this-paper-asks">What this paper asks</a><a class="toc-2" href="#main-takeaway">Main takeaway</a><a class="toc-2" href="#key-findings">Key findings</a><a class="toc-2" href="#why-it-matters">Why it matters</a><a class="toc-2" href="#how-to-read-the-evidence">How to read the evidence</a><a class="toc-2" href="#suggested-citation">Suggested citation</a></nav>
+
     </section>
     <section class="card doc-body">
+      <aside class="research-identity-panel" aria-label="Research classification">
+    <div class="doc-kicker">Research classification</div>
+    <div class="identity-pill-row">
+      <span>Household / resilience research</span>
+      <span>Supporting material</span>
+      <span>Household evidence</span>
+    </div>
+    <dl class="identity-summary">
+      <div><dt>What it can support</dt><dd>Background theory for resilience constraints; not direct BTC Helper validation.</dd></div>
+      <div><dt>Primary limitation</dt><dd>Long-form research spine; most users should start with the resilience synthesis.</dd></div>
+    </dl>
+  </aside>
       <p class="small"><strong>Suggested citation:</strong> Kotte, Arne. 2026. “Society Under Monetary Stress II: The Cantillon Map: Asset Ownership, Monetary Expansion, and Wealth Stratification.” BTC Helper Research.</p>
-      <h1 id="society-under-monetary-stress-ii-the-cantillon-map">Society Under Monetary Stress II: The Cantillon Map</h1>
-<p><strong>Asset Ownership, Monetary Expansion, and Wealth Stratification</strong></p>
-<p><strong>Author:</strong> Arne Kotte</p>
-<p><strong>Affiliation:</strong> BTC Helper Research</p>
-<h2 id="what-this-paper-asks">What this paper asks</h2>
-<p>Households do not experience the same macro environment from the same starting point. Some already own homes, equities, retirement assets, and business claims. Others rely mainly on wages, cash savings, and debt-managed access to assets.</p>
-<p>This paper maps that starting point using public Federal Reserve Distributional Financial Accounts data and FRED macro series from 1989 through 2024.</p>
-<h2 id="main-takeaway">Main takeaway</h2>
-<p>The paper is descriptive, not causal. It does not claim that one monetary aggregate mechanically caused wealth stratification. Its contribution is a balance-sheet exposure map: when asset values rise and credit conditions change, the effects pass through portfolios that are already unequal.</p>
-<h2 id="key-findings">Key findings</h2>
-<ul>
-<li>The top 10 percent's net-worth share rose from 60.9 percent in 1989 to 67.4 percent in 2024.</li>
-<li>The top 10 percent's share of corporate equities and mutual fund shares rose from 81.4 percent to 87.2 percent.</li>
-<li>The bottom half held 2.5 percent of net worth and 1.0 percent of corporate equities and mutual fund shares in 2024.</li>
-<li>Bottom-half liabilities remained about three-fifths of assets.</li>
-<li>Asset-value scale measures rose much faster than ordinary wage and income benchmarks, though those measures should be read as descriptive context rather than causal proof.</li>
-</ul>
-<h2 id="why-it-matters">Why it matters</h2>
-<p>Aggregate prosperity can hide very different household experiences. Asset owners participate directly in repricing. Wage-dependent and cash-dependent households often have to save into assets after the repricing has occurred. Leveraged households may face additional stress when rate, income, or local price conditions change.</p>
-<p>The practical question for an individual reader is: where is my household positioned on the map?</p>
-<h2 id="how-to-read-the-evidence">How to read the evidence</h2>
-<p>The paper suggests watching five household-facing dimensions:</p>
-<ul>
-<li>wage growth versus target-asset prices;</li>
-<li>emergency liquidity versus long-run asset exposure;</li>
-<li>debt quality and rate sensitivity;</li>
-<li>monthly affordability versus entry affordability;</li>
-<li>timing of ownership before or after major repricing.</li>
-</ul>
-<h2 id="suggested-citation">Suggested citation</h2>
-<p>Kotte, Arne. 2026. “Society Under Monetary Stress II: The Cantillon Map: Asset Ownership, Monetary Expansion, and Wealth Stratification.” BTC Helper Research.</p>
+
     </section>
   </main>
   <footer class="site-footer" id="contact">

@@ -166,6 +166,15 @@
     .doc-card:hover, .doc-card:focus { border-color:var(--accent); outline:none; }
     .doc-title { font-weight:900; color:var(--hero-ink); margin-bottom:6px; }
     .doc-meta { color:var(--dark-card-muted); font-size:.92rem; }
+    .research-identity-panel { border:1px solid var(--line); border-radius:16px; background:var(--card-soft); padding:16px; margin-bottom:18px; }
+    :root[data-theme="dark"] .research-identity-panel { background:rgba(255,255,255,.045); }
+    .identity-pill-row { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
+    .identity-pill-row span { display:inline-flex; border:1px solid var(--line); border-radius:999px; padding:5px 9px; background:var(--card); color:var(--ink); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.07em; text-transform:uppercase; }
+    .identity-summary { display:grid; gap:10px; margin:0; }
+    .identity-summary div { border-left:4px solid var(--accent); padding-left:10px; }
+    .identity-summary dt, .identity-summary dd { margin:0; }
+    .identity-summary dt { color:var(--muted); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+    .identity-summary dd { color:var(--ink); font-weight:720; }
     @media print { body { background:#fff; color:#111827; } main { max-width:none; padding:0; } .back-link, .actions, .toc { display:none; } .hero, .card { box-shadow:none; border:0; padding:0; background:#fff; color:#111827; } h2, h3 { break-after:avoid; } figure, table { break-inside:avoid; } }
 
   </style>
@@ -206,36 +215,23 @@
         <a class="button" href="../Society_Under_Monetary_Stress_I_The_Fiat_Squeeze.pdf">Download PDF</a>
         <a class="button secondary" href="./index.html">Home</a>
       </div>
-      <nav class="toc"><div class="toc-title">Contents</div><a class="toc-1" href="#the-fiat-squeeze-public-companion-summary">The Fiat Squeeze — Public Companion Summary</a><a class="toc-2" href="#one-line-summary">One-line summary</a><a class="toc-2" href="#why-this-matters">Why this matters</a><a class="toc-2" href="#what-the-paper-finds">What the paper finds</a><a class="toc-2" href="#what-the-paper-does-not-claim">What the paper does *not* claim</a><a class="toc-2" href="#best-interpretation">Best interpretation</a><a class="toc-2" href="#read-and-cite-the-paper">Read and cite the paper</a></nav>
+
     </section>
     <section class="card doc-body">
+      <aside class="research-identity-panel" aria-label="Research classification">
+    <div class="doc-kicker">Research classification</div>
+    <div class="identity-pill-row">
+      <span>Household / resilience research</span>
+      <span>Supporting material</span>
+      <span>Household evidence</span>
+    </div>
+    <dl class="identity-summary">
+      <div><dt>What it can support</dt><dd>Background theory for resilience constraints; not direct BTC Helper validation.</dd></div>
+      <div><dt>Primary limitation</dt><dd>Long-form research spine; most users should start with the resilience synthesis.</dd></div>
+    </dl>
+  </aside>
       <p class="small"><strong>Suggested citation:</strong> Kotte, Arne. 2026. “Society Under Monetary Stress I: The Fiat Squeeze: Money Growth, Housing Affordability, and Household Formation.” BTC Helper Research.</p>
-      <h1 id="the-fiat-squeeze-public-companion-summary">The Fiat Squeeze — Public Companion Summary</h1>
-<p><strong>Author:</strong> Arne Kotte</p>
-<p><strong>Affiliation:</strong> BTC Helper Research</p>
-<h2 id="one-line-summary">One-line summary</h2>
-<p>Public data suggest the bridge from household income to housing access has become more regime-dependent: home prices rose faster than income, low rates temporarily softened monthly payments, and higher prices plus higher rates renewed the squeeze by 2024.</p>
-<h2 id="why-this-matters">Why this matters</h2>
-<p>Housing is where macro conditions become personal. Families do not experience monetary conditions as abstract charts. They experience them as rent burden, mortgage payments, down payment targets, savings pressure, and delayed decisions about ownership, moving, or forming a household.</p>
-<h2 id="what-the-paper-finds">What the paper finds</h2>
-<ul>
-<li><strong>The price bridge widened.</strong> With 1987 set to 100, the national home-price-to-income index reached 151.0 by 2024.</li>
-<li><strong>The payment story depends on rates.</strong> Lower mortgage rates made monthly payments easier through much of the 2010s, even as home prices rose. By 2024, higher prices and higher rates pushed the payment-to-income proxy back above its 1987 base.</li>
-<li><strong>Rent burden is the strongest local finding.</strong> In state-level ACS/FHFA data, higher local housing-price pressure is associated with higher rent-burdened renter shares, even after accounting for stable state differences and common year shocks.</li>
-<li><strong>Household-formation evidence is preliminary.</strong> Under-35 householdership and ownership proxies are weaker and need better young-adult living-arrangement measures before making strong claims.</li>
-</ul>
-<h2 id="what-the-paper-does-not-claim">What the paper does <em>not</em> claim</h2>
-<ul>
-<li>It does not claim one monetary variable caused housing unaffordability.</li>
-<li>It does not claim every household became worse off every year.</li>
-<li>It does not make a product or asset recommendation.</li>
-</ul>
-<h2 id="best-interpretation">Best interpretation</h2>
-<p>The evidence supports a careful version of the fiat-squeeze thesis: the conversion of income into durable housing access has become less reliable and more dependent on price/rate regimes.</p>
-<p>For individual readers, the most useful lesson is diagnostic: separate the housing problem into the <strong>price hurdle</strong>, the <strong>payment hurdle</strong>, the <strong>cash-entry hurdle</strong>, and the <strong>rent-burden channel</strong>. A low-rate period can soften monthly payments while the price and down-payment hurdles worsen. A high-rate period can make payments harder even if price growth slows. Better decisions start by identifying which constraint is actually binding.</p>
-<h2 id="read-and-cite-the-paper">Read and cite the paper</h2>
-<p>The full paper is available as a downloadable PDF from this page.</p>
-<p>Suggested citation: Kotte, Arne. 2026. “Society Under Monetary Stress I: The Fiat Squeeze: Money Growth, Housing Affordability, and Household Formation.” BTC Helper Research.</p>
+
     </section>
   </main>
   <footer class="site-footer" id="contact">

@@ -166,6 +166,15 @@
     .doc-card:hover, .doc-card:focus { border-color:var(--accent); outline:none; }
     .doc-title { font-weight:900; color:var(--hero-ink); margin-bottom:6px; }
     .doc-meta { color:var(--dark-card-muted); font-size:.92rem; }
+    .research-identity-panel { border:1px solid var(--line); border-radius:16px; background:var(--card-soft); padding:16px; margin-bottom:18px; }
+    :root[data-theme="dark"] .research-identity-panel { background:rgba(255,255,255,.045); }
+    .identity-pill-row { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
+    .identity-pill-row span { display:inline-flex; border:1px solid var(--line); border-radius:999px; padding:5px 9px; background:var(--card); color:var(--ink); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.07em; text-transform:uppercase; }
+    .identity-summary { display:grid; gap:10px; margin:0; }
+    .identity-summary div { border-left:4px solid var(--accent); padding-left:10px; }
+    .identity-summary dt, .identity-summary dd { margin:0; }
+    .identity-summary dt { color:var(--muted); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+    .identity-summary dd { color:var(--ink); font-weight:720; }
     @media print { body { background:#fff; color:#111827; } main { max-width:none; padding:0; } .back-link, .actions, .toc { display:none; } .hero, .card { box-shadow:none; border:0; padding:0; background:#fff; color:#111827; } h2, h3 { break-after:avoid; } figure, table { break-inside:avoid; } }
 
   </style>
@@ -209,8 +218,21 @@
       <nav class="toc"><div class="toc-title">Contents</div><a class="toc-1" href="#how-to-read-the-sound-money-research-series">How to Read the Sound-Money Research Series</a></nav>
     </section>
     <section class="card doc-body">
+      <aside class="research-identity-panel" aria-label="Research classification">
+    <div class="doc-kicker">Research classification</div>
+    <div class="identity-pill-row">
+      <span>Bitcoin thesis research</span>
+      <span>Supporting material</span>
+      <span>Bitcoin thesis context</span>
+    </div>
+    <dl class="identity-summary">
+      <div><dt>What it can support</dt><dd>Adversarial thesis context; not BTC Helper decision-engine validation.</dd></div>
+      <div><dt>Primary limitation</dt><dd>Essay series; not all objections are empirical tests.</dd></div>
+    </dl>
+  </aside>
       <p class="small"><strong>Suggested citation:</strong> Kotte, Arne. 2026. “Sound Money Stress Tests: How to Read the Sound-Money Research Series.” BTC Helper Research.</p>
       <h1 id="how-to-read-the-sound-money-research-series">How to Read the Sound-Money Research Series</h1>
+<p>_Stress-test introduction draft · 2026-05-19_</p>
 <p>The sound-money research series should not be read as a claim that one monetary cause explains every household problem. That would be too simple, and it would be wrong.</p>
 <p>The papers are doing something narrower: they map how households are exposed to costs, assets, debt, liquidity, labor income, public balance sheets, medical risk, and planning uncertainty. Some of those pressures are monetary. Some are fiscal. Some come from housing supply, healthcare, labor markets, credit systems, demographics, regulation, or household choices. The point is not to collapse all of that into one cause. The point is to understand how those channels meet inside ordinary household balance sheets.</p>
 <p>That distinction matters. A household can look fine in aggregate statistics and still have little room to absorb a shock. Another household can have debt that is useful, serviceable, and welfare-improving. A homeowner may benefit from asset appreciation while a renter faces a harder entry path. A family may report low medical spending because it is healthy, well insured, or because care was delayed. Public data cannot resolve every one of those cases. It can, however, help separate stronger claims from weaker ones.</p>

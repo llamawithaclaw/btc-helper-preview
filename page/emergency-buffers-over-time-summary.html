@@ -166,6 +166,15 @@
     .doc-card:hover, .doc-card:focus { border-color:var(--accent); outline:none; }
     .doc-title { font-weight:900; color:var(--hero-ink); margin-bottom:6px; }
     .doc-meta { color:var(--dark-card-muted); font-size:.92rem; }
+    .research-identity-panel { border:1px solid var(--line); border-radius:16px; background:var(--card-soft); padding:16px; margin-bottom:18px; }
+    :root[data-theme="dark"] .research-identity-panel { background:rgba(255,255,255,.045); }
+    .identity-pill-row { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
+    .identity-pill-row span { display:inline-flex; border:1px solid var(--line); border-radius:999px; padding:5px 9px; background:var(--card); color:var(--ink); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.07em; text-transform:uppercase; }
+    .identity-summary { display:grid; gap:10px; margin:0; }
+    .identity-summary div { border-left:4px solid var(--accent); padding-left:10px; }
+    .identity-summary dt, .identity-summary dd { margin:0; }
+    .identity-summary dt { color:var(--muted); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+    .identity-summary dd { color:var(--ink); font-weight:720; }
     @media print { body { background:#fff; color:#111827; } main { max-width:none; padding:0; } .back-link, .actions, .toc { display:none; } .hero, .card { box-shadow:none; border:0; padding:0; background:#fff; color:#111827; } h2, h3 { break-after:avoid; } figure, table { break-inside:avoid; } }
 
   </style>
@@ -206,46 +215,23 @@
         <a class="button" href="../Emergency_Buffers_Over_Time_SHED_2015_2025.pdf">Download PDF</a>
         <a class="button secondary" href="./index.html">Home</a>
       </div>
-      <nav class="toc"><div class="toc-title">Contents</div><a class="toc-1" href="#emergency-buffers-over-time">Emergency Buffers Over Time</a><a class="toc-2" href="#a-shed-repeated-cross-section-measurement-note-2015-2025">A SHED Repeated Cross-Section Measurement Note, 2015–2025</a><a class="toc-2" href="#plain-language-summary">Plain-language summary</a><a class="toc-2" href="#corrected-benchmark">Corrected benchmark</a><a class="toc-2" href="#what-remains-useful">What remains useful</a><a class="toc-2" href="#what-changed-after-review">What changed after review</a><a class="toc-2" href="#interpretation">Interpretation</a><a class="toc-2" href="#suggested-citation">Suggested citation</a></nav>
+
     </section>
     <section class="card doc-body">
+      <aside class="research-identity-panel" aria-label="Research classification">
+    <div class="doc-kicker">Research classification</div>
+    <div class="identity-pill-row">
+      <span>Measurement / methodology</span>
+      <span>Measurement note</span>
+      <span>Measurement / methods</span>
+    </div>
+    <dl class="identity-summary">
+      <div><dt>What it can support</dt><dd>Shows measurement caution behind household evidence; not a planner recommendation or engine proof.</dd></div>
+      <div><dt>Primary limitation</dt><dd>Cross-section methods note; not a direct planner recommendation.</dd></div>
+    </dl>
+  </aside>
       <p class="small"><strong>Suggested citation:</strong> Kotte, Arne. 2026. “Emergency Buffers Over Time: A SHED Repeated Cross-Section Measurement Note, 2015–2025.” BTC Helper Research.</p>
-      <h1 id="emergency-buffers-over-time">Emergency Buffers Over Time</h1>
-<h2 id="a-shed-repeated-cross-section-measurement-note-2015-2025">A SHED Repeated Cross-Section Measurement Note, 2015–2025</h2>
-<p><strong>Author:</strong> Arne Kotte</p>
-<p><strong>Document type:</strong> Descriptive measurement note / revised draft</p>
-<p><strong>Date:</strong> May 2026</p>
-<h2 id="plain-language-summary">Plain-language summary</h2>
-<p>This revised SHED measurement note corrects an important harmonization problem. The earlier multi-year draft treated a pre-2020 component-built $400 cash/equivalent measure as comparable to the Federal Reserve's official cash/equivalent series. An external-style review correctly caught that the constructed pre-2020 series was materially higher than the official published SHED trend.</p>
-<p>The corrected note separates the Federal Reserve's official trend from the author's constructed/direct diagnostic series and withdraws the earlier 2019-high claim.</p>
-<h2 id="corrected-benchmark">Corrected benchmark</h2>
-<p>The Federal Reserve's official published $400 cash/equivalent series for 2015–2025 is:</p>
-<p><strong>54, 56, 59, 61, 63, 64, 68, 63, 63, 63, 63 percent.</strong></p>
-<p>That means the official high is <strong>2021</strong>, not 2019. The note now treats the pre-2020 component-built series as a diagnostic only, not as a validated replacement for the official measure.</p>
-<h2 id="what-remains-useful">What remains useful</h2>
-<p>The corrected empirical core is narrower but stronger:</p>
-<ul>
-<li>2020–2025 direct cash/equivalent comparisons using the cleaner public-use measure window;</li>
-<li>2021–2025 adjusted repeated cross-sectional associations with richer covariates;</li>
-<li>non-mechanical outcomes such as financial vulnerability and bill pressure;</li>
-<li>explicit caution that all results are descriptive, not causal.</li>
-</ul>
-<p>In the cleaner 2020–2025 window, adults without $400 cash/equivalent capacity report much weaker financial conditions than adults with that capacity. In 2021–2025 adjusted models, adults lacking both $400 cash/equivalent capacity and three-month savings remain substantially more likely to be financially vulnerable and under bill pressure.</p>
-<h2 id="what-changed-after-review">What changed after review</h2>
-<p>The revision:</p>
-<ul>
-<li>withdraws the incorrect 2019-high claim;</li>
-<li>stops calling the repeated cross-sections a panel;</li>
-<li>adds an official-vs-diagnostic benchmark table;</li>
-<li>removes mechanically linked inability-to-pay-$400 outcomes from the main headline models;</li>
-<li>removes bill pressure from full-period trend framing;</li>
-<li>explicitly frames the draft as a measurement note focused on what the harmonized public-use files can support.</li>
-</ul>
-<h2 id="interpretation">Interpretation</h2>
-<p>The main lesson is methodological: SHED public-use data are valuable for household emergency-buffer research, but harmonization must be benchmarked against official Federal Reserve published toplines before trend claims are made.</p>
-<p>The next best research step is a replication-grade harmonization appendix and package with official file provenance, codebook mappings, source hashes, overlap diagnostics, and one-command reproduction.</p>
-<h2 id="suggested-citation">Suggested citation</h2>
-<p>Kotte, Arne. 2026. “Emergency Buffers Over Time: A SHED Repeated Cross-Section Measurement Note, 2015–2025.” BTC Helper Research.</p>
+
     </section>
   </main>
   <footer class="site-footer" id="contact">

@@ -166,6 +166,15 @@
     .doc-card:hover, .doc-card:focus { border-color:var(--accent); outline:none; }
     .doc-title { font-weight:900; color:var(--hero-ink); margin-bottom:6px; }
     .doc-meta { color:var(--dark-card-muted); font-size:.92rem; }
+    .research-identity-panel { border:1px solid var(--line); border-radius:16px; background:var(--card-soft); padding:16px; margin-bottom:18px; }
+    :root[data-theme="dark"] .research-identity-panel { background:rgba(255,255,255,.045); }
+    .identity-pill-row { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
+    .identity-pill-row span { display:inline-flex; border:1px solid var(--line); border-radius:999px; padding:5px 9px; background:var(--card); color:var(--ink); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.07em; text-transform:uppercase; }
+    .identity-summary { display:grid; gap:10px; margin:0; }
+    .identity-summary div { border-left:4px solid var(--accent); padding-left:10px; }
+    .identity-summary dt, .identity-summary dd { margin:0; }
+    .identity-summary dt { color:var(--muted); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+    .identity-summary dd { color:var(--ink); font-weight:720; }
     @media print { body { background:#fff; color:#111827; } main { max-width:none; padding:0; } .back-link, .actions, .toc { display:none; } .hero, .card { box-shadow:none; border:0; padding:0; background:#fff; color:#111827; } h2, h3 { break-after:avoid; } figure, table { break-inside:avoid; } }
 
   </style>
@@ -206,98 +215,23 @@
         <a class="button" href="/Is_This_Just_a_Cherry_Picked_Crisis_Story.pdf">Download PDF</a>
         <a class="button secondary" href="/index.html">Home</a>
       </div>
-      <nav class="toc"><div class="toc-title">Contents</div><a class="toc-1" href="#is-this-just-a-cherry-picked-crisis-story">Is This Just a Cherry-Picked Crisis Story?</a><a class="toc-2" href="#the-objection">The objection</a><a class="toc-2" href="#what-cherry-picking-would-look-like">What cherry-picking would look like</a><a class="toc-2" href="#what-household-resilience-means-here">What household resilience means here</a><a class="toc-2" href="#what-a-fair-test-should-require">What a fair test should require</a><a class="toc-2" href="#what-the-series-should-concede">What the series should concede</a><a class="toc-2" href="#what-the-existing-evidence-suggests">What the existing evidence suggests</a><a class="toc-2" href="#what-this-does-not-prove">What this does not prove</a><a class="toc-2" href="#the-narrow-conclusion">The narrow conclusion</a><a class="toc-2" href="#evidence-note">Evidence note</a><a class="toc-2" href="#related-research-library-pieces">Related research-library pieces</a></nav>
+
     </section>
     <section class="card doc-body">
+      <aside class="research-identity-panel" aria-label="Research classification">
+    <div class="doc-kicker">Research classification</div>
+    <div class="identity-pill-row">
+      <span>Bitcoin thesis research</span>
+      <span>Supporting material</span>
+      <span>Bitcoin thesis context</span>
+    </div>
+    <dl class="identity-summary">
+      <div><dt>What it can support</dt><dd>Adversarial thesis context; not BTC Helper decision-engine validation.</dd></div>
+      <div><dt>Primary limitation</dt><dd>Essay series; not all objections are empirical tests.</dd></div>
+    </dl>
+  </aside>
       <p class="small"><strong>Suggested citation:</strong> Kotte, Arne. 2026. “Is This Just a Cherry-Picked Crisis Story?” Sound Money Stress Tests. BTC Helper Research.</p>
-      <h1 id="is-this-just-a-cherry-picked-crisis-story">Is This Just a Cherry-Picked Crisis Story?</h1>
-<h2 id="the-objection">The objection</h2>
-<p>A fair objection to the household-resilience research series is that it may be selecting the bad facts.</p>
-<p>A reader could say: yes, some indicators look stressful. Housing entry became harder in some places. Essential costs rose. Some households have thin buffers. Some medical-spending measures are ambiguous. Some debt looks distress-linked.</p>
-<p>But why focus on those indicators? Why not start with rising real income, low unemployment in many years, higher aggregate net worth, improved homeownership relative to some earlier points, larger retirement balances for many households, technological gains, better consumer choice, or periods when policy transfers improved liquidity?</p>
-<p>In that view, the series may be a cherry-picked crisis story: a collection of negative measures arranged to make ordinary economic tradeoffs look like broad household fragility.</p>
-<p>That critique matters. A public-data research program loses trust if it only collects evidence that confirms its starting view.</p>
-<h2 id="what-cherry-picking-would-look-like">What cherry-picking would look like</h2>
-<p>Cherry-picking is not the same as choosing a topic. Every research project has a focus. A housing paper focuses on housing. A medical paper focuses on health access. A debt paper focuses on borrowing. That is normal.</p>
-<p>The problem appears when a series does one of four things:</p>
-<ul>
-<li>reports only negative indicators while hiding countervailing improvements;</li>
-<li>treats every worsening measure as evidence for the same story;</li>
-<li>ignores measurement limits when they weaken the preferred conclusion;</li>
-<li>moves between aggregate, local, and household claims without saying which level the evidence supports.</li>
-</ul>
-<p>Those are real risks for any public-data series about household strain. They are especially important here because the subject is emotionally loaded. People experience housing, medical bills, grocery prices, childcare, debt, and savings pressure personally. A persuasive story can become too easy if the evidence is not disciplined.</p>
-<p>The right response is not to deny the risk. The right response is to define a standard that makes cherry-picking harder.</p>
-<h2 id="what-household-resilience-means-here">What household resilience means here</h2>
-<p>This essay uses <strong>household resilience</strong> in a narrow measurement sense. It does not mean that a household feels comfortable, made perfect choices, or has no financial stress. It means the household has enough usable slack to absorb shocks and maintain essential commitments without a costly cascade.</p>
-<p>That broad idea has several parts:</p>
-<div class="table-wrap"><table>
-<thead><tr><th>Resilience margin</th><th>Practical question</th><th>Examples of useful indicators</th><th>What can mislead</th></tr></thead>
-<tbody>
-<tr><td>Liquidity resilience</td><td>Can the household cover a short-run expense without costly adjustment?</td><td>emergency cash capacity, liquid savings, checking/savings balances</td><td>credit availability that cannot be repaid, illiquid wealth</td></tr>
-<tr><td>Solvency resilience</td><td>Can required payments be serviced over time?</td><td>debt service, delinquency, bill pressure, revolving balances</td><td>low current delinquency during temporary support periods</td></tr>
-<tr><td>Consumption-smoothing resilience</td><td>Can essential consumption be maintained after a shock?</td><td>food security, utility stress, medical debt, external help</td><td>aggregate income growth that misses required-cost pressure</td></tr>
-<tr><td>Access resilience</td><td>Can the household obtain needed services without financial barriers?</td><td>delayed care due to cost, insurance status, unaffordable prescriptions</td><td>low spending that reflects foregone care rather than low need</td></tr>
-<tr><td>Planning resilience</td><td>Can the household make long-horizon commitments?</td><td>housing entry, retirement saving, family formation, education finance</td><td>asset gains for incumbents that do not help entrants</td></tr>
-</tbody></table></div>
-<p>These margins are related, but they are not identical. A household can be solvent but illiquid, asset-rich but cash-poor, employed but unable to cover a routine emergency, or able to handle a small shock but unable to enter housing safely. That is why the series should not rely on one headline statistic.</p>
-<p>The scope is also limited. The claim is about public U.S. household evidence and the margins that public data can illuminate. It is not a judgment about every household, every region, or every individual decision.</p>
-<h2 id="what-a-fair-test-should-require">What a fair test should require</h2>
-<p>A fair household-resilience series should follow four rules.</p>
-<p>First, it should state where the critic is right. If income rose, say so. If homeownership did not collapse, say so. If credit can smooth shocks, say so. If low medical spending can reflect good health or good coverage, say so. If survey measures are imperfect, say so.</p>
-<p>Second, it should separate channels. Housing entry, essential costs, labor adaptation, medical access, liquid buffers, debt service, asset ownership, and planning confidence are not the same thing. A weak result in one channel should not be smuggled into another.</p>
-<p>Third, it should label evidence by strength. Public aggregate trends are useful context. Household microdata profiles are stronger for hardship measurement. Descriptive associations are not causal estimates. Working drafts are not finished empirical articles.</p>
-<p>Fourth, it should use a survival test. A stress claim survives only if it remains a bounded, channel-specific claim after counterevidence is included. If the pattern disappears once income, assets, employment, credit smoothing, policy support, local variation, or measurement limits are considered, it should be weakened or abandoned.</p>
-<p>A simple diagnostic looks like this:</p>
-<div class="table-wrap"><table>
-<thead><tr><th>Step</th><th>Question</th><th>Result if answer is weak</th></tr></thead>
-<tbody>
-<tr><td>Define the margin</td><td>Is this about liquidity, solvency, access, planning, or something else?</td><td>Do not combine unlike claims.</td></tr>
-<tr><td>Name the counterindicator</td><td>What evidence points the other way?</td><td>Add it before drawing conclusions.</td></tr>
-<tr><td>Check the level</td><td>Is the evidence aggregate, local, household-level, or subgroup-specific?</td><td>Do not infer individual hardship from aggregates.</td></tr>
-<tr><td>Check robustness</td><td>Does the point survive alternative measures, base years, or subgroups where available?</td><td>Treat it as tentative or unresolved.</td></tr>
-<tr><td>Bound the conclusion</td><td>What exactly can be said without causal overreach?</td><td>Narrow the claim.</td></tr>
-</tbody></table></div>
-<p>This is not a formal statistical rule. It is a public-facing discipline rule. Its purpose is to keep a research series from becoming a one-way narrative.</p>
-<h2 id="what-the-series-should-concede">What the series should concede</h2>
-<p>The cherry-picking critique improves the series in several ways.</p>
-<p>It prevents collapse language. The public evidence does not show that the household sector simply collapsed. Real income rose over many windows. Homeownership remains common. Many households gained from asset appreciation. Labor markets were strong in some periods. Credit access helped some households smooth timing gaps. Policy support improved liquidity for some households during crisis periods.</p>
-<p>It prevents single-cause language. Housing, healthcare, childcare, food, energy, insurance, debt, wages, zoning, supply chains, fiscal policy, regulation, demographics, migration, family transfers, and household choices all matter. No credible public essay should turn them into one master cause.</p>
-<p>It prevents aggregate overreach. A national price index, saving rate, sentiment series, or debt measure cannot prove an individual household is fragile. Aggregate evidence can map background pressure. It cannot replace household-level data.</p>
-<p>It also prevents one-sided moral judgment. Some households are strained because constraints tightened. Some are strained because of choices. Usually both matter. A serious resilience framework should measure the feasible set without erasing agency.</p>
-<p>Those concessions are part of the standard the project has to meet.</p>
-<h2 id="what-the-existing-evidence-suggests">What the existing evidence suggests</h2>
-<p>The public research library is mixed in practice. It contains broad public-data papers, working measurement papers, microdata notes, and methodology documents. Those documents are not substitutes for direct source tables in a formal empirical paper. Their public value here is different: they show how the resilience map looks when several household margins are read side by side.</p>
-<p>The housing evidence is one example. It does not say homeownership disappeared. The long-horizon planning paper explicitly notes that real disposable personal income rose, real median household income rose, and the national homeownership rate was 65.6 percent in 2024 compared with 64.0 percent in 1994. Those facts are not hidden. They are part of the interpretation.</p>
-<p>But the same evidence also shows that housing-entry pressure rose on corrected public measures. A nominal median-home-price-to-nominal-income index increased from 100 in 1994 to 124 in 2024, while a real home-price-index-to-real-income proxy rose to 145. The housing paper separately shows that the home-price-to-income bridge widened from its 1987 base, while payment pressure depended heavily on the mortgage-rate regime. That is not a simple crisis story. It is a mixed bridge story: income progress and ownership continuity can coexist with harder entry margins.</p>
-<p>The asset evidence is also mixed. Asset appreciation helped many households. Homeowners, retirement-account holders, business owners, and equity owners gained. The asset-appreciation essay says that directly. The concern is distributional exposure: aggregate wealth gains do not automatically mean liquid, broad, shock-resistant household resilience. The question is who owned appreciating assets before the repricing and who faced higher entry costs afterward.</p>
-<p>The labor evidence follows the same pattern. A strong labor market matters. Jobs and wages are resilience inputs. But labor strength does not automatically answer whether essential costs, debt service, housing entry, healthcare access, and liquid buffers left enough slack. A household can be employed and still financially fragile if the budget margin is thin.</p>
-<p>The SHED evidence is probably the clearest example of why a single headline can mislead. The emergency-buffer work does not say that all credit is bad. It separates cash/checking/savings, paid-in-full bridge credit, revolving credit, other emergency borrowing, and inability to pay. In the 2025 profile table, paid-in-full bridge-credit users had a much lower strict-hardship rate than revolving-credit users, other emergency borrowers, or respondents unable to pay. That distinction weakens any one-sided anti-credit story, but strengthens the measurement claim: the type of emergency financing matters.</p>
-<p>The medical-spending evidence is similarly guarded. Low out-of-pocket spending is not treated as automatic hidden hardship. It can mean low need, good coverage, or foregone care. The concerning case is low spending paired with cost-related access barriers and nontrivial need. Again, the claim is not “every low-spending household is fragile.” The claim is that spending alone is not enough to classify medical financial risk.</p>
-<p>Across these examples, the repeated pattern is narrower than a crisis narrative: household resilience depends on interactions among costs, buffers, debt, assets, labor income, access barriers, and planning stability.</p>
-<h2 id="what-this-does-not-prove">What this does not prove</h2>
-<p>This evidence does not prove that the United States experienced a single household crisis. It does not prove that one monetary variable caused the observed pressures. It does not prove that every household became worse off, that every young household is uniquely disadvantaged, or that every use of debt signals distress.</p>
-<p>It also does not prove that the public research library is complete. Several important channels remain underdeveloped: local housing variation, household-level liquid wealth, family transfers, subgroup heterogeneity, regional labor-market exposure, full medical-insurance premium measurement, and design-consistent survey inference.</p>
-<p>The series also relies on different evidence types. Public national indicators are not the same as household microdata. Working measurement papers are not the same as fully polished empirical articles. A trustable public library has to make those differences visible rather than treating every document as equally strong.</p>
-<h2 id="the-narrow-conclusion">The narrow conclusion</h2>
-<p>The cherry-picking critique is useful because it points to the project’s main discipline requirement: do not tell a crisis story unless the evidence earns it.</p>
-<p>The most defensible version of the household-resilience argument is not that every indicator worsened. It is not that all household strain has one cause. It is not that asset gains, labor-market strength, credit access, or policy support do not matter.</p>
-<p>The defensible claim is narrower: public evidence should be read as a resilience map. Some indicators improved. Some worsened. Some are ambiguous. The key question is whether households have enough usable slack — liquidity, serviceable obligations, stable income, affordable essentials, medical access, and planning room — to absorb shocks and make long-horizon commitments.</p>
-<p>That is why a cherry-picking test is valuable. If a claimed stress pattern disappears once counterevidence and measurement limits are included, it should be weakened or abandoned. If it survives as a bounded channel-specific claim, it belongs in the map.</p>
-<p>The series should be judged by that standard. Not “does every chart look bad?” but “does the evidence, including counterevidence, identify household margins that headline prosperity can miss?”</p>
-<h2 id="evidence-note">Evidence note</h2>
-<p>This essay relies on the public research-library methodology index, the household-resilience capstone, the SHED emergency-buffer consolidation, the housing and long-horizon planning papers, the asset-exposure work, and the MEPS medical financial fragility measurement draft. The figures cited are descriptive public-data or public-use-microdata findings from those documents. They should not be read as causal estimates or as a complete welfare accounting.</p>
-<p>A formal empirical paper on this topic would need a pre-specified indicator set, transparent inclusion rules, direct source tables, alternative indicator choices, subgroup and local robustness checks, uncertainty estimates, and a clear way to report countervailing evidence. This essay’s narrower role is to state the anti-cherry-picking standard the public series should be held to.</p>
-<h2 id="related-research-library-pieces">Related research-library pieces</h2>
-<ul>
-<li><em>Public Research Replication and Methodology Index</em></li>
-<li><em>Mapping Household Financial Resilience</em></li>
-<li><em>Emergency Buffers, Borrowed Resilience, and Household Hardship</em></li>
-<li><em>Society Under Monetary Stress I: The Fiat Squeeze</em></li>
-<li><em>Society Under Monetary Stress II: The Cantillon Map</em></li>
-<li><em>Society Under Monetary Stress V: Saving the Future</em></li>
-<li><em>Medical Financial Fragility in MEPS</em></li>
-</ul>
+
     </section>
   </main>
   <footer class="site-footer" id="contact">

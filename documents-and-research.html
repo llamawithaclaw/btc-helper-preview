@@ -186,9 +186,12 @@
     .doc-card-head { display:flex; gap:12px; align-items:flex-start; justify-content:space-between; }
     .doc-title { font-size:1.08rem; font-weight:900; color:var(--hero-ink); margin:4px 0 0; letter-spacing:-.01em; line-height:1.25; }
     .doc-status-label { flex:0 0 auto; border:1px solid rgba(242,237,214,.25); border-radius:999px; padding:5px 9px; color:#f2edd6; background:rgba(242,237,214,.10); font-size:.74rem; font-weight:900; white-space:nowrap; }
+    .doc-badge-row { display:flex; flex-wrap:wrap; gap:8px; }
+    .doc-badge-row span { display:inline-flex; border:1px solid rgba(242,237,214,.22); border-radius:999px; padding:4px 8px; color:var(--hero-muted); background:rgba(255,255,255,.05); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.66rem; font-weight:900; letter-spacing:.07em; text-transform:uppercase; }
     .doc-claim { color:var(--hero-ink); margin:0; font-weight:720; line-height:1.4; }
     .doc-field-grid { display:grid; gap:8px; }
     .doc-field { border-left:4px solid var(--accent); padding:8px 10px; border-radius:10px; background:rgba(255,255,255,.05); }
+    .doc-field a { color:var(--accent-blue); }
     .doc-field span, .doc-meta-grid dt { display:block; color:var(--dark-card-muted); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
     .doc-field strong { display:block; color:var(--hero-ink); font-size:.9rem; line-height:1.35; }
     .doc-meta-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px 12px; margin:0; }
@@ -240,484 +243,584 @@
   <section class="hero">
     <div class="eyebrow">Research library</div>
     <h1>Documents &amp; Research</h1>
-    <p class="section-lead">A curated research front door for the product method, household-resilience argument, weekly macro context, measurement notes, and complete public shelf.</p>
+    <p class="section-lead">A curated research front door that separates product method, validation governance, Bitcoin thesis work, household resilience, macro context, and measurement notes. The shelf is serious evidence discipline; it is not a public efficacy claim.</p>
   </section>
   <section class="card">
     <h2>Start here</h2>
-    <p class="section-lead">These entries carry the core product. The full shelf is below for readers who want methods, objections, supporting evidence, or older context.</p>
+    <p class="section-lead">Use the quick path for the product and its limits. Use deep research when you want papers, methods, objections, and supporting context. BTC Helper has not demonstrated superior timing or reserve-policy efficacy.</p>
     <div class="research-map">
       <div class="map-row"><div class="map-label">Method</div><div class="map-panel"><strong>How BTC Helper works</strong><p>The plain product method: baseline plan, optional reserve overlay, daily action translation, source health, public record, and public boundary.</p><div class="map-links"><a href="/public-proof-of-work-methodology.html">Methodology</a><a href="/btc-helper-white-paper.html">White paper</a></div></div></div>
+      <div class="map-row"><div class="map-label">Validation</div><div class="map-panel"><strong>What the evidence can support</strong><p>Validation material explains governance, evidence tiers, source health, and current limits. It does not claim a backtest, timing advantage, or public efficacy result.</p><div class="map-links"><a href="/track.html">Track</a><a href="/research-replication-methodology-index.html">Research methods</a></div></div></div>
       <div class="map-row"><div class="map-label">Safety</div><div class="map-panel"><strong>Why household resilience comes first</strong><p>The safety argument behind My Plan: a Bitcoin plan is only useful when a household can sustain it through ordinary stress.</p><div class="map-links"><a href="/household-resilience-summary.html">Resilience synthesis</a><a href="/household-resilience-planner.html">Local planner</a></div></div></div>
-      <div class="map-row"><div class="map-label">Macro</div><div class="map-panel"><strong>Latest weekly macro thesis</strong><p>The interpretation layer for why conditions are moving underneath the daily action.</p><div class="map-links"><a href="/weekly-macro-thesis/">Weekly macro</a><a href="/insights.html">Insights</a></div></div></div>
+      <div class="map-row"><div class="map-label">Macro</div><div class="map-panel"><strong>Latest weekly macro thesis</strong><p>The interpretation layer for why conditions are moving underneath the daily action. It is context, not engine validation.</p><div class="map-links"><a href="/weekly-macro-thesis/">Weekly macro</a><a href="/insights.html">Insights</a></div></div></div>
     </div>
   </section>
   <section class="card">
     <h2>Featured</h2>
     <p class="section-lead">The best first reads remain prominent, while the complete library stays visible below.</p>
-    <div class="featured-research-grid"><a class="featured-research-card" href="/btc-helper-white-paper.html"><span>Accumulation methodology</span><strong>BTC Helper White Paper</strong><em>BTC Helper is an educational reserve-aware accumulation framework, not a trade-call service.</em></a><a class="featured-research-card" href="/public-proof-of-work-methodology.html"><span>Accumulation methodology</span><strong>How BTC Helper Works</strong><em>The daily read translates source health and factor direction into baseline and optional-reserve guidance.</em></a><a class="featured-research-card" href="/weekly-macro-thesis/"><span>Bitcoin and macro structure</span><strong>Latest Weekly Macro Thesis</strong><em>Conditions can move underneath the daily action even when the plan instruction stays unchanged.</em></a><a class="featured-research-card" href="/household-resilience-summary.html"><span>Household resilience</span><strong>Mapping Household Financial Resilience</strong><em>Buffers, costs, debt, labor risk, and backstops determine whether a long-horizon plan can survive stress.</em></a></div>
+    <div class="featured-research-grid"><a class="featured-research-card" href="/btc-helper-white-paper.html"><span>Engine / product validation</span><strong>BTC Helper White Paper</strong><em>Explains product boundaries; does not demonstrate timing advantage or policy efficacy.</em></a><a class="featured-research-card" href="/public-proof-of-work-methodology.html"><span>Engine / product validation</span><strong>How BTC Helper Works</strong><em>Explains product and validation boundaries; it is not a backtest or efficacy result.</em></a><a class="featured-research-card" href="/weekly-macro-thesis/"><span>Macro context</span><strong>Latest Weekly Macro Thesis</strong><em>Organizes macro context; not direct engine validation, not a backtest, and not a price forecast.</em></a><a class="featured-research-card" href="/household-resilience-summary.html"><span>Household / resilience research</span><strong>Mapping Household Financial Resilience</strong><em>Supports safety-floor reasoning; not evidence that Bitcoin should be bought or that BTC Helper improves outcomes.</em></a></div>
   </section>
   <section class="card">
-    <h2>Research tracks</h2>
-    <p class="section-lead">Use tracks when a specific product question needs more support. This keeps the research from competing with the daily decision surface.</p>
-    <div class="library-guide"><div class="guide-tile"><strong>Accumulation methodology</strong><span>Baseline planning, optional reserve rules, cautious posture, source health, and public evidence boundaries.</span></div><div class="guide-tile"><strong>Household resilience</strong><span>Emergency buffers, debt pressure, essential costs, medical and insurance risk, and plan durability.</span></div><div class="guide-tile"><strong>Bitcoin and macro structure</strong><span>Weekly interpretation and factor movement underneath the daily action layer.</span></div><div class="guide-tile"><strong>Measurement and replication</strong><span>Public-data methods, replication notes, and limits around what each research item can support.</span></div></div>
+    <h2>Research categories</h2>
+    <p class="section-lead">Category answers what question a document is about. It is separate from maturity and separate from what the document can support.</p>
+    <div class="library-guide"><div class="guide-tile"><strong>Engine / product validation</strong><span>How BTC Helper works, how public reads are governed, and how validation is being evaluated.</span></div><div class="guide-tile"><strong>Bitcoin thesis research</strong><span>Bitcoin, monetary structure, and objections that inform the broader thesis without validating the daily engine.</span></div><div class="guide-tile"><strong>Household / resilience research</strong><span>Buffers, debt, essential costs, medical risk, and plan durability before optional accumulation.</span></div><div class="guide-tile"><strong>Macro context</strong><span>Liquidity, rates, dollar pressure, credit, fiscal conditions, and weekly interpretation around the daily backdrop.</span></div><div class="guide-tile"><strong>Measurement / methodology</strong><span>Data construction, source quality, replication posture, evidence tiers, and public-proof methods.</span></div></div>
   </section>
   <section class="card">
-    <h2>Recommended by track</h2>
+    <h2>Recommended by category</h2>
     <p class="section-lead">Use these as entry points when you know which question you are trying to answer.</p>
-    <div class="recommended-track-grid"><div class="recommended-track-card"><div class="doc-kicker">Accumulation methodology</div><a href="/btc-helper-white-paper.html"><strong>BTC Helper White Paper</strong><span>Best first read for the product promise, boundaries, and public beta scope.</span></a><a href="/public-proof-of-work-methodology.html"><strong>How BTC Helper Works</strong><span>Explains the public decision record without exposing thresholds, weights, or private calibration.</span></a></div><div class="recommended-track-card"><div class="doc-kicker">Household resilience</div><a href="/household-resilience-planner.html"><strong>Household Resilience Planner</strong><span>Turns the resilience-first philosophy into the private My Plan workflow.</span></a><a href="/household-resilience-summary.html"><strong>Mapping Household Financial Resilience</strong><span>Best research bridge from the planner to the broader household-resilience argument.</span></a></div><div class="recommended-track-card"><div class="doc-kicker">Bitcoin and macro structure</div><a href="/weekly-macro-thesis/"><strong>Latest Weekly Macro Thesis</strong><span>Primary interpretation layer for readers who want context without daily checking.</span></a><a href="/sound-money-stress-tests.html"><strong>Sound Money Stress Tests</strong><span>Gives skeptical readers a doorway into the strongest counterarguments.</span></a></div><div class="recommended-track-card"><div class="doc-kicker">Measurement and replication</div><a href="/bitcoin-indicator-data-quality.html"><strong>Why Data Quality Matters in Bitcoin Indicators</strong><span>Shows why BTC Helper separates action language from source-health confidence.</span></a><a href="/research-replication-methodology-index.html"><strong>Public Research Replication and Methodology Index</strong><span>Explains how to read the library without treating every item as equally mature.</span></a></div></div>
+    <div class="recommended-track-grid"><div class="recommended-track-card"><div class="doc-kicker">Engine / product validation</div><a href="/btc-helper-white-paper.html"><strong>BTC Helper White Paper</strong><span>Best first read for the product promise, boundaries, and public beta scope.</span></a><a href="/public-proof-of-work-methodology.html"><strong>How BTC Helper Works</strong><span>Explains the public decision record without exposing thresholds, weights, or private calibration.</span></a><a href="/bitcoin-dca-vs-reserve-aware-accumulation.html"><strong>Bitcoin DCA vs Reserve-Aware Accumulation</strong><span>Clarifies the product behavior most users need before building a private plan.</span></a></div><div class="recommended-track-card"><div class="doc-kicker">Bitcoin thesis research</div><a href="/sound-money-stress-tests.html"><strong>Sound Money Stress Tests</strong><span>Gives skeptical readers a doorway into the strongest counterarguments.</span></a></div><div class="recommended-track-card"><div class="doc-kicker">Household / resilience research</div><a href="/household-resilience-planner.html"><strong>Household Resilience Planner</strong><span>Turns the resilience-first philosophy into the private My Plan workflow.</span></a><a href="/household-resilience-summary.html"><strong>Mapping Household Financial Resilience</strong><span>Best research bridge from the planner to the broader household-resilience argument.</span></a><a href="/emergency-buffers-borrowed-resilience-household-hardship.html"><strong>Emergency Buffers, Borrowed Resilience, and Household Hardship</strong><span>Strongest current evidence lane behind the safety-floor logic in My Plan.</span></a></div><div class="recommended-track-card"><div class="doc-kicker">Macro context</div><a href="/weekly-macro-thesis/"><strong>Latest Weekly Macro Thesis</strong><span>Primary interpretation layer for readers who want context without daily checking.</span></a><a href="/household-facing-indicators-monetary-tightening.html"><strong>Household-Facing Indicators of Monetary Tightening</strong><span>Helps explain why macro context belongs behind the daily accumulation plan.</span></a><a href="/real-rates-asset-prices-household-entry-barriers.html"><strong>Real Rates, Asset Prices, and Household Entry Barriers</strong><span>Supports the household-pressure context behind resilient accumulation planning.</span></a></div><div class="recommended-track-card"><div class="doc-kicker">Measurement / methodology</div><a href="/bitcoin-indicator-data-quality.html"><strong>Why Data Quality Matters in Bitcoin Indicators</strong><span>Shows why BTC Helper separates action language from source-health confidence.</span></a><a href="/research-replication-methodology-index.html"><strong>Public Research Replication and Methodology Index</strong><span>Explains how to read the library without treating every item as equally mature.</span></a><a href="/geographic-household-pressure-index.html"><strong>Geographic Household Pressure Index</strong><span>Experimental bridge from national resilience themes to place-aware pressure signals.</span></a></div></div>
   </section>
   <section class="card">
-    <h2>Status labels</h2>
-    <p class="section-lead">One controlled vocabulary tells readers how much weight to put on a document before opening it.</p>
-    <div class="library-guide status-guide"><div class="guide-tile"><strong>Published</strong><span>Stable public synthesis or product explanation.</span></div><div class="guide-tile"><strong>Working paper</strong><span>Substantive research draft that may still be revised.</span></div><div class="guide-tile"><strong>Measurement note</strong><span>Narrow evidence, replication, or methods note.</span></div><div class="guide-tile"><strong>Prototype</strong><span>Experimental tool or research-to-action surface.</span></div><div class="guide-tile"><strong>Supporting material</strong><span>Deeper background behind a better starting point.</span></div><div class="guide-tile"><strong>Superseded</strong><span>Preserved for context, but no longer the preferred entry.</span></div></div>
+    <h2>Maturity labels</h2>
+    <p class="section-lead">Maturity says how settled the document is. It does not say what topic it covers.</p>
+    <div class="library-guide status-guide"><div class="guide-tile"><strong>Established public methodology</strong><span>Current public product or methodology explanation. It describes the operating framework, not proven efficacy.</span></div><div class="guide-tile"><strong>Current public synthesis</strong><span>Stable public synthesis or recurring commentary surface that may be updated as conditions change.</span></div><div class="guide-tile"><strong>Research paper</strong><span>Developed public analysis with a stable conclusion, still separate from peer-reviewed publication.</span></div><div class="guide-tile"><strong>Working paper</strong><span>Developed analysis that may still change as data, methods, or interpretation improve.</span></div><div class="guide-tile"><strong>Measurement note</strong><span>Focused note on variable construction, source quality, replication, or data limitations.</span></div><div class="guide-tile"><strong>Prototype</strong><span>Experimental tool or index that should not carry validated-score weight.</span></div><div class="guide-tile"><strong>Supporting material</strong><span>Background, objections, or detail behind a clearer starting point.</span></div><div class="guide-tile"><strong>Superseded / archived</strong><span>Preserved for history, but not the preferred current methodology or starting point.</span></div></div>
+  </section>
+  <section class="card">
+    <h2>Evidence role</h2>
+    <p class="section-lead">Evidence role answers what the document can actually support. No current public library item is labeled as direct engine efficacy validation.</p>
+    <div class="library-guide status-guide"><div class="guide-tile"><strong>Product method</strong><span>Explains how BTC Helper is intended to work.</span></div><div class="guide-tile"><strong>Validation method / governance</strong><span>Explains evidence handling, source quality, or validation process without claiming performance.</span></div><div class="guide-tile"><strong>Direct engine validation</strong><span>Would directly test BTC Helper decision efficacy; no current public library item is allowed to claim this.</span></div><div class="guide-tile"><strong>Household evidence</strong><span>Describes household constraints that can affect whether an accumulation plan is durable.</span></div><div class="guide-tile"><strong>Macro interpretation</strong><span>Interprets the macro backdrop and factor implications; it is not a model-validation result.</span></div><div class="guide-tile"><strong>Bitcoin thesis context</strong><span>Informs the broader Bitcoin/monetary argument without validating BTC Helper policy performance.</span></div><div class="guide-tile"><strong>Measurement / methods</strong><span>Supports reproducibility and data interpretation.</span></div><div class="guide-tile"><strong>Hypothesis / exploratory</strong><span>Early or experimental work that should not carry major conclusions.</span></div></div>
   </section>
   <section class="card">
     <h2>All research</h2>
-    <p class="section-lead">Filter by track, status, source family, year, or a plain-language search term. Each card states its claim, product relevance, and main limitation before asking for a click.</p>
+    <p class="section-lead">Filter by category, maturity, evidence role, source family, year, or a plain-language search term. Each card states its claim, what it can support, and its main limitation before asking for a click.</p>
     <div class="doc-filter-panel" role="search" aria-label="Research library filters">
       <div class="doc-filter-grid">
-        <div class="doc-filter"><label for="research-track-filter">Track</label><select id="research-track-filter"><option value="">All tracks</option><option value="Accumulation methodology">Accumulation methodology</option><option value="Bitcoin and macro structure">Bitcoin and macro structure</option><option value="Household resilience">Household resilience</option><option value="Measurement and replication">Measurement and replication</option></select></div>
-        <div class="doc-filter"><label for="research-status-filter">Status</label><select id="research-status-filter"><option value="">All statuses</option><option value="Measurement note">Measurement note</option><option value="Prototype">Prototype</option><option value="Published">Published</option><option value="Superseded">Superseded</option><option value="Supporting material">Supporting material</option><option value="Working paper">Working paper</option></select></div>
+        <div class="doc-filter"><label for="research-category-filter">Category</label><select id="research-category-filter"><option value="">All categories</option><option value="Bitcoin thesis research">Bitcoin thesis research</option><option value="Engine / product validation">Engine / product validation</option><option value="Household / resilience research">Household / resilience research</option><option value="Macro context">Macro context</option><option value="Measurement / methodology">Measurement / methodology</option></select></div>
+        <div class="doc-filter"><label for="research-status-filter">Maturity</label><select id="research-status-filter"><option value="">All maturity labels</option><option value="Current public synthesis">Current public synthesis</option><option value="Established public methodology">Established public methodology</option><option value="Measurement note">Measurement note</option><option value="Prototype">Prototype</option><option value="Superseded / archived">Superseded / archived</option><option value="Supporting material">Supporting material</option><option value="Working paper">Working paper</option></select></div>
+        <div class="doc-filter"><label for="research-role-filter">Evidence role</label><select id="research-role-filter"><option value="">All evidence roles</option><option value="Bitcoin thesis context">Bitcoin thesis context</option><option value="Household evidence">Household evidence</option><option value="Hypothesis / exploratory">Hypothesis / exploratory</option><option value="Macro interpretation">Macro interpretation</option><option value="Measurement / methods">Measurement / methods</option><option value="Product method">Product method</option><option value="Validation method / governance">Validation method / governance</option></select></div>
         <div class="doc-filter"><label for="research-source-filter">Data/source</label><select id="research-source-filter"><option value="">All sources</option><option value="ACS and FHFA public data">ACS and FHFA public data</option><option value="BTC Helper methodology">BTC Helper methodology</option><option value="BTC Helper public record">BTC Helper public record</option><option value="BTC Helper public source-health record">BTC Helper public source-health record</option><option value="BTC Helper research archive">BTC Helper research archive</option><option value="BTC Helper weekly macro brief">BTC Helper weekly macro brief</option><option value="CEX and MEPS public data">CEX and MEPS public data</option><option value="Contrarian research series">Contrarian research series</option><option value="FRED and BLS public data">FRED and BLS public data</option><option value="FRED and SHED public data">FRED and SHED public data</option><option value="FRED public economic series">FRED public economic series</option><option value="Household resilience synthesis">Household resilience synthesis</option><option value="Local-only manual planner inputs">Local-only manual planner inputs</option><option value="MEPS public-use microdata">MEPS public-use microdata</option><option value="Public state-year panel">Public state-year panel</option><option value="Published emergency-savings indicators">Published emergency-savings indicators</option><option value="SHED public-use microdata">SHED public-use microdata</option><option value="SHED repeated cross-sections">SHED repeated cross-sections</option><option value="SHED replication package">SHED replication package</option><option value="Sound Money research series">Sound Money research series</option></select></div>
         <div class="doc-filter"><label for="research-year-filter">Year</label><select id="research-year-filter"><option value="">All years</option><option value="2026">2026</option></select></div>
         <div class="doc-filter"><label for="research-search">Search</label><input id="research-search" type="search" autocomplete="off" placeholder="Search by topic"></div>
       </div>
-      <div class="doc-filter-actions"><button class="button secondary" type="button" id="research-reset">Reset filters</button><p class="doc-count" id="research-result-count">Showing all 24 reads</p></div>
+      <div class="doc-filter-actions"><button class="button secondary" type="button" id="research-reset">Reset filters</button><p class="doc-count" id="research-result-count">Showing all 25 reads</p></div>
     </div>
-    <div class="doc-grid" id="research-card-grid"><article class="doc-card" data-research-card data-track="Accumulation methodology" data-status="Published" data-source="BTC Helper methodology" data-year="2026" data-search="btc helper white paper accumulation methodology published btc helper methodology btc helper is an educational reserve-aware accumulation framework, not a trade-call service. best first read for the product promise, boundaries, and public beta scope. summarizes the framework; use track and methodology for evidence state. white paper method">
+    <div class="doc-grid" id="research-card-grid"><article class="doc-card" data-research-card data-category="Engine / product validation" data-status="Established public methodology" data-role="Product method" data-source="BTC Helper methodology" data-year="2026" data-search="btc helper white paper engine / product validation established public methodology product method btc helper methodology btc helper is an educational reserve-aware accumulation framework, not a trade-call service. best first read for the product promise, boundaries, and public beta scope. framework description only; use track for current evidence state and limitations. explains product boundaries; does not demonstrate timing advantage or policy efficacy. white paper method">
         <div class="doc-card-head">
-          <div><div class="doc-kicker">Accumulation methodology</div><h3 class="doc-title">BTC Helper White Paper</h3></div>
-          <span class="doc-status-label">Published</span>
+          <div><div class="doc-kicker">Engine / product validation</div><h3 class="doc-title">BTC Helper White Paper</h3></div>
+          <span class="doc-status-label">Established public methodology</span>
         </div>
+        <div class="doc-badge-row"><span>Product method</span><span>Not engine efficacy proof</span></div>
         <p class="doc-claim">BTC Helper is an educational reserve-aware accumulation framework, not a trade-call service.</p>
         <div class="doc-field-grid">
-          <div class="doc-field"><span>Product relevance</span><strong>Best first read for the product promise, boundaries, and public beta scope.</strong></div>
-          <div class="doc-field"><span>Main limitation</span><strong>Summarizes the framework; use Track and methodology for evidence state.</strong></div>
+          <div class="doc-field"><span>What this can support</span><strong>Explains product boundaries; does not demonstrate timing advantage or policy efficacy.</strong></div>
+          <div class="doc-field"><span>Why it matters here</span><strong>Best first read for the product promise, boundaries, and public beta scope.</strong></div>
+          <div class="doc-field"><span>Main limitation</span><strong>Framework description only; use Track for current evidence state and limitations.</strong></div>
+
         </div>
         <dl class="doc-meta-grid">
           <div><dt>Data/source</dt><dd>BTC Helper methodology</dd></div>
           <div><dt>Author</dt><dd>BTC Helper / Arne Kotte</dd></div>
-          <div><dt>Last reviewed</dt><dd>2026-07-20</dd></div>
+          <div><dt>Last reviewed</dt><dd>2026-08-14</dd></div>
           <div><dt>Reading time</dt><dd>12 min</dd></div>
         </dl>
         <div class="doc-tag-list"><span class="tag">White paper</span><span class="tag">Method</span></div>
         <div class="doc-actions"><a class="button" href="/btc-helper-white-paper.html">Open read</a><a class="button secondary" href="/BTC_HELPER_WHITE_PAPER.pdf">Download</a></div>
-      </article><article class="doc-card" data-research-card data-track="Accumulation methodology" data-status="Published" data-source="BTC Helper public record" data-year="2026" data-search="how btc helper works accumulation methodology published btc helper public record the daily read translates source health and factor direction into baseline and optional-reserve guidance. explains the public decision record without exposing thresholds, weights, or private calibration. explains method boundaries; it is not a reproducible model specification. methodology public record">
+      </article><article class="doc-card" data-research-card data-category="Engine / product validation" data-status="Established public methodology" data-role="Validation method / governance" data-source="BTC Helper public record" data-year="2026" data-search="how btc helper works engine / product validation established public methodology validation method / governance btc helper public record the daily read translates source health and factor direction into baseline and optional-reserve guidance. explains the public decision record without exposing thresholds, weights, or private calibration. public methodology, not a reproducible private-engine specification. explains product and validation boundaries; it is not a backtest or efficacy result. methodology public record">
         <div class="doc-card-head">
-          <div><div class="doc-kicker">Accumulation methodology</div><h3 class="doc-title">How BTC Helper Works</h3></div>
-          <span class="doc-status-label">Published</span>
+          <div><div class="doc-kicker">Engine / product validation</div><h3 class="doc-title">How BTC Helper Works</h3></div>
+          <span class="doc-status-label">Established public methodology</span>
         </div>
+        <div class="doc-badge-row"><span>Validation method / governance</span><span>Not engine efficacy proof</span></div>
         <p class="doc-claim">The daily read translates source health and factor direction into baseline and optional-reserve guidance.</p>
         <div class="doc-field-grid">
-          <div class="doc-field"><span>Product relevance</span><strong>Explains the public decision record without exposing thresholds, weights, or private calibration.</strong></div>
-          <div class="doc-field"><span>Main limitation</span><strong>Explains method boundaries; it is not a reproducible model specification.</strong></div>
+          <div class="doc-field"><span>What this can support</span><strong>Explains product and validation boundaries; it is not a backtest or efficacy result.</strong></div>
+          <div class="doc-field"><span>Why it matters here</span><strong>Explains the public decision record without exposing thresholds, weights, or private calibration.</strong></div>
+          <div class="doc-field"><span>Main limitation</span><strong>Public methodology, not a reproducible private-engine specification.</strong></div>
+
         </div>
         <dl class="doc-meta-grid">
           <div><dt>Data/source</dt><dd>BTC Helper public record</dd></div>
           <div><dt>Author</dt><dd>BTC Helper</dd></div>
-          <div><dt>Last reviewed</dt><dd>2026-07-20</dd></div>
+          <div><dt>Last reviewed</dt><dd>2026-08-14</dd></div>
           <div><dt>Reading time</dt><dd>8 min</dd></div>
         </dl>
         <div class="doc-tag-list"><span class="tag">Methodology</span><span class="tag">Public record</span></div>
         <div class="doc-actions"><a class="button" href="/public-proof-of-work-methodology.html">Open read</a></div>
-      </article><article class="doc-card" data-research-card data-track="Accumulation methodology" data-status="Published" data-source="BTC Helper methodology" data-year="2026" data-search="bitcoin dca vs reserve-aware accumulation accumulation methodology published btc helper methodology btc helper keeps baseline accumulation separate from optional reserve deployment. clarifies the product behavior most users need before building a private plan. educational framing only; it does not personalize purchase sizes. dca reserve">
+      </article><article class="doc-card" data-research-card data-category="Engine / product validation" data-status="Established public methodology" data-role="Product method" data-source="BTC Helper methodology" data-year="2026" data-search="bitcoin dca vs reserve-aware accumulation engine / product validation established public methodology product method btc helper methodology btc helper keeps baseline accumulation separate from optional reserve deployment. clarifies the product behavior most users need before building a private plan. educational framing only; it does not personalize purchase sizes or prove improved outcomes. clarifies policy behavior; does not show that reserve-aware behavior has outperformed dca. dca reserve">
         <div class="doc-card-head">
-          <div><div class="doc-kicker">Accumulation methodology</div><h3 class="doc-title">Bitcoin DCA vs Reserve-Aware Accumulation</h3></div>
-          <span class="doc-status-label">Published</span>
+          <div><div class="doc-kicker">Engine / product validation</div><h3 class="doc-title">Bitcoin DCA vs Reserve-Aware Accumulation</h3></div>
+          <span class="doc-status-label">Established public methodology</span>
         </div>
+        <div class="doc-badge-row"><span>Product method</span><span>Not engine efficacy proof</span></div>
         <p class="doc-claim">BTC Helper keeps baseline accumulation separate from optional reserve deployment.</p>
         <div class="doc-field-grid">
-          <div class="doc-field"><span>Product relevance</span><strong>Clarifies the product behavior most users need before building a private plan.</strong></div>
-          <div class="doc-field"><span>Main limitation</span><strong>Educational framing only; it does not personalize purchase sizes.</strong></div>
+          <div class="doc-field"><span>What this can support</span><strong>Clarifies policy behavior; does not show that reserve-aware behavior has outperformed DCA.</strong></div>
+          <div class="doc-field"><span>Why it matters here</span><strong>Clarifies the product behavior most users need before building a private plan.</strong></div>
+          <div class="doc-field"><span>Main limitation</span><strong>Educational framing only; it does not personalize purchase sizes or prove improved outcomes.</strong></div>
+
         </div>
         <dl class="doc-meta-grid">
           <div><dt>Data/source</dt><dd>BTC Helper methodology</dd></div>
           <div><dt>Author</dt><dd>BTC Helper</dd></div>
-          <div><dt>Last reviewed</dt><dd>2026-07-20</dd></div>
+          <div><dt>Last reviewed</dt><dd>2026-08-14</dd></div>
           <div><dt>Reading time</dt><dd>6 min</dd></div>
         </dl>
         <div class="doc-tag-list"><span class="tag">DCA</span><span class="tag">Reserve</span></div>
         <div class="doc-actions"><a class="button" href="/bitcoin-dca-vs-reserve-aware-accumulation.html">Open read</a></div>
-      </article><article class="doc-card" data-research-card data-track="Accumulation methodology" data-status="Published" data-source="BTC Helper methodology" data-year="2026" data-search="what a cautious bitcoin accumulation stance means accumulation methodology published btc helper methodology cautious context can change interpretation without changing a user default baseline purchase. useful when the daily read says baseline only but the market posture still says cautious. does not replace the user plan boundary selected in my plan. cautious posture">
+      </article><article class="doc-card" data-research-card data-category="Engine / product validation" data-status="Established public methodology" data-role="Product method" data-source="BTC Helper methodology" data-year="2026" data-search="what a cautious bitcoin accumulation stance means engine / product validation established public methodology product method btc helper methodology cautious context can change interpretation without changing a user default baseline purchase. useful when the daily read says baseline only but the market posture still says cautious. does not replace the user plan boundary selected in my plan. defines a posture/action translation; it is not evidence that cautious improves returns. cautious posture">
         <div class="doc-card-head">
-          <div><div class="doc-kicker">Accumulation methodology</div><h3 class="doc-title">What a Cautious Bitcoin Accumulation Stance Means</h3></div>
-          <span class="doc-status-label">Published</span>
+          <div><div class="doc-kicker">Engine / product validation</div><h3 class="doc-title">What a Cautious Bitcoin Accumulation Stance Means</h3></div>
+          <span class="doc-status-label">Established public methodology</span>
         </div>
+        <div class="doc-badge-row"><span>Product method</span><span>Not engine efficacy proof</span></div>
         <p class="doc-claim">Cautious context can change interpretation without changing a user default baseline purchase.</p>
         <div class="doc-field-grid">
-          <div class="doc-field"><span>Product relevance</span><strong>Useful when the daily read says Baseline only but the market posture still says Cautious.</strong></div>
+          <div class="doc-field"><span>What this can support</span><strong>Defines a posture/action translation; it is not evidence that Cautious improves returns.</strong></div>
+          <div class="doc-field"><span>Why it matters here</span><strong>Useful when the daily read says Baseline only but the market posture still says Cautious.</strong></div>
           <div class="doc-field"><span>Main limitation</span><strong>Does not replace the user plan boundary selected in My Plan.</strong></div>
+
         </div>
         <dl class="doc-meta-grid">
           <div><dt>Data/source</dt><dd>BTC Helper methodology</dd></div>
           <div><dt>Author</dt><dd>BTC Helper</dd></div>
-          <div><dt>Last reviewed</dt><dd>2026-07-20</dd></div>
+          <div><dt>Last reviewed</dt><dd>2026-08-14</dd></div>
           <div><dt>Reading time</dt><dd>5 min</dd></div>
         </dl>
         <div class="doc-tag-list"><span class="tag">Cautious</span><span class="tag">Posture</span></div>
         <div class="doc-actions"><a class="button" href="/cautious-bitcoin-accumulation-stance.html">Open read</a></div>
-      </article><article class="doc-card" data-research-card data-track="Measurement and replication" data-status="Measurement note" data-source="BTC Helper public source-health record" data-year="2026" data-search="why data quality matters in bitcoin indicators measurement and replication measurement note btc helper public source-health record indicator freshness and coverage can matter as much as the headline action label. shows why btc helper separates action language from source-health confidence. names public source families but keeps raw values and internal field logic private. source health quality">
+      </article><article class="doc-card" data-research-card data-category="Measurement / methodology" data-status="Measurement note" data-role="Validation method / governance" data-source="BTC Helper public source-health record" data-year="2026" data-search="why data quality matters in bitcoin indicators measurement / methodology measurement note validation method / governance btc helper public source-health record indicator freshness and coverage can matter as much as the headline action label. shows why btc helper separates action language from source-health confidence. names public source families but keeps raw values and internal field logic private. supports source-health interpretation; does not validate model efficacy. source health quality">
         <div class="doc-card-head">
-          <div><div class="doc-kicker">Measurement and replication</div><h3 class="doc-title">Why Data Quality Matters in Bitcoin Indicators</h3></div>
+          <div><div class="doc-kicker">Measurement / methodology</div><h3 class="doc-title">Why Data Quality Matters in Bitcoin Indicators</h3></div>
           <span class="doc-status-label">Measurement note</span>
         </div>
+        <div class="doc-badge-row"><span>Validation method / governance</span><span>Not engine efficacy proof</span></div>
         <p class="doc-claim">Indicator freshness and coverage can matter as much as the headline action label.</p>
         <div class="doc-field-grid">
-          <div class="doc-field"><span>Product relevance</span><strong>Shows why BTC Helper separates action language from source-health confidence.</strong></div>
+          <div class="doc-field"><span>What this can support</span><strong>Supports source-health interpretation; does not validate model efficacy.</strong></div>
+          <div class="doc-field"><span>Why it matters here</span><strong>Shows why BTC Helper separates action language from source-health confidence.</strong></div>
           <div class="doc-field"><span>Main limitation</span><strong>Names public source families but keeps raw values and internal field logic private.</strong></div>
+
         </div>
         <dl class="doc-meta-grid">
           <div><dt>Data/source</dt><dd>BTC Helper public source-health record</dd></div>
           <div><dt>Author</dt><dd>BTC Helper</dd></div>
-          <div><dt>Last reviewed</dt><dd>2026-07-20</dd></div>
+          <div><dt>Last reviewed</dt><dd>2026-08-14</dd></div>
           <div><dt>Reading time</dt><dd>7 min</dd></div>
         </dl>
         <div class="doc-tag-list"><span class="tag">Source health</span><span class="tag">Quality</span></div>
         <div class="doc-actions"><a class="button" href="/bitcoin-indicator-data-quality.html">Open read</a></div>
-      </article><article class="doc-card" data-research-card data-track="Bitcoin and macro structure" data-status="Published" data-source="BTC Helper weekly macro brief" data-year="2026" data-search="latest weekly macro thesis bitcoin and macro structure published btc helper weekly macro brief conditions can move underneath the daily action even when the plan instruction stays unchanged. primary interpretation layer for readers who want context without daily checking. weekly brief format is still being strengthened with clearer sourcing and navigation. macro weekly">
+      </article><article class="doc-card" data-research-card data-category="Macro context" data-status="Current public synthesis" data-role="Macro interpretation" data-source="BTC Helper weekly macro brief" data-year="2026" data-search="latest weekly macro thesis macro context current public synthesis macro interpretation btc helper weekly macro brief conditions can move underneath the daily action even when the plan instruction stays unchanged. primary interpretation layer for readers who want context without daily checking. interpretive synthesis only; today and its evidence bundle remain the action/evidence source. organizes macro context; not direct engine validation, not a backtest, and not a price forecast. macro weekly">
         <div class="doc-card-head">
-          <div><div class="doc-kicker">Bitcoin and macro structure</div><h3 class="doc-title">Latest Weekly Macro Thesis</h3></div>
-          <span class="doc-status-label">Published</span>
+          <div><div class="doc-kicker">Macro context</div><h3 class="doc-title">Latest Weekly Macro Thesis</h3></div>
+          <span class="doc-status-label">Current public synthesis</span>
         </div>
+        <div class="doc-badge-row"><span>Macro interpretation</span><span>Not engine efficacy proof</span></div>
         <p class="doc-claim">Conditions can move underneath the daily action even when the plan instruction stays unchanged.</p>
         <div class="doc-field-grid">
-          <div class="doc-field"><span>Product relevance</span><strong>Primary interpretation layer for readers who want context without daily checking.</strong></div>
-          <div class="doc-field"><span>Main limitation</span><strong>Weekly brief format is still being strengthened with clearer sourcing and navigation.</strong></div>
+          <div class="doc-field"><span>What this can support</span><strong>Organizes macro context; not direct engine validation, not a backtest, and not a price forecast.</strong></div>
+          <div class="doc-field"><span>Why it matters here</span><strong>Primary interpretation layer for readers who want context without daily checking.</strong></div>
+          <div class="doc-field"><span>Main limitation</span><strong>Interpretive synthesis only; Today and its evidence bundle remain the action/evidence source.</strong></div>
+
         </div>
         <dl class="doc-meta-grid">
           <div><dt>Data/source</dt><dd>BTC Helper weekly macro brief</dd></div>
           <div><dt>Author</dt><dd>BTC Helper</dd></div>
-          <div><dt>Last reviewed</dt><dd>2026-07-20</dd></div>
+          <div><dt>Last reviewed</dt><dd>2026-08-14</dd></div>
           <div><dt>Reading time</dt><dd>6 min</dd></div>
         </dl>
         <div class="doc-tag-list"><span class="tag">Macro</span><span class="tag">Weekly</span></div>
         <div class="doc-actions"><a class="button" href="/weekly-macro-thesis/">Open read</a></div>
-      </article><article class="doc-card" data-research-card data-track="Household resilience" data-status="Prototype" data-source="Local-only manual planner inputs" data-year="2026" data-search="household resilience planner household resilience prototype local-only manual planner inputs a bitcoin plan is more durable when emergency buffers and must-pay obligations are respected first. turns the resilience-first philosophy into the private my plan workflow. prototype tool; it stores values locally and does not verify finances. planner local-only">
+      </article><article class="doc-card" data-research-card data-category="Household / resilience research" data-status="Prototype" data-role="Hypothesis / exploratory" data-source="Local-only manual planner inputs" data-year="2026" data-search="household resilience planner household / resilience research prototype hypothesis / exploratory local-only manual planner inputs a bitcoin plan is more durable when emergency buffers and must-pay obligations are respected first. turns the resilience-first philosophy into the private my plan workflow. prototype tool; it stores values locally and does not verify finances. applies resilience-first logic locally; not validation of bitcoin allocation or btc helper efficacy. planner local-only">
         <div class="doc-card-head">
-          <div><div class="doc-kicker">Household resilience</div><h3 class="doc-title">Household Resilience Planner</h3></div>
+          <div><div class="doc-kicker">Household / resilience research</div><h3 class="doc-title">Household Resilience Planner</h3></div>
           <span class="doc-status-label">Prototype</span>
         </div>
+        <div class="doc-badge-row"><span>Hypothesis / exploratory</span><span>Not engine efficacy proof</span></div>
         <p class="doc-claim">A Bitcoin plan is more durable when emergency buffers and must-pay obligations are respected first.</p>
         <div class="doc-field-grid">
-          <div class="doc-field"><span>Product relevance</span><strong>Turns the resilience-first philosophy into the private My Plan workflow.</strong></div>
+          <div class="doc-field"><span>What this can support</span><strong>Applies resilience-first logic locally; not validation of Bitcoin allocation or BTC Helper efficacy.</strong></div>
+          <div class="doc-field"><span>Why it matters here</span><strong>Turns the resilience-first philosophy into the private My Plan workflow.</strong></div>
           <div class="doc-field"><span>Main limitation</span><strong>Prototype tool; it stores values locally and does not verify finances.</strong></div>
+
         </div>
         <dl class="doc-meta-grid">
           <div><dt>Data/source</dt><dd>Local-only manual planner inputs</dd></div>
           <div><dt>Author</dt><dd>BTC Helper</dd></div>
-          <div><dt>Last reviewed</dt><dd>2026-07-20</dd></div>
+          <div><dt>Last reviewed</dt><dd>2026-08-14</dd></div>
           <div><dt>Reading time</dt><dd>Interactive</dd></div>
         </dl>
         <div class="doc-tag-list"><span class="tag">Planner</span><span class="tag">Local-only</span></div>
         <div class="doc-actions"><a class="button" href="/household-resilience-planner.html">Open read</a></div>
-      </article><article class="doc-card" data-research-card data-track="Household resilience" data-status="Published" data-source="Household resilience synthesis" data-year="2026" data-search="mapping household financial resilience household resilience published household resilience synthesis buffers, costs, debt, labor risk, and backstops determine whether a long-horizon plan can survive stress. best research bridge from the planner to the broader household-resilience argument. synthesis paper; individual evidence lanes have different data strength. synthesis resilience">
+      </article><article class="doc-card" data-research-card data-category="Household / resilience research" data-status="Current public synthesis" data-role="Household evidence" data-source="Household resilience synthesis" data-year="2026" data-search="mapping household financial resilience household / resilience research current public synthesis household evidence household resilience synthesis buffers, costs, debt, labor risk, and backstops determine whether a long-horizon plan can survive stress. best research bridge from the planner to the broader household-resilience argument. synthesis paper; individual evidence lanes have different data strength. supports safety-floor reasoning; not evidence that bitcoin should be bought or that btc helper improves outcomes. synthesis resilience">
         <div class="doc-card-head">
-          <div><div class="doc-kicker">Household resilience</div><h3 class="doc-title">Mapping Household Financial Resilience</h3></div>
-          <span class="doc-status-label">Published</span>
+          <div><div class="doc-kicker">Household / resilience research</div><h3 class="doc-title">Mapping Household Financial Resilience</h3></div>
+          <span class="doc-status-label">Current public synthesis</span>
         </div>
+        <div class="doc-badge-row"><span>Household evidence</span><span>Not engine efficacy proof</span></div>
         <p class="doc-claim">Buffers, costs, debt, labor risk, and backstops determine whether a long-horizon plan can survive stress.</p>
         <div class="doc-field-grid">
-          <div class="doc-field"><span>Product relevance</span><strong>Best research bridge from the planner to the broader household-resilience argument.</strong></div>
+          <div class="doc-field"><span>What this can support</span><strong>Supports safety-floor reasoning; not evidence that Bitcoin should be bought or that BTC Helper improves outcomes.</strong></div>
+          <div class="doc-field"><span>Why it matters here</span><strong>Best research bridge from the planner to the broader household-resilience argument.</strong></div>
           <div class="doc-field"><span>Main limitation</span><strong>Synthesis paper; individual evidence lanes have different data strength.</strong></div>
+
         </div>
         <dl class="doc-meta-grid">
           <div><dt>Data/source</dt><dd>Household resilience synthesis</dd></div>
           <div><dt>Author</dt><dd>BTC Helper / Arne Kotte</dd></div>
-          <div><dt>Last reviewed</dt><dd>2026-07-20</dd></div>
+          <div><dt>Last reviewed</dt><dd>2026-08-14</dd></div>
           <div><dt>Reading time</dt><dd>10 min</dd></div>
         </dl>
         <div class="doc-tag-list"><span class="tag">Synthesis</span><span class="tag">Resilience</span></div>
         <div class="doc-actions"><a class="button" href="/household-resilience-summary.html">Open read</a><a class="button secondary" href="/Mapping_Household_Financial_Resilience.pdf">Download</a></div>
-      </article><article class="doc-card" data-research-card data-track="Household resilience" data-status="Working paper" data-source="SHED public-use microdata" data-year="2026" data-search="emergency buffers, borrowed resilience, and household hardship household resilience working paper shed public-use microdata emergency buffers, borrowing channels, and hardship markers carry different resilience meanings. strongest current evidence lane behind the safety-floor logic in my plan. descriptive evidence; not a causal household-level treatment estimate. shed buffers">
+      </article><article class="doc-card" data-research-card data-category="Household / resilience research" data-status="Working paper" data-role="Household evidence" data-source="SHED public-use microdata" data-year="2026" data-search="emergency buffers, borrowed resilience, and household hardship household / resilience research working paper household evidence shed public-use microdata emergency buffers, borrowing channels, and hardship markers carry different resilience meanings. strongest current evidence lane behind the safety-floor logic in my plan. descriptive evidence; not a causal household-level treatment estimate. supports resilience-first constraints; not a causal planner or bitcoin-allocation result. shed buffers">
         <div class="doc-card-head">
-          <div><div class="doc-kicker">Household resilience</div><h3 class="doc-title">Emergency Buffers, Borrowed Resilience, and Household Hardship</h3></div>
+          <div><div class="doc-kicker">Household / resilience research</div><h3 class="doc-title">Emergency Buffers, Borrowed Resilience, and Household Hardship</h3></div>
           <span class="doc-status-label">Working paper</span>
         </div>
+        <div class="doc-badge-row"><span>Household evidence</span><span>Not engine efficacy proof</span></div>
         <p class="doc-claim">Emergency buffers, borrowing channels, and hardship markers carry different resilience meanings.</p>
         <div class="doc-field-grid">
-          <div class="doc-field"><span>Product relevance</span><strong>Strongest current evidence lane behind the safety-floor logic in My Plan.</strong></div>
+          <div class="doc-field"><span>What this can support</span><strong>Supports resilience-first constraints; not a causal planner or Bitcoin-allocation result.</strong></div>
+          <div class="doc-field"><span>Why it matters here</span><strong>Strongest current evidence lane behind the safety-floor logic in My Plan.</strong></div>
           <div class="doc-field"><span>Main limitation</span><strong>Descriptive evidence; not a causal household-level treatment estimate.</strong></div>
+
         </div>
         <dl class="doc-meta-grid">
           <div><dt>Data/source</dt><dd>SHED public-use microdata</dd></div>
           <div><dt>Author</dt><dd>BTC Helper / Arne Kotte</dd></div>
-          <div><dt>Last reviewed</dt><dd>2026-07-20</dd></div>
+          <div><dt>Last reviewed</dt><dd>2026-08-14</dd></div>
           <div><dt>Reading time</dt><dd>14 min</dd></div>
         </dl>
         <div class="doc-tag-list"><span class="tag">SHED</span><span class="tag">Buffers</span></div>
         <div class="doc-actions"><a class="button" href="/emergency-buffers-borrowed-resilience-household-hardship.html">Open read</a><a class="button secondary" href="/Emergency_Buffers_Borrowed_Resilience_and_Household_Hardship_SHED_2015_2025.pdf">Download</a></div>
-      </article><article class="doc-card" data-research-card data-track="Measurement and replication" data-status="Measurement note" data-source="BTC Helper research archive" data-year="2026" data-search="public research replication and methodology index measurement and replication measurement note btc helper research archive a research shelf needs clear labels for evidence strength, reproducibility, and remaining limits. explains how to read the library without treating every item as equally mature. index only; each linked item still needs its own evidence review. replication index">
+      </article><article class="doc-card" data-research-card data-category="Measurement / methodology" data-status="Measurement note" data-role="Measurement / methods" data-source="BTC Helper research archive" data-year="2026" data-search="public research replication and methodology index measurement / methodology measurement note measurement / methods btc helper research archive a research shelf needs clear labels for evidence strength, reproducibility, and remaining limits. explains how to read the library without treating every item as equally mature. index only; each linked item still needs its own evidence review. explains research-library evidence discipline; does not promote any item to efficacy proof. replication index">
         <div class="doc-card-head">
-          <div><div class="doc-kicker">Measurement and replication</div><h3 class="doc-title">Public Research Replication and Methodology Index</h3></div>
+          <div><div class="doc-kicker">Measurement / methodology</div><h3 class="doc-title">Public Research Replication and Methodology Index</h3></div>
           <span class="doc-status-label">Measurement note</span>
         </div>
+        <div class="doc-badge-row"><span>Measurement / methods</span><span>Not engine efficacy proof</span></div>
         <p class="doc-claim">A research shelf needs clear labels for evidence strength, reproducibility, and remaining limits.</p>
         <div class="doc-field-grid">
-          <div class="doc-field"><span>Product relevance</span><strong>Explains how to read the library without treating every item as equally mature.</strong></div>
+          <div class="doc-field"><span>What this can support</span><strong>Explains research-library evidence discipline; does not promote any item to efficacy proof.</strong></div>
+          <div class="doc-field"><span>Why it matters here</span><strong>Explains how to read the library without treating every item as equally mature.</strong></div>
           <div class="doc-field"><span>Main limitation</span><strong>Index only; each linked item still needs its own evidence review.</strong></div>
+
         </div>
         <dl class="doc-meta-grid">
           <div><dt>Data/source</dt><dd>BTC Helper research archive</dd></div>
           <div><dt>Author</dt><dd>BTC Helper</dd></div>
-          <div><dt>Last reviewed</dt><dd>2026-07-20</dd></div>
+          <div><dt>Last reviewed</dt><dd>2026-08-14</dd></div>
           <div><dt>Reading time</dt><dd>8 min</dd></div>
         </dl>
         <div class="doc-tag-list"><span class="tag">Replication</span><span class="tag">Index</span></div>
         <div class="doc-actions"><a class="button" href="/research-replication-methodology-index.html">Open read</a><a class="button secondary" href="/Research_Replication_Methodology_Index.pdf">Download</a></div>
-      </article><article class="doc-card" data-research-card data-track="Bitcoin and macro structure" data-status="Supporting material" data-source="Contrarian research series" data-year="2026" data-search="sound money stress tests bitcoin and macro structure supporting material contrarian research series the framework is stronger when major objections are stated plainly and tested fairly. gives skeptical readers a doorway into the strongest counterarguments. essay series; not all objections are empirical tests. stress tests objections">
+      </article><article class="doc-card" data-research-card data-category="Bitcoin thesis research" data-status="Supporting material" data-role="Bitcoin thesis context" data-source="Contrarian research series" data-year="2026" data-search="sound money stress tests bitcoin thesis research supporting material bitcoin thesis context contrarian research series the framework is stronger when major objections are stated plainly and tested fairly. gives skeptical readers a doorway into the strongest counterarguments. essay series; not all objections are empirical tests. adversarial thesis context; not btc helper decision-engine validation. stress tests objections">
         <div class="doc-card-head">
-          <div><div class="doc-kicker">Bitcoin and macro structure</div><h3 class="doc-title">Sound Money Stress Tests</h3></div>
+          <div><div class="doc-kicker">Bitcoin thesis research</div><h3 class="doc-title">Sound Money Stress Tests</h3></div>
           <span class="doc-status-label">Supporting material</span>
         </div>
+        <div class="doc-badge-row"><span>Bitcoin thesis context</span><span>Not engine efficacy proof</span></div>
         <p class="doc-claim">The framework is stronger when major objections are stated plainly and tested fairly.</p>
         <div class="doc-field-grid">
-          <div class="doc-field"><span>Product relevance</span><strong>Gives skeptical readers a doorway into the strongest counterarguments.</strong></div>
+          <div class="doc-field"><span>What this can support</span><strong>Adversarial thesis context; not BTC Helper decision-engine validation.</strong></div>
+          <div class="doc-field"><span>Why it matters here</span><strong>Gives skeptical readers a doorway into the strongest counterarguments.</strong></div>
           <div class="doc-field"><span>Main limitation</span><strong>Essay series; not all objections are empirical tests.</strong></div>
+
         </div>
         <dl class="doc-meta-grid">
           <div><dt>Data/source</dt><dd>Contrarian research series</dd></div>
           <div><dt>Author</dt><dd>BTC Helper / Arne Kotte</dd></div>
-          <div><dt>Last reviewed</dt><dd>2026-07-20</dd></div>
+          <div><dt>Last reviewed</dt><dd>2026-08-14</dd></div>
           <div><dt>Reading time</dt><dd>Series</dd></div>
         </dl>
         <div class="doc-tag-list"><span class="tag">Stress tests</span><span class="tag">Objections</span></div>
         <div class="doc-actions"><a class="button" href="/sound-money-stress-tests.html">Open read</a><a class="button secondary" href="/Sound_Money_Stress_Tests_Series_Intro.pdf">Download</a></div>
-      </article><article class="doc-card" data-research-card data-track="Household resilience" data-status="Supporting material" data-source="Sound Money research series" data-year="2026" data-search="society under monetary stress household resilience supporting material sound money research series monetary stress often appears through housing, buffers, debt, labor pressure, and planning confidence. background theory for why btc helper starts with household durability. long-form research spine; most users should start with the resilience synthesis. series theory">
+      </article><article class="doc-card" data-research-card data-category="Household / resilience research" data-status="Supporting material" data-role="Household evidence" data-source="Sound Money research series" data-year="2026" data-search="society under monetary stress household / resilience research supporting material household evidence sound money research series monetary stress often appears through housing, buffers, debt, labor pressure, and planning confidence. background theory for why btc helper starts with household durability. long-form research spine; most users should start with the resilience synthesis. background theory for resilience constraints; not direct btc helper validation. series theory">
         <div class="doc-card-head">
-          <div><div class="doc-kicker">Household resilience</div><h3 class="doc-title">Society Under Monetary Stress</h3></div>
+          <div><div class="doc-kicker">Household / resilience research</div><h3 class="doc-title">Society Under Monetary Stress</h3></div>
           <span class="doc-status-label">Supporting material</span>
         </div>
+        <div class="doc-badge-row"><span>Household evidence</span><span>Not engine efficacy proof</span></div>
         <p class="doc-claim">Monetary stress often appears through housing, buffers, debt, labor pressure, and planning confidence.</p>
         <div class="doc-field-grid">
-          <div class="doc-field"><span>Product relevance</span><strong>Background theory for why BTC Helper starts with household durability.</strong></div>
+          <div class="doc-field"><span>What this can support</span><strong>Background theory for resilience constraints; not direct BTC Helper validation.</strong></div>
+          <div class="doc-field"><span>Why it matters here</span><strong>Background theory for why BTC Helper starts with household durability.</strong></div>
           <div class="doc-field"><span>Main limitation</span><strong>Long-form research spine; most users should start with the resilience synthesis.</strong></div>
+
         </div>
         <dl class="doc-meta-grid">
           <div><dt>Data/source</dt><dd>Sound Money research series</dd></div>
           <div><dt>Author</dt><dd>BTC Helper / Arne Kotte</dd></div>
-          <div><dt>Last reviewed</dt><dd>2026-07-20</dd></div>
+          <div><dt>Last reviewed</dt><dd>2026-08-14</dd></div>
           <div><dt>Reading time</dt><dd>Series</dd></div>
         </dl>
         <div class="doc-tag-list"><span class="tag">Series</span><span class="tag">Theory</span></div>
         <div class="doc-actions"><a class="button" href="/society-under-monetary-stress.html">Open read</a></div>
-      </article><article class="doc-card" data-research-card data-track="Household resilience" data-status="Working paper" data-source="MEPS public-use microdata" data-year="2026" data-search="medical financial fragility household resilience working paper meps public-use microdata low medical spending can mean protection, low need, or foregone care, so spending alone can misread risk. supports the broader claim that household safety floors need more than income checks. working paper; interpretation depends on measurement choices and data scope. meps medical risk">
+      </article><article class="doc-card" data-research-card data-category="Household / resilience research" data-status="Working paper" data-role="Household evidence" data-source="MEPS public-use microdata" data-year="2026" data-search="medical financial fragility household / resilience research working paper household evidence meps public-use microdata low medical spending can mean protection, low need, or foregone care, so spending alone can misread risk. supports the broader claim that household safety floors need more than income checks. working paper; interpretation depends on measurement choices and data scope. supports household-risk context; not btc helper policy validation. meps medical risk">
         <div class="doc-card-head">
-          <div><div class="doc-kicker">Household resilience</div><h3 class="doc-title">Medical Financial Fragility</h3></div>
+          <div><div class="doc-kicker">Household / resilience research</div><h3 class="doc-title">Medical Financial Fragility</h3></div>
           <span class="doc-status-label">Working paper</span>
         </div>
+        <div class="doc-badge-row"><span>Household evidence</span><span>Not engine efficacy proof</span></div>
         <p class="doc-claim">Low medical spending can mean protection, low need, or foregone care, so spending alone can misread risk.</p>
         <div class="doc-field-grid">
-          <div class="doc-field"><span>Product relevance</span><strong>Supports the broader claim that household safety floors need more than income checks.</strong></div>
+          <div class="doc-field"><span>What this can support</span><strong>Supports household-risk context; not BTC Helper policy validation.</strong></div>
+          <div class="doc-field"><span>Why it matters here</span><strong>Supports the broader claim that household safety floors need more than income checks.</strong></div>
           <div class="doc-field"><span>Main limitation</span><strong>Working paper; interpretation depends on measurement choices and data scope.</strong></div>
+
         </div>
         <dl class="doc-meta-grid">
           <div><dt>Data/source</dt><dd>MEPS public-use microdata</dd></div>
           <div><dt>Author</dt><dd>BTC Helper / Arne Kotte</dd></div>
-          <div><dt>Last reviewed</dt><dd>2026-07-20</dd></div>
+          <div><dt>Last reviewed</dt><dd>2026-08-14</dd></div>
           <div><dt>Reading time</dt><dd>11 min</dd></div>
         </dl>
         <div class="doc-tag-list"><span class="tag">MEPS</span><span class="tag">Medical risk</span></div>
         <div class="doc-actions"><a class="button" href="/medical-financial-fragility-meps.html">Open read</a><a class="button secondary" href="/Medical_Financial_Fragility_MEPS_Working_Draft.pdf">Download</a></div>
-      </article><article class="doc-card" data-research-card data-track="Household resilience" data-status="Measurement note" data-source="CEX and MEPS public data" data-year="2026" data-search="insurance costs and household financial resilience household resilience measurement note cex and meps public data insurance and medical-risk costs can act as a hidden resilience premium. adds essential-cost context to the resilience-first planner logic. descriptive note; does not estimate full household welfare effects. insurance medical risk">
+      </article><article class="doc-card" data-research-card data-category="Household / resilience research" data-status="Measurement note" data-role="Household evidence" data-source="CEX and MEPS public data" data-year="2026" data-search="insurance costs and household financial resilience household / resilience research measurement note household evidence cex and meps public data insurance and medical-risk costs can act as a hidden resilience premium. adds essential-cost context to the resilience-first planner logic. descriptive note; does not estimate full household welfare effects. adds household-cost context; not allocation guidance or engine validation. insurance medical risk">
         <div class="doc-card-head">
-          <div><div class="doc-kicker">Household resilience</div><h3 class="doc-title">Insurance Costs and Household Financial Resilience</h3></div>
+          <div><div class="doc-kicker">Household / resilience research</div><h3 class="doc-title">Insurance Costs and Household Financial Resilience</h3></div>
           <span class="doc-status-label">Measurement note</span>
         </div>
+        <div class="doc-badge-row"><span>Household evidence</span><span>Not engine efficacy proof</span></div>
         <p class="doc-claim">Insurance and medical-risk costs can act as a hidden resilience premium.</p>
         <div class="doc-field-grid">
-          <div class="doc-field"><span>Product relevance</span><strong>Adds essential-cost context to the resilience-first planner logic.</strong></div>
+          <div class="doc-field"><span>What this can support</span><strong>Adds household-cost context; not allocation guidance or engine validation.</strong></div>
+          <div class="doc-field"><span>Why it matters here</span><strong>Adds essential-cost context to the resilience-first planner logic.</strong></div>
           <div class="doc-field"><span>Main limitation</span><strong>Descriptive note; does not estimate full household welfare effects.</strong></div>
+
         </div>
         <dl class="doc-meta-grid">
           <div><dt>Data/source</dt><dd>CEX and MEPS public data</dd></div>
           <div><dt>Author</dt><dd>BTC Helper / Arne Kotte</dd></div>
-          <div><dt>Last reviewed</dt><dd>2026-07-20</dd></div>
+          <div><dt>Last reviewed</dt><dd>2026-08-14</dd></div>
           <div><dt>Reading time</dt><dd>8 min</dd></div>
         </dl>
         <div class="doc-tag-list"><span class="tag">Insurance</span><span class="tag">Medical risk</span></div>
         <div class="doc-actions"><a class="button" href="/insurance-costs-household-financial-resilience.html">Open read</a><a class="button secondary" href="/Insurance_Costs_and_Household_Financial_Resilience.pdf">Download</a></div>
-      </article><article class="doc-card" data-research-card data-track="Household resilience" data-status="Measurement note" data-source="FRED public economic series" data-year="2026" data-search="household-facing indicators of monetary tightening household resilience measurement note fred public economic series tight money reaches households through rates, payments, delinquencies, debt service, and buffer pressure. helps explain why macro context belongs behind the daily accumulation plan. public aggregate indicators cannot see individual household circumstances. fred macro">
+      </article><article class="doc-card" data-research-card data-category="Macro context" data-status="Measurement note" data-role="Macro interpretation" data-source="FRED public economic series" data-year="2026" data-search="household-facing indicators of monetary tightening macro context measurement note macro interpretation fred public economic series tight money reaches households through rates, payments, delinquencies, debt service, and buffer pressure. helps explain why macro context belongs behind the daily accumulation plan. public aggregate indicators cannot see individual household circumstances. macro-to-household context; not a daily-engine proof. fred macro">
         <div class="doc-card-head">
-          <div><div class="doc-kicker">Household resilience</div><h3 class="doc-title">Household-Facing Indicators of Monetary Tightening</h3></div>
+          <div><div class="doc-kicker">Macro context</div><h3 class="doc-title">Household-Facing Indicators of Monetary Tightening</h3></div>
           <span class="doc-status-label">Measurement note</span>
         </div>
+        <div class="doc-badge-row"><span>Macro interpretation</span><span>Not engine efficacy proof</span></div>
         <p class="doc-claim">Tight money reaches households through rates, payments, delinquencies, debt service, and buffer pressure.</p>
         <div class="doc-field-grid">
-          <div class="doc-field"><span>Product relevance</span><strong>Helps explain why macro context belongs behind the daily accumulation plan.</strong></div>
+          <div class="doc-field"><span>What this can support</span><strong>Macro-to-household context; not a daily-engine proof.</strong></div>
+          <div class="doc-field"><span>Why it matters here</span><strong>Helps explain why macro context belongs behind the daily accumulation plan.</strong></div>
           <div class="doc-field"><span>Main limitation</span><strong>Public aggregate indicators cannot see individual household circumstances.</strong></div>
+
         </div>
         <dl class="doc-meta-grid">
           <div><dt>Data/source</dt><dd>FRED public economic series</dd></div>
           <div><dt>Author</dt><dd>BTC Helper / Arne Kotte</dd></div>
-          <div><dt>Last reviewed</dt><dd>2026-07-20</dd></div>
+          <div><dt>Last reviewed</dt><dd>2026-08-14</dd></div>
           <div><dt>Reading time</dt><dd>7 min</dd></div>
         </dl>
         <div class="doc-tag-list"><span class="tag">FRED</span><span class="tag">Macro</span></div>
         <div class="doc-actions"><a class="button" href="/household-facing-indicators-monetary-tightening.html">Open read</a><a class="button secondary" href="/Household_Facing_Indicators_of_Monetary_Tightening.pdf">Download</a></div>
-      </article><article class="doc-card" data-research-card data-track="Household resilience" data-status="Measurement note" data-source="FRED public economic series" data-year="2026" data-search="real rates, asset prices, and household entry barriers household resilience measurement note fred public economic series higher rates did not automatically restore entry affordability when prices stayed elevated. supports the household-pressure context behind resilient accumulation planning. transparent calculation; not a full housing-market model. housing rates">
+      </article><article class="doc-card" data-research-card data-category="Macro context" data-status="Measurement note" data-role="Macro interpretation" data-source="FRED public economic series" data-year="2026" data-search="real rates, asset prices, and household entry barriers macro context measurement note macro interpretation fred public economic series higher rates did not automatically restore entry affordability when prices stayed elevated. supports the household-pressure context behind resilient accumulation planning. transparent calculation; not a full housing-market model. macro/household context; not a btc helper outcome test. housing rates">
         <div class="doc-card-head">
-          <div><div class="doc-kicker">Household resilience</div><h3 class="doc-title">Real Rates, Asset Prices, and Household Entry Barriers</h3></div>
+          <div><div class="doc-kicker">Macro context</div><h3 class="doc-title">Real Rates, Asset Prices, and Household Entry Barriers</h3></div>
           <span class="doc-status-label">Measurement note</span>
         </div>
+        <div class="doc-badge-row"><span>Macro interpretation</span><span>Not engine efficacy proof</span></div>
         <p class="doc-claim">Higher rates did not automatically restore entry affordability when prices stayed elevated.</p>
         <div class="doc-field-grid">
-          <div class="doc-field"><span>Product relevance</span><strong>Supports the household-pressure context behind resilient accumulation planning.</strong></div>
+          <div class="doc-field"><span>What this can support</span><strong>Macro/household context; not a BTC Helper outcome test.</strong></div>
+          <div class="doc-field"><span>Why it matters here</span><strong>Supports the household-pressure context behind resilient accumulation planning.</strong></div>
           <div class="doc-field"><span>Main limitation</span><strong>Transparent calculation; not a full housing-market model.</strong></div>
+
         </div>
         <dl class="doc-meta-grid">
           <div><dt>Data/source</dt><dd>FRED public economic series</dd></div>
           <div><dt>Author</dt><dd>BTC Helper / Arne Kotte</dd></div>
-          <div><dt>Last reviewed</dt><dd>2026-07-20</dd></div>
+          <div><dt>Last reviewed</dt><dd>2026-08-14</dd></div>
           <div><dt>Reading time</dt><dd>8 min</dd></div>
         </dl>
         <div class="doc-tag-list"><span class="tag">Housing</span><span class="tag">Rates</span></div>
         <div class="doc-actions"><a class="button" href="/real-rates-asset-prices-household-entry-barriers.html">Open read</a><a class="button secondary" href="/Real_Rates_Asset_Prices_and_Household_Entry_Barriers.pdf">Download</a></div>
-      </article><article class="doc-card" data-research-card data-track="Measurement and replication" data-status="Prototype" data-source="ACS and FHFA public data" data-year="2026" data-search="geographic household pressure index measurement and replication prototype acs and fhfa public data selected public proxies can map where household pressure clusters geographically. experimental bridge from national resilience themes to place-aware pressure signals. prototype index; should not be treated as a validated local-risk score. geography index">
+      </article><article class="doc-card" data-research-card data-category="Measurement / methodology" data-status="Prototype" data-role="Hypothesis / exploratory" data-source="ACS and FHFA public data" data-year="2026" data-search="geographic household pressure index measurement / methodology prototype hypothesis / exploratory acs and fhfa public data selected public proxies can map where household pressure clusters geographically. experimental bridge from national resilience themes to place-aware pressure signals. prototype index; should not be treated as a validated local-risk score. experimental pressure map; not a validated risk score or engine input. geography index">
         <div class="doc-card-head">
-          <div><div class="doc-kicker">Measurement and replication</div><h3 class="doc-title">Geographic Household Pressure Index</h3></div>
+          <div><div class="doc-kicker">Measurement / methodology</div><h3 class="doc-title">Geographic Household Pressure Index</h3></div>
           <span class="doc-status-label">Prototype</span>
         </div>
+        <div class="doc-badge-row"><span>Hypothesis / exploratory</span><span>Not engine efficacy proof</span></div>
         <p class="doc-claim">Selected public proxies can map where household pressure clusters geographically.</p>
         <div class="doc-field-grid">
-          <div class="doc-field"><span>Product relevance</span><strong>Experimental bridge from national resilience themes to place-aware pressure signals.</strong></div>
+          <div class="doc-field"><span>What this can support</span><strong>Experimental pressure map; not a validated risk score or engine input.</strong></div>
+          <div class="doc-field"><span>Why it matters here</span><strong>Experimental bridge from national resilience themes to place-aware pressure signals.</strong></div>
           <div class="doc-field"><span>Main limitation</span><strong>Prototype index; should not be treated as a validated local-risk score.</strong></div>
+
         </div>
         <dl class="doc-meta-grid">
           <div><dt>Data/source</dt><dd>ACS and FHFA public data</dd></div>
           <div><dt>Author</dt><dd>BTC Helper / Arne Kotte</dd></div>
-          <div><dt>Last reviewed</dt><dd>2026-07-20</dd></div>
+          <div><dt>Last reviewed</dt><dd>2026-08-14</dd></div>
           <div><dt>Reading time</dt><dd>9 min</dd></div>
         </dl>
         <div class="doc-tag-list"><span class="tag">Geography</span><span class="tag">Index</span></div>
         <div class="doc-actions"><a class="button" href="/geographic-household-pressure-index.html">Open read</a><a class="button secondary" href="/Geographic_Household_Pressure_Index.pdf">Download</a></div>
-      </article><article class="doc-card" data-research-card data-track="Household resilience" data-status="Measurement note" data-source="FRED and SHED public data" data-year="2026" data-search="cash, inflation, and household optionality household resilience measurement note fred and shed public data emergency liquidity has option value even when inflation erodes idle cash purchasing power. explains why btc helper does not treat every available dollar as deployable reserve. descriptive context; does not estimate the marginal option value of liquidity. cash inflation">
+      </article><article class="doc-card" data-research-card data-category="Household / resilience research" data-status="Measurement note" data-role="Household evidence" data-source="FRED and SHED public data" data-year="2026" data-search="cash, inflation, and household optionality household / resilience research measurement note household evidence fred and shed public data emergency liquidity has option value even when inflation erodes idle cash purchasing power. explains why btc helper does not treat every available dollar as deployable reserve. descriptive context; does not estimate the marginal option value of liquidity. supports liquidity-optionality context; not a bitcoin purchase justification. cash inflation">
         <div class="doc-card-head">
-          <div><div class="doc-kicker">Household resilience</div><h3 class="doc-title">Cash, Inflation, and Household Optionality</h3></div>
+          <div><div class="doc-kicker">Household / resilience research</div><h3 class="doc-title">Cash, Inflation, and Household Optionality</h3></div>
           <span class="doc-status-label">Measurement note</span>
         </div>
+        <div class="doc-badge-row"><span>Household evidence</span><span>Not engine efficacy proof</span></div>
         <p class="doc-claim">Emergency liquidity has option value even when inflation erodes idle cash purchasing power.</p>
         <div class="doc-field-grid">
-          <div class="doc-field"><span>Product relevance</span><strong>Explains why BTC Helper does not treat every available dollar as deployable reserve.</strong></div>
+          <div class="doc-field"><span>What this can support</span><strong>Supports liquidity-optionality context; not a Bitcoin purchase justification.</strong></div>
+          <div class="doc-field"><span>Why it matters here</span><strong>Explains why BTC Helper does not treat every available dollar as deployable reserve.</strong></div>
           <div class="doc-field"><span>Main limitation</span><strong>Descriptive context; does not estimate the marginal option value of liquidity.</strong></div>
+
         </div>
         <dl class="doc-meta-grid">
           <div><dt>Data/source</dt><dd>FRED and SHED public data</dd></div>
           <div><dt>Author</dt><dd>BTC Helper / Arne Kotte</dd></div>
-          <div><dt>Last reviewed</dt><dd>2026-07-20</dd></div>
+          <div><dt>Last reviewed</dt><dd>2026-08-14</dd></div>
           <div><dt>Reading time</dt><dd>7 min</dd></div>
         </dl>
         <div class="doc-tag-list"><span class="tag">Cash</span><span class="tag">Inflation</span></div>
         <div class="doc-actions"><a class="button" href="/cash-inflation-household-optionality.html">Open read</a><a class="button secondary" href="/Cash_Inflation_and_Household_Optionality.pdf">Download</a></div>
-      </article><article class="doc-card" data-research-card data-track="Household resilience" data-status="Measurement note" data-source="FRED and BLS public data" data-year="2026" data-search="inflation volatility and household planning risk household resilience measurement note fred and bls public data essential-price dispersion can create planning risk even when headline inflation cools. supports the household-safety floor before optional bitcoin allocation. selected categories only; not a full household budget panel. inflation essential costs">
+      </article><article class="doc-card" data-research-card data-category="Household / resilience research" data-status="Measurement note" data-role="Household evidence" data-source="FRED and BLS public data" data-year="2026" data-search="inflation volatility and household planning risk household / resilience research measurement note household evidence fred and bls public data essential-price dispersion can create planning risk even when headline inflation cools. supports the household-safety floor before optional bitcoin allocation. selected categories only; not a full household budget panel. supports safety-floor context; not engine validation or purchase advice. inflation essential costs">
         <div class="doc-card-head">
-          <div><div class="doc-kicker">Household resilience</div><h3 class="doc-title">Inflation Volatility and Household Planning Risk</h3></div>
+          <div><div class="doc-kicker">Household / resilience research</div><h3 class="doc-title">Inflation Volatility and Household Planning Risk</h3></div>
           <span class="doc-status-label">Measurement note</span>
         </div>
+        <div class="doc-badge-row"><span>Household evidence</span><span>Not engine efficacy proof</span></div>
         <p class="doc-claim">Essential-price dispersion can create planning risk even when headline inflation cools.</p>
         <div class="doc-field-grid">
-          <div class="doc-field"><span>Product relevance</span><strong>Supports the household-safety floor before optional Bitcoin allocation.</strong></div>
+          <div class="doc-field"><span>What this can support</span><strong>Supports safety-floor context; not engine validation or purchase advice.</strong></div>
+          <div class="doc-field"><span>Why it matters here</span><strong>Supports the household-safety floor before optional Bitcoin allocation.</strong></div>
           <div class="doc-field"><span>Main limitation</span><strong>Selected categories only; not a full household budget panel.</strong></div>
+
         </div>
         <dl class="doc-meta-grid">
           <div><dt>Data/source</dt><dd>FRED and BLS public data</dd></div>
           <div><dt>Author</dt><dd>BTC Helper / Arne Kotte</dd></div>
-          <div><dt>Last reviewed</dt><dd>2026-07-20</dd></div>
+          <div><dt>Last reviewed</dt><dd>2026-08-14</dd></div>
           <div><dt>Reading time</dt><dd>7 min</dd></div>
         </dl>
         <div class="doc-tag-list"><span class="tag">Inflation</span><span class="tag">Essential costs</span></div>
         <div class="doc-actions"><a class="button" href="/inflation-volatility-household-planning-risk.html">Open read</a><a class="button secondary" href="/Inflation_Volatility_Household_Planning_Risk.pdf">Download</a></div>
-      </article><article class="doc-card" data-research-card data-track="Household resilience" data-status="Superseded" data-source="Published emergency-savings indicators" data-year="2026" data-search="emergency savings and household financial fragility household resilience superseded published emergency-savings indicators emergency savings indicators helped frame the original resilience problem. preserved for history; the shed buffer paper is now the better starting point. older supporting note with less complete measurement than the flagship shed work. emergency savings older note">
+      </article><article class="doc-card" data-research-card data-category="Household / resilience research" data-status="Superseded / archived" data-role="Household evidence" data-source="Published emergency-savings indicators" data-year="2026" data-search="emergency savings and household financial fragility household / resilience research superseded / archived household evidence published emergency-savings indicators emergency savings indicators helped frame the original resilience problem. preserved for history; the shed buffer paper is now the better starting point. older supporting note with less complete measurement than the flagship shed work. older household context; not current methodology or engine validation. emergency savings older note">
         <div class="doc-card-head">
-          <div><div class="doc-kicker">Household resilience</div><h3 class="doc-title">Emergency Savings and Household Financial Fragility</h3></div>
-          <span class="doc-status-label">Superseded</span>
+          <div><div class="doc-kicker">Household / resilience research</div><h3 class="doc-title">Emergency Savings and Household Financial Fragility</h3></div>
+          <span class="doc-status-label">Superseded / archived</span>
         </div>
+        <div class="doc-badge-row"><span>Household evidence</span><span>Not engine efficacy proof</span></div>
         <p class="doc-claim">Emergency savings indicators helped frame the original resilience problem.</p>
         <div class="doc-field-grid">
-          <div class="doc-field"><span>Product relevance</span><strong>Preserved for history; the SHED buffer paper is now the better starting point.</strong></div>
+          <div class="doc-field"><span>What this can support</span><strong>Older household context; not current methodology or engine validation.</strong></div>
+          <div class="doc-field"><span>Why it matters here</span><strong>Preserved for history; the SHED buffer paper is now the better starting point.</strong></div>
           <div class="doc-field"><span>Main limitation</span><strong>Older supporting note with less complete measurement than the flagship SHED work.</strong></div>
+          <div class="doc-field"><span>Current replacement</span><strong><a href="/emergency-buffers-borrowed-resilience-household-hardship.html">Open the current starting point</a></strong></div>
         </div>
         <dl class="doc-meta-grid">
           <div><dt>Data/source</dt><dd>Published emergency-savings indicators</dd></div>
           <div><dt>Author</dt><dd>BTC Helper / Arne Kotte</dd></div>
-          <div><dt>Last reviewed</dt><dd>2026-07-20</dd></div>
+          <div><dt>Last reviewed</dt><dd>2026-08-14</dd></div>
           <div><dt>Reading time</dt><dd>6 min</dd></div>
         </dl>
         <div class="doc-tag-list"><span class="tag">Emergency savings</span><span class="tag">Older note</span></div>
         <div class="doc-actions"><a class="button" href="/emergency-savings-summary.html">Open read</a><a class="button secondary" href="/Emergency_Savings_and_Household_Financial_Fragility.pdf">Download</a></div>
-      </article><article class="doc-card" data-research-card data-track="Household resilience" data-status="Supporting material" data-source="SHED public-use microdata" data-year="2026" data-search="emergency liquidity, borrowing, and hardship household resilience supporting material shed public-use microdata emergency-payment responses differ sharply by buffer and hardship context. detailed support behind the flagship buffer-and-hardship paper. supporting material; read the flagship shed paper first. shed borrowing">
+      </article><article class="doc-card" data-research-card data-category="Household / resilience research" data-status="Supporting material" data-role="Household evidence" data-source="SHED public-use microdata" data-year="2026" data-search="emergency liquidity, borrowing, and hardship household / resilience research supporting material household evidence shed public-use microdata emergency-payment responses differ sharply by buffer and hardship context. detailed support behind the flagship buffer-and-hardship paper. supporting material; read the flagship shed paper first. detailed household support material; not btc helper efficacy evidence. shed borrowing">
         <div class="doc-card-head">
-          <div><div class="doc-kicker">Household resilience</div><h3 class="doc-title">Emergency Liquidity, Borrowing, and Hardship</h3></div>
+          <div><div class="doc-kicker">Household / resilience research</div><h3 class="doc-title">Emergency Liquidity, Borrowing, and Hardship</h3></div>
           <span class="doc-status-label">Supporting material</span>
         </div>
+        <div class="doc-badge-row"><span>Household evidence</span><span>Not engine efficacy proof</span></div>
         <p class="doc-claim">Emergency-payment responses differ sharply by buffer and hardship context.</p>
         <div class="doc-field-grid">
-          <div class="doc-field"><span>Product relevance</span><strong>Detailed support behind the flagship buffer-and-hardship paper.</strong></div>
+          <div class="doc-field"><span>What this can support</span><strong>Detailed household support material; not BTC Helper efficacy evidence.</strong></div>
+          <div class="doc-field"><span>Why it matters here</span><strong>Detailed support behind the flagship buffer-and-hardship paper.</strong></div>
           <div class="doc-field"><span>Main limitation</span><strong>Supporting material; read the flagship SHED paper first.</strong></div>
+
         </div>
         <dl class="doc-meta-grid">
           <div><dt>Data/source</dt><dd>SHED public-use microdata</dd></div>
           <div><dt>Author</dt><dd>BTC Helper / Arne Kotte</dd></div>
-          <div><dt>Last reviewed</dt><dd>2026-07-20</dd></div>
+          <div><dt>Last reviewed</dt><dd>2026-08-14</dd></div>
           <div><dt>Reading time</dt><dd>7 min</dd></div>
         </dl>
         <div class="doc-tag-list"><span class="tag">SHED</span><span class="tag">Borrowing</span></div>
         <div class="doc-actions"><a class="button" href="/emergency-liquidity-summary.html">Open read</a><a class="button secondary" href="/Emergency_Liquidity_Borrowing_and_Hardship.pdf">Download</a></div>
-      </article><article class="doc-card" data-research-card data-track="Measurement and replication" data-status="Measurement note" data-source="SHED repeated cross-sections" data-year="2026" data-search="emergency buffers over time measurement and replication measurement note shed repeated cross-sections repeated shed cross-sections require careful harmonization before trend language is useful. shows the measurement caution behind the public buffer evidence. cross-section methods note; not a direct planner recommendation. shed time series">
+      </article><article class="doc-card" data-research-card data-category="Household / resilience research" data-status="Supporting material" data-role="Household evidence" data-source="SHED public-use microdata" data-year="2026" data-search="liquid buffers, borrowed resilience, and household hardship profiles household / resilience research supporting material household evidence shed public-use microdata buffer status and borrowing responses describe different hardship profiles. methods and profile detail behind the main shed synthesis. detailed support material; not the clearest public entry point. detailed household profile support; not engine validation. shed profiles">
         <div class="doc-card-head">
-          <div><div class="doc-kicker">Measurement and replication</div><h3 class="doc-title">Emergency Buffers Over Time</h3></div>
+          <div><div class="doc-kicker">Household / resilience research</div><h3 class="doc-title">Liquid Buffers, Borrowed Resilience, and Household Hardship Profiles</h3></div>
+          <span class="doc-status-label">Supporting material</span>
+        </div>
+        <div class="doc-badge-row"><span>Household evidence</span><span>Not engine efficacy proof</span></div>
+        <p class="doc-claim">Buffer status and borrowing responses describe different hardship profiles.</p>
+        <div class="doc-field-grid">
+          <div class="doc-field"><span>What this can support</span><strong>Detailed household profile support; not engine validation.</strong></div>
+          <div class="doc-field"><span>Why it matters here</span><strong>Methods and profile detail behind the main SHED synthesis.</strong></div>
+          <div class="doc-field"><span>Main limitation</span><strong>Detailed support material; not the clearest public entry point.</strong></div>
+
+        </div>
+        <dl class="doc-meta-grid">
+          <div><dt>Data/source</dt><dd>SHED public-use microdata</dd></div>
+          <div><dt>Author</dt><dd>BTC Helper / Arne Kotte</dd></div>
+          <div><dt>Last reviewed</dt><dd>2026-08-14</dd></div>
+          <div><dt>Reading time</dt><dd>9 min</dd></div>
+        </dl>
+        <div class="doc-tag-list"><span class="tag">SHED</span><span class="tag">Profiles</span></div>
+        <div class="doc-actions"><a class="button" href="/liquid-buffers-borrowed-resilience-summary.html">Open read</a><a class="button secondary" href="/Liquid_Buffers_Borrowed_Resilience_and_Hardship_Profiles.pdf">Download</a></div>
+      </article><article class="doc-card" data-research-card data-category="Measurement / methodology" data-status="Measurement note" data-role="Measurement / methods" data-source="SHED repeated cross-sections" data-year="2026" data-search="emergency buffers over time measurement / methodology measurement note measurement / methods shed repeated cross-sections repeated shed cross-sections require careful harmonization before trend language is useful. shows the measurement caution behind the public buffer evidence. cross-section methods note; not a direct planner recommendation. shows measurement caution behind household evidence; not a planner recommendation or engine proof. shed time series">
+        <div class="doc-card-head">
+          <div><div class="doc-kicker">Measurement / methodology</div><h3 class="doc-title">Emergency Buffers Over Time</h3></div>
           <span class="doc-status-label">Measurement note</span>
         </div>
+        <div class="doc-badge-row"><span>Measurement / methods</span><span>Not engine efficacy proof</span></div>
         <p class="doc-claim">Repeated SHED cross-sections require careful harmonization before trend language is useful.</p>
         <div class="doc-field-grid">
-          <div class="doc-field"><span>Product relevance</span><strong>Shows the measurement caution behind the public buffer evidence.</strong></div>
+          <div class="doc-field"><span>What this can support</span><strong>Shows measurement caution behind household evidence; not a planner recommendation or engine proof.</strong></div>
+          <div class="doc-field"><span>Why it matters here</span><strong>Shows the measurement caution behind the public buffer evidence.</strong></div>
           <div class="doc-field"><span>Main limitation</span><strong>Cross-section methods note; not a direct planner recommendation.</strong></div>
+
         </div>
         <dl class="doc-meta-grid">
           <div><dt>Data/source</dt><dd>SHED repeated cross-sections</dd></div>
           <div><dt>Author</dt><dd>BTC Helper / Arne Kotte</dd></div>
-          <div><dt>Last reviewed</dt><dd>2026-07-20</dd></div>
+          <div><dt>Last reviewed</dt><dd>2026-08-14</dd></div>
           <div><dt>Reading time</dt><dd>7 min</dd></div>
         </dl>
         <div class="doc-tag-list"><span class="tag">SHED</span><span class="tag">Time series</span></div>
         <div class="doc-actions"><a class="button" href="/emergency-buffers-over-time-summary.html">Open read</a><a class="button secondary" href="/Emergency_Buffers_Over_Time_SHED_2015_2025.pdf">Download</a></div>
-      </article><article class="doc-card" data-research-card data-track="Measurement and replication" data-status="Measurement note" data-source="SHED replication package" data-year="2026" data-search="shed emergency-buffer measurement and replication note measurement and replication measurement note shed replication package emergency-buffer evidence needs provenance, variable maps, benchmark checks, and environment capture. strongest current example of the research program maturing toward reproducibility. replication package is public-facing but still not a formal academic archive. replication shed">
+      </article><article class="doc-card" data-research-card data-category="Measurement / methodology" data-status="Measurement note" data-role="Measurement / methods" data-source="SHED replication package" data-year="2026" data-search="shed emergency-buffer measurement and replication note measurement / methodology measurement note measurement / methods shed replication package emergency-buffer evidence needs provenance, variable maps, benchmark checks, and environment capture. strongest current example of the research program maturing toward reproducibility. replication package is public-facing but still not a formal academic archive. replication discipline for household research; not btc helper efficacy evidence. replication shed">
         <div class="doc-card-head">
-          <div><div class="doc-kicker">Measurement and replication</div><h3 class="doc-title">SHED Emergency-Buffer Measurement and Replication Note</h3></div>
+          <div><div class="doc-kicker">Measurement / methodology</div><h3 class="doc-title">SHED Emergency-Buffer Measurement and Replication Note</h3></div>
           <span class="doc-status-label">Measurement note</span>
         </div>
+        <div class="doc-badge-row"><span>Measurement / methods</span><span>Not engine efficacy proof</span></div>
         <p class="doc-claim">Emergency-buffer evidence needs provenance, variable maps, benchmark checks, and environment capture.</p>
         <div class="doc-field-grid">
-          <div class="doc-field"><span>Product relevance</span><strong>Strongest current example of the research program maturing toward reproducibility.</strong></div>
+          <div class="doc-field"><span>What this can support</span><strong>Replication discipline for household research; not BTC Helper efficacy evidence.</strong></div>
+          <div class="doc-field"><span>Why it matters here</span><strong>Strongest current example of the research program maturing toward reproducibility.</strong></div>
           <div class="doc-field"><span>Main limitation</span><strong>Replication package is public-facing but still not a formal academic archive.</strong></div>
+
         </div>
         <dl class="doc-meta-grid">
           <div><dt>Data/source</dt><dd>SHED replication package</dd></div>
           <div><dt>Author</dt><dd>BTC Helper / Arne Kotte</dd></div>
-          <div><dt>Last reviewed</dt><dd>2026-07-20</dd></div>
+          <div><dt>Last reviewed</dt><dd>2026-08-14</dd></div>
           <div><dt>Reading time</dt><dd>10 min</dd></div>
         </dl>
         <div class="doc-tag-list"><span class="tag">Replication</span><span class="tag">SHED</span></div>
         <div class="doc-actions"><a class="button" href="/shed-emergency-buffer-replication-summary.html">Open read</a><a class="button secondary" href="/SHED_Emergency_Buffer_Replication_Methodology_Draft.pdf">Download</a></div>
-      </article><article class="doc-card" data-research-card data-track="Measurement and replication" data-status="Working paper" data-source="Public state-year panel" data-year="2026" data-search="economic strain and health burden measurement and replication working paper public state-year panel housing pressure, labor-market stress, and health burden can be studied together in a state-year panel. adjacent research lane that informs household-pressure thinking. working manuscript; not part of the btc helper daily signal engine. health burden panel">
+      </article><article class="doc-card" data-research-card data-category="Measurement / methodology" data-status="Working paper" data-role="Measurement / methods" data-source="Public state-year panel" data-year="2026" data-search="economic strain and health burden measurement / methodology working paper measurement / methods public state-year panel housing pressure, labor-market stress, and health burden can be studied together in a state-year panel. adjacent research lane that informs household-pressure thinking. working manuscript; not part of the btc helper daily signal engine. adjacent public-data research lane; not part of the daily signal engine. health burden panel">
         <div class="doc-card-head">
-          <div><div class="doc-kicker">Measurement and replication</div><h3 class="doc-title">Economic Strain and Health Burden</h3></div>
+          <div><div class="doc-kicker">Measurement / methodology</div><h3 class="doc-title">Economic Strain and Health Burden</h3></div>
           <span class="doc-status-label">Working paper</span>
         </div>
+        <div class="doc-badge-row"><span>Measurement / methods</span><span>Not engine efficacy proof</span></div>
         <p class="doc-claim">Housing pressure, labor-market stress, and health burden can be studied together in a state-year panel.</p>
         <div class="doc-field-grid">
-          <div class="doc-field"><span>Product relevance</span><strong>Adjacent research lane that informs household-pressure thinking.</strong></div>
+          <div class="doc-field"><span>What this can support</span><strong>Adjacent public-data research lane; not part of the daily signal engine.</strong></div>
+          <div class="doc-field"><span>Why it matters here</span><strong>Adjacent research lane that informs household-pressure thinking.</strong></div>
           <div class="doc-field"><span>Main limitation</span><strong>Working manuscript; not part of the BTC Helper daily signal engine.</strong></div>
+
         </div>
         <dl class="doc-meta-grid">
           <div><dt>Data/source</dt><dd>Public state-year panel</dd></div>
           <div><dt>Author</dt><dd>BTC Helper / Arne Kotte</dd></div>
-          <div><dt>Last reviewed</dt><dd>2026-07-20</dd></div>
+          <div><dt>Last reviewed</dt><dd>2026-08-14</dd></div>
           <div><dt>Reading time</dt><dd>13 min</dd></div>
         </dl>
         <div class="doc-tag-list"><span class="tag">Health burden</span><span class="tag">Panel</span></div>
         <div class="doc-actions"><a class="button" href="/liquidity-health-manuscript.html">Open read</a><a class="button secondary" href="/LIQUIDITY_HEALTH_MANUSCRIPT.pdf">Download</a></div>
       </article></div>
-    <p class="doc-empty" id="research-empty" hidden>No matching research items. Try a broader track, status, or search term.</p>
+    <p class="doc-empty" id="research-empty" hidden>No matching research items. Try a broader category, maturity label, or search term.</p>
   </section>
 </main><footer class="site-footer" id="contact">
     <div class="site-footer-inner">
@@ -779,8 +882,9 @@
   (function () {
     const cards = Array.from(document.querySelectorAll('[data-research-card]'));
     const controls = {
-      track: document.getElementById('research-track-filter'),
+      category: document.getElementById('research-category-filter'),
       status: document.getElementById('research-status-filter'),
+      role: document.getElementById('research-role-filter'),
       source: document.getElementById('research-source-filter'),
       year: document.getElementById('research-year-filter'),
       search: document.getElementById('research-search')
@@ -789,8 +893,9 @@
     const empty = document.getElementById('research-empty');
     function cardMatches(card) {
       const query = (controls.search?.value || '').trim().toLowerCase();
-      return (!controls.track?.value || card.dataset.track === controls.track.value)
+      return (!controls.category?.value || card.dataset.category === controls.category.value)
         && (!controls.status?.value || card.dataset.status === controls.status.value)
+        && (!controls.role?.value || card.dataset.role === controls.role.value)
         && (!controls.source?.value || card.dataset.source === controls.source.value)
         && (!controls.year?.value || card.dataset.year === controls.year.value)
         && (!query || (card.dataset.search || '').includes(query));

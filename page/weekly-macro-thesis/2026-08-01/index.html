@@ -85,6 +85,10 @@
     .evidence-note span { display:block; color:var(--accent); font-size:.72rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; margin-bottom:6px; }
     .evidence-note strong { display:block; color:var(--ink); line-height:1.28; margin-bottom:8px; }
     .evidence-note p { margin:0; color:var(--muted); font-family:"Noto Sans", "Segoe UI", Roboto, system-ui, sans-serif; font-size:.92rem; line-height:1.45; }
+    .boundary-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-top:14px; }
+    .boundary-card { border:1px solid var(--line); border-radius:12px; background:var(--card); padding:14px; }
+    .boundary-card span { display:block; color:var(--accent); font-size:.72rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; margin-bottom:6px; }
+    .boundary-card ul { margin-bottom:0; }
     .figure-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
     .qual-figure { margin:0; border:1px solid var(--line); border-radius:14px; background:var(--card); padding:16px; }
     .qual-figure figcaption { color:var(--ink); font-weight:900; margin-bottom:12px; }
@@ -127,7 +131,7 @@
     .footer-title { color:var(--ink); font-weight:900; margin-bottom:6px; }
     .footer-links { display:grid; gap:7px; }
     .footer-links a { text-decoration:none; }
-    @media (max-width:900px) { .article-layout, .plan-panel, .evidence-note-grid, .figure-grid, .weekly-index-feature { grid-template-columns:1fr; } .article-toc { position:static; display:flex; flex-wrap:wrap; border-bottom:1px solid var(--line); padding-bottom:14px; } .meta-grid, .footer-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+    @media (max-width:900px) { .article-layout, .plan-panel, .evidence-note-grid, .boundary-grid, .figure-grid, .weekly-index-feature { grid-template-columns:1fr; } .article-toc { position:static; display:flex; flex-wrap:wrap; border-bottom:1px solid var(--line); padding-bottom:14px; } .meta-grid, .footer-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
     @media (max-width:760px) { .site-nav { align-items:flex-start; flex-direction:column; } .post-nav { grid-template-columns:1fr; } .hero { padding-top:22px; } .brief-table th, .brief-table td { display:block; width:100%; } .brief-table td { padding-top:0; } .plan-track div, .figure-plan div { grid-template-columns:76px 1fr auto; } }
     @media (max-width:560px) { .meta-grid, .footer-grid, .index-grid { grid-template-columns:1fr; } }
 
@@ -241,9 +245,18 @@
       <div><span>Reserve</span><i class="reserve-line"></i><strong>Use Today</strong></div>
     </div>
   </section>
+      <section class="article-section" id="macro-boundary">
+    <h2>How to classify this brief</h2>
+    <p>The weekly macro thesis is <strong>Macro context</strong>, with maturity <strong>Current public synthesis</strong> and evidence role <strong>Macro interpretation</strong>.</p>
+    <div class="boundary-grid">
+      <div class="boundary-card"><span>It is</span><ul><li>Interpretive synthesis for the macro backdrop around Bitcoin accumulation.</li><li>A way to organize observable weekly developments before mapping them to public factor categories.</li><li>Context for BTC Helper&#39;s macro domain, while Today remains the action and evidence source.</li></ul></div>
+      <div class="boundary-card"><span>It is not</span><ul><li>Proof that BTC Helper works or that its daily accumulation policy improves outcomes.</li><li>A formal backtest, causal test, direct engine-validation record, or price-direction guarantee.</li><li>A substitute for the dated point-in-time evidence bundle, source-health state, or public daily read.</li></ul></div>
+    </div>
+  </section>
       <div class="article-layout">
         <nav class="article-toc" aria-label="Article sections">
           <strong>Read</strong>
+          <a href="#macro-boundary">Classification</a>
           <a href="#one-sentence">One sentence</a>
           <a href="#changed">Changed conditions</a>
           <a href="#factor-impact">Daily-factor impact</a>
@@ -266,7 +279,7 @@
   </section>
           <section class="article-section" id="evidence-notes">
     <h2>Evidence notes</h2>
-    <p>The weekly brief uses public factor categories, as-of timing, and plan implications. It shows directional context for Valuation, Holder behavior, Flows, Macro, and Leverage while keeping raw values, exact series mapping, thresholds, weights, and calibration outside the article.</p>
+    <p>The weekly brief separates observable conditions, interpretation, BTC-relevant implication, and relation to BTC Helper context. It uses public factor categories, as-of timing, and plan implications while keeping raw values, exact series mapping, thresholds, weights, and calibration outside the article.</p>
     <div class="evidence-note-grid">
     <article class="evidence-note">
       <span>Valuation</span>
@@ -354,7 +367,7 @@
           <section class="article-section" id="watch-items"><h2>Watch items</h2><ul><li>Global liquidity impulse, reserve balances, repo stress, and dollar strength.</li><li>Spot Bitcoin demand, ETF flow tone, volume, volatility, and whether participation broadens.</li><li>Long-term holder behavior and whether support work holds during quiet market conditions.</li><li>Real rates, oil, gold, and energy-sensitive inflation pressure.</li><li>Treasury refinancing, short-bill issuance, stablecoin growth, and front-end funding conditions.</li><li>Bitcoin-linked credit and balance-sheet structures for signs of stress or forced selling.</li></ul></section>
           <section class="article-section" id="context"><h2>Data as-of and article context</h2><table class="brief-table">
     <caption>Brief context</caption>
-    <tbody><tr><th scope="row">Author</th><td>BTC Helper, operated by Arne Kotte</td></tr><tr><th scope="row">Reading time</th><td>3 min</td></tr><tr><th scope="row">Weekly context window</th><td>Week ending August 1, 2026</td></tr><tr><th scope="row">Daily-factor bridge</th><td>Valuation, holder behavior, flows, macro, and leverage</td></tr><tr><th scope="row">Action layer</th><td>Today remains the source for baseline and reserve instructions</td></tr><tr><th scope="row">Current-source status</th><td>Use Source health for the latest daily-run freshness view</td></tr></tbody>
+    <tbody><tr><th scope="row">Author</th><td>BTC Helper, operated by Arne Kotte</td></tr><tr><th scope="row">Reading time</th><td>3 min</td></tr><tr><th scope="row">Research classification</th><td>Macro context · Current public synthesis · Macro interpretation</td></tr><tr><th scope="row">Weekly context window</th><td>Week ending August 1, 2026</td></tr><tr><th scope="row">Daily-factor bridge</th><td>Valuation, holder behavior, flows, macro, and leverage</td></tr><tr><th scope="row">Action layer</th><td>Today remains the source for baseline and reserve instructions</td></tr><tr><th scope="row">Current-source status</th><td>Use Source health for the latest daily-run freshness view</td></tr></tbody>
   </table></section>
           <section class="article-section" id="limitations"><h2>Confidence and limitations</h2><ul><li>Confidence is qualitative and directional, not a probability forecast.</li><li>Macro conditions can change faster than a weekly article can reflect.</li><li>The brief summarizes public-facing context and does not publish raw values, thresholds, weights, or private calibration notes.</li><li>BTC Helper remains educational research and cannot know a reader&#39;s personal financial situation.</li></ul></section>
         </div>
@@ -367,7 +380,7 @@
     </article></main>
   <footer class="site-footer" id="contact">
     <div class="site-footer-inner">
-      <div class="footer-brand"><strong>BTC Helper</strong><p>A private Bitcoin accumulation plan, a source-aware daily action layer, and a public decision record.</p><p class="footer-note">Educational research tool only. Not financial advice, investment advice, or a recommendation to buy or sell any asset.</p></div>
+      <div class="footer-brand"><strong>BTC Helper</strong><p>A private Bitcoin accumulation plan, a transparent daily action layer, and a public evidence trail.</p><p class="footer-note">Educational research tool only. Not financial advice, investment advice, or a recommendation to buy or sell any asset.</p></div>
       <div><div class="footer-column-title">Product</div><div class="footer-links"><a href="/#today">Today</a><a href="/planner.html">My Plan</a><a href="/insights.html">Insights</a><a href="/track.html">Track</a><a href="/updates.html">Updates</a></div></div>
       <div><div class="footer-column-title">Research</div><div class="footer-links"><a href="/weekly-macro-thesis/">Weekly macro</a><a href="/documents-and-research.html">Research library</a><a href="/public-proof-of-work-methodology.html">Methodology</a><a href="/household-resilience-planner.html">Household resilience</a></div></div>
       <div><div class="footer-column-title">Trust</div><div class="footer-links"><a href="/data-sources.html">Source health</a><a href="/about.html">About</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a><a href="https://x.com/btchelperapp">BTC Helper on X</a></div></div>

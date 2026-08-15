@@ -166,6 +166,15 @@
     .doc-card:hover, .doc-card:focus { border-color:var(--accent); outline:none; }
     .doc-title { font-weight:900; color:var(--hero-ink); margin-bottom:6px; }
     .doc-meta { color:var(--dark-card-muted); font-size:.92rem; }
+    .research-identity-panel { border:1px solid var(--line); border-radius:16px; background:var(--card-soft); padding:16px; margin-bottom:18px; }
+    :root[data-theme="dark"] .research-identity-panel { background:rgba(255,255,255,.045); }
+    .identity-pill-row { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
+    .identity-pill-row span { display:inline-flex; border:1px solid var(--line); border-radius:999px; padding:5px 9px; background:var(--card); color:var(--ink); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.07em; text-transform:uppercase; }
+    .identity-summary { display:grid; gap:10px; margin:0; }
+    .identity-summary div { border-left:4px solid var(--accent); padding-left:10px; }
+    .identity-summary dt, .identity-summary dd { margin:0; }
+    .identity-summary dt { color:var(--muted); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+    .identity-summary dd { color:var(--ink); font-weight:720; }
     @media print { body { background:#fff; color:#111827; } main { max-width:none; padding:0; } .back-link, .actions, .toc { display:none; } .hero, .card { box-shadow:none; border:0; padding:0; background:#fff; color:#111827; } h2, h3 { break-after:avoid; } figure, table { break-inside:avoid; } }
 
   </style>
@@ -206,84 +215,23 @@
         <a class="button" href="/Inflation_Volatility_Household_Planning_Risk.pdf">Download PDF</a>
         <a class="button secondary" href="/index.html">Home</a>
       </div>
-      <nav class="toc"><div class="toc-title">Contents</div><a class="toc-1" href="#inflation-volatility-essential-price-dispersion-and-household-planning-risk">Inflation Volatility, Essential Price Dispersion, and Household Planning Risk</a><a class="toc-2" href="#public-companion-summary">Public companion summary</a><a class="toc-2" href="#core-idea">Core idea</a><a class="toc-2" href="#data-and-construction">Data and construction</a><a class="toc-2" href="#main-revision-finding">Main revision finding</a><a class="toc-2" href="#price-levels-matter-too">Price levels matter too</a><a class="toc-2" href="#what-the-note-does-not-claim">What the note does not claim</a><a class="toc-2" href="#planner-relevance">Planner relevance</a><a class="toc-2" href="#next-empirical-step">Next empirical step</a></nav>
+
     </section>
     <section class="card doc-body">
+      <aside class="research-identity-panel" aria-label="Research classification">
+    <div class="doc-kicker">Research classification</div>
+    <div class="identity-pill-row">
+      <span>Household / resilience research</span>
+      <span>Measurement note</span>
+      <span>Household evidence</span>
+    </div>
+    <dl class="identity-summary">
+      <div><dt>What it can support</dt><dd>Supports safety-floor context; not engine validation or purchase advice.</dd></div>
+      <div><dt>Primary limitation</dt><dd>Selected categories only; not a full household budget panel.</dd></div>
+    </dl>
+  </aside>
       <p class="small"><strong>Suggested citation:</strong> Kotte, Arne. 2026. “Inflation Volatility, Essential Price Dispersion, and Household Planning Risk: A Public-Data Companion Note on Budget Instability and Must-Pay Prices.” BTC Helper Research.</p>
-      <p class="small"><strong>Descriptive companion note.</strong> Public-data measurement note only; not a journal-style empirical paper, not investment advice, and not a causal estimate of household hardship. The note separates headline inflation, selected-essential inflation, gasoline sensitivity, price-level persistence, and household-exposure limits.</p><h1 id="inflation-volatility-essential-price-dispersion-and-household-planning-risk">Inflation Volatility, Essential Price Dispersion, and Household Planning Risk</h1>
-<h2 id="public-companion-summary">Public companion summary</h2>
-<p>This descriptive companion note asks why household budget pressure can persist even when headline inflation cools.</p>
-<p>The note is not an journal-style empirical paper, not investment advice, and not a causal estimate of household hardship. It is a public-data measurement note about selected must-pay price categories and household planning risk.</p>
-<h2 id="core-idea">Core idea</h2>
-<p>Households do not pay “headline CPI” directly. They pay rent or housing costs, food, utilities, transportation, medical costs, insurance, debt service, and other obligations on different schedules.</p>
-<p>That means household planning risk should distinguish:</p>
-<ul>
-<li>inflation level;</li>
-<li>cumulative price levels;</li>
-<li>cross-category price pressure;</li>
-<li>volatility;</li>
-<li>household exposure;</li>
-<li>realized hardship outcomes.</li>
-</ul>
-<p>Aggregate public CPI series can motivate that framework, but they cannot measure household planning damage by themselves.</p>
-<h2 id="data-and-construction">Data and construction</h2>
-<p>The note uses FRED-hosted CPI component series:</p>
-<ul>
-<li>headline CPI-U;</li>
-<li>food at home;</li>
-<li>rent of primary residence;</li>
-<li>electricity;</li>
-<li>gasoline;</li>
-<li>medical care.</li>
-</ul>
-<p>It constructs a transparent selected-essential screen:</p>
-<ul>
-<li>equal-weighted selected-essential inflation mean;</li>
-<li>median selected-essential inflation;</li>
-<li>selected-essential mean excluding gasoline;</li>
-<li>cross-category dispersion;</li>
-<li>cross-category dispersion excluding gasoline;</li>
-<li>median absolute deviation;</li>
-<li>rolling 12-month volatility;</li>
-<li>cumulative price-level indexes from December 2019.</li>
-</ul>
-<h2 id="main-revision-finding">Main revision finding</h2>
-<p>The revised note makes the strongest initial result more cautious.</p>
-<p>In December 2021:</p>
-<ul>
-<li>equal-weight selected-essential mean inflation was <strong>13.7 percent</strong>;</li>
-<li>selected-essential dispersion was <strong>20.5 percentage points</strong>;</li>
-<li>excluding gasoline, selected-essential mean inflation was <strong>4.6 percent</strong>;</li>
-<li>excluding gasoline, dispersion was <strong>2.2 percentage points</strong>.</li>
-</ul>
-<p>That means the headline selected-essential spike was heavily energy-sensitive. The measure is useful as a stress screen, but fragile if interpreted as representative household exposure.</p>
-<h2 id="price-levels-matter-too">Price levels matter too</h2>
-<p>The note also shows cumulative price-level changes from December 2019 to December 2024.</p>
-<p>By December 2024:</p>
-<ul>
-<li>headline CPI-U was 22.8 percent above December 2019;</li>
-<li>food at home was 27.5 percent higher;</li>
-<li>rent of primary residence was 27.1 percent higher;</li>
-<li>electricity was 31.9 percent higher;</li>
-<li>gasoline was 20.0 percent higher;</li>
-<li>medical care was 11.6 percent higher.</li>
-</ul>
-<p>This distinction matters because households may feel pressure after inflation rates cool if nominal price levels remain much higher than the pre-shock baseline.</p>
-<h2 id="what-the-note-does-not-claim">What the note does not claim</h2>
-<p>The note does not claim that inflation dispersion causes hardship. It does not estimate household-specific inflation exposure. It does not observe household bills, incomes, missed payments, borrowing, delayed care, or savings depletion.</p>
-<p>Consumer sentiment is treated only as background context, not as an outcome model.</p>
-<h2 id="planner-relevance">Planner relevance</h2>
-<p>A household-resilience planner should not use headline CPI alone when explaining budget instability. It should ask:</p>
-<ol>
-<li>Which must-pay categories are rising fastest?</li>
-<li>Are shocks concentrated in energy or broader across essentials?</li>
-<li>Are price levels still elevated after inflation rates cool?</li>
-<li>Is the household exposed to the volatile categories?</li>
-<li>Does the household have liquidity to absorb category-specific surprises without missed payments or interrupted long-horizon plans?</li>
-</ol>
-<h2 id="next-empirical-step">Next empirical step</h2>
-<p>The stronger empirical paper would construct household-specific exposure measures using pre-period expenditure shares and link them to outcomes such as missed payments, high-cost borrowing, food insecurity, delayed medical care, credit-card balance carrying, savings depletion, reduced retirement contributions, or subjective financial stress.</p>
-<p>Until then, the useful contribution is measurement discipline: headline CPI can miss budget instability, but aggregate category data are only the beginning of the evidence chain.</p>
+      <p class="small"><strong>Descriptive companion note.</strong> Public-data measurement note only; not a journal-style empirical paper, not investment advice, and not a causal estimate of household hardship. The note separates headline inflation, selected-essential inflation, gasoline sensitivity, price-level persistence, and household-exposure limits.</p>
     </section>
   </main>
   <footer class="site-footer" id="contact">

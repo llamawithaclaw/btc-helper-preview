@@ -166,6 +166,15 @@
     .doc-card:hover, .doc-card:focus { border-color:var(--accent); outline:none; }
     .doc-title { font-weight:900; color:var(--hero-ink); margin-bottom:6px; }
     .doc-meta { color:var(--dark-card-muted); font-size:.92rem; }
+    .research-identity-panel { border:1px solid var(--line); border-radius:16px; background:var(--card-soft); padding:16px; margin-bottom:18px; }
+    :root[data-theme="dark"] .research-identity-panel { background:rgba(255,255,255,.045); }
+    .identity-pill-row { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
+    .identity-pill-row span { display:inline-flex; border:1px solid var(--line); border-radius:999px; padding:5px 9px; background:var(--card); color:var(--ink); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.07em; text-transform:uppercase; }
+    .identity-summary { display:grid; gap:10px; margin:0; }
+    .identity-summary div { border-left:4px solid var(--accent); padding-left:10px; }
+    .identity-summary dt, .identity-summary dd { margin:0; }
+    .identity-summary dt { color:var(--muted); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+    .identity-summary dd { color:var(--ink); font-weight:720; }
     @media print { body { background:#fff; color:#111827; } main { max-width:none; padding:0; } .back-link, .actions, .toc { display:none; } .hero, .card { box-shadow:none; border:0; padding:0; background:#fff; color:#111827; } h2, h3 { break-after:avoid; } figure, table { break-inside:avoid; } }
 
   </style>
@@ -206,71 +215,23 @@
         <a class="button" href="../Society_Under_Monetary_Stress_IX_The_Fragility_Premium.pdf">Download PDF</a>
         <a class="button secondary" href="./index.html">Home</a>
       </div>
-      <nav class="toc"><div class="toc-title">Contents</div><a class="toc-1" href="#society-under-monetary-stress-ix-the-fragility-premium">Society Under Monetary Stress IX: The Fragility Premium</a><a class="toc-2" href="#summary">Summary</a><a class="toc-2" href="#core-measurement-idea">Core measurement idea</a><a class="toc-2" href="#public-data-motivation">Public-data motivation</a><a class="toc-2" href="#important-caveats">Important caveats</a><a class="toc-2" href="#main-takeaway">Main takeaway</a><a class="toc-2" href="#best-future-version">Best future version</a><a class="toc-2" href="#read-the-full-paper">Read the full paper</a></nav>
+
     </section>
     <section class="card doc-body">
+      <aside class="research-identity-panel" aria-label="Research classification">
+    <div class="doc-kicker">Research classification</div>
+    <div class="identity-pill-row">
+      <span>Household / resilience research</span>
+      <span>Supporting material</span>
+      <span>Household evidence</span>
+    </div>
+    <dl class="identity-summary">
+      <div><dt>What it can support</dt><dd>Background theory for resilience constraints; not direct BTC Helper validation.</dd></div>
+      <div><dt>Primary limitation</dt><dd>Long-form research spine; most users should start with the resilience synthesis.</dd></div>
+    </dl>
+  </aside>
       <p class="small"><strong>Suggested citation:</strong> Kotte, Arne. 2026. “Society Under Monetary Stress IX: The Fragility Premium: Insurance, Medical Care, Childcare Proxies, and the Cost of Household Resilience.” BTC Helper Research.</p>
-      <h1 id="society-under-monetary-stress-ix-the-fragility-premium">Society Under Monetary Stress IX: The Fragility Premium</h1>
-<p><strong>Insurance, Medical Care, Childcare Proxies, and the Cost of Household Resilience</strong></p>
-<p>Arne Kotte</p>
-<h2 id="summary">Summary</h2>
-<p>This paper introduces the <strong>fragility premium</strong>: the recurring cost households pay to stay less fragile.</p>
-<p>The idea is simple. Household resilience is not only income, savings, or credit access. Families also pay to preserve access to medical care, insurance, mobility, housing protection, childcare, and other safeguards that keep disruptions from becoming crises.</p>
-<p>The revised paper is deliberately modest. It does <strong>not</strong> claim to estimate a complete household-level fragility premium. Instead, it defines the measurement problem, uses public aggregate data to show why the concept deserves a deeper microdata paper, adds a limited public income-quintile tabulation for healthcare and health-insurance spending, and includes a CEX public-use microdata appendix for pooled calendar-year 2024 Interview records.</p>
-<h2 id="core-measurement-idea">Core measurement idea</h2>
-<p>The paper defines a household-level fragility-premium burden as:</p>
-<p><code>FP_ht = [sum_k e_hkt <em> p_kt </em> q_hkt + o_hkt] / R_ht</code></p>
-<p>In plain language, the burden depends on:</p>
-<ul>
-<li>prices, premiums, and service costs;</li>
-<li>household exposure or need;</li>
-<li>actual use or required quantity;</li>
-<li>out-of-pocket residual exposure;</li>
-<li>income, liquid savings, or other resources available to absorb the cost.</li>
-</ul>
-<p>That means a CPI category alone is not the full premium. Household burden depends on who faces the cost, when, and with what financial buffer.</p>
-<h2 id="public-data-motivation">Public-data motivation</h2>
-<p>The paper uses public FRED and BLS series. From 1998 to 2025:</p>
-<ul>
-<li>headline CPI rose <strong>97.5%</strong>;</li>
-<li>medical care rose <strong>139.6%</strong>;</li>
-<li>medical care services rose <strong>156.4%</strong>;</li>
-<li>hospital services rose <strong>296.7%</strong>;</li>
-<li>motor vehicle insurance rose <strong>251.2%</strong> in the available national CPI item;</li>
-<li>the broad tuition/school-fee/childcare aggregate rose <strong>202.8%</strong>.</li>
-</ul>
-<p>Consumer Expenditure health-insurance spending rose <strong>344.1%</strong> from 1998 to 2024, while healthcare spending rose <strong>225.6%</strong>. Those are spending measures, not price indexes.</p>
-<p>The revised appendix also adds a 2024 Consumer Expenditure income-quintile table. Healthcare spending absorbed <strong>9.8%</strong> of total expenditures in the lowest income quintile versus <strong>6.5%</strong> in the highest quintile. Health-insurance spending absorbed <strong>6.1%</strong> versus <strong>4.1%</strong>. This is not household microdata, but it shows why the burden has to be measured distributionally.</p>
-<p>The revised version then adds a CEX public-use microdata appendix. In pooled calendar-year 2024 Interview records, selected current-quarter resilience costs rise in dollars with income, but fall as a share of income: <strong>$785</strong> and <strong>4.8%</strong> for consumer units below $25,000 of income versus <strong>$2,447</strong> and <strong>1.4%</strong> for consumer units at or above $100,000. These are descriptive reference-period budget shares, not annualized causal hardship estimates.</p>
-<h2 id="important-caveats">Important caveats</h2>
-<p>The paper is careful about measurement limits:</p>
-<ul>
-<li>Health insurance CPI is not a simple household-premium series.</li>
-<li>Consumer Expenditure health-insurance spending is nominal expenditure, not a pure price index.</li>
-<li>The tuition/school-fee/childcare CPI aggregate is broader than childcare alone.</li>
-<li>Grouped income-quintile tables are useful but still hide within-quintile liquidity, health risk, insurance design, household size, geography, and delayed care.</li>
-<li>The CEX microdata appendix reports current-quarter/reference-period costs from pooled Interview records, not annualized household totals.</li>
-<li>CEX measures spending, not unmet need; low spending may reflect low need, good coverage, delayed care, or foregone services.</li>
-<li>National aggregate indexes hide differences by income, health risk, geography, family structure, renter/owner status, vehicle dependence, and liquid savings.</li>
-</ul>
-<p>The paper therefore does not claim that all households face the same rising burden.</p>
-<h2 id="main-takeaway">Main takeaway</h2>
-<p>The strongest conclusion is disciplined:</p>
-<blockquote>Do not infer household resilience from employment, income, or headline inflation alone.</blockquote>
-<p>Resilience also depends on whether households can afford the protections that keep shocks from becoming crises.</p>
-<p>The public evidence suggests that several resilience-adjacent costs have risen faster than headline CPI. But measuring the actual household fragility premium requires household-level data.</p>
-<h2 id="best-future-version">Best future version</h2>
-<p>A stronger follow-on paper would use:</p>
-<ul>
-<li>repeated-cross-section Consumer Expenditure microdata over many years;</li>
-<li>MEPS medical and out-of-pocket burden data;</li>
-<li>childcare price datasets;</li>
-<li>insurance premium or rate-filing data;</li>
-<li>distributional tables by income, liquid savings, health risk, family structure, region, housing tenure, and vehicle dependence.</li>
-</ul>
-<p>It would then test whether rising fragility-premium burdens are associated with lower savings, more debt, delayed care, reduced childcare usage, weaker labor supply, or higher financial stress.</p>
-<h2 id="read-the-full-paper">Read the full paper</h2>
-<p>Download the full PDF for the measurement identity, public-data tables, figures, caveats, references, and replication notes.</p>
+
     </section>
   </main>
   <footer class="site-footer" id="contact">

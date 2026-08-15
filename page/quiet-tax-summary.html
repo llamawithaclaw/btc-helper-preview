@@ -166,6 +166,15 @@
     .doc-card:hover, .doc-card:focus { border-color:var(--accent); outline:none; }
     .doc-title { font-weight:900; color:var(--hero-ink); margin-bottom:6px; }
     .doc-meta { color:var(--dark-card-muted); font-size:.92rem; }
+    .research-identity-panel { border:1px solid var(--line); border-radius:16px; background:var(--card-soft); padding:16px; margin-bottom:18px; }
+    :root[data-theme="dark"] .research-identity-panel { background:rgba(255,255,255,.045); }
+    .identity-pill-row { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
+    .identity-pill-row span { display:inline-flex; border:1px solid var(--line); border-radius:999px; padding:5px 9px; background:var(--card); color:var(--ink); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.07em; text-transform:uppercase; }
+    .identity-summary { display:grid; gap:10px; margin:0; }
+    .identity-summary div { border-left:4px solid var(--accent); padding-left:10px; }
+    .identity-summary dt, .identity-summary dd { margin:0; }
+    .identity-summary dt { color:var(--muted); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+    .identity-summary dd { color:var(--ink); font-weight:720; }
     @media print { body { background:#fff; color:#111827; } main { max-width:none; padding:0; } .back-link, .actions, .toc { display:none; } .hero, .card { box-shadow:none; border:0; padding:0; background:#fff; color:#111827; } h2, h3 { break-after:avoid; } figure, table { break-inside:avoid; } }
 
   </style>
@@ -206,43 +215,23 @@
         <a class="button" href="../Society_Under_Monetary_Stress_III_The_Quiet_Tax.pdf">Download PDF</a>
         <a class="button secondary" href="./index.html">Home</a>
       </div>
-      <nav class="toc"><div class="toc-title">Contents</div><a class="toc-1" href="#society-under-monetary-stress-iii-the-quiet-tax">Society Under Monetary Stress III: The Quiet Tax</a><a class="toc-2" href="#what-this-paper-asks">What this paper asks</a><a class="toc-2" href="#main-takeaway">Main takeaway</a><a class="toc-2" href="#key-findings">Key findings</a><a class="toc-2" href="#why-it-matters">Why it matters</a><a class="toc-2" href="#how-to-read-the-evidence">How to read the evidence</a><a class="toc-2" href="#suggested-citation">Suggested citation</a></nav>
+
     </section>
     <section class="card doc-body">
+      <aside class="research-identity-panel" aria-label="Research classification">
+    <div class="doc-kicker">Research classification</div>
+    <div class="identity-pill-row">
+      <span>Household / resilience research</span>
+      <span>Supporting material</span>
+      <span>Household evidence</span>
+    </div>
+    <dl class="identity-summary">
+      <div><dt>What it can support</dt><dd>Background theory for resilience constraints; not direct BTC Helper validation.</dd></div>
+      <div><dt>Primary limitation</dt><dd>Long-form research spine; most users should start with the resilience synthesis.</dd></div>
+    </dl>
+  </aside>
       <p class="small"><strong>Suggested citation:</strong> Kotte, Arne. 2026. “Society Under Monetary Stress III: The Quiet Tax: Essential-Cost Inflation, Household Tradeoffs, and Budget Compression.” BTC Helper Research.</p>
-      <h1 id="society-under-monetary-stress-iii-the-quiet-tax">Society Under Monetary Stress III: The Quiet Tax</h1>
-<p><strong>Essential-Cost Inflation, Household Tradeoffs, and Budget Compression</strong></p>
-<p><strong>Author:</strong> Arne Kotte</p>
-<p><strong>Affiliation:</strong> BTC Helper Research</p>
-<h2 id="what-this-paper-asks">What this paper asks</h2>
-<p>Headline CPI is useful, but households do not pay an abstract average. They pay rent or mortgage costs, groceries, fuel, utilities, insurance, medical bills, and debt service. Some categories can be delayed. Others cannot.</p>
-<p>This paper asks how rising non-deferrable costs show up as household budget compression.</p>
-<h2 id="main-takeaway">Main takeaway</h2>
-<p>The paper is descriptive, not causal. It does not claim that one monetary aggregate mechanically caused household hardship. Its contribution is a budget-pressure map: essential costs matter most when they meet thin buffers, fixed commitments, and household-specific exposure.</p>
-<h2 id="key-findings">Key findings</h2>
-<p>From 1989 to 2024:</p>
-<ul>
-<li>Headline CPI rose from 100 to 253.</li>
-<li>The equal-weight essential-cost stack rose from 100 to 314.</li>
-<li>The essential stack divided by average hourly earnings rose from 100 to 102.</li>
-<li>The essential stack divided by median household income rose from 100 to 108.</li>
-<li>USDA food insecurity rose from 10.2 percent in 2021 to 13.7 percent in 2024.</li>
-</ul>
-<p>The central point is nuanced: essential categories rose faster than headline CPI, but income-normalized pressure is not a simple “costs outran wages everywhere” story.</p>
-<h2 id="why-it-matters">Why it matters</h2>
-<p>Budget compression often appears at the margin. A household may still have income growth and employment while losing room to save, maintain insurance, absorb medical costs, buy healthier food, or avoid debt.</p>
-<p>The quiet tax is that loss of room for choice.</p>
-<h2 id="how-to-read-the-evidence">How to read the evidence</h2>
-<p>The paper suggests watching five household-facing dimensions:</p>
-<ul>
-<li>must-pay costs versus optional spending;</li>
-<li>income growth versus the household’s actual cost stack;</li>
-<li>emergency liquidity;</li>
-<li>delayed care, skipped maintenance, or lower-quality substitutions;</li>
-<li>long-term resilience, including saving and planning horizon.</li>
-</ul>
-<h2 id="suggested-citation">Suggested citation</h2>
-<p>Kotte, Arne. 2026. “Society Under Monetary Stress III: The Quiet Tax: Essential-Cost Inflation, Household Tradeoffs, and Budget Compression.” BTC Helper Research.</p>
+
     </section>
   </main>
   <footer class="site-footer" id="contact">

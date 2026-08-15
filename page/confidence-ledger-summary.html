@@ -166,6 +166,15 @@
     .doc-card:hover, .doc-card:focus { border-color:var(--accent); outline:none; }
     .doc-title { font-weight:900; color:var(--hero-ink); margin-bottom:6px; }
     .doc-meta { color:var(--dark-card-muted); font-size:.92rem; }
+    .research-identity-panel { border:1px solid var(--line); border-radius:16px; background:var(--card-soft); padding:16px; margin-bottom:18px; }
+    :root[data-theme="dark"] .research-identity-panel { background:rgba(255,255,255,.045); }
+    .identity-pill-row { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
+    .identity-pill-row span { display:inline-flex; border:1px solid var(--line); border-radius:999px; padding:5px 9px; background:var(--card); color:var(--ink); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.07em; text-transform:uppercase; }
+    .identity-summary { display:grid; gap:10px; margin:0; }
+    .identity-summary div { border-left:4px solid var(--accent); padding-left:10px; }
+    .identity-summary dt, .identity-summary dd { margin:0; }
+    .identity-summary dt { color:var(--muted); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+    .identity-summary dd { color:var(--ink); font-weight:720; }
     @media print { body { background:#fff; color:#111827; } main { max-width:none; padding:0; } .back-link, .actions, .toc { display:none; } .hero, .card { box-shadow:none; border:0; padding:0; background:#fff; color:#111827; } h2, h3 { break-after:avoid; } figure, table { break-inside:avoid; } }
 
   </style>
@@ -206,57 +215,23 @@
         <a class="button" href="../Society_Under_Monetary_Stress_VIII_The_Confidence_Ledger.pdf">Download PDF</a>
         <a class="button secondary" href="./index.html">Home</a>
       </div>
-      <nav class="toc"><div class="toc-title">Contents</div><a class="toc-1" href="#society-under-monetary-stress-viii-the-confidence-ledger">Society Under Monetary Stress VIII: The Confidence Ledger</a><a class="toc-2" href="#summary">Summary</a><a class="toc-2" href="#main-findings">Main findings</a><a class="toc-2" href="#measurement-discipline">Measurement discipline</a><a class="toc-2" href="#why-it-matters">Why it matters</a><a class="toc-2" href="#data-and-replication">Data and replication</a><a class="toc-2" href="#read-the-full-paper">Read the full paper</a></nav>
+
     </section>
     <section class="card doc-body">
+      <aside class="research-identity-panel" aria-label="Research classification">
+    <div class="doc-kicker">Research classification</div>
+    <div class="identity-pill-row">
+      <span>Household / resilience research</span>
+      <span>Supporting material</span>
+      <span>Household evidence</span>
+    </div>
+    <dl class="identity-summary">
+      <div><dt>What it can support</dt><dd>Background theory for resilience constraints; not direct BTC Helper validation.</dd></div>
+      <div><dt>Primary limitation</dt><dd>Long-form research spine; most users should start with the resilience synthesis.</dd></div>
+    </dl>
+  </aside>
       <p class="small"><strong>Suggested citation:</strong> Kotte, Arne. 2026. “Society Under Monetary Stress VIII: The Confidence Ledger: Inflation Volatility, Expectations, and Consumer Sentiment.” BTC Helper Research.</p>
-      <h1 id="society-under-monetary-stress-viii-the-confidence-ledger">Society Under Monetary Stress VIII: The Confidence Ledger</h1>
-<p><strong>Inflation Volatility, Expectations, and Consumer Sentiment</strong></p>
-<p>Arne Kotte</p>
-<h2 id="summary">Summary</h2>
-<p>This paper studies consumer confidence as a household-facing margin of monetary stress.</p>
-<p>The revised paper is not an institutional-trust paper. It does not claim that inflation causes distrust in government, banks, media, science, or any other institution. Instead, it uses clean public FRED data to examine how consumer sentiment co-moves with inflation expectations, realized inflation, inflation volatility, unemployment, real disposable-income growth, rates, gasoline prices, debt service, and revolving credit.</p>
-<p>The central idea is the <strong>confidence ledger</strong>: households do not judge the future from unemployment alone. They also observe prices, expected inflation, income growth, saving conditions, credit context, rates, and recession risk.</p>
-<h2 id="main-findings">Main findings</h2>
-<ol>
-<li><strong>Sentiment is lower when expected inflation is higher.</strong> In monthly data from 1978-2025, Michigan expected inflation has a -0.50 correlation with Michigan consumer sentiment.</li>
-</ol>
-<ol>
-<li><strong>The relationship is not only a 2020-2022 artifact.</strong> Excluding 2020-2022, the expected-inflation/sentiment correlation remains -0.50.</li>
-</ol>
-<ol>
-<li><strong>Inflation volatility also matters.</strong> Rolling 12-month inflation volatility has a -0.33 monthly correlation with sentiment in the full sample and -0.30 excluding 2020-2022.</li>
-</ol>
-<ol>
-<li><strong>Unemployment alone misses the 2022 confidence shock.</strong> In 2022, unemployment averaged only 3.6%, but sentiment averaged 59.0 while CPI inflation averaged 8.0%, expected inflation 5.0%, real disposable-income growth -5.7%, and gasoline inflation 32.2%.</li>
-</ol>
-<ol>
-<li><strong>Real income growth supports confidence.</strong> Real disposable-income growth has a +0.34 monthly correlation with sentiment in the full sample and +0.43 excluding 2020-2022.</li>
-</ol>
-<ol>
-<li><strong>The analysis is descriptive, not causal.</strong> The paper adds monthly evidence, confidence intervals, robustness checks, and standardized associations, but it does not claim identification.</li>
-</ol>
-<h2 id="measurement-discipline">Measurement discipline</h2>
-<p>An external-style review flagged several valid issues in the earlier version. The revision now:</p>
-<ul>
-<li>uses monthly data instead of relying mainly on annual milestones;</li>
-<li>reports sample sizes and Fisher-z confidence intervals;</li>
-<li>includes robustness excluding 2020-2022;</li>
-<li>adds gasoline inflation (<code>GASREGW</code>) and recession context (<code>USREC</code>);</li>
-<li>replaces common-axis overlay figures with standardized z-score charts and a scatterplot;</li>
-<li>explicitly notes that <code>UMCSENT</code> and <code>MICH</code> share the same Michigan survey environment, so expected inflation may partly reflect common respondent mood or generalized pessimism;</li>
-<li>narrows the framing around consumer sentiment rather than institutional trust.</li>
-</ul>
-<h2 id="why-it-matters">Why it matters</h2>
-<p>A society can have jobs, credit access, and positive aggregate output while households still feel that planning has become unreliable.</p>
-<p>The paper’s useful conclusion is modest:</p>
-<blockquote>Do not infer household confidence from unemployment alone; do not infer institutional trust from consumer sentiment alone; and do not confuse co-movement with mechanism.</blockquote>
-<p>Under those constraints, the public data still show a clear pattern: price instability and inflation expectations are central to how households experience macroeconomic stress.</p>
-<h2 id="data-and-replication">Data and replication</h2>
-<p>The paper uses public FRED series including <code>UMCSENT</code>, <code>MICH</code>, <code>CPIAUCSL</code>, <code>UNRATE</code>, <code>U6RATE</code>, <code>FEDFUNDS</code>, <code>DGS10</code>, <code>DSPIC96</code>, <code>PSAVERT</code>, <code>TDSP</code>, <code>REVOLSL</code>, <code>DSPI</code>, <code>GASREGW</code>, and <code>USREC</code>.</p>
-<p>Monthly values are within-month averages where higher-frequency data are pulled. Annual milestones are within-year averages.</p>
-<h2 id="read-the-full-paper">Read the full paper</h2>
-<p>Download the full PDF for figures, tables, caveats, and replication notes.</p>
+
     </section>
   </main>
   <footer class="site-footer" id="contact">

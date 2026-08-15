@@ -166,6 +166,15 @@
     .doc-card:hover, .doc-card:focus { border-color:var(--accent); outline:none; }
     .doc-title { font-weight:900; color:var(--hero-ink); margin-bottom:6px; }
     .doc-meta { color:var(--dark-card-muted); font-size:.92rem; }
+    .research-identity-panel { border:1px solid var(--line); border-radius:16px; background:var(--card-soft); padding:16px; margin-bottom:18px; }
+    :root[data-theme="dark"] .research-identity-panel { background:rgba(255,255,255,.045); }
+    .identity-pill-row { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
+    .identity-pill-row span { display:inline-flex; border:1px solid var(--line); border-radius:999px; padding:5px 9px; background:var(--card); color:var(--ink); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.07em; text-transform:uppercase; }
+    .identity-summary { display:grid; gap:10px; margin:0; }
+    .identity-summary div { border-left:4px solid var(--accent); padding-left:10px; }
+    .identity-summary dt, .identity-summary dd { margin:0; }
+    .identity-summary dt { color:var(--muted); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+    .identity-summary dd { color:var(--ink); font-weight:720; }
     @media print { body { background:#fff; color:#111827; } main { max-width:none; padding:0; } .back-link, .actions, .toc { display:none; } .hero, .card { box-shadow:none; border:0; padding:0; background:#fff; color:#111827; } h2, h3 { break-after:avoid; } figure, table { break-inside:avoid; } }
 
   </style>
@@ -206,65 +215,23 @@
         <a class="button" href="../Liquid_Buffers_Borrowed_Resilience_and_Hardship_Profiles.pdf">Download PDF</a>
         <a class="button secondary" href="./index.html">Home</a>
       </div>
-      <nav class="toc"><div class="toc-title">Contents</div><a class="toc-1" href="#liquid-buffers-borrowed-resilience-and-household-hardship-profiles">Liquid Buffers, Borrowed Resilience, and Household Hardship Profiles</a><a class="toc-2" href="#plain-language-summary">Plain-language summary</a><a class="toc-2" href="#main-empirical-message">Main empirical message</a><a class="toc-2" href="#why-this-matters">Why this matters</a><a class="toc-2" href="#what-this-paper-is-and-is-not">What this paper is — and is not</a><a class="toc-2" href="#current-limitations">Current limitations</a><a class="toc-2" href="#suggested-citation">Suggested citation</a></nav>
+
     </section>
     <section class="card doc-body">
+      <aside class="research-identity-panel" aria-label="Research classification">
+    <div class="doc-kicker">Research classification</div>
+    <div class="identity-pill-row">
+      <span>Household / resilience research</span>
+      <span>Supporting material</span>
+      <span>Household evidence</span>
+    </div>
+    <dl class="identity-summary">
+      <div><dt>What it can support</dt><dd>Detailed household profile support; not engine validation.</dd></div>
+      <div><dt>Primary limitation</dt><dd>Detailed support material; not the clearest public entry point.</dd></div>
+    </dl>
+  </aside>
       <p class="small"><strong>Suggested citation:</strong> Kotte, Arne. 2026. “Liquid Buffers, Borrowed Resilience, and Household Hardship Profiles: A SHED Policy-Measurement Working Paper.” BTC Helper Research.</p>
-      <p class="small"><strong>Working paper / measurement paper.</strong> Descriptive SHED evidence; not a causal estimate, validated forecast, or final resilience index. The multi-year evidence validates the broad simplified profile ordering, not every fine 2025 category.</p><h1 id="liquid-buffers-borrowed-resilience-and-household-hardship-profiles">Liquid Buffers, Borrowed Resilience, and Household Hardship Profiles</h1>
-<p><strong>Status:</strong> Policy-measurement working draft</p>
-<p><strong>Author:</strong> Arne Kotte</p>
-<p><strong>Data:</strong> Federal Reserve SHED public-use microdata and harmonized SHED repeated cross-sections</p>
-<p><strong>Current version:</strong> May 2026 revised draft with data-driven clustering validation, inference-boundary memo, benchmark screens, and multi-year validation</p>
-<h2 id="plain-language-summary">Plain-language summary</h2>
-<p>This paper asks a measurement question: when people face a $400 emergency expense, are all “credit users” in the same financial state?</p>
-<p>The answer is no. The paper separates four household-finance states that are often blurred together:</p>
-<ol>
-<li><strong>Liquid sufficiency</strong> — the respondent can cover the emergency from cash, checking, or savings.</li>
-<li><strong>Bridge credit</strong> — the respondent uses credit but expects to pay the bill in full.</li>
-<li><strong>Debt-financed distress</strong> — the respondent relies on revolving credit or other borrowing.</li>
-<li><strong>Liquidity exclusion</strong> — the respondent cannot pay or has low buffers with no listed financing path.</li>
-</ol>
-<p>The central finding is that paid-in-full bridge credit looks empirically different from revolving credit, other emergency borrowing, and inability to pay. That distinction matters because broad “credit use” measures can mix resilience with distress.</p>
-<h2 id="main-empirical-message">Main empirical message</h2>
-<p>In the 2025 SHED microdata, strict hardship is much lower among respondents using bridge credit paid in full than among respondents relying on revolving credit, other borrowing, or inability to pay. The paper uses a strict hardship outcome designed to avoid mechanical overlap with the $400 emergency-capacity question.</p>
-<p>The revised draft also adds validation upgrades:</p>
-<ul>
-<li>small diagnostic 2025 cells are pooled for main-text interpretation;</li>
-<li>non-exclusive emergency-response dummy models check that the result is not only a priority-rule artifact;</li>
-<li>first-pass data-driven clustering uses emergency-response, low-buffer, and credit-constraint indicators while holding hardship outcomes out until after cluster assignment;</li>
-<li>benchmark-screen comparisons compare the taxonomy with income-only, $400-capacity, emergency-savings, low-buffer, and broad-credit-reliance screens;</li>
-<li>repeated-cross-section validation shows similar ordering across harmonized SHED years;</li>
-<li>an inference memo documents that the public-use files inspected for this draft include final weights but not public replicate weights, strata, or PSU variables.</li>
-</ul>
-<p>A simplified emergency-financing taxonomy shows similar ordering across years:</p>
-<ul>
-<li>bridge credit paid in full is consistently among the lowest-vulnerability groups;</li>
-<li>revolving credit is materially higher;</li>
-<li>inability to pay is highest or near-highest;</li>
-<li>low-buffer/no-listed-financing is elevated.</li>
-</ul>
-<h2 id="why-this-matters">Why this matters</h2>
-<p>The paper is not claiming that bridge credit causes resilience. It is more cautious: paid-in-full credit and revolving credit should not be pooled as if they represented the same financial condition.</p>
-<p>That matters for household-finance measurement, policy analysis, and public dashboards. A person who uses a card and pays it off is not in the same condition as a person who must revolve debt, borrow elsewhere, or cannot pay at all.</p>
-<h2 id="what-this-paper-is-and-is-not">What this paper is — and is not</h2>
-<p>This is a <strong>descriptive measurement paper</strong>. It is useful as a framework for classifying emergency-financing behavior and hardship profiles.</p>
-<p>It is not:</p>
-<ul>
-<li>a causal estimate;</li>
-<li>a validated forecast;</li>
-<li>a final resilience index;</li>
-<li>a causal or structural economics paper.</li>
-</ul>
-<p>The multi-year section validates the broad simplified profile ordering, not every fine 2025 category.</p>
-<h2 id="current-limitations">Current limitations</h2>
-<p>Before journal submission, the paper still needs:</p>
-<ul>
-<li>official design-consistent SHED survey inference if public guidance or restricted design variables become available;</li>
-<li>richer taxonomy validation, ideally including multiple-correspondence analysis, latent class analysis, and out-of-sample classification checks;</li>
-<li>a fuller literature review and data appendix.</li>
-</ul>
-<h2 id="suggested-citation">Suggested citation</h2>
-<p>Kotte, Arne. 2026. “Liquid Buffers, Borrowed Resilience, and Household Hardship Profiles: A SHED Policy-Measurement Working Draft.” BTC Helper Research.</p>
+      <p class="small"><strong>Working paper / measurement paper.</strong> Descriptive SHED evidence; not a causal estimate, validated forecast, or final resilience index. The multi-year evidence validates the broad simplified profile ordering, not every fine 2025 category.</p>
     </section>
   </main>
   <footer class="site-footer" id="contact">

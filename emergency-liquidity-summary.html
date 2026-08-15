@@ -166,6 +166,15 @@
     .doc-card:hover, .doc-card:focus { border-color:var(--accent); outline:none; }
     .doc-title { font-weight:900; color:var(--hero-ink); margin-bottom:6px; }
     .doc-meta { color:var(--dark-card-muted); font-size:.92rem; }
+    .research-identity-panel { border:1px solid var(--line); border-radius:16px; background:var(--card-soft); padding:16px; margin-bottom:18px; }
+    :root[data-theme="dark"] .research-identity-panel { background:rgba(255,255,255,.045); }
+    .identity-pill-row { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
+    .identity-pill-row span { display:inline-flex; border:1px solid var(--line); border-radius:999px; padding:5px 9px; background:var(--card); color:var(--ink); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.07em; text-transform:uppercase; }
+    .identity-summary { display:grid; gap:10px; margin:0; }
+    .identity-summary div { border-left:4px solid var(--accent); padding-left:10px; }
+    .identity-summary dt, .identity-summary dd { margin:0; }
+    .identity-summary dt { color:var(--muted); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+    .identity-summary dd { color:var(--ink); font-weight:720; }
     @media print { body { background:#fff; color:#111827; } main { max-width:none; padding:0; } .back-link, .actions, .toc { display:none; } .hero, .card { box-shadow:none; border:0; padding:0; background:#fff; color:#111827; } h2, h3 { break-after:avoid; } figure, table { break-inside:avoid; } }
 
   </style>
@@ -206,52 +215,23 @@
         <a class="button" href="/Emergency_Liquidity_Borrowing_and_Hardship.pdf">Download PDF</a>
         <a class="button secondary" href="/index.html">Home</a>
       </div>
-      <nav class="toc"><div class="toc-title">Contents</div><a class="toc-1" href="#emergency-liquidity-borrowing-and-hardship">Emergency Liquidity, Borrowing, and Hardship</a><a class="toc-2" href="#a-descriptive-shed-2025-microdata-note">A Descriptive SHED 2025 Microdata Note</a><a class="toc-2" href="#plain-language-summary">Plain-language summary</a><a class="toc-2" href="#main-findings">Main findings</a><a class="toc-2" href="#what-changed-after-review">What changed after review</a><a class="toc-2" href="#interpretation">Interpretation</a><a class="toc-2" href="#suggested-citation">Suggested citation</a></nav>
+
     </section>
     <section class="card doc-body">
+      <aside class="research-identity-panel" aria-label="Research classification">
+    <div class="doc-kicker">Research classification</div>
+    <div class="identity-pill-row">
+      <span>Household / resilience research</span>
+      <span>Supporting material</span>
+      <span>Household evidence</span>
+    </div>
+    <dl class="identity-summary">
+      <div><dt>What it can support</dt><dd>Detailed household support material; not BTC Helper efficacy evidence.</dd></div>
+      <div><dt>Primary limitation</dt><dd>Supporting material; read the flagship SHED paper first.</dd></div>
+    </dl>
+  </aside>
       <p class="small"><strong>Suggested citation:</strong> Kotte, Arne. 2026. “Emergency Liquidity, Borrowing, and Hardship: A Descriptive SHED 2025 Microdata Note.” BTC Helper Research.</p>
-      <h1 id="emergency-liquidity-borrowing-and-hardship">Emergency Liquidity, Borrowing, and Hardship</h1>
-<h2 id="a-descriptive-shed-2025-microdata-note">A Descriptive SHED 2025 Microdata Note</h2>
-<p><strong>Series:</strong> Society Under Monetary Stress XI</p>
-<p><strong>Author:</strong> Arne Kotte</p>
-<p><strong>Document type:</strong> Descriptive working paper / microdata note</p>
-<p><strong>Date:</strong> May 2026</p>
-<h2 id="plain-language-summary">Plain-language summary</h2>
-<p>This paper uses 2025 public-use microdata from the Federal Reserve's Survey of Household Economics and Decisionmaking (SHED) to examine how emergency liquidity, borrowing-style emergency responses, and hardship-related outcomes vary together among U.S. adults.</p>
-<p>The paper is deliberately modest. It is a descriptive microdata note that strengthens the earlier emergency-savings work by adding respondent-level tables, denominator discipline, approximate uncertainty, concrete hardship outcomes, and a clearer replication path.</p>
-<h2 id="main-findings">Main findings</h2>
-<p>In weighted 2025 estimates:</p>
-<ul>
-<li><strong>63.1%</strong> of adults could cover a $400 emergency expense with cash or equivalent.</li>
-<li><strong>54.8%</strong> had three-month emergency savings.</li>
-<li><strong>15.3%</strong> would put a $400 emergency on a credit card and pay over time.</li>
-<li><strong>12.2%</strong> would not be able to pay the $400 expense right now.</li>
-<li><strong>30.4%</strong> lacked both $400 cash/equivalent capacity and three-month emergency savings.</li>
-</ul>
-<p>Adults lacking both core buffers had a much weaker hardship profile:</p>
-<ul>
-<li><strong>62.9%</strong> were financially vulnerable.</li>
-<li><strong>37.2%</strong> could not pay a $400 emergency right now.</li>
-<li><strong>61.5%</strong> had bill pressure.</li>
-<li><strong>40.1%</strong> received outside-household help with expenses.</li>
-<li><strong>38.6%</strong> were credit constrained.</li>
-<li><strong>32.8%</strong> had medical debt.</li>
-</ul>
-<h2 id="what-changed-after-review">What changed after review</h2>
-<p>A critical review noted that the earlier version was useful but too descriptive and insufficiently connected to respondent-level outcomes. The revised draft therefore:</p>
-<ul>
-<li>reframes the paper as a descriptive SHED microdata note;</li>
-<li>adds a denominator and skip-pattern audit table;</li>
-<li>adds approximate confidence intervals;</li>
-<li>adds concrete hardship outcomes beyond general financial self-assessment;</li>
-<li>moves BNPL outcomes out of the main argument because of selection and non-monotone patterns;</li>
-<li>adds approximate adjusted associations with controls;</li>
-<li>and strengthens the data/replication note.</li>
-</ul>
-<h2 id="interpretation">Interpretation</h2>
-<p>The paper's claim is narrow: emergency-buffer measures do not prove causality, but they identify adults with a materially different hardship profile. The next research step is multi-year SHED harmonization from 2013–2025 so the project can examine trends, post-2021 changes, and stronger model-based associations.</p>
-<h2 id="suggested-citation">Suggested citation</h2>
-<p>Kotte, Arne. 2026. “Emergency Liquidity, Borrowing, and Hardship: A Descriptive SHED 2025 Microdata Note.” BTC Helper Research.</p>
+
     </section>
   </main>
   <footer class="site-footer" id="contact">

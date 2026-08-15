@@ -166,6 +166,15 @@
     .doc-card:hover, .doc-card:focus { border-color:var(--accent); outline:none; }
     .doc-title { font-weight:900; color:var(--hero-ink); margin-bottom:6px; }
     .doc-meta { color:var(--dark-card-muted); font-size:.92rem; }
+    .research-identity-panel { border:1px solid var(--line); border-radius:16px; background:var(--card-soft); padding:16px; margin-bottom:18px; }
+    :root[data-theme="dark"] .research-identity-panel { background:rgba(255,255,255,.045); }
+    .identity-pill-row { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
+    .identity-pill-row span { display:inline-flex; border:1px solid var(--line); border-radius:999px; padding:5px 9px; background:var(--card); color:var(--ink); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.07em; text-transform:uppercase; }
+    .identity-summary { display:grid; gap:10px; margin:0; }
+    .identity-summary div { border-left:4px solid var(--accent); padding-left:10px; }
+    .identity-summary dt, .identity-summary dd { margin:0; }
+    .identity-summary dt { color:var(--muted); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+    .identity-summary dd { color:var(--ink); font-weight:720; }
     @media print { body { background:#fff; color:#111827; } main { max-width:none; padding:0; } .back-link, .actions, .toc { display:none; } .hero, .card { box-shadow:none; border:0; padding:0; background:#fff; color:#111827; } h2, h3 { break-after:avoid; } figure, table { break-inside:avoid; } }
 
   </style>
@@ -206,55 +215,23 @@
         <a class="button" href="../Geographic_Household_Pressure_Index.pdf">Download PDF</a>
         <a class="button secondary" href="./index.html">Home</a>
       </div>
-      <nav class="toc"><div class="toc-title">Contents</div><a class="toc-1" href="#geographic-household-pressure-index">Geographic Household Pressure Index</a><a class="toc-2" href="#public-companion-summary">Public companion summary</a><a class="toc-2" href="#core-finding">Core finding</a><a class="toc-2" href="#what-changed-after-review">What changed after review</a><a class="toc-2" href="#robustness-result">Robustness result</a><a class="toc-2" href="#validation-result">Validation result</a><a class="toc-2" href="#what-the-note-does-not-claim">What the note does not claim</a><a class="toc-2" href="#next-empirical-step">Next empirical step</a></nav>
+
     </section>
     <section class="card doc-body">
+      <aside class="research-identity-panel" aria-label="Research classification">
+    <div class="doc-kicker">Research classification</div>
+    <div class="identity-pill-row">
+      <span>Measurement / methodology</span>
+      <span>Prototype</span>
+      <span>Hypothesis / exploratory</span>
+    </div>
+    <dl class="identity-summary">
+      <div><dt>What it can support</dt><dd>Experimental pressure map; not a validated risk score or engine input.</dd></div>
+      <div><dt>Primary limitation</dt><dd>Prototype index; should not be treated as a validated local-risk score.</dd></div>
+    </dl>
+  </aside>
       <p class="small"><strong>Suggested citation:</strong> Kotte, Arne. 2026. “Geographic Household Pressure Index: A State-Level Public-Data Measurement Prototype.” BTC Helper Research.</p>
-      <p class="small"><strong>Prototype.</strong> State-level public-data pressure map only; not a causal estimate, not a welfare ranking, not advice about where to live, and not yet a validated household-resilience index. The note reports robustness checks and treats preliminary validation as mixed.</p><h1 id="geographic-household-pressure-index">Geographic Household Pressure Index</h1>
-<h2 id="public-companion-summary">Public companion summary</h2>
-<p>This revised measurement prototype asks whether public state-level data can identify where selected household pressure proxies cluster geographically.</p>
-<p>The title is intentionally <strong>Geographic Household Pressure Index</strong>, not “Household Resilience Map.” Resilience is an outcome or capacity: whether households can absorb income, expense, housing, health, or labor-market shocks without severe welfare loss. The current public-data object does not directly observe those outcomes. It measures pressure proxies that may condition resilience.</p>
-<h2 id="core-finding">Core finding</h2>
-<p>A transparent state-level pressure layer is feasible, but not yet validated as a resilience index.</p>
-<p>The prototype combines:</p>
-<ul>
-<li>renter rent-burden pressure;</li>
-<li>an FHFA house-price-index-to-income proxy;</li>
-<li>reverse-ranked median household income;</li>
-<li>reverse-ranked under-35 homeownership;</li>
-<li>reverse-ranked under-35 household formation.</li>
-</ul>
-<p>The index is useful as a diagnostic map and component decomposition. It should not be read as a welfare ranking, a claim that one state is “better” than another, or advice about where households should live.</p>
-<h2 id="what-changed-after-review">What changed after review</h2>
-<p>The earlier version was too close to a “resilience map” framing. After review, the note was rebuilt as a measurement prototype:</p>
-<ol>
-<li>It distinguishes <strong>pressure</strong>, <strong>vulnerability</strong>, and <strong>resilience</strong>.</li>
-<li>It treats under-35 homeownership and household formation as proxies with multiple possible interpretations.</li>
-<li>It flags the FHFA HPI-income measure as an imperfect index-based proxy rather than a direct home-price-level affordability measure.</li>
-<li>It adds robustness checks, including a no-HPI specification, a housing-heavy specification, and single-component benchmarks.</li>
-<li>It adds a simple 2011–2024 panel validation exercise and treats the mixed results as a warning, not a success claim.</li>
-</ol>
-<h2 id="robustness-result">Robustness result</h2>
-<p>The no-HPI specification remains highly correlated with the headline index, which reduces concern that the FHFA proxy alone drives the map. The housing-heavy specification is also very close to the headline version.</p>
-<p>However, single-component benchmarks are much less aligned. That suggests the composite is not simply rent burden, income, formation, or the HPI proxy under another name.</p>
-<p>This is useful, but it is not validation. A composite can be nonredundant and still fail to predict meaningful household outcomes.</p>
-<h2 id="validation-result">Validation result</h2>
-<p>The first panel check is deliberately modest. It asks whether 2011 pressure predicts 2011–2024 state-level changes in under-35 homeownership, under-35 household formation, rent burden, and the HPI-income proxy.</p>
-<p>The results are mixed. That is the right conclusion to publish at this stage. The measure is promising as a prototype, but it has not yet earned the stronger label of a validated household-resilience index.</p>
-<h2 id="what-the-note-does-not-claim">What the note does not claim</h2>
-<p>The note does not claim causality. It does not measure household-level resilience directly. It does not rank states as good or bad places to live. It does not resolve within-state differences across metros, counties, income groups, renters, owners, young households, or older households.</p>
-<p>State averages are coarse. Large states contain multiple housing markets, labor markets, commuting zones, and cost structures. A mature version should move toward metro, county, commuting-zone, or PUMA-level evidence while preserving measurement discipline.</p>
-<h2 id="next-empirical-step">Next empirical step</h2>
-<p>The next version should add:</p>
-<ul>
-<li>better housing price-level and payment-burden measures;</li>
-<li>BLS labor-market stress;</li>
-<li>ACS commute burden;</li>
-<li>BEA regional price parity or real-income context;</li>
-<li>population-weighted and uncertainty-aware specifications;</li>
-<li>validation against independent hardship, liquidity, housing-instability, formation, delinquency, or migration outcomes.</li>
-</ul>
-<p>Until then, the useful public claim is narrower: selected public pressure proxies can be mapped transparently, but the map remains a measurement prototype rather than a finished resilience index.</p>
+      <p class="small"><strong>Prototype.</strong> State-level public-data pressure map only; not a causal estimate, not a welfare ranking, not advice about where to live, and not yet a validated household-resilience index. The note reports robustness checks and treats preliminary validation as mixed.</p>
     </section>
   </main>
   <footer class="site-footer" id="contact">

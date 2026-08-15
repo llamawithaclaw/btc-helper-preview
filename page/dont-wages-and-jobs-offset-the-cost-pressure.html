@@ -166,6 +166,15 @@
     .doc-card:hover, .doc-card:focus { border-color:var(--accent); outline:none; }
     .doc-title { font-weight:900; color:var(--hero-ink); margin-bottom:6px; }
     .doc-meta { color:var(--dark-card-muted); font-size:.92rem; }
+    .research-identity-panel { border:1px solid var(--line); border-radius:16px; background:var(--card-soft); padding:16px; margin-bottom:18px; }
+    :root[data-theme="dark"] .research-identity-panel { background:rgba(255,255,255,.045); }
+    .identity-pill-row { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
+    .identity-pill-row span { display:inline-flex; border:1px solid var(--line); border-radius:999px; padding:5px 9px; background:var(--card); color:var(--ink); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.07em; text-transform:uppercase; }
+    .identity-summary { display:grid; gap:10px; margin:0; }
+    .identity-summary div { border-left:4px solid var(--accent); padding-left:10px; }
+    .identity-summary dt, .identity-summary dd { margin:0; }
+    .identity-summary dt { color:var(--muted); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+    .identity-summary dd { color:var(--ink); font-weight:720; }
     @media print { body { background:#fff; color:#111827; } main { max-width:none; padding:0; } .back-link, .actions, .toc { display:none; } .hero, .card { box-shadow:none; border:0; padding:0; background:#fff; color:#111827; } h2, h3 { break-after:avoid; } figure, table { break-inside:avoid; } }
 
   </style>
@@ -206,71 +215,23 @@
         <a class="button" href="../Dont_Wages_and_Jobs_Offset_the_Cost_Pressure.pdf">Download PDF</a>
         <a class="button secondary" href="./index.html">Home</a>
       </div>
-      <nav class="toc"><div class="toc-title">Contents</div><a class="toc-1" href="#don-t-wages-and-jobs-offset-the-cost-pressure">Don’t Wages and Jobs Offset the Cost Pressure?</a><a class="toc-2" href="#the-objection">The objection</a><a class="toc-2" href="#what-offset-means-here">What “offset” means here</a><a class="toc-2" href="#data-scope">Data scope</a><a class="toc-2" href="#what-labor-strength-can-prove">What labor strength can prove</a><a class="toc-2" href="#what-the-argument-should-concede">What the argument should concede</a><a class="toc-2" href="#what-the-aggregate-series-are-consistent-with">What the aggregate series are consistent with</a><a class="toc-2" href="#where-labor-strength-may-still-fall-short">Where labor strength may still fall short</a><a class="toc-2" href="#what-this-does-not-prove">What this does not prove</a><a class="toc-2" href="#the-narrow-conclusion">The narrow conclusion</a><a class="toc-2" href="#evidence-note">Evidence note</a><a class="toc-2" href="#related-research-library-pieces">Related research-library pieces</a></nav>
+
     </section>
     <section class="card doc-body">
+      <aside class="research-identity-panel" aria-label="Research classification">
+    <div class="doc-kicker">Research classification</div>
+    <div class="identity-pill-row">
+      <span>Bitcoin thesis research</span>
+      <span>Supporting material</span>
+      <span>Bitcoin thesis context</span>
+    </div>
+    <dl class="identity-summary">
+      <div><dt>What it can support</dt><dd>Adversarial thesis context; not BTC Helper decision-engine validation.</dd></div>
+      <div><dt>Primary limitation</dt><dd>Essay series; not all objections are empirical tests.</dd></div>
+    </dl>
+  </aside>
       <p class="small"><strong>Suggested citation:</strong> Kotte, Arne. 2026. “Don’t Wages and Jobs Offset the Cost Pressure?” Sound Money Stress Tests. BTC Helper Research.</p>
-      <h1 id="don-t-wages-and-jobs-offset-the-cost-pressure">Don’t Wages and Jobs Offset the Cost Pressure?</h1>
-<h2 id="the-objection">The objection</h2>
-<p>A serious objection to household-stress research is that it can understate labor-market strength. If people are employed, wages are rising, and prime-age work attachment is strong, then perhaps higher costs are not evidence of fragility. Households adapt. They earn more, switch jobs, add hours, move to stronger labor markets, or use a second earner to absorb pressure.</p>
-<p>That objection is important because it is partly right. A strong labor market is one of the best household resilience tools. Employment provides income and often provides insurance access, creditworthiness, retirement contributions, and bargaining power. Rising real earnings should count as good news, not be waved away because they complicate a stress narrative.</p>
-<p>The question is not whether jobs and wages matter. They clearly do. The question is whether strong labor-market aggregates fully settle the household-resilience question.</p>
-<h2 id="what-offset-means-here">What “offset” means here</h2>
-<p>This essay uses “offset” in a narrow practical sense. Labor-market strength offsets cost pressure when work income leaves a household with enough slack after essential costs and required obligations to avoid fragile adjustment.</p>
-<p>That slack can take several forms:</p>
-<ul>
-<li>cash left after rent, food, utilities, transport, insurance, childcare, medical exposure, and debt service;</li>
-<li>liquid savings that can absorb an emergency or a short income interruption;</li>
-<li>stable hours and job quality rather than involuntary part-time work or earnings volatility;</li>
-<li>unused labor-supply margin, meaning the household is not already relying on every available worker, hour, or side job to stay current.</li>
-</ul>
-<p>This is not a full welfare measure. It does not prove whether a household is happy, optimizing, or better off in a lifetime sense. It asks a narrower balance-sheet question: after jobs and wages are counted, is there still room to absorb a shock?</p>
-<h2 id="data-scope">Data scope</h2>
-<p>The evidence discussed here is descriptive and aggregate. It uses national public labor-market series and a simple national cost benchmark. That is useful for testing an extreme national claim, but it is not household-level evidence.</p>
-<p>The sample starts in 1994 because the public multiple-jobholding series used in the underlying labor paper begins then. Other labor and price series go back further, but using a common post-1994 window keeps the comparison aligned.</p>
-<p>The period includes the 2020–2021 COVID disruption, when earnings and employment series can be affected by composition changes. A formal empirical paper should report results with and without those years. This essay uses the series only as broad descriptive context, not as a causal estimate or a precise trend decomposition.</p>
-<h2 id="what-labor-strength-can-prove">What labor strength can prove</h2>
-<p>Labor-market evidence can test whether a simple “everyone is working more just to stand still” story is too strong. It can show whether real earnings improved, whether multiple jobholding rose, whether underemployment worsened, and whether prime-age workers remained attached to the labor force.</p>
-<p>Those are meaningful tests. If real earnings rose, that weakens any claim that wages simply failed to keep up. If multiple jobholding did not rise, it weakens the claim that households broadly added second jobs out of necessity. If prime-age employment recovered, it weakens any story of long-running labor-market collapse.</p>
-<p>But labor strength is not the same as full household resilience. A household can be employed and still fragile if fixed costs are high, buffers are thin, hours are unstable, debt service is heavy, or there is little unused labor-supply margin left. The same paycheck can feel very different depending on rent, childcare, insurance, medical exposure, transportation costs, debt, household size, and local housing conditions.</p>
-<p>So the useful test is narrower: do jobs and wages eliminate the cost-pressure story, or do they show that the story has to be stated more carefully?</p>
-<h2 id="what-the-argument-should-concede">What the argument should concede</h2>
-<p>The argument should concede three things.</p>
-<p>First, the public labor data do not support the bluntest version of the “more work to stand still” claim. From 1994 through 2024, real median weekly earnings rose. A second inflation-adjusted weekly earnings measure also rose. Prime-age employment recovered. Multiple jobholding did not rise monotonically.</p>
-<p>Second, employment strength is real resilience. A household with stable work and rising real earnings is in a better position than a household facing job loss, unstable hours, or involuntary part-time work. Work is not merely a symptom of stress; it is often the main way households maintain security.</p>
-<p>Third, additional labor supply can be voluntary and welfare-improving. A second job can be professional development, entrepreneurship, seasonal opportunity, or preference. A second earner can reflect empowerment, not distress. More work is not automatically fragility.</p>
-<p>These concessions matter. If every extra hour, second job, or two-earner household is treated as hardship, the analysis will misread ordinary adaptation and opportunity.</p>
-<h2 id="what-the-aggregate-series-are-consistent-with">What the aggregate series are consistent with</h2>
-<p>The labor evidence gives a deliberately mixed answer. It uses public FRED and BLS data from 1994 through 2024 to compare real earnings, weekly hours, multiple jobholding, involuntary part-time work, U-6 labor underutilization, prime-age work attachment, labor share, and a transparent essential-cost pressure benchmark. The labor measures are national annual averages, not household-level estimates.</p>
-<p>The aggregate evidence rejects the strongest national squeeze story. Real median usual weekly earnings for full-time wage and salary workers rose from an index value of 100 in 1994 to 117 in 2024. This series covers wage and salary workers and excludes the self-employed. A second inflation-adjusted weekly earnings measure, built from average hourly earnings and average weekly hours for production and nonsupervisory workers, rose to 123. That proxy is useful for a broad check, but it is a payroll-job measure, not household income.</p>
-<p>The simple cost comparison points in the same direction. An equal-weight food, energy, shelter, and medical-care CPI benchmark divided by the weekly earnings proxy was 98 in 2024, slightly below its 1994 base. This benchmark is intentionally transparent, but it is not a household budget. Actual exposure varies by income, renter or homeowner status, family size, age, health, geography, transportation needs, insurance coverage, and local prices. The result does not prove costs were painless. It shows that this simple national benchmark does not support a one-way aggregate squeeze claim.</p>
-<p>Prime-age employment-population ratios were also higher in 2024 than in 1994. That matters, but work attachment is not job quality. It does not capture benefits, commuting costs, schedule volatility, local wage levels, household slack, or whether work is chosen or forced by fixed obligations.</p>
-<p>Multiple jobholding also does not carry a simple hardship narrative. The multiple-jobholding rate was 5.9 percent of employed workers in 1994 and 5.2 percent in 2024. That does not prove second jobs are never stressful. It also does not rule out informal work, gig work, unreported cash work, hours intensification, second-earner changes, or subgroup strain. It only means the national series should not be used as if it shows a monotonic rise in forced extra work.</p>
-<p>These findings discipline the broader argument. The public aggregate evidence rejects a crude national claim that labor conditions simply deteriorated across the whole period. It does not prove how many households are resilient or fragile.</p>
-<h2 id="where-labor-strength-may-still-fall-short">Where labor strength may still fall short</h2>
-<p>Underemployment is the clearer stress margin. Part-time work for economic reasons and U-6 labor underutilization rise sharply when labor markets weaken. U-6 is broad: it includes unemployed workers, marginally attached workers, and workers employed part time for economic reasons. A household that is fine at full employment may become fragile when hours are cut or full-time work disappears. That risk is larger when rent, debt service, childcare, insurance, transport, or medical bills already absorb most of the household margin.</p>
-<p>Labor share adds background context, but it should not carry the argument. The labor-share index fell from 100 in 1994 to 90 in 2024. That is a macro distributional fact, not a household balance-sheet measure. It reflects compensation, productivity, output, sectoral composition, capital income, and measurement conventions. At most, it adds context for why rising real earnings may not fully settle the resilience question when asset ownership is uneven and fixed costs remain important.</p>
-<p>The central issue is interaction. A household with rising wages, low fixed costs, liquid savings, manageable debt, stable hours, good insurance, and affordable housing access may be genuinely resilient. A household with similar earnings growth but high rent, childcare, medical exposure, debt service, and no cash buffer may be fragile even while employed.</p>
-<p>This is why employment headlines can be true and incomplete at the same time. They tell us whether income is coming in. They do not tell us how much room remains after must-pay costs, whether the household can absorb a shock, whether the next hour of work is available, or whether a second earner already carries the household’s margin.</p>
-<p>Essential-cost evidence makes the same point from the cost side. Essential categories can rise faster than headline CPI, while income-normalized pressure remains more mixed. The practical issue is budget compression: the loss of room for saving, insurance, maintenance, healthcare, or delay-free bill payment.</p>
-<p>That compression can coexist with rising earnings. The question is whether earnings growth produces durable buffers, or whether it is mostly absorbed by fixed commitments.</p>
-<h2 id="what-this-does-not-prove">What this does not prove</h2>
-<p>This evidence does not prove that employed households are broadly worse off. It does not prove that higher costs erased labor-market gains. It does not prove that two-earner households are fragile, that multiple jobholders are necessarily distressed, or that monetary forces caused labor-market pressure.</p>
-<p>It also does not identify which households face the most strain. National averages cannot tell whether renters in high-cost metros, single parents, lower-wage workers, young households, medically exposed households, or households with unstable hours are using labor adaptation to build resilience or merely to avoid falling behind.</p>
-<p>A stronger empirical paper would need household-level or subgroup evidence: hours, second jobs, earnings volatility, involuntary part-time work, debt service, rent burden, childcare, medical exposure, liquid savings, local cost conditions, and COVID-period sensitivity checks. That is especially important because national averages can mask subgroup strain. The public aggregate data are useful, but they cannot carry more than a bounded descriptive claim.</p>
-<h2 id="the-narrow-conclusion">The narrow conclusion</h2>
-<p>The strongest answer to the labor-market objection is to accept the good news. Jobs and wages matter. Real earnings improved. Prime-age work attachment recovered. Multiple jobholding did not show a simple upward hardship trend. Those facts should narrow the household-stress claim.</p>
-<p>But they do not eliminate it. Labor-market strength is a resilience input, not a complete resilience measure. A household is resilient when labor income leaves enough room for liquidity, manageable debt, essential costs, insurance, healthcare access, and long-horizon commitments. Employment alone does not prove that those margins are secure.</p>
-<p>The defensible claim is therefore modest: strong labor markets can offset cost pressure for many households, but they do not automatically settle whether households have durable resilience. The right question is not simply whether people are working. It is whether work income is producing slack, or whether it is being consumed by fixed costs and thin buffers.</p>
-<h2 id="evidence-note">Evidence note</h2>
-<p>This essay relies on public research-library papers covering labor-market fragility, essential-cost pressure, and household financial resilience. The figures cited above are descriptive public-data findings. They should not be read as causal estimates or as proof of individual hardship.</p>
-<p>A formal empirical paper would need a clearer household-level resilience measure, transparent series documentation, subgroup or local data, statistical inference, alternative cost weights, and robustness checks. That is beyond the scope of this public stress-test essay, but it is the right standard for an academic article.</p>
-<h2 id="related-research-library-pieces">Related research-library pieces</h2>
-<ul>
-<li><em>Society Under Monetary Stress IV: More Work to Stand Still?</em></li>
-<li><em>Society Under Monetary Stress III: The Quiet Tax</em></li>
-<li><em>Mapping Household Financial Resilience</em></li>
-</ul>
+
     </section>
   </main>
   <footer class="site-footer" id="contact">

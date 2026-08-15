@@ -166,6 +166,15 @@
     .doc-card:hover, .doc-card:focus { border-color:var(--accent); outline:none; }
     .doc-title { font-weight:900; color:var(--hero-ink); margin-bottom:6px; }
     .doc-meta { color:var(--dark-card-muted); font-size:.92rem; }
+    .research-identity-panel { border:1px solid var(--line); border-radius:16px; background:var(--card-soft); padding:16px; margin-bottom:18px; }
+    :root[data-theme="dark"] .research-identity-panel { background:rgba(255,255,255,.045); }
+    .identity-pill-row { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
+    .identity-pill-row span { display:inline-flex; border:1px solid var(--line); border-radius:999px; padding:5px 9px; background:var(--card); color:var(--ink); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.07em; text-transform:uppercase; }
+    .identity-summary { display:grid; gap:10px; margin:0; }
+    .identity-summary div { border-left:4px solid var(--accent); padding-left:10px; }
+    .identity-summary dt, .identity-summary dd { margin:0; }
+    .identity-summary dt { color:var(--muted); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+    .identity-summary dd { color:var(--ink); font-weight:720; }
     @media print { body { background:#fff; color:#111827; } main { max-width:none; padding:0; } .back-link, .actions, .toc { display:none; } .hero, .card { box-shadow:none; border:0; padding:0; background:#fff; color:#111827; } h2, h3 { break-after:avoid; } figure, table { break-inside:avoid; } }
 
   </style>
@@ -206,40 +215,23 @@
         <a class="button" href="../Household_Facing_Indicators_of_Monetary_Tightening.pdf">Download PDF</a>
         <a class="button secondary" href="./index.html">Home</a>
       </div>
-      <nav class="toc"><div class="toc-title">Contents</div><a class="toc-1" href="#household-facing-indicators-of-monetary-tightening">Household-Facing Indicators of Monetary Tightening</a><a class="toc-2" href="#public-companion-summary">Public companion summary</a><a class="toc-2" href="#core-finding">Core finding</a><a class="toc-2" href="#why-payments-matter">Why payments matter</a><a class="toc-2" href="#what-the-note-does-not-claim">What the note does not claim</a><a class="toc-2" href="#next-empirical-step">Next empirical step</a></nav>
+
     </section>
     <section class="card doc-body">
+      <aside class="research-identity-panel" aria-label="Research classification">
+    <div class="doc-kicker">Research classification</div>
+    <div class="identity-pill-row">
+      <span>Macro context</span>
+      <span>Measurement note</span>
+      <span>Macro interpretation</span>
+    </div>
+    <dl class="identity-summary">
+      <div><dt>What it can support</dt><dd>Macro-to-household context; not a daily-engine proof.</dd></div>
+      <div><dt>Primary limitation</dt><dd>Public aggregate indicators cannot see individual household circumstances.</dd></div>
+    </dl>
+  </aside>
       <p class="small"><strong>Suggested citation:</strong> Kotte, Arne. 2026. “Household-Facing Indicators of Monetary Tightening: A Public-Data Channel Map of Rates, Payments, Delinquencies, and Buffers.” BTC Helper Research.</p>
-      <p class="small"><strong>Descriptive research note.</strong> Public-data channel map only; not a causal estimate of monetary policy, not a household-level fragility model, and not a journal-style empirical paper. The note shows how tightening appears in household-facing rates and buffer-adjacent indicators while separating measurement from causality.</p><h1 id="household-facing-indicators-of-monetary-tightening">Household-Facing Indicators of Monetary Tightening</h1>
-<h2 id="public-companion-summary">Public companion summary</h2>
-<p>This descriptive research note maps how monetary tightening appears in household-facing public data. It does not estimate the causal effect of Federal Reserve policy, and it does not directly measure household fragility at the household level. Its purpose is narrower: to identify the public indicators that help translate tight money into practical household margins.</p>
-<p>The note focuses on six channels:</p>
-<ol>
-<li>policy-rate repricing;</li>
-<li>mortgage access;</li>
-<li>revolving credit;</li>
-<li>auto credit;</li>
-<li>debt-service burden;</li>
-<li>liquid-buffer pressure.</li>
-</ol>
-<h2 id="core-finding">Core finding</h2>
-<p>Public data show that several household-facing borrowing costs rose sharply into the 2023–2024 tightening window. Relative to 2019, the 2024 annual average was higher by:</p>
-<ul>
-<li><strong>2.99 percentage points</strong> for the federal funds rate;</li>
-<li><strong>2.79 percentage points</strong> for the 30-year mortgage rate;</li>
-<li><strong>6.54 percentage points</strong> for the commercial-bank credit-card APR;</li>
-<li><strong>3.10 percentage points</strong> for the 48-month auto-loan rate.</li>
-</ul>
-<p>The paper also shows that stress indicators moved unevenly. Credit-card and consumer-loan delinquencies rose from pandemic lows in the aggregate bank series, mortgage delinquency remained comparatively contained, the household debt-service ratio rose modestly, and the personal saving rate fell well below its 2020 pandemic surge.</p>
-<h2 id="why-payments-matter">Why payments matter</h2>
-<p>The note translates rate changes into representative payment arithmetic. For example, a $400,000 thirty-year mortgage financed at the 2024 annual-average mortgage rate costs about <strong>$876 more per month</strong> than the same loan financed at the 2020 average. A $10,000 revolving card balance carries about <strong>$687 more annual interest</strong> at the 2024 card APR than at the 2020 card APR, before compounding, fees, promotional rates, penalty rates, or balance changes.</p>
-<p>These examples are not household-level estimates. They are simple screens that show why tight money can matter before delinquency appears: payment pressure can reduce resilience even while households remain current.</p>
-<h2 id="what-the-note-does-not-claim">What the note does not claim</h2>
-<p>This is not a causal monetary-policy paper. It does not show that rate hikes caused observed changes in household hardship. Inflation, pandemic-transfer expiration, labor-market shifts, underwriting changes, rent, vehicle prices, insurance costs, and borrower selection all moved during the same period.</p>
-<p>The note also does not directly identify fragile households. Household fragility is distributional and balance-sheet-specific. Aggregate FRED series can show repricing pressure, but they cannot tell which households crossed from pressure into fragility.</p>
-<h2 id="next-empirical-step">Next empirical step</h2>
-<p>A stronger journal-style paper would need household-level or regional exposure analysis. The key question would be whether households with greater pre-tightening exposure—revolving balances, variable-rate debt, low liquid assets, renter/prospective-buyer status, auto dependence, or near-term borrowing needs—experienced larger deterioration in liquidity, missed payments, delinquency, or forced borrowing after tightening shocks.</p>
-<p>Until then, the disciplined conclusion is narrower: tight money raised the public-data price of several household-continuity channels, but aggregate data cannot identify who became fragile or prove causality.</p>
+      <p class="small"><strong>Descriptive research note.</strong> Public-data channel map only; not a causal estimate of monetary policy, not a household-level fragility model, and not a journal-style empirical paper. The note shows how tightening appears in household-facing rates and buffer-adjacent indicators while separating measurement from causality.</p>
     </section>
   </main>
   <footer class="site-footer" id="contact">

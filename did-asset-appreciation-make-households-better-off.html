@@ -166,6 +166,15 @@
     .doc-card:hover, .doc-card:focus { border-color:var(--accent); outline:none; }
     .doc-title { font-weight:900; color:var(--hero-ink); margin-bottom:6px; }
     .doc-meta { color:var(--dark-card-muted); font-size:.92rem; }
+    .research-identity-panel { border:1px solid var(--line); border-radius:16px; background:var(--card-soft); padding:16px; margin-bottom:18px; }
+    :root[data-theme="dark"] .research-identity-panel { background:rgba(255,255,255,.045); }
+    .identity-pill-row { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
+    .identity-pill-row span { display:inline-flex; border:1px solid var(--line); border-radius:999px; padding:5px 9px; background:var(--card); color:var(--ink); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.07em; text-transform:uppercase; }
+    .identity-summary { display:grid; gap:10px; margin:0; }
+    .identity-summary div { border-left:4px solid var(--accent); padding-left:10px; }
+    .identity-summary dt, .identity-summary dd { margin:0; }
+    .identity-summary dt { color:var(--muted); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+    .identity-summary dd { color:var(--ink); font-weight:720; }
     @media print { body { background:#fff; color:#111827; } main { max-width:none; padding:0; } .back-link, .actions, .toc { display:none; } .hero, .card { box-shadow:none; border:0; padding:0; background:#fff; color:#111827; } h2, h3 { break-after:avoid; } figure, table { break-inside:avoid; } }
 
   </style>
@@ -206,71 +215,23 @@
         <a class="button" href="/Did_Asset_Appreciation_Make_Households_Better_Off.pdf">Download PDF</a>
         <a class="button secondary" href="/index.html">Home</a>
       </div>
-      <nav class="toc"><div class="toc-title">Contents</div><a class="toc-1" href="#did-asset-appreciation-make-households-better-off">Did Asset Appreciation Make Households Better Off?</a><a class="toc-2" href="#the-objection">The objection</a><a class="toc-2" href="#what-better-off-means-here">What “better off” means here</a><a class="toc-2" href="#what-public-data-can-test">What public data can test</a><a class="toc-2" href="#what-the-framework-should-concede">What the framework should concede</a><a class="toc-2" href="#what-the-existing-evidence-suggests">What the existing evidence suggests</a><a class="toc-2" href="#what-this-does-not-prove">What this does not prove</a><a class="toc-2" href="#the-narrow-conclusion">The narrow conclusion</a><a class="toc-2" href="#evidence-note">Evidence note</a><a class="toc-2" href="#related-research-library-pieces">Related research-library pieces</a></nav>
+
     </section>
     <section class="card doc-body">
+      <aside class="research-identity-panel" aria-label="Research classification">
+    <div class="doc-kicker">Research classification</div>
+    <div class="identity-pill-row">
+      <span>Bitcoin thesis research</span>
+      <span>Supporting material</span>
+      <span>Bitcoin thesis context</span>
+    </div>
+    <dl class="identity-summary">
+      <div><dt>What it can support</dt><dd>Adversarial thesis context; not BTC Helper decision-engine validation.</dd></div>
+      <div><dt>Primary limitation</dt><dd>Essay series; not all objections are empirical tests.</dd></div>
+    </dl>
+  </aside>
       <p class="small"><strong>Suggested citation:</strong> Kotte, Arne. 2026. “Did Asset Appreciation Make Households Better Off?” Sound Money Stress Tests. BTC Helper Research.</p>
-      <h1 id="did-asset-appreciation-make-households-better-off">Did Asset Appreciation Make Households Better Off?</h1>
-<h2 id="the-objection">The objection</h2>
-<p>A serious objection to the household monetary-stress framework is that it can sound too negative about asset-price growth. Many households did become wealthier on paper. Home equity rose for owners. Retirement accounts benefited from higher equity values. Business owners, shareholders, and households with long-duration assets often saw their balance sheets improve.</p>
-<p>That objection matters because it is true in part. Higher asset values can improve household resilience. They can create collateral, retirement security, borrowing capacity, and a larger cushion against shocks.</p>
-<p>The right question is therefore not whether asset appreciation helped anyone. It clearly did. The right question is what kind of “better off” we mean, who already owned the appreciating assets, who was trying to buy in after repricing, and whether paper gains became usable resilience.</p>
-<h2 id="what-better-off-means-here">What “better off” means here</h2>
-<p>This essay uses “better off” in a narrow balance-sheet sense, not as a full welfare claim. A household can be better off in one dimension and still vulnerable in another.</p>
-<p>Four dimensions need to be kept separate:</p>
-<ul>
-<li><strong>Net worth:</strong> whether the market value of assets minus liabilities rose.</li>
-<li><strong>Liquidity:</strong> whether the household has cash or near-cash resources to absorb a shock without missed payments or forced borrowing.</li>
-<li><strong>Debt service and income risk:</strong> whether monthly obligations remain manageable if rates, income, or expenses change.</li>
-<li><strong>Entry capacity:</strong> whether a non-owner or younger household can cross into ownership, retirement saving, business formation, or other durable asset exposure.</li>
-</ul>
-<p>A homeowner with large home equity and little cash may be wealthier but still fragile in a short-run emergency. A renter with no home equity but strong income, low debt, and liquid savings may be more resilient to a near-term shock. A young household facing higher home prices may be worse off on the entry margin even if aggregate household net worth has risen.</p>
-<p>So the essay does not ask whether asset appreciation raised total wealth. In many cases it did. It asks whether rising asset values can be read as broad household resilience. That is a stricter claim.</p>
-<h2 id="what-public-data-can-test">What public data can test</h2>
-<p>Public data cannot tell a complete household story. They cannot observe every family transfer, local market constraint, risk preference, investment choice, or timing decision. They also cannot prove that one monetary variable mechanically caused asset appreciation or wealth concentration.</p>
-<p>But public data can test a narrower descriptive claim: whether asset gains were broadly shared across household balance sheets, or whether they mainly flowed through portfolios that were already unequal.</p>
-<p>That requires separating four ideas that are often mixed together:</p>
-<ul>
-<li><strong>Aggregate wealth:</strong> whether total household net worth rose.</li>
-<li><strong>Portfolio exposure:</strong> which households owned homes, equities, retirement assets, business claims, or other appreciating assets before the repricing.</li>
-<li><strong>Entry costs:</strong> what non-owners or younger households had to pay to acquire the same assets later.</li>
-<li><strong>Usable resilience:</strong> whether higher asset values were paired with enough liquidity, income, and manageable debt to reduce hardship risk.</li>
-</ul>
-<p>Those distinctions keep the analysis from becoming one-sided. Asset appreciation can be a real benefit for owners and a real barrier for entrants at the same time.</p>
-<h2 id="what-the-framework-should-concede">What the framework should concede</h2>
-<p>The framework should concede three things clearly.</p>
-<p>First, higher asset values are not automatically bad. For a household that already owns a home, rising home equity can be a major source of security. For a household with retirement savings, equity-market gains can improve long-run resilience. For a business owner, appreciation can increase borrowing capacity or exit value.</p>
-<p>Second, aggregate wealth gains are not fake merely because they are uneven. If a household’s retirement account rose, that is a real improvement for that household. If a homeowner built equity, that matters. The fact that another household was priced out does not erase the owner’s gain.</p>
-<p>Third, the source of appreciation matters. Rising equity values may reflect expected productivity, profits, lower discount rates, buybacks, risk appetite, or global savings flows. Rising home prices may reflect supply restrictions, local amenities, lower rates, migration, income growth, intergenerational transfers, or speculative dynamics. The welfare interpretation differs across channels.</p>
-<p>These concessions make the narrower claim stronger. The concern is not asset appreciation by itself. The concern is reading aggregate appreciation as if it automatically means broad, liquid, shock-resistant household resilience.</p>
-<h2 id="what-the-existing-evidence-suggests">What the existing evidence suggests</h2>
-<p>The public research library is not a substitute for a self-contained empirical article. This essay therefore uses its numbers only as descriptive context.</p>
-<p>The asset-exposure evidence uses Federal Reserve Distributional Financial Accounts and public macro series to describe household balance sheets from 1989 through 2024. The findings are descriptive, not causal, but they are directly relevant to this objection.</p>
-<p>The top 10 percent’s net-worth share rose from 60.9 percent in 1989 to 67.4 percent in 2024. Its share of corporate equities and mutual fund shares rose from 81.4 percent to 87.2 percent. By 2024, the bottom half held 2.5 percent of net worth and 1.0 percent of corporate equities and mutual fund shares. Bottom-half liabilities remained about three-fifths of assets.</p>
-<p>Those facts do not show whether median households were better or worse off in a full welfare sense. They do show why aggregate asset appreciation cannot be read as uniform household improvement. When asset values rise, the most direct gains accrue to households that already hold the assets.</p>
-<p>The housing evidence points in the same direction, but it needs careful wording. National housing data cannot settle local affordability, down-payment constraints, credit standards, geographic sorting, supply restrictions, or family-transfer effects. Still, the broad distinction is useful: homeownership can remain stable while entry costs rise for marginal buyers.</p>
-<p>The housing paper separates the price hurdle, payment hurdle, cash-entry hurdle, and rent-burden channel. Low mortgage rates softened monthly payments during parts of the 2010s even while prices rose. By 2024, higher prices and higher rates made the payment problem harder again.</p>
-<p>The long-horizon planning paper adds an important counterweight. Homeownership did not collapse nationally: the homeownership rate was 64.0 percent in 1994 and 65.6 percent in 2024. Real income rose. Saving was volatile, not simply destroyed. These facts matter because they stop the argument from becoming a collapse story.</p>
-<p>But the same paper still finds that corrected housing-entry pressure rose. A nominal median-home-price-to-nominal-income index increased from 100 in 1994 to 124 in 2024. A real home-price-index-to-real-income proxy rose to 145. Those are not apocalyptic numbers, and they are not a full local affordability model. They are evidence that entry became harder on national public measures even while existing owners could benefit from appreciation.</p>
-<p>That is the central distinction. Asset appreciation can strengthen incumbents and raise hurdles for entrants at the same time.</p>
-<h2 id="what-this-does-not-prove">What this does not prove</h2>
-<p>This evidence does not prove that every non-owner was harmed or that every owner was helped. Some renters benefited from strong labor markets, family support, mobility, or investments outside housing. Some homeowners faced high maintenance costs, property taxes, insurance, debt service, local decline, or illiquid wealth they could not easily use.</p>
-<p>It also does not prove that rising asset prices were caused by one monetary channel. Housing supply, zoning, migration, demographics, tax policy, credit standards, global capital flows, fiscal policy, technology, and local labor markets all matter. Equity-market gains reflect profits, productivity expectations, discount rates, risk appetite, buybacks, global liquidity, and many other forces.</p>
-<p>Nor does the evidence prove that asset appreciation is socially undesirable. A society wants productive assets to become more valuable when they represent real future output, better businesses, or better housing. A lower-asset-price counterfactual could reduce incumbent wealth, collateral value, retirement adequacy, and investment. The concern is when appreciation appears to outpace the ability of many new households to enter ownership, build buffers, and participate in durable balance-sheet gains.</p>
-<h2 id="the-narrow-conclusion">The narrow conclusion</h2>
-<p>The strongest answer to the asset-appreciation objection is not denial. Yes, many households became wealthier. Yes, home equity and retirement gains improved resilience for many owners. Yes, aggregate net worth matters.</p>
-<p>But aggregate wealth is not the same as broad resilience. Asset appreciation should be treated as distributional exposure: a benefit to households already positioned in appreciating assets, a potential entry barrier to households trying to buy in later, and a mixed signal for households with illiquid wealth but thin cash buffers.</p>
-<p>That is the defensible claim. Asset appreciation can improve household resilience, but it does not automatically prove that the household sector became more resilient in the ways that matter for shocks, liquidity, debt service, entry costs, family formation, or long-horizon planning. The key question is not whether assets rose. It is who owned them before they rose, who had to buy them afterward, and whether the gains translated into usable resilience.</p>
-<h2 id="evidence-note">Evidence note</h2>
-<p>This essay relies on public research-library papers covering asset exposure, housing affordability, long-horizon planning, and household financial resilience. The figures cited above are descriptive public-data findings. They should not be read as causal estimates or as a complete welfare decomposition.</p>
-<p>A full empirical paper would need more than this essay provides: household-level or cohort-level measures of liquidity, debt service, asset ownership, rent burden, mortgage status, age, income, local housing conditions, and retirement exposure; a transparent decomposition by asset class; and a clearer counterfactual for why asset prices rose. That is beyond the scope of this public stress-test essay, but it is the right standard for a formal research article.</p>
-<h2 id="related-research-library-pieces">Related research-library pieces</h2>
-<ul>
-<li><em>Society Under Monetary Stress II: The Cantillon Map</em></li>
-<li><em>Society Under Monetary Stress I: The Fiat Squeeze</em></li>
-<li><em>Society Under Monetary Stress V: Saving the Future</em></li>
-<li><em>Mapping Household Financial Resilience</em></li>
-</ul>
+
     </section>
   </main>
   <footer class="site-footer" id="contact">

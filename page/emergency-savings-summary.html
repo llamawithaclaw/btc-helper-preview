@@ -166,6 +166,15 @@
     .doc-card:hover, .doc-card:focus { border-color:var(--accent); outline:none; }
     .doc-title { font-weight:900; color:var(--hero-ink); margin-bottom:6px; }
     .doc-meta { color:var(--dark-card-muted); font-size:.92rem; }
+    .research-identity-panel { border:1px solid var(--line); border-radius:16px; background:var(--card-soft); padding:16px; margin-bottom:18px; }
+    :root[data-theme="dark"] .research-identity-panel { background:rgba(255,255,255,.045); }
+    .identity-pill-row { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
+    .identity-pill-row span { display:inline-flex; border:1px solid var(--line); border-radius:999px; padding:5px 9px; background:var(--card); color:var(--ink); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.07em; text-transform:uppercase; }
+    .identity-summary { display:grid; gap:10px; margin:0; }
+    .identity-summary div { border-left:4px solid var(--accent); padding-left:10px; }
+    .identity-summary dt, .identity-summary dd { margin:0; }
+    .identity-summary dt { color:var(--muted); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+    .identity-summary dd { color:var(--ink); font-weight:720; }
     @media print { body { background:#fff; color:#111827; } main { max-width:none; padding:0; } .back-link, .actions, .toc { display:none; } .hero, .card { box-shadow:none; border:0; padding:0; background:#fff; color:#111827; } h2, h3 { break-after:avoid; } figure, table { break-inside:avoid; } }
 
   </style>
@@ -206,38 +215,23 @@
         <a class="button" href="../Emergency_Savings_and_Household_Financial_Fragility.pdf">Download PDF</a>
         <a class="button secondary" href="./index.html">Home</a>
       </div>
-      <nav class="toc"><div class="toc-title">Contents</div><a class="toc-1" href="#emergency-savings-and-household-financial-fragility">Emergency Savings and Household Financial Fragility</a><a class="toc-2" href="#evidence-from-shed-published-indicators-2013-2025">Evidence from SHED Published Indicators, 2013–2025</a><a class="toc-2" href="#plain-language-summary">Plain-language summary</a><a class="toc-2" href="#why-it-matters">Why it matters</a><a class="toc-2" href="#what-changed-after-review">What changed after review</a><a class="toc-2" href="#bottom-line">Bottom line</a></nav>
+
     </section>
     <section class="card doc-body">
+      <aside class="research-identity-panel" aria-label="Research classification">
+    <div class="doc-kicker">Research classification</div>
+    <div class="identity-pill-row">
+      <span>Household / resilience research</span>
+      <span>Superseded / archived</span>
+      <span>Household evidence</span>
+    </div>
+    <dl class="identity-summary">
+      <div><dt>What it can support</dt><dd>Older household context; not current methodology or engine validation.</dd></div>
+      <div><dt>Primary limitation</dt><dd>Older supporting note with less complete measurement than the flagship SHED work.</dd></div>
+    </dl>
+  </aside>
       <p class="small"><strong>Suggested citation:</strong> Kotte, Arne. 2026. “Emergency Savings and Household Financial Fragility: Evidence from SHED Published Indicators, 2013–2025.” BTC Helper Research.</p>
-      <h1 id="emergency-savings-and-household-financial-fragility">Emergency Savings and Household Financial Fragility</h1>
-<h2 id="evidence-from-shed-published-indicators-2013-2025">Evidence from SHED Published Indicators, 2013–2025</h2>
-<p><strong>Author:</strong> Arne Kotte</p>
-<p><strong>Document type:</strong> Descriptive public-data research note</p>
-<p><strong>Status:</strong> Revised published-indicator draft</p>
-<h2 id="plain-language-summary">Plain-language summary</h2>
-<p>This paper studies a basic household resilience question: when an unexpected expense arrives, who has enough immediate payment capacity to absorb it without turning the shock into debt, arrears, skipped care, or forced tradeoffs?</p>
-<p>The draft uses public Federal Reserve Survey of Household Economics and Decisionmaking (SHED) indicators through 2025. It focuses on two measures:</p>
-<ul>
-<li>whether adults could cover a hypothetical <strong>$400 emergency expense using cash or its equivalent</strong></li>
-<li>whether adults report <strong>emergency savings sufficient to cover three months of expenses</strong></li>
-</ul>
-<p>The central public-data fact is that emergency-buffer indicators improved through 2021, then reversed or plateaued. In 2025, <strong>37 percent</strong> of adults could not cover a $400 emergency expense with cash or its equivalent, and <strong>45 percent</strong> lacked three months of emergency savings.</p>
-<h2 id="why-it-matters">Why it matters</h2>
-<p>Aggregate income and employment statistics can hide fragile household balance sheets. A household may be working, current on bills, and still be one car repair, medical bill, rent increase, or missed shift away from high-cost borrowing or delayed payment.</p>
-<p>The distributional pattern is the most important part. In 2025, lacking $400 cash/equivalent payment capacity was much more common among younger adults, parents with children, adults with less education, and Black and Hispanic adults. These are unconditional public-table gaps, not causal estimates, but they show where emergency-payment fragility is concentrated.</p>
-<h2 id="what-changed-after-review">What changed after review</h2>
-<p>The revised draft is intentionally more disciplined than the first version:</p>
-<ul>
-<li>It uses <strong>cash/equivalent payment capacity</strong> rather than overclaiming direct cash balances.</li>
-<li>It clarifies that SHED's $400 measure includes cash, savings, or a credit card paid off at the next statement.</li>
-<li>It notes that public table values are rounded and do not provide survey-adjusted confidence intervals.</li>
-<li>It quantifies the fixed-threshold issue: using CPI-U, <strong>$400 in 2013 had roughly the purchasing power of $553 in 2025</strong>.</li>
-<li>It clearly states what a stronger research version would require: SHED microdata, inference, conditional models, decompositions, and links to actual hardship outcomes.</li>
-</ul>
-<h2 id="bottom-line">Bottom line</h2>
-<p>The emergency buffer is the household shock absorber. Public SHED indicators show that many adults still lack it, and that the post-2021 improvement in household liquidity did not become a durable broad-based reserve.</p>
-<p>This version should be read as a transparent public-data measurement note and research agenda, not as a causal paper.</p>
+
     </section>
   </main>
   <footer class="site-footer" id="contact">

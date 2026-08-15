@@ -166,6 +166,15 @@
     .doc-card:hover, .doc-card:focus { border-color:var(--accent); outline:none; }
     .doc-title { font-weight:900; color:var(--hero-ink); margin-bottom:6px; }
     .doc-meta { color:var(--dark-card-muted); font-size:.92rem; }
+    .research-identity-panel { border:1px solid var(--line); border-radius:16px; background:var(--card-soft); padding:16px; margin-bottom:18px; }
+    :root[data-theme="dark"] .research-identity-panel { background:rgba(255,255,255,.045); }
+    .identity-pill-row { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
+    .identity-pill-row span { display:inline-flex; border:1px solid var(--line); border-radius:999px; padding:5px 9px; background:var(--card); color:var(--ink); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.07em; text-transform:uppercase; }
+    .identity-summary { display:grid; gap:10px; margin:0; }
+    .identity-summary div { border-left:4px solid var(--accent); padding-left:10px; }
+    .identity-summary dt, .identity-summary dd { margin:0; }
+    .identity-summary dt { color:var(--muted); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+    .identity-summary dd { color:var(--ink); font-weight:720; }
     @media print { body { background:#fff; color:#111827; } main { max-width:none; padding:0; } .back-link, .actions, .toc { display:none; } .hero, .card { box-shadow:none; border:0; padding:0; background:#fff; color:#111827; } h2, h3 { break-after:avoid; } figure, table { break-inside:avoid; } }
 
   </style>
@@ -206,71 +215,23 @@
         <a class="button" href="/Emergency_Buffers_Borrowed_Resilience_and_Household_Hardship_SHED_2015_2025.pdf">Download PDF</a>
         <a class="button secondary" href="/index.html">Home</a>
       </div>
-      <nav class="toc"><div class="toc-title">Contents</div><a class="toc-1" href="#emergency-buffers-borrowed-resilience-and-household-hardship">Emergency Buffers, Borrowed Resilience, and Household Hardship</a><a class="toc-2" href="#plain-language-summary">Plain-language summary</a><a class="toc-2" href="#main-empirical-message">Main empirical message</a><a class="toc-2" href="#what-this-paper-consolidates">What this paper consolidates</a><a class="toc-2" href="#validation-included">Validation included</a><a class="toc-2" href="#what-this-paper-is-and-is-not">What this paper is — and is not</a><a class="toc-2" href="#main-limitation">Main limitation</a><a class="toc-2" href="#suggested-citation">Suggested citation</a></nav>
+
     </section>
     <section class="card doc-body">
+      <aside class="research-identity-panel" aria-label="Research classification">
+    <div class="doc-kicker">Research classification</div>
+    <div class="identity-pill-row">
+      <span>Household / resilience research</span>
+      <span>Working paper</span>
+      <span>Household evidence</span>
+    </div>
+    <dl class="identity-summary">
+      <div><dt>What it can support</dt><dd>Supports resilience-first constraints; not a causal planner or Bitcoin-allocation result.</dd></div>
+      <div><dt>Primary limitation</dt><dd>Descriptive evidence; not a causal household-level treatment estimate.</dd></div>
+    </dl>
+  </aside>
       <p class="small"><strong>Suggested citation:</strong> Kotte, Arne. 2026. “Emergency Buffers, Borrowed Resilience, and Household Hardship: Evidence from SHED 2015–2025.” BTC Helper Research.</p>
-      <p class="small"><strong>Flagship SHED consolidation working paper.</strong> Descriptive public-use SHED measurement evidence; not a causal estimate, validated forecast, or final resilience index. Public-use uncertainty remains approximate because replicate weights, strata, and PSU variables are not exposed in the inspected files.</p><h1 id="emergency-buffers-borrowed-resilience-and-household-hardship">Emergency Buffers, Borrowed Resilience, and Household Hardship</h1>
-<p><strong>Status:</strong> Flagship SHED consolidation working paper</p>
-<p><strong>Author:</strong> Arne Kotte</p>
-<p><strong>Data:</strong> Federal Reserve SHED public indicators, 2025 public-use microdata, and harmonized SHED repeated cross-sections, 2015–2025</p>
-<p><strong>Current version:</strong> May 2026 institutional research draft</p>
-<h2 id="plain-language-summary">Plain-language summary</h2>
-<p>This paper consolidates the SHED emergency-buffer work into one flagship measurement paper.</p>
-<p>The main idea is simple: “Can someone handle a $400 emergency?” is useful, but incomplete. We also need to know <strong>how</strong> they would handle it.</p>
-<p>The paper separates four states:</p>
-<ol>
-<li><strong>Liquid sufficiency</strong> — cash, checking, savings, or similar resources are available.</li>
-<li><strong>Bridge credit</strong> — credit is used as short-term payment smoothing and paid in full.</li>
-<li><strong>Debt-financed distress</strong> — the emergency is handled by revolving credit or other borrowing.</li>
-<li><strong>Liquidity exclusion</strong> — the respondent cannot pay or appears unable to access a workable financing path.</li>
-</ol>
-<h2 id="main-empirical-message">Main empirical message</h2>
-<p>The strongest finding is that paid-in-full bridge credit is empirically different from revolving credit and emergency borrowing.</p>
-<p>In the 2025 SHED profile table, strict hardship is:</p>
-<ul>
-<li><strong>24.7%</strong> for bridge credit paid in full;</li>
-<li><strong>31.4%</strong> for cash/checking/savings;</li>
-<li><strong>67.9%</strong> for revolving credit;</li>
-<li><strong>79.3%</strong> for other emergency borrowing;</li>
-<li><strong>85.1%</strong> for inability to pay $400.</li>
-</ul>
-<p>The point is not that bridge credit causes resilience. The point is that generic “credit use” is too crude.</p>
-<h2 id="what-this-paper-consolidates">What this paper consolidates</h2>
-<p>This paper pulls together three prior SHED artifacts:</p>
-<ul>
-<li>published-indicator background on $400 capacity and three-month emergency savings;</li>
-<li>public-use microdata replication and harmonization scaffolding;</li>
-<li>the 2025 hardship-profile taxonomy and validation checks.</li>
-</ul>
-<h2 id="validation-included">Validation included</h2>
-<p>The paper carries forward and now extends:</p>
-<ul>
-<li>strict non-overlap hardship construction;</li>
-<li>priority-rule sensitivity;</li>
-<li>non-exclusive emergency-response dummy models;</li>
-<li>first-pass data-driven clustering;</li>
-<li>benchmark-screen comparisons;</li>
-<li>multi-year validation from harmonized SHED repeated cross-sections;</li>
-<li>profile balance tables;</li>
-<li>separate component-outcome tables;</li>
-<li>a first classification-multiverse table;</li>
-<li>a 2025 bill-pressure jump diagnostic.</li>
-</ul>
-<h2 id="what-this-paper-is-and-is-not">What this paper is — and is not</h2>
-<p>This is an <strong>institutional measurement paper</strong>. It is designed to improve adult-respondent household-resilience measurement and support better personal economic decision tools.</p>
-<p>It is not:</p>
-<ul>
-<li>a causal estimate;</li>
-<li>a validated forecast;</li>
-<li>a final resilience index;</li>
-<li>a causal or structural economics paper.</li>
-</ul>
-<h2 id="main-limitation">Main limitation</h2>
-<p>The public-use files inspected for this project include final weights but not public replicate weights, strata, or PSU variables. Reported uncertainty is therefore approximate and should be treated as scale/screening evidence rather than final design-consistent SHED inference.</p>
-<p>The review-response diagnostics strengthen the paper, but they also make the boundaries clearer: profile differences are partly compositional, the strict hardship composite has components with different timing and mechanisms, and the 2025 bill-pressure jump needs wave-by-wave harmonization before being overinterpreted.</p>
-<h2 id="suggested-citation">Suggested citation</h2>
-<p>Kotte, Arne. 2026. “Emergency Buffers, Borrowed Resilience, and Household Hardship: Evidence from SHED 2015–2025.” BTC Helper Research.</p>
+      <p class="small"><strong>Flagship SHED consolidation working paper.</strong> Descriptive public-use SHED measurement evidence; not a causal estimate, validated forecast, or final resilience index. Public-use uncertainty remains approximate because replicate weights, strata, and PSU variables are not exposed in the inspected files.</p>
     </section>
   </main>
   <footer class="site-footer" id="contact">

@@ -166,6 +166,15 @@
     .doc-card:hover, .doc-card:focus { border-color:var(--accent); outline:none; }
     .doc-title { font-weight:900; color:var(--hero-ink); margin-bottom:6px; }
     .doc-meta { color:var(--dark-card-muted); font-size:.92rem; }
+    .research-identity-panel { border:1px solid var(--line); border-radius:16px; background:var(--card-soft); padding:16px; margin-bottom:18px; }
+    :root[data-theme="dark"] .research-identity-panel { background:rgba(255,255,255,.045); }
+    .identity-pill-row { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
+    .identity-pill-row span { display:inline-flex; border:1px solid var(--line); border-radius:999px; padding:5px 9px; background:var(--card); color:var(--ink); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.07em; text-transform:uppercase; }
+    .identity-summary { display:grid; gap:10px; margin:0; }
+    .identity-summary div { border-left:4px solid var(--accent); padding-left:10px; }
+    .identity-summary dt, .identity-summary dd { margin:0; }
+    .identity-summary dt { color:var(--muted); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+    .identity-summary dd { color:var(--ink); font-weight:720; }
     @media print { body { background:#fff; color:#111827; } main { max-width:none; padding:0; } .back-link, .actions, .toc { display:none; } .hero, .card { box-shadow:none; border:0; padding:0; background:#fff; color:#111827; } h2, h3 { break-after:avoid; } figure, table { break-inside:avoid; } }
 
   </style>
@@ -206,50 +215,23 @@
         <a class="button" href="../Real_Rates_Asset_Prices_and_Household_Entry_Barriers.pdf">Download PDF</a>
         <a class="button secondary" href="./index.html">Home</a>
       </div>
-      <nav class="toc"><div class="toc-title">Contents</div><a class="toc-1" href="#real-rates-asset-prices-and-household-entry-barriers">Real Rates, Asset Prices, and Household Entry Barriers</a><a class="toc-2" href="#public-companion-summary">Public companion summary</a><a class="toc-2" href="#core-finding">Core finding</a><a class="toc-2" href="#why-the-accounting-matters">Why the accounting matters</a><a class="toc-2" href="#counterfactual-screens">Counterfactual screens</a><a class="toc-2" href="#what-the-note-does-not-claim">What the note does not claim</a><a class="toc-2" href="#next-empirical-step">Next empirical step</a></nav>
+
     </section>
     <section class="card doc-body">
+      <aside class="research-identity-panel" aria-label="Research classification">
+    <div class="doc-kicker">Research classification</div>
+    <div class="identity-pill-row">
+      <span>Macro context</span>
+      <span>Measurement note</span>
+      <span>Macro interpretation</span>
+    </div>
+    <dl class="identity-summary">
+      <div><dt>What it can support</dt><dd>Macro/household context; not a BTC Helper outcome test.</dd></div>
+      <div><dt>Primary limitation</dt><dd>Transparent calculation; not a full housing-market model.</dd></div>
+    </dl>
+  </aside>
       <p class="small"><strong>Suggested citation:</strong> Kotte, Arne. 2026. “Real Rates, Asset Prices, and Household Entry Barriers: A Public-Data Accounting Note on Payment Affordability.” BTC Helper Research.</p>
-      <p class="small"><strong>Public-data accounting note.</strong> Descriptive affordability arithmetic only; not a causal estimate, not a structural housing model, and not a journal-style empirical paper. The note shows how real rates, mortgage rates, home prices, income, down payments, and cash-to-close constraints interact in a representative national entry-payment screen.</p><h1 id="real-rates-asset-prices-and-household-entry-barriers">Real Rates, Asset Prices, and Household Entry Barriers</h1>
-<h2 id="public-companion-summary">Public companion summary</h2>
-<p>This descriptive public-data accounting note asks whether the post-2021 move to higher real rates restored household entry affordability or shifted the barrier from elevated asset prices to higher financing costs.</p>
-<p>It is not a causal paper and not a structural housing model. The purpose is narrower: to make the payment arithmetic transparent using public data on real rates, mortgage rates, home prices, rent, and nominal household income.</p>
-<h2 id="core-finding">Core finding</h2>
-<p>The note finds two different affordability regimes:</p>
-<ol>
-<li><strong>2019–2021:</strong> real rates and mortgage rates fell while home prices rose. The simplified 80 percent loan-to-value payment screen worsened only modestly.</li>
-<li><strong>2021–2024:</strong> real rates and mortgage rates rose while home prices remained elevated. The estimated monthly payment rose sharply and the payment-to-income burden deteriorated.</li>
-</ol>
-<p>From 2019 to 2024, the national public-data screen shows:</p>
-<ul>
-<li>the 10-year TIPS real yield rose by <strong>1.54 percentage points</strong>;</li>
-<li>the 30-year mortgage rate rose by <strong>2.79 percentage points</strong>;</li>
-<li>the median sale price rose by <strong>$98,725</strong>;</li>
-<li>the estimated 80 percent LTV principal-and-interest payment rose by about <strong>$954 per month</strong>;</li>
-<li>the payment-to-monthly-nominal-income burden rose from <strong>21.20 percent</strong> to <strong>31.06 percent</strong>.</li>
-</ul>
-<p>The disciplined conclusion is that higher real rates did not coincide with enough price adjustment to restore 2019-style entry-payment affordability in this national screen.</p>
-<h2 id="why-the-accounting-matters">Why the accounting matters</h2>
-<p>The note uses a simple mortgage-payment identity:</p>
-<p><strong>Payment burden = [LTV × Price × annuity factor] / [Income / 12].</strong></p>
-<p>That identity makes the tradeoff clear. Higher rates can pressure valuations, but if home prices do not fall enough, the monthly payment burden can worsen. Nominal income growth partly offsets the pressure but did not fully restore the 2019 burden by 2024.</p>
-<p>The revised note also adds an order-invariant accounting decomposition. Averaging across all possible update orderings, the 2019–2024 burden increase is associated with:</p>
-<ul>
-<li><strong>+7.00 percentage points</strong> from higher median sale prices;</li>
-<li><strong>+8.10 percentage points</strong> from higher mortgage rates;</li>
-<li><strong>−5.23 percentage points</strong> from nominal household income growth.</li>
-</ul>
-<h2 id="counterfactual-screens">Counterfactual screens</h2>
-<p>At the observed 2024 mortgage rate and nominal income, the median sale price would have needed to be about <strong>$285,920</strong> to restore the 2019 payment-income burden. The observed 2024 median sale price was <strong>$418,975</strong>.</p>
-<p>Alternatively, at the observed 2024 price and income, the 30-year mortgage rate would have needed to be about <strong>3.36 percent</strong> to restore the 2019 payment-income burden. The observed 2024 average was <strong>6.72 percent</strong>.</p>
-<p>These are formula-based screens, not forecasts.</p>
-<h2 id="what-the-note-does-not-claim">What the note does not claim</h2>
-<p>The note does not show that real rates caused home prices, mortgage rates, rents, or household formation to move. It also does not identify the marginal household entrant.</p>
-<p>The national median household is not the same as a first-time buyer, younger renter, or local starter-home buyer. The national median sale price is not the local price faced by every household. The note therefore should be read as a transparent benchmark, not a household-level entry model.</p>
-<p>The note also keeps taxes, insurance, PMI, closing costs, and cash-to-close limitations explicit. A sensitivity table shows that lower down payments reduce the cash barrier but can raise the monthly burden, especially once illustrative tax, insurance, and PMI assumptions are included.</p>
-<h2 id="next-empirical-step">Next empirical step</h2>
-<p>The natural next version would be local and entrant-specific. It would use metro or county prices, starter-home or lower-tier prices, renter incomes, local rents, taxes, insurance, PMI assumptions, and observed entry outcomes such as first-time-buyer originations, purchase applications, renter-to-owner transitions, household formation, or age-specific homeownership.</p>
-<p>Until then, the useful public-data claim is narrower: higher rates may discipline asset prices over time, but household entry affordability depends on the combined payment, down-payment, rent alternative, cash-to-close requirement, and income margin facing the potential entrant.</p>
+      <p class="small"><strong>Public-data accounting note.</strong> Descriptive affordability arithmetic only; not a causal estimate, not a structural housing model, and not a journal-style empirical paper. The note shows how real rates, mortgage rates, home prices, income, down payments, and cash-to-close constraints interact in a representative national entry-payment screen.</p>
     </section>
   </main>
   <footer class="site-footer" id="contact">

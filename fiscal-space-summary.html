@@ -166,6 +166,15 @@
     .doc-card:hover, .doc-card:focus { border-color:var(--accent); outline:none; }
     .doc-title { font-weight:900; color:var(--hero-ink); margin-bottom:6px; }
     .doc-meta { color:var(--dark-card-muted); font-size:.92rem; }
+    .research-identity-panel { border:1px solid var(--line); border-radius:16px; background:var(--card-soft); padding:16px; margin-bottom:18px; }
+    :root[data-theme="dark"] .research-identity-panel { background:rgba(255,255,255,.045); }
+    .identity-pill-row { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
+    .identity-pill-row span { display:inline-flex; border:1px solid var(--line); border-radius:999px; padding:5px 9px; background:var(--card); color:var(--ink); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.07em; text-transform:uppercase; }
+    .identity-summary { display:grid; gap:10px; margin:0; }
+    .identity-summary div { border-left:4px solid var(--accent); padding-left:10px; }
+    .identity-summary dt, .identity-summary dd { margin:0; }
+    .identity-summary dt { color:var(--muted); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+    .identity-summary dd { color:var(--ink); font-weight:720; }
     @media print { body { background:#fff; color:#111827; } main { max-width:none; padding:0; } .back-link, .actions, .toc { display:none; } .hero, .card { box-shadow:none; border:0; padding:0; background:#fff; color:#111827; } h2, h3 { break-after:avoid; } figure, table { break-inside:avoid; } }
 
   </style>
@@ -206,56 +215,23 @@
         <a class="button" href="/Society_Under_Monetary_Stress_VI_Fiscal_Dominance_in_Daily_Life.pdf">Download PDF</a>
         <a class="button secondary" href="/index.html">Home</a>
       </div>
-      <nav class="toc"><div class="toc-title">Contents</div><a class="toc-1" href="#society-under-monetary-stress-vi-fiscal-space-in-daily-life">Society Under Monetary Stress VI: Fiscal Space in Daily Life</a><a class="toc-2" href="#summary">Summary</a><a class="toc-2" href="#main-findings">Main findings</a><a class="toc-2" href="#measurement-refinement">Measurement refinement</a><a class="toc-2" href="#why-it-matters">Why it matters</a><a class="toc-2" href="#data-and-replication">Data and replication</a><a class="toc-2" href="#read-the-full-paper">Read the full paper</a></nav>
+
     </section>
     <section class="card doc-body">
+      <aside class="research-identity-panel" aria-label="Research classification">
+    <div class="doc-kicker">Research classification</div>
+    <div class="identity-pill-row">
+      <span>Household / resilience research</span>
+      <span>Supporting material</span>
+      <span>Household evidence</span>
+    </div>
+    <dl class="identity-summary">
+      <div><dt>What it can support</dt><dd>Background theory for resilience constraints; not direct BTC Helper validation.</dd></div>
+      <div><dt>Primary limitation</dt><dd>Long-form research spine; most users should start with the resilience synthesis.</dd></div>
+    </dl>
+  </aside>
       <p class="small"><strong>Suggested citation:</strong> Kotte, Arne. 2026. “Society Under Monetary Stress VI: Fiscal Space in Daily Life: Debt Service, Deficits, and Household-Facing Budget Tradeoffs.” BTC Helper Research.</p>
-      <h1 id="society-under-monetary-stress-vi-fiscal-space-in-daily-life">Society Under Monetary Stress VI: Fiscal Space in Daily Life</h1>
-<p><strong>Debt Service, Deficits, and Household-Facing Budget Tradeoffs</strong></p>
-<p>Arne Kotte</p>
-<h2 id="summary">Summary</h2>
-<p>This paper examines how federal fiscal space moved closer to household-facing tradeoffs from 1994 through 2024.</p>
-<p>The revised paper intentionally softens the frame from strict “fiscal dominance” to <strong>fiscal space</strong>. It does not test whether monetary policy was subordinated to fiscal needs. Instead, it maps the public balance-sheet constraints that eventually shape taxes, benefits, services, inflation exposure, rate tradeoffs, and future flexibility.</p>
-<p>The evidence is descriptive and nonpartisan. It does not claim that public debt mechanically caused household hardship. The central finding is narrower:</p>
-<blockquote>The data do not prove a crisis. They show a narrowing fiscal menu.</blockquote>
-<h2 id="main-findings">Main findings</h2>
-<ol>
-<li><strong>Debt rose on both gross and public-held measures.</strong> Gross federal debt rose from 64.2% of GDP in 1994 to 120.4% in 2024. Debt held by the public rose from 47.7% to 95.9%.</li>
-</ol>
-<ol>
-<li><strong>Fiscal balance deteriorated after the late-1990s surplus period.</strong> The federal fiscal balance moved from a 2.3% of GDP surplus in 2000 to a 6.2% deficit in 2024.</li>
-</ol>
-<ol>
-<li><strong>Budget interest outlays became visible again.</strong> Budget interest outlays rose from 1.7% of GDP in 2019 to 3.0% in 2024.</li>
-</ol>
-<ol>
-<li><strong>Interest absorbed more of receipts.</strong> A budget-interest-to-receipts proxy rose from 10.1% in 2019 to 17.0% in 2024.</li>
-</ol>
-<ol>
-<li><strong>Expenditures exceeded receipts by a wide margin.</strong> In 2024, federal expenditures were 24.1% of GDP while receipts were 17.7%.</li>
-</ol>
-<ol>
-<li><strong>The household interface became more important.</strong> Social benefits rose from 11.6% of GDP in 1994 to 15.6% in 2024, while personal taxes and private saving remained key household-facing adjustment margins.</li>
-</ol>
-<h2 id="measurement-refinement">Measurement refinement</h2>
-<p>An external-style review flagged that the earlier version used “fiscal dominance” too broadly and mixed budget and national-account concepts without enough separation.</p>
-<p>The revised paper now:</p>
-<ul>
-<li>uses <strong>Fiscal Space in Daily Life</strong> as the title frame;</li>
-<li>adds debt held by the public (<code>FYGFGDQ188S</code>);</li>
-<li>adds federal budget interest outlays (<code>FYOIGDA188S</code>);</li>
-<li>distinguishes budget interest outlays from NIPA interest payments;</li>
-<li>lists formulas for constructed variables;</li>
-<li>treats household effects as exposure channels rather than proven crowding.</li>
-</ul>
-<h2 id="why-it-matters">Why it matters</h2>
-<p>Households do not experience “fiscal space” as an abstract ratio. They experience it through taxes, benefits, services, inflation exposure, interest-rate tradeoffs, and the resilience of public commitments.</p>
-<p>This paper does not argue for a single policy answer. It shows that the public balance sheet became more constrained, which makes future choices harder.</p>
-<h2 id="data-and-replication">Data and replication</h2>
-<p>The paper uses public FRED series for total public debt, debt held by the public, federal interest outlays, NIPA interest payments, receipts, expenditures, fiscal balance, social benefits, personal taxes, GDP, disposable income, real disposable income, saving, policy rates, Treasury yields, and CPI.</p>
-<p>Monthly and quarterly series are averaged within calendar year. Fiscal-year balance and interest-outlay observations are assigned to observation year.</p>
-<h2 id="read-the-full-paper">Read the full paper</h2>
-<p>Download the full PDF for figures, tables, limitations, and replication notes.</p>
+
     </section>
   </main>
   <footer class="site-footer" id="contact">

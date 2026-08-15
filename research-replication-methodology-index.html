@@ -166,6 +166,15 @@
     .doc-card:hover, .doc-card:focus { border-color:var(--accent); outline:none; }
     .doc-title { font-weight:900; color:var(--hero-ink); margin-bottom:6px; }
     .doc-meta { color:var(--dark-card-muted); font-size:.92rem; }
+    .research-identity-panel { border:1px solid var(--line); border-radius:16px; background:var(--card-soft); padding:16px; margin-bottom:18px; }
+    :root[data-theme="dark"] .research-identity-panel { background:rgba(255,255,255,.045); }
+    .identity-pill-row { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
+    .identity-pill-row span { display:inline-flex; border:1px solid var(--line); border-radius:999px; padding:5px 9px; background:var(--card); color:var(--ink); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.07em; text-transform:uppercase; }
+    .identity-summary { display:grid; gap:10px; margin:0; }
+    .identity-summary div { border-left:4px solid var(--accent); padding-left:10px; }
+    .identity-summary dt, .identity-summary dd { margin:0; }
+    .identity-summary dt { color:var(--muted); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+    .identity-summary dd { color:var(--ink); font-weight:720; }
     @media print { body { background:#fff; color:#111827; } main { max-width:none; padding:0; } .back-link, .actions, .toc { display:none; } .hero, .card { box-shadow:none; border:0; padding:0; background:#fff; color:#111827; } h2, h3 { break-after:avoid; } figure, table { break-inside:avoid; } }
 
   </style>
@@ -209,6 +218,18 @@
       <nav class="toc"><div class="toc-title">Contents</div><a class="toc-1" href="#public-research-replication-and-methodology-index">Public Research Replication and Methodology Index</a><a class="toc-2" href="#purpose">Purpose</a><a class="toc-2" href="#status-labels">Status labels</a><a class="toc-2" href="#public-research-library-map">Public research library map</a><a class="toc-2" href="#current-publication-boundary">Current publication boundary</a><a class="toc-2" href="#near-term-roadmap">Near-term roadmap</a><a class="toc-3" href="#1-curate-the-public-library">1. Curate the public library</a><a class="toc-3" href="#2-harden-replication-notes">2. Harden replication notes</a><a class="toc-3" href="#3-polish-the-capstone-synthesis">3. Polish the capstone synthesis</a><a class="toc-3" href="#4-prioritize-shed-microdata-as-the-flagship-empirical-backbone">4. Prioritize SHED microdata as the flagship empirical backbone</a><a class="toc-3" href="#5-return-to-meps-for-the-next-validation-pass">5. Return to MEPS for the next validation pass</a><a class="toc-3" href="#6-maintain-a-living-sound-money-research-roadmap">6. Maintain a living sound-money research roadmap</a><a class="toc-3" href="#7-explore-the-btc-helper-budgeting-app-household-resilience-planner">7. Explore the BTC Helper Budgeting App / Household Resilience Planner</a><a class="toc-2" href="#public-trust-rule">Public trust rule</a></nav>
     </section>
     <section class="card doc-body">
+      <aside class="research-identity-panel" aria-label="Research classification">
+    <div class="doc-kicker">Research classification</div>
+    <div class="identity-pill-row">
+      <span>Measurement / methodology</span>
+      <span>Measurement note</span>
+      <span>Measurement / methods</span>
+    </div>
+    <dl class="identity-summary">
+      <div><dt>What it can support</dt><dd>Explains research-library evidence discipline; does not promote any item to efficacy proof.</dd></div>
+      <div><dt>Primary limitation</dt><dd>Index only; each linked item still needs its own evidence review.</dd></div>
+    </dl>
+  </aside>
       <p class="small"><strong>Suggested citation:</strong> Kotte, Arne. 2026. “Public Research Replication and Methodology Index.” BTC Helper Research.</p>
       <h1 id="public-research-replication-and-methodology-index">Public Research Replication and Methodology Index</h1>
 <h2 id="purpose">Purpose</h2>

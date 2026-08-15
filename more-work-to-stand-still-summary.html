@@ -166,6 +166,15 @@
     .doc-card:hover, .doc-card:focus { border-color:var(--accent); outline:none; }
     .doc-title { font-weight:900; color:var(--hero-ink); margin-bottom:6px; }
     .doc-meta { color:var(--dark-card-muted); font-size:.92rem; }
+    .research-identity-panel { border:1px solid var(--line); border-radius:16px; background:var(--card-soft); padding:16px; margin-bottom:18px; }
+    :root[data-theme="dark"] .research-identity-panel { background:rgba(255,255,255,.045); }
+    .identity-pill-row { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
+    .identity-pill-row span { display:inline-flex; border:1px solid var(--line); border-radius:999px; padding:5px 9px; background:var(--card); color:var(--ink); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.07em; text-transform:uppercase; }
+    .identity-summary { display:grid; gap:10px; margin:0; }
+    .identity-summary div { border-left:4px solid var(--accent); padding-left:10px; }
+    .identity-summary dt, .identity-summary dd { margin:0; }
+    .identity-summary dt { color:var(--muted); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+    .identity-summary dd { color:var(--ink); font-weight:720; }
     @media print { body { background:#fff; color:#111827; } main { max-width:none; padding:0; } .back-link, .actions, .toc { display:none; } .hero, .card { box-shadow:none; border:0; padding:0; background:#fff; color:#111827; } h2, h3 { break-after:avoid; } figure, table { break-inside:avoid; } }
 
   </style>
@@ -206,51 +215,23 @@
         <a class="button" href="/Society_Under_Monetary_Stress_IV_More_Work_to_Stand_Still.pdf">Download PDF</a>
         <a class="button secondary" href="/index.html">Home</a>
       </div>
-      <nav class="toc"><div class="toc-title">Contents</div><a class="toc-1" href="#society-under-monetary-stress-iv-more-work-to-stand-still">Society Under Monetary Stress IV: More Work to Stand Still?</a><a class="toc-2" href="#summary">Summary</a><a class="toc-2" href="#main-findings">Main findings</a><a class="toc-2" href="#why-it-matters">Why it matters</a><a class="toc-2" href="#data-and-replication">Data and replication</a><a class="toc-2" href="#read-the-full-paper">Read the full paper</a></nav>
+
     </section>
     <section class="card doc-body">
+      <aside class="research-identity-panel" aria-label="Research classification">
+    <div class="doc-kicker">Research classification</div>
+    <div class="identity-pill-row">
+      <span>Household / resilience research</span>
+      <span>Supporting material</span>
+      <span>Household evidence</span>
+    </div>
+    <dl class="identity-summary">
+      <div><dt>What it can support</dt><dd>Background theory for resilience constraints; not direct BTC Helper validation.</dd></div>
+      <div><dt>Primary limitation</dt><dd>Long-form research spine; most users should start with the resilience synthesis.</dd></div>
+    </dl>
+  </aside>
       <p class="small"><strong>Suggested citation:</strong> Kotte, Arne. 2026. “Society Under Monetary Stress IV: More Work to Stand Still? Real Earnings, Underemployment, and Household Labor-Market Fragility.” BTC Helper Research.</p>
-      <h1 id="society-under-monetary-stress-iv-more-work-to-stand-still">Society Under Monetary Stress IV: More Work to Stand Still?</h1>
-<p><strong>Real Earnings, Underemployment, and Household Labor-Market Fragility</strong></p>
-<p>Arne Kotte</p>
-<h2 id="summary">Summary</h2>
-<p>This paper examines the labor side of household monetary stress. It asks whether public U.S. labor-market data support the claim that households increasingly need more labor effort, multiple jobs, or less secure work arrangements to maintain living standards.</p>
-<p>The answer is deliberately mixed. The aggregate data do <strong>not</strong> support the bluntest version of the “more work to stand still” story. From 1994 through 2024, real median weekly earnings rose, a real weekly earnings proxy improved, prime-age employment recovered, and multiple jobholding did not rise monotonically.</p>
-<p>But that does not mean household labor fragility is imaginary. The evidence points to margins and regimes:</p>
-<ul>
-<li>underemployment rises quickly when the economy weakens;</li>
-<li>multiple jobholding is too ambiguous to use as a standalone hardship measure;</li>
-<li>labor share drifted lower over the sample;</li>
-<li>household pressure depends on fixed costs, local conditions, family structure, and available labor-supply margin.</li>
-</ul>
-<p>The paper is best read as a disciplined public-data note. It clarifies what aggregate labor data can and cannot prove before making stronger household-level claims.</p>
-<h2 id="main-findings">Main findings</h2>
-<ol>
-<li><strong>Real earnings improved.</strong> Real median usual weekly earnings rose from an index value of 100 in 1994 to 117 in 2024. A real weekly earnings proxy rose to 123.</li>
-</ol>
-<ol>
-<li><strong>The simple national squeeze story is too strong.</strong> The essential-cost benchmark divided by weekly earnings was slightly below its 1994 base by 2024.</li>
-</ol>
-<ol>
-<li><strong>Multiple jobholding is not a monotonic hardship trend.</strong> The national multiple-jobholding rate was lower in 2024 than in 1994.</li>
-</ol>
-<ol>
-<li><strong>Underemployment is the clearer fragility signal.</strong> Part-time work for economic reasons and U-6 labor underutilization rise sharply in weak labor-market regimes.</li>
-</ol>
-<ol>
-<li><strong>Prime-age attachment recovered.</strong> Prime-age labor force participation and employment-population ratios were strong by 2024.</li>
-</ol>
-<ol>
-<li><strong>Labor share declined.</strong> Labor’s claim on nonfarm business output fell over the sample, adding distributional context but not direct household proof.</li>
-</ol>
-<h2 id="why-it-matters">Why it matters</h2>
-<p>Employment headlines are useful but incomplete. A household can be employed and still fragile if fixed costs are high, buffers are thin, hours are unstable, or all available labor margin is already being used.</p>
-<p>This paper argues for restraint: aggregate data reject the simplest version of the “more work to stand still” claim, but they also show why a serious household-resilience analysis needs subgroup and household-level evidence.</p>
-<h2 id="data-and-replication">Data and replication</h2>
-<p>The paper uses public FRED/BLS series for wages, hours, multiple jobholding, involuntary part-time work, U-6 labor underutilization, participation, employment, unemployment, labor share, and prices. Monthly and quarterly series are averaged within calendar year. The sample starts in 1994 because the multiple-jobholding rate begins then.</p>
-<p>The essential-cost benchmark is an equal-weight index of food, energy, shelter, and medical-care CPI divided by a weekly earnings proxy. It is transparent but not household-specific.</p>
-<h2 id="read-the-full-paper">Read the full paper</h2>
-<p>Download the full PDF for figures, tables, limitations, and replication notes.</p>
+
     </section>
   </main>
   <footer class="site-footer" id="contact">

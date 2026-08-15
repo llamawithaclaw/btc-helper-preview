@@ -166,6 +166,15 @@
     .doc-card:hover, .doc-card:focus { border-color:var(--accent); outline:none; }
     .doc-title { font-weight:900; color:var(--hero-ink); margin-bottom:6px; }
     .doc-meta { color:var(--dark-card-muted); font-size:.92rem; }
+    .research-identity-panel { border:1px solid var(--line); border-radius:16px; background:var(--card-soft); padding:16px; margin-bottom:18px; }
+    :root[data-theme="dark"] .research-identity-panel { background:rgba(255,255,255,.045); }
+    .identity-pill-row { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
+    .identity-pill-row span { display:inline-flex; border:1px solid var(--line); border-radius:999px; padding:5px 9px; background:var(--card); color:var(--ink); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.07em; text-transform:uppercase; }
+    .identity-summary { display:grid; gap:10px; margin:0; }
+    .identity-summary div { border-left:4px solid var(--accent); padding-left:10px; }
+    .identity-summary dt, .identity-summary dd { margin:0; }
+    .identity-summary dt { color:var(--muted); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+    .identity-summary dd { color:var(--ink); font-weight:720; }
     @media print { body { background:#fff; color:#111827; } main { max-width:none; padding:0; } .back-link, .actions, .toc { display:none; } .hero, .card { box-shadow:none; border:0; padding:0; background:#fff; color:#111827; } h2, h3 { break-after:avoid; } figure, table { break-inside:avoid; } }
 
   </style>
@@ -206,60 +215,23 @@
         <a class="button" href="/Cash_Inflation_and_Household_Optionality.pdf">Download PDF</a>
         <a class="button secondary" href="/index.html">Home</a>
       </div>
-      <nav class="toc"><div class="toc-title">Contents</div><a class="toc-1" href="#cash-inflation-and-household-optionality">Cash, Inflation, and Household Optionality</a><a class="toc-2" href="#public-companion-summary">Public companion summary</a><a class="toc-2" href="#core-finding">Core finding</a><a class="toc-2" href="#public-data-facts">Public-data facts</a><a class="toc-2" href="#what-changed-after-review">What changed after review</a><a class="toc-2" href="#practical-interpretation">Practical interpretation</a><a class="toc-2" href="#next-empirical-step">Next empirical step</a></nav>
+
     </section>
     <section class="card doc-body">
+      <aside class="research-identity-panel" aria-label="Research classification">
+    <div class="doc-kicker">Research classification</div>
+    <div class="identity-pill-row">
+      <span>Household / resilience research</span>
+      <span>Measurement note</span>
+      <span>Household evidence</span>
+    </div>
+    <dl class="identity-summary">
+      <div><dt>What it can support</dt><dd>Supports liquidity-optionality context; not a Bitcoin purchase justification.</dd></div>
+      <div><dt>Primary limitation</dt><dd>Descriptive context; does not estimate the marginal option value of liquidity.</dd></div>
+    </dl>
+  </aside>
       <p class="small"><strong>Suggested citation:</strong> Kotte, Arne. 2026. “Cash, Inflation, and Household Optionality: A Descriptive Companion Note on Liquidity, Purchasing Power, and Emergency Buffers.” BTC Helper Research.</p>
-      <p class="small"><strong>Descriptive companion note.</strong> Public-data liquidity note only; not investment advice, not a portfolio optimization model, not a causal estimate, and not a journal-style empirical paper. The note separates 3-month T-bill benchmark yield, zero-yield nominal balances, and cash-equivalent emergency-payment capacity.</p><h1 id="cash-inflation-and-household-optionality">Cash, Inflation, and Household Optionality</h1>
-<h2 id="public-companion-summary">Public companion summary</h2>
-<p>This descriptive companion note asks how households should think about cash-like liquidity when inflation erodes purchasing power but emergency buffers protect future choices.</p>
-<p>It is not investment advice, not a portfolio optimization model, and not a causal empirical paper. The purpose is narrower: separate three objects that are often conflated:</p>
-<ul>
-<li><strong>3-month Treasury bill benchmark yield</strong>;</li>
-<li><strong>zero-yield nominal balances</strong>;</li>
-<li><strong>cash-equivalent emergency-payment capacity</strong>.</li>
-</ul>
-<h2 id="core-finding">Core finding</h2>
-<p>Cash-like liquidity has two margins:</p>
-<ol>
-<li><strong>Purchasing-power cost:</strong> idle nominal balances lose real value when inflation exceeds yield.</li>
-<li><strong>Optionality value:</strong> emergency liquidity can prevent ordinary shocks from becoming high-cost borrowing, arrears, skipped care, forced sales, or interrupted long-horizon plans.</li>
-</ol>
-<p>The note does not estimate the marginal option value of emergency liquidity. It clarifies the measurement problem and identifies the empirical work needed to estimate that value.</p>
-<h2 id="public-data-facts">Public-data facts</h2>
-<p>Using FRED data, the note finds that the 3-month Treasury bill benchmark was negative in exact ex-post real terms during 2021–2022 but positive by 2023–2025 in the simple annual screen.</p>
-<p>Zero-yield nominal balances remain different. A fixed nominal balance earns no offsetting yield, so its purchasing-power index falls as consumer prices rise.</p>
-<p>Using Federal Reserve SHED public tables, the note shows that in 2025:</p>
-<ul>
-<li>63 percent of adults would cover a $400 emergency expense using cash or its equivalent;</li>
-<li>37 percent would not;</li>
-<li>the “would not cover using cash/equivalent” rate was higher among young adults, parents, adults with less education, Black adults, and Hispanic adults.</li>
-</ul>
-<p>SHED’s cash-equivalent wording includes cash, savings, or a credit card paid off at the next statement. It should not be interpreted as literal cash balances, nor as inability to pay by any method.</p>
-<h2 id="what-changed-after-review">What changed after review</h2>
-<p>The revised version fixes several measurement and language issues:</p>
-<ul>
-<li>replaces generic “cash yield” language with <strong>3-month T-bill benchmark yield</strong>;</li>
-<li>uses the exact real-return formula <code>(1 + nominal)/(1 + inflation) − 1</code>;</li>
-<li>keeps the rough yield-minus-inflation approximation only as an audit column;</li>
-<li>changes SHED wording from “cannot cover” to <strong>“would not cover using cash/equivalent”</strong>;</li>
-<li>rewrites the purchasing-power chart as an index normalized to 2000=100;</li>
-<li>adds a minimal optionality framework linking liquidity to expected avoided adjustment costs and opportunity cost;</li>
-<li>adds source and formula notes.</li>
-</ul>
-<h2 id="practical-interpretation">Practical interpretation</h2>
-<p>The practical lesson is a sequencing principle, not an allocation rule. Emergency liquidity can protect the ability to keep long-horizon plans intact. Without it, households may be forced to sell assets, carry high-interest debt, miss payments, or pause accumulation after predictable shocks.</p>
-<p>A household-resilience planner should distinguish:</p>
-<ol>
-<li>transaction balances for near-term bills;</li>
-<li>emergency liquidity for unexpected shocks;</li>
-<li>planned-spending liquidity for known near-term expenses;</li>
-<li>excess idle balances exposed to avoidable inflation/yield drag.</li>
-</ol>
-<h2 id="next-empirical-step">Next empirical step</h2>
-<p>The stronger research paper would estimate whether households with emergency liquidity are less likely to experience hardship after comparable shocks.</p>
-<p>That would require household microdata or administrative data observing pre-shock liquidity, shocks, and post-shock outcomes such as arrears, high-cost borrowing, skipped care, credit-card balance carrying, forced asset sales, interrupted saving, or disrupted household plans.</p>
-<p>Until then, the useful public claim is modest: liquidity has both an inflation cost and an option-like household value, and those two margins should be measured separately.</p>
+      <p class="small"><strong>Descriptive companion note.</strong> Public-data liquidity note only; not investment advice, not a portfolio optimization model, not a causal estimate, and not a journal-style empirical paper. The note separates 3-month T-bill benchmark yield, zero-yield nominal balances, and cash-equivalent emergency-payment capacity.</p>
     </section>
   </main>
   <footer class="site-footer" id="contact">

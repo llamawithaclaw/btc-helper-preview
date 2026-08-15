@@ -166,6 +166,15 @@
     .doc-card:hover, .doc-card:focus { border-color:var(--accent); outline:none; }
     .doc-title { font-weight:900; color:var(--hero-ink); margin-bottom:6px; }
     .doc-meta { color:var(--dark-card-muted); font-size:.92rem; }
+    .research-identity-panel { border:1px solid var(--line); border-radius:16px; background:var(--card-soft); padding:16px; margin-bottom:18px; }
+    :root[data-theme="dark"] .research-identity-panel { background:rgba(255,255,255,.045); }
+    .identity-pill-row { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
+    .identity-pill-row span { display:inline-flex; border:1px solid var(--line); border-radius:999px; padding:5px 9px; background:var(--card); color:var(--ink); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.07em; text-transform:uppercase; }
+    .identity-summary { display:grid; gap:10px; margin:0; }
+    .identity-summary div { border-left:4px solid var(--accent); padding-left:10px; }
+    .identity-summary dt, .identity-summary dd { margin:0; }
+    .identity-summary dt { color:var(--muted); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+    .identity-summary dd { color:var(--ink); font-weight:720; }
     @media print { body { background:#fff; color:#111827; } main { max-width:none; padding:0; } .back-link, .actions, .toc { display:none; } .hero, .card { box-shadow:none; border:0; padding:0; background:#fff; color:#111827; } h2, h3 { break-after:avoid; } figure, table { break-inside:avoid; } }
 
   </style>
@@ -206,35 +215,23 @@
         <a class="button" href="../Medical_Financial_Fragility_MEPS_Working_Draft.pdf">Download PDF</a>
         <a class="button secondary" href="./index.html">Home</a>
       </div>
-      <nav class="toc"><div class="toc-title">Contents</div><a class="toc-1" href="#medical-financial-fragility-a-meps-working-paper-on-cost-burden-insurance-and-access-barriers">Medical Financial Fragility: A MEPS Working Paper on Cost Burden, Insurance, and Access Barriers</a><a class="toc-2" href="#status">Status</a><a class="toc-2" href="#core-idea">Core idea</a><a class="toc-2" href="#what-is-solid">What is solid</a><a class="toc-2" href="#what-is-not-final">What is not final</a><a class="toc-2" href="#not-a-causal-paper">Not a causal paper</a><a class="toc-2" href="#how-to-read-the-exploratory-tables">How to read the exploratory tables</a><a class="toc-2" href="#why-publish-as-a-working-paper">Why publish as a working paper</a></nav>
+
     </section>
     <section class="card doc-body">
+      <aside class="research-identity-panel" aria-label="Research classification">
+    <div class="doc-kicker">Research classification</div>
+    <div class="identity-pill-row">
+      <span>Household / resilience research</span>
+      <span>Working paper</span>
+      <span>Household evidence</span>
+    </div>
+    <dl class="identity-summary">
+      <div><dt>What it can support</dt><dd>Supports household-risk context; not BTC Helper policy validation.</dd></div>
+      <div><dt>Primary limitation</dt><dd>Working paper; interpretation depends on measurement choices and data scope.</dd></div>
+    </dl>
+  </aside>
       <p class="small"><strong>Suggested citation:</strong> Kotte, Arne. 2026. “Medical Financial Fragility: A MEPS Working Paper on Cost Burden, Insurance, and Access Barriers.” BTC Helper Research.</p>
-      <p class="small"><strong>Working paper / measurement paper.</strong> Descriptive MEPS evidence centered on 2022 with 2019–2023 robustness benchmarks. The latest revision checks the main spending/access result against selected survey-design intervals, denominator sensitivity, access-barrier components, family construction, PRPL premium linkage, questionnaire continuity, underinsurance-style benchmark screens, and model robustness. Full model-level variance validation, official family construction, PRPL documentation validation, and a formal questionnaire appendix remain pending.</p><h1 id="medical-financial-fragility-a-meps-working-paper-on-cost-burden-insurance-and-access-barriers">Medical Financial Fragility: A MEPS Working Paper on Cost Burden, Insurance, and Access Barriers</h1>
-<h2 id="status">Status</h2>
-<p><strong>Advanced working paper / MEPS measurement paper.</strong> This is descriptive MEPS evidence centered on 2022 with 2019–2023 robustness checks. The May 2026 validation passes now test the main result several ways: sample restrictions, selected survey-design confidence intervals, family construction, PRPL premium linkage and annualization, denominator sensitivity, access-barrier components, model robustness, questionnaire continuity, and comparisons with simpler fragility and underinsurance-style screens. Full model-level MEPS variance validation, official family-level construction, PRPL documentation validation, and a submission-quality questionnaire/timing appendix remain pending.</p>
-<h2 id="core-idea">Core idea</h2>
-<p>Medical vulnerability cannot be read from spending alone. Low out-of-pocket spending can reflect protection, low need, or foregone care.</p>
-<p>The draft studies out-of-pocket medical burden, insurance status, health need, and delayed or unaffordable care together because each measure is incomplete on its own.</p>
-<h2 id="what-is-solid">What is solid</h2>
-<p>The strongest person-weighted descriptive result is the spending/access ambiguity:</p>
-<blockquote>In MEPS 2022, uninsured people have lower observed out-of-pocket spending than privately insured people but much higher delayed or unaffordable-care rates. That is why spending alone is not enough.</blockquote>
-<p>The draft also shows that lower-income groups face higher out-of-pocket burden shares even when their dollar spending is lower, and that poor-health groups face both higher medical spending and more access barriers. The 2019–2023 robustness and questionnaire-continuity checks suggest the core spending/access ambiguity is not isolated to 2022.</p>
-<h2 id="what-is-not-final">What is not final</h2>
-<p>The draft should not be read as a finished empirical paper. Four upgrades remain for a submission-quality version:</p>
-<ul>
-<li>Formal MEPS variance-method validation against AHRQ guidance.</li>
-<li>Validated family-level construction using MEPS guidance.</li>
-<li>PRPL premium annualization checks and external validation against MEPS documentation.</li>
-<li>Submission-quality questionnaire/timing-continuity review for the 2019–2023 multi-year evidence.</li>
-</ul>
-<h2 id="not-a-causal-paper">Not a causal paper</h2>
-<p>The estimates describe co-occurrence and risk profiles. They do not identify causal effects of out-of-pocket burden, insurance status, or plan design on access barriers.</p>
-<h2 id="how-to-read-the-exploratory-tables">How to read the exploratory tables</h2>
-<p>The family-level and premium-linked tables are exploratory. They are included to show where the measurement program can go next, not to provide headline final estimates.</p>
-<p>The validation tables improve transparency: sample restrictions are visible, selected gradients and access-barrier components now have approximate design-based CIs, family estimates are clearly separated from the main person-weighted evidence, PRPL has de-duplication and annualization checks, denominator checks show where very-low-income ratios affect tail burden estimates, multi-year benchmarks show adjacent-year robustness, and the benchmark/model tables show why a spending-only threshold misses people with access barriers. The PRPL premium-linked low-income tail ratios remain exploratory because they are sensitive to denominator instability and require additional premium-construction validation before serving as headline estimates.</p>
-<h2 id="why-publish-as-a-working-paper">Why publish as a working paper</h2>
-<p>The measurement issue is useful now: healthcare vulnerability is not visible in spending alone. Publishing the draft with clear boundaries lets readers see the research program’s direction while preserving the distinction between transparent working evidence and final empirical claims.</p>
+      <p class="small"><strong>Working paper / measurement paper.</strong> Descriptive MEPS evidence centered on 2022 with 2019–2023 robustness benchmarks. The latest revision checks the main spending/access result against selected survey-design intervals, denominator sensitivity, access-barrier components, family construction, PRPL premium linkage, questionnaire continuity, underinsurance-style benchmark screens, and model robustness. Full model-level variance validation, official family construction, PRPL documentation validation, and a formal questionnaire appendix remain pending.</p>
     </section>
   </main>
   <footer class="site-footer" id="contact">

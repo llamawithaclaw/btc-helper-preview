@@ -166,6 +166,15 @@
     .doc-card:hover, .doc-card:focus { border-color:var(--accent); outline:none; }
     .doc-title { font-weight:900; color:var(--hero-ink); margin-bottom:6px; }
     .doc-meta { color:var(--dark-card-muted); font-size:.92rem; }
+    .research-identity-panel { border:1px solid var(--line); border-radius:16px; background:var(--card-soft); padding:16px; margin-bottom:18px; }
+    :root[data-theme="dark"] .research-identity-panel { background:rgba(255,255,255,.045); }
+    .identity-pill-row { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
+    .identity-pill-row span { display:inline-flex; border:1px solid var(--line); border-radius:999px; padding:5px 9px; background:var(--card); color:var(--ink); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.07em; text-transform:uppercase; }
+    .identity-summary { display:grid; gap:10px; margin:0; }
+    .identity-summary div { border-left:4px solid var(--accent); padding-left:10px; }
+    .identity-summary dt, .identity-summary dd { margin:0; }
+    .identity-summary dt { color:var(--muted); font-family:'JetBrains Mono', ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+    .identity-summary dd { color:var(--ink); font-weight:720; }
     @media print { body { background:#fff; color:#111827; } main { max-width:none; padding:0; } .back-link, .actions, .toc { display:none; } .hero, .card { box-shadow:none; border:0; padding:0; background:#fff; color:#111827; } h2, h3 { break-after:avoid; } figure, table { break-inside:avoid; } }
 
   </style>
@@ -206,60 +215,23 @@
         <a class="button" href="../Society_Under_Monetary_Stress_V_Saving_the_Future.pdf">Download PDF</a>
         <a class="button secondary" href="./index.html">Home</a>
       </div>
-      <nav class="toc"><div class="toc-title">Contents</div><a class="toc-1" href="#society-under-monetary-stress-v-saving-the-future">Society Under Monetary Stress V: Saving the Future</a><a class="toc-2" href="#summary">Summary</a><a class="toc-2" href="#main-findings">Main findings</a><a class="toc-2" href="#measurement-correction">Measurement correction</a><a class="toc-2" href="#why-it-matters">Why it matters</a><a class="toc-2" href="#data-and-replication">Data and replication</a><a class="toc-2" href="#read-the-full-paper">Read the full paper</a></nav>
+
     </section>
     <section class="card doc-body">
+      <aside class="research-identity-panel" aria-label="Research classification">
+    <div class="doc-kicker">Research classification</div>
+    <div class="identity-pill-row">
+      <span>Household / resilience research</span>
+      <span>Supporting material</span>
+      <span>Household evidence</span>
+    </div>
+    <dl class="identity-summary">
+      <div><dt>What it can support</dt><dd>Background theory for resilience constraints; not direct BTC Helper validation.</dd></div>
+      <div><dt>Primary limitation</dt><dd>Long-form research spine; most users should start with the resilience synthesis.</dd></div>
+    </dl>
+  </aside>
       <p class="small"><strong>Suggested citation:</strong> Kotte, Arne. 2026. “Society Under Monetary Stress V: Saving the Future: Household Margins, Family Formation, and Long-Horizon Investment.” BTC Helper Research.</p>
-      <h1 id="society-under-monetary-stress-v-saving-the-future">Society Under Monetary Stress V: Saving the Future</h1>
-<p><strong>Household Margins, Family Formation, and Long-Horizon Investment</strong></p>
-<p>Arne Kotte</p>
-<h2 id="summary">Summary</h2>
-<p>This paper examines whether public U.S. data show pressure on long-horizon household investment: saving, homeownership, family formation, education finance, and durable resilience.</p>
-<p>The corrected evidence is mixed and deliberately restrained. Real disposable personal income rose, real median household income rose, homeownership in 2024 was slightly above 1994, and the personal saving rate was volatile rather than monotonically declining.</p>
-<p>But several future-facing commitments still became harder to finance at the margin:</p>
-<ul>
-<li>corrected housing-entry pressure rose by national price-to-income measures;</li>
-<li>fertility fell below replacement;</li>
-<li>student-loan balances became a larger claim on income after 2006;</li>
-<li>saving remained volatile rather than providing a stable offset.</li>
-</ul>
-<p>The paper is descriptive. It does not claim that one monetary aggregate caused fertility decline, student debt, home-price growth, or saving-rate volatility. Its contribution is a corrected planning-horizon dashboard: the future did not collapse, but several durable commitments became harder to secure.</p>
-<h2 id="main-findings">Main findings</h2>
-<ol>
-<li><strong>Real income rose.</strong> Real disposable personal income rose strongly from 1994 to 2024, while real median household income rose more slowly.</li>
-</ol>
-<ol>
-<li><strong>Saving was volatile, not a simple collapse.</strong> The personal saving rate was 6.8% in 1994, 2.5% in 2007, 7.3% in 2019, and 5.4% in 2024.</li>
-</ol>
-<ol>
-<li><strong>Homeownership did not collapse.</strong> The national homeownership rate was 64.0% in 1994 and 65.6% in 2024.</li>
-</ol>
-<ol>
-<li><strong>Corrected housing-entry pressure still rose.</strong> Nominal median home price divided by nominal median household income rose from 100 in 1994 to 124 in 2024. A real home-price-index-to-real-income proxy rose to 145.</li>
-</ol>
-<ol>
-<li><strong>Fertility declined.</strong> The total fertility rate fell from 2.00 births per woman in 1994 to 1.63 in 2024.</li>
-</ol>
-<ol>
-<li><strong>Student loans became a larger future claim.</strong> Student loans relative to nominal disposable personal income rose from 5.4% in 2007 to 10.0% in 2019, then eased to 8.0% in 2024.</li>
-</ol>
-<h2 id="measurement-correction">Measurement correction</h2>
-<p>An external-style review flagged that the earlier version mixed nominal/index quantities with real income denominators. The paper was rebuilt with internally consistent nominal and real measures.</p>
-<p>Corrected additions include:</p>
-<ul>
-<li>nominal disposable personal income (<code>DSPI</code>);</li>
-<li>nominal median household income (<code>MEHOINUSA646N</code>);</li>
-<li>median sales price of houses sold (<code>MSPUS</code>);</li>
-<li>CPI-based real proxies where needed.</li>
-</ul>
-<p>The earlier version’s overstated home-price-to-income tripling claim was removed.</p>
-<h2 id="why-it-matters">Why it matters</h2>
-<p>A household future is not secured only by current income. It requires room to save, form a household, buy or maintain a home, raise children, invest in education, and preserve optionality.</p>
-<p>The corrected public data do not support a collapse narrative. They do show a harder planning problem: some durable commitments require more upfront resources, more debt, or more confidence in future income.</p>
-<h2 id="data-and-replication">Data and replication</h2>
-<p>The paper uses public FRED series for saving, income, homeownership, fertility, households, home prices, mortgage rates, student loans, and CPI. Monthly and quarterly series are averaged within calendar year. Indexes are normalized to 1994 = 100 except student-loan measures, which begin in 2006.</p>
-<h2 id="read-the-full-paper">Read the full paper</h2>
-<p>Download the full PDF for figures, tables, limitations, and replication notes.</p>
+
     </section>
   </main>
   <footer class="site-footer" id="contact">
