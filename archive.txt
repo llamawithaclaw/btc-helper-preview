@@ -1,5 +1,16 @@
 BTC Helper Public Archive
 
+## 2026-08-16
+- Baseline instruction: Continue
+- Reserve instruction: Hold
+- Market context: Unclear
+- Source health: Reduced
+- Coverage: Limited
+- Run quality: Degraded
+- BTC: $63,015
+- Plan summary: Baseline continues; reserve stays held
+- Why: Not enough data to confidently assess a regime.
+
 ## 2026-08-15
 - Baseline instruction: Continue
 - Reserve instruction: Hold

@@ -2,6 +2,6 @@ BTC Helper today: Continue baseline; hold reserve.
 
 Why: Not enough data to confidently assess a regime.
 Source health: Reduced; coverage Limited
-BTC ref: $62,905
+BTC ref: $63,015
 
-Full read: https://btchelper.app/history/2026-08-15/
+Full read: https://btchelper.app/history/2026-08-16/
