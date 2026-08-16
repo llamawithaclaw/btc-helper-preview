@@ -203,7 +203,7 @@
     <section class="card">
       <h2>Plain-English purpose</h2>
 <p>BTC Helper is a public daily Bitcoin plan. It does <strong>not</strong> try to predict tomorrow's price. It tries to answer a narrower practical question:</p>
-<p>&gt; Given today's conditions and source health, should a disciplined accumulator continue the scheduled baseline, hold optional reserve, build reserve, or deploy eligible reserve?</p>
+<p>&gt; Given today's conditions and source health, how does the model classify a scheduled baseline and any potentially optional reserve for user review?</p>
 <p>The public methodology exists so a reader can understand what the daily read means, what the public decision record preserves, what the benchmark does and does not prove, and how to interpret degraded-data warnings.</p>
 <h2>How to read the daily output</h2>
 <p>Each public read has four main parts.</p>
@@ -213,19 +213,19 @@
 <li><strong>Continue</strong>: keep the scheduled baseline running.</li>
 <li><strong>Hold</strong>: hold the scheduled baseline only when the user has explicitly selected an advanced baseline-affecting rule.</li>
 </ul>
-<p>The recommended default keeps the baseline separate from BTC Helper's optional-reserve guidance.</p>
+<p>The default educational setting keeps the baseline separate from BTC Helper's optional-reserve context.</p>
 <h3>2. Reserve instruction</h3>
 <p>The reserve instruction says what happens to optional reserve capital:</p>
 <ul>
 <li><strong>Hold</strong>: leave optional reserve untouched.</li>
-<li><strong>Deploy</strong>: deploy eligible reserve only if the user's written plan and household safety floor allow it.</li>
+<li><strong>Review</strong>: consider potentially optional reserve only if the user's written plan and household resilience boundary allow it.</li>
 <li><strong>Build</strong>: let optional allocation accumulate as reserve rather than adding extra buying.</li>
 </ul>
 <p>A user still executes manually outside BTC Helper.</p>
 <h3>3. Market context</h3>
 <p>Market context explains the backdrop behind the plan translation:</p>
 <ul>
-<li><strong>Aggressive</strong>: conditions favor stronger-than-baseline accumulation if reserve is eligible.</li>
+<li><strong>Aggressive</strong>: conditions favor reviewing potentially optional reserve if the user's plan and household boundary allow it.</li>
 <li><strong>Normal</strong>: maintain ordinary baseline accumulation discipline.</li>
 <li><strong>Cautious</strong>: conditions are mixed; avoid discretionary extra buys.</li>
 <li><strong>Pause</strong>: stand down from fresh discretionary accumulation until conditions improve.</li>
@@ -255,7 +255,7 @@
 <ul>
 <li><strong>Normal / Cautious</strong>: baseline continues; optional reserve is held.</li>
 <li><strong>Pause</strong>: baseline remains separate by default; optional allocation is held or built as reserve.</li>
-<li><strong>Aggressive</strong>: baseline continues; eligible reserve may deploy if prior reserve exists and safety checks allow it.</li>
+<li><strong>Aggressive</strong>: baseline continues; potentially optional reserve is marked for review if prior reserve exists and household checks allow it.</li>
 </ul>
 <p>This benchmark asks whether BTC Helper's public posture can improve disciplined accumulation behavior versus ordinary daily DCA over time. It is not a claim of optimized trading performance.</p>
 <p>The current public result should be read modestly: no reserve deployment has occurred, the public-policy reserve is zero unless a future summary says otherwise, and BTC Helper has not demonstrated timing advantage when it has not diverged from fixed DCA.</p>
@@ -309,6 +309,12 @@
 <li><strong>Explanation review</strong>: checks whether the output is understandable to a human reader.</li>
 </ol>
 <p>The goal is not to make every read look confident. The goal is to make each read human-readable, bounded, and operationally honest.</p>
+<h2>Current validation state</h2>
+<p>BTC Helper does not currently make a public efficacy claim.</p>
+<p>The Benchmark Lab review reached a conservative conclusion: a full five-domain strict historical replay is not currently defensible with the available historical source record. Sparse historical fixtures remain useful for scenario review, source-quality analysis, and methodology discipline, but they should not be treated as a backtest, a timing-advantage result, or proof that the BTC Helper policy improves outcomes.</p>
+<p>Reduced-domain research can still be useful. For example, valuation-plus-macro diagnostics can describe how a limited research sample behaves, but that is not the same thing as validating BTC Helper's full daily process. Current public validation language should keep valuation-led findings, flow-data insufficiency, replay tiers, and live-history accumulation separate.</p>
+<p>The primary future validation path is continuous live history. Daily public reads and private internal validation records are now accumulating prospectively so a later reassessment can evaluate real live decisions, posture transitions, reserve events, macro regimes, and source-health conditions without manufacturing missing historical detail.</p>
+<p>Production rules should not be tuned using the same sparse historical research sample that motivated these limitations. Model changes need their own review gate and should preserve the boundary between research-only diagnostics, public methodology, and live forward evidence.</p>
 <p>The public Track page reports replay evidence tiers at a high level: 16 replayed cases, 2 grounded candidate cases, 40 candidate cases, and 2 synthetic cases. These are project-level validation artifacts, not forward performance proof or a price-prediction record.</p>
 <p>Before validation-relevant model changes, BTC Helper uses a review gate covering scenario review, policy audit, replay validation, replay consistency, historical replay, and public-quality checks when public copy changes. Provider and source families are public; direct source links, exact series mappings, raw inputs, thresholds, weights, overrides, and calibration details remain private while the public surface still shows evidence tiers, limitations, and next validation priorities.</p>
 <p>Track is process evidence and governance evidence. It should not be read as efficacy proof until enough forward reserve-aware behavior, equal-capital comparison history, and properly labeled evidence support exist.</p>
@@ -334,14 +340,14 @@
 <p>For public questions, comments, data corrections, or accessibility issues, contact BTC Helper by email: [support@btchelper.app](mailto:support@btchelper.app). For security reports, use [security@btchelper.app](mailto:security@btchelper.app).</p>
 <hr>
 <p>*This methodology document is part of BTC Helper's public decision-record commitment.*</p>
-<p>*Last updated: 2026-08-10*</p>
+<p>*Last updated: 2026-08-14*</p>
     </section>
   </main>
   <footer class="site-footer" id="contact">
     <div class="site-footer-inner">
       <div class="footer-brand">
         <strong>BTC Helper</strong>
-        <p>A private Bitcoin accumulation plan, a source-aware daily action layer, and a public decision record.</p>
+        <p>A private Bitcoin accumulation plan, a source-aware daily posture layer, and a public decision record.</p>
         <p class="footer-note">Educational research tool only. Not financial advice, investment advice, or a recommendation to buy or sell any asset.</p>
       </div>
       <div><div class="footer-column-title">Product</div><div class="footer-links"><a href="/index.html#today">Today</a><a href="/planner.html">My Plan</a><a href="/insights.html">Insights</a><a href="/track.html">Track</a><a href="/updates.html">Updates</a></div></div>

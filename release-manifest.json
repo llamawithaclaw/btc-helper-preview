@@ -25,7 +25,7 @@
   "evidence_freshness_state": "degraded",
   "evidence_correction_status": "no_known_correction",
   "build_id": "btc-helper-20260815-20260815090023",
-  "content_hash": "sha256:3851ed02f0398ef2903b6a7be2411bc881282607dad519988efe26a667a49f0f",
+  "content_hash": "sha256:fd809b6c204291781cf8bf3c75efcd073e04ecd92a61a54a0a8d286f9a0b15d3",
   "benchmark": {
     "btc_helper_cumulative_btc": 0.0016141822492761351,
     "baseline_cumulative_btc": 0.0016141822492761351,
@@ -41,7 +41,7 @@
     },
     "homepage": {
       "path": "index.html",
-      "sha256": "sha256:67a6730e689f175639aafae78f90059aa96af5b80f1abe6f731f0a06051b58a4"
+      "sha256": "sha256:285ae7cc0117e4c6385b1466c4996ee27e7b6eae644bb6b311c281c72b54b9f4"
     },
     "daily_read": {
       "path": "history/2026-08-15/index.html",
@@ -49,23 +49,23 @@
     },
     "archive": {
       "path": "archive.html",
-      "sha256": "sha256:d84da08a58e8b32123805061faab8396e70e662d5385680d50e257f58064df78"
+      "sha256": "sha256:bfb3e10079640844ec4c059f810d2ab0a67f624fabcd0a4a9fe763f567877914"
     },
     "track": {
       "path": "track.html",
-      "sha256": "sha256:6d6cd97214541adfaf19d14bb4187bab8da4745ad300054b3089d3c5ced3f853"
+      "sha256": "sha256:269425cb1bc267df6cd3408d0e9b29ee338e6b1f5b340d9a6d84b2ba4e9052e5"
     },
     "evidence": {
       "path": "evidence.html",
-      "sha256": "sha256:37b61f6aa7b9d9cf142216f61e3c8cbb396984e846e0d4b8a643493b42c3060d"
+      "sha256": "sha256:656fe76f86d53a335f57fc243d74637b90fcf119be7c4a711676907b32d7615a"
     },
     "source_health": {
       "path": "data-sources.html",
-      "sha256": "sha256:41951eb3bab1ed76b8b0782e0177aab3c8158da9cb0bdf4d8cc8f380cca52a79"
+      "sha256": "sha256:eca62e412bfd59cb9697703a75b1af64b573bf62335c94d1480b238c6cbfc00b"
     },
     "trust": {
       "path": "trust.html",
-      "sha256": "sha256:22238dd7dfc42b3d8d4ae452dbb2aaf46621fef29230e46dbae7e5538f607f86"
+      "sha256": "sha256:d555ca0f3e133ed735ee4e3354407d6a23104dacf12cd7047ecf9f241cfbbf11"
     },
     "latest_post": {
       "path": "latest-post.txt",
@@ -102,7 +102,11 @@
     "social_card_image": {
       "path": "card/latest-read-card.png",
       "sha256": "sha256:64731027098e2cbbc129a7ddf2fcf249a928ceeea12b4a1f563b5a13c21d1606"
+    },
+    "dated_social_card_image": {
+      "path": "history/2026-08-15/social-card.png",
+      "sha256": "sha256:64731027098e2cbbc129a7ddf2fcf249a928ceeea12b4a1f563b5a13c21d1606"
     }
   },
-  "generated_at": "2026-08-15T09:00:35.387Z"
+  "generated_at": "2026-08-15T23:52:44.980Z"
 }

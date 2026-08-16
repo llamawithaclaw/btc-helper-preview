@@ -321,7 +321,7 @@
             <strong id="resilience-summary-pressure">Use the quick check</strong>
           </div>
           <div class="plan-summary-item">
-            <span>Safe floor</span>
+            <span>Resilience floor</span>
             <strong id="resilience-summary-floor">Protect essentials first</strong>
           </div>
           <div class="plan-summary-item">
@@ -424,7 +424,7 @@
   </main>
   <footer class="site-footer" id="contact">
     <div class="site-footer-inner">
-      <div class="footer-brand"><strong>BTC Helper</strong><p>A private Bitcoin accumulation plan, a source-aware daily action layer, and a public decision record.</p><p class="footer-note">Educational research tool only. Not financial advice, investment advice, or a recommendation to buy or sell any asset.</p></div>
+      <div class="footer-brand"><strong>BTC Helper</strong><p>A private Bitcoin accumulation plan, a source-aware daily posture layer, and a public decision record.</p><p class="footer-note">Educational research tool only. Not financial advice, investment advice, or a recommendation to buy or sell any asset.</p></div>
       <div><div class="footer-column-title">Product</div><div class="footer-links"><a href="./index.html#today">Today</a><a href="./planner.html">My Plan</a><a href="./insights.html">Insights</a><a href="./track.html">Track</a><a href="./updates.html">Updates</a></div></div>
       <div><div class="footer-column-title">Research</div><div class="footer-links"><a href="./weekly-macro-thesis/">Weekly macro</a><a href="./documents-and-research.html">Research library</a><a href="./public-proof-of-work-methodology.html">Methodology</a><a href="./household-resilience-planner.html">Household resilience</a></div></div>
       <div><div class="footer-column-title">Trust</div><div class="footer-links"><a href="./data-sources.html">Source health</a><a href="./about.html">About</a><a href="./privacy.html">Privacy</a><a href="./terms.html">Terms</a><a href="./contact.html">Contact</a><a href="https://x.com/btchelperapp">BTC Helper on X</a></div></div>
@@ -792,7 +792,7 @@
       else if (accumulationShare > 0.5) guardrail += 'The amount appears affordable but uses much of monthly slack; consider a lower baseline while buffers grow.';
       else guardrail += 'Entered baseline accumulation appears budget-compatible under these assumptions, provided priorities and risks are understood.';
       setText('btcGuardrail', guardrail);
-      document.getElementById('printableSummary').innerHTML = `<strong>${durability} plan durability</strong><br>${copy}<br><br><strong>Main pressure:</strong> ${bottleneck}<br><strong>Safe floor:</strong> ${safeFloor}<br><strong>Protected cash check:</strong> ${protectedCashText}<br><strong>Optional accumulation room:</strong> ${optionalRoom}<br><strong>BTC exposure check:</strong> ${exposure}<br><strong>First next step:</strong> ${nextStep}<br><br><strong>Supporting score:</strong> ${score}/100 · <strong>Monthly margin:</strong> ${fmt.format(marginAfterBtc)} · <strong>Buffer:</strong> ${bufferMonths.toFixed(1)} months · <strong>Debt load:</strong> ${pct(debtPay / Math.max(income,1))}<br><br><strong>Guardrail:</strong> ${guardrail}`;
+      document.getElementById('printableSummary').innerHTML = `<strong>${durability} plan durability</strong><br>${copy}<br><br><strong>Main pressure:</strong> ${bottleneck}<br><strong>Resilience floor:</strong> ${safeFloor}<br><strong>Protected cash check:</strong> ${protectedCashText}<br><strong>Optional accumulation room:</strong> ${optionalRoom}<br><strong>BTC exposure check:</strong> ${exposure}<br><strong>First next step:</strong> ${nextStep}<br><br><strong>Supporting score:</strong> ${score}/100 · <strong>Monthly margin:</strong> ${fmt.format(marginAfterBtc)} · <strong>Buffer:</strong> ${bufferMonths.toFixed(1)} months · <strong>Debt load:</strong> ${pct(debtPay / Math.max(income,1))}<br><br><strong>Guardrail:</strong> ${guardrail}`;
     }
     document.getElementById('recalc').addEventListener('click', recalc);
     document.getElementById('loadExample').addEventListener('click', () => {

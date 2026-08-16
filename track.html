@@ -3270,7 +3270,7 @@
         <div class="record-ledger-row">
           <span>Behavior-changing events</span>
           <strong>0</strong>
-          <p>0 reserve deploy · 0 optional hold · 0 advanced baseline hold.</p>
+          <p>0 reserve review · 0 optional hold · 0 advanced baseline hold.</p>
         </div>
         <div class="record-ledger-row">
           <span>Source health</span>
@@ -3345,7 +3345,7 @@
         <div class="model-quality-card">
           <div class="metric-label">Behavior-changing plan events</div>
           <div class="metric-value">0</div>
-          <div class="metric-sub">0 reserve deploy · 0 optional hold · 0 baseline hold</div>
+          <div class="metric-sub">0 reserve review · 0 optional hold · 0 baseline hold</div>
         </div>
         <div class="model-quality-card">
           <div class="metric-label">Days since last translation change</div>
@@ -3447,7 +3447,7 @@
       </div>
       <div class="model-quality-table-wrap">
         <table class="model-quality-table">
-          <caption>Recent plan translation changes</caption>
+          <caption>Recent posture translation changes</caption>
           <thead><tr><th scope="col">Date</th><th scope="col">From</th><th scope="col">To</th></tr></thead>
           <tbody>
   <tr>
@@ -3687,7 +3687,7 @@
     <div class="site-footer-inner">
       <div class="footer-brand">
         <strong>BTC Helper</strong>
-        <p>A private Bitcoin accumulation plan, a source-aware daily action layer, and a public decision record.</p>
+        <p>A private Bitcoin accumulation plan, a source-aware daily posture layer, and a public decision record.</p>
         <p class="footer-note">Educational research tool only. Not financial advice, investment advice, or a recommendation to buy or sell any asset.</p>
       </div>
       <div><div class="footer-column-title">Product</div><div class="footer-links"><a href="/index.html#today">Today</a><a href="/planner.html">My Plan</a><a href="/insights.html">Insights</a><a href="/track.html">Track</a><a href="/updates.html">Updates</a></div></div>
@@ -3695,28 +3695,71 @@
       <div><div class="footer-column-title">Trust</div><div class="footer-links"><a href="/trust.html">Trust hub</a><a href="/data-sources.html">Source health</a><a href="/about.html">About</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a><a href="https://x.com/btchelperapp">BTC Helper on X</a></div></div>
     </div>
   </footer>
+<script>
+    const btcHelperThemeStorageKey = 'btcHelperTheme';
+    function setBtcHelperTheme(theme, persist = true) {
+      const next = theme === 'dark' ? 'dark' : 'light';
+      document.documentElement.dataset.theme = next;
+      if (persist) { try { localStorage.setItem(btcHelperThemeStorageKey, next); } catch {} }
+      const button = document.getElementById('theme-toggle');
+      if (button) {
+        button.innerHTML = next === 'dark' ? '<svg aria-hidden="true" class="theme-icon theme-icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2.8v3M12 18.2v3M4.8 4.8l2.1 2.1M17.1 17.1l2.1 2.1M2.8 12h3M18.2 12h3M4.8 19.2l2.1-2.1M17.1 6.9l2.1-2.1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="theme-toggle-label">Theme</span>' : '<svg aria-hidden="true" class="theme-icon theme-icon-moon" viewBox="0 0 24 24"><path d="M20.4 14.7A8.3 8.3 0 0 1 9.3 3.6 8.7 8.7 0 1 0 20.4 14.7Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="theme-toggle-label">Theme</span>';
+        button.setAttribute('aria-label', next === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+        button.setAttribute('title', next === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+      }
+    }
+    setBtcHelperTheme(document.documentElement.dataset.theme || 'light', false);
+    document.getElementById('theme-toggle')?.addEventListener('click', () => setBtcHelperTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'));
+    window.addEventListener('storage', (event) => { if (event.key === btcHelperThemeStorageKey && event.newValue) setBtcHelperTheme(event.newValue, false); });
+    document.querySelectorAll('.site-nav').forEach((nav) => {
+      const toggle = nav.querySelector('.menu-toggle');
+      const links = nav.querySelector('.nav-links');
+      if (!toggle || !links) return;
+      const label = toggle.querySelector('.menu-toggle-label-text');
+      const normalizePath = (href) => {
+        try {
+          const url = new URL(href, window.location.href);
+          return url.pathname.replace(/\/index\.html$/, '/');
+        } catch {
+          return '';
+        }
+      };
+      const currentPath = normalizePath(window.location.href);
+      links.querySelectorAll('a').forEach((link) => {
+        const linkPath = normalizePath(link.href);
+        if (linkPath === currentPath || (currentPath === '/' && linkPath === '/')) link.setAttribute('aria-current', 'page');
+      });
+      const setMenuOpen = (open, restoreFocus = false) => {
+        nav.classList.toggle('is-open', open);
+        toggle.setAttribute('aria-expanded', String(open));
+        if (label) label.textContent = open ? 'Close' : 'Menu';
+        if (!open && restoreFocus) toggle.focus();
+      };
+      toggle.addEventListener('click', () => setMenuOpen(!nav.classList.contains('is-open')));
+      links.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setMenuOpen(false)));
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && nav.classList.contains('is-open')) setMenuOpen(false, true);
+      });
+      document.addEventListener('click', (event) => {
+        if (nav.classList.contains('is-open') && !nav.contains(event.target)) setMenuOpen(false, true);
+      });
+    });
+  </script>
   <script>
-    const btcHelperPlannerHistory = [{"date":"2026-07-17","publication_timestamp_utc":"2026-07-17T09:00:26.163Z","methodology_version":"phase1_reserve_tracker_v1","regime":"cautious","action":"be_selective","confidence":"moderate_usability","run_quality":"live","reference_price_btcusd":62850,"reference_price_provider":"btc_helper_daily_snapshot","reference_price_observed_at":"2026-07-17T09:00:26.163Z","summary_rationale":"Valuation is favorable, but holder stress or macro/flow friction argues for baseline-only selective accumulation.","daily_allocation_unit":1,"btc_helper_buy_unit":1,"baseline_dca_buy_unit":1,"reserve_balance_before":0,"reserve_balance_after":0,"reserve_deployed_today":0,"btc_helper_btc_bought_today":0.000015910898965791566,"baseline_dca_btc_bought_today":0.000015910898965791566,"btc_helper_cumulative_btc":0.001162887821695378,"baseline_cumulative_btc":0.001162887821695378,"btc_helper_portfolio_value":73.08749959355451,"baseline_portfolio_value":73.08749959355451,"benchmark_difference_pct":0,"benchmark_status":"in_line","public_read_schema_version":"public_read_v1","baseline_instruction":"continue","reserve_instruction":"hold","market_context":"cautious","source_health":"moderate","coverage_status":"usable","behavior_change":false,"context_change":false,"combined_translation":"baseline_only"},{"date":"2026-07-18","publication_timestamp_utc":"2026-07-18T09:00:21.164Z","methodology_version":"phase1_reserve_tracker_v1","regime":"normal","action":"maintain_baseline","confidence":"moderate_usability","run_quality":"live","reference_price_btcusd":63944,"reference_price_provider":"btc_helper_daily_snapshot","reference_price_observed_at":"2026-07-18T09:00:21.164Z","summary_rationale":"Valuation is favorable, but confirmation is not strong enough to deploy reserve aggressively.","daily_allocation_unit":1,"btc_helper_buy_unit":1,"baseline_dca_buy_unit":1,"reserve_balance_before":0,"reserve_balance_after":0,"reserve_deployed_today":0,"btc_helper_btc_bought_today":0.000015638683848367322,"baseline_dca_btc_bought_today":0.000015638683848367322,"btc_helper_cumulative_btc":0.0011785265055437454,"baseline_cumulative_btc":0.0011785265055437454,"btc_helper_portfolio_value":75.35969887048925,"baseline_portfolio_value":75.35969887048925,"benchmark_difference_pct":0,"benchmark_status":"in_line","public_read_schema_version":"public_read_v1","baseline_instruction":"continue","reserve_instruction":"hold","market_context":"normal","source_health":"moderate","coverage_status":"usable","behavior_change":false,"context_change":true,"combined_translation":"scheduled_plan_unchanged"},{"date":"2026-07-19","publication_timestamp_utc":"2026-07-19T23:27:22.885Z","methodology_version":"phase1_reserve_tracker_v1","regime":"cautious","action":"be_selective","confidence":"moderate_usability","run_quality":"live","reference_price_btcusd":64651,"reference_price_provider":"btc_helper_daily_snapshot","reference_price_observed_at":"2026-07-19T23:27:22.885Z","summary_rationale":"Valuation is favorable, but holder stress or macro/flow friction argues for baseline-only selective accumulation.","daily_allocation_unit":1,"btc_helper_buy_unit":1,"baseline_dca_buy_unit":1,"reserve_balance_before":0,"reserve_balance_after":0,"reserve_deployed_today":0,"btc_helper_btc_bought_today":0.000015467664846638104,"baseline_dca_btc_bought_today":0.000015467664846638104,"btc_helper_cumulative_btc":0.0011939941703903835,"baseline_cumulative_btc":0.0011939941703903835,"btc_helper_portfolio_value":77.19291710990869,"baseline_portfolio_value":77.19291710990869,"benchmark_difference_pct":0,"benchmark_status":"in_line","public_read_schema_version":"public_read_v1","baseline_instruction":"continue","reserve_instruction":"hold","market_context":"cautious","source_health":"moderate","coverage_status":"usable","behavior_change":false,"context_change":true,"combined_translation":"baseline_only"},{"date":"2026-07-20","publication_timestamp_utc":"2026-07-20T23:59:53.897Z","methodology_version":"phase1_reserve_tracker_v1","regime":"cautious","action":"be_selective","confidence":"moderate_usability","run_quality":"live","reference_price_btcusd":65195,"reference_price_provider":"btc_helper_daily_snapshot","reference_price_observed_at":"2026-07-20T23:59:53.897Z","summary_rationale":"Valuation is favorable, but holder stress or macro/flow friction argues for baseline-only selective accumulation.","daily_allocation_unit":1,"btc_helper_buy_unit":1,"baseline_dca_buy_unit":1,"reserve_balance_before":0,"reserve_balance_after":0,"reserve_deployed_today":0,"btc_helper_btc_bought_today":0.000015338599585857812,"baseline_dca_btc_bought_today":0.000015338599585857812,"btc_helper_cumulative_btc":0.0012093327699762414,"baseline_cumulative_btc":0.0012093327699762414,"btc_helper_portfolio_value":78.84244993860106,"baseline_portfolio_value":78.84244993860106,"benchmark_difference_pct":0,"benchmark_status":"in_line","public_read_schema_version":"public_read_v1","baseline_instruction":"continue","reserve_instruction":"hold","market_context":"cautious","source_health":"moderate","coverage_status":"usable","behavior_change":false,"context_change":false,"combined_translation":"baseline_only"},{"date":"2026-07-21","publication_timestamp_utc":"2026-07-21T11:48:52.281Z","methodology_version":"phase1_reserve_tracker_v1","regime":"normal","action":"maintain_baseline","confidence":"moderate_usability","run_quality":"live","reference_price_btcusd":66289,"reference_price_provider":"btc_helper_daily_snapshot","reference_price_observed_at":"2026-07-21T11:48:52.281Z","summary_rationale":"Valuation is favorable, but confirmation is not strong enough to deploy reserve aggressively.","daily_allocation_unit":1,"btc_helper_buy_unit":1,"baseline_dca_buy_unit":1,"reserve_balance_before":0,"reserve_balance_after":0,"reserve_deployed_today":0,"btc_helper_btc_bought_today":0.000015085459125948498,"baseline_dca_btc_bought_today":0.000015085459125948498,"btc_helper_cumulative_btc":0.00122441822910219,"baseline_cumulative_btc":0.00122441822910219,"btc_helper_portfolio_value":81.16545998895508,"baseline_portfolio_value":81.16545998895508,"benchmark_difference_pct":0,"benchmark_status":"in_line","public_read_schema_version":"public_read_v1","baseline_instruction":"continue","reserve_instruction":"hold","market_context":"normal","source_health":"moderate","coverage_status":"usable","behavior_change":false,"context_change":true,"combined_translation":"scheduled_plan_unchanged"},{"date":"2026-07-22","publication_timestamp_utc":"2026-07-22T22:45:44.586Z","methodology_version":"phase1_reserve_tracker_v1","regime":"normal","action":"maintain_baseline","confidence":"reduced_usability","run_quality":"degraded","reference_price_btcusd":65926,"reference_price_provider":"btc_helper_daily_snapshot","reference_price_observed_at":"2026-07-22T22:45:44.586Z","summary_rationale":"Valuation is favorable, but confirmation is not strong enough to deploy reserve aggressively.","daily_allocation_unit":1,"btc_helper_buy_unit":1,"baseline_dca_buy_unit":1,"reserve_balance_before":0,"reserve_balance_after":0,"reserve_deployed_today":0,"btc_helper_btc_bought_today":0.000015168522282559233,"baseline_dca_btc_bought_today":0.000015168522282559233,"btc_helper_cumulative_btc":0.0012395867513847493,"baseline_cumulative_btc":0.0012395867513847493,"btc_helper_portfolio_value":81.72099617179099,"baseline_portfolio_value":81.72099617179099,"benchmark_difference_pct":0,"benchmark_status":"in_line","public_read_schema_version":"public_read_v1","baseline_instruction":"continue","reserve_instruction":"hold","market_context":"normal","source_health":"reduced","coverage_status":"limited","behavior_change":false,"context_change":true,"combined_translation":"scheduled_plan_unchanged"},{"date":"2026-07-23","publication_timestamp_utc":"2026-07-23T09:00:22.354Z","methodology_version":"phase1_reserve_tracker_v1","regime":"normal","action":"maintain_baseline","confidence":"moderate_usability","run_quality":"live","reference_price_btcusd":65597,"reference_price_provider":"btc_helper_daily_snapshot","reference_price_observed_at":"2026-07-23T09:00:22.354Z","summary_rationale":"Valuation is favorable, but confirmation is not strong enough to deploy reserve aggressively.","daily_allocation_unit":1,"btc_helper_buy_unit":1,"baseline_dca_buy_unit":1,"reserve_balance_before":0,"reserve_balance_after":0,"reserve_deployed_today":0,"btc_helper_btc_bought_today":0.00001524459960059149,"baseline_dca_btc_bought_today":0.00001524459960059149,"btc_helper_cumulative_btc":0.001254831350985341,"baseline_cumulative_btc":0.001254831350985341,"btc_helper_portfolio_value":82.31317213058541,"baseline_portfolio_value":82.31317213058541,"benchmark_difference_pct":0,"benchmark_status":"in_line","public_read_schema_version":"public_read_v1","baseline_instruction":"continue","reserve_instruction":"hold","market_context":"normal","source_health":"moderate","coverage_status":"usable","behavior_change":false,"context_change":true,"combined_translation":"scheduled_plan_unchanged"},{"date":"2026-07-24","publication_timestamp_utc":"2026-07-24T09:00:25.953Z","methodology_version":"phase1_reserve_tracker_v1","regime":"normal","action":"maintain_baseline","confidence":"moderate_usability","run_quality":"live","reference_price_btcusd":65284,"reference_price_provider":"btc_helper_daily_snapshot","reference_price_observed_at":"2026-07-24T09:00:25.953Z","summary_rationale":"Valuation is favorable, but confirmation is not strong enough to deploy reserve aggressively.","daily_allocation_unit":1,"btc_helper_buy_unit":1,"baseline_dca_buy_unit":1,"reserve_balance_before":0,"reserve_balance_after":0,"reserve_deployed_today":0,"btc_helper_btc_bought_today":0.000015317688867103733,"baseline_dca_btc_bought_today":0.000015317688867103733,"btc_helper_cumulative_btc":0.0012701490398524446,"baseline_cumulative_btc":0.0012701490398524446,"btc_helper_portfolio_value":82.920409917727,"baseline_portfolio_value":82.920409917727,"benchmark_difference_pct":0,"benchmark_status":"in_line","public_read_schema_version":"public_read_v1","baseline_instruction":"continue","reserve_instruction":"hold","market_context":"normal","source_health":"moderate","coverage_status":"usable","behavior_change":false,"context_change":false,"combined_translation":"scheduled_plan_unchanged"},{"date":"2026-07-25","publication_timestamp_utc":"2026-07-25T09:00:20.391Z","methodology_version":"phase1_reserve_tracker_v1","regime":"normal","action":"maintain_baseline","confidence":"moderate_usability","run_quality":"live","reference_price_btcusd":63817,"reference_price_provider":"btc_helper_daily_snapshot","reference_price_observed_at":"2026-07-25T09:00:20.391Z","summary_rationale":"Valuation is favorable, but confirmation is not strong enough to deploy reserve aggressively.","daily_allocation_unit":1,"btc_helper_buy_unit":1,"baseline_dca_buy_unit":1,"reserve_balance_before":0,"reserve_balance_after":0,"reserve_deployed_today":0,"btc_helper_btc_bought_today":0.000015669805851105506,"baseline_dca_btc_bought_today":0.000015669805851105506,"btc_helper_cumulative_btc":0.0012858188457035501,"baseline_cumulative_btc":0.0012858188457035501,"btc_helper_portfolio_value":82.05710127626347,"baseline_portfolio_value":82.05710127626347,"benchmark_difference_pct":0,"benchmark_status":"in_line","public_read_schema_version":"public_read_v1","baseline_instruction":"continue","reserve_instruction":"hold","market_context":"normal","source_health":"moderate","coverage_status":"usable","behavior_change":false,"context_change":false,"combined_translation":"scheduled_plan_unchanged"},{"date":"2026-07-26","publication_timestamp_utc":"2026-07-26T09:00:23.259Z","methodology_version":"phase1_reserve_tracker_v1","regime":"normal","action":"maintain_baseline","confidence":"moderate_usability","run_quality":"live","reference_price_btcusd":64429,"reference_price_provider":"btc_helper_daily_snapshot","reference_price_observed_at":"2026-07-26T09:00:23.259Z","summary_rationale":"Valuation is favorable, but confirmation is not strong enough to deploy reserve aggressively.","daily_allocation_unit":1,"btc_helper_buy_unit":1,"baseline_dca_buy_unit":1,"reserve_balance_before":0,"reserve_balance_after":0,"reserve_deployed_today":0,"btc_helper_btc_bought_today":0.000015520961057908704,"baseline_dca_btc_bought_today":0.000015520961057908704,"btc_helper_cumulative_btc":0.001301339806761459,"baseline_cumulative_btc":0.001301339806761459,"btc_helper_portfolio_value":83.84402240983404,"baseline_portfolio_value":83.84402240983404,"benchmark_difference_pct":0,"benchmark_status":"in_line","public_read_schema_version":"public_read_v1","baseline_instruction":"continue","reserve_instruction":"hold","market_context":"normal","source_health":"moderate","coverage_status":"usable","behavior_change":false,"context_change":false,"combined_translation":"scheduled_plan_unchanged"},{"date":"2026-07-27","publication_timestamp_utc":"2026-07-27T09:00:23.975Z","methodology_version":"phase1_reserve_tracker_v1","regime":"normal","action":"maintain_baseline","confidence":"moderate_usability","run_quality":"live","reference_price_btcusd":65128,"reference_price_provider":"btc_helper_daily_snapshot","reference_price_observed_at":"2026-07-27T09:00:23.975Z","summary_rationale":"Valuation is favorable, but confirmation is not strong enough to deploy reserve aggressively.","daily_allocation_unit":1,"btc_helper_buy_unit":1,"baseline_dca_buy_unit":1,"reserve_balance_before":0,"reserve_balance_after":0,"reserve_deployed_today":0,"btc_helper_btc_bought_today":0.000015354379068910453,"baseline_dca_btc_bought_today":0.000015354379068910453,"btc_helper_cumulative_btc":0.0013166941858303693,"baseline_cumulative_btc":0.0013166941858303693,"btc_helper_portfolio_value":85.7536589347603,"baseline_portfolio_value":85.7536589347603,"benchmark_difference_pct":0,"benchmark_status":"in_line","public_read_schema_version":"public_read_v1","baseline_instruction":"continue","reserve_instruction":"hold","market_context":"normal","source_health":"moderate","coverage_status":"usable","behavior_change":false,"context_change":false,"combined_translation":"scheduled_plan_unchanged"},{"date":"2026-07-28","publication_timestamp_utc":"2026-07-28T09:00:21.351Z","methodology_version":"phase1_reserve_tracker_v1","regime":"cautious","action":"be_selective","confidence":"moderate_usability","run_quality":"live","reference_price_btcusd":63353,"reference_price_provider":"btc_helper_daily_snapshot","reference_price_observed_at":"2026-07-28T09:00:21.351Z","summary_rationale":"Valuation is favorable, but holder stress or macro/flow friction argues for baseline-only selective accumulation.","daily_allocation_unit":1,"btc_helper_buy_unit":1,"baseline_dca_buy_unit":1,"reserve_balance_before":0,"reserve_balance_after":0,"reserve_deployed_today":0,"btc_helper_btc_bought_today":0.000015784572159171624,"baseline_dca_btc_bought_today":0.000015784572159171624,"btc_helper_cumulative_btc":0.001332478757989541,"baseline_cumulative_btc":0.001332478757989541,"btc_helper_portfolio_value":84.41652675491139,"baseline_portfolio_value":84.41652675491139,"benchmark_difference_pct":0,"benchmark_status":"in_line","public_read_schema_version":"public_read_v1","baseline_instruction":"continue","reserve_instruction":"hold","market_context":"cautious","source_health":"moderate","coverage_status":"usable","behavior_change":false,"context_change":true,"combined_translation":"baseline_only"},{"date":"2026-07-29","publication_timestamp_utc":"2026-07-29T09:00:25.447Z","methodology_version":"phase1_reserve_tracker_v1","regime":"cautious","action":"be_selective","confidence":"reduced_usability","run_quality":"degraded","reference_price_btcusd":64349,"reference_price_provider":"btc_helper_daily_snapshot","reference_price_observed_at":"2026-07-29T09:00:25.447Z","summary_rationale":"Valuation is favorable, but holder stress or macro/flow friction argues for baseline-only selective accumulation.","daily_allocation_unit":1,"btc_helper_buy_unit":1,"baseline_dca_buy_unit":1,"reserve_balance_before":0,"reserve_balance_after":0,"reserve_deployed_today":0,"btc_helper_btc_bought_today":0.000015540257035851374,"baseline_dca_btc_bought_today":0.000015540257035851374,"btc_helper_cumulative_btc":0.0013480190150253924,"baseline_cumulative_btc":0.0013480190150253924,"btc_helper_portfolio_value":86.74367559786897,"baseline_portfolio_value":86.74367559786897,"benchmark_difference_pct":0,"benchmark_status":"in_line","public_read_schema_version":"public_read_v1","baseline_instruction":"continue","reserve_instruction":"hold","market_context":"cautious","source_health":"reduced","coverage_status":"limited","behavior_change":false,"context_change":true,"combined_translation":"baseline_only"},{"date":"2026-07-30","publication_timestamp_utc":"2026-07-30T09:00:25.458Z","methodology_version":"phase1_reserve_tracker_v1","regime":"cautious","action":"be_selective","confidence":"moderate_usability","run_quality":"live","reference_price_btcusd":64234,"reference_price_provider":"btc_helper_daily_snapshot","reference_price_observed_at":"2026-07-30T09:00:25.458Z","summary_rationale":"Valuation is favorable, but holder stress or macro/flow friction argues for baseline-only selective accumulation.","daily_allocation_unit":1,"btc_helper_buy_unit":1,"baseline_dca_buy_unit":1,"reserve_balance_before":0,"reserve_balance_after":0,"reserve_deployed_today":0,"btc_helper_btc_bought_today":0.000015568079210387023,"baseline_dca_btc_bought_today":0.000015568079210387023,"btc_helper_cumulative_btc":0.0013635870942357794,"baseline_cumulative_btc":0.0013635870942357794,"btc_helper_portfolio_value":87.58865341114105,"baseline_portfolio_value":87.58865341114105,"benchmark_difference_pct":0,"benchmark_status":"in_line","public_read_schema_version":"public_read_v1","baseline_instruction":"continue","reserve_instruction":"hold","market_context":"cautious","source_health":"moderate","coverage_status":"usable","behavior_change":false,"context_change":true,"combined_translation":"baseline_only"},{"date":"2026-07-31","publication_timestamp_utc":"2026-07-31T09:00:27.253Z","methodology_version":"phase1_reserve_tracker_v1","regime":"cautious","action":"be_selective","confidence":"moderate_usability","run_quality":"live","reference_price_btcusd":63782,"reference_price_provider":"btc_helper_daily_snapshot","reference_price_observed_at":"2026-07-31T09:00:27.253Z","summary_rationale":"Valuation is favorable, but holder stress or macro/flow friction argues for baseline-only selective accumulation.","daily_allocation_unit":1,"btc_helper_buy_unit":1,"baseline_dca_buy_unit":1,"reserve_balance_before":0,"reserve_balance_after":0,"reserve_deployed_today":0,"btc_helper_btc_bought_today":0.00001567840456555141,"baseline_dca_btc_bought_today":0.00001567840456555141,"btc_helper_cumulative_btc":0.001379265498801331,"baseline_cumulative_btc":0.001379265498801331,"btc_helper_portfolio_value":87.97231204454648,"baseline_portfolio_value":87.97231204454648,"benchmark_difference_pct":0,"benchmark_status":"in_line","public_read_schema_version":"public_read_v1","baseline_instruction":"continue","reserve_instruction":"hold","market_context":"cautious","source_health":"moderate","coverage_status":"usable","behavior_change":false,"context_change":false,"combined_translation":"baseline_only"},{"date":"2026-08-01","publication_timestamp_utc":"2026-08-01T09:00:23.131Z","methodology_version":"phase1_reserve_tracker_v1","regime":"cautious","action":"be_selective","confidence":"moderate_usability","run_quality":"live","reference_price_btcusd":63084,"reference_price_provider":"btc_helper_daily_snapshot","reference_price_observed_at":"2026-08-01T09:00:23.131Z","summary_rationale":"Valuation is favorable, but holder stress or macro/flow friction argues for baseline-only selective accumulation.","daily_allocation_unit":1,"btc_helper_buy_unit":1,"baseline_dca_buy_unit":1,"reserve_balance_before":0,"reserve_balance_after":0,"reserve_deployed_today":0,"btc_helper_btc_bought_today":0.00001585188003297191,"baseline_dca_btc_bought_today":0.00001585188003297191,"btc_helper_cumulative_btc":0.0013951173788343029,"baseline_cumulative_btc":0.0013951173788343029,"btc_helper_portfolio_value":88.00958472638317,"baseline_portfolio_value":88.00958472638317,"benchmark_difference_pct":0,"benchmark_status":"in_line","public_read_schema_version":"public_read_v1","baseline_instruction":"continue","reserve_instruction":"hold","market_context":"cautious","source_health":"moderate","coverage_status":"usable","behavior_change":false,"context_change":false,"combined_translation":"baseline_only"},{"date":"2026-08-02","publication_timestamp_utc":"2026-08-02T09:00:21.273Z","methodology_version":"phase1_reserve_tracker_v1","regime":"cautious","action":"be_selective","confidence":"moderate_usability","run_quality":"live","reference_price_btcusd":63140,"reference_price_provider":"btc_helper_daily_snapshot","reference_price_observed_at":"2026-08-02T09:00:21.273Z","summary_rationale":"Valuation is favorable, but holder stress or macro/flow friction argues for baseline-only selective accumulation.","daily_allocation_unit":1,"btc_helper_buy_unit":1,"baseline_dca_buy_unit":1,"reserve_balance_before":0,"reserve_balance_after":0,"reserve_deployed_today":0,"btc_helper_btc_bought_today":0.000015837820715869496,"baseline_dca_btc_bought_today":0.000015837820715869496,"btc_helper_cumulative_btc":0.0014109551995501724,"baseline_cumulative_btc":0.0014109551995501724,"btc_helper_portfolio_value":89.08771129959788,"baseline_portfolio_value":89.08771129959788,"benchmark_difference_pct":0,"benchmark_status":"in_line","public_read_schema_version":"public_read_v1","baseline_instruction":"continue","reserve_instruction":"hold","market_context":"cautious","source_health":"moderate","coverage_status":"usable","behavior_change":false,"context_change":false,"combined_translation":"baseline_only"},{"date":"2026-08-03","publication_timestamp_utc":"2026-08-03T09:00:27.111Z","methodology_version":"phase1_reserve_tracker_v1","regime":"cautious","action":"be_selective","confidence":"moderate_usability","run_quality":"live","reference_price_btcusd":62466,"reference_price_provider":"btc_helper_daily_snapshot","reference_price_observed_at":"2026-08-03T09:00:27.111Z","summary_rationale":"Valuation is favorable, but holder stress or macro/flow friction argues for baseline-only selective accumulation.","daily_allocation_unit":1,"btc_helper_buy_unit":1,"baseline_dca_buy_unit":1,"reserve_balance_before":0,"reserve_balance_after":0,"reserve_deployed_today":0,"btc_helper_btc_bought_today":0.00001600870873755323,"baseline_dca_btc_bought_today":0.00001600870873755323,"btc_helper_cumulative_btc":0.0014269639082877257,"baseline_cumulative_btc":0.0014269639082877257,"btc_helper_portfolio_value":89.13672749510107,"baseline_portfolio_value":89.13672749510107,"benchmark_difference_pct":0,"benchmark_status":"in_line","public_read_schema_version":"public_read_v1","baseline_instruction":"continue","reserve_instruction":"hold","market_context":"cautious","source_health":"moderate","coverage_status":"usable","behavior_change":false,"context_change":false,"combined_translation":"baseline_only"},{"date":"2026-08-04","publication_timestamp_utc":"2026-08-04T09:00:26.951Z","methodology_version":"phase1_reserve_tracker_v1","regime":"cautious","action":"be_selective","confidence":"moderate_usability","run_quality":"live","reference_price_btcusd":63530,"reference_price_provider":"btc_helper_daily_snapshot","reference_price_observed_at":"2026-08-04T09:00:26.951Z","summary_rationale":"Valuation is favorable, but holder stress or macro/flow friction argues for baseline-only selective accumulation.","daily_allocation_unit":1,"btc_helper_buy_unit":1,"baseline_dca_buy_unit":1,"reserve_balance_before":0,"reserve_balance_after":0,"reserve_deployed_today":0,"btc_helper_btc_bought_today":0.000015740594994490792,"baseline_dca_btc_bought_today":0.000015740594994490792,"btc_helper_cumulative_btc":0.0014427045032822164,"baseline_cumulative_btc":0.0014427045032822164,"btc_helper_portfolio_value":91.6550170935192,"baseline_portfolio_value":91.6550170935192,"benchmark_difference_pct":0,"benchmark_status":"in_line","public_read_schema_version":"public_read_v1","baseline_instruction":"continue","reserve_instruction":"hold","market_context":"cautious","source_health":"moderate","coverage_status":"usable","behavior_change":false,"context_change":false,"combined_translation":"baseline_only"},{"date":"2026-08-05","publication_timestamp_utc":"2026-08-05T09:00:27.685Z","methodology_version":"phase1_reserve_tracker_v1","regime":"cautious","action":"be_selective","confidence":"reduced_usability","run_quality":"degraded","reference_price_btcusd":64102,"reference_price_provider":"btc_helper_daily_snapshot","reference_price_observed_at":"2026-08-05T09:00:27.685Z","summary_rationale":"Valuation is favorable, but holder stress or macro/flow friction argues for baseline-only selective accumulation.","daily_allocation_unit":1,"btc_helper_buy_unit":1,"baseline_dca_buy_unit":1,"reserve_balance_before":0,"reserve_balance_after":0,"reserve_deployed_today":0,"btc_helper_btc_bought_today":0.000015600137281208075,"baseline_dca_btc_bought_today":0.000015600137281208075,"btc_helper_cumulative_btc":0.0014583046405634245,"baseline_cumulative_btc":0.0014583046405634245,"btc_helper_portfolio_value":93.48024406939663,"baseline_portfolio_value":93.48024406939663,"benchmark_difference_pct":0,"benchmark_status":"in_line","public_read_schema_version":"public_read_v1","baseline_instruction":"continue","reserve_instruction":"hold","market_context":"cautious","source_health":"reduced","coverage_status":"limited","behavior_change":false,"context_change":true,"combined_translation":"baseline_only"},{"date":"2026-08-06","publication_timestamp_utc":"2026-08-06T09:00:23.918Z","methodology_version":"phase1_reserve_tracker_v1","regime":"cautious","action":"be_selective","confidence":"moderate_usability","run_quality":"live","reference_price_btcusd":64876,"reference_price_provider":"btc_helper_daily_snapshot","reference_price_observed_at":"2026-08-06T09:00:23.918Z","summary_rationale":"Valuation is favorable, but holder stress or macro/flow friction argues for baseline-only selective accumulation.","daily_allocation_unit":1,"btc_helper_buy_unit":1,"baseline_dca_buy_unit":1,"reserve_balance_before":0,"reserve_balance_after":0,"reserve_deployed_today":0,"btc_helper_btc_bought_today":0.00001541402059313151,"baseline_dca_btc_bought_today":0.00001541402059313151,"btc_helper_cumulative_btc":0.0014737186611565559,"baseline_cumulative_btc":0.0014737186611565559,"btc_helper_portfolio_value":95.60897186119271,"baseline_portfolio_value":95.60897186119271,"benchmark_difference_pct":0,"benchmark_status":"in_line","public_read_schema_version":"public_read_v1","baseline_instruction":"continue","reserve_instruction":"hold","market_context":"cautious","source_health":"moderate","coverage_status":"usable","behavior_change":false,"context_change":true,"combined_translation":"baseline_only"},{"date":"2026-08-07","publication_timestamp_utc":"2026-08-07T09:00:24.453Z","methodology_version":"phase1_reserve_tracker_v1","regime":"normal","action":"maintain_baseline","confidence":"moderate_usability","run_quality":"live","reference_price_btcusd":64531,"reference_price_provider":"btc_helper_daily_snapshot","reference_price_observed_at":"2026-08-07T09:00:24.453Z","summary_rationale":"Valuation is favorable, but confirmation is not strong enough to deploy reserve aggressively.","daily_allocation_unit":1,"btc_helper_buy_unit":1,"baseline_dca_buy_unit":1,"reserve_balance_before":0,"reserve_balance_after":0,"reserve_deployed_today":0,"btc_helper_btc_bought_today":0.0000154964280733291,"baseline_dca_btc_bought_today":0.0000154964280733291,"btc_helper_cumulative_btc":0.0014892150892298849,"baseline_cumulative_btc":0.0014892150892298849,"btc_helper_portfolio_value":96.1005389230937,"baseline_portfolio_value":96.1005389230937,"benchmark_difference_pct":0,"benchmark_status":"in_line","public_read_schema_version":"public_read_v1","baseline_instruction":"continue","reserve_instruction":"hold","market_context":"normal","source_health":"moderate","coverage_status":"usable","behavior_change":false,"context_change":true,"combined_translation":"scheduled_plan_unchanged"},{"date":"2026-08-08","publication_timestamp_utc":"2026-08-08T09:00:21.748Z","methodology_version":"phase1_reserve_tracker_v1","regime":"normal","action":"maintain_baseline","confidence":"moderate_usability","run_quality":"live","reference_price_btcusd":64955,"reference_price_provider":"btc_helper_daily_snapshot","reference_price_observed_at":"2026-08-08T09:00:21.748Z","summary_rationale":"Valuation is favorable, but confirmation is not strong enough to deploy reserve aggressively.","daily_allocation_unit":1,"btc_helper_buy_unit":1,"baseline_dca_buy_unit":1,"reserve_balance_before":0,"reserve_balance_after":0,"reserve_deployed_today":0,"btc_helper_btc_bought_today":0.000015395273650989148,"baseline_dca_btc_bought_today":0.000015395273650989148,"btc_helper_cumulative_btc":0.001504610362880874,"baseline_cumulative_btc":0.001504610362880874,"btc_helper_portfolio_value":97.73196612092717,"baseline_portfolio_value":97.73196612092717,"benchmark_difference_pct":0,"benchmark_status":"in_line","public_read_schema_version":"public_read_v1","baseline_instruction":"continue","reserve_instruction":"hold","market_context":"normal","source_health":"moderate","coverage_status":"usable","behavior_change":false,"context_change":false,"combined_translation":"scheduled_plan_unchanged"},{"date":"2026-08-09","publication_timestamp_utc":"2026-08-09T09:00:24.924Z","methodology_version":"phase1_reserve_tracker_v1","regime":"normal","action":"maintain_baseline","confidence":"moderate_usability","run_quality":"live","reference_price_btcusd":64774,"reference_price_provider":"btc_helper_daily_snapshot","reference_price_observed_at":"2026-08-09T09:00:24.924Z","summary_rationale":"Valuation is favorable, but confirmation is not strong enough to deploy reserve aggressively.","daily_allocation_unit":1,"btc_helper_buy_unit":1,"baseline_dca_buy_unit":1,"reserve_balance_before":0,"reserve_balance_after":0,"reserve_deployed_today":0,"btc_helper_btc_bought_today":0.000015438293142310187,"baseline_dca_btc_bought_today":0.000015438293142310187,"btc_helper_cumulative_btc":0.001520048656023184,"baseline_cumulative_btc":0.001520048656023184,"btc_helper_portfolio_value":98.45963164524572,"baseline_portfolio_value":98.45963164524572,"benchmark_difference_pct":0,"benchmark_status":"in_line","public_read_schema_version":"public_read_v1","baseline_instruction":"continue","reserve_instruction":"hold","market_context":"normal","source_health":"moderate","coverage_status":"usable","behavior_change":false,"context_change":false,"combined_translation":"scheduled_plan_unchanged"},{"date":"2026-08-10","publication_timestamp_utc":"2026-08-10T09:00:26.977Z","methodology_version":"phase1_reserve_tracker_v1","regime":"normal","action":"maintain_baseline","confidence":"moderate_usability","run_quality":"live","reference_price_btcusd":65202,"reference_price_provider":"btc_helper_daily_snapshot","reference_price_observed_at":"2026-08-10T09:00:26.977Z","summary_rationale":"Valuation is favorable, but confirmation is not strong enough to deploy reserve aggressively.","daily_allocation_unit":1,"btc_helper_buy_unit":1,"baseline_dca_buy_unit":1,"reserve_balance_before":0,"reserve_balance_after":0,"reserve_deployed_today":0,"btc_helper_btc_bought_today":0.000015336952854206928,"baseline_dca_btc_bought_today":0.000015336952854206928,"btc_helper_cumulative_btc":0.001535385608877391,"baseline_cumulative_btc":0.001535385608877391,"btc_helper_portfolio_value":100.11021247002365,"baseline_portfolio_value":100.11021247002365,"benchmark_difference_pct":0,"benchmark_status":"in_line","public_read_schema_version":"public_read_v1","baseline_instruction":"continue","reserve_instruction":"hold","market_context":"normal","source_health":"moderate","coverage_status":"usable","behavior_change":false,"context_change":false,"combined_translation":"scheduled_plan_unchanged"},{"date":"2026-08-11","publication_timestamp_utc":"2026-08-11T09:00:27.567Z","methodology_version":"phase1_reserve_tracker_v1","regime":"normal","action":"maintain_baseline","confidence":"moderate_usability","run_quality":"live","reference_price_btcusd":64081,"reference_price_provider":"btc_helper_daily_snapshot","reference_price_observed_at":"2026-08-11T09:00:27.567Z","summary_rationale":"Valuation is favorable, but confirmation is not strong enough to deploy reserve aggressively.","daily_allocation_unit":1,"btc_helper_buy_unit":1,"baseline_dca_buy_unit":1,"reserve_balance_before":0,"reserve_balance_after":0,"reserve_deployed_today":0,"btc_helper_btc_bought_today":0.000015605249605967447,"baseline_dca_btc_bought_today":0.000015605249605967447,"btc_helper_cumulative_btc":0.0015509908584833585,"baseline_cumulative_btc":0.0015509908584833585,"btc_helper_portfolio_value":99.3890452024721,"baseline_portfolio_value":99.3890452024721,"benchmark_difference_pct":0,"benchmark_status":"in_line","public_read_schema_version":"public_read_v1","baseline_instruction":"continue","reserve_instruction":"hold","market_context":"normal","source_health":"moderate","coverage_status":"usable","behavior_change":false,"context_change":false,"combined_translation":"scheduled_plan_unchanged"},{"date":"2026-08-12","publication_timestamp_utc":"2026-08-12T09:00:25.424Z","methodology_version":"phase1_reserve_tracker_v1","regime":"normal","action":"maintain_baseline","confidence":"reduced_usability","run_quality":"degraded","reference_price_btcusd":63732,"reference_price_provider":"btc_helper_daily_snapshot","reference_price_observed_at":"2026-08-12T09:00:25.424Z","summary_rationale":"Valuation is favorable, but confirmation is not strong enough to deploy reserve aggressively.","daily_allocation_unit":1,"btc_helper_buy_unit":1,"baseline_dca_buy_unit":1,"reserve_balance_before":0,"reserve_balance_after":0,"reserve_deployed_today":0,"btc_helper_btc_bought_today":0.000015690704826460804,"baseline_dca_btc_bought_today":0.000015690704826460804,"btc_helper_cumulative_btc":0.0015666815633098193,"baseline_cumulative_btc":0.0015666815633098193,"btc_helper_portfolio_value":99.8477493928614,"baseline_portfolio_value":99.8477493928614,"benchmark_difference_pct":0,"benchmark_status":"in_line","public_read_schema_version":"public_read_v1","baseline_instruction":"continue","reserve_instruction":"hold","market_context":"normal","source_health":"reduced","coverage_status":"limited","behavior_change":false,"context_change":true,"combined_translation":"scheduled_plan_unchanged"},{"date":"2026-08-13","publication_timestamp_utc":"2026-08-13T09:00:22.681Z","methodology_version":"phase1_reserve_tracker_v1","regime":"indeterminate","action":"insufficient_signal","confidence":"reduced_usability","run_quality":"degraded","reference_price_btcusd":63705,"reference_price_provider":"btc_helper_daily_snapshot","reference_price_observed_at":"2026-08-13T09:00:22.681Z","summary_rationale":"Not enough data to confidently assess a regime.","daily_allocation_unit":1,"btc_helper_buy_unit":1,"baseline_dca_buy_unit":1,"reserve_balance_before":0,"reserve_balance_after":0,"reserve_deployed_today":0,"btc_helper_btc_bought_today":0.00001569735499568323,"baseline_dca_btc_bought_today":0.00001569735499568323,"btc_helper_cumulative_btc":0.0015823789183055026,"baseline_cumulative_btc":0.0015823789183055026,"btc_helper_portfolio_value":100.80544899065204,"baseline_portfolio_value":100.80544899065204,"benchmark_difference_pct":0,"benchmark_status":"in_line","public_read_schema_version":"public_read_v1","baseline_instruction":"continue","reserve_instruction":"hold","market_context":"unclear","source_health":"reduced","coverage_status":"limited","behavior_change":false,"context_change":true,"combined_translation":"scheduled_plan_unchanged"},{"date":"2026-08-14","publication_timestamp_utc":"2026-08-14T09:00:25.466Z","methodology_version":"phase1_reserve_tracker_v1","regime":"indeterminate","action":"insufficient_signal","confidence":"reduced_usability","run_quality":"degraded","reference_price_btcusd":62868,"reference_price_provider":"btc_helper_daily_snapshot","reference_price_observed_at":"2026-08-14T09:00:25.466Z","summary_rationale":"Not enough data to confidently assess a regime.","daily_allocation_unit":1,"btc_helper_buy_unit":1,"baseline_dca_buy_unit":1,"reserve_balance_before":0,"reserve_balance_after":0,"reserve_deployed_today":0,"btc_helper_btc_bought_today":0.000015906343449767768,"baseline_dca_btc_bought_today":0.000015906343449767768,"btc_helper_cumulative_btc":0.0015982852617552703,"baseline_cumulative_btc":0.0015982852617552703,"btc_helper_portfolio_value":100.48099783603034,"baseline_portfolio_value":100.48099783603034,"benchmark_difference_pct":0,"benchmark_status":"in_line","public_read_schema_version":"public_read_v1","baseline_instruction":"continue","reserve_instruction":"hold","market_context":"unclear","source_health":"reduced","coverage_status":"limited","behavior_change":false,"context_change":false,"combined_translation":"scheduled_plan_unchanged"},{"date":"2026-08-15","publication_timestamp_utc":"2026-08-15T09:00:23.044Z","methodology_version":"phase1_reserve_tracker_v1","regime":"indeterminate","action":"insufficient_signal","confidence":"reduced_usability","run_quality":"degraded","reference_price_btcusd":62905,"reference_price_provider":"btc_helper_daily_snapshot","reference_price_observed_at":"2026-08-15T09:00:23.044Z","summary_rationale":"Not enough data to confidently assess a regime.","daily_allocation_unit":1,"btc_helper_buy_unit":1,"baseline_dca_buy_unit":1,"reserve_balance_before":0,"reserve_balance_after":0,"reserve_deployed_today":0,"btc_helper_btc_bought_today":0.000015896987520864796,"baseline_dca_btc_bought_today":0.000015896987520864796,"btc_helper_cumulative_btc":0.0016141822492761351,"baseline_cumulative_btc":0.0016141822492761351,"btc_helper_portfolio_value":101.54013439071528,"baseline_portfolio_value":101.54013439071528,"benchmark_difference_pct":0,"benchmark_status":"in_line","public_read_schema_version":"public_read_v1","baseline_instruction":"continue","reserve_instruction":"hold","market_context":"unclear","source_health":"reduced","coverage_status":"limited","behavior_change":false,"context_change":false,"combined_translation":"scheduled_plan_unchanged"}];
-    const plannerStorageKey = 'btcHelperManualPlannerProfileV1';
-    const plannerLastVisitStorageKey = 'btcHelperLastViewedReadDateV1';
-    const btcHelperShareText = "BTC Helper today: Continue baseline; hold reserve.\n\nWhy: Not enough data to confidently assess a regime.\nSource health: Reduced; coverage Limited\nBTC ref: $62,905\n\nFull read: https://btchelper.app/history/2026-08-15/";
-    const btcHelperNextUpdateWindow = "Public read usually posts near 5:00 AM ET; operator review or corrections may land later.";
-    const btcHelperEngagementConfig = {
+    const btcHelperTrackConfig = {
       endpoint: "",
       siteId: "btc-helper-public-surface",
       buildTimestamp: "2026-08-15T09:00:23.044Z"
     };
-
     function btcHelperTrack(eventName, detail = {}) {
-      const event = String(eventName || 'unknown');
       const payload = {
         type: 'event',
-        site: btcHelperEngagementConfig.siteId,
-        event,
+        site: btcHelperTrackConfig.siteId,
+        event: String(eventName || 'unknown'),
         path: window.location.pathname,
         detail,
         at: new Date().toISOString(),
-        buildTimestamp: btcHelperEngagementConfig.buildTimestamp
+        buildTimestamp: btcHelperTrackConfig.buildTimestamp
       };
       try {
         const key = 'btcHelperLocalEngagementEvents';
@@ -3724,17 +3767,16 @@
         existing.push(payload);
         localStorage.setItem(key, JSON.stringify(existing.slice(-50)));
       } catch {}
-      if (!btcHelperEngagementConfig.endpoint) return;
+      if (!btcHelperTrackConfig.endpoint) return;
       try {
         const body = JSON.stringify(payload);
         if (navigator.sendBeacon) {
-          navigator.sendBeacon(btcHelperEngagementConfig.endpoint, new Blob([body], { type: 'text/plain;charset=UTF-8' }));
+          navigator.sendBeacon(btcHelperTrackConfig.endpoint, new Blob([body], { type: 'text/plain;charset=UTF-8' }));
         } else {
-          fetch(btcHelperEngagementConfig.endpoint, { method: 'POST', headers: { 'content-type': 'text/plain;charset=UTF-8' }, body, keepalive: true, mode: 'no-cors' });
+          fetch(btcHelperTrackConfig.endpoint, { method: 'POST', headers: { 'content-type': 'text/plain;charset=UTF-8' }, body, keepalive: true, mode: 'no-cors' });
         }
       } catch {}
     }
-
     btcHelperTrack('page_view', { title: document.title });
 
     (function () {
@@ -3788,7 +3830,6 @@
         });
       });
     })();
-
     document.querySelectorAll('[data-track-event]').forEach((node) => {
       node.addEventListener('click', () => {
         btcHelperTrack(node.dataset.trackEvent, {
@@ -3797,1128 +3838,6 @@
         });
       });
     });
-
-    document.getElementById('copy-share-post')?.addEventListener('click', async (event) => {
-      const button = event.currentTarget;
-      try {
-        await navigator.clipboard.writeText(btcHelperShareText);
-        button.textContent = 'Copied';
-        btcHelperTrack('copy_share_post_success');
-      } catch {
-        button.textContent = 'Copy failed';
-        btcHelperTrack('copy_share_post_failed');
-      }
-      window.setTimeout(() => { button.textContent = 'Copy share text'; }, 1800);
-    });
-
-    const themeStorageKey = 'btcHelperTheme';
-    function setBtcHelperTheme(theme) {
-      const next = theme === 'dark' ? 'dark' : 'light';
-      document.documentElement.dataset.theme = next;
-      try { localStorage.setItem(themeStorageKey, next); } catch {}
-      const button = document.getElementById('theme-toggle');
-      if (button) {
-        button.innerHTML = next === 'dark' ? '<svg aria-hidden="true" class="theme-icon theme-icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2.8v3M12 18.2v3M4.8 4.8l2.1 2.1M17.1 17.1l2.1 2.1M2.8 12h3M18.2 12h3M4.8 19.2l2.1-2.1M17.1 6.9l2.1-2.1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="theme-toggle-label">Theme</span>' : '<svg aria-hidden="true" class="theme-icon theme-icon-moon" viewBox="0 0 24 24"><path d="M20.4 14.7A8.3 8.3 0 0 1 9.3 3.6 8.7 8.7 0 1 0 20.4 14.7Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="theme-toggle-label">Theme</span>';
-        button.setAttribute('aria-label', next === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
-        button.setAttribute('title', next === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
-      }
-    }
-    const activeTheme = document.documentElement.dataset.theme || 'light';
-    setBtcHelperTheme(activeTheme);
-    document.getElementById('theme-toggle')?.addEventListener('click', () => {
-      setBtcHelperTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark');
-    });
-    window.addEventListener('storage', (event) => {
-      if (event.key === themeStorageKey && event.newValue) setBtcHelperTheme(event.newValue);
-    });
-    document.querySelectorAll('.site-nav').forEach((nav) => {
-      const toggle = nav.querySelector('.menu-toggle');
-      const links = nav.querySelector('.nav-links');
-      if (!toggle || !links) return;
-      const label = toggle.querySelector('.menu-toggle-label-text');
-      const normalizePath = (href) => {
-        try {
-          const url = new URL(href, window.location.href);
-          return url.pathname.replace(/\/index\.html$/, '/');
-        } catch {
-          return '';
-        }
-      };
-      const currentPath = normalizePath(window.location.href);
-      links.querySelectorAll('a').forEach((link) => {
-        const linkPath = normalizePath(link.href);
-        if (linkPath === currentPath || (currentPath === '/' && linkPath === '/')) link.setAttribute('aria-current', 'page');
-      });
-      const setMenuOpen = (open, restoreFocus = false) => {
-        nav.classList.toggle('is-open', open);
-        toggle.setAttribute('aria-expanded', String(open));
-        if (label) label.textContent = open ? 'Close' : 'Menu';
-        if (!open && restoreFocus) toggle.focus();
-      };
-      toggle.addEventListener('click', () => setMenuOpen(!nav.classList.contains('is-open')));
-      links.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setMenuOpen(false)));
-      document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape' && nav.classList.contains('is-open')) setMenuOpen(false, true);
-      });
-      document.addEventListener('click', (event) => {
-        if (nav.classList.contains('is-open') && !nav.contains(event.target)) setMenuOpen(false, true);
-      });
-    });
-
-    function formatDecisionUsd(value) {
-      if (!Number.isFinite(value)) return '$0';
-      return value.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: value >= 100 ? 0 : 2 });
-    }
-    function formatPlannerUsdMaybe(value) {
-      return Number.isFinite(value) ? formatDecisionUsd(value) : 'Not entered';
-    }
-    function plannerNumberOrNull(value) {
-      const raw = String(value ?? '').trim();
-      if (!raw) return null;
-      const parsed = Number(raw);
-      return Number.isFinite(parsed) ? Math.max(0, parsed) : null;
-    }
-    function plannerProfileNumber(value, fallback = null) {
-      const parsed = plannerNumberOrNull(value);
-      return parsed === null ? fallback : parsed;
-    }
-    function setPlannerInputValue(id, value) {
-      const el = getPlannerEl(id);
-      if (!el) return;
-      el.value = Number.isFinite(value) ? String(value) : '';
-    }
-    function getPlannerEl(id) { return document.getElementById(id); }
-    const plannerLatestRecord = btcHelperPlannerHistory[btcHelperPlannerHistory.length - 1] || {};
-    const plannerLatestDate = new Date(String(plannerLatestRecord.date || '').slice(0, 10) + 'T00:00:00Z');
-    const plannerDefaultWeekday = Number.isNaN(plannerLatestDate.getTime()) ? 1 : plannerLatestDate.getUTCDay();
-    const plannerDefaultProfile = {
-      style: 'reserve',
-      budget: 500,
-      period: 'monthly',
-      cadence: 'weekly',
-      weekday: plannerDefaultWeekday,
-      reserveRule: 'pause_only',
-      startingReserve: 0,
-      liquidCash: null,
-      protectedEmergency: null,
-      protectedNearTerm: null,
-      protectedTax: null,
-      protectedDebt: null,
-      protectedOther: null,
-      durabilityMargin: 'unknown',
-      durabilityBuffer: 'unknown',
-      durabilityDebt: 'unknown',
-      durabilityObligations: 'unknown',
-      optionalCapital: 'unknown',
-      exposureStatus: 'unknown',
-      reserveSeparation: 'unknown',
-      deployGuardrail: true,
-      advancedAcknowledged: false,
-      storageMode: 'local'
-    };
-    const plannerExampleProfile = {
-      ...plannerDefaultProfile,
-      liquidCash: 12000,
-      protectedEmergency: 9000,
-      protectedNearTerm: 1000,
-      protectedTax: 500,
-      protectedDebt: 500,
-      protectedOther: 0,
-      startingReserve: 1000,
-      durabilityMargin: 'steady',
-      durabilityBuffer: 'three_plus',
-      durabilityDebt: 'none',
-      durabilityObligations: 'clear',
-      optionalCapital: 'yes',
-      exposureStatus: 'within_limit',
-      reserveSeparation: 'separate'
-    };
-    const plannerStages = ['safety', 'baseline', 'reserve', 'boundary'];
-    let plannerActiveStage = 'safety';
-    function readStoredPlannerProfile() {
-      try {
-        const sessionSaved = JSON.parse(sessionStorage.getItem(plannerStorageKey) || 'null');
-        if (sessionSaved) return { ...sessionSaved, storageMode: 'session' };
-      } catch {}
-      try {
-        const localSaved = JSON.parse(localStorage.getItem(plannerStorageKey) || 'null');
-        if (localSaved) return { ...localSaved, storageMode: localSaved.storageMode || 'local' };
-      } catch {}
-      return null;
-    }
-    function plannerReserveBoundary(profile) {
-      const liquidCash = plannerProfileNumber(profile.liquidCash);
-      const protectedEmergency = plannerProfileNumber(profile.protectedEmergency);
-      const protectedNearTerm = plannerProfileNumber(profile.protectedNearTerm);
-      const protectedTax = plannerProfileNumber(profile.protectedTax);
-      const protectedDebt = plannerProfileNumber(profile.protectedDebt);
-      const protectedOther = plannerProfileNumber(profile.protectedOther);
-      const requestedReserve = Math.max(0, Number(profile.startingReserve ?? 0));
-      const requiredValues = [liquidCash, protectedEmergency, protectedNearTerm, protectedTax, protectedDebt, protectedOther];
-      const complete = requiredValues.every((value) => Number.isFinite(value));
-      const protectedTotal = complete
-        ? protectedEmergency + protectedNearTerm + protectedTax + protectedDebt + protectedOther
-        : null;
-      const maximumPotential = complete ? Math.max(0, liquidCash - protectedTotal) : null;
-      const overprotected = Boolean(complete && protectedTotal > liquidCash);
-      const overallocated = Boolean(complete && requestedReserve > maximumPotential);
-      const effectiveReserve = complete ? Math.min(requestedReserve, maximumPotential) : 0;
-      const note = !complete
-        ? 'Enter total liquid cash and every protected bucket. Use 0 only when a bucket truly does not apply.'
-        : overprotected
-          ? 'Protected cash is greater than total liquid cash. This planner treats optional BTC reserve as $0.'
-          : overallocated
-            ? 'The selected reserve is above the potentially optional remainder and is capped by this planner.'
-            : 'Reserve arithmetic uses only the remainder after the protected amounts you entered.';
-      return { liquidCash, protectedTotal, maximumPotential, requestedReserve, effectiveReserve, complete, overprotected, overallocated, note };
-    }
-    function plannerStageCompletion(profile = plannerProfileFromForm(), durability = plannerDurability(profile)) {
-      const reserveBoundary = plannerReserveBoundary(profile);
-      const safetyFields = [
-        profile.durabilityMargin,
-        profile.durabilityBuffer,
-        profile.durabilityDebt,
-        profile.durabilityObligations,
-        profile.optionalCapital,
-        profile.exposureStatus,
-        profile.reserveSeparation
-      ];
-      return {
-        safety: durability.level !== 'unchecked' && safetyFields.every((value) => value && value !== 'unknown'),
-        baseline: Number.isFinite(profile.budget) && profile.budget > 0 && Boolean(profile.period) && Boolean(profile.cadence),
-        reserve: profile.style === 'steady' || (['reserve', 'opportunistic'].includes(profile.style || '') && reserveBoundary.complete),
-        boundary: ['steady', 'reserve'].includes(profile.style || '') || (profile.style === 'opportunistic' && profile.advancedAcknowledged && durability.level === 'strong' && reserveBoundary.complete)
-      };
-    }
-    function setPlannerStage(target) {
-      const nextStage = plannerStages.includes(target) ? target : 'safety';
-      plannerActiveStage = nextStage;
-      const profile = plannerProfileFromForm();
-      const durability = plannerDurability(profile);
-      const completion = plannerStageCompletion(profile, durability);
-      const activeIndex = plannerStages.indexOf(nextStage);
-      setPlannerText('planner-stage-progress', 'Step ' + String(activeIndex + 1) + ' of ' + String(plannerStages.length));
-      document.querySelectorAll('[data-planner-stage]').forEach((card) => {
-        const stage = card.dataset.plannerStage || '';
-        const index = plannerStages.indexOf(stage);
-        const active = stage === nextStage;
-        const complete = Boolean(completion[stage]);
-        const state = active ? 'active' : complete ? 'complete' : 'waiting';
-        card.dataset.stageState = state;
-        card.setAttribute('aria-expanded', String(active));
-        card.classList.toggle('is-active', active);
-        card.classList.toggle('is-complete', complete);
-        const body = card.querySelector('.planner-stage-body');
-        if (body) body.hidden = !active;
-        const status = card.querySelector('.planner-stage-status');
-        if (status) status.textContent = active ? (complete ? 'Ready' : 'Open') : complete ? 'Done' : index < activeIndex ? 'Needs input' : 'Next';
-      });
-      document.querySelectorAll('[data-planner-stage-button]').forEach((button) => {
-        const stage = button.dataset.plannerStageButton || '';
-        const active = stage === nextStage;
-        button.setAttribute('aria-current', active ? 'step' : 'false');
-        button.dataset.complete = String(Boolean(completion[stage]));
-        button.dataset.needsInput = String(!completion[stage] && plannerStages.indexOf(stage) < activeIndex);
-      });
-    }
-    function setPlannerTab(target) {
-      document.querySelectorAll('[data-planner-tab]').forEach((tab) => tab.setAttribute('aria-selected', String(tab.dataset.plannerTab === target)));
-      document.querySelectorAll('.planner-pane').forEach((pane) => {
-        const active = pane.id === 'planner-pane-' + target;
-        pane.classList.toggle('active', active);
-        pane.hidden = !active;
-      });
-    }
-    function setPlannerText(id, value) {
-      const el = getPlannerEl(id);
-      if (el) el.textContent = value;
-    }
-    function compareReadDates(a, b) {
-      return String(a || '').slice(0, 10).localeCompare(String(b || '').slice(0, 10));
-    }
-    function clientPriceChangeText(current, prior) {
-      const now = Number(current);
-      const before = Number(prior);
-      if (!Number.isFinite(now) || !Number.isFinite(before) || before === 0) return 'BTC reference-price change unavailable.';
-      const diff = now - before;
-      const pct = (diff / before) * 100;
-      if (Math.abs(diff) < 0.01) return 'BTC reference price was unchanged.';
-      const direction = diff > 0 ? 'increased' : 'decreased';
-      return 'BTC reference price ' + direction + ' ' + Math.abs(pct).toFixed(1) + '%.';
-    }
-    function updateHomepageMode(profile = window.btcHelperPlannerSavedProfile) {
-      const hasSavedPlan = Boolean(profile);
-      document.body.classList.toggle('has-saved-plan', hasSavedPlan);
-      document.querySelectorAll('[data-saved-plan-only]').forEach((node) => {
-        node.hidden = !hasSavedPlan;
-      });
-      const emptyState = getPlannerEl('plan-empty-state');
-      if (emptyState) emptyState.hidden = hasSavedPlan;
-    }
-    function updateReturnSummary() {
-      const panel = getPlannerEl('return-summary');
-      const text = getPlannerEl('return-summary-text');
-      const latestDate = String(plannerLatestRecord.date || '').slice(0, 10);
-      if (!panel || !text || !latestDate) return;
-      let previousDate = '';
-      try { previousDate = String(localStorage.getItem(plannerLastVisitStorageKey) || '').slice(0, 10); } catch {}
-      const hasSavedPlan = Boolean(window.btcHelperPlannerSavedProfile);
-      let message = '';
-      if (previousDate && previousDate !== latestDate) {
-        const unseen = btcHelperPlannerHistory.filter((record) => compareReadDates(record.date, previousDate) > 0);
-        const firstUnseenIndex = btcHelperPlannerHistory.findIndex((record) => compareReadDates(record.date, previousDate) > 0);
-        const prior = firstUnseenIndex > 0 ? btcHelperPlannerHistory[firstUnseenIndex - 1] : null;
-        const postures = [...new Set(unseen.map((record) => record.regime).filter(Boolean))];
-        const qualityChanged = unseen.some((record, index) => {
-          const absoluteIndex = firstUnseenIndex + index;
-          const before = absoluteIndex > 0 ? btcHelperPlannerHistory[absoluteIndex - 1] : null;
-          return before && (record.confidence !== before.confidence || record.run_quality !== before.run_quality);
-        });
-        const priceLine = prior && unseen.length ? clientPriceChangeText(unseen.at(-1)?.reference_price_btcusd, prior.reference_price_btcusd) : '';
-        message = 'What changed since your last visit: ' + unseen.length + ' new read' + (unseen.length === 1 ? '' : 's') + '. Stance ' + (postures.length === 1 ? 'remained ' + postures[0] : 'included ' + postures.join(', ')) + '. ' + (qualityChanged ? 'Source health changed during this span. ' : 'Source health did not materially change. ') + priceLine;
-      } else if (hasSavedPlan) {
-        message = 'No new read since your last visit. Your saved plan is current for the latest read. ' + btcHelperNextUpdateWindow;
-      }
-      if (message && hasSavedPlan) {
-        text.textContent = message.trim();
-        panel.hidden = false;
-      }
-      try { localStorage.setItem(plannerLastVisitStorageKey, latestDate); } catch {}
-    }
-    function syncPlannerReserveDisclosure() {
-      const style = getPlannerEl('planner-style')?.value || 'reserve';
-      const reserveRule = getPlannerEl('planner-reserve-rule');
-      const reserveSettings = getPlannerEl('planner-reserve-settings');
-      const advancedNote = getPlannerEl('planner-advanced-mode-note');
-      const advancedWarning = getPlannerEl('planner-advanced-baseline-warning');
-      const advancedConfirm = getPlannerEl('planner-advanced-confirm-wrap');
-      const cashBoundaryWrap = getPlannerEl('planner-cash-boundary-wrap');
-      const storageMode = getPlannerEl('planner-storage-mode')?.value || 'local';
-      const storageNote = getPlannerEl('planner-storage-note');
-      const hideAllReserveFields = style === 'steady';
-      const hideReserveRule = style !== 'opportunistic';
-      if (hideAllReserveFields && reserveRule) reserveRule.value = 'observe_only';
-      if (style === 'reserve' && reserveRule && reserveRule.value === 'observe_only') reserveRule.value = 'pause_only';
-      if (style === 'opportunistic' && reserveRule && reserveRule.value === 'observe_only') reserveRule.value = 'pause_cautious';
-      if (reserveSettings) {
-        reserveSettings.hidden = hideAllReserveFields;
-        reserveSettings.setAttribute('aria-hidden', String(hideAllReserveFields));
-      }
-      if (cashBoundaryWrap) {
-        cashBoundaryWrap.hidden = hideAllReserveFields;
-        cashBoundaryWrap.setAttribute('aria-hidden', String(hideAllReserveFields));
-      }
-      const reserveRuleWrap = getPlannerEl('planner-reserve-rule-wrap');
-      if (reserveRuleWrap) {
-        reserveRuleWrap.hidden = hideReserveRule;
-        reserveRuleWrap.setAttribute('aria-hidden', String(hideReserveRule));
-      }
-      if (advancedNote) {
-        advancedNote.textContent = style === 'opportunistic'
-          ? 'Advanced mode can hold scheduled baseline amounts in reserve on the days selected below.'
-          : style === 'reserve'
-            ? 'Optional reserve mode keeps your baseline scheduled and only uses reserve when conditions earn it.'
-            : 'Context mode keeps BTC Helper as explanation only.';
-      }
-      if (advancedWarning) advancedWarning.hidden = style !== 'opportunistic';
-      if (advancedConfirm) advancedConfirm.hidden = style !== 'opportunistic';
-      if (storageNote) {
-        storageNote.textContent = storageMode === 'session'
-          ? 'Session-only mode keeps planner values in this browser tab/session and removes any saved local planner profile.'
-          : 'Saved planner values can remain on this browser/device. Use Clear this device on shared computers.';
-      }
-    }
-    function setPlannerModeControls(style) {
-      const selectedStyle = style || getPlannerEl('planner-style')?.value || 'reserve';
-      document.querySelectorAll('[data-planner-style]').forEach((button) => {
-        button.setAttribute('aria-pressed', String(button.dataset.plannerStyle === selectedStyle));
-      });
-      const preset = selectedStyle === 'opportunistic' ? 'opportunistic' : selectedStyle === 'steady' ? 'steady' : 'reserve';
-      document.querySelectorAll('[data-planner-preset]').forEach((button) => {
-        button.setAttribute('aria-pressed', String(button.dataset.plannerPreset === preset));
-      });
-    }
-    function plannerBoundaryLabel(style) {
-      if (style === 'steady') return 'Context only';
-      if (style === 'opportunistic') return 'Advanced baseline and reserve';
-      return 'Optional reserve only';
-    }
-    function plannerPeriodLabel(value) {
-      if (value === 'weekly') return 'weekly';
-      if (value === 'per_buy') return 'per buy';
-      return 'monthly';
-    }
-    function updatePlannerStageSummaries(profile, durability = plannerDurability(profile)) {
-      const reserveBoundary = plannerReserveBoundary(profile);
-      const baselineSummary = formatDecisionUsd(profile.budget) + ' ' + plannerPeriodLabel(profile.period) + ' · ' + String(profile.cadence || 'daily');
-      const reserveSummary = profile.style === 'steady'
-        ? 'Context only'
-        : !reserveBoundary.complete
-          ? 'Complete protected cash boundary'
-          : profile.style === 'opportunistic'
-            ? 'Build reserve under advanced rule'
-            : 'Preserve potentially optional reserve';
-      const boundarySummary = plannerBoundaryLabel(profile.style);
-      const advancedReady = profile.style !== 'opportunistic'
-        ? ''
-        : profile.advancedAcknowledged && durability.level === 'strong'
-          ? ' · experimental acknowledged'
-          : ' · experimental gate incomplete';
-      setPlannerText('planner-stage-mini-safety', durability.label);
-      setPlannerText('planner-stage-mini-baseline', formatDecisionUsd(profile.budget) + ' ' + plannerPeriodLabel(profile.period));
-      setPlannerText('planner-stage-mini-reserve', profile.style === 'steady'
-        ? 'Context only'
-        : profile.style === 'opportunistic'
-          ? 'Build reserve'
-          : 'Preserve reserve');
-      setPlannerText('planner-stage-mini-boundary', boundarySummary);
-      setPlannerText('planner-stage-summary-safety', durability.level === 'unchecked'
-        ? 'Complete the safety-floor quick check before treating reserve as deployable.'
-        : durability.label + ' · ' + durability.mainPressure + ' · ' + durability.optionalRoom);
-      setPlannerText('planner-stage-summary-baseline', baselineSummary);
-      setPlannerText('planner-stage-summary-reserve', reserveSummary);
-      setPlannerText('planner-stage-summary-boundary', boundarySummary + (profile.style === 'reserve' ? ' · baseline stays scheduled' : advancedReady));
-    }
-    function setPlannerStyle(style, reserveRuleValue = '') {
-      const styleInput = getPlannerEl('planner-style');
-      const reserveRule = getPlannerEl('planner-reserve-rule');
-      const nextStyle = ['steady', 'reserve', 'opportunistic'].includes(style) ? style : 'reserve';
-      if (styleInput) styleInput.value = nextStyle;
-      if (reserveRule) {
-        if (reserveRuleValue) {
-          reserveRule.value = reserveRuleValue;
-        } else if (nextStyle === 'steady') {
-          reserveRule.value = 'observe_only';
-        } else if (nextStyle === 'reserve') {
-          reserveRule.value = 'pause_only';
-        } else if (nextStyle === 'opportunistic') {
-          reserveRule.value = 'pause_cautious';
-        }
-      }
-      syncPlannerReserveDisclosure();
-      setPlannerModeControls(nextStyle);
-    }
-    function plannerDurability(profile) {
-      const margin = profile.durabilityMargin || 'unknown';
-      const buffer = profile.durabilityBuffer || 'unknown';
-      const debt = profile.durabilityDebt || 'unknown';
-      const obligations = profile.durabilityObligations || 'unknown';
-      const optionalCapital = profile.optionalCapital || 'unknown';
-      const exposureStatus = profile.exposureStatus || 'unknown';
-      const reserveSeparation = profile.reserveSeparation || 'unknown';
-      const checked = [margin, buffer, debt, obligations, optionalCapital, exposureStatus, reserveSeparation].some((value) => value !== 'unknown');
-      if (!checked) {
-        return {
-          level: 'unchecked',
-          label: 'Not checked',
-          mainPressure: 'Use the quick check',
-          safeFloor: 'Protect essentials first',
-          optionalRoom: 'Not checked',
-          exposureText: 'Not checked',
-          reserveSeparationText: 'Not checked',
-          nextStep: 'Use the safety floor before deploying reserve.',
-          blocksReserveDeployment: false,
-          guardrailText: profile.deployGuardrail ? 'Waiting for safety check' : 'Off'
-        };
-      }
-
-      const marginScore = { tight: -2, limited: 1, steady: 2, strong: 3, unknown: 0 }[margin] ?? 0;
-      const bufferScore = { less_than_one: -2, one_to_three: 1, three_plus: 3, unknown: 0 }[buffer] ?? 0;
-      const debtScore = { pressure: -2, manageable: 1, none: 2, unknown: 0 }[debt] ?? 0;
-      const obligationScore = { heavy: -2, watch: 0, clear: 1, unknown: 0 }[obligations] ?? 0;
-      const optionalScore = { no: -3, unsure: -1, yes: 2, unknown: 0 }[optionalCapital] ?? 0;
-      const exposureScore = { none: 2, within_limit: 2, near_limit: 0, over_limit: -3, unknown: 0 }[exposureStatus] ?? 0;
-      const separationScore = { separate: 2, unsure: -1, overlaps: -3, needed: -3, unknown: 0 }[reserveSeparation] ?? 0;
-      const score = marginScore + bufferScore + debtScore + obligationScore + optionalScore + exposureScore + separationScore;
-      let level = 'limited';
-      if (optionalCapital === 'no' || margin === 'tight' || buffer === 'less_than_one' || exposureStatus === 'over_limit' || reserveSeparation === 'overlaps' || reserveSeparation === 'needed') {
-        level = 'fragile';
-      } else if (score >= 10 && buffer === 'three_plus' && optionalCapital === 'yes' && ['none', 'within_limit'].includes(exposureStatus) && reserveSeparation === 'separate') {
-        level = 'strong';
-      }
-
-      const pressure = (() => {
-        if (optionalCapital === 'no') return 'Capital not clearly optional';
-        if (reserveSeparation === 'overlaps') return 'Reserve overlaps emergency cash';
-        if (reserveSeparation === 'needed') return 'Reserve needed soon';
-        if (exposureStatus === 'over_limit') return 'BTC exposure at limit';
-        if (margin === 'tight') return 'Thin monthly room';
-        if (buffer === 'less_than_one') return 'Thin emergency buffer';
-        if (debt === 'pressure') return 'Debt pressure';
-        if (obligations === 'heavy') return 'Near-term obligation';
-        if ([margin, buffer, debt, obligations, optionalCapital, exposureStatus, reserveSeparation].includes('unknown')) return 'Incomplete safety check';
-        if (reserveSeparation === 'unsure') return 'Reserve separation unclear';
-        if (exposureStatus === 'near_limit') return 'BTC exposure near limit';
-        return 'No severe bottleneck';
-      })();
-      const label = level === 'strong' ? 'Strong' : level === 'fragile' ? 'Fragile' : 'Limited';
-      const safeFloor = level === 'strong'
-        ? 'Maintain buffer discipline'
-        : level === 'fragile'
-          ? reserveSeparation === 'overlaps' || reserveSeparation === 'needed'
-            ? 'Separate reserve from safety cash'
-            : exposureStatus === 'over_limit'
-              ? 'Respect concentration limit'
-              : 'Stabilize cash flow first'
-          : 'Protect buffer and required bills';
-      const optionalRoom = level === 'strong'
-        ? 'Reserve deployment eligible'
-        : level === 'fragile'
-          ? 'No optional reserve deployment'
-          : 'Baseline first; reserve waits';
-      const exposureText = exposureStatus === 'none'
-        ? 'No current exposure'
-        : exposureStatus === 'within_limit'
-          ? 'Within selected limit'
-          : exposureStatus === 'near_limit'
-            ? 'Near selected limit'
-            : exposureStatus === 'over_limit'
-              ? 'At or above selected limit'
-              : 'Not checked';
-      const reserveSeparationText = reserveSeparation === 'separate'
-        ? 'Separate reserve'
-        : reserveSeparation === 'unsure'
-          ? 'Not fully separated'
-          : reserveSeparation === 'overlaps'
-            ? 'Overlaps emergency cash'
-            : reserveSeparation === 'needed'
-              ? 'Needed soon'
-              : 'Not checked';
-      const blocksReserveDeployment = Boolean(profile.deployGuardrail && level !== 'strong');
-      return {
-        level,
-        label,
-        mainPressure: pressure,
-        safeFloor,
-        optionalRoom,
-        exposureText,
-        reserveSeparationText,
-        nextStep: level === 'strong'
-          ? 'Review again monthly or when household conditions change.'
-          : 'Improve the safety floor before deploying reserve.',
-        blocksReserveDeployment,
-        guardrailText: profile.deployGuardrail
-          ? blocksReserveDeployment
-            ? 'Reserve held'
-            : 'Reserve eligible'
-          : 'Off'
-      };
-    }
-    function updatePlannerDurability(profile) {
-      const durability = plannerDurability(profile);
-      const card = getPlannerEl('planner-durability-card');
-      if (card) card.dataset.durability = durability.level;
-      setPlannerText('planner-durability-label', durability.label);
-      setPlannerText('planner-durability-pressure', durability.mainPressure);
-      setPlannerText('planner-durability-floor', durability.safeFloor);
-      setPlannerText('planner-durability-room', durability.optionalRoom);
-      setPlannerText('planner-durability-exposure', durability.exposureText);
-      setPlannerText('planner-durability-separation', durability.reserveSeparationText);
-      setPlannerText('planner-result-durability', durability.label);
-      setPlannerText('planner-result-guardrail', durability.guardrailText);
-      setPlannerText('planner-receipt-safety', durability.level === 'unchecked' ? 'Complete safety check' : durability.label);
-      setPlannerText('planner-receipt-exposure', durability.exposureText || 'Exposure pending');
-      return durability;
-    }
-    function updatePlannerCashBoundary(profile) {
-      const boundary = plannerReserveBoundary(profile);
-      setPlannerText('planner-protected-total', formatPlannerUsdMaybe(boundary.protectedTotal));
-      setPlannerText('planner-potential-reserve', formatPlannerUsdMaybe(boundary.maximumPotential));
-      setPlannerText('planner-chosen-reserve', formatDecisionUsd(boundary.requestedReserve));
-      setPlannerText('planner-effective-reserve', formatDecisionUsd(boundary.effectiveReserve));
-      setPlannerText('planner-result-potential-reserve', formatPlannerUsdMaybe(boundary.maximumPotential));
-      setPlannerText('planner-receipt-protected-cash', boundary.complete
-        ? formatDecisionUsd(boundary.protectedTotal) + ' protected; ' + formatDecisionUsd(boundary.effectiveReserve) + ' considered'
-        : 'Complete cash boundary');
-      setPlannerText('planner-cash-boundary-note', boundary.note);
-      return boundary;
-    }
-    let btcHelperPlannerStartTracked = false;
-    let btcHelperPersonalActionTracked = false;
-    function plannerEventDetail(profile = plannerProfileFromForm()) {
-      return {
-        style: profile.style,
-        period: profile.period,
-        cadence: profile.cadence,
-        reserveRule: profile.reserveRule,
-        hasBudget: Number.isFinite(profile.budget) && profile.budget > 0,
-        hasStartingReserve: Number.isFinite(profile.startingReserve) && profile.startingReserve > 0,
-        cashBoundaryComplete: plannerReserveBoundary(profile).complete,
-        exposureChecked: profile.exposureStatus && profile.exposureStatus !== 'unknown',
-        reserveSeparated: profile.reserveSeparation === 'separate',
-        advancedAcknowledged: profile.advancedAcknowledged === true,
-        storageMode: profile.storageMode === 'session' ? 'session' : 'local'
-      };
-    }
-    function trackPlannerEvent(eventName, detail = {}) {
-      if (typeof btcHelperTrack === 'function') btcHelperTrack(eventName, detail);
-    }
-    function trackPlannerStart() {
-      if (btcHelperPlannerStartTracked) return;
-      btcHelperPlannerStartTracked = true;
-      trackPlannerEvent('planner_start', plannerEventDetail());
-    }
-    function validatePlannerProfile(profile) {
-      const messages = [];
-      if (!Number.isFinite(profile.budget) || profile.budget <= 0) messages.push('Enter a budget above $0 to calculate a plan.');
-      if (profile.cadence === 'manual') messages.push('Manual check-in mode will not mark scheduled buy days.');
-      const durability = plannerDurability(profile);
-      const reserveBoundary = plannerReserveBoundary(profile);
-      if (profile.style !== 'steady' && !reserveBoundary.complete) messages.push('Complete the protected-cash boundary before treating optional BTC reserve as available.');
-      if (profile.style !== 'steady' && reserveBoundary.overprotected) messages.push('Protected cash is greater than total liquid cash; optional BTC reserve is treated as $0.');
-      if (profile.style !== 'steady' && reserveBoundary.overallocated) messages.push('Optional reserve is capped at the potentially optional remainder after the protected amounts you entered.');
-      if (profile.style !== 'steady' && (profile.reserveSeparation || 'unknown') !== 'separate') messages.push('Reserve is not treated as deployable until it is separate from emergency funds and near-term obligations.');
-      if (profile.style !== 'steady' && !['none', 'within_limit'].includes(profile.exposureStatus || 'unknown')) messages.push('Reserve deployment stays gated until current BTC exposure is checked and within your selected boundary.');
-      if (profile.style === 'opportunistic' && (!profile.advancedAcknowledged || durability.level !== 'strong' || !reserveBoundary.complete)) messages.push('Experimental baseline control requires a Strong safety floor, completed protected-cash boundary, and explicit acknowledgement.');
-      return messages;
-    }
-    function setPlannerResultComplete(complete) {
-      document.querySelectorAll('[data-planner-complete-only]').forEach((node) => {
-        node.hidden = !complete;
-      });
-      document.querySelectorAll('[data-planner-incomplete-only]').forEach((node) => {
-        node.hidden = Boolean(complete);
-      });
-    }
-    function setPlannerUnavailable(messages) {
-      const message = messages[0] || 'Enter a plan to calculate.';
-      setPlannerResultComplete(false);
-      ['planner-additional-today','planner-buy-today','planner-reserve-after','planner-window-bought','planner-window-reserved','planner-window-baseline','planner-preview-buy','planner-preview-reserve','return-buy-today','return-reserve-after','planner-receipt-today'].forEach((id) => setPlannerText(id, 'Waiting for plan'));
-      ['planner-scheduled-amount','planner-preview-scheduled','return-scheduled-baseline','planner-receipt-baseline'].forEach((id) => setPlannerText(id, 'Save a plan'));
-      ['return-durability','planner-receipt-safety','planner-result-durability','planner-result-guardrail','planner-receipt-exposure'].forEach((id) => setPlannerText(id, 'Waiting for check'));
-      setPlannerText('planner-receipt-reserve', 'Reserve rule pending');
-      setPlannerText('planner-receipt-protected-cash', 'Cash boundary pending');
-      setPlannerText('planner-result-potential-reserve', 'Waiting for boundary');
-      setPlannerText('planner-window-scheduled', '0');
-      setPlannerText('planner-headline', message);
-      setPlannerText('return-plan-action', message);
-      setPlannerText('planner-receipt-boundary', plannerBoundaryLabel(plannerProfileFromForm().style));
-      setPlannerText('planner-latest-why', message);
-      setPlannerText('planner-validation', message);
-      setPlannerText('planner-market-review', 'Set a valid baseline first; then watch for action, source-health, or weekly-context changes.');
-      setPlannerText('planner-plan-review', 'Monthly, or when household circumstances change.');
-      setPlannerText('planner-next-review', 'Set a valid baseline first.');
-      const csvButton = getPlannerEl('planner-download-csv');
-      if (csvButton) csvButton.disabled = true;
-      window.btcHelperPlannerLastCsv = '';
-    }
-    function plannerProfileFromForm() {
-      const savedProfile = window.btcHelperPlannerSavedProfile;
-      if (!getPlannerEl('planner-budget') && savedProfile) {
-        return {
-          ...plannerDefaultProfile,
-          ...savedProfile,
-          budget: Math.max(0, Number(savedProfile.budget ?? plannerDefaultProfile.budget)),
-          weekday: Number(savedProfile.weekday ?? plannerDefaultProfile.weekday),
-          startingReserve: Math.max(0, Number(savedProfile.startingReserve ?? plannerDefaultProfile.startingReserve)),
-          liquidCash: plannerProfileNumber(savedProfile.liquidCash),
-          protectedEmergency: plannerProfileNumber(savedProfile.protectedEmergency),
-          protectedNearTerm: plannerProfileNumber(savedProfile.protectedNearTerm),
-          protectedTax: plannerProfileNumber(savedProfile.protectedTax),
-          protectedDebt: plannerProfileNumber(savedProfile.protectedDebt),
-          protectedOther: plannerProfileNumber(savedProfile.protectedOther),
-          exposureStatus: savedProfile.exposureStatus ?? savedProfile.portfolioExposure ?? plannerDefaultProfile.exposureStatus,
-          reserveSeparation: savedProfile.reserveSeparation ?? plannerDefaultProfile.reserveSeparation,
-          deployGuardrail: savedProfile.deployGuardrail !== false,
-          advancedAcknowledged: savedProfile.advancedAcknowledged === true,
-          storageMode: savedProfile.storageMode === 'session' ? 'session' : 'local'
-        };
-      }
-      return {
-        style: getPlannerEl('planner-style')?.value || 'reserve',
-        budget: Math.max(0, Number(getPlannerEl('planner-budget')?.value || 0)),
-        period: getPlannerEl('planner-period')?.value || 'monthly',
-        cadence: getPlannerEl('planner-cadence')?.value || 'daily',
-        weekday: Number(getPlannerEl('planner-weekday')?.value || 1),
-        reserveRule: getPlannerEl('planner-reserve-rule')?.value || 'pause_only',
-        startingReserve: Math.max(0, Number(getPlannerEl('planner-starting-reserve')?.value || 0)),
-        liquidCash: plannerNumberOrNull(getPlannerEl('planner-liquid-cash')?.value),
-        protectedEmergency: plannerNumberOrNull(getPlannerEl('planner-protected-emergency')?.value),
-        protectedNearTerm: plannerNumberOrNull(getPlannerEl('planner-protected-near-term')?.value),
-        protectedTax: plannerNumberOrNull(getPlannerEl('planner-protected-tax')?.value),
-        protectedDebt: plannerNumberOrNull(getPlannerEl('planner-protected-debt')?.value),
-        protectedOther: plannerNumberOrNull(getPlannerEl('planner-protected-other')?.value),
-        durabilityMargin: getPlannerEl('planner-margin')?.value || 'unknown',
-        durabilityBuffer: getPlannerEl('planner-buffer')?.value || 'unknown',
-        durabilityDebt: getPlannerEl('planner-debt')?.value || 'unknown',
-        durabilityObligations: getPlannerEl('planner-obligations')?.value || 'unknown',
-        optionalCapital: getPlannerEl('planner-optional-capital')?.value || 'unknown',
-        exposureStatus: getPlannerEl('planner-exposure')?.value || 'unknown',
-        reserveSeparation: getPlannerEl('planner-reserve-separation')?.value || 'unknown',
-        deployGuardrail: getPlannerEl('planner-deploy-guardrail')?.checked !== false,
-        advancedAcknowledged: getPlannerEl('planner-advanced-ack')?.checked === true,
-        storageMode: getPlannerEl('planner-storage-mode')?.value === 'session' ? 'session' : 'local'
-      };
-    }
-    function applyPlannerProfile(profile) {
-      if (!profile) return;
-      if (getPlannerEl('planner-style')) getPlannerEl('planner-style').value = profile.style ?? 'reserve';
-      if (getPlannerEl('planner-budget')) getPlannerEl('planner-budget').value = profile.budget ?? 500;
-      if (getPlannerEl('planner-period')) getPlannerEl('planner-period').value = profile.period ?? 'monthly';
-      if (getPlannerEl('planner-cadence')) getPlannerEl('planner-cadence').value = profile.cadence ?? 'daily';
-      if (getPlannerEl('planner-weekday')) getPlannerEl('planner-weekday').value = String(profile.weekday ?? 1);
-      if (getPlannerEl('planner-reserve-rule')) getPlannerEl('planner-reserve-rule').value = profile.reserveRule ?? 'pause_only';
-      if (getPlannerEl('planner-starting-reserve')) getPlannerEl('planner-starting-reserve').value = profile.startingReserve ?? 0;
-      setPlannerInputValue('planner-liquid-cash', plannerProfileNumber(profile.liquidCash));
-      setPlannerInputValue('planner-protected-emergency', plannerProfileNumber(profile.protectedEmergency));
-      setPlannerInputValue('planner-protected-near-term', plannerProfileNumber(profile.protectedNearTerm));
-      setPlannerInputValue('planner-protected-tax', plannerProfileNumber(profile.protectedTax));
-      setPlannerInputValue('planner-protected-debt', plannerProfileNumber(profile.protectedDebt));
-      setPlannerInputValue('planner-protected-other', plannerProfileNumber(profile.protectedOther));
-      if (getPlannerEl('planner-margin')) getPlannerEl('planner-margin').value = profile.durabilityMargin ?? 'unknown';
-      if (getPlannerEl('planner-buffer')) getPlannerEl('planner-buffer').value = profile.durabilityBuffer ?? 'unknown';
-      if (getPlannerEl('planner-debt')) getPlannerEl('planner-debt').value = profile.durabilityDebt ?? 'unknown';
-      if (getPlannerEl('planner-obligations')) getPlannerEl('planner-obligations').value = profile.durabilityObligations ?? 'unknown';
-      if (getPlannerEl('planner-optional-capital')) getPlannerEl('planner-optional-capital').value = profile.optionalCapital ?? 'unknown';
-      if (getPlannerEl('planner-exposure')) getPlannerEl('planner-exposure').value = profile.exposureStatus ?? profile.portfolioExposure ?? 'unknown';
-      if (getPlannerEl('planner-reserve-separation')) getPlannerEl('planner-reserve-separation').value = profile.reserveSeparation ?? 'unknown';
-      if (getPlannerEl('planner-deploy-guardrail')) getPlannerEl('planner-deploy-guardrail').checked = profile.deployGuardrail !== false;
-      if (getPlannerEl('planner-advanced-ack')) getPlannerEl('planner-advanced-ack').checked = profile.advancedAcknowledged === true;
-      if (getPlannerEl('planner-storage-mode')) getPlannerEl('planner-storage-mode').value = profile.storageMode === 'session' ? 'session' : 'local';
-      syncPlannerReserveDisclosure();
-      setPlannerModeControls(profile.style ?? 'reserve');
-    }
-    function scheduledAmount(profile) {
-      if (profile.period === 'per_buy') return profile.budget;
-      if (profile.period === 'weekly') {
-        if (profile.cadence === 'daily') return profile.budget / 7;
-        if (profile.cadence === 'biweekly') return profile.budget * 2;
-        if (profile.cadence === 'monthly') return profile.budget * 4.345;
-        return profile.budget;
-      }
-      if (profile.cadence === 'daily') return profile.budget / 30.4375;
-      if (profile.cadence === 'weekly') return profile.budget * 12 / 52;
-      if (profile.cadence === 'biweekly') return profile.budget * 12 / 26;
-      if (profile.cadence === 'monthly') return profile.budget;
-      return profile.budget / 30.4375;
-    }
-    function recordDate(record) {
-      const date = new Date((record.date || '').slice(0, 10) + 'T00:00:00Z');
-      return Number.isNaN(date.getTime()) ? null : date;
-    }
-    function isScheduled(record, profile, index) {
-      if (profile.cadence === 'manual') return false;
-      const date = recordDate(record);
-      if (!date) return false;
-      if (profile.cadence === 'daily') return true;
-      if (profile.cadence === 'weekly') return date.getUTCDay() === profile.weekday;
-      if (profile.cadence === 'biweekly') return date.getUTCDay() === profile.weekday && index % 2 === 0;
-      if (profile.cadence === 'monthly') return date.getUTCDate() <= 7 && date.getUTCDay() === profile.weekday;
-      return false;
-    }
-    function plannerPostureKey(record) {
-      return String(record?.regime || '').toLowerCase();
-    }
-    function plannerPlanTranslation(posture, profile, scheduled) {
-      const key = String(posture || '').toLowerCase();
-      const style = profile.style || 'reserve';
-      if (profile.cadence === 'manual') return 'Manual check-in';
-      if (!scheduled) return 'No scheduled buy today';
-      if (style === 'steady') return 'Scheduled plan unchanged';
-      if (key.includes('aggressive')) return 'Deploy reserve';
-      if (key.includes('pause')) return 'Hold optional allocation';
-      if (key.includes('cautious')) return 'Baseline only';
-      if (key.includes('normal') || key.includes('maintain')) return 'Scheduled plan unchanged';
-      return 'Review manually';
-    }
-    function shouldHoldScheduledAmount(profile, posture) {
-      const key = String(posture || '').toLowerCase();
-      if (profile.style !== 'opportunistic' || profile.reserveRule === 'observe_only') return false;
-      return key.includes('pause') || (profile.reserveRule === 'pause_cautious' && key.includes('cautious'));
-    }
-    function advancedBaselineHoldAllowed(profile, durability) {
-      return Boolean(profile.style === 'opportunistic' && profile.advancedAcknowledged === true && durability?.level === 'strong' && plannerReserveBoundary(profile).complete);
-    }
-    function simulatePlanner(profile) {
-      const amount = scheduledAmount(profile);
-      const durability = plannerDurability(profile);
-      const reserveBoundary = plannerReserveBoundary(profile);
-      let reserve = profile.style === 'steady' ? 0 : reserveBoundary.effectiveReserve;
-      let bought = 0;
-      let baseline = 0;
-      let scheduled = 0;
-      const rows = [];
-      btcHelperPlannerHistory.forEach((record, index) => {
-        const isBuyDay = isScheduled(record, profile, index);
-        const posture = plannerPostureKey(record);
-      const reserveRule = profile.style === 'steady' ? 'observe_only' : profile.reserveRule;
-      const reserveEnabled = profile.style !== 'steady' && reserveRule !== 'observe_only';
-      const holdScheduledAmount = advancedBaselineHoldAllowed(profile, durability) && shouldHoldScheduledAmount({ ...profile, reserveRule }, posture);
-        let buy = 0;
-        let reserved = 0;
-        let baselineBuy = 0;
-        let additionalBuy = 0;
-        let instruction = 'No scheduled action';
-        if (isBuyDay) {
-          scheduled += 1;
-          baseline += amount;
-          if (!reserveEnabled) {
-            baselineBuy = amount;
-            buy = amount;
-            instruction = 'Buy scheduled baseline; BTC Helper is context only';
-          } else if (holdScheduledAmount) {
-            reserved = amount;
-            reserve += amount;
-            instruction = 'Hold scheduled amount in reserve under advanced rule';
-          } else if (posture.includes('aggressive')) {
-            baselineBuy = amount;
-            if (durability.blocksReserveDeployment) {
-              buy = baselineBuy;
-              instruction = 'Buy scheduled baseline; reserve deployment held by local safety floor';
-            } else {
-              additionalBuy = reserve;
-              buy = baselineBuy + additionalBuy;
-              reserve = 0;
-              instruction = 'Buy scheduled baseline plus user-selected potentially optional reserve';
-            }
-          } else {
-            baselineBuy = amount;
-            buy = amount;
-            instruction = posture.includes('pause')
-              ? 'Buy scheduled baseline; hold optional allocation'
-              : posture.includes('cautious')
-                ? 'Buy baseline only; no extra buy'
-                : 'Buy scheduled baseline';
-          }
-        }
-        bought += buy;
-        rows.push({ date: record.date || '', posture: record.regime || '', scheduled: isBuyDay, baselineAmount: isBuyDay ? amount : 0, baselineBuy, additionalBuy, buy, reserved, reserveAfter: reserve, instruction });
-      });
-      return { amount, reserve, bought, baseline, scheduled, rows, durability, reserveBoundary };
-    }
-    function todayInstruction(profile, simulation) {
-      const latest = btcHelperPlannerHistory[btcHelperPlannerHistory.length - 1] || {};
-      const posture = plannerPostureKey(latest);
-      const latestIndex = Math.max(0, btcHelperPlannerHistory.length - 1);
-      const todayScheduled = isScheduled(latest, profile, latestIndex);
-      const todayRow = simulation.rows[latestIndex] || {};
-      const amount = simulation.amount;
-      const buyToday = Number(todayRow.buy || 0);
-      const additionalToday = Number(todayRow.additionalBuy || 0);
-      const reserveAfter = Number.isFinite(todayRow.reserveAfter) ? todayRow.reserveAfter : simulation.reserve;
-      const reserveDeploymentHeld = Boolean(simulation.durability?.blocksReserveDeployment && todayScheduled && posture.includes('aggressive') && profile.style !== 'steady' && profile.reserveRule !== 'observe_only');
-      let headline = plannerPlanTranslation(posture, profile, todayScheduled);
-      let text = 'No scheduled buy today under your selected cadence. Use today’s posture as context and keep your next scheduled buy unchanged.';
-      if (reserveDeploymentHeld) headline = 'Reserve held by safety floor';
-      if (profile.cadence === 'manual') {
-        headline = 'Manual check-in';
-        text = 'BTC Helper is showing today’s posture, but your profile does not automate a buy cadence. Use the posture as context for your own manual schedule.';
-      } else if (todayScheduled) {
-        if (profile.style === 'steady') {
-          text = 'Today maps to your scheduled baseline. BTC Helper is providing context only, so reserve behavior is unchanged.';
-        } else if (shouldHoldScheduledAmount(profile, posture)) {
-          if (advancedBaselineHoldAllowed(profile, simulation.durability)) {
-            text = 'Today is scheduled, and your experimental rule would hold this scheduled amount in reserve instead of buying.';
-          } else {
-            headline = 'Baseline continues';
-            text = 'Your experimental baseline rule is not active until the safety floor is Strong, protected cash has been reviewed, and the acknowledgement is checked. Baseline remains scheduled.';
-          }
-        } else if (reserveDeploymentHeld) {
-          text = 'Today is the reserve-deployment state, but your local safety floor is not Strong. Baseline remains scheduled; reserve stays held.';
-        } else if (posture.includes('aggressive') && profile.style !== 'steady' && profile.reserveRule !== 'observe_only') {
-          text = 'Today is scheduled and is the reserve-deployment state. Baseline remains scheduled, with only the user-selected potentially optional reserve considered after protected cash.';
-        } else if (posture.includes('pause')) {
-          text = 'Baseline remains scheduled in this mode. The posture says to hold optional allocation and avoid deploying reserve.';
-        } else if (posture.includes('cautious')) {
-          text = 'Today is scheduled. Buy the baseline amount only; do not add discretionary extra buying or deploy reserve.';
-        } else {
-          text = 'Today is scheduled. Buy the baseline amount according to your plan and leave reserve untouched.';
-        }
-      }
-      return { headline, text, buyToday, additionalToday, reserveAfter, scheduledAmount: amount };
-    }
-    function plannerCsv(rows) {
-      const header = ['date','posture','scheduled_buy','baseline_amount_usd','amount_bought_usd','amount_reserved_usd','reserve_after_usd','instruction'];
-      const escapeCsv = (value) => '"' + String(value ?? '').replaceAll('"', '""') + '"';
-      return [header.join(','), ...rows.map((row) => [row.date,row.posture,row.scheduled ? 'yes' : 'no',row.baselineAmount.toFixed(2),row.buy.toFixed(2),row.reserved.toFixed(2),row.reserveAfter.toFixed(2),row.instruction].map(escapeCsv).join(','))].join('\n');
-    }
-    function downloadPlanner(filename, text, type) {
-      const blob = new Blob([text], { type: type || 'text/plain' });
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = filename;
-      document.body.appendChild(link);
-      link.click();
-      link.remove();
-      URL.revokeObjectURL(url);
-    }
-    function updatePlanner() {
-      const profile = plannerProfileFromForm();
-      const durability = updatePlannerDurability(profile);
-      const reserveBoundary = updatePlannerCashBoundary(profile);
-      syncPlannerReserveDisclosure();
-      updatePlannerStageSummaries(profile, durability);
-      setPlannerStage(plannerActiveStage);
-      const validationMessages = validatePlannerProfile(profile);
-      if (validationMessages.some((message) => message.includes('budget'))) {
-        setPlannerUnavailable(validationMessages);
-        window.btcHelperPlannerLastProfile = profile;
-        return;
-      }
-      const simulation = simulatePlanner(profile);
-      const today = todayInstruction(profile, simulation);
-      const waitingForSafety = simulation.durability?.level === 'unchecked';
-      const waitingForCashBoundary = profile.style !== 'steady' && !reserveBoundary.complete;
-      const waitingForPlan = waitingForSafety || waitingForCashBoundary;
-      setPlannerResultComplete(!waitingForPlan);
-      const displayHeadline = waitingForSafety
-        ? 'Complete the safety floor to finish today’s receipt.'
-        : waitingForCashBoundary
-          ? 'Complete the protected-cash boundary before reserve is considered.'
-          : today.headline;
-      const displayToday = waitingForPlan ? 'Waiting for completed inputs' : today.headline + ' · ' + formatDecisionUsd(today.buyToday);
-      const boundaryLabel = plannerBoundaryLabel(profile.style);
-      const reserveReceipt = profile.style === 'steady'
-        ? 'Context only'
-        : formatDecisionUsd(today.reserveAfter) + ' after today';
-      const storageLabel = profile.storageMode === 'session' ? 'This session only' : 'Saved only in this browser';
-      setPlannerText('planner-scheduled-amount', formatDecisionUsd(today.scheduledAmount));
-      setPlannerText('planner-additional-today', formatDecisionUsd(today.additionalToday));
-      setPlannerText('planner-buy-today', formatDecisionUsd(today.buyToday));
-      setPlannerText('planner-reserve-after', formatDecisionUsd(today.reserveAfter));
-      setPlannerText('planner-receipt-baseline', formatDecisionUsd(simulation.amount) + ' ' + profile.cadence);
-      setPlannerText('planner-receipt-reserve', reserveReceipt);
-      setPlannerText('planner-receipt-boundary', boundaryLabel);
-      setPlannerText('planner-receipt-storage', storageLabel);
-      setPlannerText('planner-receipt-today', displayToday);
-      setPlannerText('planner-preview-scheduled', formatDecisionUsd(simulation.amount));
-      setPlannerText('planner-preview-buy', formatDecisionUsd(today.buyToday));
-      setPlannerText('planner-preview-reserve', formatDecisionUsd(today.reserveAfter));
-      setPlannerText('planner-headline', displayHeadline);
-      setPlannerText('return-plan-action', displayHeadline);
-      setPlannerText('return-scheduled-baseline', formatDecisionUsd(simulation.amount));
-      setPlannerText('return-buy-today', formatDecisionUsd(today.buyToday));
-      setPlannerText('return-reserve-after', formatDecisionUsd(today.reserveAfter));
-      setPlannerText('return-durability', simulation.durability?.label || 'Not checked');
-      setPlannerText('planner-latest-why', waitingForSafety
-        ? 'Complete the local safety-floor check before treating reserve deployment as eligible.'
-        : waitingForCashBoundary
-          ? 'Enter total liquid cash and protected buckets before treating any reserve as potentially optional.'
-          : today.text);
-      setPlannerText('planner-market-review', 'When the action, source health, or weekly context changes.');
-      setPlannerText('planner-plan-review', simulation.durability.nextStep || 'Monthly, or when household circumstances change.');
-      setPlannerText('planner-next-review', 'Market: action, source health, or weekly context. Plan: monthly or household change.');
-      setPlannerText('planner-validation', validationMessages.join(' ') || (waitingForPlan ? 'Complete the required local checks, then review today’s estimate and execute manually wherever you buy Bitcoin.' : 'Ready. Review today’s estimate before treating any amount as available. BTC Helper does not execute purchases.'));
-      setPlannerText('planner-window-scheduled', String(simulation.scheduled));
-      setPlannerText('planner-window-bought', formatDecisionUsd(simulation.bought));
-      setPlannerText('planner-window-reserved', formatDecisionUsd(simulation.reserve));
-      setPlannerText('planner-window-baseline', formatDecisionUsd(simulation.baseline));
-      const csvButton = getPlannerEl('planner-download-csv');
-      if (csvButton) csvButton.disabled = false;
-      window.btcHelperPlannerLastCsv = plannerCsv(simulation.rows);
-      window.btcHelperPlannerLastProfile = profile;
-      if (window.btcHelperPlannerSavedProfile && !btcHelperPersonalActionTracked) {
-        btcHelperPersonalActionTracked = true;
-        trackPlannerEvent('view_personal_action', { hasSavedPlan: true, cadence: profile.cadence, style: profile.style });
-      }
-    }
-    try {
-      const saved = readStoredPlannerProfile();
-      window.btcHelperPlannerSavedProfile = saved || null;
-      applyPlannerProfile(saved);
-      updateHomepageMode(saved);
-    } catch {}
-    syncPlannerReserveDisclosure();
-    setPlannerModeControls(getPlannerEl('planner-style')?.value || 'reserve');
-    document.querySelectorAll('[data-planner-stage-button]').forEach((button) => {
-      button.addEventListener('click', () => {
-        const stage = button.dataset.plannerStageButton || 'safety';
-        setPlannerStage(stage);
-        trackPlannerEvent('planner_stage_select', { stage });
-      });
-    });
-    document.querySelectorAll('[data-planner-stage-next]').forEach((button) => {
-      button.addEventListener('click', () => {
-        const stage = button.dataset.plannerStageNext || 'safety';
-        setPlannerStage(stage);
-        trackPlannerEvent('planner_stage_next', { stage });
-      });
-    });
-    ['planner-style','planner-budget','planner-period','planner-cadence','planner-weekday','planner-reserve-rule','planner-starting-reserve','planner-liquid-cash','planner-protected-emergency','planner-protected-near-term','planner-protected-tax','planner-protected-debt','planner-protected-other','planner-margin','planner-buffer','planner-debt','planner-obligations','planner-optional-capital','planner-exposure','planner-reserve-separation','planner-deploy-guardrail','planner-advanced-ack','planner-storage-mode'].forEach((id) => {
-      getPlannerEl(id)?.addEventListener('input', () => { trackPlannerStart(); updatePlanner(); });
-      getPlannerEl(id)?.addEventListener('change', () => { trackPlannerStart(); updatePlanner(); });
-    });
-    getPlannerEl('planner-style')?.addEventListener('change', () => {
-      const style = getPlannerEl('planner-style')?.value;
-      setPlannerStyle(style);
-      updatePlanner();
-    });
-    document.querySelectorAll('[data-planner-style]').forEach((button) => {
-      button.addEventListener('click', () => {
-        const style = button.dataset.plannerStyle || 'reserve';
-        setPlannerStyle(style);
-        updatePlanner();
-        trackPlannerEvent('planner_style_select', { style });
-      });
-    });
-    document.querySelectorAll('[data-planner-preset]').forEach((button) => {
-      button.addEventListener('click', () => {
-        const preset = button.dataset.plannerPreset || 'reserve';
-        const style = preset === 'steady'
-          ? 'steady'
-          : preset === 'opportunistic'
-            ? 'opportunistic'
-            : 'reserve';
-        const reserveRule = preset === 'steady'
-          ? 'observe_only'
-          : preset === 'opportunistic'
-            ? 'pause_cautious'
-            : 'pause_only';
-        setPlannerStyle(style, reserveRule);
-        updatePlanner();
-        trackPlannerEvent('planner_preset_select', { preset });
-      });
-    });
-    function savePlannerProfile(statusMessage = '') {
-      const profile = plannerProfileFromForm();
-      const storageMode = profile.storageMode === 'session' ? 'session' : 'local';
-      if (storageMode === 'session') {
-        sessionStorage.setItem(plannerStorageKey, JSON.stringify({ ...profile, storageMode }));
-        localStorage.removeItem(plannerStorageKey);
-      } else {
-        localStorage.setItem(plannerStorageKey, JSON.stringify({ ...profile, storageMode }));
-        sessionStorage.removeItem(plannerStorageKey);
-      }
-      window.btcHelperPlannerSavedProfile = profile;
-      updateHomepageMode(profile);
-      updateReturnSummary();
-      updatePlanner();
-      trackPlannerEvent('planner_save', plannerEventDetail(profile));
-      const status = getPlannerEl('planner-save-status');
-      if (status) status.textContent = statusMessage || (storageMode === 'session' ? 'Plan is available for this browser session only.' : 'Saved locally in this browser.');
-      return profile;
-    }
-    getPlannerEl('planner-save')?.addEventListener('click', () => {
-      savePlannerProfile();
-    });
-    getPlannerEl('planner-finish-save')?.addEventListener('click', () => {
-      const profile = savePlannerProfile();
-      const status = getPlannerEl('planner-save-status');
-      if (status) status.textContent = profile.storageMode === 'session'
-        ? 'Plan finished for this session only. It is not retained as a local browser profile.'
-        : 'Plan finished and saved locally in this browser.';
-      trackPlannerEvent('planner_finish_save', plannerEventDetail());
-    });
-    getPlannerEl('planner-example')?.addEventListener('click', () => {
-      applyPlannerProfile(plannerExampleProfile);
-      updatePlanner();
-      setPlannerTab('plan');
-      setPlannerStage('safety');
-      trackPlannerEvent('planner_example', plannerEventDetail(plannerExampleProfile));
-      const status = getPlannerEl('planner-save-status');
-      if (status) status.textContent = 'Example loaded. Adjust any field, then save if it fits your plan.';
-    });
-    getPlannerEl('planner-download-csv')?.addEventListener('click', () => {
-      updatePlanner();
-      trackPlannerEvent('planner_download_csv', plannerEventDetail());
-      downloadPlanner('btc-helper-manual-tracker.csv', window.btcHelperPlannerLastCsv || '', 'text/csv');
-    });
-    getPlannerEl('planner-reset')?.addEventListener('click', () => {
-      if (!window.confirm('Clear planner values saved on this browser/device and reset the fields?')) return;
-      localStorage.removeItem(plannerStorageKey);
-      sessionStorage.removeItem(plannerStorageKey);
-      localStorage.removeItem(plannerLastVisitStorageKey);
-      window.btcHelperPlannerSavedProfile = null;
-      updateHomepageMode(null);
-      applyPlannerProfile(plannerDefaultProfile);
-      updatePlanner();
-      setPlannerStage('safety');
-      trackPlannerEvent('planner_clear_device', { resetToDefault: true });
-      const status = getPlannerEl('planner-save-status');
-      if (status) status.textContent = 'Cleared planner values saved on this browser/device. Use session-only or save locally again if needed.';
-    });
-    document.querySelectorAll('[data-planner-tab]').forEach((tab) => {
-      tab.addEventListener('click', () => {
-        setPlannerTab(tab.dataset.plannerTab);
-        trackPlannerEvent('planner_tab_select', { tab: tab.dataset.plannerTab || '' });
-      });
-    });
-    setPlannerStage('safety');
-    updatePlanner();
-    updateReturnSummary();
-
-    document.querySelectorAll('.replay-marker').forEach((marker) => {
-      marker.addEventListener('click', () => {
-        const label = document.getElementById('replay-detail-label');
-        const meta = document.getElementById('replay-detail-meta');
-        const regime = document.getElementById('replay-detail-regime');
-        const action = document.getElementById('replay-detail-action');
-        const description = document.getElementById('replay-detail-description');
-        if (!label || !meta || !regime || !action || !description) return;
-        label.textContent = marker.dataset.label || 'Replay scenario';
-        meta.textContent = (marker.dataset.date || 'n/a') + ' • ' + (marker.dataset.price || 'n/a') + ' • ' + (marker.dataset.readiness || 'n/a');
-        regime.textContent = marker.dataset.regime || 'n/a';
-        action.textContent = marker.dataset.action || 'n/a';
-        description.textContent = marker.dataset.description || '';
-      });
-    });
-
-    const replayCaseDataNode = document.getElementById('replay-case-data');
-    if (replayCaseDataNode) {
-      let replayCaseLimit = 12;
-      let replayCases = [];
-      try { replayCases = JSON.parse(replayCaseDataNode.textContent || '[]'); } catch {}
-      const replayCaseControls = {
-        list: document.getElementById('replay-case-list'),
-        search: document.getElementById('replay-case-search'),
-        readiness: document.getElementById('replay-case-readiness'),
-        reset: document.getElementById('replay-case-reset'),
-        count: document.getElementById('replay-case-count'),
-        empty: document.getElementById('replay-case-empty'),
-        loadMore: document.getElementById('replay-case-load-more'),
-        loadNote: document.getElementById('replay-case-load-note')
-      };
-      const replayEscape = (value) => String(value ?? '').replace(/[&<>"']/g, (char) => ({
-        '&': '&amp;',
-        '<': '&lt;',
-        '>': '&gt;',
-        '"': '&quot;',
-        "'": '&#39;'
-      })[char]);
-      function renderReplayCase(entry) {
-        return '<article class="replay-case ' + replayEscape(entry.readinessClass || '') + '">' +
-          '<div class="replay-case-top"><div><div class="archive-date">' + replayEscape(entry.label || 'Historical case') + '</div><div class="small">' + replayEscape(entry.meta || 'Historical environment') + '</div></div><span class="archive-badge">' + replayEscape(entry.readiness || 'Unspecified') + '</span></div>' +
-          '<div class="replay-case-grid">' +
-            '<div><div class="archive-label">Expected posture</div><div>' + replayEscape(entry.regime || 'n/a') + '</div></div>' +
-            '<div><div class="archive-label">Expected action</div><div>' + replayEscape(entry.action || 'n/a') + '</div></div>' +
-            '<div><div class="archive-label">Basis</div><div>' + replayEscape(entry.basis || 'Unknown') + '</div></div>' +
-          '</div>' +
-          '<p class="archive-why">' + replayEscape(entry.narrative || '') + '</p>' +
-        '</article>';
-      }
-      function updateReplayCases() {
-        const query = String(replayCaseControls.search?.value || '').trim().toLowerCase();
-        const readiness = replayCaseControls.readiness?.value || '';
-        const matched = replayCases.filter((entry) => (!query || String(entry.searchText || '').includes(query)) && (!readiness || entry.readinessKey === readiness));
-        const visible = matched.slice(0, replayCaseLimit);
-        if (replayCaseControls.list) replayCaseControls.list.innerHTML = visible.map(renderReplayCase).join('');
-        if (replayCaseControls.count) replayCaseControls.count.textContent = visible.length + ' of ' + matched.length + ' case' + (matched.length === 1 ? '' : 's') + ' shown';
-        if (replayCaseControls.empty) {
-          replayCaseControls.empty.hidden = Boolean(matched.length);
-          replayCaseControls.empty.style.display = matched.length ? 'none' : 'block';
-        }
-        const canLoad = visible.length < matched.length;
-        if (replayCaseControls.loadMore) {
-          replayCaseControls.loadMore.hidden = !canLoad;
-          replayCaseControls.loadMore.disabled = !canLoad;
-        }
-        if (replayCaseControls.loadNote) replayCaseControls.loadNote.hidden = !canLoad;
-      }
-      replayCaseControls.search?.addEventListener('input', () => { replayCaseLimit = 12; updateReplayCases(); });
-      replayCaseControls.readiness?.addEventListener('change', () => { replayCaseLimit = 12; updateReplayCases(); });
-      replayCaseControls.reset?.addEventListener('click', () => {
-        if (replayCaseControls.search) replayCaseControls.search.value = '';
-        if (replayCaseControls.readiness) replayCaseControls.readiness.value = '';
-        replayCaseLimit = 12;
-        updateReplayCases();
-      });
-      replayCaseControls.loadMore?.addEventListener('click', () => {
-        replayCaseLimit += 12;
-        updateReplayCases();
-      });
-      updateReplayCases();
-    }
   </script>
 </body>
 </html>

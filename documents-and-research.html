@@ -205,6 +205,9 @@
     .hero .button.secondary, .doc-card .button.secondary { background:rgba(242,237,214,.10); color:#f2edd6; border-color:rgba(242,237,214,.25); }
     .doc-empty { border:1px dashed var(--line); border-radius:16px; padding:16px; background:var(--card-soft); color:var(--muted); }
     @media (max-width:620px) {
+      main { padding-inline:14px; }
+      .library-guide, .library-guide.status-guide, .featured-research-grid, .recommended-track-grid, .doc-filter-grid, .doc-grid { grid-template-columns:minmax(0,1fr); }
+      .guide-tile, .featured-research-card, .recommended-track-card, .doc-filter-panel, .doc-card { min-width:0; }
       .map-row { grid-template-columns:1fr; gap:6px; }
       .map-label { padding:9px 12px; border-radius:14px; }
       .map-panel { padding:14px; }
@@ -212,6 +215,7 @@
       .doc-card-head { display:grid; }
       .doc-status-label { width:fit-content; white-space:normal; }
       .doc-meta-grid { grid-template-columns:1fr; }
+      .doc-actions .button, .map-links a { max-width:100%; white-space:normal; overflow-wrap:anywhere; }
     }
   </style>
 </head>
@@ -249,10 +253,10 @@
     <h2>Start here</h2>
     <p class="section-lead">Use the quick path for the product and its limits. Use deep research when you want papers, methods, objections, and supporting context. BTC Helper has not demonstrated superior timing or reserve-policy efficacy.</p>
     <div class="research-map">
-      <div class="map-row"><div class="map-label">Method</div><div class="map-panel"><strong>How BTC Helper works</strong><p>The plain product method: baseline plan, optional reserve overlay, daily action translation, source health, public record, and public boundary.</p><div class="map-links"><a href="/public-proof-of-work-methodology.html">Methodology</a><a href="/btc-helper-white-paper.html">White paper</a></div></div></div>
+      <div class="map-row"><div class="map-label">Method</div><div class="map-panel"><strong>How BTC Helper works</strong><p>The plain product method: baseline plan, optional reserve overlay, daily posture translation, source health, public record, and public boundary.</p><div class="map-links"><a href="/public-proof-of-work-methodology.html">Methodology</a><a href="/btc-helper-white-paper.html">White paper</a></div></div></div>
       <div class="map-row"><div class="map-label">Validation</div><div class="map-panel"><strong>What the evidence can support</strong><p>Validation material explains governance, evidence tiers, source health, and current limits. It does not claim a backtest, timing advantage, or public efficacy result.</p><div class="map-links"><a href="/track.html">Track</a><a href="/research-replication-methodology-index.html">Research methods</a></div></div></div>
       <div class="map-row"><div class="map-label">Safety</div><div class="map-panel"><strong>Why household resilience comes first</strong><p>The safety argument behind My Plan: a Bitcoin plan is only useful when a household can sustain it through ordinary stress.</p><div class="map-links"><a href="/household-resilience-summary.html">Resilience synthesis</a><a href="/household-resilience-planner.html">Local planner</a></div></div></div>
-      <div class="map-row"><div class="map-label">Macro</div><div class="map-panel"><strong>Latest weekly macro thesis</strong><p>The interpretation layer for why conditions are moving underneath the daily action. It is context, not engine validation.</p><div class="map-links"><a href="/weekly-macro-thesis/">Weekly macro</a><a href="/insights.html">Insights</a></div></div></div>
+      <div class="map-row"><div class="map-label">Macro</div><div class="map-panel"><strong>Latest weekly macro thesis</strong><p>The interpretation layer for why conditions are moving underneath the daily posture. It is context, not engine validation.</p><div class="map-links"><a href="/weekly-macro-thesis/">Weekly macro</a><a href="/insights.html">Insights</a></div></div></div>
     </div>
   </section>
   <section class="card">
@@ -357,7 +361,7 @@
         </dl>
         <div class="doc-tag-list"><span class="tag">DCA</span><span class="tag">Reserve</span></div>
         <div class="doc-actions"><a class="button" href="/bitcoin-dca-vs-reserve-aware-accumulation.html">Open read</a></div>
-      </article><article class="doc-card" data-research-card data-category="Engine / product validation" data-status="Established public methodology" data-role="Product method" data-source="BTC Helper methodology" data-year="2026" data-search="what a cautious bitcoin accumulation stance means engine / product validation established public methodology product method btc helper methodology cautious context can change interpretation without changing a user default baseline purchase. useful when the daily read says baseline only but the market posture still says cautious. does not replace the user plan boundary selected in my plan. defines a posture/action translation; it is not evidence that cautious improves returns. cautious posture">
+      </article><article class="doc-card" data-research-card data-category="Engine / product validation" data-status="Established public methodology" data-role="Product method" data-source="BTC Helper methodology" data-year="2026" data-search="what a cautious bitcoin accumulation stance means engine / product validation established public methodology product method btc helper methodology cautious context can change interpretation without changing a user default baseline purchase. useful when the daily read says baseline only but the market posture still says cautious. does not replace the user plan boundary selected in my plan. defines a posture translation; it is not evidence that cautious improves returns. cautious posture">
         <div class="doc-card-head">
           <div><div class="doc-kicker">Engine / product validation</div><h3 class="doc-title">What a Cautious Bitcoin Accumulation Stance Means</h3></div>
           <span class="doc-status-label">Established public methodology</span>
@@ -365,7 +369,7 @@
         <div class="doc-badge-row"><span>Product method</span><span>Not engine efficacy proof</span></div>
         <p class="doc-claim">Cautious context can change interpretation without changing a user default baseline purchase.</p>
         <div class="doc-field-grid">
-          <div class="doc-field"><span>What this can support</span><strong>Defines a posture/action translation; it is not evidence that Cautious improves returns.</strong></div>
+          <div class="doc-field"><span>What this can support</span><strong>Defines a posture translation; it is not evidence that Cautious improves returns.</strong></div>
           <div class="doc-field"><span>Why it matters here</span><strong>Useful when the daily read says Baseline only but the market posture still says Cautious.</strong></div>
           <div class="doc-field"><span>Main limitation</span><strong>Does not replace the user plan boundary selected in My Plan.</strong></div>
 
@@ -399,13 +403,13 @@
         </dl>
         <div class="doc-tag-list"><span class="tag">Source health</span><span class="tag">Quality</span></div>
         <div class="doc-actions"><a class="button" href="/bitcoin-indicator-data-quality.html">Open read</a></div>
-      </article><article class="doc-card" data-research-card data-category="Macro context" data-status="Current public synthesis" data-role="Macro interpretation" data-source="BTC Helper weekly macro brief" data-year="2026" data-search="latest weekly macro thesis macro context current public synthesis macro interpretation btc helper weekly macro brief conditions can move underneath the daily action even when the plan instruction stays unchanged. primary interpretation layer for readers who want context without daily checking. interpretive synthesis only; today and its evidence bundle remain the action/evidence source. organizes macro context; not direct engine validation, not a backtest, and not a price forecast. macro weekly">
+      </article><article class="doc-card" data-research-card data-category="Macro context" data-status="Current public synthesis" data-role="Macro interpretation" data-source="BTC Helper weekly macro brief" data-year="2026" data-search="latest weekly macro thesis macro context current public synthesis macro interpretation btc helper weekly macro brief conditions can move underneath the daily posture even when the plan instruction stays unchanged. primary interpretation layer for readers who want context without daily checking. interpretive synthesis only; today and its evidence bundle remain the action/evidence source. organizes macro context; not direct engine validation, not a backtest, and not a price forecast. macro weekly">
         <div class="doc-card-head">
           <div><div class="doc-kicker">Macro context</div><h3 class="doc-title">Latest Weekly Macro Thesis</h3></div>
           <span class="doc-status-label">Current public synthesis</span>
         </div>
         <div class="doc-badge-row"><span>Macro interpretation</span><span>Not engine efficacy proof</span></div>
-        <p class="doc-claim">Conditions can move underneath the daily action even when the plan instruction stays unchanged.</p>
+        <p class="doc-claim">Conditions can move underneath the daily posture even when the plan instruction stays unchanged.</p>
         <div class="doc-field-grid">
           <div class="doc-field"><span>What this can support</span><strong>Organizes macro context; not direct engine validation, not a backtest, and not a price forecast.</strong></div>
           <div class="doc-field"><span>Why it matters here</span><strong>Primary interpretation layer for readers who want context without daily checking.</strong></div>
@@ -546,7 +550,7 @@
         </dl>
         <div class="doc-tag-list"><span class="tag">Series</span><span class="tag">Theory</span></div>
         <div class="doc-actions"><a class="button" href="/society-under-monetary-stress.html">Open read</a></div>
-      </article><article class="doc-card" data-research-card data-category="Household / resilience research" data-status="Working paper" data-role="Household evidence" data-source="MEPS public-use microdata" data-year="2026" data-search="medical financial fragility household / resilience research working paper household evidence meps public-use microdata low medical spending can mean protection, low need, or foregone care, so spending alone can misread risk. supports the broader claim that household safety floors need more than income checks. working paper; interpretation depends on measurement choices and data scope. supports household-risk context; not btc helper policy validation. meps medical risk">
+      </article><article class="doc-card" data-research-card data-category="Household / resilience research" data-status="Working paper" data-role="Household evidence" data-source="MEPS public-use microdata" data-year="2026" data-search="medical financial fragility household / resilience research working paper household evidence meps public-use microdata low medical spending can mean protection, low need, or foregone care, so spending alone can misread risk. supports the broader claim that household resilience floors need more than income checks. working paper; interpretation depends on measurement choices and data scope. supports household-risk context; not btc helper policy validation. meps medical risk">
         <div class="doc-card-head">
           <div><div class="doc-kicker">Household / resilience research</div><h3 class="doc-title">Medical Financial Fragility</h3></div>
           <span class="doc-status-label">Working paper</span>
@@ -555,7 +559,7 @@
         <p class="doc-claim">Low medical spending can mean protection, low need, or foregone care, so spending alone can misread risk.</p>
         <div class="doc-field-grid">
           <div class="doc-field"><span>What this can support</span><strong>Supports household-risk context; not BTC Helper policy validation.</strong></div>
-          <div class="doc-field"><span>Why it matters here</span><strong>Supports the broader claim that household safety floors need more than income checks.</strong></div>
+          <div class="doc-field"><span>Why it matters here</span><strong>Supports the broader claim that household resilience floors need more than income checks.</strong></div>
           <div class="doc-field"><span>Main limitation</span><strong>Working paper; interpretation depends on measurement choices and data scope.</strong></div>
 
         </div>
@@ -672,7 +676,7 @@
         </dl>
         <div class="doc-tag-list"><span class="tag">Cash</span><span class="tag">Inflation</span></div>
         <div class="doc-actions"><a class="button" href="/cash-inflation-household-optionality.html">Open read</a><a class="button secondary" href="/Cash_Inflation_and_Household_Optionality.pdf">Download</a></div>
-      </article><article class="doc-card" data-research-card data-category="Household / resilience research" data-status="Measurement note" data-role="Household evidence" data-source="FRED and BLS public data" data-year="2026" data-search="inflation volatility and household planning risk household / resilience research measurement note household evidence fred and bls public data essential-price dispersion can create planning risk even when headline inflation cools. supports the household-safety floor before optional bitcoin allocation. selected categories only; not a full household budget panel. supports safety-floor context; not engine validation or purchase advice. inflation essential costs">
+      </article><article class="doc-card" data-research-card data-category="Household / resilience research" data-status="Measurement note" data-role="Household evidence" data-source="FRED and BLS public data" data-year="2026" data-search="inflation volatility and household planning risk household / resilience research measurement note household evidence fred and bls public data essential-price dispersion can create planning risk even when headline inflation cools. supports the household resilience floor before optional bitcoin allocation. selected categories only; not a full household budget panel. supports safety-floor context; not engine validation or purchase advice. inflation essential costs">
         <div class="doc-card-head">
           <div><div class="doc-kicker">Household / resilience research</div><h3 class="doc-title">Inflation Volatility and Household Planning Risk</h3></div>
           <span class="doc-status-label">Measurement note</span>
@@ -681,7 +685,7 @@
         <p class="doc-claim">Essential-price dispersion can create planning risk even when headline inflation cools.</p>
         <div class="doc-field-grid">
           <div class="doc-field"><span>What this can support</span><strong>Supports safety-floor context; not engine validation or purchase advice.</strong></div>
-          <div class="doc-field"><span>Why it matters here</span><strong>Supports the household-safety floor before optional Bitcoin allocation.</strong></div>
+          <div class="doc-field"><span>Why it matters here</span><strong>Supports the household resilience floor before optional Bitcoin allocation.</strong></div>
           <div class="doc-field"><span>Main limitation</span><strong>Selected categories only; not a full household budget panel.</strong></div>
 
         </div>
@@ -824,7 +828,7 @@
   </section>
 </main><footer class="site-footer" id="contact">
     <div class="site-footer-inner">
-      <div class="footer-brand"><strong>BTC Helper</strong><p>A private Bitcoin accumulation plan, a source-aware daily action layer, and a public decision record.</p><p class="footer-note">Educational research tool only. Not financial advice, investment advice, or a recommendation to buy or sell any asset.</p></div>
+      <div class="footer-brand"><strong>BTC Helper</strong><p>A private Bitcoin accumulation plan, a source-aware daily posture layer, and a public decision record.</p><p class="footer-note">Educational research tool only. Not financial advice, investment advice, or a recommendation to buy or sell any asset.</p></div>
       <div><div class="footer-column-title">Product</div><div class="footer-links"><a href="/index.html#today">Today</a><a href="/planner.html">My Plan</a><a href="/insights.html">Insights</a><a href="/track.html">Track</a><a href="/updates.html">Updates</a></div></div>
       <div><div class="footer-column-title">Research</div><div class="footer-links"><a href="/weekly-macro-thesis/">Weekly macro</a><a href="/documents-and-research.html">Research library</a><a href="/public-proof-of-work-methodology.html">Methodology</a><a href="/household-resilience-planner.html">Household resilience</a></div></div>
       <div><div class="footer-column-title">Trust</div><div class="footer-links"><a href="/data-sources.html">Source health</a><a href="/about.html">About</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a><a href="https://x.com/btchelperapp">BTC Helper on X</a></div></div>

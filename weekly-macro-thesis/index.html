@@ -27,7 +27,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
-  
+
   <style>
     :root { color-scheme: light dark; --bg:#f5f1e9; --ink:#171a18; --muted:#6e746f; --card:#fffdf8; --surface:#f0ebe1; --line:#dcd6cb; --accent:#ad5617; --accent-soft:#efe3d5; --steady:#526b83; --ink-soft:#242824; }
     @media (prefers-color-scheme: dark) { :root { --bg:#0d100f; --ink:#f3f0e8; --muted:#a5aca6; --card:#151816; --surface:#1b201d; --line:rgba(255,255,255,.09); --accent:#f59a3a; --accent-soft:#2b2015; --steady:#91a99a; --ink-soft:#dce0d8; } }
@@ -85,6 +85,10 @@
     .evidence-note span { display:block; color:var(--accent); font-size:.72rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; margin-bottom:6px; }
     .evidence-note strong { display:block; color:var(--ink); line-height:1.28; margin-bottom:8px; }
     .evidence-note p { margin:0; color:var(--muted); font-family:"Noto Sans", "Segoe UI", Roboto, system-ui, sans-serif; font-size:.92rem; line-height:1.45; }
+    .boundary-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-top:14px; }
+    .boundary-card { border:1px solid var(--line); border-radius:12px; background:var(--card); padding:14px; }
+    .boundary-card span { display:block; color:var(--accent); font-size:.72rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; margin-bottom:6px; }
+    .boundary-card ul { margin-bottom:0; }
     .figure-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
     .qual-figure { margin:0; border:1px solid var(--line); border-radius:14px; background:var(--card); padding:16px; }
     .qual-figure figcaption { color:var(--ink); font-weight:900; margin-bottom:12px; }
@@ -127,10 +131,10 @@
     .footer-title { color:var(--ink); font-weight:900; margin-bottom:6px; }
     .footer-links { display:grid; gap:7px; }
     .footer-links a { text-decoration:none; }
-    @media (max-width:900px) { .article-layout, .plan-panel, .evidence-note-grid, .figure-grid, .weekly-index-feature { grid-template-columns:1fr; } .article-toc { position:static; display:flex; flex-wrap:wrap; border-bottom:1px solid var(--line); padding-bottom:14px; } .meta-grid, .footer-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+    @media (max-width:900px) { .article-layout, .plan-panel, .evidence-note-grid, .boundary-grid, .figure-grid, .weekly-index-feature { grid-template-columns:1fr; } .article-toc { position:static; display:flex; flex-wrap:wrap; border-bottom:1px solid var(--line); padding-bottom:14px; } .meta-grid, .footer-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
     @media (max-width:760px) { .site-nav { align-items:flex-start; flex-direction:column; } .post-nav { grid-template-columns:1fr; } .hero { padding-top:22px; } .brief-table th, .brief-table td { display:block; width:100%; } .brief-table td { padding-top:0; } .plan-track div, .figure-plan div { grid-template-columns:76px 1fr auto; } }
     @media (max-width:560px) { .meta-grid, .footer-grid, .index-grid { grid-template-columns:1fr; } }
-    
+
     html { font-synthesis:none; }
     body, button, input, select, textarea, summary { font-family:"Noto Sans", "Segoe UI", Roboto, system-ui, sans-serif; }
     button, input, select, textarea, summary { font:inherit; }
@@ -189,7 +193,7 @@
       .site-footer-inner { border-radius:18px; padding:18px; }
     }
     @media (max-width:340px) { .nav-links { grid-template-columns:1fr; } .theme-toggle { grid-column:auto; } }
-  
+
   </style>
 </head>
 <body>
@@ -222,11 +226,11 @@
     <section class="hero">
       <div class="kicker">BTC Helper</div>
       <h1>Weekly Macro Thesis</h1>
-      <p class="dek">A weekly macro backdrop for Bitcoin accumulation planning. It summarizes the current thesis, disagreement, and what to watch as conditions change.</p>
+      <p class="dek">A weekly macro backdrop for Bitcoin accumulation planning. It summarizes the current thesis, disagreement, and what to watch as conditions change without claiming engine validation.</p>
     </section>
     <section class="index-grid">
-      <div class="index-note"><h2>How to read it</h2><p>The weekly thesis is the interpretation layer under Today. It explains macro pressure, disagreement, and what would matter next without changing the daily action by itself.</p></div>
-      <div class="index-note"><h2>What it is not</h2><p>It is not a price target, trading signal, or replacement for the private plan. Use Today for action and Track for the public record.</p></div>
+      <div class="index-note"><h2>How to read it</h2><p>The weekly thesis is the interpretation layer under Today. It explains macro pressure, disagreement, and what would matter next without changing the daily posture by itself, proving BTC Helper efficacy, or replacing dated evidence bundles.</p></div>
+      <div class="index-note"><h2>What it is not</h2><p>It is not a price target, trading signal, formal backtest, direct engine-validation record, or replacement for the private plan. Use Today for action and Track for the public record.</p></div>
     </section>
     <section class="weekly-index-feature"><div><h2>Latest brief</h2><h3>Supportive Liquidity, Tighter Confirmation</h3><p>This week&#39;s macro backdrop is supportive but less clearly improving. Bitcoin&#39;s setup looks compressed rather than euphoric, with market structure, holder positioning, and dollar plumbing now doing more of the work than headline risk appetite.</p><div class="meta-row"><span class="pill">August 15, 2026</span><span class="pill">4 min read</span><span class="pill">By BTC Helper</span></div><p><a href="/weekly-macro-thesis/2026-08-15/">Read the latest weekly macro thesis</a></p></div><div class="plan-track" aria-hidden="true"><div><span>Baseline</span><i class="baseline-line"></i><strong>Continue</strong></div><div><span>Reserve</span><i class="reserve-line"></i><strong>Today decides</strong></div></div></section>
     <div class="archive-list">
@@ -234,7 +238,7 @@
     </div></main>
   <footer class="site-footer" id="contact">
     <div class="site-footer-inner">
-      <div class="footer-brand"><strong>BTC Helper</strong><p>A private Bitcoin accumulation plan, a source-aware daily action layer, and a public decision record.</p><p class="footer-note">Educational research tool only. Not financial advice, investment advice, or a recommendation to buy or sell any asset.</p></div>
+      <div class="footer-brand"><strong>BTC Helper</strong><p>A private Bitcoin accumulation plan, a transparent daily posture layer, and a public evidence trail.</p><p class="footer-note">Educational research tool only. Not financial advice, investment advice, or a recommendation to buy or sell any asset.</p></div>
       <div><div class="footer-column-title">Product</div><div class="footer-links"><a href="/#today">Today</a><a href="/planner.html">My Plan</a><a href="/insights.html">Insights</a><a href="/track.html">Track</a><a href="/updates.html">Updates</a></div></div>
       <div><div class="footer-column-title">Research</div><div class="footer-links"><a href="/weekly-macro-thesis/">Weekly macro</a><a href="/documents-and-research.html">Research library</a><a href="/public-proof-of-work-methodology.html">Methodology</a><a href="/household-resilience-planner.html">Household resilience</a></div></div>
       <div><div class="footer-column-title">Trust</div><div class="footer-links"><a href="/data-sources.html">Source health</a><a href="/about.html">About</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a><a href="https://x.com/btchelperapp">BTC Helper on X</a></div></div>

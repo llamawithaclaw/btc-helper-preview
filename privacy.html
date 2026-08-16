@@ -191,7 +191,7 @@
 
     <section class="card" id="privacy-planner-data">
       <h2>Planner data</h2>
-      <p>The manual planner runs in the browser. Budget, cadence, reserve rule, protected-cash buckets, optional reserve, theme preference, and similar settings stay on the visitor device unless the visitor exports them manually.</p><p>Planner profiles can be saved locally in this browser or used for the current browser session only. Local browser profiles are not encrypted by BTC Helper, so shared-device users should choose session-only mode or use Clear this device when finished.</p><p>Those values are not sent to BTC Helper by the static public site.</p>
+      <p>The manual planner runs in the browser. Budget, cadence, reserve rule, protected-cash buckets, optional reserve, theme preference, and similar settings stay on the visitor device unless the visitor exports them manually.</p><p>Planner profiles can be saved locally in this browser or used for the current browser session only. Local browser profiles are not encrypted by BTC Helper, and some browsers may sync local browser storage through the user's own browser account. Shared-device users should choose session-only mode or use Clear this device when finished.</p><p>Clear this device removes the BTC Helper planner profile and planner visit marker stored by this site in the current browser. It does not clear browser sync copies, screenshots, downloads, email records, or data a visitor separately saved outside BTC Helper.</p><p>Those values are not sent to BTC Helper by the static public site.</p>
 
     </section>
 
@@ -203,13 +203,19 @@
 
     <section class="card" id="privacy-update-requests">
       <h2>Update requests</h2>
-      <p>The update-interest form can collect an email address, selected alert preferences, and no-change email preference if a first-party endpoint is configured. Without an endpoint, it opens a prefilled email request instead.</p><p>Email requests are for BTC Helper action-change alerts, source-health alerts, weekly summaries, or optional monthly plan-review reminders. They are separate from planner data and should not be mixed with financial inputs.</p><p>Live email updates require double opt-in confirmation before an address becomes active. Recurring emails include an unsubscribe link, and the update form does not collect planner budgets, household inputs, reserve balances, purchase amounts, cookies, or cross-site identifiers.</p>
+      <p>The update-interest form can collect an email address, selected alert preferences, and no-change email preference if a first-party endpoint is configured. Without an endpoint, it opens a prefilled email request instead.</p><p>Email requests are for BTC Helper action-change alerts, source-health alerts, weekly summaries, or optional monthly plan-review reminders. They are separate from planner data and should not be mixed with financial inputs.</p><p>Live email updates require double opt-in confirmation before an address becomes active. Recurring emails include an unsubscribe link, and the update form does not collect planner budgets, household inputs, reserve balances, purchase amounts, cookies, or cross-site identifiers.</p><p>Email records may include address, confirmation status, selected preferences, unsubscribe/suppression status, and delivery metadata. Planner and household values are not stored in the email subscriber record.</p>
 
     </section>
 
     <section class="card" id="privacy-public-artifacts">
       <h2>Public artifacts</h2>
-      <p>The public site exposes only public-facing BTC Helper artifacts: daily reads, source notes, RSS, CSV, share card, documents, and research pages.</p><p>Private metrics CSV tokens, private service paths, and local environment files are not part of the public surface.</p>
+      <p>The public site exposes only public-facing BTC Helper artifacts: daily reads, source notes, RSS, CSV, share card, documents, and research pages.</p><p>Private metrics CSV tokens, private service paths, and local environment files are not part of the public surface.</p><p>Private live-validation records are internal model/publication records, not stored user planner financial profiles.</p>
+
+    </section>
+
+    <section class="card" id="privacy-retention-and-deletion">
+      <h2>Retention and deletion</h2>
+      <p>Public daily records, source snapshots, research pages, and correction history are intended to remain public so the record is auditable.</p><p>Planner data is deleted by using session-only mode, Clear this device, or the browser's own site-data controls. Email and support records are handled separately from planner data and should be reviewed under the email/compliance process before commercialization.</p>
 
     </section>
 
@@ -224,7 +230,7 @@
     <div class="site-footer-inner">
       <div class="footer-brand">
         <strong>BTC Helper</strong>
-        <p>A private Bitcoin accumulation plan, a source-aware daily action layer, and a public decision record.</p>
+        <p>A private Bitcoin accumulation plan, a source-aware daily posture layer, and a public decision record.</p>
         <p class="footer-note">Educational research tool only. Not financial advice, investment advice, or a recommendation to buy or sell any asset.</p>
       </div>
       <div><div class="footer-column-title">Product</div><div class="footer-links"><a href="/index.html#today">Today</a><a href="/planner.html">My Plan</a><a href="/insights.html">Insights</a><a href="/track.html">Track</a><a href="/updates.html">Updates</a></div></div>
