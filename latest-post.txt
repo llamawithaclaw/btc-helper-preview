@@ -6,5 +6,6 @@ BTC Helper, 2026-08-16
 - Coverage: Limited
 - Run quality: Degraded
 - BTC: $63,015
-- Plan summary: Baseline continues; reserve stays held
+- Benchmark interpretation: withheld for degraded run
+- Plan summary: Written baseline unchanged; optional reserve held
 - Why: Not enough data to confidently assess a regime.

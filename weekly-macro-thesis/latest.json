@@ -1,67 +1,67 @@
 {
-  "date": "2026-08-15",
-  "title": "Supportive Liquidity, Tighter Confirmation",
-  "summary": "This week's macro backdrop is supportive but less clearly improving. Bitcoin's setup looks compressed rather than euphoric, with market structure, holder positioning, and dollar plumbing now doing more of the work than headline risk appetite.",
-  "regime": "Supportive but maturing liquidity",
+  "date": "2026-08-08",
+  "title": "Treasury Plumbing Moves to the Center",
+  "summary": "This week's macro backdrop shifted from generic liquidity talk toward yen pressure, Treasury-market support, and carry-trade risk. Liquidity is still mixed rather than cleanly bullish, while Bitcoin's on-chain read is noisier because custody-related movements can look like holder stress even when they are mostly market-structure signal.",
+  "regime": "Mixed liquidity, Treasury plumbing focus",
   "thesisBullets": [
-    "Global liquidity still leans supportive, but the weekly impulse looks flatter and more mature, so confirmation matters more than broad risk-on assumptions.",
-    "Bitcoin's near-term setup is more about compression than euphoria: lower volatility, crowded positioning, and holder cost-basis clustering can make breaks in either direction more consequential.",
-    "Long-end yields, yen stress, and dollar funding conditions remain the key macro pressure points because they can offset otherwise helpful liquidity.",
-    "Stablecoin rails, digital collateral markets, Treasury-bill demand, and 24/7 market structure remain important long-term themes for Bitcoin's monetary role.",
+    "The main macro focus is now funding plumbing: yen support, Treasury collateral, bill issuance, buybacks, and the risk that carry trades unwind into broader market stress.",
+    "Near-term liquidity has pockets of support, but momentum still looks mature and uneven, which argues for confirmation rather than assuming a clean risk-on regime.",
+    "Bitcoin's holder data needs extra care this week because custody-related coin movement can blur the difference between real distribution and operational migration.",
+    "The AI financing boom is becoming part of the sound-money map because heavily levered capital spending could increase pressure on policymakers to prevent hard liquidation.",
     "This weekly backdrop adds context and watch items, but it does not change BTC Helper's mechanical daily signal, posture, thresholds, or weights."
   ],
   "btcImplications": [
-    "BTC Helper users should treat macro as constructive but not decisive this week; the daily model still needs confirmation from valuation, flows, holder behavior, and leverage.",
-    "A compressed Bitcoin setup can resolve quickly, so improving spot demand and calm funding would matter more than narrative strength alone.",
-    "If long yields or dollar funding stress rise, Bitcoin can trade defensively even while the longer-term monetary thesis remains intact.",
-    "Market-structure changes around stablecoins and collateral are useful thesis context, but they are not direct daily signal inputs."
+    "BTC Helper users should treat macro as a caution-and-confirmation layer this week: the plumbing story matters, but the daily model still decides posture.",
+    "Supportive bill issuance and buybacks can help risk appetite, but slowing liquidity momentum means Bitcoin still needs evidence from flows, holder behavior, and leverage.",
+    "Large coin movements deserve context before being read as capitulation; custody events can distort short-term on-chain signals.",
+    "If funding stress stays contained while spot demand improves, the backdrop can become constructive without needing a single dramatic catalyst."
   ],
   "factorImplications": [
     {
       "factor": "Valuation",
-      "weeklyChange": "The backdrop remains supportive but no longer offers a clean improvement signal.",
-      "dailyImplication": "Valuation needs confirmation from the full daily model before implying a stronger posture."
+      "weeklyChange": "Macro support is uneven, so valuation needs confirmation from market behavior rather than narrative alone.",
+      "dailyImplication": "No standalone posture change without alignment from the broader daily model."
     },
     {
       "factor": "Holder behavior",
-      "weeklyChange": "Holder positioning looks clustered and compressed rather than broadly euphoric.",
-      "dailyImplication": "Watch whether pressure resolves into renewed accumulation or broader distribution."
+      "weeklyChange": "Custody-related movement made holder interpretation noisier.",
+      "dailyImplication": "Separate operational migration from genuine distribution before treating holder stress as decisive."
     },
     {
       "factor": "Flows",
-      "weeklyChange": "Spot demand and liquidity support are important, but momentum is mixed.",
-      "dailyImplication": "Improving flows would help confirm resilience; fading participation would keep caution elevated."
+      "weeklyChange": "Liquidity channels improved in some places but remain mature and mixed overall.",
+      "dailyImplication": "Stronger spot demand would help confirm resilience; fading demand would keep caution elevated."
     },
     {
       "factor": "Macro",
-      "weeklyChange": "Liquidity is still helpful, while long yields, yen stress, and dollar funding remain the main offsets.",
-      "dailyImplication": "Macro should be read as a confirmation layer, especially around funding stress and liquidity impulse."
+      "weeklyChange": "Yen pressure, Treasury funding mix, buybacks, and carry-trade risk moved to the center of the weekly map.",
+      "dailyImplication": "Watch funding stress and dollar liquidity before leaning too hard into risk-on conclusions."
     },
     {
       "factor": "Leverage",
-      "weeklyChange": "Low volatility and crowded structures increase the importance of leverage conditions.",
-      "dailyImplication": "Calm leverage supports upside resolution; forced deleveraging would make the compression more fragile."
+      "weeklyChange": "Carry trades and circular financing risk became more important watch items.",
+      "dailyImplication": "Calm leverage supports resilience; forced deleveraging would make drawdowns more dangerous."
     }
   ],
   "counterThesis": [
-    "If liquidity re-accelerates and spot demand broadens, the current compression could become a cleaner bullish setup.",
-    "If long yields rise or yen and funding stress worsen, supportive liquidity may not be enough to protect risk assets.",
-    "If volatility stays low without improving flows, Bitcoin could remain range-bound longer than the thesis expects."
+    "If Treasury support and bill-heavy funding keep liquidity ample, Bitcoin can strengthen before slower momentum becomes visible in price.",
+    "If custody-related coin movement fades without broader holder selling, this week's on-chain noise may prove less bearish than it first appears.",
+    "If carry-trade stress accelerates, the mixed-liquidity framing may be too calm and risk assets could need a more defensive read."
   ],
   "watchNext": [
-    "Global liquidity impulse and whether it improves from flat to clearly supportive.",
-    "Long-end yields, yen pressure, dollar strength, repo conditions, and other funding-stress signals.",
+    "Yen pressure, carry-trade behavior, and whether funding stress spreads beyond currency markets.",
+    "Treasury issuance mix, buybacks, reserve balances, repo conditions, and front-end funding rates.",
     "Spot Bitcoin demand, ETF flow tone, volume, and whether participation broadens.",
-    "Holder behavior around crowded cost-basis zones and whether compression resolves through accumulation or distribution.",
-    "Stablecoin supply, Treasury-bill demand, and the growth of dollar settlement rails.",
-    "Bitcoin volatility, leverage, and any signs of forced deleveraging."
+    "Long-term holder behavior after custody-related movements settle.",
+    "Gold, dollar strength, and global liquidity impulse.",
+    "AI-linked financing structures and signs that capital-market stress is becoming systemic."
   ],
   "whatWouldChange": [
-    "A clear liquidity re-acceleration, stronger spot demand, and calm leverage would make the weekly backdrop more constructive.",
-    "Rising long-end stress, dollar funding pressure, or yen-driven deleveraging would make the backdrop more defensive.",
-    "Sustained holder accumulation after the compression phase would improve confidence in Bitcoin's setup.",
-    "Weak flows paired with rising leverage stress would argue for more caution even if the long-term thesis remains intact."
+    "A clear turn higher in liquidity, broad spot demand, and calm leverage would make the backdrop more constructive.",
+    "Rising repo stress, yen-driven deleveraging, or weaker Treasury-market functioning would make the backdrop more defensive.",
+    "Cleaner holder data after custody-related movement settles would improve confidence in the on-chain read.",
+    "Persistent financing stress in speculative capital structures would raise the risk that macro pressure spills into Bitcoin."
   ],
-  "xPost": "BTC Helper Weekly Macro Thesis: Supportive but maturing liquidity\n\nThesis: Global liquidity still leans supportive, but the weekly imp...\nRisk: If long yields rise or yen and funding stress wor...\nWatch: Global liquidity impulse and whether it improves...\n\nhttps://btchelper.app/weekly-macro-thesis/2026-08-15/",
+  "xPost": "BTC Helper Weekly Macro Thesis: Mixed liquidity, Treasury plumbing focus\n\nThesis: The main macro focus is now funding plumbing: yen sup...\nRisk: If carry-trade stress accelerates, the mi...\nWatch: Yen pressure, carry-trade behavior, and w...\n\nhttps://btchelper.app/weekly-macro-thesis/2026-08-08/",
   "createdAt": null
 }

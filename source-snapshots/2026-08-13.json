@@ -3,14 +3,14 @@
   "date": "2026-08-13",
   "generatedAt": "2026-08-13T09:00:22.681Z",
   "publicationTimestampUtc": "2026-08-13T09:00:22.681Z",
-  "evidenceBundleId": "btc-helper-evidence-2026-08-13-5411707f260f",
-  "evidenceBundleHash": "sha256:5411707f260fc2d1dd6dd257f3cf9b3d01a56b887a78dd3a2d64ca460548397a",
+  "evidenceBundleId": "btc-helper-evidence-2026-08-13-c1bdffeb63d9",
+  "evidenceBundleHash": "sha256:c1bdffeb63d9381d560a946e23ff5dd5c4b7cbfdc96cf0d4bd9ba251988ec8a0",
   "evidenceBundleSchemaVersion": "btc_helper_evidence_bundle_v1",
   "evidenceCaptureKind": "grounded_reconstruction",
   "evidenceCaptureLabel": "Grounded reconstruction",
   "evidenceIntegrityStatement": "Public evidence fields describe provenance, timing, and operational source quality. They do not prove source correctness, model accuracy, or future BTC performance.",
   "evidenceBundle": {
-    "bundle_id": "btc-helper-evidence-2026-08-13-5411707f260f",
+    "bundle_id": "btc-helper-evidence-2026-08-13-c1bdffeb63d9",
     "schema_version": "btc_helper_evidence_bundle_v1",
     "bundle_kind": "grounded_reconstruction",
     "capture_label": "Grounded reconstruction",
@@ -180,8 +180,8 @@
         "provenance_note": "Leverage context is directional support, not a complete exchange-wide risk measure."
       },
       {
-        "source_identifier": "Public source",
-        "source_family": "Public source",
+        "source_identifier": "Withheld public-source family",
+        "source_family": "Withheld public-source family",
         "domain_labels": [],
         "source_frequency": "Varies by source",
         "source_data_as_of": null,
@@ -231,7 +231,7 @@
     "integrity": {
       "algorithm": "sha256",
       "canonicalization": "stable-json-v1",
-      "content_hash": "sha256:5411707f260fc2d1dd6dd257f3cf9b3d01a56b887a78dd3a2d64ca460548397a"
+      "content_hash": "sha256:c1bdffeb63d9381d560a946e23ff5dd5c4b7cbfdc96cf0d4bd9ba251988ec8a0"
     }
   },
   "transparencyBoundary": {

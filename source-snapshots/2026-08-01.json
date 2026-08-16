@@ -116,7 +116,7 @@
         "severity": "acceptable"
       },
       {
-        "sourceFamily": "Public source",
+        "sourceFamily": "Withheld public-source family",
         "importedFieldCount": 1,
         "asOf": "2026-07-31",
         "timestampStatus": "reported",
@@ -211,7 +211,7 @@
       "timestampNote": null
     },
     {
-      "sourceFamily": "Public source",
+      "sourceFamily": "Withheld public-source family",
       "asOf": "2026-07-31",
       "timestampStatus": "reported",
       "timestampNote": null

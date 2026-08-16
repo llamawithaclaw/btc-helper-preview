@@ -202,16 +202,16 @@
     </section>
     <section class="card">
       <h2>Plain-English purpose</h2>
-<p>BTC Helper is a public daily Bitcoin plan. It does <strong>not</strong> try to predict tomorrow's price. It tries to answer a narrower practical question:</p>
-<p>&gt; Given today's conditions and source health, how does the model classify a scheduled baseline and any potentially optional reserve for user review?</p>
+<p>BTC Helper is a public daily Bitcoin model posture and private-plan translation aid. It does <strong>not</strong> try to predict tomorrow's price. It tries to answer a narrower practical question:</p>
+<p>&gt; Given today's public model posture and source health, how does a user's prewritten baseline-and-reserve rule map the current state?</p>
 <p>The public methodology exists so a reader can understand what the daily read means, what the public decision record preserves, what the benchmark does and does not prove, and how to interpret degraded-data warnings.</p>
 <h2>How to read the daily output</h2>
 <p>Each public read has four main parts.</p>
 <h3>1. Baseline instruction</h3>
 <p>The baseline instruction says what happens to the scheduled accumulation plan:</p>
 <ul>
-<li><strong>Continue</strong>: keep the scheduled baseline running.</li>
-<li><strong>Hold</strong>: hold the scheduled baseline only when the user has explicitly selected an advanced baseline-affecting rule.</li>
+<li><strong>Continue</strong>: the user's written baseline rule remains unchanged.</li>
+<li><strong>Hold</strong>: BTC Helper affects the written baseline only when the user has explicitly selected an advanced baseline-affecting rule.</li>
 </ul>
 <p>The default educational setting keeps the baseline separate from BTC Helper's optional-reserve context.</p>
 <h3>2. Reserve instruction</h3>
@@ -226,11 +226,13 @@
 <p>Market context explains the backdrop behind the plan translation:</p>
 <ul>
 <li><strong>Aggressive</strong>: conditions favor reviewing potentially optional reserve if the user's plan and household boundary allow it.</li>
-<li><strong>Normal</strong>: maintain ordinary baseline accumulation discipline.</li>
+<li><strong>Normal</strong>: the written baseline rule remains unchanged.</li>
 <li><strong>Cautious</strong>: conditions are mixed; avoid discretionary extra buys.</li>
 <li><strong>Pause</strong>: stand down from fresh discretionary accumulation until conditions improve.</li>
+<li><strong>Unclear</strong>: the current source run does not support a sufficiently reliable market-context classification. BTC Helper does not infer a stronger posture from incomplete evidence.</li>
 </ul>
 <p>These are accumulation contexts, not short-term trading signals.</p>
+<p>Unclear is only the market-context label. It does not silently become every other state in the system. A degraded read may also show decision status as insufficient signal, baseline translation as written baseline unchanged, reserve translation as Hold, source health as Reduced, coverage as Limited, or benchmark eligibility as Withheld. Those fields describe different parts of the public contract.</p>
 <h3>4. Source health</h3>
 <p>Source health describes whether the current read is operationally useful enough to interpret. It reflects source coverage, freshness, internal consistency, and degraded-run handling.</p>
 <p>It is <strong>not</strong> a probability that Bitcoin will go up or down.</p>
@@ -250,15 +252,16 @@
 <li><strong>Baseline DCA</strong>: buys the same fixed daily amount every day.</li>
 <li><strong>BTC Helper policy</strong>: follows the public posture using a reserve-aware rule.</li>
 </ul>
-<p>The primary benchmark objective is disciplined reserve-aware accumulation behavior, not short-term price prediction. A useful public benchmark must also preserve gap handling: degraded runs, missing publication dates, or weak coverage should be visible and should suppress or qualify performance language.</p>
+<p>The primary benchmark objective is behavior divergence and process accountability, not short-term price prediction. The public benchmark asks whether a frozen prospective reserve-aware policy has actually changed allocation behavior versus an equal-capital baseline, and whether those differences can be reviewed without rewriting history after the fact.</p>
+<p>A useful public benchmark must preserve gap handling: degraded runs, missing publication dates, or weak coverage should be visible and should suppress or qualify performance language. Equal-capital alternatives and future seeded-reserve tests belong to the validation program, but no public timing advantage should be inferred before meaningful policy divergence exists.</p>
 <p>The current public reserve rule is intentionally simple:</p>
 <ul>
 <li><strong>Normal / Cautious</strong>: baseline continues; optional reserve is held.</li>
 <li><strong>Pause</strong>: baseline remains separate by default; optional allocation is held or built as reserve.</li>
 <li><strong>Aggressive</strong>: baseline continues; potentially optional reserve is marked for review if prior reserve exists and household checks allow it.</li>
 </ul>
-<p>This benchmark asks whether BTC Helper's public posture can improve disciplined accumulation behavior versus ordinary daily DCA over time. It is not a claim of optimized trading performance.</p>
-<p>The current public result should be read modestly: no reserve deployment has occurred, the public-policy reserve is zero unless a future summary says otherwise, and BTC Helper has not demonstrated timing advantage when it has not diverged from fixed DCA.</p>
+<p>This benchmark asks whether BTC Helper's public posture creates auditable reserve-aware behavior over time. It is not a claim of optimized trading performance, alpha, predictive accuracy, or superior timing.</p>
+<p>The current public result should be read modestly: no reserve deployment has occurred, the public-policy reserve is zero unless a future summary says otherwise, 0 forward reads have changed allocation behavior where that remains factually current, and BTC Helper has not demonstrated timing advantage when it has not diverged from fixed DCA.</p>
 <p>The planned benchmark program should distinguish fixed DCA from future equal-capital reserve tests:</p>
 <ul>
 <li>seeded reserve</li>
@@ -272,6 +275,15 @@
 <h2>Why benchmark claims may be withheld</h2>
 <p>Benchmark snippets are intentionally suppressed or softened when daily coverage is degraded. BTC Helper should not create promotional-looking claims from weak source conditions.</p>
 <p>That means a day can still have a posture and rationale, while performance comparison language is withheld because the run was not clean enough for that kind of public claim.</p>
+<p>The public benchmark contract separates calculated values from interpretive eligibility:</p>
+<ul>
+<li><strong>Calculated</strong>: technical accounting values may continue to exist for continuity and auditability.</li>
+<li><strong>Eligibility</strong>: the current read states whether those values are eligible for public behavioral interpretation.</li>
+<li><strong>Withheld reason</strong>: limited coverage, degraded run, insufficient signal, or another explicit reason explains why a comparison is withheld.</li>
+<li><strong>Public status</strong>: withheld reads show a withheld public status rather than an interpretive status such as in-line.</li>
+<li><strong>Internal status</strong>: technical calculations may retain an internal state for accounting review.</li>
+</ul>
+<p>BTC Helper currently uses the conservative exposure decision of keeping technical values in the standard public record while clearly marking them as calculated but not eligible for interpretation on withheld reads. The goal is transparency without turning degraded-run arithmetic into an efficacy claim.</p>
 <h2>Data-source posture</h2>
 <p>BTC Helper currently uses a mixed-source public beta posture:</p>
 <ul>
@@ -318,6 +330,7 @@
 <p>The public Track page reports replay evidence tiers at a high level: 16 replayed cases, 2 grounded candidate cases, 40 candidate cases, and 2 synthetic cases. These are project-level validation artifacts, not forward performance proof or a price-prediction record.</p>
 <p>Before validation-relevant model changes, BTC Helper uses a review gate covering scenario review, policy audit, replay validation, replay consistency, historical replay, and public-quality checks when public copy changes. Provider and source families are public; direct source links, exact series mappings, raw inputs, thresholds, weights, overrides, and calibration details remain private while the public surface still shows evidence tiers, limitations, and next validation priorities.</p>
 <p>Track is process evidence and governance evidence. It should not be read as efficacy proof until enough forward reserve-aware behavior, equal-capital comparison history, and properly labeled evidence support exist.</p>
+<p>BTC Helper's public boundary remains: <strong>NO PUBLIC EFFICACY CLAIM</strong>. It does not publicly claim superior timing, DCA outperformance, reserve-policy efficacy, predictive accuracy, alpha, independently validated performance, or guaranteed future returns.</p>
 <h2>Interpretation guide</h2>
 <h3>If BTC Helper and baseline DCA are equal</h3>
 <p>This usually means the public posture has mostly stayed Normal, or reserve behavior has not yet created a meaningful difference.</p>
@@ -340,14 +353,14 @@
 <p>For public questions, comments, data corrections, or accessibility issues, contact BTC Helper by email: [support@btchelper.app](mailto:support@btchelper.app). For security reports, use [security@btchelper.app](mailto:security@btchelper.app).</p>
 <hr>
 <p>*This methodology document is part of BTC Helper's public decision-record commitment.*</p>
-<p>*Last updated: 2026-08-14*</p>
+<p>*Last updated: 2026-08-16*</p>
     </section>
   </main>
   <footer class="site-footer" id="contact">
     <div class="site-footer-inner">
       <div class="footer-brand">
         <strong>BTC Helper</strong>
-        <p>A private Bitcoin accumulation plan, a source-aware daily posture layer, and a public decision record.</p>
+        <p>A private Bitcoin accumulation plan, a source-aware model posture, and a public decision record.</p>
         <p class="footer-note">Educational research tool only. Not financial advice, investment advice, or a recommendation to buy or sell any asset.</p>
       </div>
       <div><div class="footer-column-title">Product</div><div class="footer-links"><a href="/index.html#today">Today</a><a href="/planner.html">My Plan</a><a href="/insights.html">Insights</a><a href="/track.html">Track</a><a href="/updates.html">Updates</a></div></div>

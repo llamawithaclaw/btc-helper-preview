@@ -6,8 +6,13 @@
   "btc_helper_portfolio_value": 102.71769443813567,
   "baseline_portfolio_value": 102.71769443813567,
   "benchmark_difference_pct": 0,
-  "benchmark_status": "in_line",
+  "benchmark_status": "withheld",
   "btc_helper_cumulative_btc": 0.0016300514867592741,
   "baseline_cumulative_btc": 0.0016300514867592741,
-  "current_reserve_balance": 0
+  "current_reserve_balance": 0,
+  "benchmark_calculated": true,
+  "benchmark_eligibility": "withheld",
+  "benchmark_withheld_reason": "degraded_run",
+  "benchmark_public_status": "withheld",
+  "benchmark_internal_status": "in_line"
 }

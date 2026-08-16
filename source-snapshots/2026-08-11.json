@@ -3,14 +3,14 @@
   "date": "2026-08-11",
   "generatedAt": "2026-08-11T08:30:19.047Z",
   "publicationTimestampUtc": "2026-08-11T09:00:27.567Z",
-  "evidenceBundleId": "btc-helper-evidence-2026-08-11-66d833dbf70f",
-  "evidenceBundleHash": "sha256:66d833dbf70fd488dc2ffe2922ab7c708099956908ff76f9436139f56d754627",
+  "evidenceBundleId": "btc-helper-evidence-2026-08-11-1f87f3eb3dea",
+  "evidenceBundleHash": "sha256:1f87f3eb3deaeb2a6fa7820c6cdccf40fc7f60fcb7bbb8d193c7af18424823f0",
   "evidenceBundleSchemaVersion": "btc_helper_evidence_bundle_v1",
   "evidenceCaptureKind": "grounded_reconstruction",
   "evidenceCaptureLabel": "Grounded reconstruction",
   "evidenceIntegrityStatement": "Public evidence fields describe provenance, timing, and operational source quality. They do not prove source correctness, model accuracy, or future BTC performance.",
   "evidenceBundle": {
-    "bundle_id": "btc-helper-evidence-2026-08-11-66d833dbf70f",
+    "bundle_id": "btc-helper-evidence-2026-08-11-1f87f3eb3dea",
     "schema_version": "btc_helper_evidence_bundle_v1",
     "bundle_kind": "grounded_reconstruction",
     "capture_label": "Grounded reconstruction",
@@ -184,8 +184,8 @@
         "provenance_note": "Leverage context is directional support, not a complete exchange-wide risk measure."
       },
       {
-        "source_identifier": "Public source",
-        "source_family": "Public source",
+        "source_identifier": "Withheld public-source family",
+        "source_family": "Withheld public-source family",
         "domain_labels": [
           "Other"
         ],
@@ -237,7 +237,7 @@
     "integrity": {
       "algorithm": "sha256",
       "canonicalization": "stable-json-v1",
-      "content_hash": "sha256:66d833dbf70fd488dc2ffe2922ab7c708099956908ff76f9436139f56d754627"
+      "content_hash": "sha256:1f87f3eb3deaeb2a6fa7820c6cdccf40fc7f60fcb7bbb8d193c7af18424823f0"
     }
   },
   "transparencyBoundary": {
@@ -355,7 +355,7 @@
         "severity": "acceptable"
       },
       {
-        "sourceFamily": "Public source",
+        "sourceFamily": "Withheld public-source family",
         "importedFieldCount": 1,
         "asOf": "2026-08-10",
         "timestampStatus": "reported",
@@ -450,7 +450,7 @@
       "timestampNote": null
     },
     {
-      "sourceFamily": "Public source",
+      "sourceFamily": "Withheld public-source family",
       "asOf": "2026-08-10",
       "timestampStatus": "reported",
       "timestampNote": null
