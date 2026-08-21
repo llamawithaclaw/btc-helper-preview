@@ -2,6 +2,6 @@ BTC Helper today: Unclear context; written baseline unchanged and optional reser
 
 Why: Not enough data to confidently assess a regime.
 Source health: Reduced; coverage Limited
-BTC ref: $71,600
+BTC ref: $78,870
 
-Full read: https://btchelper.app/history/2026-08-20/
+Full read: https://btchelper.app/history/2026-08-21/
