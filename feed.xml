@@ -5,7 +5,14 @@
     <link>https://btchelper.app/</link>
     <description>Dated Bitcoin accumulation reads, source health, and manual-plan context.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 22 Aug 2026 09:00:16 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 23 Aug 2026 09:00:20 GMT</lastBuildDate>
+    <item>
+      <title>BTC Helper 2026-08-23: Written baseline unchanged; optional reserve held</title>
+      <link>https://btchelper.app/history/2026-08-23/</link>
+      <guid isPermaLink="true">https://btchelper.app/history/2026-08-23/</guid>
+      <pubDate>Sun, 23 Aug 2026 09:00:20 GMT</pubDate>
+      <description>Written baseline unchanged; optional reserve held Not enough data to confidently assess a regime. Source health: Reduced. Coverage: Limited.</description>
+    </item>
     <item>
       <title>BTC Helper 2026-08-22: Written baseline unchanged; optional reserve held</title>
       <link>https://btchelper.app/history/2026-08-22/</link>
@@ -207,13 +214,6 @@
       <link>https://btchelper.app/history/2026-07-25/</link>
       <guid isPermaLink="true">https://btchelper.app/history/2026-07-25/</guid>
       <pubDate>Sat, 25 Jul 2026 09:00:20 GMT</pubDate>
-      <description>Written baseline unchanged; optional reserve held Valuation is favorable, but confirmation is not strong enough to deploy reserve aggressively. Source health: Moderate. Coverage: Usable.</description>
-    </item>
-    <item>
-      <title>BTC Helper 2026-07-24: Written baseline unchanged; optional reserve held</title>
-      <link>https://btchelper.app/history/2026-07-24/</link>
-      <guid isPermaLink="true">https://btchelper.app/history/2026-07-24/</guid>
-      <pubDate>Fri, 24 Jul 2026 09:00:25 GMT</pubDate>
       <description>Written baseline unchanged; optional reserve held Valuation is favorable, but confirmation is not strong enough to deploy reserve aggressively. Source health: Moderate. Coverage: Usable.</description>
     </item>
   </channel>
