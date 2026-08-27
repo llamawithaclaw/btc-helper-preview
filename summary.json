@@ -1,10 +1,10 @@
 {
   "methodology_version": "phase1_reserve_tracker_v1",
   "start_date": "2026-04-20",
-  "updated_at": "2026-08-26T09:00:16.155Z",
-  "days_tracked": 121,
-  "btc_helper_portfolio_value": 139.08646755474837,
-  "baseline_portfolio_value": 139.08646755474837,
+  "updated_at": "2026-08-27T09:00:22.350Z",
+  "days_tracked": 122,
+  "btc_helper_portfolio_value": 141.97275131194138,
+  "baseline_portfolio_value": 141.97275131194138,
   "benchmark_difference_pct": 0,
   "benchmark_calculated": true,
   "benchmark_eligibility": "withheld",
@@ -12,7 +12,7 @@
   "benchmark_public_status": "withheld",
   "benchmark_internal_status": "in_line",
   "benchmark_status": "withheld",
-  "btc_helper_cumulative_btc": 0.0017678385728144336,
-  "baseline_cumulative_btc": 0.0017678385728144336,
+  "btc_helper_cumulative_btc": 0.001780378858482141,
+  "baseline_cumulative_btc": 0.001780378858482141,
   "current_reserve_balance": 0
 }
