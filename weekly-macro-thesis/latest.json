@@ -1,67 +1,67 @@
 {
-  "date": "2026-09-05",
-  "title": "Managed Credit, Liquidity Plumbing, BTC Confirmation",
-  "summary": "This week's macro backdrop points to a policy regime moving from broad liquidity rescue toward more managed credit creation, Treasury-market support, and regulated dollar plumbing. Bitcoin's long-term monetary case remains constructive, but the near-term read is still liquidity-sensitive and needs confirmation from demand, holder behavior, and calm leverage.",
-  "regime": "Managed credit with liquidity-sensitive Bitcoin",
+  "date": "2026-09-12",
+  "title": "Fiscal Dominance, Dollar Plumbing, BTC Confirmation",
+  "summary": "This week's macro backdrop is dominated by fiscal dominance, Treasury-market absorption, and the growing role of regulated dollar rails. Bitcoin's long-term hard-money case remains supported by the backdrop, but the near-term setup still needs confirmation from demand, holder behavior, and leverage discipline.",
+  "regime": "Fiscal dominance with liquidity path risk",
   "thesisBullets": [
-    "Policy attention is shifting toward credit direction, Treasury-market support, stable dollar rails, and productive-capacity funding rather than only broad central-bank balance-sheet expansion.",
-    "Bitcoin's weekly macro setup is constructive, but more as a scarce monetary asset tied to liquidity conditions than as a straight-line debasement trade.",
-    "Gold, energy, and high-quality collateral remain important pressure gauges because hard assets and productive capacity are becoming central to the policy and market response.",
-    "On-chain and flow confirmation matter because a supportive macro story can still fail tactically if demand is thin, holders distribute, or leverage rebuilds too quickly.",
+    "The central macro question is shifting toward who absorbs government duration, how long-end yields behave, and whether policy leans more heavily on Treasury-market support.",
+    "Dollar plumbing is becoming more explicit: stablecoins, bill demand, sanctions enforcement, and Treasury policy are increasingly part of one monetary-transition story.",
+    "Bitcoin has two separate reads this week: a long-term scarce-asset beneficiary of fiscal pressure, and a near-term market structure that still needs clean confirmation.",
+    "Bond-market stress remains a path-risk issue because a yield spike can pressure risk assets before longer-term hard-money demand appears.",
     "This weekly backdrop adds context and watch items, but it does not change BTC Helper's mechanical daily signal, posture, thresholds, or weights."
   ],
   "btcImplications": [
-    "BTC Helper users should treat the macro backdrop as thesis-supportive, not as an automatic daily-risk-on signal.",
-    "A managed-credit regime can support the long-term Bitcoin case, while still producing short-term air pockets if dollar liquidity tightens or credit stress rises.",
-    "Confirmation should come from durable spot demand, accumulation behavior, and contained leverage rather than narrative strength alone.",
-    "Policy support for dollar rails and Treasury plumbing is a structural watch item because it can affect liquidity transmission, collateral demand, and risk appetite."
+    "BTC Helper users should treat the fiscal-dominance backdrop as thesis-supportive, not as an automatic daily-risk-on signal.",
+    "A stronger hard-money narrative is most useful when it is confirmed by spot demand, accumulation behavior, and calm leverage.",
+    "Stablecoin and Treasury-plumbing developments matter because they can change how dollar liquidity moves through markets and how collateral demand is transmitted.",
+    "Near-term caution is still warranted if long-end yields, funding conditions, or leverage stress deteriorate faster than Bitcoin demand improves."
   ],
   "factorImplications": [
     {
       "factor": "Valuation",
-      "weeklyChange": "The long-term scarcity and hard-money narrative improved, but valuation still depends on confirmation rather than thesis alone.",
-      "dailyImplication": "Valuation should remain governed by BTC Helper's daily model instead of the weekly macro story."
+      "weeklyChange": "The long-term scarcity case improved as fiscal pressure and duration absorption stayed central.",
+      "dailyImplication": "Valuation should remain governed by BTC Helper's daily model until market data confirms the thesis."
     },
     {
       "factor": "Holder behavior",
-      "weeklyChange": "The setup needs evidence that long-term holders are absorbing supply rather than using strength to distribute.",
-      "dailyImplication": "Accumulation would improve confidence; visible distribution would keep the posture more cautious."
+      "weeklyChange": "The weekly setup favors patience if long-term holders keep absorbing supply instead of distributing into strength.",
+      "dailyImplication": "Accumulation would improve confidence; distribution would keep the daily read more cautious."
     },
     {
       "factor": "Flows",
-      "weeklyChange": "Constructive macro interest needs to translate into persistent spot demand and broad participation.",
-      "dailyImplication": "Sustained inflows support resilience; fading demand makes the weekly thesis less actionable."
+      "weeklyChange": "Macro interest needs to become durable spot demand rather than only narrative attention.",
+      "dailyImplication": "Persistent inflows support resilience; fading demand makes the weekly thesis less actionable."
     },
     {
       "factor": "Macro",
-      "weeklyChange": "Managed credit, Treasury support, stable dollar rails, and productive-capacity policy dominated the macro read.",
-      "dailyImplication": "Macro is more supportive if liquidity remains available and credit stress stays contained."
+      "weeklyChange": "Fiscal dominance, Treasury absorption, stable dollar rails, and long-end yield risk dominated the macro read.",
+      "dailyImplication": "Macro is more supportive if liquidity stays orderly and bond-market stress remains contained."
     },
     {
       "factor": "Leverage",
-      "weeklyChange": "Liquidity-sensitive upside makes positioning discipline important because leverage can turn a constructive setup into a fragile one.",
-      "dailyImplication": "Calm leverage supports continuation; crowded positioning or forced deleveraging would raise reversal risk."
+      "weeklyChange": "A constructive long-term thesis still carries near-term fragility if leverage rebuilds before demand confirms.",
+      "dailyImplication": "Calm leverage supports continuation; crowded positioning or forced deleveraging raises reversal risk."
     }
   ],
   "counterThesis": [
-    "If managed credit tightens liquidity for risk assets instead of easing it, Bitcoin could struggle despite a stronger long-term monetary thesis.",
-    "If hard-asset demand concentrates in gold or energy while Bitcoin flows fade, the weekly backdrop may be less BTC-specific than it appears.",
-    "If spot demand and holder accumulation strengthen together, Bitcoin could confirm a more durable constructive regime."
+    "If long-end yields rise disorderly or Treasury-market stress worsens, Bitcoin could trade as a liquidity-sensitive risk asset before benefiting from the hard-money narrative.",
+    "If regulated dollar rails strengthen demand for short government paper without improving broad risk liquidity, the macro backdrop may be less immediately bullish for Bitcoin.",
+    "If on-chain repair, spot demand, and holder accumulation all improve together, Bitcoin could confirm a more durable constructive regime."
   ],
   "watchNext": [
-    "Treasury buybacks, bill issuance mix, auction tone, long-end yields, reserve balances, and repo conditions.",
-    "Stablecoin supply, reserve quality, settlement adoption, and the effect of regulated dollar rails on bill demand.",
+    "Treasury buybacks, auction tone, bill issuance mix, long-end yields, reserve balances, and repo conditions.",
+    "Stablecoin supply, reserve quality, settlement adoption, and the role of regulated dollar rails in bill demand.",
     "Spot Bitcoin demand, ETF flow tone, volume quality, and whether participation broadens beyond short-term positioning.",
-    "Holder accumulation versus distribution as price reacts to macro liquidity headlines.",
-    "Gold and energy behavior as signals for fiscal-confidence pressure and productive-capacity stress.",
-    "Leverage, funding tone, basis pressure, and signs of forced deleveraging."
+    "Holder accumulation versus distribution as Bitcoin reacts to fiscal and liquidity headlines.",
+    "Funding tone, basis pressure, leverage, and signs of forced deleveraging.",
+    "Gold, dollar strength, and credit stress as cross-checks on fiscal-confidence pressure."
   ],
   "whatWouldChange": [
     "Persistent spot demand, constructive holder behavior, and calm leverage would make the weekly setup more actionable.",
     "Rising repo stress, weak auction tone, or long-end instability would make the macro backdrop more defensive.",
-    "A broad liquidity improvement alongside healthy flows would support a stronger bullish read.",
+    "Stablecoin growth that improves liquidity transmission without funding stress would support a more constructive read.",
     "Fading demand with rebuilt leverage would argue for caution even if the long-term thesis remains intact."
   ],
-  "xPost": "BTC Helper Weekly Macro Thesis: Managed credit with liquidity-sensitive Bit...\n\nThesis: Policy attention is shifting toward credit direction,...\nRisk: If managed credit tightens liquidity for...\nWatch: Treasury buybacks, bill issuance mix, auc...\n\nhttps://btchelper.app/weekly-macro-thesis/2026-09-05/",
+  "xPost": "BTC Helper Weekly Macro Thesis: Fiscal dominance with liquidity path risk\n\nThesis: The central macro question is shifting toward who abs...\nRisk: If long-end yields rise disorderly or Tre...\nWatch: Treasury buybacks, auction tone, bill iss...\n\nhttps://btchelper.app/weekly-macro-thesis/2026-09-12/",
   "createdAt": null
 }
