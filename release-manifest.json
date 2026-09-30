@@ -1,11 +1,11 @@
 {
-  "read_id": "2026-09-29",
-  "publication_id": "2026-09-29T09:00:18.103Z",
+  "read_id": "2026-09-30",
+  "publication_id": "2026-09-30T09:00:19.536Z",
   "schema_version": "public_read_v1",
   "methodology_version": "phase1_reserve_tracker_v1",
-  "source_audit_at": "2026-09-29T09:00:18.103Z",
-  "btc_reference_at": "2026-09-29T09:00:18.103Z",
-  "btc_reference_price_usd": 84039.44,
+  "source_audit_at": "2026-09-30T09:00:19.536Z",
+  "btc_reference_at": "2026-09-30T09:00:19.536Z",
+  "btc_reference_price_usd": 83038,
   "baseline_instruction": "continue",
   "reserve_instruction": "hold",
   "market_context": "unclear",
@@ -20,22 +20,22 @@
   "benchmark_withheld_reason": "degraded_run",
   "benchmark_public_status": "withheld",
   "benchmark_internal_status": "in_line",
-  "evidence_bundle_id": "btc-helper-evidence-2026-09-29-1f8de13d198e",
-  "evidence_bundle_hash": "sha256:1f8de13d198e23bd7b3b37fe7bc6ef624d3cb0269b8eab4e63ff643ca7409280",
+  "evidence_bundle_id": "btc-helper-evidence-2026-09-30-3f7bfe2f2e4a",
+  "evidence_bundle_hash": "sha256:3f7bfe2f2e4a542c103761953cb778c53a7fb16ff443d49380046a57bab06451",
   "evidence_bundle_schema_version": "btc_helper_evidence_bundle_v1",
   "evidence_capture_kind": "grounded_reconstruction",
   "evidence_capture_label": "Grounded reconstruction",
-  "evidence_source_retrieval_at": "2026-09-29T09:00:18.103Z",
-  "evidence_source_data_as_of": "2026-09-29T09:00:08.559Z",
+  "evidence_source_retrieval_at": "2026-09-30T09:00:19.536Z",
+  "evidence_source_data_as_of": "2026-09-30T09:00:08.543Z",
   "evidence_freshness_state": "degraded",
   "evidence_correction_status": "no_known_correction",
-  "build_id": "btc-helper-20260929-20260929090018",
-  "content_hash": "sha256:ea5f5ccd1c09a55f36f256c58cbf3f6ab5ad4f4bb2ab0555ee7521d408f07c5a",
+  "build_id": "btc-helper-20260930-20260930090019",
+  "content_hash": "sha256:0b581794e78661040204ae24d65cc00193f64b3920785529a58dd05e41ae31b2",
   "benchmark": {
-    "btc_helper_cumulative_btc": 0.0021808458463693373,
-    "baseline_cumulative_btc": 0.0021808458463693373,
-    "btc_helper_portfolio_value": 183.27706365520515,
-    "baseline_portfolio_value": 183.27706365520515,
+    "btc_helper_cumulative_btc": 0.002192888525624618,
+    "baseline_cumulative_btc": 0.002192888525624618,
+    "btc_helper_portfolio_value": 182.09307739081703,
+    "baseline_portfolio_value": 182.09307739081703,
     "benchmark_difference_pct": 0,
     "benchmark_calculated": true,
     "benchmark_eligibility": "withheld",
@@ -52,27 +52,27 @@
     },
     "homepage": {
       "path": "index.html",
-      "sha256": "sha256:08923cd9ffb10ab5e4a36e4d90a92ce6d4aac579e27a0d60768d69e9d369af62"
+      "sha256": "sha256:a1f6e0f8b96fb0a693dc0e7b6ea99bc520dfce99e161792780014404035a7f01"
     },
     "daily_read": {
-      "path": "history/2026-09-29/index.html",
-      "sha256": "sha256:ff7dd1ca68a84938e57e7923cf76ecbc73a4691751f4b4e4f1548e3fcec70b00"
+      "path": "history/2026-09-30/index.html",
+      "sha256": "sha256:beef19be124bd8658e6692f8f93b25787e29991c0a1e5d167051a8885f1e9fd0"
     },
     "archive": {
       "path": "archive.html",
-      "sha256": "sha256:942b2d249b338ecb5959366e9f2bee86998d378d33c98479d105877f4f948874"
+      "sha256": "sha256:1b1521596ae940d65f0bf28db71f578f586ea1c47464f9227bd43af95fdbc34c"
     },
     "track": {
       "path": "track.html",
-      "sha256": "sha256:ac4c8a89cfdedb702148065a71ef25a2f05c068f4cc70cd47637e8db29377107"
+      "sha256": "sha256:0afcad2f8d092a35e4a32bf88e7dad976ee3699e6322cdb6170e824d0b1744fd"
     },
     "evidence": {
       "path": "evidence.html",
-      "sha256": "sha256:0058bf98f14e7176660a61f2383ca8e5e028abe6d70a5d7e9f087ccae7204baf"
+      "sha256": "sha256:c3d642a28986c4799fa30afa2d9cf522ef302e6f1dcc11f752a179bf83a10195"
     },
     "source_health": {
       "path": "data-sources.html",
-      "sha256": "sha256:752a99879479fae309d2970d2602b43f70824e42a3582725182071c934c15f9d"
+      "sha256": "sha256:91c9314d1e331fe696ac505ce9e1f76e9e5ddbb3c33fddf9bdb9818ddc5c55d4"
     },
     "trust": {
       "path": "trust.html",
@@ -80,27 +80,27 @@
     },
     "latest_post": {
       "path": "latest-post.txt",
-      "sha256": "sha256:7929edf52ea5e2d80109fe748f9e758f8213bd9098074419a47b9e23cf53fb87"
+      "sha256": "sha256:933635dc1d3b1d96dd229fe58d69acc3532668d30d060e6969e41282fad94be2"
     },
     "x_post": {
       "path": "x-post.txt",
-      "sha256": "sha256:763f03f69b73001776593e556893bdfb92f6889015db513bc44390d9829ada0a"
+      "sha256": "sha256:55342636c715fb899d07cc6987f8f808d4ecc0fe1ece0c4bb99c255c19d93613"
     },
     "rss": {
       "path": "feed.xml",
-      "sha256": "sha256:0c4b3753974d34c3e08a03bccac91adb901d8dc8ef61a0897d36da6deee5531e"
+      "sha256": "sha256:3f63aa3a63f654033522d990e99256186e368cb074908f67fb3240adb0f9ca59"
     },
     "csv": {
       "path": "latest-read.csv",
-      "sha256": "sha256:3d084b0ab8ef534569aa2d5f72b76ad29d9c3be4e374e74c1760c8d632447056"
+      "sha256": "sha256:14ca06e3ca6006e41959a53190ef5fa9cac201249565b999dcbd5d356bfd31eb"
     },
     "summary": {
       "path": "summary.json",
-      "sha256": "sha256:c42a64e218717840b359d3a211107a1ec62156742f08903aceb20f23e63b269f"
+      "sha256": "sha256:523d93d476bebc186294765f555c57f2731805009007ceba6caf90f4974424ab"
     },
     "source_snapshot": {
-      "path": "source-snapshots/2026-09-29.json",
-      "sha256": "sha256:048c786ad0da82ac3baa15fe3a08f2dbdacc451e2eafd47566ed2541890f58bd"
+      "path": "source-snapshots/2026-09-30.json",
+      "sha256": "sha256:ef7ec7ef85fd9dc83aae3166f8a1aaede0b43b13d2fca45c7a8691f4bd215703"
     },
     "security_txt": {
       "path": ".well-known/security.txt",
@@ -108,16 +108,16 @@
     },
     "social_card_html": {
       "path": "card/card.html",
-      "sha256": "sha256:cc72f9b4deae789b3d5b069d9277f12a08e8f96a4862d77bd4260f5bf4904247"
+      "sha256": "sha256:47a12f15476d8780c55aa561a60ed7f4e34dd8ccc6479a24c2e998fa7ecee4c1"
     },
     "social_card_image": {
       "path": "card/latest-read-card.png",
-      "sha256": "sha256:8cb34d3657e6e7b0eaec37b93ad7d37e5157a0d691ded19649800991011f3253"
+      "sha256": "sha256:966cd0143cf083c09205ffc17c3e09e78a1eaa9287205290ef892f27125c2682"
     },
     "dated_social_card_image": {
-      "path": "history/2026-09-29/social-card.png",
-      "sha256": "sha256:8cb34d3657e6e7b0eaec37b93ad7d37e5157a0d691ded19649800991011f3253"
+      "path": "history/2026-09-30/social-card.png",
+      "sha256": "sha256:966cd0143cf083c09205ffc17c3e09e78a1eaa9287205290ef892f27125c2682"
     }
   },
-  "generated_at": "2026-09-29T09:00:30.057Z"
+  "generated_at": "2026-09-30T09:00:31.708Z"
 }
