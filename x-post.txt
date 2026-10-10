@@ -2,6 +2,6 @@ BTC Helper today: Written baseline unchanged; optional reserve held.
 
 Why: Some supportive signals exist, but enough friction or fragility is pr...
 Source health: Reduced; coverage Limited
-BTC ref: $82,608
+BTC ref: $82,771
 
-Full read: https://btchelper.app/history/2026-10-09/
+Full read: https://btchelper.app/history/2026-10-10/
