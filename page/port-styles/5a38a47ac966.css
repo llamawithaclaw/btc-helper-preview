@@ -1,0 +1,64 @@
+/* Current-site stylesheet 5a38a47ac966, scoped to <main class="port"> and mapped to Field guide tokens by port.py. */
+.port { --bg: var(--paper); --card: var(--white); --card-soft: var(--tint); --muted: var(--soft); --line: var(--rule); --accent: var(--river); --accent-blue: var(--river); --accent-soft: var(--river-15); --brand-gold: var(--brass); --btc-amber: var(--brass); --btc-amber-soft: var(--brass-bg); --muted-positive: var(--river); --muted-caution: var(--brass-ink); --muted-adverse: var(--alert); --status-live: var(--river); --status-live-text: var(--river-dk); --status-degraded: var(--brass); --status-degraded-text: var(--brass-ink); --status-warn: var(--brass); --hero-ink: var(--ink); --hero-muted: var(--soft); --secondary-bg: var(--tint); --secondary-ink: var(--ink); --secondary-border: var(--rule); --dark-card-bg: var(--tint); --dark-card-ink: var(--ink); --dark-card-muted: var(--soft); }
+.port{ font-synthesis:none; }
+.port, .port button, .port input, .port select, .port textarea, .port summary{ font-family:"Field Sans", system-ui, sans-serif; }
+.port button, .port input, .port select, .port textarea, .port summary{ font:inherit; }
+.port code, .port pre, .port .machine-record{ font-family:"DejaVu Sans Mono", ui-monospace, monospace; }
+.port .numeric, .port .price, .port .percentage, .port .timestamp{ font-variant-numeric:tabular-nums; }
+.port a:focus-visible, .port button:focus-visible, .port input:focus-visible, .port select:focus-visible, .port summary:focus-visible{ outline:3px solid color-mix(in srgb,var(--accent-blue) 34%,transparent); outline-offset:3px; }
+@media (prefers-reduced-motion: reduce){.port *, .port *::before, .port *::after{ animation-duration:.001ms !important; animation-iteration-count:1 !important; scroll-behavior:auto !important; transition-duration:.001ms !important; }}
+.port a:focus-visible, .port button:focus-visible, .port input:focus-visible, .port select:focus-visible, .port summary:focus-visible{ outline:3px solid color-mix(in srgb,var(--accent-blue, var(--river)) 34%,transparent); outline-offset:3px; }
+@media (prefers-reduced-motion: reduce){.port *, .port *::before, .port *::after{ animation-duration:.001ms !important; animation-iteration-count:1 !important; scroll-behavior:auto !important; transition-duration:.001ms !important; }}
+.port .breadcrumb{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin:0 0 16px; color:var(--muted); font-size:.78rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+.port .breadcrumb a{ color:var(--accent-blue); text-decoration:none; }
+.port .breadcrumb a:hover, .port .breadcrumb a:focus{ color:var(--ink); text-decoration:underline; outline:none; }
+.port .breadcrumb span{ min-width:0; }
+.port *{ box-sizing:border-box; }
+.port{ scroll-behavior:smooth; scroll-padding-top:84px; }
+.port{ margin:0; font-family:"Field Sans", system-ui, sans-serif; background:radial-gradient(circle at 15% -10%, color-mix(in srgb,var(--accent) 10%,transparent), transparent 30%), var(--bg); color:var(--ink); line-height:1.65; }
+main.port{ max-width:1040px; margin:0 auto; padding:34px 20px 64px; }
+.port .hero, .port .card, .port .option-card{ border:1px solid var(--line); border-radius:22px; background:var(--card); box-shadow:0 10px 30px rgba(0,0,0,.10); }
+.port .hero{ border-radius:28px; padding:30px; background:var(--dark-card-bg); color:var(--hero-ink); margin-bottom:18px; }
+.port .hero p{ color:var(--hero-muted); max-width:760px; margin:0; }
+.port .eyebrow{ color:var(--brass-ink); font-weight:900; letter-spacing:.12em; text-transform:uppercase; font-size:.78rem; }
+.port h1{ margin:.35rem 0 .55rem; letter-spacing:-.035em; line-height:1.02; font-size:clamp(2.1rem,5.5vw,4.2rem); }
+.port h2, .port h3, .port p{ margin-top:0; }
+.port .card{ padding:22px; margin-bottom:18px; }
+.port .small, .port .card p, .port .option-card p{ color:var(--muted); }
+.port .option-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; margin-top:14px; }
+.port .option-card{ display:flex; flex-direction:column; gap:8px; min-height:180px; padding:18px; color:inherit; text-decoration:none; background:linear-gradient(135deg,color-mix(in srgb,var(--card) 95%,transparent),color-mix(in srgb,var(--accent-soft) 42%,var(--card))); }
+.port .option-card:hover, .port .option-card:focus{ border-color:var(--accent-blue); transform:translateY(-1px); }
+.port .option-card strong{ display:block; color:var(--ink); font-size:1.08rem; }
+.port .option-card span{ margin-top:auto; color:var(--accent-blue); font-weight:900; }
+.port .delivery-status-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:12px; margin-top:14px; }
+.port .delivery-status-card{ border:1px solid var(--line); border-radius:16px; padding:15px; background:var(--card-soft); }
+.port .delivery-status-card strong{ display:block; color:var(--ink); font-size:1rem; }
+.port .delivery-status-card em{ display:block; margin:7px 0; color:var(--brass-ink); font-style:normal; font-weight:950; letter-spacing:.04em; text-transform:uppercase; font-size:.76rem; }
+.port .delivery-status-card p{ margin:0; color:var(--muted); }
+.port .alert-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; margin-top:14px; }
+.port .alert-card{ border:1px solid var(--line); border-radius:16px; padding:16px; background:var(--card-soft); }
+.port .alert-card strong{ display:block; color:var(--ink); font-size:1.02rem; }
+.port .alert-card span{ display:inline-flex; margin:8px 0; border:1px solid color-mix(in srgb,var(--accent) 28%,var(--line)); border-radius:999px; padding:5px 8px; color:var(--ink); background:var(--accent-soft); font-size:.78rem; font-weight:900; letter-spacing:.06em; text-transform:uppercase; }
+.port .alert-card p{ margin:0; color:var(--muted); }
+.port .note{ border-left:4px solid var(--brand-gold); background:var(--card-soft); padding:13px 14px; border-radius:12px; color:var(--ink); }
+.port .update-form{ display:grid; gap:14px; margin-top:14px; border:1px solid var(--line); border-radius:18px; padding:18px; background:var(--card-soft); }
+.port .form-grid{ display:grid; grid-template-columns:minmax(220px,1fr) minmax(180px,.7fr); gap:12px; }
+.port .update-form label{ display:grid; gap:6px; color:var(--muted); font-size:.82rem; font-weight:900; letter-spacing:.06em; text-transform:uppercase; }
+.port .update-form input, .port .update-form select{ width:100%; min-height:44px; border:1px solid var(--line); border-radius:12px; background:var(--card); color:var(--ink); font:inherit; font-weight:750; padding:9px 10px; }
+.port .update-form input:focus, .port .update-form select:focus, .port .update-form button:focus{ outline:3px solid color-mix(in srgb,var(--accent-blue) 24%,transparent); border-color:var(--accent-blue); }
+.port .update-form button{ min-height:44px; border:1px solid var(--brand-gold); border-radius:999px; background:var(--river); color:var(--ink); font:inherit; font-weight:950; padding:10px 14px; cursor:pointer; justify-self:start; ;color:var(--white)}
+.port .form-status{ margin:0; color:var(--muted); font-size:.93rem; }
+.port .preference-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:10px; }
+.port .preference-card{ display:grid; grid-template-columns:auto minmax(0,1fr); gap:10px; align-items:start; border:1px solid var(--line); border-radius:15px; padding:12px; background:var(--card); }
+.port .preference-card input{ width:18px; height:18px; min-height:18px; margin-top:3px; accent-color:var(--brand-gold); }
+.port .preference-card strong{ display:block; color:var(--ink); line-height:1.15; }
+.port .preference-card span{ display:block; color:var(--muted); margin-top:3px; line-height:1.35; font-size:.88rem; letter-spacing:0; text-transform:none; font-weight:700; }
+.port .preference-card.quiet{ border-style:dashed; }
+.port .update-preview{ border:1px solid color-mix(in srgb,var(--accent-blue) 30%,var(--line)); border-radius:16px; padding:14px; background:linear-gradient(135deg,var(--card),color-mix(in srgb,var(--accent-soft) 58%,var(--card))); }
+.port .update-preview strong{ display:block; color:var(--ink); }
+.port .update-preview p{ margin:.35rem 0 0; color:var(--muted); }
+.port .visually-hidden-input{ position:absolute; inline-size:1px; block-size:1px; opacity:0; pointer-events:none; }
+.port a{ color:var(--accent-blue); font-weight:850; }
+@media (max-width:640px){.port .form-grid{ grid-template-columns:1fr; }}
+@media (max-width:560px){main.port{ padding-inline:14px; }
+.port .hero, .port .card, .port .option-card{ border-radius:18px; padding:18px; }}

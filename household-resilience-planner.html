@@ -1,260 +1,31 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Household Resilience Planner by BTC Helper</title>
+<html lang="en"><head><meta charset="utf-8"><!-- ported: household-resilience-planner.html --><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<script>try{const t=localStorage.getItem('btcHelperTheme');document.documentElement.dataset.theme=t==='dark'||t==='light'?t:(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch(e){document.documentElement.dataset.theme='light'}</script><meta name="theme-color" content="#f1f4f0"><title>Household Resilience Planner by BTC Helper</title>
+<link rel="stylesheet" href="/fieldguide-shell.css">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/btc-helper-logo.svg">
   <meta name="theme-color" content="#111313">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
-  <script>
-    try {
-      const savedTheme = localStorage.getItem('btcHelperTheme');
-      document.documentElement.dataset.theme = savedTheme === 'light' ? 'light' : 'dark';
-    } catch {
-      document.documentElement.dataset.theme = 'dark';
-    }
-  </script>
-  <style>
-    :root { color-scheme:light; --bg:#f7f6ef; --card:#fffefa; --card-soft:#f7f6ef; --ink:#141712; --muted:#4f584c; --line:#d7d2c0; --accent:#526b83; --accent-blue:#2563eb; --accent-soft:#eef1f1; --brand-gold:#f2edd6; --hero-ink:#f8fafc; --hero-muted:#cbd5e1; --secondary-bg:#eef1f1; --secondary-ink:#26394a; --secondary-border:rgba(82,107,131,.45); --warn:#b45309; --bad:#991b1b; --good:#166534; --strong:#155e75; }
-    :root[data-theme="dark"] { color-scheme:dark; --bg:#0b0d0d; --card:#101111; --card-soft:#151615; --ink:#f3f2e8; --muted:#c2cbbd; --line:#343837; --accent:#8aa0ad; --accent-blue:#dbeafe; --accent-soft:rgba(138,160,173,.14); --brand-gold:#f2edd6; --hero-ink:#f8fafc; --hero-muted:#cbd5e1; --secondary-bg:#1b211f; --secondary-ink:#f2edd6; --secondary-border:rgba(242,237,214,.36); --warn:#fb923c; --bad:#fca5a5; --good:#86efac; --strong:#67e8f9; }
-    * { box-sizing:border-box; }
-    html { scroll-behavior:smooth; font-synthesis:none; }
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        animation-duration:.001ms !important;
-        animation-iteration-count:1 !important;
-        scroll-behavior:auto !important;
-        transition-duration:.001ms !important;
-      }
-      html { scroll-behavior:auto; }
-    }
-    body, button, input, select, textarea, summary { font-family:"Noto Sans", "Segoe UI", Roboto, system-ui, sans-serif; }
-    button, input, select, textarea, summary { font:inherit; }
-    .skip-link { position:absolute; left:16px; top:-52px; z-index:1000; border-radius:999px; padding:10px 14px; background:#f2edd6; color:#0d120f; font-weight:950; text-decoration:none; box-shadow:0 12px 28px rgba(0,0,0,.22); }
-    .skip-link:focus { top:14px; outline:3px solid color-mix(in srgb,var(--accent-blue) 58%,transparent); }
-    body { margin:0; padding:0; font-family:"Noto Sans", "Segoe UI", Roboto, system-ui, sans-serif; background:radial-gradient(circle at 20% -10%, color-mix(in srgb,var(--accent) 8%,transparent), transparent 32%), radial-gradient(circle at 90% 10%, rgba(251,191,36,.07), transparent 30%), var(--bg); color:var(--ink); line-height:1.55; }
-    .site-nav { position:sticky; top:0; z-index:20; backdrop-filter:blur(14px); background:color-mix(in srgb,var(--bg) 88%,transparent); border-bottom:1px solid var(--line); box-shadow:0 10px 28px rgba(0,0,0,.14); }
-    .site-nav-inner { max-width:1120px; margin:0 auto; padding:12px 20px; display:flex; align-items:center; justify-content:space-between; gap:18px; }
-    .brand-lockup { display:inline-flex; align-items:center; gap:10px; color:var(--ink); text-decoration:none; min-width:fit-content; }
-    .brand-mark { width:40px; height:40px; border-radius:13px; display:inline-flex; align-items:center; justify-content:center; background:linear-gradient(135deg,#111313,#181a19); border:1px solid color-mix(in srgb,var(--accent) 44%,#34362d); overflow:hidden; }
-    .brand-mark svg, .brand-mark img { width:36px; height:36px; display:block; }
-    .brand-mark .mark-ring, .brand-mark .mark-compass { stroke:var(--accent); } .brand-mark .mark-arc { stroke:#6f8f5f; } .brand-mark .mark-center { stroke:#f3f2e8; fill:none; } .brand-mark .mark-needle { fill:#fbbf24; stroke:none; }
-    .brand-text strong { display:block; font-size:.86rem; letter-spacing:.12em; text-transform:uppercase; line-height:1.1; }
-    .brand-text span { display:block; color:var(--muted); font-size:.78rem; margin-top:2px; }
-    .nav-links { display:flex; align-items:center; gap:6px; flex-wrap:wrap; justify-content:flex-end; }
-    .nav-links a, .theme-toggle { border:1px solid transparent; border-radius:999px; padding:8px 10px; min-width:38px; color:var(--muted); background:transparent; text-decoration:none; font:inherit; font-size:.86rem; font-weight:800; cursor:pointer; }
-    .nav-links a:hover, .nav-links a:focus, .theme-toggle:hover, .theme-toggle:focus { color:var(--ink); background:var(--accent-soft); border-color:color-mix(in srgb,var(--accent) 24%,var(--line)); outline:none; }
-    .nav-links a[aria-current="page"] { color:var(--ink); background:var(--accent-soft); border-color:color-mix(in srgb,var(--accent) 28%,var(--line)); }
-    .theme-toggle { width:40px; height:40px; display:inline-flex; align-items:center; justify-content:center; padding:0; box-shadow:none; }
-    .theme-toggle:hover, .theme-toggle:focus { border-color:color-mix(in srgb,var(--accent) 45%,var(--line)); background:var(--accent-soft); outline:none; }
-    .theme-icon { display:block; margin:0; }
-    .theme-icon-sun, .theme-icon-moon { width:22px; height:22px; }
-    .breadcrumb { display:flex; align-items:center; gap:8px; flex-wrap:wrap; max-width:1120px; margin:40px auto 18px; color:var(--muted); text-decoration:none; font-weight:900; font-family:'JetBrains Mono', ui-monospace, monospace; letter-spacing:.08em; text-transform:uppercase; font-size:.78rem; }
-    .breadcrumb a { color:var(--accent-blue); text-decoration:none; }
-    .breadcrumb a:hover, .breadcrumb a:focus { color:var(--ink); text-decoration:underline; outline:none; }
-    header { max-width:1120px; margin:0 auto 18px; background:radial-gradient(circle at 84% 18%, rgba(251,191,36,.07), transparent 28%), radial-gradient(circle at 78% 74%, color-mix(in srgb,var(--accent) 10%, transparent), transparent 32%), linear-gradient(135deg,#0b0d0d,#171a1a 58%,#111313); border:1px solid color-mix(in srgb,var(--accent) 28%,#050704); border-radius:22px; color:var(--hero-ink); padding:22px 24px; box-shadow:0 16px 44px rgba(0,0,0,.30); }
-    .wrap { max-width:1120px; margin:0 auto; }
-    .breadcrumb, header, .wrap { width:min(1120px, calc(100% - 32px)); }
-    .eyebrow { text-transform:uppercase; letter-spacing:.12em; font-size:.76rem; color:var(--accent-blue); font-weight:900; font-family:'JetBrains Mono', ui-monospace, monospace; }
-    h1 { margin:.25rem 0 .5rem; font-size:clamp(1.9rem, 4vw, 3.25rem); line-height:1.04; }
-    header p { max-width:760px; color:var(--hero-muted); font-size:1rem; }
-    main { padding:0 0 60px; }
-    .grid { display:grid; grid-template-columns: minmax(0, 1fr) minmax(320px, .8fr); gap:22px; align-items:start; }
-    .planner-split { grid-template-columns:minmax(0, 1.05fr) minmax(320px, .78fr); }
-    .input-panel { min-width:0; }
-    .result-panel { position:sticky; top:86px; align-self:start; }
-    .result-panel h2 { margin-bottom:1rem; }
-    @media (max-width: 860px) { .grid { grid-template-columns:1fr; } }
-    .card { background:var(--card); border:1px solid var(--line); border-radius:22px; padding:20px; box-shadow:0 16px 44px rgba(0,0,0,.22); }
-    h2 { margin:0 0 .75rem; font-size:1.25rem; }
-    h3 { margin:1.2rem 0 .5rem; }
-    .input-grid { display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap:14px; }
-    @media (max-width: 640px) { .input-grid { grid-template-columns:1fr; } }
-    label { display:block; font-size:.88rem; font-weight:800; color:var(--ink); }
-    .input-section { grid-column:1 / -1; margin-top:4px; padding-top:10px; border-top:1px solid var(--line); color:var(--muted); font-weight:900; text-transform:uppercase; letter-spacing:.07em; font-size:.78rem; }
-    .input-section:first-child { border-top:0; padding-top:0; }
-    input { width:100%; margin-top:5px; padding:11px 12px; border:1px solid var(--line); border-radius:12px; background:var(--card-soft); color:var(--ink); font:inherit; }
-    input::placeholder { color:color-mix(in srgb,var(--muted) 88%,var(--ink)); opacity:.78; }
-    .hint { color:var(--muted); font-size:.86rem; margin:.25rem 0 0; }
-    .results { display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap:12px; }
-    .metric { border:1px solid var(--line); border-radius:16px; padding:14px; background:var(--card-soft); }
-    .supporting-ratios { margin-top:12px; }
-    .wide { grid-column:1 / -1; }
-    .example-note { margin-top:12px; padding:12px 14px; border:1px dashed var(--line); border-radius:14px; background:var(--card-soft); color:var(--muted); font-size:.9rem; }
-    .why-box { margin-top:14px; border:1px solid var(--line); border-radius:16px; padding:14px; background:var(--card-soft); }
-    .why-box p { margin:.35rem 0 0; }
-    .plan-summary-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-bottom:12px; }
-    .plan-summary-item { min-height:112px; border:1px solid var(--line); border-radius:16px; padding:14px; background:var(--card-soft); }
-    .plan-summary-item.primary { grid-column:1 / -1; min-height:0; background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 14%,var(--card-soft)),var(--card-soft)); }
-    .plan-summary-item span, .plan-next-step span { display:block; color:var(--muted); font-size:.78rem; font-weight:900; letter-spacing:.07em; text-transform:uppercase; }
-    .plan-summary-item strong { display:block; margin-top:4px; font-size:1.2rem; line-height:1.18; }
-    .plan-summary-item p { margin:.35rem 0 0; }
-    .plan-next-step { margin:12px 0 14px; border:1px solid color-mix(in srgb,var(--accent) 34%,var(--line)); border-radius:16px; padding:14px; background:var(--accent-soft); }
-    .plan-next-step strong { display:block; margin-top:4px; line-height:1.35; }
-    @media (max-width: 640px) { .plan-summary-grid { grid-template-columns:1fr; } .plan-summary-item.primary { grid-column:auto; } }
-    .score-card { margin-bottom:14px; padding:16px; border:1px solid var(--line); border-radius:18px; background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 14%,var(--card-soft)),var(--card-soft)); }
-    details { margin-top:14px; border:1px solid var(--line); border-radius:16px; background:var(--card-soft); padding:0; overflow:hidden; }
-    summary { cursor:pointer; padding:12px 14px; font-weight:900; color:var(--ink); }
-    details[open] summary { border-bottom:1px solid var(--line); }
-    .details-body { padding:14px; }
-    .score-row { display:flex; align-items:end; justify-content:space-between; gap:14px; }
-    .score-value { font-size:2.35rem; line-height:1; font-weight:900; }
-    .score-label { color:var(--muted); font-weight:900; text-transform:uppercase; letter-spacing:.07em; font-size:.78rem; }
-    .score-bar { height:10px; border-radius:999px; overflow:hidden; background:color-mix(in srgb,var(--line) 70%,transparent); margin-top:12px; }
-    .score-fill { display:block; height:100%; width:0%; background:linear-gradient(90deg,var(--bad),var(--warn),var(--good)); border-radius:999px; transition:width .18s ease; }
-    .subscores, .scenario-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin-top:12px; }
-    .scenario-grid.is-primary { margin:12px 0 14px; }
-    .supporting-heading { margin:.35rem 0 .25rem; font-size:1rem; }
-    .subscore, .scenario { border:1px solid var(--line); border-radius:14px; padding:12px; background:var(--card-soft); }
-    .subscore strong, .scenario strong { display:block; }
-    .subscore span, .scenario span { color:var(--muted); font-size:.86rem; }
-    .scenario-grid { grid-template-columns:1fr; }
-    .scenario strong { font-size:1rem; }
-    .scenario-metrics { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; margin-top:8px; }
-    .scenario-metrics span { display:block; border-top:1px solid var(--line); padding-top:6px; }
-    .tool-row { display:flex; flex-wrap:wrap; gap:10px; margin-top:12px; }
-    .tool-row button { margin-top:0; }
-    .file-label { display:inline-flex; align-items:center; border:1px solid var(--secondary-border); border-radius:999px; padding:10px 14px; background:var(--secondary-bg); color:var(--secondary-ink); font-weight:900; cursor:pointer; }
-    .file-label input { display:none; }
-    .method-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-top:12px; }
-    @media (max-width: 640px) { .method-grid { grid-template-columns:1fr; } }
-    .method-card { border:1px solid var(--line); border-radius:16px; padding:14px; background:var(--card-soft); }
-    .method-card strong { display:block; margin-bottom:4px; }
-    .summary-card { margin-top:18px; }
-    .start-panel { display:grid; grid-template-columns:1.1fr repeat(3,minmax(150px,.7fr)); gap:12px; margin:0 0 18px; }
-    .start-card { border:1px solid var(--line); border-radius:18px; padding:16px; background:var(--card); box-shadow:0 10px 28px rgba(0,0,0,.14); }
-    .start-card.primary { background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 14%,var(--card)),var(--card)); }
-    .start-card strong { display:block; margin-bottom:5px; color:var(--ink); }
-    .step-number { display:inline-flex; align-items:center; justify-content:center; width:26px; height:26px; margin-bottom:8px; border-radius:999px; background:var(--accent-soft); color:var(--ink); font-weight:900; }
-    @media (max-width:900px) { .start-panel { grid-template-columns:1fr 1fr; } .start-card.primary { grid-column:1 / -1; } }
-    @media (max-width:620px) { .start-panel { grid-template-columns:1fr; } }
-    @media print { body { background:white; color:#111; padding:0; } .theme-toggle,.breadcrumb,button,.file-label,.research-links { display:none !important; } header,.card { box-shadow:none; border:1px solid #ddd; break-inside:avoid; } .grid { grid-template-columns:1fr; } .result-panel { position:static; } }
-    .metric .label { color:var(--muted); font-size:.8rem; font-weight:800; text-transform:uppercase; letter-spacing:.07em; }
-    .metric .value { font-size:1.35rem; font-weight:900; margin-top:3px; }
-    .status { padding:12px 14px; border-radius:16px; border:1px solid var(--line); margin:0 0 14px; }
-    .status.fragile { background:color-mix(in srgb,var(--bad) 10%,var(--card)); border-color:color-mix(in srgb,var(--bad) 45%,var(--line)); color:var(--bad); }
-    .status.stabilizing { background:color-mix(in srgb,var(--warn) 10%,var(--card)); border-color:color-mix(in srgb,var(--warn) 45%,var(--line)); color:var(--warn); }
-    .status.baseline { background:color-mix(in srgb,var(--good) 10%,var(--card)); border-color:color-mix(in srgb,var(--good) 45%,var(--line)); color:var(--good); }
-    .status.strong { background:color-mix(in srgb,var(--strong) 10%,var(--card)); border-color:color-mix(in srgb,var(--strong) 45%,var(--line)); color:var(--strong); }
-    .status strong { display:block; font-size:1rem; }
-    ul { padding-left:1.2rem; }
-    .small { color:var(--muted); font-size:.9rem; }
-    .pill { display:inline-flex; gap:6px; align-items:center; border:1px solid var(--line); background:var(--card-soft); border-radius:999px; padding:6px 10px; margin:4px 4px 0 0; font-weight:800; font-size:.82rem; color:var(--ink); text-decoration:none; }
-    a.pill:hover, a.pill:focus { border-color:var(--accent); color:var(--accent-blue); outline:none; }
-    .disclaimer { margin-top:18px; padding:14px; border-left:4px solid var(--accent); background:var(--accent-soft); color:var(--ink); border-radius:12px; }
-    button { border:1px solid color-mix(in srgb,var(--brand-gold) 72%,#0d120f); border-radius:999px; padding:11px 16px; background:var(--brand-gold); color:#0d120f; font-weight:900; cursor:pointer; margin-top:14px; box-shadow:0 10px 24px rgba(0,0,0,.12); }
-    button.secondary { background:var(--secondary-bg); color:var(--secondary-ink); border-color:var(--secondary-border); }
-    .site-footer { max-width:1120px; margin:0 auto; padding:28px 20px 44px; color:var(--muted); }
-    .site-footer-inner { border-top:1px solid var(--line); padding-top:22px; display:grid; grid-template-columns:minmax(0,1.2fr) minmax(260px,.8fr); gap:22px; }
-    .footer-links { display:flex; flex-wrap:wrap; gap:10px; }
-    .footer-links a { color:var(--muted); text-decoration:none; font-weight:800; }
-    .footer-links a:hover, .footer-links a:focus { color:var(--ink); text-decoration:underline; outline:none; }
-    .menu-toggle { display:none; gap:7px; padding-inline:11px; color:var(--ink); border-color:var(--line); background:color-mix(in srgb,var(--card) 72%,transparent); }
-    .menu-toggle-bars { width:15px; height:10px; position:relative; display:inline-block; border-top:2px solid currentColor; border-bottom:2px solid currentColor; }
-    .menu-toggle-bars::after { content:''; position:absolute; left:0; right:0; top:3px; border-top:2px solid currentColor; }
-    .site-nav { z-index:50; background:color-mix(in srgb,var(--bg) 92%,transparent); }
-    .site-nav-inner { display:grid; grid-template-columns:auto 1fr; min-height:62px; padding:10px 20px; }
-    .brand-mark { width:34px; height:34px; border-radius:10px; }
-    .brand-mark svg, .brand-mark img { width:30px; height:30px; }
-    .brand-text strong { font-size:.82rem; }
-    .brand-text span { font-size:.72rem; }
-    .nav-links { gap:4px; }
-    .nav-links a, .theme-toggle, .menu-toggle { position:static; box-shadow:none; display:inline-flex; align-items:center; justify-content:center; min-height:36px; min-width:36px; padding:7px 9px; font-size:.82rem; }
-    .site-nav .menu-toggle { display:none; }
-    .site-footer-inner { border:1px solid var(--line); border-radius:24px; padding:24px; display:grid; grid-template-columns:minmax(0,1.2fr) repeat(3,minmax(150px,.55fr)); gap:22px; background:linear-gradient(135deg,color-mix(in srgb,var(--card) 94%,transparent),color-mix(in srgb,var(--accent-soft) 36%,var(--card))); box-shadow:0 16px 44px rgba(0,0,0,.10); }
-    .footer-brand strong { display:block; color:var(--ink); letter-spacing:.08em; text-transform:uppercase; font-size:.86rem; }
-    .footer-brand p, .footer-note { margin:.45rem 0 0; color:var(--muted); font-size:.9rem; }
-    .footer-column-title { color:var(--ink); font-weight:900; margin-bottom:10px; font-size:.86rem; display:flex; align-items:center; gap:8px; }
-    .footer-icon { width:22px; height:22px; border-radius:8px; display:inline-flex; align-items:center; justify-content:center; background:var(--accent-soft); color:var(--ink); border:1px solid var(--line); font-size:.82rem; line-height:1; }
-    .footer-links a { display:inline-flex; align-items:center; gap:7px; }
-    .footer-links a .link-icon { color:var(--accent); font-size:.86rem; width:1.1em; text-align:center; }
-    @media (max-width:860px) { .site-nav-inner { grid-template-columns:1fr auto; gap:10px; min-height:56px; padding:9px 14px; } .menu-toggle { display:inline-flex; } .nav-links { display:none; grid-column:1 / -1; width:100%; grid-template-columns:1fr 1fr; gap:8px; padding:8px 0 4px; border-top:1px solid var(--line); } .site-nav.is-open .nav-links { display:grid; } .nav-links a, .theme-toggle { justify-content:flex-start; width:100%; border-color:var(--line); background:color-mix(in srgb,var(--card) 74%,transparent); padding:9px 10px; } .theme-toggle { justify-content:center; } .brand-text span { display:none; } .site-footer-inner { grid-template-columns:1fr 1fr; padding:20px; } .footer-brand { grid-column:1 / -1; } }
-    @media (max-width:560px) { .site-nav-inner { padding:4px 12px; } .brand-mark { width:32px; height:32px; } .brand-mark svg, .brand-mark img { width:28px; height:28px; } .brand-text strong { font-size:.78rem; } .menu-toggle { min-height:34px; padding:6px 10px; font-size:.8rem; } .site-footer-inner { grid-template-columns:1fr; border-radius:20px; } }
 
-    .menu-toggle { gap:8px; min-height:34px; padding:7px 11px; border-radius:999px; font-weight:900; }
-    .menu-toggle-icon { width:16px; height:14px; position:relative; display:inline-block; flex:0 0 auto; }
-    .menu-toggle-icon span { position:absolute; left:0; right:0; height:2px; border-radius:999px; background:currentColor; display:block; transform-origin:center; transition:top .16s ease, transform .16s ease, opacity .16s ease; }
-    .menu-toggle-icon span:nth-child(1) { top:1px; }
-    .menu-toggle-icon span:nth-child(2) { top:6px; }
-    .menu-toggle-icon span:nth-child(3) { top:11px; }
-    .site-nav.is-open .menu-toggle-icon span:nth-child(1) { top:6px; transform:rotate(45deg); }
-    .site-nav.is-open .menu-toggle-icon span:nth-child(2) { opacity:0; }
-    .site-nav.is-open .menu-toggle-icon span:nth-child(3) { top:6px; transform:rotate(-45deg); }
-    .theme-toggle { gap:8px; }
-    .theme-toggle .theme-icon { margin:0; }
-    .theme-toggle-label { display:none; font-size:.83rem; font-weight:900; }
-    .footer-icon, .footer-links a .link-icon { display:none; }
-    .footer-column-title { gap:0; letter-spacing:.09em; text-transform:uppercase; font-size:.75rem; color:var(--muted); }
-    .footer-links { gap:6px; }
-    .footer-links a { gap:0; color:color-mix(in srgb,var(--ink) 78%,var(--muted)); }
-    @media (max-width:860px) {
-      .site-nav-inner { gap:8px; min-height:54px; padding:8px 14px; }
-      .site-nav .menu-toggle { display:inline-flex; }
-      .nav-links { grid-template-columns:repeat(2,minmax(0,1fr)); gap:6px; margin:6px 0 2px; padding:7px; border:1px solid var(--line); border-radius:16px; background:color-mix(in srgb,var(--card) 92%,transparent); box-shadow:0 18px 44px rgba(0,0,0,.16); }
-      .site-nav.is-open .nav-links { display:grid; }
-      .nav-links a, .theme-toggle { width:100%; min-height:36px; justify-content:flex-start; gap:8px; padding:8px 10px; border:0; border-radius:12px; background:transparent; color:var(--ink); }
-      .nav-links a:hover, .nav-links a:focus, .theme-toggle:hover, .theme-toggle:focus { background:var(--accent-soft); border-color:transparent; text-decoration:none; }
-      .theme-toggle { height:auto; grid-column:1 / -1; }
-      .theme-toggle-label { display:inline; }
-      .menu-toggle-label-text { min-width:36px; text-align:left; }
-      .theme-toggle .theme-icon { flex:0 0 auto; }
-      .site-footer { padding-top:24px; }
-      .site-footer-inner { grid-template-columns:1fr; gap:18px; padding:20px; }
-      .footer-brand { grid-column:auto; }
-      .result-panel { position:static; }
-    }
-    @media (max-width:560px) {
-      .site-footer { padding:24px 12px 40px; }
-      .site-footer-inner { width:100%; min-width:0; border-radius:18px; padding:18px; gap:18px; overflow:hidden; }
-      .site-footer-inner > * { min-width:0; }
-      .footer-column-title { margin-bottom:8px; }
-      .footer-links { display:grid; grid-template-columns:1fr; gap:6px; align-items:stretch; }
-      .footer-links a { width:100%; min-height:32px; align-items:center; padding:2px 0; line-height:1.25; overflow-wrap:anywhere; }
-    }
-    @media (max-width:340px) { .nav-links { grid-template-columns:1fr; } .theme-toggle { grid-column:auto; } }
-  </style>
-</head>
-<body>
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-  <nav class="site-nav" aria-label="BTC Helper site navigation">
-    <div class="site-nav-inner">
-      <a class="brand-lockup" href="/index.html" aria-label="BTC Helper home">
-        <span class="brand-mark"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
-          <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path class="mark-arc" d="M17 23c-4 6-4 14 0 21 4 7 12 11 20 8 7-2 13-8 14-16 1-5-1-10-4-14" stroke-width="3.5"></path>
-            <path class="mark-compass" d="M22 24v20M42 24v20" stroke-width="2.8" opacity="0.92"></path>
-            <path class="mark-center" d="M24 30v8M28 21v15M32 15v27M36 18v20M40 24v9" stroke-width="2.8"></path>
-          </g>
-          <circle class="mark-needle" cx="28" cy="18" r="2"></circle>
-        </svg></span>
-        <span class="brand-text"><strong>BTC Helper</strong><span>Resilient accumulation</span></span>
-      </a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav-links"><span class="menu-toggle-icon" aria-hidden="true"><span></span><span></span><span></span></span><span class="menu-toggle-label-text">Menu</span></button>
-      <div class="nav-links" id="site-nav-links">
-        <a href="/index.html#today">Today</a>
-        <a href="/planner.html">My Plan</a>
-        <a href="/insights.html">Insights</a>
-        <a href="/track.html">Track</a>
-        <a href="/updates.html">Updates</a>
-        <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Switch theme"><svg aria-hidden="true" class="theme-icon theme-icon-moon" viewBox="0 0 24 24"><path d="M20.4 14.7A8.3 8.3 0 0 1 9.3 3.6 8.7 8.7 0 1 0 20.4 14.7Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="theme-toggle-label">Theme</span></button>
-      </div>
-    </div>
-  </nav>
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/planner.html">My Plan</a><span>/</span><span>Household Resilience</span></nav>
+<link rel="canonical" href="https://btchelper.app/household-resilience-planner.html"><link rel="stylesheet" href="/port-styles/701a30b33f85.css"><link rel="stylesheet" href="/port.css"></head>
+<body><a class="skip" href="#main-content">Skip to content</a>
+<header class="masthead">
+<div class="mast"><a class="mark" href="/index.html">BTC Helper<span>Money, household and Bitcoin, in that order</span></a>
+<nav aria-label="Sections"><ul><li><a href="/sound-money.html">Learn</a></li><li><a href="/household.html" aria-current="true">Your household</a></li><li><a href="/today.html">Bitcoin today</a></li><li><a href="/research.html">Research</a></li></ul></nav>
+<div class="tools"><button class="theme-toggle" type="button" id="theme-toggle" aria-label="Switch theme"><svg aria-hidden="true" class="theme-icon theme-icon-moon" viewBox="0 0 24 24"><path d="M20.4 14.7A8.3 8.3 0 0 1 9.3 3.6 8.7 8.7 0 1 0 20.4 14.7Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="theme-toggle-label">Theme</span></button>
+<button class="menu" id="route-open" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="route"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="4" cy="4" r="2.4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="16" cy="16" r="2.4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M6.4 4H12a3 3 0 010 6H8a3 3 0 000 6h5.6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><span class="menu-label">Sections</span></button></div></div></header>
+<dialog class="sheet" id="route" aria-labelledby="route-h"><div class="grab" aria-hidden="true"></div>
+<div class="sheet-head"><h2 id="route-h">Sections</h2><button class="sheet-close" type="button">Close</button></div>
+<ol><li class=""><a href="/sound-money.html"><b>Learn</b><span>Sound money, household foundations and why Bitcoin.</span></a></li><li class=""><a href="/household.html" aria-current="true"><b>Your household</b><span>A budget check, a workbook and a detailed resilience check.</span></a></li><li class="opt"><a href="/today.html"><b>Bitcoin today</b><span>Optional: a rule-based daily read of the Bitcoin market. It never says what you can afford.</span></a></li><li class=""><a href="/research.html"><b>Research</b><span>Papers, the weekly brief and what the evidence can show.</span></a></li></ol><a class="home" href="/index.html">Home</a></dialog>
+<nav class="chapters" aria-label="Your household"><ul><li><a href="/household.html">Overview</a></li><li><a href="/plan.html">Household Planner</a></li><li><a href="/workbook.html">Budget workbook</a></li><li><a href="/household-resilience-planner.html" aria-current="page">Detailed resilience check</a></li></ul></nav>
+<section class="port port-exterior" aria-label="Page introduction"><nav class="breadcrumb" aria-label="Breadcrumb"><a href="/planner.html">My Plan</a><span>/</span><span>Household Resilience</span></nav>
   <header>
     <div class="wrap">
       <div class="eyebrow">BTC Helper Household Tool · local-only</div>
       <h1>Household Resilience Planner</h1>
       <p>Estimate whether a monthly plan has enough room, cash buffer, and debt flexibility to support durable long-term accumulation.</p>
     </div>
-  </header>
-  <main class="wrap" id="main-content">
+  </header></section>
+<main id="main-content" class="port">
     <section class="start-panel" aria-label="How to use the planner">
       <div class="start-card primary"><strong>Start here</strong><span class="small">Enter rough monthly numbers. The planner turns them into a plain resilience posture, biggest bottleneck, and first practical next step. Nothing leaves this browser.</span></div>
       <div class="start-card"><span class="step-number">1</span><strong>Monthly room</strong><span class="small">Can income cover essentials, debt, irregular bills, and optional accumulation?</span></div>
@@ -302,7 +73,7 @@
               <label class="file-label">Import JSON <input id="importJson" type="file" accept="application/json,.json"></label>
               <button class="secondary" id="printSummary">Print summary</button>
             </div>
-            <p class="small" id="saveStatus">This prototype does not save unless you choose “Save locally.” Local browser profiles are not encrypted by BTC Helper; use Clear this device on shared computers.</p>
+            <p class="small" id="saveStatus">This planner does not save unless you choose “Save locally.” Local browser profiles are not encrypted by BTC Helper; use Clear this device on shared computers.</p>
           </div>
         </details>
         <div id="exampleNote" class="example-note" hidden>This is a fictional teaching example only. It does not come from any real household data.</div>
@@ -387,7 +158,7 @@
             </div>
             <h3 class="research-links">Research links</h3>
             <a class="pill research-links" href="/emergency-buffers-borrowed-resilience-household-hardship.html">Emergency buffers / SHED</a>
-            <a class="pill research-links" href="/borrowed-resilience-summary.html">Borrowed Resilience</a>
+            <a class="pill research-links" href="/borrowed-resilience-summary.html">Borrowed Resilience (national credit trends, background)</a>
             <a class="pill research-links" href="/quiet-tax-summary.html">Quiet Tax</a>
             <a class="pill research-links" href="/medical-financial-fragility-meps.html">Medical Fragility / MEPS</a>
             <a class="pill research-links" href="/confidence-ledger-summary.html">Confidence Ledger</a>
@@ -404,8 +175,8 @@
         <div class="details-body">
           <p class="small">The score rewards household conditions that make long-horizon accumulation more durable: positive margin, emergency liquidity, manageable debt pressure, survivable essential costs, and accumulation that does not consume all available slack.</p>
           <div class="method-grid">
-            <div class="method-card"><strong>Cash-flow margin</strong><span>Higher monthly slack improves resilience because shocks are less likely to force borrowing or asset sales.</span></div>
-            <div class="method-card"><strong>Emergency buffer</strong><span>Liquid savings are treated as a base layer because the research links buffers to lower hardship risk.</span></div>
+            <div class="method-card"><strong>Cash-flow margin</strong><span>Monthly slack leaves room to meet surprises without borrowing or selling assets.</span></div>
+            <div class="method-card"><strong>Emergency buffer</strong><span>Liquid savings are treated as a base layer. In US survey data, adults without emergency savings report bill-payment problems, outside help and medical debt far more often than those with savings. That is an association, not proof that savings prevent hardship.</span></div>
             <div class="method-card"><strong>Debt pressure</strong><span>Required debt payments reduce flexibility, especially when paired with thin buffers.</span></div>
             <div class="method-card"><strong>Essential costs</strong><span>Housing, food, utilities, insurance, and irregular essentials can crowd out long-horizon planning.</span></div>
             <div class="method-card"><strong>Medical exposure</strong><span>Medical and insurance costs can operate like a resilience premium that must be carried before savings can build.</span></div>
@@ -422,15 +193,8 @@
       </details>
     </section>
   </main>
-  <footer class="site-footer" id="contact">
-    <div class="site-footer-inner">
-      <div class="footer-brand"><strong>BTC Helper</strong><p>A private Bitcoin accumulation plan, a source-aware model posture, and a public decision record.</p><p class="footer-note">Educational research tool only. Not financial advice, investment advice, or a recommendation to buy or sell any asset.</p></div>
-      <div><div class="footer-column-title">Product</div><div class="footer-links"><a href="/index.html#today">Today</a><a href="/planner.html">My Plan</a><a href="/insights.html">Insights</a><a href="/track.html">Track</a><a href="/updates.html">Updates</a></div></div>
-      <div><div class="footer-column-title">Research</div><div class="footer-links"><a href="/weekly-macro-thesis/">Weekly macro</a><a href="/documents-and-research.html">Research library</a><a href="/public-proof-of-work-methodology.html">Methodology</a><a href="/household-resilience-planner.html">Household resilience</a></div></div>
-      <div><div class="footer-column-title">Trust</div><div class="footer-links"><a href="/trust.html">Trust hub</a><a href="/data-sources.html">Source health</a><a href="/about.html">About</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a><a href="https://x.com/btchelperapp">BTC Helper on X</a></div></div>
-    </div>
-  </footer>
-  <script>
+<footer class="site"><nav class="foot-cols" aria-label="Site"><div><h2>Learn</h2><ul><li><a href="/sound-money.html">Sound money</a></li><li><a href="/resilience.html">Household foundations</a></li><li><a href="/why-bitcoin.html">Why Bitcoin?</a></li></ul></div><div><h2>Your household</h2><ul><li><a href="/household.html">Overview</a></li><li><a href="/plan.html">Household Planner</a></li><li><a href="/workbook.html">Budget workbook</a></li><li><a href="/household-resilience-planner.html">Detailed resilience check</a></li></ul></div><div><h2>Bitcoin today</h2><ul><li><a href="/today.html">Today's read</a></li><li><a href="/public-proof-of-work-methodology.html">Why this reading?</a></li><li><a href="/data-sources.html">Data and sources</a></li><li><a href="/archive.html">History</a></li><li><a href="/planner.html">My Plan</a></li></ul></div><div><h2>Research</h2><ul><li><a href="/research.html">Research home</a></li><li><a href="/documents-and-research.html">All papers</a></li><li><a href="/weekly.html">Weekly brief</a></li><li><a href="/validation.html">What the evidence can show</a></li></ul></div><div><h2>About</h2><ul><li><a href="/about.html">About</a></li><li><a href="/contact.html">Contact</a></li><li><a href="/privacy.html">Privacy</a></li><li><a href="/terms.html">Terms</a></li><li><a href="/notices.html">Notices</a></li><li><a href="/updates.html">Updates</a></li><li><a href="/site-map.html">Site map</a></li><li><a href="https://x.com/btchelperapp">BTC Helper on X</a></li></ul></div></nav><p>Educational material, not personalised financial advice, investment advice, or a recommendation to buy or sell any asset. Doing nothing different is always a valid choice.</p></footer>
+<script src="/nav.js"></script><script>
     const btcHelperThemeStorageKey = 'btcHelperTheme';
     function setBtcHelperTheme(theme, persist = true) {
       const next = theme === 'light' ? 'light' : 'dark';
@@ -821,5 +585,4 @@
     ids.forEach(id => document.getElementById(id).addEventListener('input', () => { document.getElementById('exampleNote').hidden = true; document.getElementById('saveStatus').textContent = 'Unsaved changes in this browser.'; recalc(); }));
     try { const saved = JSON.parse(localStorage.getItem(storageKey) || 'null'); if (saved?.profile) { applyProfile(saved.profile); document.getElementById('saveStatus').textContent = 'Loaded saved local profile from this browser.'; } else recalc(); } catch { recalc(); }
   </script>
-</body>
-</html>
+</body></html>

@@ -1,0 +1,72 @@
+/* Current-site stylesheet 497d60e19993, scoped to <main class="port"> and mapped to Field guide tokens by port.py. */
+.port { --bg: var(--paper); --card: var(--white); --card-soft: var(--tint); --muted: var(--soft); --line: var(--rule); --accent: var(--river); --accent-blue: var(--river); --accent-soft: var(--river-15); --brand-gold: var(--brass); --btc-amber: var(--brass); --btc-amber-soft: var(--brass-bg); --muted-positive: var(--river); --muted-caution: var(--brass-ink); --muted-adverse: var(--alert); --status-live: var(--river); --status-live-text: var(--river-dk); --status-degraded: var(--brass); --status-degraded-text: var(--brass-ink); --status-warn: var(--brass); --hero-ink: var(--ink); --hero-muted: var(--soft); --secondary-bg: var(--tint); --secondary-ink: var(--ink); --secondary-border: var(--rule); --dark-card-bg: var(--tint); --dark-card-ink: var(--ink); --dark-card-muted: var(--soft); }
+.port{ font-synthesis:none; }
+.port, .port button, .port input, .port select, .port textarea, .port summary{ font-family:"Field Sans", system-ui, sans-serif; }
+.port button, .port input, .port select, .port textarea, .port summary{ font:inherit; }
+.port code, .port pre, .port .machine-record{ font-family:"DejaVu Sans Mono", ui-monospace, monospace; }
+.port .numeric, .port .price, .port .percentage, .port .timestamp{ font-variant-numeric:tabular-nums; }
+.port *{ box-sizing: border-box; }
+.port .breadcrumb{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin:0 0 16px; color:var(--muted); font-size:.78rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+.port .breadcrumb a{ color:var(--accent-blue); text-decoration:none; }
+.port .breadcrumb a:hover, .port .breadcrumb a:focus{ color:var(--ink); text-decoration:underline; outline:none; }
+.port .breadcrumb span{ min-width:0; }
+.port{ scroll-behavior:smooth; }
+.port{ margin:0; font-family:"Field Sans", system-ui, sans-serif; background:radial-gradient(circle at 20% -10%, color-mix(in srgb,var(--accent) 8%,transparent), transparent 32%), radial-gradient(circle at 90% 10%, var(--brass-bg), transparent 30%), var(--bg); color:var(--ink); line-height:1.62; }
+main.port{ max-width: 980px; margin:0 auto; padding:32px 20px 64px; }
+.port .back-link{ display:inline-block; margin-bottom:18px; color:var(--accent-blue); text-decoration:none; font-weight:800; font-family:"DejaVu Sans Mono", ui-monospace, monospace; letter-spacing:.08em; text-transform:uppercase; font-size:.76rem; }
+.port .back-link:hover{ text-decoration:underline; }
+.port .hero, .port .card{ background:var(--card); border:1px solid var(--line); border-radius:22px; padding:28px; box-shadow:0 16px 44px rgba(0,0,0,.30); margin-bottom:18px; }
+.port .hero{ background:radial-gradient(circle at 84% 18%, var(--brass-bg), transparent 28%), radial-gradient(circle at 78% 74%, color-mix(in srgb,var(--accent) 10%, transparent), transparent 32%), linear-gradient(135deg,var(--tint),var(--tint) 58%,var(--tint)); border-color:color-mix(in srgb,var(--accent) 28%,var(--rule)); color:var(--hero-ink); }
+.port .eyebrow{ color:var(--accent-blue); font-family:"DejaVu Sans Mono", ui-monospace, monospace; font-weight:900; letter-spacing:.12em; text-transform:uppercase; font-size:.76rem; margin-bottom:10px; }
+.port h1, .port h2, .port h3, .port h4, .port p{ margin-top:0; }
+.port h1{ letter-spacing:-.035em; line-height:1.08; margin-bottom:10px; font-size:clamp(2rem,4vw,3.1rem); }
+.port h2{ margin-top:34px; margin-bottom:10px; font-size:1.45rem; letter-spacing:-.015em; }
+.port h3{ margin-top:24px; margin-bottom:8px; font-size:1.1rem; }
+.port h4{ margin-top:18px; margin-bottom:6px; }
+.port .subtitle, .port .small, .port figcaption{ color:var(--muted); }
+.port .doc-byline{ color:var(--hero-ink); font-weight:800; margin:8px 0 0; }
+.port .hero .subtitle{ color:var(--hero-muted); }
+.port .actions{ display:flex; flex-wrap:wrap; gap:10px; margin-top:18px; }
+.port .button{ display:inline-flex; align-items:center; gap:8px; border:1px solid var(--brand-gold); background:var(--river); color:var(--ink); text-decoration:none; border-radius:999px; padding:10px 14px; font-weight:900; ;color:var(--white)}
+.port .button.secondary{ background:var(--secondary-bg); color:var(--secondary-ink); border-color:var(--secondary-border); }
+.port .hero .button.secondary, .port .doc-card .button.secondary{ background:color-mix(in srgb, var(--ink) 10%, transparent); color:var(--ink); border-color:color-mix(in srgb, var(--ink) 25%, transparent); }
+.port .note{ border-left:4px solid var(--accent); background:var(--accent-soft); padding:12px 14px; border-radius:12px; color:var(--ink); }
+.port .toc{ display:grid; gap:4px; margin-top:18px; padding:14px; background:color-mix(in srgb, var(--ink) 6%, transparent); border:1px solid color-mix(in srgb, var(--ink) 14%, transparent); border-radius:14px; }
+.port .toc-title{ font-weight:900; margin-bottom:4px; color:var(--hero-ink); }
+.port .toc a{ color:var(--accent-blue); text-decoration:none; }
+.port .toc a:hover{ text-decoration:underline; }
+.port .toc-3{ padding-left:14px; font-size:.94rem; }
+.port .doc-body > h1:first-child, .port .doc-body > h2:first-child{ margin-top:0; }
+.port ul, .port ol{ margin:8px 0 16px 22px; padding:0; }
+.port li{ margin:5px 0; }
+.port blockquote{ border-left:4px solid var(--accent); margin:16px 0; padding:12px 16px; background:color-mix(in srgb, var(--river) 12%, transparent); border-radius:12px; color:var(--ink); }
+.port code{ background:color-mix(in srgb, var(--ink) 8%, transparent); padding:2px 6px; border-radius:6px; color:var(--secondary-ink); }
+.port hr{ border:0; border-top:1px solid var(--line); margin:24px 0; }
+.port .table-wrap{ overflow-x:auto; margin:14px 0 20px; border:1px solid var(--line); border-radius:14px; }
+.port table{ border-collapse:collapse; min-width:100%; font-size:.92rem; background:var(--card); }
+.port th, .port td{ border-bottom:1px solid var(--line); padding:9px 10px; text-align:left; vertical-align:top; }
+.port th{ background:var(--tint); font-weight:900; color:var(--hero-ink); }
+.port tr:last-child td{ border-bottom:0; }
+.port figure{ margin:22px 0; }
+.port figure img{ max-width:100%; display:block; border:1px solid var(--line); border-radius:14px; background:white; }
+.port figcaption{ font-size:.92rem; margin-top:8px; }
+.port .doc-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; margin-top:18px; }
+.port .doc-card{ display:block; color:inherit; text-decoration:none; border:1px solid var(--line); border-radius:18px; padding:18px; background:var(--dark-card-bg); }
+.port .doc-card:hover, .port .doc-card:focus{ border-color:var(--accent); outline:none; }
+.port .doc-title{ font-weight:900; color:var(--hero-ink); margin-bottom:6px; }
+.port .doc-meta{ color:var(--dark-card-muted); font-size:.92rem; }
+.port .research-identity-panel{ border:1px solid var(--line); border-radius:16px; background:var(--card-soft); padding:16px; margin-bottom:18px; }
+:root[data-theme="dark"] .port .research-identity-panel{ background:color-mix(in srgb, var(--ink) 4%, transparent); }
+.port .identity-pill-row{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom:12px; }
+.port .identity-pill-row span{ display:inline-flex; border:1px solid var(--line); border-radius:999px; padding:5px 9px; background:var(--card); color:var(--ink); font-family:"DejaVu Sans Mono", ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.07em; text-transform:uppercase; }
+.port .identity-summary{ display:grid; gap:10px; margin:0; }
+.port .identity-summary div{ border-left:4px solid var(--accent); padding-left:10px; }
+.port .identity-summary dt, .port .identity-summary dd{ margin:0; }
+.port .identity-summary dt{ color:var(--muted); font-family:"DejaVu Sans Mono", ui-monospace, monospace; font-size:.68rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+.port .identity-summary dd{ color:var(--ink); font-weight:720; }
+@media print{.port{ background:var(--white); color:var(--ink); }
+main.port{ max-width:none; padding:0; }
+.port .back-link, .port .actions, .port .toc{ display:none; }
+.port .hero, .port .card{ box-shadow:none; border:0; padding:0; background:var(--white); color:var(--ink); }
+.port h2, .port h3{ break-after:avoid; }
+.port figure, .port table{ break-inside:avoid; }}

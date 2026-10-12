@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<script>try{const t=localStorage.getItem('btcHelperTheme');document.documentElement.dataset.theme=t==='dark'||t==='light'?t:(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}catch(e){document.documentElement.dataset.theme='light'}</script><meta name="theme-color" content="#f1f4f0"><title>Household Planner</title><meta name="description" content="A local-only household budget and buffer check that works without any Bitcoin."><link rel="canonical" href="https://btchelper.app/plan.html">
+<link rel="stylesheet" href="fieldguide.css"></head>
+<body><a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+<div class="mast"><a class="mark" href="index.html">BTC Helper<span>Money, household and Bitcoin, in that order</span></a>
+<nav aria-label="Sections"><ul><li><a href="sound-money.html">Learn</a></li><li><a href="household.html" aria-current="true">Your household</a></li><li><a href="today.html">Bitcoin today</a></li><li><a href="research.html">Research</a></li></ul></nav>
+<div class="tools"><button class="theme-toggle" type="button" id="theme-toggle" aria-label="Switch theme"><svg aria-hidden="true" class="theme-icon theme-icon-moon" viewBox="0 0 24 24"><path d="M20.4 14.7A8.3 8.3 0 0 1 9.3 3.6 8.7 8.7 0 1 0 20.4 14.7Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="theme-toggle-label">Theme</span></button>
+<button class="menu" id="route-open" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="route"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="4" cy="4" r="2.4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="16" cy="16" r="2.4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M6.4 4H12a3 3 0 010 6H8a3 3 0 000 6h5.6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><span class="menu-label">Sections</span></button></div></div></header>
+<dialog class="sheet" id="route" aria-labelledby="route-h"><div class="grab" aria-hidden="true"></div>
+<div class="sheet-head"><h2 id="route-h">Sections</h2><button class="sheet-close" type="button">Close</button></div>
+<ol><li class=""><a href="sound-money.html"><b>Learn</b><span>Sound money, household foundations and why Bitcoin.</span></a></li><li class=""><a href="household.html" aria-current="true"><b>Your household</b><span>A budget check, a workbook and a detailed resilience check.</span></a></li><li class="opt"><a href="today.html"><b>Bitcoin today</b><span>Optional: a rule-based daily read of the Bitcoin market. It never says what you can afford.</span></a></li><li class=""><a href="research.html"><b>Research</b><span>Papers, the weekly brief and what the evidence can show.</span></a></li></ol><a class="home" href="index.html">Home</a></dialog>
+<nav class="chapters" aria-label="Your household"><ul><li><a href="household.html">Overview</a></li><li><a href="plan.html" aria-current="page">Household Planner</a></li><li><a href="workbook.html">Budget workbook</a></li><li><a href="household-resilience-planner.html">Detailed resilience check</a></li></ul></nav>
+<main id="main">
+<div class="band" style="padding-bottom:1.5rem"><p class="small" style="margin:0 0 .6rem">Your household · Household Planner</p><h1 class="page">Household Planner</h1>
+<p class="lede">Work out your monthly room, your emergency buffer and a safety floor. It works with no Bitcoin at all.</p></div>
+<div class="planner-page"><div class="planner-main">
+<div class="privacy"><svg viewBox="0 0 22 22" aria-hidden="true"><rect x="4" y="9" width="14" height="10" rx="2" fill="none" stroke="#1e6a66" stroke-width="2"/><path d="M7 9V7a4 4 0 018 0v2" fill="none" stroke="#1e6a66" stroke-width="2"/></svg><p><strong>Your numbers stay in this browser.</strong> Nothing is sent anywhere. Nothing is saved unless you press “Save in this browser”. You can erase it at any time. Leave a box blank, or tick “I don’t know yet”, and the planner will say what it still needs instead of guessing.</p></div>
+<ol class="progress" aria-label="Steps"><li aria-current="step">Monthly money</li><li>Cash</li><li>Your target</li></ol>
+<form id="planner" novalidate>
+<fieldset data-step="1"><legend>Monthly money</legend>
+<div class="field"><label for="income">Monthly take-home income<span class="hint" id="income-hint">After tax, for the whole household.</span></label>
+<input type="text" inputmode="decimal" autocomplete="off" id="income" name="income" aria-describedby="income-hint income-error">
+<span class="hint" id="income-error" role="alert"></span>
+<label class="check"><input type="checkbox" name="incomeUnknown" aria-label="I don't know my monthly take-home income yet"> I don't know yet</label></div>
+<div class="field"><label for="essentials">Essential costs per month<span class="hint" id="essentials-hint">Housing, food, utilities, insurance, transport, childcare.</span></label>
+<input type="text" inputmode="decimal" autocomplete="off" id="essentials" name="essentials" aria-describedby="essentials-hint essentials-error">
+<span class="hint" id="essentials-error" role="alert"></span>
+<label class="check"><input type="checkbox" name="essentialsUnknown" aria-label="I don't know my essential costs per month yet"> I don't know yet</label></div>
+<div class="field"><label for="debtMin">Minimum debt payments per month<span class="hint" id="debtMin-hint">Enter 0 if you have none.</span></label>
+<input type="text" inputmode="decimal" autocomplete="off" id="debtMin" name="debtMin" aria-describedby="debtMin-hint debtMin-error">
+<span class="hint" id="debtMin-error" role="alert"></span>
+<label class="check"><input type="checkbox" name="debtMinUnknown" aria-label="I don't know my minimum debt payments per month yet"> I don't know yet</label></div>
+<div class="field"><label for="flexible">Flexible spending per month (optional)<span class="hint" id="flexible-hint">Eating out, subscriptions, hobbies.</span></label>
+<input type="text" inputmode="decimal" autocomplete="off" id="flexible" name="flexible" aria-describedby="flexible-hint flexible-error">
+<span class="hint" id="flexible-error" role="alert"></span>
+<label class="check"><input type="checkbox" name="flexibleUnknown" aria-label="I don't know my flexible spending per month yet"> I don't know yet</label></div>
+<div class="actions"><button type="button" data-go="next">Next: cash</button><button type="button" class="secondary" id="example">Try a fictional example</button></div></fieldset>
+<fieldset data-step="2" hidden><legend>Cash you can reach</legend>
+<div class="field"><label for="cash">Accessible cash<span class="hint" id="cash-hint">Checking, savings, money market. Not retirement accounts, not investments.</span></label>
+<input type="text" inputmode="decimal" autocomplete="off" id="cash" name="cash" aria-describedby="cash-hint cash-error">
+<span class="hint" id="cash-error" role="alert"></span>
+<label class="check"><input type="checkbox" name="cashUnknown" aria-label="I don't know my accessible cash yet"> I don't know yet</label></div>
+<div class="field"><label for="earmarked">Money already earmarked<span class="hint" id="earmarked-hint">Taxes due, known bills, a planned purchase. This is not emergency cash.</span></label>
+<input type="text" inputmode="decimal" autocomplete="off" id="earmarked" name="earmarked" aria-describedby="earmarked-hint earmarked-error">
+<span class="hint" id="earmarked-error" role="alert"></span>
+<label class="check"><input type="checkbox" name="earmarkedUnknown" aria-label="I don't know my money already earmarked yet"> I don't know yet</label></div>
+<div class="actions"><button type="button" class="secondary" data-go="back">Back</button><button type="button" data-go="next">Next: your target</button></div></fieldset>
+<fieldset data-step="3" hidden><legend>Your buffer target</legend>
+<div class="field"><label for="targetMonths">How many months of essentials would you like in reserve?<span class="hint">3 months is a common planning default. Choose what fits your income stability.</span></label>
+<select id="targetMonths" name="targetMonths"><option value="1">1 month</option><option value="3" selected>3 months</option><option value="6">6 months</option></select></div>
+<div class="actions"><button type="button" class="secondary" data-go="back">Back</button><button type="button" data-go="result">See my result</button></div></fieldset>
+</form>
+<p id="result-status" class="small" role="status"></p>
+<section id="result" aria-live="polite" hidden></section>
+<div class="actions" role="group" aria-label="Your data"><button type="button" class="secondary" id="save">Save in this browser</button><button type="button" class="secondary" id="export">Download a copy</button><button type="button" class="secondary" id="erase">Erase</button></div>
+<p id="storage-status" class="small" role="status"></p>
+<details id="assumptions"><summary>Assumptions this planner uses</summary>
+<ul>
+<li id="assumption-A1" tabindex="-1"><span class="kind">Assumption A1</span>: the safety floor has two parts, and both must be met. (1) <strong>Cash:</strong> emergency cash of at least one month of essentials plus minimum debt payments. (2) <strong>Monthly room:</strong> take-home income minus essentials, minimum debt payments and flexible spending is $0 or more, so you are not spending more than you take home. Savings alone do not meet the floor while you spend more than you take home. The one-month figure is an editorial choice, not an evidence-derived optimum. Related research: <a href="emergency-buffers-borrowed-resilience-household-hardship.html"><em>Emergency Buffers, Borrowed Resilience, and Household Hardship</em> (working paper, May 2026)</a>. That paper describes how often adults with and without emergency savings report hardship; it does not set this number. Our research uses two survey measures, whether an adult could cover a $400 expense with cash or its equivalent, and whether they have three months of emergency savings; neither tests a one-month floor.</li>
+<li id="assumption-A2" tabindex="-1"><span class="kind">Assumption A2</span>: you choose the buffer target; 3 months is the default.</li>
+<li id="assumption-A3" tabindex="-1"><span class="kind">Definition A3</span>: earmarked money is not emergency cash.</li>
+<li id="assumption-credit" tabindex="-1">Borrowing capacity is not counted as buffer. This is our choice, not a finding: credit can bridge timing gaps, but its availability, cost and repayment are not guaranteed when a shock arrives. Our choice is stricter than the survey measure our research uses, which counts a credit card paid off at the next statement as cash or its equivalent (<a href="household-resilience-summary.html">Mapping Household Financial Resilience</a>).</li></ul></details>
+<section class="compare-wide" id="planner-vs-market" aria-labelledby="pvm-h"><h2 id="pvm-h">This planner is not a market tool</h2>
+<table class="compare"><caption class="small" style="text-align:left">Planner compared with BTC Helper</caption><thead><tr><th scope="col">Aspect</th><th scope="col">Planner</th><th scope="col">BTC Helper</th></tr></thead><tbody>
+<tr><th scope="row">Answers</th><td>Can my household cover essentials and absorb a shock?</td><td>How do today's Bitcoin conditions score under one rule set?</td></tr>
+<tr><th scope="row">Uses</th><td>Only the numbers you type, in this browser</td><td>Public market data, no household data</td></tr>
+<tr><th scope="row">Needs Bitcoin?</th><td>No</td><td>Only if you already follow a written plan</td></tr></tbody></table>
+<p class="small">The two never combine into one score. No market read overrides your household result: your safety floor, your buffer or your monthly room.</p></section>
+</div>
+<aside class="side" aria-label="About this planner">
+
+<section class="box" aria-labelledby="bf-h"><h2 id="bf-h">Where does Bitcoin fit?</h2><p>Nowhere, unless you want it to. This planner treats any Bitcoin plan as optional investing. It only shows money for optional investing, in any asset, when your safety floor is met, your buffer target is met, and money is left each month (monthly room above $0). A covered floor alone is not enough. A market read, including BTC Helper's, never overrides that.</p></section>
+<section class="box" id="supporting-research" aria-labelledby="sr-h"><h2 id="sr-h">Supporting research</h2><ul class="small" style="padding-left:1.1rem">
+<li><a href="emergency-buffers-borrowed-resilience-household-hardship.html">Emergency Buffers, Borrowed Resilience, and Household Hardship</a> <span class="kind">Evidence</span>: how often adults with and without emergency savings report hardship. An association in survey data, not proof that savings prevent hardship; context for A1, it does not set the number.</li>
+<li><a href="household-resilience-summary.html">Mapping Household Financial Resilience</a> <span class="kind">Background</span>: how the survey measures emergency cash, and why borrowing is treated separately here.</li></ul></section>
+</aside></div></main>
+<footer class="site"><nav class="foot-cols" aria-label="Site"><div><h2>Learn</h2><ul><li><a href="sound-money.html">Sound money</a></li><li><a href="resilience.html">Household foundations</a></li><li><a href="why-bitcoin.html">Why Bitcoin?</a></li></ul></div><div><h2>Your household</h2><ul><li><a href="household.html">Overview</a></li><li><a href="plan.html">Household Planner</a></li><li><a href="workbook.html">Budget workbook</a></li><li><a href="household-resilience-planner.html">Detailed resilience check</a></li></ul></div><div><h2>Bitcoin today</h2><ul><li><a href="today.html">Today's read</a></li><li><a href="public-proof-of-work-methodology.html">Why this reading?</a></li><li><a href="data-sources.html">Data and sources</a></li><li><a href="archive.html">History</a></li><li><a href="planner.html">My Plan</a></li></ul></div><div><h2>Research</h2><ul><li><a href="research.html">Research home</a></li><li><a href="documents-and-research.html">All papers</a></li><li><a href="weekly.html">Weekly brief</a></li><li><a href="validation.html">What the evidence can show</a></li></ul></div><div><h2>About</h2><ul><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li><li><a href="notices.html">Notices</a></li><li><a href="updates.html">Updates</a></li><li><a href="site-map.html">Site map</a></li><li><a href="https://x.com/btchelperapp">BTC Helper on X</a></li></ul></div></nav><p>Educational material, not personalised financial advice, investment advice, or a recommendation to buy or sell any asset. Doing nothing different is always a valid choice.</p></footer>
+<script src="nav.js"></script><script src="theme.js"></script>
+<script>
+// Opening a link to an assumption opens its <details> and moves focus there.
+function openTarget() { const t = location.hash && document.getElementById(location.hash.slice(1)); if (!t) return; const d = t.closest('details'); if (d) d.open = true; t.focus(); }
+addEventListener('hashchange', openTarget); openTarget();
+</script>
+<script src="../suite/assets/planner.js"></script>
+</body></html>

@@ -1,0 +1,57 @@
+/* Field guide finish for ported pages, loaded after the scoped current-site stylesheet (port-styles/*.css).
+   The page container follows the Field guide shell: full-width band, content aligned with the masthead. */
+main.port { display: block; max-width: none; margin: 0; padding: clamp(1.4rem, 3vw, 2.4rem) var(--pad) 4rem; background: var(--paper); color: var(--ink); font: 400 1rem/1.6 "Field Sans", system-ui, sans-serif; }
+main.port h1, main.port h2 { font-family: "Field Display", Georgia, serif; font-weight: 400; letter-spacing: -.012em; color: var(--ink); }
+main.port h3 { font-family: "Field Sans", system-ui, sans-serif; font-weight: 600; color: var(--ink); }
+main.port h1 { line-height: 1.04; }
+main.port p, main.port li, main.port dd { font-family: "Field Text", Georgia, serif; }
+main.port a { color: var(--river); text-underline-offset: 3px; }
+main.port :focus-visible { outline: 3px solid var(--brass); outline-offset: 3px; }
+main.port code, main.port pre { font-family: "DejaVu Sans Mono", ui-monospace, monospace; }
+/* Quieter surfaces, as on the Field guide pages: rules and tints instead of floating cards. */
+main.port * { box-shadow: none !important; }
+main.port .card, main.port .hero, main.port section[class], main.port .doc-card, main.port .read-box, main.port .summary-box, main.port .boundary-card, main.port .trust-card, main.port .contact-card, main.port .model-quality-card, main.port .hero-command-card { border-radius: 12px; }
+main.port .hero-command-card { background: var(--white); border: 1px solid var(--rule); color: var(--ink); }
+main.port .hero-command-card :is(p, span, small) { color: var(--soft); }
+main.port .hero-command-card :is(h2, h3, strong, b) { color: var(--ink); }
+/* Grids sized for the current site's narrower gutters: let them fold instead of overflowing. */
+main.port .strip { grid-template-columns: repeat(auto-fit, minmax(min(100%, 9.5rem), 1fr)); }
+main.port .posture span, main.port .source-status-board-item span { overflow-wrap: anywhere; }
+main.port .source-status-board { grid-template-columns: repeat(auto-fit, minmax(min(100%, 8rem), 1fr)); }
+main.port .source-status-board > :first-child { grid-column: 1 / -1; }
+main.port .planner-durability-item > span { color: var(--text2); }
+/* My Plan: stage labels sit on stacked tints, so they use the stronger text colour; stage buttons are Field guide buttons. */
+/* Later steps were dimmed with opacity (text fell to about 3.3:1); the stage status label already says which step is next. */
+main.port .planner-step-card { opacity: 1; }
+main#main-content.port .planner-stage-status, main#main-content.port .planner-stage-summary { color: var(--text2); }
+main.port .planner-stage-next { background: var(--river); border-color: var(--river); color: var(--white); }
+/* Page-specific regions kept outside <main> (review F2), aligned with the page content. */
+.port-exterior { display: block; padding: clamp(1.2rem, 3vw, 2rem) var(--pad) 0; background: var(--paper); color: var(--ink); font: 400 1rem/1.6 "Field Sans", system-ui, sans-serif; }
+.port-exterior + main.port { padding-top: 1rem; }
+.port-exterior h1, .port-exterior h2 { font-family: "Field Display", Georgia, serif; font-weight: 400; color: var(--ink); }
+.port-exterior p { font-family: "Field Text", Georgia, serif; }
+/* Form controls: a visible boundary at 3:1 or better against the page in both themes (review A1; inherited from the current site). */
+.port :is(input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="hidden"]), select, textarea) { border: 1.5px solid var(--field-rule) !important; }
+.port :is(input[type="checkbox"], input[type="radio"]) { accent-color: var(--river); }
+/* evidence.html: list of every timeline record (equivalent full-size controls for the chart markers). */
+main.port .timeline-records { margin: 1.4rem 0 1.8rem; border-top: 1px solid var(--rule); padding-top: .6rem; }
+main.port .timeline-records h3 { font-family: "Field Display", Georgia, serif; font-weight: 400; font-size: 1.45rem; margin: .6rem 0 .3rem; }
+main.port .tr-group { border-bottom: 1px solid var(--rule); }
+main.port .tr-group > summary { min-height: 44px; display: flex; align-items: center; gap: .6rem; cursor: pointer; font: 600 1rem/1.3 "Field Sans", sans-serif; color: var(--ink); }
+main.port .tr-count { font: 600 .82rem/1 "Field Sans", sans-serif; color: var(--river); background: var(--mist); border-radius: 999px; padding: .25rem .55rem; }
+main.port .tr-list { list-style: none; margin: 0 0 .8rem; padding: 0; }
+main.port .tr-row { display: grid; grid-template-columns: 7.2rem minmax(0, 1.2fr) minmax(0, 1.6fr) auto; gap: .3rem 1rem; align-items: center; padding: .45rem .2rem; border-top: 1px solid var(--rule3); }
+main.port .tr-row[aria-current] { background: var(--mist); box-shadow: inset 3px 0 0 var(--river) !important; }
+main.port .tr-row:target { background: var(--mist); }
+main.port .tr-date { font: 600 .9rem/1.3 "DejaVu Sans Mono", ui-monospace, monospace; color: var(--ink); }
+main.port .tr-label { font: 600 .95rem/1.35 "Field Sans", sans-serif; color: var(--ink); }
+main.port .tr-meta { font: 400 .88rem/1.4 "Field Sans", sans-serif; color: var(--text2); }
+main.port .tr-show { min-height: 44px; min-width: 44px; padding: .5rem .9rem; border-radius: 999px; border: 1.5px solid var(--river); background: var(--white); color: var(--river); font: 600 .9rem/1 "Field Sans", sans-serif; cursor: pointer; }
+main.port .tr-show:hover { background: var(--river); color: var(--white); }
+main.port .tr-visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+main.port #replay-detail:focus-visible, main.port #replay-detail:focus { outline: 3px solid var(--brass); outline-offset: 3px; }
+@media (max-width: 760px) {
+  main.port .tr-row { grid-template-columns: minmax(0, 1fr) auto; }
+  main.port .tr-date { grid-column: 1; } main.port .tr-label { grid-column: 1; } main.port .tr-meta { grid-column: 1; }
+  main.port .tr-show { grid-column: 2; grid-row: 1 / span 3; }
+}

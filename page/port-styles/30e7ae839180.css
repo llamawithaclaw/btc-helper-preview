@@ -1,0 +1,64 @@
+/* Current-site stylesheet 30e7ae839180, scoped to <main class="port"> and mapped to Field guide tokens by port.py. */
+.port { --bg: var(--paper); --card: var(--white); --card-soft: var(--tint); --muted: var(--soft); --line: var(--rule); --accent: var(--river); --accent-blue: var(--river); --accent-soft: var(--river-15); --brand-gold: var(--brass); --btc-amber: var(--brass); --btc-amber-soft: var(--brass-bg); --muted-positive: var(--river); --muted-caution: var(--brass-ink); --muted-adverse: var(--alert); --status-live: var(--river); --status-live-text: var(--river-dk); --status-degraded: var(--brass); --status-degraded-text: var(--brass-ink); --status-warn: var(--brass); --hero-ink: var(--ink); --hero-muted: var(--soft); --secondary-bg: var(--tint); --secondary-ink: var(--ink); --secondary-border: var(--rule); --dark-card-bg: var(--tint); --dark-card-ink: var(--ink); --dark-card-muted: var(--soft); }
+.port{ font-synthesis:none; }
+.port, .port button, .port input, .port select, .port textarea, .port summary{ font-family:"Field Sans", system-ui, sans-serif; }
+.port button, .port input, .port select, .port textarea, .port summary{ font:inherit; }
+.port code, .port pre, .port .machine-record{ font-family:"DejaVu Sans Mono", ui-monospace, monospace; }
+.port .numeric, .port .price, .port .percentage, .port .timestamp{ font-variant-numeric:tabular-nums; }
+.port a:focus-visible, .port button:focus-visible, .port input:focus-visible, .port select:focus-visible, .port summary:focus-visible{ outline:3px solid color-mix(in srgb,var(--accent-blue) 34%,transparent); outline-offset:3px; }
+@media (prefers-reduced-motion: reduce){.port *, .port *::before, .port *::after{ animation-duration:.001ms !important; animation-iteration-count:1 !important; scroll-behavior:auto !important; transition-duration:.001ms !important; }}
+.port a:focus-visible, .port button:focus-visible, .port input:focus-visible, .port select:focus-visible, .port summary:focus-visible{ outline:3px solid color-mix(in srgb,var(--accent-blue, var(--river)) 34%,transparent); outline-offset:3px; }
+@media (prefers-reduced-motion: reduce){.port *, .port *::before, .port *::after{ animation-duration:.001ms !important; animation-iteration-count:1 !important; scroll-behavior:auto !important; transition-duration:.001ms !important; }}
+.port .breadcrumb{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin:0 0 16px; color:var(--muted); font-size:.78rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+.port .breadcrumb a{ color:var(--accent-blue); text-decoration:none; }
+.port .breadcrumb a:hover, .port .breadcrumb a:focus{ color:var(--ink); text-decoration:underline; outline:none; }
+.port .breadcrumb span{ min-width:0; }
+.port *{ box-sizing:border-box; }
+.port{ scroll-behavior:smooth; scroll-padding-top:84px; }
+.port{ margin:0; font-family:"Field Sans", system-ui, sans-serif; background:radial-gradient(circle at 20% -10%, color-mix(in srgb,var(--accent) 8%,transparent), transparent 32%), var(--bg); color:var(--ink); line-height:1.6; }
+main.port{ max-width:1040px; margin:0 auto; padding:34px 20px 64px; }
+.port .hero{ border:1px solid var(--line); border-radius:28px; padding:30px; background:var(--dark-card-bg); color:var(--hero-ink); box-shadow:0 18px 54px rgba(0,0,0,.16); margin-bottom:18px; }
+.port .eyebrow{ color:var(--brass-ink); font-weight:900; letter-spacing:.12em; text-transform:uppercase; font-size:.78rem; }
+.port h1{ margin:.35rem 0 .55rem; letter-spacing:-.04em; line-height:1; font-size:clamp(2.1rem,6vw,4.4rem); }
+.port h2, .port h3, .port p{ margin-top:0; }
+.port .hero p{ color:var(--hero-muted); max-width:760px; margin:0; }
+.port .card{ background:var(--card); border:1px solid var(--line); border-radius:22px; padding:22px; box-shadow:0 10px 30px rgba(0,0,0,.10); margin-bottom:18px; }
+.port .read-action{ font-size:clamp(1.7rem,4vw,3.1rem); line-height:1.02; letter-spacing:-.035em; font-weight:950; max-width:760px; }
+.port .read-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin:18px 0; }
+.port .read-box{ border:1px solid var(--line); border-radius:16px; padding:14px; background:var(--card-soft); }
+.port .condition-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:10px; margin:14px 0; }
+.port .condition-chip{ border:1px solid var(--line); border-radius:14px; padding:11px 12px; background:var(--card-soft); }
+.port .condition-chip span{ display:block; color:var(--muted); font-size:.76rem; font-weight:900; letter-spacing:.07em; text-transform:uppercase; margin-bottom:3px; }
+.port .condition-chip strong{ display:block; color:var(--ink); font-size:1rem; line-height:1.2; }
+.port .condition-chip.is-constructive{ border-color:color-mix(in srgb,var(--river) 38%,var(--line)); background:color-mix(in srgb,var(--river) 9%,var(--card)); }
+.port .condition-chip.is-caution{ border-color:color-mix(in srgb,var(--brass) 42%,var(--line)); background:color-mix(in srgb,var(--brass) 10%,var(--card)); }
+.port .condition-chip.is-info{ border-color:color-mix(in srgb,var(--accent) 34%,var(--line)); background:color-mix(in srgb,var(--accent) 9%,var(--card)); }
+.port .factor-change-list{ display:grid; gap:10px; margin:14px 0; }
+.port .factor-change-table{ display:grid; overflow:hidden; border:1px solid var(--line); border-radius:16px; margin:14px 0; background:var(--card-soft); }
+.port .factor-change-table-row{ display:grid; grid-template-columns:minmax(120px,.8fr) minmax(140px,.9fr) minmax(150px,1fr); gap:10px; align-items:center; padding:11px 13px; border-top:1px solid var(--line); }
+.port .factor-change-table-row:first-child{ border-top:0; }
+.port .factor-change-table-head{ background:color-mix(in srgb,var(--accent) 9%,var(--card)); color:var(--muted); font-size:.78rem; font-weight:900; letter-spacing:.07em; text-transform:uppercase; }
+.port .factor-change-table-row strong{ color:var(--ink); }
+.port .factor-change-table-row.is-constructive{ box-shadow:inset 5px 0 0 var(--river); }
+.port .factor-change-table-row.is-caution{ box-shadow:inset 5px 0 0 var(--brass); }
+.port .factor-change-table-row.is-info{ box-shadow:inset 5px 0 0 var(--accent-blue); }
+.port .factor-change-row{ display:grid; gap:4px; border:1px solid var(--line); border-left-width:5px; border-radius:14px; padding:12px 14px; background:var(--card-soft); }
+.port .factor-change-row span{ color:var(--muted); font-size:.76rem; font-weight:900; letter-spacing:.07em; text-transform:uppercase; }
+.port .factor-change-row strong{ color:var(--ink); line-height:1.25; }
+.port .factor-change-row p{ margin:0; color:var(--muted); font-size:.92rem; }
+.port .factor-change-row.is-constructive{ border-left-color:var(--river); }
+.port .factor-change-row.is-caution{ border-left-color:var(--brass); }
+.port .factor-change-row.is-info{ border-left-color:var(--accent-blue); }
+.port .factor-change-row.is-neutral{ border-left-color:var(--line); }
+.port .metric-label{ color:var(--muted); font-size:.76rem; font-weight:900; letter-spacing:.07em; text-transform:uppercase; }
+.port .metric-value{ font-size:1.25rem; font-weight:950; color:var(--ink); margin-top:2px; }
+.port .small, .port .section-lead{ color:var(--muted); }
+.port .badge-row{ display:flex; flex-wrap:wrap; gap:8px; margin-top:18px; }
+.port .badge{ display:inline-flex; align-items:center; border:1px solid var(--line); border-radius:999px; padding:7px 10px; font-weight:900; color:var(--ink); background:var(--card-soft); }
+.port .nav-row{ display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-top:18px; }
+.port .button{ display:inline-flex; align-items:center; justify-content:center; border:1px solid var(--line); border-radius:999px; padding:10px 14px; color:var(--ink); background:var(--card-soft); text-decoration:none; font-weight:900; }
+.port .button.primary{ background:var(--river); color:var(--ink); border-color:var(--brand-gold); ;color:var(--white)}
+.port pre{ white-space:pre-wrap; overflow:auto; max-height:520px; border:1px solid var(--line); border-radius:14px; padding:14px; background:var(--card-soft); }
+@media (max-width:680px){.port .factor-change-table-row{ grid-template-columns:1fr; gap:4px; }}
+@media (max-width:560px){main.port{ padding-inline:14px; }
+.port .hero, .port .card{ border-radius:20px; padding:20px; }}

@@ -1,0 +1,35 @@
+/* Current-site stylesheet 53a0e9d8f76a, scoped to <main class="port"> and mapped to Field guide tokens by port.py. */
+.port { --bg: var(--paper); --card: var(--white); --card-soft: var(--tint); --muted: var(--soft); --line: var(--rule); --accent: var(--river); --accent-blue: var(--river); --accent-soft: var(--river-15); --brand-gold: var(--brass); --btc-amber: var(--brass); --btc-amber-soft: var(--brass-bg); --muted-positive: var(--river); --muted-caution: var(--brass-ink); --muted-adverse: var(--alert); --status-live: var(--river); --status-live-text: var(--river-dk); --status-degraded: var(--brass); --status-degraded-text: var(--brass-ink); --status-warn: var(--brass); --hero-ink: var(--ink); --hero-muted: var(--soft); --secondary-bg: var(--tint); --secondary-ink: var(--ink); --secondary-border: var(--rule); --dark-card-bg: var(--tint); --dark-card-ink: var(--ink); --dark-card-muted: var(--soft); }
+.port{ font-synthesis:none; }
+.port, .port button, .port input, .port select, .port textarea, .port summary{ font-family:"Field Sans", system-ui, sans-serif; }
+.port button, .port input, .port select, .port textarea, .port summary{ font:inherit; }
+.port code, .port pre, .port .machine-record{ font-family:"DejaVu Sans Mono", ui-monospace, monospace; }
+.port .numeric, .port .price, .port .percentage, .port .timestamp{ font-variant-numeric:tabular-nums; }
+.port a:focus-visible, .port button:focus-visible, .port input:focus-visible, .port select:focus-visible, .port summary:focus-visible{ outline:3px solid color-mix(in srgb,var(--accent-blue) 34%,transparent); outline-offset:3px; }
+@media (prefers-reduced-motion: reduce){.port *, .port *::before, .port *::after{ animation-duration:.001ms !important; animation-iteration-count:1 !important; scroll-behavior:auto !important; transition-duration:.001ms !important; }}
+.port a:focus-visible, .port button:focus-visible, .port input:focus-visible, .port select:focus-visible, .port summary:focus-visible{ outline:3px solid color-mix(in srgb,var(--accent-blue, var(--river)) 34%,transparent); outline-offset:3px; }
+@media (prefers-reduced-motion: reduce){.port *, .port *::before, .port *::after{ animation-duration:.001ms !important; animation-iteration-count:1 !important; scroll-behavior:auto !important; transition-duration:.001ms !important; }}
+.port .breadcrumb{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin:0 0 16px; color:var(--muted); font-size:.78rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+.port .breadcrumb a{ color:var(--accent-blue); text-decoration:none; }
+.port .breadcrumb a:hover, .port .breadcrumb a:focus{ color:var(--ink); text-decoration:underline; outline:none; }
+.port .breadcrumb span{ min-width:0; }
+.port *{ box-sizing:border-box; }
+.port{ scroll-behavior:smooth; scroll-padding-top:84px; }
+.port{ margin:0; font-family:"Field Sans", system-ui, sans-serif; background:radial-gradient(circle at 15% -10%, color-mix(in srgb,var(--accent) 10%,transparent), transparent 30%), var(--bg); color:var(--ink); line-height:1.65; }
+main.port{ max-width:960px; margin:0 auto; padding:34px 20px 64px; }
+.port .hero, .port .card{ border:1px solid var(--line); border-radius:22px; background:var(--card); box-shadow:0 10px 30px rgba(0,0,0,.10); }
+.port .hero{ border-radius:28px; padding:30px; background:var(--dark-card-bg); color:var(--hero-ink); margin-bottom:18px; }
+.port .hero p{ color:var(--hero-muted); max-width:760px; margin:0; }
+.port .eyebrow{ color:var(--brass-ink); font-weight:900; letter-spacing:.12em; text-transform:uppercase; font-size:.78rem; }
+.port h1{ margin:.35rem 0 .55rem; letter-spacing:-.035em; line-height:1.02; font-size:clamp(2.05rem,5.5vw,4.1rem); }
+.port h2, .port p{ margin-top:0; }
+.port .card{ padding:22px; margin-bottom:18px; }
+.port .card p, .port .card li{ color:var(--muted); }
+.port .card ul{ margin:10px 0 0 20px; padding:0; }
+.port .card li{ margin:7px 0; }
+.port .link-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:10px; margin-top:14px; }
+.port .guide-link{ border:1px solid var(--line); border-radius:14px; padding:12px 13px; color:var(--ink); background:var(--card-soft); text-decoration:none; font-weight:900; }
+.port .guide-link:hover, .port .guide-link:focus{ border-color:var(--accent-blue); }
+.port a{ color:var(--accent-blue); font-weight:850; }
+@media (max-width:560px){main.port{ padding-inline:14px; }
+.port .hero, .port .card{ border-radius:18px; padding:18px; }}

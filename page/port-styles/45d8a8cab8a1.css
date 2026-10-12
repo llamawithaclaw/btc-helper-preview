@@ -1,0 +1,50 @@
+/* Current-site stylesheet 45d8a8cab8a1, scoped to <main class="port"> and mapped to Field guide tokens by port.py. */
+.port { --bg: var(--paper); --card: var(--white); --card-soft: var(--tint); --muted: var(--soft); --line: var(--rule); --accent: var(--river); --accent-blue: var(--river); --accent-soft: var(--river-15); --brand-gold: var(--brass); --btc-amber: var(--brass); --btc-amber-soft: var(--brass-bg); --muted-positive: var(--river); --muted-caution: var(--brass-ink); --muted-adverse: var(--alert); --status-live: var(--river); --status-live-text: var(--river-dk); --status-degraded: var(--brass); --status-degraded-text: var(--brass-ink); --status-warn: var(--brass); --hero-ink: var(--ink); --hero-muted: var(--soft); --secondary-bg: var(--tint); --secondary-ink: var(--ink); --secondary-border: var(--rule); --dark-card-bg: var(--tint); --dark-card-ink: var(--ink); --dark-card-muted: var(--soft); }
+.port{ font-synthesis:none; }
+.port, .port button, .port input, .port select, .port textarea, .port summary{ font-family:"Field Sans", system-ui, sans-serif; }
+.port button, .port input, .port select, .port textarea, .port summary{ font:inherit; }
+.port code, .port pre, .port .machine-record{ font-family:"DejaVu Sans Mono", ui-monospace, monospace; }
+.port .numeric, .port .price, .port .percentage, .port .timestamp{ font-variant-numeric:tabular-nums; }
+.port a:focus-visible, .port button:focus-visible, .port input:focus-visible, .port select:focus-visible, .port summary:focus-visible{ outline:3px solid color-mix(in srgb,var(--accent-blue) 34%,transparent); outline-offset:3px; }
+@media (prefers-reduced-motion: reduce){.port *, .port *::before, .port *::after{ animation-duration:.001ms !important; animation-iteration-count:1 !important; scroll-behavior:auto !important; transition-duration:.001ms !important; }}
+.port *{ box-sizing: border-box; }
+.port a:focus-visible, .port button:focus-visible, .port input:focus-visible, .port select:focus-visible, .port summary:focus-visible{ outline:3px solid color-mix(in srgb,var(--accent-blue, var(--river)) 34%,transparent); outline-offset:3px; }
+@media (prefers-reduced-motion: reduce){.port *, .port *::before, .port *::after{ animation-duration:.001ms !important; animation-iteration-count:1 !important; scroll-behavior:auto !important; transition-duration:.001ms !important; }}
+.port .breadcrumb{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin:0 0 16px; color:var(--muted); font-size:.78rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+.port .breadcrumb a{ color:var(--accent-blue); text-decoration:none; }
+.port .breadcrumb a:hover, .port .breadcrumb a:focus{ color:var(--ink); text-decoration:underline; outline:none; }
+.port .breadcrumb span{ min-width:0; }
+.port{ scroll-behavior:smooth; }
+.port{ margin:0; font-family:"Field Sans", system-ui, sans-serif; background:radial-gradient(circle at 20% -10%, color-mix(in srgb,var(--accent) 8%,transparent), transparent 32%), radial-gradient(circle at 90% 10%, var(--brass-bg), transparent 30%), var(--bg); color:var(--ink); line-height:1.62; }
+main.port{ max-width: 1060px; margin:0 auto; padding:32px 20px 64px; }
+.port .back-link{ display:inline-block; margin-bottom:18px; color:var(--accent-blue); text-decoration:none; font-weight:800; font-family:"DejaVu Sans Mono", ui-monospace, monospace; letter-spacing:.08em; text-transform:uppercase; font-size:.76rem; }
+.port .back-link:hover{ text-decoration:underline; }
+.port .hero, .port .card{ background:var(--card); border:1px solid var(--line); border-radius:22px; padding:28px; box-shadow:0 16px 44px rgba(0,0,0,.30); margin-bottom:18px; }
+.port .hero{ background:radial-gradient(circle at 84% 18%, var(--brass-bg), transparent 28%), radial-gradient(circle at 78% 74%, color-mix(in srgb,var(--accent) 10%, transparent), transparent 32%), linear-gradient(135deg,var(--tint),var(--tint) 58%,var(--tint)); border-color:color-mix(in srgb,var(--accent) 28%,var(--rule)); color:var(--hero-ink); }
+.port .eyebrow, .port .module-kicker{ color:var(--accent-blue); font-family:"DejaVu Sans Mono", ui-monospace, monospace; font-weight:900; letter-spacing:.12em; text-transform:uppercase; font-size:.76rem; margin-bottom:10px; }
+.port h1, .port h2, .port h3, .port p{ margin-top:0; }
+.port h1{ letter-spacing:-.035em; line-height:1.04; margin-bottom:12px; font-size:clamp(2.3rem,5vw,4.8rem); max-width:880px; }
+.port h2{ margin-bottom:10px; font-size:1.55rem; letter-spacing:-.015em; }
+.port h3{ margin-bottom:8px; font-size:1.08rem; }
+.port .subtitle, .port .section-lead, .port .small{ color:var(--muted); }
+.port .hero .subtitle{ color:var(--hero-muted); max-width:760px; font-size:1.08rem; }
+.port .actions{ display:flex; flex-wrap:wrap; gap:10px; margin-top:20px; }
+.port .button{ display:inline-flex; align-items:center; gap:8px; border:1px solid var(--brand-gold); background:var(--river); color:var(--ink); text-decoration:none; border-radius:999px; padding:10px 14px; font-weight:900; ;color:var(--white)}
+.port .button.secondary{ background:var(--secondary-bg); color:var(--secondary-ink); border-color:var(--secondary-border); }
+.port .hero .button.secondary, .port .tile .button.secondary{ background:color-mix(in srgb, var(--ink) 10%, transparent); color:var(--ink); border-color:color-mix(in srgb, var(--ink) 25%, transparent); }
+.port .grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; margin-top:16px; }
+.port .tile{ background:var(--dark-card-bg); border:1px solid var(--line); border-radius:18px; padding:18px; }
+.port .tile strong{ display:block; color:var(--hero-ink); margin-bottom:6px; }
+.port .tile .small, .port .tile p{ color:var(--dark-card-muted); }
+.port .split{ display:grid; grid-template-columns:minmax(0,1fr) minmax(260px,.72fr); gap:18px; align-items:start; }
+@media (max-width: 800px){.port .split{ grid-template-columns:1fr; }}
+.port .strip{ display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin:16px 0 0; }
+@media (max-width: 700px){.port .strip{ grid-template-columns:1fr 1fr; }}
+.port .posture{ border:1px solid var(--line); border-radius:14px; padding:12px; background:color-mix(in srgb, var(--ink) 5%, transparent); }
+.port .posture span{ display:block; font-family:"DejaVu Sans Mono", ui-monospace, monospace; font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; color:var(--accent-blue); margin-bottom:4px; }
+.port .callout{ border-left:4px solid var(--accent); background:var(--accent-soft); padding:14px 16px; border-radius:14px; }
+.port ul{ margin:8px 0 0 20px; padding:0; }
+.port li{ margin:6px 0; }
+.port .boundary{ border-color:color-mix(in srgb,var(--status-warn) 55%,var(--line)); background:color-mix(in srgb,var(--status-warn) 9%,var(--card)); }
+.port .pill-row{ display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; }
+.port .pill{ border:1px solid var(--line); border-radius:999px; padding:5px 9px; color:var(--hero-muted); background:color-mix(in srgb, var(--ink) 5%, transparent); font-family:"DejaVu Sans Mono", ui-monospace, monospace; font-size:.74rem; text-transform:uppercase; letter-spacing:.08em; }
