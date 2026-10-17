@@ -178,7 +178,7 @@
             <div class="method-card"><strong>Emergency buffer</strong><span>Liquid savings are treated as a base layer. In US survey data, adults without emergency savings report bill-payment problems, outside help and medical debt far more often than those with savings. That is an association, not proof that savings prevent hardship.</span></div>
             <div class="method-card"><strong>Debt pressure</strong><span>Required debt payments reduce flexibility, especially when paired with thin buffers.</span></div>
             <div class="method-card"><strong>Essential costs</strong><span>Housing, food, utilities, insurance, and irregular essentials can crowd out long-horizon planning.</span></div>
-            <div class="method-card"><strong>Medical exposure</strong><span>Medical and insurance costs can operate like a resilience premium that must be carried before savings can build.</span></div>
+            <div class="method-card"><strong>Medical exposure</strong><span>Medical and insurance costs are recurring costs of staying protected. In public survey data, out-of-pocket medical costs take a larger share of income in lower-income groups.</span></div>
             <div class="method-card"><strong>Accumulation durability</strong><span>The planner favors accumulation that can survive stress without becoming forced selling, high-cost debt, or interrupted savings.</span></div>
           </div>
         </div>
@@ -371,7 +371,7 @@
       if (bufferMonths < 1) return ['Thin emergency buffer', 'A thin cash buffer means ordinary surprises may force borrowing, missed payments, or selling assets at the wrong time.'];
       if (debtBal > 0 && debtLoad > 0.12) return ['Debt pressure', 'Required debt payments are taking a meaningful share of income, reducing flexibility when shocks arrive.'];
       if (essentialLoad > 0.7) return ['High essential-cost load', 'Fixed and necessary costs are consuming most take-home income, leaving little room for buffers or long-horizon planning.'];
-      if (medical / Math.max(income,1) > 0.08) return ['Medical / insurance exposure', 'Health and insurance costs can behave like a resilience premium: recurring costs must be carried before savings can build.'];
+      if (medical / Math.max(income,1) > 0.08) return ['Medical / insurance exposure', 'Health and insurance costs are recurring costs of staying protected, and they leave less room for saving when they take a large share of income.'];
       if (btc > 0 && marginBeforeBtc > 0 && btc / marginBeforeBtc > 0.5) return ['Accumulation crowd-out', 'The entered accumulation amount uses a large share of available monthly slack. Stress-test a lower amount before treating it as durable.'];
       return ['No single severe bottleneck', 'The entered profile has multiple usable resilience inputs. Maintain buffers and keep any accumulation sized below household stress points.'];
     }

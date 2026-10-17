@@ -21,7 +21,7 @@
     <section class="hero">
       <div class="eyebrow">BTC Helper</div>
       <h1>BTC Helper White Paper</h1>
-<p class="small"><strong>Editor&rsquo;s note (October 2026):</strong> This paper was written in May 2026, when the site was labelled a public beta, and its wording is kept as written. Its description of validation predates validation study V1, which found that historical efficacy is not assessable from the retained evidence; see <a href="validation.html">What the evidence can show</a>.</p>
+<p class="small"><strong>Correction note (October 2026):</strong> This paper was written in May 2026, before validation study V1. Its description of validation has been corrected: benchmark and domain-ablation tests are planned but have not been done, and V1 concluded that historical efficacy is not assessable from the retained evidence. It also no longer says that weights or calibration details are kept private: the model is rule-based and has no weights. The changed passages and their original wording are listed in the <a href="changelog.html">changelog</a>; the original PDF is kept unchanged. See also <a href="validation.html">What the evidence can show</a>.</p>
       <p class="subtitle">An explainable Bitcoin accumulation regime engine.</p>
       <p class="doc-byline">Arne Kotte · BTC Helper Research</p>
       <div class="actions">
@@ -75,7 +75,7 @@
 <li>financial advice</li>
 <li>a promise that the next move in Bitcoin is knowable</li>
 </ul>
-<p>The product’s value proposition is better accumulation discipline: clearer posture, less one-factor reactivity, explicit uncertainty, and more honest handling of degraded data. It does not mean guaranteed higher returns, statistical dominance over every benchmark, or personalized portfolio advice.</p>
+<p>The product aims to support accumulation discipline: clearer posture, less one-factor reactivity, explicit uncertainty, and more honest handling of degraded data. Whether this leads to better decisions or results has not been tested. It does not promise higher returns, statistical dominance over any benchmark, or personalized portfolio advice.</p>
 <hr>
 <h2 id="3-intended-user-context">3. Intended user context</h2>
 <p>BTC Helper is designed for a specific decision context: a long-horizon Bitcoin accumulator who already has, or is considering, a baseline recurring accumulation plan and wants help deciding whether discretionary accumulation should be stronger, ordinary, more selective, or temporarily deferred.</p>
@@ -90,7 +90,7 @@
 <h3 id="4-3-accumulation-focused-posture">4.3 Accumulation-focused posture</h3>
 <p>The system is optimized for stacking posture and accumulation policy, not short-term tactical trading.</p>
 <h3 id="4-4-public-framework-private-implementation">4.4 Public framework, private implementation</h3>
-<p>The high-level methodology can be described publicly. Exact thresholds, weightings, tie-break logic, and calibration details remain private.</p>
+<p>The high-level methodology can be described publicly. Exact thresholds, rule order and tie-break logic are not published in this paper. The model is rule-based: it has no weights and no fitted parameters.</p>
 <h3 id="4-5-honesty-under-degradation">4.5 Honesty under degradation</h3>
 <p>A useful system must remain honest when provider failures, stale inputs, fallback behavior, or import-assisted data affect interpretation.</p>
 <hr>
@@ -194,17 +194,16 @@
 <p>This is a deliberate product choice. It keeps the system realistic for an early-stage product while forcing stronger honesty about provider fragility and operational limitations, without overclaiming production readiness before the sourcing path is fully finalized.</p>
 <hr>
 <h2 id="11-validation-philosophy">11. Validation philosophy</h2>
-<p>BTC Helper is not being built by intuition alone. Its validation posture includes:</p>
+<p>BTC Helper is not being built by intuition alone. Its current checks are:</p>
 <ul>
 <li>scenario fixtures</li>
 <li>historical-style case-study review</li>
 <li>degraded-data review</li>
 <li>policy-audit review</li>
 <li>explanation review</li>
-<li>benchmark comparison against baseline accumulation and simple heuristic alternatives</li>
-<li>domain-ablation review to test whether the multi-domain structure adds explanatory value</li>
 </ul>
-<p>The development philosophy is that explicit validation loops should outrank threshold tuning guided only by intuition. At the same time, the current public white paper should not be read as a completed statistical validation package. Public validation will mature over time without requiring disclosure of proprietary thresholds, weights, aggregation rules, or tie-break logic.</p>
+<p>Benchmark comparison against baseline accumulation and simple heuristic alternatives, and domain-ablation tests of whether the multi-domain structure adds explanatory value, are planned (see 11.5) but have not been done.</p>
+<p>The development philosophy is that explicit validation loops should outrank threshold tuning guided only by intuition. At the same time, the current public white paper should not be read as a completed statistical validation package. Public validation will mature over time without requiring disclosure of the exact thresholds, rule order or tie-break logic.</p>
 <h3 id="11-1-scenario-validation">11.1 Scenario validation</h3>
 <p>Scenario fixtures test whether the regime engine behaves correctly across stylized market states.</p>
 <h3 id="11-2-historical-style-validation">11.2 Historical-style validation</h3>
@@ -215,7 +214,7 @@
 <p>The output should remain understandable and defensible to a human operator.</p>
 <h3 id="11-5-benchmark-and-ablation-validation">11.5 Benchmark and ablation validation</h3>
 <p>A useful accumulation engine should eventually be evaluated against simple baselines such as baseline recurring accumulation, buy-the-dip heuristics, valuation-only reads, and other one-factor rules. It should also be tested by removing or weakening domains to determine whether each domain adds useful decision context. These tests are part of the validation roadmap.</p>
-<p>The purpose of public benchmark language is not to disclose the private model core. It is to make the product's burden of proof clear: BTC Helper should earn trust by showing that its regime logic is disciplined, robust, and more informative than simplistic alternatives.</p>
+<p>The purpose of public benchmark language is not to disclose the private model core. It is to make the product's burden of proof clear: BTC Helper should earn trust by showing that its regime logic is disciplined, robust, and more informative than simplistic alternatives. That has not yet been shown.</p>
 <hr>
 <h2 id="12-public-methodology-versus-proprietary-implementation">12. Public methodology versus proprietary implementation</h2>
 <p>BTC Helper is intentionally designed with a disclosure boundary.</p>
@@ -230,11 +229,8 @@
 </ul>
 <h3 id="kept-private">Kept private</h3>
 <ul>
-<li>exact thresholds</li>
-<li>exact weightings</li>
-<li>exact aggregation rules</li>
 <li>exact thresholds and override rules</li>
-<li>calibration history</li>
+<li>exact aggregation rules (rule order)</li>
 <li>private tie-break logic</li>
 </ul>
 <p>This boundary exists to preserve both credibility and defensibility. The public method should be clear enough for a user or partner to understand what kind of system BTC Helper is, what it is trying to improve, and where its limitations are. It should not be detailed enough to reconstruct the proprietary engine.</p>
@@ -266,7 +262,7 @@
 <li>a mixed pullback that still deserves caution</li>
 <li>an overheated environment where buying more is not disciplined</li>
 </ul>
-<p>BTC Helper is trying to make those distinctions legible and actionable.</p>
+<p>BTC Helper tries to describe those situations separately and explain its classification. Whether its classifications are more reliable than a dip rule has not been tested.</p>
 <p>That is the lane BTC Helper is trying to occupy: better accumulation policy without black-box opacity.</p>
 <hr>
 <h2 id="15-limitations">15. Limitations</h2>
@@ -274,7 +270,7 @@
 <ul>
 <li>It operates in a mixed-source environment.</li>
 <li>Some premium-quality on-chain metrics remain import-assisted or deferred.</li>
-<li>Validation is meaningful but still evolving.</li>
+<li>Validation so far shows that the live system ran the reviewed rules in the accepted October 2026 releases, and that the frozen rules, re-run on the inputs retained for two recent runs, gave the recorded decisions; those inputs are not certified as available at decision time. Validation study V1 (October 2026) concluded that historical efficacy is not assessable from the retained evidence: whether following the reads improves outcomes has not been tested.</li>
 <li>The system is not a substitute for judgment, risk tolerance, or broader portfolio context.</li>
 <li>Regime labels are posture categories, not personalized instructions.</li>
 <li>Public-facing outputs necessarily simplify deeper internal complexity.</li>
@@ -293,11 +289,11 @@
 <p>BTC Helper may evolve from static beta surface toward a more robust web product, service-backed application, or partner-facing analytical tool.</p>
 <h3 id="16-4-institutional-and-partner-readiness">16.4 Institutional and partner readiness</h3>
 <p>If BTC Helper is ever expected to approach institutional-grade consumer products or partner discussions, the path will require stronger reliability, broader validation, tighter presentation, and continued clarity about what is public versus proprietary.</p>
-<p>That partner path may include products that currently rely on simplistic accumulation automation. In that context, BTC Helper's case would not be &quot;more complexity&quot; but &quot;better accumulation policy&quot;: an explainable regime layer that can sit on top of recurring-buy workflows and distinguish opportunity, baseline, caution, and pause more intelligently than a one-factor dip rule.</p>
+<p>That partner path may include products that currently rely on simplistic accumulation automation. In that context, BTC Helper's case would not be &quot;more complexity&quot; but &quot;better accumulation policy&quot;: an explainable regime layer that could sit on top of recurring-buy workflows and describe opportunity, baseline, caution, and pause separately. Any claim that it does this better than a one-factor dip rule would first need the benchmark tests described in 11.5.</p>
 <hr>
 <h2 id="17-conclusion">17. Conclusion</h2>
 <p>BTC Helper is best understood not as a predictor, but as a disciplined and explainable Bitcoin accumulation regime engine.</p>
-<p>Its core claim is modest but meaningful: that a multi-domain, interpretable, validation-driven system can support more disciplined accumulation posture than isolated heuristics, while remaining honest about degraded conditions, mixed-source dependencies, and uncertainty. This is a product-methodology claim, not a public proof of outperformance.</p>
+<p>Its core claim is a design claim: that a multi-domain, interpretable, rule-based system can give a clearer and more consistent accumulation posture than isolated heuristics, while remaining honest about degraded conditions, mixed-source dependencies, and uncertainty. It is not evidence that the posture improves results, and not a public proof of outperformance.</p>
 <p>If BTC Helper succeeds, it will not be because it claimed to know the future. It will be because it helped users think more clearly about when Bitcoin conditions looked structurally attractive, mixed, stretched, or too fragile to chase.</p>
     </section>
   </main>

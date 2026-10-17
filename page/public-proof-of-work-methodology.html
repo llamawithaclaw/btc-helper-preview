@@ -41,8 +41,8 @@
     </section>
     <section class="card">
       <h2>Plain-English purpose</h2>
-<p>BTC Helper is a public daily Bitcoin model posture and private-plan translation aid. It does <strong>not</strong> try to predict tomorrow's price. It tries to answer a narrower practical question:</p>
-<p>&gt; Given today's public model posture and source health, how does a user's prewritten baseline-and-reserve rule map the current state?</p>
+<p>BTC Helper publishes a daily rule-based read of Bitcoin market conditions and helps readers apply it to their own written plan. It does <strong>not</strong> try to predict tomorrow's price. It tries to answer a narrower practical question:</p>
+<p>Given today's public model posture and source health, how does a user's prewritten baseline-and-reserve rule map the current state?</p>
 <p>The public methodology exists so a reader can understand what the daily read means, what the public decision record preserves, what the benchmark does and does not prove, and how to interpret degraded-data warnings.</p>
 <h2>How to read the daily output</h2>
 <p>Each public read has four main parts.</p>
@@ -71,7 +71,7 @@
 <li><strong>Unclear</strong>: the current source run does not support a sufficiently reliable market-context classification. BTC Helper does not infer a stronger posture from incomplete evidence.</li>
 </ul>
 <p>These are accumulation contexts, not short-term trading signals.</p>
-<p>Unclear is only the market-context label. It does not silently become every other state in the system. A degraded read may also show decision status as insufficient signal, baseline translation as written baseline unchanged, reserve translation as Hold, source health as Reduced, coverage as Limited, or benchmark eligibility as Withheld. Those fields describe different parts of the public contract.</p>
+<p>Unclear is only the market-context label. It does not silently become every other state in the system. A degraded read may also show decision status as insufficient signal, baseline translation as written baseline unchanged, reserve translation as Hold, source health as Reduced, coverage as Limited, or benchmark eligibility as Withheld. Those fields describe different parts of the daily read.</p>
 <h3>4. Source health</h3>
 <p>Source health describes whether the current read is operationally useful enough to interpret. It reflects source coverage, freshness, internal consistency, and degraded-run handling.</p>
 <p>It is <strong>not</strong> a probability that Bitcoin will go up or down.</p>
@@ -100,7 +100,7 @@
 <li><strong>Aggressive</strong>: baseline continues; potentially optional reserve is marked for review if prior reserve exists and household checks allow it.</li>
 </ul>
 <p>This benchmark asks whether BTC Helper's public posture creates auditable reserve-aware behavior over time. It is not a claim of optimized trading performance, alpha, predictive accuracy, or superior timing.</p>
-<p>The current public result should be read modestly: no reserve deployment has occurred, the public-policy reserve is zero unless a future summary says otherwise, 0 forward reads have changed allocation behavior where that remains factually current, and BTC Helper has not demonstrated timing advantage when it has not diverged from fixed DCA.</p>
+<p>The current public result should be read modestly: no reserve deployment has occurred, the public-policy reserve is zero unless a future summary says otherwise, 0 forward reads had changed allocation behavior when this page was last updated, and BTC Helper has not demonstrated timing advantage when it has not diverged from fixed DCA.</p>
 <p>The planned benchmark program should distinguish fixed DCA from future equal-capital reserve tests:</p>
 <ul>
 <li>seeded reserve</li>
@@ -114,7 +114,7 @@
 <h2>Why benchmark claims may be withheld</h2>
 <p>Benchmark snippets are intentionally suppressed or softened when daily coverage is degraded. BTC Helper should not create promotional-looking claims from weak source conditions.</p>
 <p>That means a day can still have a posture and rationale, while performance comparison language is withheld because the run was not clean enough for that kind of public claim.</p>
-<p>The public benchmark contract separates calculated values from interpretive eligibility:</p>
+<p>The public benchmark separates calculated values from interpretive eligibility:</p>
 <ul>
 <li><strong>Calculated</strong>: technical accounting values may continue to exist for continuity and auditability.</li>
 <li><strong>Eligibility</strong>: the current read states whether those values are eligible for public behavioral interpretation.</li>
@@ -133,9 +133,9 @@
 <li>import-assisted or fallback handling where stronger live coverage is not yet available</li>
 </ul>
 <p>Provider and source families are public. Direct source links, exact series mappings, raw inputs, thresholds, weights, overrides, and calibration details remain private.</p>
-<p>The public output should communicate this honestly. Production-grade sourcing and partner-grade procurement remain a separate hardening step.</p>
+<p>The public output should communicate this honestly. Sourcing is not yet production-grade.</p>
 <h2>Public evidence protocol</h2>
-<p>BTC Helper preserves a dated public decision history plus a public-safe evidence bundle for the latest daily read. The public surface shows daily decisions, publication timing, source-health summaries, coverage status, selected normalized factor states or directions, replay tiers, correction paths, and the latest bundle identifier/hash.</p>
+<p>BTC Helper preserves a dated public decision history plus a public-safe evidence bundle for the latest daily read. The public site shows daily decisions, publication timing, source-health summaries, coverage status, selected normalized factor states or directions, replay tiers, correction paths, and the latest bundle identifier/hash.</p>
 <p>It still does <strong>not</strong> publish a complete point-in-time evidence audit for every input or every historical read. Older daily reads that predate evidence-bundle v1 remain partial public records and are not relabeled as captured point-in-time evidence. The current 2026-08-11 bundle is labeled as a grounded reconstruction: its source audit was captured before publication, but the evidence-bundle record was assembled after the already-live public read. Future true point-in-time bundles must be generated and frozen before publication. The evidence-bundle protocol includes:</p>
 <ul>
 <li>bundle ID and content hash</li>
@@ -149,7 +149,7 @@
 <p>Normalized factor states are public labels, not raw metric values. Where source-run history supports them, BTC Helper can show current state, direction, and recent movement. Older daily reads may not reconstruct factor-level snapshots if the public record did not retain them at the time.</p>
 <p>A bundle ID or hash identifies the serialized evidence record and helps detect silent mutation. It does not prove the source was correct, that the private engine is accurate, or that future BTC outcomes will follow the read.</p>
 <h2>Weekly macro boundary</h2>
-<p>The weekly macro thesis is interpretive context for valuation, holder behavior, flows, macro pressure, and leverage. It is not direct proof of engine efficacy, not equivalent to the evidence-bundle provenance record, and not a substitute for source-run provenance. Public weekly macro pages should avoid private source-chain details while still explaining how the context may affect the daily factor categories.</p>
+<p>The weekly macro thesis is interpretive context for valuation, holder behavior, flows, macro pressure, and leverage. It is not direct proof of engine efficacy, not equivalent to the evidence-bundle provenance record, and not a substitute for source-run provenance. Weekly macro pages leave out private source details while still explaining how the context may affect the daily factor categories.</p>
 <h2>Validation approach</h2>
 <p>BTC Helper is developed with several validation loops:</p>
 <ol>
@@ -162,12 +162,12 @@
 <p>The goal is not to make every read look confident. The goal is to make each read human-readable, bounded, and operationally honest.</p>
 <h2>Current validation state</h2>
 <p>BTC Helper does not currently make a public efficacy claim.</p>
-<p>The Benchmark Lab review reached a conservative conclusion: a full five-domain strict historical replay is not currently defensible with the available historical source record. Sparse historical fixtures remain useful for scenario review, source-quality analysis, and methodology discipline, but they should not be treated as a backtest, a timing-advantage result, or proof that the BTC Helper policy improves outcomes.</p>
-<p>Reduced-domain research can still be useful. For example, valuation-plus-macro diagnostics can describe how a limited research sample behaves, but that is not the same thing as validating BTC Helper's full daily process. Current public validation language should keep valuation-led findings, flow-data insufficiency, replay tiers, and live-history accumulation separate.</p>
+<p>Our review of the historical record reached a conservative conclusion: a full five-domain strict historical replay is not currently defensible with the available historical source record. Sparse historical fixtures remain useful for scenario review, source-quality analysis, and methodology discipline, but they should not be treated as a backtest, a timing-advantage result, or proof that the BTC Helper policy improves outcomes.</p>
+<p>Reduced-domain research can still be useful. For example, valuation-plus-macro diagnostics can describe how a limited research sample behaves, but that is not the same thing as validating BTC Helper's full daily process. This page keeps valuation-led findings, missing flow data, replay tiers, and the growing live history separate.</p>
 <p>The primary future validation path is continuous live history. Daily public reads are published and kept. Recording each day's inputs as they were known at decision time, which a proper test would need, is designed but not yet switched on. Until it is, a later study cannot use the past reads as test evidence.</p>
-<p>Production rules should not be tuned using the same sparse historical research sample that motivated these limitations. Model changes need their own review gate and should preserve the boundary between research-only diagnostics, public methodology, and live forward evidence.</p>
+<p>Production rules should not be tuned using the same sparse historical research sample that motivated these limitations. Model changes need their own review and should preserve the boundary between research-only diagnostics, public methodology, and live forward evidence.</p>
 <p>The public Track page reports replay evidence tiers at a high level: 16 replayed cases, 2 grounded candidate cases, 40 candidate cases, and 2 synthetic cases. These are project-level validation artifacts, not forward performance proof or a price-prediction record.</p>
-<p>Before validation-relevant model changes, BTC Helper uses a review gate covering scenario review, policy audit, replay validation, replay consistency, historical replay, and public-quality checks when public copy changes. Provider and source families are public; direct source links, exact series mappings, raw inputs, thresholds, weights, overrides, and calibration details remain private while the public surface still shows evidence tiers, limitations, and next validation priorities.</p>
+<p>Before validation-relevant model changes, BTC Helper runs review checks covering scenario review, policy audit, replay validation, replay consistency, historical replay, and, when public wording changes, public-quality checks. Provider and source families are public; direct source links, exact series mappings, raw inputs, thresholds, weights, overrides, and calibration details remain private while the public site still shows evidence tiers, limitations, and next validation priorities.</p>
 <p>Track is process evidence and governance evidence. It should not be read as efficacy proof until enough forward reserve-aware behavior, equal-capital comparison history, and properly labeled evidence support exist.</p>
 <p>BTC Helper's public boundary remains: <strong>NO PUBLIC EFFICACY CLAIM</strong>. It does not publicly claim superior timing, DCA outperformance, reserve-policy efficacy, predictive accuracy, alpha, independently validated performance, or guaranteed future returns.</p>
 <h2>Interpretation guide</h2>
@@ -180,7 +180,7 @@
 <h3>If the sample is young</h3>
 <p>Early samples should be treated cautiously. A few weeks of public reads are not enough to make strong performance claims. The archive becomes more useful as it compounds over months and years.</p>
 <h2>Transparency commitments</h2>
-<p>BTC Helper's public surface should follow five rules:</p>
+<p>BTC Helper follows these rules:</p>
 <ol>
 <li><strong>No prediction theater</strong>: do not imply certainty about future price.</li>
 <li><strong>No hidden degradation</strong>: call out incomplete, stale, fallback, or import-assisted data.</li>
@@ -189,10 +189,10 @@
 <li><strong>No financial-advice framing</strong>: keep the product as decision support for manual user execution.</li>
 <li><strong>No complete-audit implication</strong>: describe today's public record as partial until point-in-time evidence bundles are actually retained and published.</li>
 </ol>
-<p>For public questions, comments, data corrections, or accessibility issues, contact BTC Helper by email: [support@btchelper.app](mailto:support@btchelper.app). For security reports, use [security@btchelper.app](mailto:security@btchelper.app).</p>
+<p>For public questions, comments, data corrections, or accessibility issues, contact BTC Helper by email: <a href="mailto:support@btchelper.app">support@btchelper.app</a>. For security reports, use <a href="mailto:security@btchelper.app">security@btchelper.app</a>.</p>
 <hr>
-<p>*This methodology document is part of BTC Helper's public decision-record commitment.*</p>
-<p>*Last updated: 2026-08-16*</p>
+<p><em>This methodology document is part of BTC Helper's public decision-record commitment.</em></p>
+<p><em>Last updated: 2026-08-16</em></p>
     </section>
   </main>
 <footer class="site"><nav class="foot-cols" aria-label="Site"><div><h2>Learn</h2><ul><li><a href="./sound-money.html">Sound money</a></li><li><a href="./resilience.html">Household foundations</a></li><li><a href="./why-bitcoin.html">Why Bitcoin?</a></li></ul></div><div><h2>Your household</h2><ul><li><a href="./household.html">Overview</a></li><li><a href="./plan.html">Household Planner</a></li><li><a href="./workbook.html">Budget workbook</a></li><li><a href="./household-resilience-planner.html">Detailed resilience check</a></li></ul></div><div><h2>Bitcoin today</h2><ul><li><a href="./today.html">Today's read</a></li><li><a href="./public-proof-of-work-methodology.html">Why this reading?</a></li><li><a href="./data-sources.html">Data and sources</a></li><li><a href="./archive.html">History</a></li><li><a href="./planner.html">My Plan</a></li></ul></div><div><h2>Research</h2><ul><li><a href="./research.html">Research home</a></li><li><a href="./documents-and-research.html">All papers</a></li><li><a href="./weekly.html">Weekly brief</a></li><li><a href="./validation.html">What the evidence can show</a></li></ul></div><div><h2>About</h2><ul><li><a href="./about.html">About</a></li><li><a href="./contact.html">Contact</a></li><li><a href="./privacy.html">Privacy</a></li><li><a href="./terms.html">Terms</a></li><li><a href="./notices.html">Notices</a></li><li><a href="./updates.html">Updates</a></li><li><a href="./site-map.html">Site map</a></li><li><a href="https://x.com/btchelperapp">BTC Helper on X</a></li></ul></div></nav><p>Educational material, not personalised financial advice, investment advice, or a recommendation to buy or sell any asset. Doing nothing different is always a valid choice.</p></footer>
