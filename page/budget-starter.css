@@ -1,0 +1,51 @@
+/* Budget starter page (Field guide tokens only; light and dark follow fieldguide.css). */
+.bs .privacy { margin-top: .4rem; }
+.bs .rule { background: var(--white); border: 1px solid var(--rule); border-radius: 12px; padding: 1rem 1.2rem; margin: 1.2rem 0; max-width: 64ch; }
+.bs .rule p { margin: .3rem 0; }
+.bs #bs-editor { max-width: 64rem; }
+.bs .bs-cat { background: var(--white); border: 1px solid var(--rule); border-radius: 14px; padding: 1rem clamp(.9rem, 3vw, 1.4rem) .4rem; margin: 1.2rem 0; }
+.bs .bs-cat h3 { margin: .2rem 0 .8rem; font: 600 1.15rem/1.3 "Field Sans", sans-serif; overflow-wrap: anywhere; }
+.bs .bs-cat .bs-cname { max-width: 26rem; margin-bottom: .8rem; }
+.bs ol.bs-lines { list-style: none; padding: 0; margin: 0; }
+.bs ol.bs-lines li { margin: 0; max-width: none; }
+.bs .bs-line fieldset { border: 0; border-top: 1px solid var(--rule2); margin: 0; padding: .7rem 0 .4rem; min-width: 0;
+  display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 2.1fr) auto; gap: .2rem .8rem; align-items: start; }
+.bs .bs-line legend { font: 600 .85rem/1.3 "Field Sans", sans-serif; color: var(--soft); padding: 0; float: left; grid-column: 1 / -1; }
+.bs .bs-line legend + * { clear: left; }
+.bs .bs-line .field { margin: 0 0 .5rem; max-width: none; min-width: 0; }
+.bs .bs-line .field > label:first-child, .bs .bs-flabel { display: block; font: 600 .9rem/1.35 "Field Sans", sans-serif; }
+.bs .bs-line .field input[type="text"], .bs .bs-line .field select { font-size: 1rem; padding: .6rem .7rem; min-height: 44px; margin-top: .3rem; }
+.bs .bs-held { margin: .3rem 0 0; min-height: 44px; display: flex; align-items: center; font: 400 .9rem/1.3 "Field Sans", sans-serif; color: var(--soft); }
+.bs .bs-remove { align-self: start; margin: 1.5rem 0 .5rem; font: 600 .9rem/1 "Field Sans", sans-serif; min-height: 44px; padding: .6rem .9rem; border-radius: 999px; border: 2px solid var(--river); background: transparent; color: var(--river); cursor: pointer; white-space: nowrap; }
+.bs .bs-remove:hover, .bs .actions button.secondary:hover { background: var(--mist); }
+.bs .actions button:not(.secondary):hover { background: var(--river-dk); border-color: var(--river-dk); }
+.bs .bs-num { font-variant-numeric: tabular-nums; }
+.bs .bs-unknown { font-style: italic; color: var(--soft); }
+.bs #bs-overall { font: 600 .95rem/1.5 "Field Sans", sans-serif; }
+.bs tr[data-status="incomplete"] td, .bs tr[data-status="none"] td { color: var(--brass-ink); }
+.bs dl.bs-handoff { font: 400 1rem/1.45 "Field Sans", sans-serif; margin: 1rem 0 1.4rem; border-top: 2px solid var(--ink); max-width: 46rem; }
+.bs dl.bs-handoff > div { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: .3rem 1rem; padding: .55rem 0; border-bottom: 1px solid var(--rule2); }
+.bs dl.bs-handoff dt { font-weight: 600; }
+.bs dl.bs-handoff dd { margin: 0; font-variant-numeric: tabular-nums; }
+.bs fieldset.bs-opts { border: 1px solid var(--rule); border-radius: 12px; padding: .6rem 1rem .8rem; margin: 1rem 0; max-width: 46rem; }
+.bs fieldset.bs-opts legend { font: 600 1rem/1.3 "Field Sans", sans-serif; padding: 0 .3rem; }
+.bs .bs-checks { display: flex; flex-wrap: wrap; gap: 0 1.2rem; }
+.bs .bs-checks .check { color: var(--ink); }
+.bs .check input { flex: none; }
+@media (max-width: 860px) {
+  .bs .bs-line fieldset { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .bs .bs-line .bs-name, .bs .bs-line .bs-group { grid-column: 1 / -1; }
+  .bs .bs-remove { justify-self: start; grid-column: 1 / -1; margin-top: .2rem; }
+  .bs table.bs-stack, .bs table.bs-stack tbody, .bs table.bs-stack tr, .bs table.bs-stack th, .bs table.bs-stack td { display: block; width: auto; }
+  .bs table.bs-stack thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .bs table.bs-stack tr { border-bottom: 1px solid var(--rule2); padding: .5rem 0 .6rem; }
+  .bs table.bs-stack th, .bs table.bs-stack td { border: 0; padding: .15rem 0; }
+  .bs table.bs-stack td[data-label] { display: grid; grid-template-columns: 5.5rem minmax(0, 1fr); gap: .6rem; }
+  .bs table.bs-stack td[data-label]::before { content: attr(data-label); color: var(--soft); font-size: .85rem; }
+  .bs .table-wrap { overflow: visible; background: none; }
+  .bs dl.bs-handoff > div { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 420px) {
+  .bs .bs-line fieldset { grid-template-columns: minmax(0, 1fr); }
+  .bs .actions button { width: 100%; }
+}
