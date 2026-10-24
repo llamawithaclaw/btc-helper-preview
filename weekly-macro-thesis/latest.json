@@ -1,64 +1,65 @@
 {
-  "date": "2026-10-17",
-  "title": "Follow the Funding, Not Just the Dollar",
-  "summary": "This week’s macro debate centers on how government interest payments and shifting capital routes affect financial conditions. Neither a rising dollar nor a larger interest bill establishes Bitcoin’s direction on its own; funding conditions and actual demand remain the useful tests.",
-  "regime": "Contested fiscal support; liquidity confirmation needed",
+  "date": "2026-10-24",
+  "title": "Growth Can Compete With Bitcoin for Capital",
+  "summary": "Heavy infrastructure spending and government financing needs could make capital harder to obtain even while economic activity holds up. For Bitcoin, the useful test is whether actual buying and orderly funding conditions support the adoption story.",
+  "regime": "Capital competition; liquidity confirmation needed",
   "thesisBullets": [
-    "Higher interest rates can discourage private borrowing while increasing income paid to government bondholders. The balance depends partly on whether recipients spend, save, or reinvest that income.",
-    "Support for asset prices and persistent consumer inflation are different outcomes. A growing government interest bill does not prove that monetary restraint has stopped working.",
-    "Bitcoin and the dollar could strengthen together if changing capital routes benefit both. This is a conditional explanation to test, not an established trading relationship.",
-    "Bond purchases should be judged by their financing and balance-sheet effects; debt-management operations do not automatically imply fresh monetary stimulus.",
-    "Plans to expand energy production are not yet usable power. Delivery timelines and costs remain constraints on the real economy."
+    "Financing artificial-intelligence infrastructure alongside government borrowing and debt refinancing could leave less capital available for financial assets. Strong activity alone would not rule out tighter funding.",
+    "Higher energy costs could pressure household spending and business cash flow at the same time, making existing financing needs harder to meet.",
+    "Lower government bond yields are not automatically supportive: they can reflect weaker growth expectations rather than easier access to money.",
+    "Bond-market hedging could amplify a rise in yields if investors need to sell more as their interest-rate exposure changes. This remains a stress scenario, not an established outcome.",
+    "Broader institutional access to Bitcoin creates potential buyers, but access and optimistic forecasts do not establish that purchases have occurred."
   ],
   "btcImplications": [
-    "Do not treat dollar strength alone as a reason to dismiss Bitcoin demand; check whether funding conditions are improving or tightening alongside it.",
-    "A fiscal-support narrative is more compelling when accompanied by sustained spot demand and orderly credit conditions.",
-    "The macro discussion provides context, not a change to BTC Helper’s daily signal."
+    "Look for sustained spot buying before treating expanded access as stronger Bitcoin demand.",
+    "Interpret bond yields alongside credit conditions; falling yields with worsening credit would offer a different backdrop from falling yields with improving funding.",
+    "A long-term monetary thesis does not remove near-term exposure to financing stress or forced selling.",
+    "This weekly macro view provides context; BTC Helper’s daily signal remains separate and unchanged."
   ],
   "factorImplications": [
     {
       "factor": "Valuation",
       "weeklyChange": "No fresh valuation confirmation",
-      "dailyImplication": "Valuation evidence still required"
+      "dailyImplication": "Valuation evidence required"
     },
     {
       "factor": "Holder behavior",
       "weeklyChange": "No fresh holder confirmation",
-      "dailyImplication": "Accumulation or distribution confirmation needed"
+      "dailyImplication": "Holder confirmation required"
     },
     {
       "factor": "Flows",
-      "weeklyChange": "Capital-routing hypothesis in focus",
-      "dailyImplication": "Actual spot-demand confirmation needed"
+      "weeklyChange": "Access versus demand in focus",
+      "dailyImplication": "Spot-demand confirmation needed"
     },
     {
       "factor": "Macro",
-      "weeklyChange": "Fiscal transmission contested",
-      "dailyImplication": "Funding and credit confirmation needed"
+      "weeklyChange": "Capital competition in focus",
+      "dailyImplication": "Funding and credit watch"
     },
     {
       "factor": "Leverage",
-      "weeklyChange": "No fresh positioning confirmation",
-      "dailyImplication": "Funding-stress vigilance"
+      "weeklyChange": "Funding amplification risk in focus",
+      "dailyImplication": "Stress confirmation needed"
     }
   ],
   "counterThesis": [
-    "Interest income may be saved rather than spent, while higher financing costs continue to restrain activity.",
-    "Dollar strength could reflect a scramble for cash rather than supportive capital inflows, leaving Bitcoin exposed to selling pressure.",
-    "Changes in financial infrastructure may take time and need not generate additional Bitcoin demand."
+    "Infrastructure spending could be financed from healthy cash flows or accompanied by enough new liquidity to avoid crowding out financial assets.",
+    "Easing energy costs and orderly refinancing could reduce the pressure on borrowers.",
+    "Institutional access could translate into sustained Bitcoin purchases even while other assets compete for capital."
   ],
   "watchNext": [
-    "Dollar and Bitcoin direction alongside credit conditions and spot demand.",
-    "Short-term funding strains and the availability of collateral.",
-    "Whether government interest income supports spending or remains in financial assets.",
-    "How bond purchases are financed and whether they expand usable liquidity.",
-    "Energy-project delivery and power costs rather than capacity announcements alone."
+    "Credit spreads and refinancing availability alongside government bond yields.",
+    "Energy costs and signs of pressure on household and business cash flow.",
+    "The balance between internal cash generation and new borrowing or equity issuance for infrastructure.",
+    "Bond-market volatility and short-term funding conditions.",
+    "Persistent Bitcoin spot demand rather than forecasts or distribution announcements alone."
   ],
   "whatWouldChange": [
-    "Sustained Bitcoin demand alongside a firmer dollar and calmer funding markets would strengthen the capital-routing hypothesis.",
-    "Worsening funding conditions and weak spot demand would favor the liquidity-stress explanation.",
-    "Evidence of restrained spending despite rising government interest payments would weaken the inflationary fiscal-support argument."
+    "Calmer funding markets, stable credit conditions and sustained Bitcoin purchases would weaken the capital-competition concern.",
+    "Widening credit spreads and strained refinancing despite resilient activity would strengthen the tightening-risk thesis.",
+    "Falling yields accompanied by worsening credit and weak Bitcoin demand would favor a growth-stress interpretation over a liquidity tailwind."
   ],
-  "xPost": "BTC Helper Weekly Macro Thesis: Contested fiscal support; liquidity confirm...\n\nThesis: Higher interest rates can discourage private borrowin...\nRisk: Worsening funding conditions and weak spo...\nWatch: Dollar and Bitcoin direction alongside cr...\n\nhttps://btchelper.app/weekly-macro-thesis/2026-10-17/",
+  "xPost": "BTC Helper Weekly Macro Thesis: Capital competition; liquidity confirmation...\n\nThesis: Financing artificial-intelligence infrastructure alon...\nRisk: Calmer funding markets, stable credit con...\nWatch: Credit spreads and refinancing availabili...\n\nhttps://btchelper.app/weekly-macro-thesis/2026-10-24/",
   "createdAt": null
 }
