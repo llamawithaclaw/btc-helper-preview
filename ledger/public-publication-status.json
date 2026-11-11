@@ -75,6 +75,55 @@
       "reason_code": "publication_failure",
       "public_reason": "No public read was published because the scheduled automation failed before BTC Helper produced a publishable read.",
       "recorded_at": "2026-09-09T11:12:30.515748Z"
+    },
+    {
+      "date": "2026-11-04",
+      "status": "no_public_read_published",
+      "reason_code": "publication_failure",
+      "public_reason": "No public read was published. The scheduled run produced a read that passed its data checks, but the publishing step could not connect to the site's code host, so the read was not published. It was not published later.",
+      "recorded_at": "2026-11-10T11:27:26.694Z"
+    },
+    {
+      "date": "2026-11-05",
+      "status": "no_public_read_published",
+      "reason_code": "publication_failure",
+      "public_reason": "No public read was published. A safeguard stopped publication because the previous day's missing read had no recorded status. The read was not published later.",
+      "recorded_at": "2026-11-10T11:27:26.694Z"
+    },
+    {
+      "date": "2026-11-06",
+      "status": "no_public_read_published",
+      "reason_code": "publication_failure",
+      "public_reason": "No public read was published. A safeguard stopped publication because earlier missing reads had no recorded status. The read was not published later.",
+      "recorded_at": "2026-11-10T11:27:26.694Z"
+    },
+    {
+      "date": "2026-11-07",
+      "status": "no_public_read_published",
+      "reason_code": "publication_failure",
+      "public_reason": "No public read was published. A safeguard stopped publication because earlier missing reads had no recorded status. The read was not published later.",
+      "recorded_at": "2026-11-10T11:27:26.694Z"
+    },
+    {
+      "date": "2026-11-08",
+      "status": "no_public_read_published",
+      "reason_code": "publication_failure",
+      "public_reason": "No public read was published. A safeguard stopped publication because earlier missing reads had no recorded status. The read was not published later.",
+      "recorded_at": "2026-11-10T11:27:26.694Z"
+    },
+    {
+      "date": "2026-11-09",
+      "status": "no_public_read_published",
+      "reason_code": "publication_failure",
+      "public_reason": "No public read was published. A safeguard stopped publication because earlier missing reads had no recorded status. The read was not published later.",
+      "recorded_at": "2026-11-10T11:27:26.694Z"
+    },
+    {
+      "date": "2026-11-10",
+      "status": "no_public_read_published",
+      "reason_code": "publication_failure",
+      "public_reason": "No public read was published. A safeguard stopped publication because earlier missing reads had no recorded status. The read was not published later.",
+      "recorded_at": "2026-11-10T11:27:26.694Z"
     }
   ]
 }
