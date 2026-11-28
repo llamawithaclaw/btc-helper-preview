@@ -1,24 +1,24 @@
 {
-  "date": "2026-11-21",
-  "title": "Liquidity Risk Tests the Long-Term Bitcoin Thesis",
-  "summary": "This week’s macro discussion turns more cautious as liquidity and refinancing concerns challenge the recovery case. Bitcoin’s long-term monetary thesis can coexist with near-term selling pressure; neither scarcity nor hoped-for easing establishes a price floor.",
-  "regime": "Cautious macro outlook; liquidity confirmation needed",
+  "date": "2026-11-28",
+  "title": "Slowing Liquidity Keeps Bitcoin Recovery Unconfirmed",
+  "summary": "The weekly macro thesis remains cautious: liquidity growth appears to be stalling, even while funding conditions remain orderly. Bitcoin scarcity does not establish a near-term price floor, and targeted market support is not the same as broad monetary easing.",
+  "regime": "Cautious; liquidity momentum fading",
   "thesisBullets": [
-    "Liquidity and refinancing risks deserve renewed attention before treating a market rebound as durable.",
-    "Broad risk aversion can pressure Bitcoin alongside other assets, even when their long-term investment cases differ.",
-    "Future policy easing remains a scenario, not a reliable timetable for relief.",
-    "Stablecoin adoption can expand dollar settlement and demand for short-term government debt without resolving longer-term financing needs."
+    "A high level of available liquidity can coexist with a weakening impulse for asset prices; direction matters as well as size.",
+    "The current macro discussion points to softer collateral support, not an established system-wide funding crisis.",
+    "Targeted equity support in China does not by itself confirm a broad monetary stimulus turn.",
+    "Renewed Bitcoin price weakness challenges early bottom calls without resolving the longer-term monetary thesis."
   ],
   "btcImplications": [
-    "Separate long-term Bitcoin conviction from the ability to withstand near-term funding stress and forced selling.",
-    "Look for improving funding conditions and sustained spot demand before interpreting a rebound as confirmation of recovery.",
-    "Do not equate growth in dollar settlement infrastructure with confirmed Bitcoin buying.",
-    "This weekly macro outlook provides context, not a trading signal; BTC Helper’s daily signal remains separate and unchanged."
+    "Treat a durable recovery as a hypothesis requiring demand and funding confirmation, not as a consequence of fixed supply.",
+    "Watch whether policy support reaches broader credit and funding conditions before assuming it benefits Bitcoin demand.",
+    "Keep the ability to withstand forced selling separate from long-term conviction.",
+    "This weekly macro outlook provides context; BTC Helper’s mechanical daily signal remains separate and unchanged."
   ],
   "factorImplications": [
     {
       "factor": "Valuation",
-      "weeklyChange": "Price-floor thesis questioned",
+      "weeklyChange": "Bottom thesis challenged",
       "dailyImplication": "Valuation confirmation needed"
     },
     {
@@ -28,37 +28,37 @@
     },
     {
       "factor": "Flows",
-      "weeklyChange": "Adoption versus demand distinction",
+      "weeklyChange": "Broad demand improvement unconfirmed",
       "dailyImplication": "Spot-demand confirmation needed"
     },
     {
       "factor": "Macro",
-      "weeklyChange": "More cautious liquidity outlook",
-      "dailyImplication": "Funding-condition watch"
+      "weeklyChange": "Liquidity momentum softer",
+      "dailyImplication": "Funding and collateral watch"
     },
     {
       "factor": "Leverage",
-      "weeklyChange": "Refinancing risk in focus",
-      "dailyImplication": "Forced-selling risk watch"
+      "weeklyChange": "Forced-selling risk in focus",
+      "dailyImplication": "Deleveraging watch"
     }
   ],
   "counterThesis": [
-    "Funding conditions could stabilize before the cautious macro narrative improves, allowing Bitcoin demand to recover.",
-    "Refinancing difficulties could remain concentrated rather than developing into broad market stress.",
-    "Institutional adoption could support durable demand over time even while near-term liquidity remains uncertain."
+    "Orderly funding could cushion slowing liquidity growth and allow risk appetite to stabilize.",
+    "Broader easing could follow targeted support, improving the backdrop before cautious expectations adjust.",
+    "Bitcoin demand could recover without an immediate acceleration in global liquidity."
   ],
   "watchNext": [
-    "Whether short-term funding and collateral conditions improve or show broader strain.",
-    "Whether refinancing remains accessible beyond the strongest borrowers.",
-    "Whether Bitcoin spot demand persists through weakness in other risk assets.",
-    "Whether rebounds coincide with easing selling pressure rather than renewed leverage.",
-    "Whether policy action improves actual funding conditions rather than only expectations."
+    "Whether liquidity growth resumes or continues to flatten.",
+    "Whether collateral softness spreads into funding stress.",
+    "Whether targeted support in China develops into broader monetary easing.",
+    "Whether Bitcoin rebounds are accompanied by sustained spot demand and reduced selling pressure.",
+    "Whether bond-market signals of weaker growth are confirmed by broader credit conditions."
   ],
   "whatWouldChange": [
-    "Sustained spot demand alongside easier funding would weaken the cautious near-term outlook.",
-    "Broader refinancing stress accompanied by forced selling would strengthen the liquidity-risk case.",
-    "A price rebound without demand or funding confirmation would leave the recovery thesis unresolved."
+    "Renewed liquidity growth alongside sustained Bitcoin demand would weaken the cautious recovery assessment.",
+    "Broader funding strain and persistent selling would strengthen the near-term downside-risk case.",
+    "A rebound without demand confirmation or broader easing would leave the recovery case unresolved."
   ],
-  "xPost": "BTC Helper Weekly Macro Thesis: Cautious macro outlook; liquidity confirmat...\n\nThesis: Liquidity and refinancing risks deserve renewed atten...\nRisk: Refinancing difficulties could remain con...\nWatch: Whether short-term funding and collateral...\n\nhttps://btchelper.app/weekly-macro-thesis/2026-11-21/",
+  "xPost": "BTC Helper Weekly Macro Thesis: Cautious; liquidity momentum fading\n\nThesis: A high level of available liquidity can coexist with...\nRisk: Orderly funding could cushion slowing liq...\nWatch: Whether liquidity growth resumes or conti...\n\nhttps://btchelper.app/weekly-macro-thesis/2026-11-28/",
   "createdAt": null
 }
